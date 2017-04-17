@@ -1,0 +1,89 @@
+.main{
+  .wrapper{
+    .row{
+      .content{
+        .post{
+          .content{
+            a:after {
+                content: "\f08e"; /* FontAwesome Unicode */
+                font-family: FontAwesome;
+                display: inline-block;
+                margin-left: 0.2em; /* same as padding-left set on li */
+                width: 1.3em; /* same as padding-left set on li */
+            }
+          }
+        }
+        blockquote{
+          background-color: #DADADA;
+          border-left: 5px solid $color-links;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          // border-right: 5px solid $color-links;
+          // border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        table{
+          margin: 2% 0%;
+          background-color: #fff;
+          thead{
+            background-color: rgba(#C9C9C9, .8);
+            tr{
+              th{
+                padding: 5px;
+                border: 1px solid #fff;
+              }
+            }
+          }
+          tbody{
+            background-color: rgba(#C9C9C9, .5);
+            border: 1px solid #fff;
+            tr{
+              td{
+                padding: 5px;
+                border: 1px solid #fff;
+              }
+            }
+          }
+        }
+        .gist-data{
+         background-color: #F9F9F9;
+         table{
+            background-color: #F9F9F9;
+            thead{
+              background-color: #F9F9F9;
+              tr{
+                th{
+                  border: none;
+                }
+              }
+            }
+            tbody{
+              background-color: #F9F9F9;
+              border: none;
+              tr{
+                td{
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          li{
+            padding-left: 1.3em;
+            &:before {
+              content: "\f069"; /* FontAwesome Unicode */
+              font-family: FontAwesome;
+              display: inline-block;
+              font-size: 1.4rem;
+              margin-left: -1.3em; /* same as padding-left set on li */
+              width: 1.3em; /* same as padding-left set on li */
+            }
+          }
+        }
+      }
+    }
+  }
+}
