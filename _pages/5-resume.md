@@ -136,5 +136,4 @@ Realiazo diversos projetos Open-Source diariamente e armazeno tudo com [git](htt
 Para ver todos meus projetos, acesse: [{{site.url}}{{site.baseurl}}/projects/]({{site.url}}{{site.baseurl}}/projects/){:target="_blank"}.
 ## Línguas
 
-* **Inglês** - Intermediário
-* **Português** - Nativo
+* **Inglês** - Intermediário   

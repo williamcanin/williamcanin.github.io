@@ -6,7 +6,7 @@
 #
 # Supported: Unix
 # Release State: 1.0.0
-# Script Name: typing.sh
+# Script Name: init.sh
 
 # Author: William C. Canin
 #   E-Mail: william.costa.canin@gmail.com
