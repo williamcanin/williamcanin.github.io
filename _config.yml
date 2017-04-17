@@ -86,7 +86,7 @@ enables:
 
 # Disqus username
 disqus:
-  username: # Yout user Disqus. e.g: angusyoung
+  username: williamcanin # Yout user Disqus. e.g: angusyoung
 
 # Image for author in posts
 author:
