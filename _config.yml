@@ -178,7 +178,7 @@ exclude:
   - Gemfile.lock
   - "**/*.txt"
   - README.md
-  - typing.sh
+  - init.sh
   - Rakefile
   - dev/
   - src/
