@@ -32,7 +32,7 @@ page: postlist
           {% datelang post %}
           {% include datelang/post %}
         </time>
-        {% if page.comments and site.disqus.username %}
+        {% if post.comments and site.disqus.username %}
           <div class="count-comments">
             {% if site.enables.icons == "yes" %}<i class="fa fa-comments"></i>{% endif %}<span class="disqus-comment-count" data-disqus-identifier="{{post.url}}">0</span>
           </div>
