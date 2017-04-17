@@ -96,7 +96,7 @@ author:
 google:
   analytics:
     enable: "yes" # Use: "yes" | "no"
-    id: "UA-68060493-1" # tracking id, e.g. "UA-000000-01"
+    id: "UA-61340177-1" # tracking id, e.g. "UA-000000-01"
 
 # Settings for the plugins in the _plugins folder.
 plugin:

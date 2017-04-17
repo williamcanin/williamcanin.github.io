@@ -115,6 +115,9 @@
       margin: 15px 0px;
       .image{
         img{
+          @media (max-width: 480px) {
+            max-width: 140px;
+          }
           border: 0.1rem solid #CACACA;
         }
       }

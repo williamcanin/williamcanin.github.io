@@ -114,11 +114,6 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 {% lbskill IPTables|16px %}
 {% lbskill Squid|16px %}
 
-**Suite Office:**
-
-{% lbskill LibreOffice|16px %}
-{% lbskill Microsoft Office|16px %}
-
 **S.O:**
 
 {% lbskill Linux|16px %}
