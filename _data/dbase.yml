@@ -1,0 +1,100 @@
+# ________________________________________________________________________________________________ #
+# Attention! Change only the values of the variables! Do not change the position of the variables. #
+# ________________________________________________________________________________________________-#
+
+# Category: Website.
+website:
+  title: William Canin
+  description: "Analista e Desenvolvedor de Sistemas / Programador / Web Design"
+  launch: 2015
+  avatar: williamcanin.svg
+  metatag:
+    google-site-verification: z0VQaZ4DGSF76FnHN2nExfv1aRDecav5baDQcSRv4eg
+    type: "WebSite"
+    locale: "pt-BR"
+    expires:  "Sun, 31 Dec 2017 00:10:00 GMT" # E.g: "Sat, 24 Dec 2017 00:10:00 GMT"
+    cache-control:  "max-age=29030400, public" # E.g: "max-age=29030400, public" # Default: public / max-age=29030400
+    tags: "William, Canin, Analista, Programador, WebDesign"
+    refresh-time:
+  # Config for Google Analytics.  Note: Must have Google Analytics Tracking ID.
+  google:
+    analytics:
+      enable: yes # Use: yes | no
+      id: "UA-61340177-1" # tracking id, e.g. "UA-000000-01"
+  author:
+    image: williamcanin.svg
+  strings:
+    sidebar:
+      title: |
+        Hey, I'm William.
+      links:
+        home: Hello
+    footer:
+      message: In Jesus I Trust.
+    comments:
+      title: Deixe um comentário
+      disable: Comentários desabilitado.
+    # The Contact, uses the Formspree service. Need to register for the service.
+    contact:
+      btn-send: Vai, menssagem!
+      placeholder:
+        name: Seu nome completo
+        email: Seu email
+        message: O que você gostaria de dizer?
+    resume:
+      btnprint: Imprimir
+    postlist:
+      continue: Continue
+    post:
+      author:
+        title: Autor
+        name: William Canin
+        bio: |
+          Formado em Analise e Desenvolvimento de Sistemas e fascinado pelo mundo do GNU/Linux, lê avidamente tudo sobre o assunto e sobre tecnologia em geral.
+    search:
+      input:
+        placeholder: ['Pesquisar em','arquivos(s)']
+        onfocus: "Pesquisar por: título ou tags"
+        onblur: ['Pesquisar','arquivos(s)']
+        notfound: "Oh céus, nenhum resultado encontrado."
+    share_social:
+      title: "Compartilhar: "
+      facebook:
+        title: "Compartilhar no Facebook"
+      twitter:
+        title: "Compartilhar no Twitter"
+      linkedin:
+        title: "Compartilhar no LinkedIn"
+      gplus:
+        title: "Compartilhar no Google Plus"
+
+# Category: User Data.
+userdata:
+  email: william.costa.canin@gmail.com
+  twitter:
+  disqus:
+    username: williamcanin
+  # You can add at most 4 social.
+  socials:
+    title: Siga-Me!
+    links:
+      - title: GitHub
+        id: github
+        icon: fa-github
+        url: https://github.com/williamcanin
+
+      - title: Google Plus
+        id: google-plus
+        icon: fa-google-plus
+        url: https://plus.google.com/114279208421782006466
+
+      - title: LinkedIn
+        id: linkedin
+        icon: fa-linkedin
+        url: https://br.linkedin.com/in/williamcostacanin
+
+      - title: Viva O Linux
+        id: vol
+        icon: fa-linux
+        url: https://www.vivaolinux.com.br/~willnux
+

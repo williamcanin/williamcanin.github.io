@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+# Welcome to Jekyll! ... and Typing!
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
@@ -10,20 +10,15 @@
 
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# you will see them accessed via {{ data_string.website.title }}, {{  data_string.website.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: William Canin
-debutyear: 2015
-description: "Analista e Desenvolvedor de Sistemas / Programador / Web Design"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://williamcanin.com" # the base hostname & protocol for your site, e.g. http://example.com
-email: william.costa.canin@gmail.com
 
 # Add Avatar in: Sidebar or page Hello, and configure.
 avatar:
-  image: williamcanin.svg
   sidebar: true
   hello: false
   size:
@@ -34,69 +29,19 @@ avatar:
     radius: 50
     value: 1
 
-# Meta Tag Settings
-head:
-  meta:
-    google-site-verification: z0VQaZ4DGSF76FnHN2nExfv1aRDecav5baDQcSRv4eg
-    type: "WebSite"
-    locale: "pt_BR"
-    expires: "Sun, 31 Dec 2017 00:10:00 GMT" # E.g: "Sat, 24 Dec 2017 00:10:00 GMT"
-    cache-control: "max-age=29030400, public" # E.g: "max-age=29030400, public" # Default: public / max-age=29030400
-    tags: "Programador, William, Canin, Desenvolvedor, Analista, Web Design"
-    refresh-time: # 15
+# Settings to share the post on the social networks below.
+share_social:
+  enable: true
+  facebook: true
+  linkedin: true
+  twitter: false
+  googleplus: true
 
-# String for every website.
-string:
-  menu:
-    title: |
-      Hey, I'm William.
-    page:
-      title: Páginas
-      home: Hello
-      blog: Blog
-      search: Pesquisar
-      feed: Feed
-  footer:
-    message: In Jesus I Trust
-  comments:
-    title: Deixe um comentário
-    disable: Comentários desabilitado
-  # The Contact, uses the Formspree service. Need to register for the service.
-  contact:
-    btn-send: Vai, menssagem!
-    placeholder:
-      name: Seu nome completo
-      email: Seu email
-      message: O que você gostaria de dizer?
-  resume:
-    btnprint: Imprimir
-  postlist:
-    continue: Continue
-  post:
-    comments_count: Comentários
-  author:
-    title: Autor
-    name: William Canin
-    bio: |
-      Formado em Analise e Desenvolvimento de Sistemas e fascinado pelo mundo do GNU/Linux, lê avidamente tudo sobre o assunto e sobre tecnologia em geral.
 
 # Enable or disable icons on every website. Use:  "yes" | "no"
-enables:
-  icons: "yes"
-
-# Disqus username
-disqus:
-  username: williamcanin # Yout user Disqus. e.g: angusyoung
-
-# Image for author in posts
-author:
-  image: williamcanin.svg
-
-# Config for Google Analytics.  Note: Must have Google Analytics Tracking ID.
-google:
-  analytics:
-    enable: "yes" # Use: "yes" | "no"
-    id: "UA-61340177-1" # tracking id, e.g. "UA-000000-01"
+screen:
+  icons:
+    enable: yes
 
 # Settings for the plugins in the _plugins folder.
 plugin:
@@ -116,7 +61,7 @@ spotify:
     jekyll: true
     dir: "_sass"
   title:
-    enable: false
+    enable: true
     text: "Curta um sonzinho..."
   content:
     enable: true
@@ -134,15 +79,8 @@ include: ['_pages','_blog','_hello']
 markdown: kramdown
 highlighter: pygments
 permalink: /blog/:title/
-gems:
-  - jekyll-paginate
-  - jekyll-gist
-  - jekyll-youtube
-  - jekyll-feed
-  - jemoji
-  - jekyll-email-protect
-  - jekyll-spotify-plugin
 
+# Build local / Server
 destination: _site
 port: 4000
 host: localhost
@@ -151,10 +89,6 @@ host: localhost
 sass:
   sass_dir: _sass
   style: compressed
-
-# Config feed for atom
-feed:
-  path: atom.xml
 
 # Config for Compress HTML
 compress_html:
@@ -176,6 +110,10 @@ gist:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - screenshot.png
+  - CHANGELOG
+  - LICENSE.txt
+  - COPYING
   - "**/*.txt"
   - README.md
   - init.sh
@@ -184,3 +122,7 @@ exclude:
   - src/
 
 #  --- SESSION PRIVATE ---
+
+
+
+

@@ -14,6 +14,9 @@ day_quote:
         (2 Coríntios 6:15:15 NTLH)
 categories: blog
 published: true
+
+# Does not change and does not remove 'script' variables
+script: [post.js]
 ---
 
 

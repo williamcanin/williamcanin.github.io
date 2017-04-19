@@ -38,7 +38,15 @@ CHANGELOG - Portuguese - Brazil
 - Recurso de criação de cabeçalho de posts para Blog e para página Hello, através Rakefile (Ruby).
 - Recurso de gerenciar projeto com o script "typing.sh". Esse script fará praticamente quase
   toda ação do projeto, caso o usuário use S.O Unix.
+- Avatar na sidebar e na página de Hello.
+- Google Analytics.
+- Botões de compartilhamento do post. [Facebook, LinkedIn, Google+, Twitter ]
+- Plugin "jekyll-coffeescript" e "jekyll-jsminify"
+- Indice na página de "Resume".
+- Arquivo "robots.txt" e imagem "screenshot.png"
 ### Alterando
 - Alguns blocos do arquivo "_config.yml".
+- Estrutura de string do website, foram mudados para o "_data/dbase.yml".
 - Página de Error 404, como animação de gif.
 - MetaTags Head foram melhoradas (SEO).
+- Path de idiomas dos plugins "DateLang" e "ReadingTime" adicionados no diretório "_plugins" ocultamente.

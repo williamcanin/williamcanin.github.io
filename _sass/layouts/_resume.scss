@@ -31,6 +31,8 @@
       line-height: normal;
     }
     h2{
+      border-bottom: 0.1rem solid #757575;
+      padding-bottom: 5px;
       &:before{
         content: "\f0da"; /* FontAwesome Unicode */
         font-family: FontAwesome;

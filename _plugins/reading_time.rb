@@ -15,10 +15,8 @@ module Jekyll
   module ReadingTimeFilter
     def reading_time(input)
 
-      # Path config json
-      path_json = "src/config/json"
       # Loading config string languages
-      config = File.read(File.join(File.dirname(File.expand_path(__FILE__)), "../#{path_json}/reading_time.json"))
+      config = File.read(File.join(File.dirname(File.expand_path(__FILE__)), "./.readingtimerc"))
       # Capture hash
       data_hash_json = JSON.parse(config)
       # Loading and Capture config file _config.yml

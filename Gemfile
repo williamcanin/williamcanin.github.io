@@ -8,11 +8,12 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "jekyll"
-gem "jekyll-paginate"
 gem "pygments.rb"
 gem "rake"
 group :jekyll_plugins do
-   gem "jekyll-feed"
+   gem "jekyll-coffeescript"
+   gem "jekyll-jsminify"
+   gem "jekyll-paginate"
    gem "jekyll-gist"
    gem "jekyll-youtube"
    gem "jekyll-tagging"
@@ -20,5 +21,3 @@ group :jekyll_plugins do
    gem "jekyll-email-protect"
    gem "jekyll-spotify-plugin"
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -14,6 +14,9 @@ day_quote:
         (2 Coríntios 6:15:15 NTLH)
 categories: blog
 published: true
+
+# Does not change and does not remove 'script' variables
+script: [post.js]
 ---
 
 <img src="{{ "/assets/images/posts/sublime-text-logo.png" | prepend:site.baseurl | prepend:site.url }}" alt="Sublime Text 3" width="200" height="200" style="float: left;padding: 12px;" />
@@ -23,7 +26,7 @@ O [Sublime Text](http://www.sublimetext.com/){:target="_blank"} é um editor de 
 Este belo editor, está presente em todos tipo de Sistemas Operacionais, porem, irei detalhar como se instalar o Sublime Text 3 na distribuição **Linux [Debian](http://debian.org){:target="_blank"}** e distribuições derivadas do mesmo, como o **[Ubuntu](http://ubuntu.com/){:target="_blank"}** ( `testado no Debian Wheezy e Ubuntu 14.10` ).
 Para instalar a **ultima** versão de qualquer programa no seu Linux, é sempre recomendável que configure sua **sources.list** com repositórios oficiais da distribuição, e em seguida atualize sua distribuição, para isso, execute os seguintes comandos para este feito:
 
-{% highlight bash linenos %}
+{% highlight shell linenos %}
 will@linux:~$ sudo apt-get update && apt-get dist-upgrade
 {% endhighlight %}
 

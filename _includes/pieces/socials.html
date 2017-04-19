@@ -1,13 +1,13 @@
 <div class="socials">
   <div class="row">
-    {% for hash in site.data.socials %}
-      {% assign socials = hash[1] %}
-      <p>{{ socials.title }}</p>
-      {% assign links = socials.links %}
+    {% for hash in dbase %}
+      {% assign userdata = hash[1] %}
+      <p>{{ userdata.socials.title }}</p>
+      {% assign links = userdata.socials.links %}
       {% for item in links %}
-        <div id="{{item.id}}" class="col-sm-3 columns">
-          <a href="{{item.url}}" target="_blank" title="{{item.title}}">
-            <i class="fa {{item.icon}} icon" aria-hidden="true"></i>
+        <div id="{{ item.id }}" class="col-sm-3 columns">
+          <a href="{{ item.url }}" target="_blank" title="{{ item.title }}">
+            <i class="fa {{ item.icon }} icon" aria-hidden="true"></i>
           </a>
         </div>
       {% endfor %}

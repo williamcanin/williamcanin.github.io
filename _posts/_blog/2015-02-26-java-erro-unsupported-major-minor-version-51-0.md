@@ -14,6 +14,9 @@ day_quote:
         (Provérbios 12:25 NTLH)
 categories: blog
 published: true
+
+# Does not change and does not remove 'script' variables
+script: [post.js]
 ---
 
 Este é a correção de um Erro no Java, ou melhor, um erro humano, pois esse erro só é dispertado se você realizar a execução de um programa em Java que não suporta a versão no qual o programa foi compilado.

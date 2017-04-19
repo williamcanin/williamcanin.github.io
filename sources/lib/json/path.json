@@ -1,0 +1,25 @@
+{
+  "build":{
+    "dir": "_site"
+  },
+"sources":{
+  "js":{
+      "dir": "./sources/js",
+      "files": "./sources/js/**/*.js"
+    }
+  },
+  "assets":{
+    "images":{
+      "dir": "./assets/images",
+      "files": "./assets/images/**/*"
+    },
+    "stylesheets":{
+      "dir": "./assets/stylesheets",
+      "files": "./assets/stylesheets/**/*.css"
+    },
+    "javascripts":{
+      "dir": "./assets/javascripts",
+      "files": "./assets/javascripts/**/*.js"
+    }
+  }
+}

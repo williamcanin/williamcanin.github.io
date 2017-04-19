@@ -1,41 +1,18 @@
 ---
 layout: compress
-page: default
 ---
 
+<!-- Include Data Base  -->
+{% include dbase/dbase %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
   {% include pieces/head.html %}
   <body>
     <div class="main" id="top">
       <div class="container wrapper">
         <div class="row">
-          <div class="col-sm-3 sidebar">
-            {% if site.avatar.sidebar == true %}
-              <div class="row avatar">
-                <img {% if site.avatar.border.enable == true %} style="border: {{site.avatar.border.value}}px solid #333; border-radius: {{site.avatar.border.radius}}%;" {% endif %} class="img-responsive center-block avatar-img" src="{{ "/assets/images/avatar"  | prepend: site.baseurl | prepend: site.url }}/{{site.avatar.image}}" {%if site.avatar.size.enable == true %} height="{{site.avatar.size.value}}" width="{{site.avatar.size.value}}" {% endif %} alt="{{site.title}}">
-              </div>
-            {% endif %}
-            <div class="row header">
-              <h2>{{site.string.menu.title}}</h2>
-            </div>
-            <div class="row menu">
-              <ul>
-                <li>
-                {% if site.enables.icons == "yes" %}<i class="fa fa-home" aria-hidden="true"></i>&nbsp;{% endif %}<a href="{{site.url}}{{site.baseurl}}/">{{site.string.menu.page.home}}</a>
-                </li>
-                 <hr class="breakline">
-                {% for page in site.pages %}
-                {% if page.title and page.menu == true %}
-                  <li>
-                    {% if page.icon and site.enables.icons == "yes" %}<i class="fa {{ page.icon }}" aria-hidden="true"></i>&nbsp;{% endif %}<a href="{{site.url}}{{site.baseurl}}{{ page.url }}">{{ page.title }}</a>
-                  </li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-              {% include pieces/socials.html %}
-            </div>
-          </div>
+          {% include pieces/sidebar.html %}
           <div class="col-sm-9 content">
               {% if page.url == '/' %}
                 {% include pieces/hello.html %}
@@ -47,14 +24,8 @@ page: default
       </div>
       {% include pieces/footer.html %}
     </div>
-
   {% include scripts/src.html %}
-  {% include scripts/simple_jekyll_search.html %}
-
-    <!-- Include script counter comments -->
-    {% include scripts/disqus_count.html %}
+  <!-- Google Analytics  -->
+  {% include scripts/google_analytics.html %}
   </body>
 </html>
-
-
-

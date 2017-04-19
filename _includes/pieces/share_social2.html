@@ -1,0 +1,39 @@
+{% if site.share_social.enable == true %}
+<div class="row sharebutton">
+  <ul>
+    <li>Share:</li>
+    <li>
+      <a href="">Facebook</a>
+    </li>
+    <li>
+      <a href="">Linkedin</a>
+    </li>
+    <li>
+      <a href="">Twitter</a>
+    </li>
+    <li>
+      <a href="">Google+</a>
+    </li>
+  </ul>
+</div>
+{% endif %}
+
+
+
+<!-- {.% if site.share_social.enable == true %.}
+  <div class="row sharebutton">
+    <h4>{{ dbase.website.strings.share_social.title }}</h4>
+    <div class="col-xs-4 col-sm-2 col-lg-3 col-share fb">
+      <a class="btn btn-default center-block btn-share" href="#" title="{{ dbase.website.strings.share_social.facebook.title }}" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
+    </div>
+    <div class="col-xs-4 col-sm-2 col-lg-3 col-share linkedin">
+      <a class="btn btn-default center-block btn-share" href="http://www.linkedin.com/cws/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href,&quot;popupwindow&quot;,&quot;status=0,height=500,width=700,resizable=0,top=50,left=100&quot;);return false;" target="_blank" title="{{ dbase.website.strings.share_social.linkedin.title }}">Linkedin</a>
+    </div>
+    <div class="col-xs-4 col-sm-2 col-lg-3 col-share twitter">
+      <a class="btn btn-default center-block btn-share" href="https://twitter.com/intent/tweet?text={{ page.url | prepend: site.baseurl | prepend: site.url }} - {{ page.title }} by {{ dbase.userdata.twitter }}" target="_blank" title="{{ dbase.website.strings.share_social.twitter.title }}">Twitter</a>
+    </div>
+    <div class="col-xs-4 col-sm-2 col-lg-3 col-share gplus">
+      <a class="btn btn-default center-block btn-share" href="https://plus.google.com/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href,&quot;popupwindow&quot;,&quot;status=0,height=500,width=700,resizable=0,top=50,left=100&quot;);return false;" target="_blank" title="{{ dbase.website.strings.share_social.gplus.title }}">Google+</a>
+    </div>
+  </div>
+{.% endif %.} -->

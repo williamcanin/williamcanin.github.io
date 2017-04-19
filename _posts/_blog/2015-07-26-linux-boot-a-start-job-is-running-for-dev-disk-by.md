@@ -14,6 +14,9 @@ day_quote:
         (Eclesiastes 12:13-14 NTLH)
 categories: blog
 published: true
+
+# Does not change and does not remove 'script' variables
+script: [post.js]
 ---
 
 Esperar hoje em dia não uma tarefa que agrada as pessoas, ainda mais se tratando de software.

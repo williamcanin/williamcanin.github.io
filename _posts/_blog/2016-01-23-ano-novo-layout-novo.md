@@ -14,6 +14,9 @@ day_quote:
         ( NTLH)
 categories: blog
 published: false
+
+# Does not change and does not remove 'script' variables
+script: [post.js]
 ---
 
 Happy Birthday to You! Meu site/blog completa 1 Ano, e isso me deu a ideia de modificar a aparência de layout para homenagia-lo. Veja quais foram os procedimentos...

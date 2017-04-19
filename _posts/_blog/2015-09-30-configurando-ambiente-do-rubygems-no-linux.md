@@ -14,6 +14,9 @@ day_quote:
         (João 14:21 NTLH)
 categories: blog
 published: true
+
+# Does not change and does not remove 'script' variables
+script: [post.js]
 ---
 
 Se você  necessita configurar o ambiente RubyGems para seu usuário local, continue essa leitura e veja que um simples arquivo configurado pode facilitar as coisas para você.

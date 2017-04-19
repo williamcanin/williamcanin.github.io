@@ -34,8 +34,14 @@ tcontents:
       id: "#línguas"      
 
 published: true
+
+# Does not change and does not remove 'script' variables
+script: [resume.js]
+
 permalink: /resume/
 ---
+
+{% include dbase/dbase %}
 
 #  William da Costa Canin
 ### Analista e Desenvolvedor de Sistemas
@@ -49,8 +55,8 @@ permalink: /resume/
 **Estado Civil**: Solteiro   
 **País**: Brasil   
 **Província**: Lins/SP   
-**E-mail**: [{{site.email}}](mailto:{{site.email | encode_email }})   
-**Website**: [{{site.url}}{{site.baseurl}}]({{site.url}}{{site.baseurl}}){:target="_blank"}   
+**E-mail**: [{{ dbase.userdata.email }}](mailto:{{ site.email | encode_email }})   
+**Website**: [{{ site.url }}{{ site.baseurl }}]({{ site.url }}{{ site.baseurl }}){:target="_blank"}   
 
 
 ## Biografia
@@ -59,7 +65,7 @@ Um codificador assíduo com comprometimento com as atividades que realizo. Profi
 
 Diarimente, gosto de aprender novas linguagens, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, então eu diria que conheço bem suas lógicas. 
 
-Hoje estou mais para desenvolvimento em línguas Web (`Front-End`), porem não consigo ficar sem o desenvolvimento `Back-End`, tipo [Ruby](https://www.ruby-lang.org){:target="_blank"}.  Sou um defensor do código Open-Source.
+Hoje estou mais para desenvolvimento em línguas Web (`Front-End`), porem não consigo ficar sem o desenvolvimento `Back-End`, tipo [Ruby](https://www.ruby-lang.org){:target="_blank"}.  Sou um defensor do código `open source`.
 
 No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Arch Linux](https://www.archlinux.org/){:target="_blank"}.
 
@@ -83,41 +89,41 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 **Front-End:**   
 
-{% lbskill HTML|17px %}
-{% lbskill Bootstrap|16px %}
-{% lbskill CSS3|16px %}
-{% lbskill JQuery|16px %}
+{% label HTML|17px %}
+{% label Bootstrap|16px %}
+{% label CSS3|16px %}
+{% label JQuery|16px %}
 
 **Back-End:**
 
-{% lbskill Ruby|16px %}
-{% lbskill UNIX / GNU via Bash|16px %}
-{% lbskill Delphi|16px %}
-{% lbskill Java|16px %}
+{% label Ruby|16px %}
+{% label UNIX / GNU via Bash|16px %}
+{% label Delphi|16px %}
+{% label Java|16px %}
 
 **Automatizadores:**
 
-{% lbskill Git|16px %}
-{% lbskill Jekyll|16px %}
-{% lbskill Gulp|16px %}
-{% lbskill SASS|16px %}
+{% label Git|16px %}
+{% label Jekyll|16px %}
+{% label Gulp|16px %}
+{% label SASS|16px %}
 
 **Metodologias:**
 
-{% lbskill UML|16px %}
-{% lbskill OOP|16px %}
-{% lbskill PL/SQL|16px %}
+{% label UML|16px %}
+{% label OOP|16px %}
+{% label PL/SQL|16px %}
 
 
 **Redes:**
 
-{% lbskill IPTables|16px %}
-{% lbskill Squid|16px %}
+{% label IPTables|16px %}
+{% label Squid|16px %}
 
 **S.O:**
 
-{% lbskill Linux|16px %}
-{% lbskill Windows|16px %}
+{% label Linux|16px %}
+{% label Windows|16px %}
 
 
 ## Projetos

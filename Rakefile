@@ -5,7 +5,7 @@
 # Page author: http://williamcanin.com
 # Description: Task creation file for the 'config.rb' file.
 
-require './src/lib/rb/config.rb'
+require './sources/lib/rb/config.rb'
 
 
 # Task create header Post

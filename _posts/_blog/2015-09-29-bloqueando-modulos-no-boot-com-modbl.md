@@ -14,6 +14,9 @@ day_quote:
         (João 14:21 NTLH)
 categories: blog
 published: true
+
+# Does not change and does not remove 'script' variables
+script: [post.js]
 ---
 
 Essa é uma postagem que irá facilitar e otimizar seus comandos no terminal para bloquear módulos no Linux. Estou falando do Modbl, um script simples mas que lhe propoe um ganha tempo.

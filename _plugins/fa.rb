@@ -28,7 +28,7 @@ module Jekyll
         icon = input_split[0].strip
         fsize = input_split[1].strip
         # Write the output HTML string
-        %(<i style=\"font-size: #{fsize};\" class=\"fa #{icon}\" aria-hidden=\"true\"></i>)
+        %(<i style="font-size: #{fsize};" class="fa #{icon}" aria-hidden="true"></i>)
       end
       def split_params(params)
         params.split("|")

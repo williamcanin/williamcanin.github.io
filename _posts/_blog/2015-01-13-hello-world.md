@@ -14,6 +14,9 @@ day_quote:
         (Efésios 6:23 NTLH)
 categories: blog
 published: true
+
+# Does not change and does not remove 'script' variables
+script: [post.js]
 ---
 
 

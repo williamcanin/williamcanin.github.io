@@ -41,7 +41,7 @@
 #
 
 # Import LIBs
-source "./src/lib/shell/global/functions/utils.lib"
+source "./sources/lib/shell/global/functions/utils.lib"
 
 # Menu
 case $1 in

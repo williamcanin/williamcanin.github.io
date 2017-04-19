@@ -84,7 +84,7 @@
     }
     .linend{
       margin-bottom: 50px;
-      border-top: 1px solid #AFAFAF;
+      // border-top: 1px solid #AFAFAF;
       text-align: center;
       &:after{
         content: '§';
@@ -94,7 +94,7 @@
         top: -16px;
         padding: 0 10px;
         background-color: $content-background-color;
-        color: #8c8b8b;
+        // color: #8c8b8b;
         font-size: 22px;
         -webkit-transform: rotate(60deg);
         -moz-transform: rotate(60deg);

@@ -14,6 +14,9 @@ day_quote:
         (Mateus 6:27 NTLH)
 categories: blog
 published: true
+
+# Does not change and does not remove 'script' variables
+script: [post.js]
 ---
 
 Chega de ficar apenas aprendendo 'create table' no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.
