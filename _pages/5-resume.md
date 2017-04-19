@@ -89,7 +89,7 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 **Front-End:**   
 
-{% label HTML|17px %}
+{% label HTML|16px %}
 {% label Bootstrap|16px %}
 {% label CSS3|16px %}
 {% label JQuery|16px %}

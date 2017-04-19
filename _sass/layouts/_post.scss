@@ -65,6 +65,10 @@
      padding: 2% 0%;
      a{
        text-decoration: underline;
+       &:after{
+        content: ".";
+        margin-right: 10px;
+       }
      }
   }
   .content{
@@ -97,7 +101,7 @@
       .image{
         img{
           @media (max-width: 480px) {
-            max-width: 140px;
+            max-width: 100px;
           }
           border: 0.1rem solid #CACACA;
         }
