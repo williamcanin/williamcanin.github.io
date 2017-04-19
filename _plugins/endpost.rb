@@ -26,7 +26,7 @@ module Jekyll
         # Split the input variable (omitting error checking)
         color = @input
         # Write the output HTML string
-        %(<hr style="border-top: 1px solid #{color}; color: #{color};" class="linend">)
+        %(<hr style="border-top: 1px solid #{color}; color: #{color};" class="endpost">)
       end
     end
   end

@@ -97,3 +97,4 @@ Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcani
 | **Descrição**: Script via Shell que faz a instalação/reinstalação do Yaourt no Arch Linux. |
 
 
+{% endpost #7C7C7C %}
