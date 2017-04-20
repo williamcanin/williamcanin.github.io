@@ -61,7 +61,7 @@ permalink: /resume/
 
 ## Biografia
 
-Um codificador assíduo com comprometimento com as atividades que realizo. Proficiente em um monte de [linguagens](#habilidades) e tarefas voltadas a computação. 
+Sou graduado da [Centro Universitário de Lins](www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Proficiente em um monte de [linguagens](#habilidades) e tarefas voltadas a computação. 
 
 Diarimente, gosto de aprender novas linguagens, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, então eu diria que conheço bem suas lógicas. 
 
@@ -71,21 +71,19 @@ No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como S
 
 ## Objetivo
 
-Encargo na área de TI / Desenvolvimento.
+Encargo na área de TI.
 
 ## Educação
 
-### Unilins
+### Centro Universitário de Lins (Unilins)
 
-*Lins, Estado de São Paulo*
+*Lins, São Paulo - Análise e Desenvolvimento de Sistemas*
 
-*Curso Superior em Análise e Desenvolvimento de Sistemas*
-
-Encetei na faculdade no ano de 2009, onde estudei grades como: UML, Delphi, Java, Banco de Dados e pouco de Web Design. No trabalho de conclusão de curso, foi realizado um sistema ERP (Beta) em uma loja de eletrodomésticos local. A jornada durou 4 anos, onde obtive a conclusão no final de 2013.
+Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Java, Banco de Dados* e pouco de *Web Design*. Na conclusão de curso, foi realizado um sistema ERP (Beta) para uma loja de eletrodomésticos local. A jornada durou 4 anos, onde obtive a conclusão no final do ano 2013.
 
 ## Habilidades
 
-Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novas habilidades em diversas linguagens de programação. Tais como:
+Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novas habilidades em diversas linguagens de programação.
 
 **Front-End:**   
 
@@ -128,7 +126,7 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 ## Projetos
 
-Realiazo diversos projetos Open-Source diariamente e armazeno tudo com [git](https://git-scm.com/){:target="_blank"} no meu [GitHub](https://github.com/williamcanin){:target="_blank"}. Aqui está a lista de alguns:
+Realiazo diversos projetos Open-Source diariamente e armazeno tudo com [git](https://git-scm.com/){:target="_blank"} no meu [GitHub](https://github.com/williamcanin){:target="_blank"}. Aqui está alguns:
 
 * [Jekyll Spotify Plugin](http://williamcanin.github.io/jekyll-spotify-plugin){:target="_blank"} - Jekyll plug-in para gerar fragmentos de código HTML para incorporar música do Spotify em templates Jekyll.
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script via Shell para realizar a recuperação do Grub no Arch Linux.
