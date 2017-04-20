@@ -7,7 +7,6 @@
     font-size: 15px
   }
   ul.wrapper{
-    // margin: 0 auto;
     display: inline-block;
     @media (max-width: 480px) {
       display: block;
@@ -34,7 +33,6 @@
         font-weight: 600;
         text-decoration: none;
         padding: 5px 10px;
-        opacity: .8;
         background-color: $color-links;
         &:after{
           content: "" !important;

@@ -8,9 +8,11 @@
   @media (max-width: 767px) {
     border-bottom-left-radius: 0px;
   }
-  padding-bottom: 3%;
   .avatar{
     padding-top: 10%;
+    @media (max-width: 500px) {
+      display: none;
+    }
     .avatar-img{}
   }
   .header{
@@ -24,21 +26,28 @@
       line-height: 4.5rem;
       font-size: 3.5rem;
       padding: 0% 1%;
+      @media (max-width: 480px) {
+        text-align: center;
+      }
     }
   }
   .menu{
     ul{
       padding-left: 10px;
+      @media (max-width: 500px) {
+        text-align: center;
+      }
       li{
         list-style: none;
-        // @media (max-width: 480px) {
-        //   text-align: center;
-        // }
+        @media (max-width: 500px) {
+          float: left;
+          margin-right: 10px;
+         }
         a{
           font-size: 1.9rem;
           color: $color-links;
           text-decoration: underline;
-          // font-weight: 800;
+          font-weight: $links-title-weight;
         }
       }
       .breakline{

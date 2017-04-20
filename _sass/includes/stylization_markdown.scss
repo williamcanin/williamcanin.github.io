@@ -18,17 +18,15 @@
           }
         }
         blockquote{
-          background-color: #DADADA;
+          background-color: $blockquote-background;
           border-left: 5px solid $color-links;
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
-          // border-right: 5px solid $color-links;
-          // border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
         }
         table{
           margin: 2% 0%;
-          background-color: #fff;
+          background-color: $content-background-color;
           thead{
             background-color: rgba(#C9C9C9, .8);
             tr{
