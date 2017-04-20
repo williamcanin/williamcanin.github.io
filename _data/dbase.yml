@@ -26,7 +26,7 @@ website:
   strings:
     sidebar:
       title: |
-        Hey, I'm William.
+        Hey, <br> I'm William.
       links:
         home: Hello
     footer:
