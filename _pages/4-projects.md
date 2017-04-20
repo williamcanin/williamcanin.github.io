@@ -30,11 +30,11 @@ Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcani
 | **Status**: <label style="color:green;">Ativo</label> |
 | **Descrição**: Jekyll plug-in para gerar fragmentos de código HTML para incorporar música do Spotify em templates Jekyll. |
 
-|[Typing Theme](https://github.com/williamcanin/typing-theme){:target="_blank"} <i class="fa fa-external-link"></i>|
+|[Typing Jekyll Template](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} <i class="fa fa-external-link"></i>|
 --------------------------|----------------------------
-| **Ramo**: Ruby / HTML / SCSS / JQuery / Web Development |
+| **Ramo**: Ruby / HTML / SCSS / JQuery / Web Development / Template |
 | **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Tema para Jekyll construído especialmente para aqueles que querem ter uma página própria na web, veloz e leve. |
+| **Descrição**: Template para Jekyll, construído especialmente para aqueles que querem ter uma página própria na web, veloz e leve. |
 
 |[Skeleton Go!Sync](https://github.com/williamcanin/skeleton-gosync){:target="_blank"} <i class="fa fa-external-link"></i>|
 --------------------------|----------------------------
