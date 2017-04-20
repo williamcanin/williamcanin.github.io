@@ -63,7 +63,7 @@ permalink: /resume/
 
 Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Proficiente em um monte de [linguagens](#habilidades) e tarefas voltadas a computação. 
 
-Diarimente, gosto de aprender novas linguagens, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, então eu diria que conheço bem suas lógicas. 
+Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, então eu diria que conheço bem suas lógicas. 
 
 Hoje estou mais para desenvolvimento em línguas Web (`Front-End`), porem não consigo ficar sem o desenvolvimento `Back-End`, tipo [Ruby](https://www.ruby-lang.org){:target="_blank"}.  Sou um defensor do código `open source`.
 
