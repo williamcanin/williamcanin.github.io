@@ -58,15 +58,20 @@ gempath:
 
 Note que, onde está **HOME_DO_USUARIO** você deve substituir pelo diretório HOME de seu usuário no Linux. Execute o comando **echo $HOME** no terminal que você verá o diretório completo e substitua-o. Feito as alterações salve e saia do Vim, digitando**:wq** [Vim Doc](http://vimdoc.sourceforge.net/htmldoc/editing.html#save-file){:target="_blank"}.
 
+Se acha dificil, pode criar apenas com uma linha comando abaixo:
+
+{% highlight bash linenos %}
+curl -sL https://raw.githubusercontent.com/williamcanin/bin/master/gengemrc | bash
+{% endhighlight %}
+
 Após a configuração do **.gemrc**, você precisa configurar o PATH **bin** das gems para que o terminal reconheça.
 Para isso, abra o arquivo **~/.bashrc** (localizado ocultamente no HOME do usuário Linux) com um editor de sua preferência, e insira as seguintes linhas abaixo no final do arquivo e salve:
 
 {% highlight bash linenos %}
-PATH=$HOME/.gems/bin:$PATH
-GEM_HOME=$HOME/.gems
-GEM_SPEC_CACHE=$GEM_HOME/specs
-GEM_PATH=$HOME/.gems
-export PATH GEM_HOME GEM_PATH GEM_SPEC_CACHE
+GEM_PATH="$HOME/.gems"
+GEM_BIN="$GEM_PATH/bin"
+GEM_SPEC_CACHE="$GEM_PATH/specs"
+export GEM_PATH GEM_BIN GEM_SPEC_CACHE
 {% endhighlight %}
 
 Logo em seguida, execute o comando abaixo no terminal para ativar o PATH:
@@ -75,7 +80,9 @@ Logo em seguida, execute o comando abaixo no terminal para ativar o PATH:
 $ source ~/.bashrc
 {% endhighlight %}
 
-Pronto, agora você instalar suas gems sem se preocupar em inserir senha de superusuário.
+> Ou feche e abre o terminal novamente.
+
+Pronto, agora você pode instalar suas gems sem se preocupar em inserir senha de superusuário.
 As "gems" vão ser instaladas na pasta **.gems** oculta no diretório **HOME** de seu usuário no Linux. Porém essas "gems" serão utilizadas apenas para esse determinado usuário.
 
 Para ver mais detalhes sobre como está as configurações do RubyGems na sua máquina, você pode executar o comando abaixo:
