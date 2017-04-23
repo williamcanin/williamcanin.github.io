@@ -55,7 +55,7 @@ permalink: /resume/
 **Estado Civil**: Solteiro   
 **País**: Brasil   
 **Província**: Lins/SP   
-**E-mail**: [{{ dbase.userdata.email }}](mailto:{{ site.email | encode_email }})   
+**E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})   
 **Website**: [{{ site.url }}{{ site.baseurl }}]({{ site.url }}{{ site.baseurl }}){:target="_blank"}   
 
 
