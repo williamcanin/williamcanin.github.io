@@ -6,7 +6,7 @@ comments: true
 class: rubygems
 tags: ["ruby","gems","linux", "bundler"]
 excerpted: |
-    Se você  necessita configurar o PATH do RubyGems para seu usuário, continue essa leitura e veja que um simples arquivo configurado pode facilitar as coisas para você.
+    Se você  necessita configurar o PATH do RubyGems e do Bundler para seu usuário, continue essa leitura e veja que um simples arquivo configurado pode facilitar as coisas para você.
 day_quote:
     title: "A Palavra:"
     content: |
@@ -31,7 +31,7 @@ O que você irá precisar para continuar com essa leitura:
 
 ## Introdução
 
-Se você  necessita configurar o PATH do RubyGems e Bundler para seu usuário, continue essa leitura e veja que alguns arquivos configurado pode facilitar as coisas para você.
+Se você  necessita configurar o PATH do RubyGems e do Bundler para seu usuário, continue essa leitura e veja que alguns arquivos configurado pode facilitar as coisas para você.
 
 Recentemente tive alguns encomodos de instalação de Gems(gemas) no meu Linux, e isso foi pelo fato de eu não ter uma configuração para a instalação de Gems adequada no meu usuário.
 
