@@ -25,7 +25,7 @@ O que você irá precisar para continuar com essa leitura:
 
 | Requerido       | Como verificar      | Como instalar  |
 | --------------- | ------------------- | -------------- | 
-| Ruby            | `ruby -v`           | [Ruby](https://www.ruby-lang.org) |
+| Ruby            | `ruby -v`           | [Ruby](https://www.ruby-lang.org){:target="_blank"} |
 | Gem             | `gem -v`            | **Ruby** contém **Gem** |
 | Bundler         | `bundler -v`        | `gem install bundler` |
 
@@ -65,7 +65,7 @@ $ echo $GEM_PATH
 {% endhighlight %}
 
 > Nota: Observe que foi utilizado o mesmo PATH do RubyGems para o PATH do 
-> Bundler.Irá entender isso adiante.
+> Bundler. Irá entender isso adiante.
 
 Pronto, os PATHS do RubyGems e Bundler aplicadas no **~/.bashrc**.
 Fechar o terminal (caso esteja algum aberto), ou executar o comando abaixo para as configurações serem levantadas:
@@ -80,7 +80,7 @@ Porem, as configurações realizadas no **~/.bashrc** irão servir no momento ap
 
 `bundle install`
 
-...elas "Não" serão instaladas no diretório **GEM_PATH**. Para contornarmos isso, devemos criar (ou configurar) o arquivo de configuração global do próprio[Bundler](http://bundler.io/){:target="_blank"}. 
+...elas "Não" serão instaladas no diretório **GEM_PATH**. Para contornarmos isso, devemos criar (ou configurar) o arquivo de configuração global do próprio [Bundler](http://bundler.io/){:target="_blank"}. 
 
 Para sabermos se existe um arquivo de configuração global do [Bundler](http://bundler.io/){:target="_blank"}, execute o comando abaixo no terminal e veja se a mesma existe:
 
@@ -115,7 +115,7 @@ Para ver mais detalhes sobre como está as configurações do `Gem Environment` 
 $ gem env
 {% endhighlight %}
 
-Você também pode ver a documentação de configuração Bundler](http://bundler.io/){:target="_blank"} [Aqui](http://bundler.io/v1.3/man/bundle-config.1.html){:target="_blank"}.
+Você também pode ver a documentação de configuração [Bundler](http://bundler.io/){:target="_blank"} [Aqui](http://bundler.io/v1.3/man/bundle-config.1.html){:target="_blank"}.
 
 Fico por aqui, espero que esta postagem de alguma forma lhe sirva de ajuda. Obrigado por ler camarada.
 
