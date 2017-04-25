@@ -31,9 +31,6 @@ O que você irá precisar para continuar com essa leitura:
 
 ## Introdução
 
-Você iriá precisar do [Ruby](https://www.ruby-lang.org/){:target="_blank"}, o gerenciador de pacote RubyGems e do [Bundler](http://bundler.io/){:target="_blank"} instalado para continuar com essa leitura.
-
-
 Se você  necessita configurar o do RubyGems para seu usuário, continue essa leitura e veja que alguns arquivos configurado pode facilitar as coisas para você.
 
 Recentemente tive alguns encomodos de instalação de Gems(gemas) no meu Linux, e isso foi pelo fato de eu não ter uma configuração para a instalação de Gems adequada no meu usuário.
