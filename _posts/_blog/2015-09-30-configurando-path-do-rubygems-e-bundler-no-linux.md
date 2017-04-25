@@ -13,7 +13,7 @@ day_quote:
         "A pessoa que aceita e obedece aos meus mandamentos prova que me ama. E a pessoa que me ama será amado pelo meu Pai, e eu também a amarei e lhe mostrarei quem sou." <br>
         (João 14:21 NTLH)
 categories: blog
-published: true
+published: false
 
 # Does not change and does not remove 'script' variables
 script: [post.js]
