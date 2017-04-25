@@ -19,7 +19,17 @@ published: true
 script: [post.js]
 ---
 
-**Requerimentos**
+## Requerimentos
+
+O que você irá precisar para continuar com essa leitura:
+
+| Requerido       | Como verificar      | Como instalar  |
+| --------------- | ------------------- | -------------- | 
+| Ruby            | `ruby -v`           | [Ruby](https://www.ruby-lang.org) |
+| Gem             | `gem -v`            | **Ruby** contém **Gem** |
+| Bundler         | `bundler -v`        | `gem install bundler` |
+
+## Introdução
 
 Você iriá precisar do [Ruby](https://www.ruby-lang.org/){:target="_blank"}, o gerenciador de pacote RubyGems e do [Bundler](http://bundler.io/){:target="_blank"} instalado para continuar com essa leitura.
 
@@ -31,6 +41,8 @@ Recentemente tive alguns encomodos de instalação de Gems(gemas) no meu Linux, 
 Instalar Gems no diretório **(/usr/lib/ruby)** utilizando root, futuramente essas Gems podem serem utilizadsa por todos usuários na sua máquina Linux, porém tem suas vantagens e desvantagens, isso vai depender da necessidde de cada um.
 
 No meu caso, eu não queria ter que ficar colocando a senha no terminal toda vez que ao instalar as Gems através do [Bundler](https://bundler.io/){:target="_blank"} e (isso é muito pertubador (worry)), então resolvi pesquisar e driblar a utilização de senha. A saída é instalar as Gems no ambiente do seu usuário e não em **(/usr/lib/ruby)**, para isso precisa configurar o arquivo **~/.bashrc** no diretório do seu usuário, e o arquivo de configuração global do [Bundler](https://bundler.io/){:target="_blank"}.
+
+## Mão na massa
 
 Abra o arquivo **~/.bashrc** com um editor de texto preferencial e colocaque as seguintes linhas e salve.
 
