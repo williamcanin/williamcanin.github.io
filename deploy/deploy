@@ -81,9 +81,14 @@ function _select_branch(){
   _enter_branch "$branch_deploy"
 }
 
+function _start_deploy(){
+  _select_type_deploy
+  git add .
+  git commit -m "Update - $(date)"
+  git push origin $branch_deploy
+}
 
-
-_select_type_deploy
+_start_deploy
 
 
 
