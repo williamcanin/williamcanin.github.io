@@ -1,17 +1,8 @@
 #!/bin/bash
 
 
-ghpages=$(cat _config.yml | grep destination | cut -d':' -f2 | cut -d' ' -f2)
 
-list_branch=( `git branch` )
 
-# select list in "${list_branch[@]}"; do
-#   if _contains_element "${list}" "${list_branch[@]}"; then
-#     break
-#   else
-#     printf "${Error} ${Red} Invalid option ${None}\n"
-#   fi
-# done
 
 prompt1="Enter your option: "
 
@@ -20,21 +11,65 @@ function _contains_element() {
     for e in "${@:2}"; do [[ $e == $1 ]] && break; done;
 }
 
+# Function to capture Jekyll's build folder.
+function _get_destination(){
+  if [[ -f "$1" ]]; then
+   destination_build="$(cat "$1" | grep destination | cut -d':' -f2 | cut -d' ' -f2)"
+  fi
+}
+
+# Enter a specific folder
+function _enter_foloder(){
+  if [[ -d "$1" ]]; then
+    cd $1
+  fi
+}
+
+# Enter a specific branch
+function _enter_branch(){
+  git checkout $1
+}
+
+function _select_type_deploy(){
+  printf "Select the type for deploy. \n\n"
+  type_branch_list=( "Source" "Compiled" )
+
+  PS3="$prompt1"
+  printf "Options:\n\n"
+  select list in "${type_branch_list[@]}"; do
+    if _contains_element "${list}" "${type_branch_list[@]}"; then
+      break
+    else
+      printf "Invalid option\n"
+    fi
+  done
+  type_branch="$list"
+
+  if [[ "$type_branch" == "Compiled" ]]; then
+    _get_destination "_config.yml"
+    printf "\nYou are inside the folder: ${destination_build} \n"
+    printf "This folder is the compiled project folder.\n"
+    _enter_foloder $destination_build
+    _select_branch
+  else
+    printf "\n[Ok! You have chosen to deploy your source code.] \n\n"
+    _select_branch
+  fi
+}
+
 # Function select branch deploy
 function _select_branch(){
+
+  branch_current="$(git branch | grep \* | cut -d'*' -f2)"
+
+  printf "Branch current this directory: ${branch_current} \n\n"
   printf "Select the branch for deploy. \n\n"
   branch_list=( $(git branch --list | cut -d'*' -f2) )
 # branch_list=( $(git branch --list | sed 's/ /-/g') )
-
 # branch_list=( $(git branch --list | sed 's/*/[default]/g' | sed 's/ /-/g') )
 
-
-cat <<EOF > test.txt
-$branch_list
-EOF
-
   PS3="$prompt1"
-  printf "List branch options:\n\n"
+  printf "Options:\n\n"
   select list in "${branch_list[@]}"; do
     if _contains_element "${list}" "${branch_list[@]}"; then
       break
@@ -43,12 +78,12 @@ EOF
     fi
   done
   branch_deploy="$list"
-  echo "Brach escolhida: $branch_deploy"
+  _enter_branch "$branch_deploy"
 }
 
 
 
-_select_branch
+_select_type_deploy
 
-# printf "$(git branch)\n"
+
 
