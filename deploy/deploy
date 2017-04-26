@@ -23,7 +23,16 @@ function _contains_element() {
 # Function select branch deploy
 function _select_branch(){
   printf "Select the branch for deploy. \n\n"
-  branch_list=$(echo "$(git branch)")
+  branch_list=( $(git branch --list | cut -d'*' -f2) )
+# branch_list=( $(git branch --list | sed 's/ /-/g') )
+
+# branch_list=( $(git branch --list | sed 's/*/[default]/g' | sed 's/ /-/g') )
+
+
+cat <<EOF > test.txt
+$branch_list
+EOF
+
   PS3="$prompt1"
   printf "List branch options:\n\n"
   select list in "${branch_list[@]}"; do
@@ -34,7 +43,12 @@ function _select_branch(){
     fi
   done
   branch_deploy="$list"
+  echo "Brach escolhida: $branch_deploy"
 }
 
+
+
 _select_branch
+
+# printf "$(git branch)\n"
 
