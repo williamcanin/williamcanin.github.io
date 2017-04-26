@@ -45,7 +45,7 @@ O [Bundler](https://bundler.io/){:target="_blank"} também é um gerenciador de 
 
 ## Instalando Ruby e Bundler
 
-Para instalar o Ruby no Linux e o gerenciador de pacotes RubyGems, você pode olhar a pŕópria documentação do Ruby [AQUI](https://www.ruby-lang.org/pt/documentation/installation/#apt){:target="_blank"}.
+Para instalar o Ruby no Linux e o gerenciador de pacotes RubyGems, você pode olhar a pŕópria documentação do Ruby [AQUI](https://www.ruby-lang.org/pt/documentation/installation/#package-management-systems){:target="_blank"}.
 
 A instalação do Bundler, é através do gerenciador RubyGems, então para isso simplesmente execute o comando abaixo:
 
@@ -106,7 +106,7 @@ Também, algo legal é que não há encomodo em senha de superusuário para inst
 
 ## Conclusão
 
-As Gems no PATH do Bundle poderão ser executadas somente através do próprio Bundler, com o comando `bundle exec < name_gem>`. Isso é uma segurança para que os projetos sempre executem a versão adequada contida no arquivo `Gemfile`.
+As Gems no PATH do Bundler poderão ser executadas somente através do próprio Bundler, com o comando `bundle exec <name_gem>`. Isso é uma segurança para que seus projetos sempre executem a versão adequada contida no arquivo `Gemfile`.
 
 Para ver mais detalhes sobre como está as configurações do `Gem Environment` na sua máquina, você pode executar o comando abaixo:
 

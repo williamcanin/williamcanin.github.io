@@ -1,0 +1,40 @@
+#!/bin/bash
+
+
+ghpages=$(cat _config.yml | grep destination | cut -d':' -f2 | cut -d' ' -f2)
+
+list_branch=( `git branch` )
+
+# select list in "${list_branch[@]}"; do
+#   if _contains_element "${list}" "${list_branch[@]}"; then
+#     break
+#   else
+#     printf "${Error} ${Red} Invalid option ${None}\n"
+#   fi
+# done
+
+prompt1="Enter your option: "
+
+# Function check if an element exist in a string
+function _contains_element() {
+    for e in "${@:2}"; do [[ $e == $1 ]] && break; done;
+}
+
+# Function select branch deploy
+function _select_branch(){
+  printf "Select the branch for deploy. \n\n"
+  branch_list=$(echo "$(git branch)")
+  PS3="$prompt1"
+  printf "List branch options:\n\n"
+  select list in "${branch_list[@]}"; do
+    if _contains_element "${list}" "${branch_list[@]}"; then
+      break
+    else
+      printf "Invalid option\n"
+    fi
+  done
+  branch_deploy="$list"
+}
+
+_select_branch
+
