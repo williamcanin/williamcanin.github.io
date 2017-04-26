@@ -30,6 +30,18 @@ function _enter_branch(){
   git checkout $1
 }
 
+function _verify_remote(){
+  get_remote=$(git remote -v)
+  if [[ -z $get_remote ]]; then
+    printf "[Error] Remote address not reported. Set it!\n"
+    exit 1
+  fi
+}
+
+function _get_origin_name(){
+  origin_name=$(git remote -v | awk '{ print $1 }' | sed '2d')
+}
+
 function _select_type_deploy(){
   printf "Select the type for deploy. \n\n"
   type_branch_list=( "Source" "Compiled" )
@@ -82,10 +94,12 @@ function _select_branch(){
 }
 
 function _start_deploy(){
+  _verify_remote
   _select_type_deploy
+  _get_origin_name
   git add .
   git commit -m "Update - $(date)"
-  git push origin $branch_deploy
+  git push $origin_name $branch_deploy
 }
 
 _start_deploy
