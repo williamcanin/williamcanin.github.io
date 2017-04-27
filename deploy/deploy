@@ -28,13 +28,20 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# Required:
+
+# In the '_config.yml' file, it should contain:
+# destination: <folder_build>
+
 # Usage:
+
 # 1) Start git in the project directory. Example:
 #   git init
 # 2) Add the remote address to it. Example:
 #   git remote add origin "git@github.com:you_user/myproject.git"
 # 3) Make the first commit. Example:
 #   git commit -m "First commit"
+# 4) Repeat these three steps for the compiled project folder. Assigned in the variable "destination" of the file '_config.yml'.
 
 
 # Variables global
