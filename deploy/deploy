@@ -1,6 +1,8 @@
 #!/bin/bash
 # Type: Shell Script
 # Description: Simple script to push (deploy) a Jekyll project.
+#              Its function is to facilitate the deploy of Jekyll projects,
+#              with source code and the compiled project.
 # Release Status: 0.0.1
 
 # Author: William C. Canin
