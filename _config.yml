@@ -117,9 +117,12 @@ exclude:
   - "**/*.txt"
   - README.md
   - init.sh
+  - notes
+  - sources
   - Rakefile
   - dev/
   - src/
+  - deploy/deploy
 
 #  --- SESSION PRIVATE ---
 
