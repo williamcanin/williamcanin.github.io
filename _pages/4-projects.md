@@ -24,6 +24,12 @@ Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcani
 
 ##  Autoria
 
+|[Go!Link](https://github.com/williamcanin/golink){:target="_blank"} <i class="fa fa-external-link"></i>|
+--------------------------|----------------------------
+| **Ramo**: Ruby / Template / Theme / Jekyll /  Web Development |
+| **Status**: <label style="color:green;">Ativo</label> |
+| **Descrição**: Go!Link é um tema mínimo para Jekyll, especialmente para aqueles que querem ter uma página apenas para redirecionar links para outros endereços. |
+
 |[Jekyll Spotify Plugin](http://williamcanin.github.io/jekyll-spotify-plugin){:target="_blank"} <i class="fa fa-external-link"></i>|
 --------------------------|----------------------------
 | **Ramo**: Ruby / HTML / SCSS / JQuery / Web Development |

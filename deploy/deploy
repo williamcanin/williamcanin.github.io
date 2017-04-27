@@ -90,7 +90,9 @@ function _get_origin_name(){
 
 # Function to compile the project.
 function _build_project(){
-   bundle exec jekyll b
+  printf "Compiling the project ...\n"
+  bundle exec jekyll b
+  printf "Done\n"
 }
 
 # Function to select the type of deploy. Whether to deploy only the source code or the compiled project.
