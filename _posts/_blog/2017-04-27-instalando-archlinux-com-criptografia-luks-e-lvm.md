@@ -49,7 +49,7 @@ Então, neste caso, para podermos utilizar esse conceito de criptografia e de al
 
  *Archlinux! Eu escolho você!*
 
-## Inicio da aventura
+## Preparando o básico
 
 Já com o Archlinux em boot na máquina...
 
@@ -67,7 +67,33 @@ Agora iremos carregar alguns módulos **crypt**, que iremos usar para realizar t
 modprobe -a dm-mod dm-crypt
 {% endhighlight %}
 
-Certo, o proximo passo é relacionado a partição, ou seja, onde e como você irá instalar seu Archlinux. Vamos trabalhar com o `fdisk` para a criação de partições. Então, liste as partições que você tem na máquina com o comando abaixo para ter o entendimento o que fazer:
+## fdisk
+
+**Conhecendo o fdisk**
+
+O `fdisk` é uma ferramenta indispensável para quem usa Archlinux. É com ela que criamos todas partições em nosso disco durante a instalação. O `fdisk` é baseado através de linhas de comandos, como isso, você pode achar um pouco complexo no começo, mas com tempo se acostuma. :laughing: Caso realmente não queira utilizar o `fdisk`, existe o cfdisk. 
+
+O [cfdisk](https://en.wikipedia.org/wiki/Cfdisk){:target="_blank"}, é como se fosse um "fork" do `fdisk`, porem, baseado em uma interface usando as setas direcionais do teclado.
+
+**Conhecendo a estrutura de partições**
+
+Vamos começar a partir de agora, a trabalhar com o `fdisk` para a criação de partições. Mas antes de começar, devemos entender a estrutura de partições que devemos ou queremos ter na máquina.
+
+Nessa instalação, vou usar a seguinte estrutura de 3(três) partições:
+
+* Uma para Windows
+* Uma para Linux Boot
+* Uma para Linux LVM
+
+Não sei quanto a você, mas eu uso Windows e outras distribuições Linux em outras partições na minha máquina, então já vou aproveitar e deixar essa intalação com esse tipo de ambiente. 
+
+Caso você não utilize Windows e nem outras distribuições Linux, você simplemente deve realizar a criação da partição de **Linux Boot** e uma para **Linux LVM**.
+
+Como vamos utilizar **LVM** na partição Linux, nessa mesma partição podemos expandir outros volumes lógicos, ou seja, outras distribuições Linux dentro dessa partição do tipo LVM, podem ser criadas (desde que exista espaço).
+
+**Usando o fdisk**
+
+Primeira coisa a se fazer antes de usar o o `fdisk`, é obter as informações de nosso disco rígido, listando o mesmo para ver se encontra partições ou se o mesmo está sendo reconhecido. Então, para isso, digite o comando abaixo para realizar a listagem:
 
 {% highlight bash linenos %}
 fdisk -l
@@ -75,33 +101,7 @@ fdisk -l
 
 {% imager instalando-archlinux-com-criptografia-luks-e-lvm/fdisk_list.jpg|center %} 
 
-Como estou utilizando o Virtualbox, repare que na listagem dos HD acima, só existe o `/dev/sda`, porem você pode ter mais de um HD/SSD, então cabe a você saber qual irá trabalhar. Neste caso iremos usar o `/dev/sda`.
-
-## Conhecendo o fdisk
-
-O `fdisk` é uma ferramenta indispensável para quem usa Archlinux. É com ela que criamos todas partições em nosso disco durante a instalação. O `fdisk` é baseado através de linhas de comandos, como isso, você pode achar um pouco complexo no começo, mas com tempo se acostuma. :laughing: Caso realmente não queira utilizar o `fdisk`, existe o cfdisk. 
-
-**Alternativa para o fdisk**
-
-O [cfdisk](https://en.wikipedia.org/wiki/Cfdisk){:target="_blank"}, é como se fosse um "fork" do `fdisk`, porem, baseado em uma interface usando as setas direcionais do teclado.
-
-## Iniciando o trabalho de partição de disco com fdisk e LVM
-
-Nessa instalação, vou usar a opção de 3(três) partições:
-
-* Uma para Windows
-* Uma para Boot
-* Uma para Linux
-
-Não sei quanto a você, mas eu uso Windows e outras distribuições Linux em outras partições na minha máquina, então já vou aproveitar e deixar essa intalação com esse tipo de ambiente. Caso você não utilize Windows e nem outras distribuições Linux, você simplemente deve realizar a criação da partição de **Boot** e de Linux.
-
-> Nota: A partição de boot deve ficar fora da criptografia LUKS e a partição 
-> Windows também, pois o LUKS só se encarrega de gerenciar partições Linux (
-> ext3,ext4, etc).
-
-Como vamos utilizar LVM na partição Linux, nessa mesma partição podemos expandir outros volumes lógicos, ou seja, outras distribuições dentro dessa partição Linux (Está complicado?! Mas adiante irá entender, :ok_hand:).
-
-**fdisk**
+Observe: Como estou utilizando o Virtualbox, repare que na listagem dos HD acima, só existe o `/dev/sda`, porem você pode ter mais de um HD/SSD, então cabe a você saber qual irá trabalhar. Neste caso iremos usar o `/dev/sda`.
 
 Digite o comando abaixo para inicarmos o trabalho no disco `/dev/sda`.
 
@@ -113,29 +113,145 @@ Nesse momento o `fdisk` já está pronto para trabalhar no disco `/dev/sda`. Ele
 
 Se você viu as opções, observou que a opção **n** é de **new**, ou seja, criar novas partições, e é justamente isso que precisamos nesse momento, criar nossas partições, então mãos a obra.
 
-A primeira partição que iremos criar é a partição do Windows, então...
+**Criando a partição de Boot com fdisk**
 
-> Digite: n
+> Nota: A partição de boot deve ficar fora da partição criptografada com LUKS, 
+> por isso devemos criar a mesma separada das demais.
+
+A primeira partição que iremos criar é a partição de Boot, então...
+
+> Digite: **n**
 
 Depois irá perguntar para você o tipo de partição que você quer, primária ou extendida. Usamos a primeira opção, partição primária.
 
-> Digite: p
+> Digite: **p**
 
 
 Agora, o `fdisk` irá pedir o numero da partição, por padrão, está com **1**.
 
-> Digite: 1 e dê Enter
+> Digite: **1** e dê Enter
 
 Nesse momento o `fdisk` irá imprimir o setor incial para você escolher para essa nova partição, por padrão, ele já seleciona o setor incial, então...
 
-> Apenas de Enter
+> Apenas de **Enter**
 
-Agora é a hora do `fdisk` definir o setor final, ou seja, nesse momento você terá que informar o tamanho que essa nova partição irá ter. Ele lhe dá a opção de definir a criação como Kbytes, MegaBytes, Gigabytes, etc. Vamos criar em Gigabytes (G). 
+Agora é a hora do `fdisk` definir o setor final, ou seja, nesse momento você terá que informar o tamanho que essa nova partição irá ter. Ele lhe dará a opção de definir a criação como Kbytes(K), MegaBytes(M) Gigabytes(G), etc. Vamos criar em MegaBytes (M). 
 
-Neste como é um tutorial e estou no Virtualbox, caso vou colocar um tamanho de 2GB apenas. Mas, você tem que saber o tamanho da partição que você quer para Windows, certo colega?!
+Algo **I M P O R T A N T E** que você precisa saber, é que a partição de **Boot** não usa mais de que **200MB**. Então:
 
-> Digite: +2G
+> Digite: **+200M** e dê Enter
 
-Pront, a partição foi criada, mas o tipo ficou com 'Linux', e não é o que queremos, pois Windows utiliza NTFS, então temos que editar essa partição que acabamos de criar. Você pode digitar **m** novamente para ver a letra que se aplica para editar uma partição, mas eu sou bonzinho e vou dizer, é a letra **t**, de **type**.
+Pronto, a partição foi criada, e o tipo da mesma como 'Linux'(isso se você observou o print que o `fdisk` deixou na tela rs). 
+A partição de Boot tem que ser do tipo Linux sim, para o grub reconhecer, mas alem de ser Linux, ela terá que ser bootável. Para isso usamos a opção **a** do `fdisk`, que deixa uma partição Ĺinux do tipo boot. Então:
+
+> Digite: **a** e dê Enter
+
+Certo, a nova partição obtevo o tipo Bootável, mas ainda está gravado em memória do `fdisk` essas mudanças, precisamos salvar essas mudanças fisicamente. Para isso usa-se a letra **w** de **write**. Então:
+
+> Digite: w e dê Enter
+
+Ao gravar, o `fdisk` irá se fechar automaticamente , isso pra que você possa verificar se realmente as mudanças (ou partições) foram concluídas. Para verficar, apenas de o comando abaixo: 
+
+{% highlight bash linenos %}
+fdisk -l
+{% endhighlight %}
+
+Veja na imagem que existe uma nova partição do disco `/dev/sda`, e essa partição é a `/dev/sda1`. Então nossa partição do tipo Boot foi criada com sucesso! Yuupii! :pray:
+
+{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_boot_partition.jpg|center %} 
+
+**Criando partição do Windows com fdisk**
+
+> Nota: A partição do Windows não suporta criptografia LUKS, isso porque, 
+> o LUKS só encarrega de gerenciar partições Linux. Então a partição Windows 
+> terá que ser independente.
+
+Agora que você já sabe como criar partições com o `fdisk`, não tem o porque eu repetir todos passos para as outras duas partições que nos resta, a de **Windows** e a do **Linux**.
+
+As únicas coisa **I M P O R T A N T E** que você precisa saber, é que toda vez que criamos uma partição nova, ela irá obter o tipo 'Linux' de inicio. Neste caso como é uma partição para Windows, e Windows utiliza **NTFS**, demos que editar o tipo dessa partição. 
+
+Você pode digitar **m** novamente para ver a letra que se aplica para deixar a partição em modo de edição, mas como sou bonzinho vou dizer, é a letra **t**, de **type**.
+
+> Digite: **t** e dê Enter
+
+O `fdisk` deixará sua partição em modo de edição, agora basta você escolher o tipo que essa partição vai ter, utilizando a própria sugestão do `fdisk`, onde pede para digitar **L** (em maíusculo) para listar os tipos de partições disponíveis.
+
+> Digite: **L** e dê Enter 
+
+Nesse momento você verá a lista de tipos de partição, onde cada uma delas está sendo representada por um código, a partição de **NTFS** é o código **86**.
+
+> Digite: **86** e dê Enter
+
+Agora, simplesmente escreve essas mudaçãs como já vimos antes com a opção **w**.
+
+> Digite: **w** e dê Enter
+
+**Criando partição do Linux LVM com fdisk**
+
+Como vamos trabalhar com LVM, o tipo da partição Linux, **O B R I G A T Ó R I A M E N T E**, tem que ser do tipo *'Linux LVM'*. Então crie essa nova partição com o código: **8e**.
+
+## LUKS e LVM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* A partição do **Windows** deve ser primária também, com tipo de partição **NTFS**.
+* 
+No menu do `fdisk`, a para altera o tipo de 
+não usa mais de que **200MB**, e a mesma é do Linux mesmo, porem vale resaltar que ao criar você tem que  e a partição de Linux, você pode definir o tamanho que quiser. Não se esquecendo de escolher o tipo de cada uma dessas partição.
+
+*'Partição de Boot:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+e não é o que queremos, pois Windows utiliza NTFS, então temos que editar essa partição que acabamos de criar. Você pode digitar **m** novamente para ver a letra que se aplica para deixar a partição em modo de edição, mas eu sou bonzinho e vou dizer, é a letra **t**, de **type**.
 
 > Digite: t
+
+O `fdisk` deixou sua partição em modo de edição, agora basta você escolher o tipo que essa partição vai ter, utilizando a própria sugestão do `fdisk`, onde pede para digitar **L** para listar os tipos de partições disponíveis (Tem que em maíusculo).
+
+> Digite: L
+
+
+Nesse momento você verá uma lista de códigos numeros de cada tipo de partição, a partição de **NTFS** é o código **86**.
+
+> Digite: 86 e dê Enter
