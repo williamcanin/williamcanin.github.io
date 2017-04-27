@@ -42,7 +42,7 @@ function _get_origin_name(){
   origin_name=$(git remote -v | awk '{ print $1 }' | sed '2d')
 }
 
-function _verify_bundle_and_jekyll(){
+function _build_project(){
   # if [[ ! -f $(echo "$GEM_BIN/bundle") ]] || [[ ! -f $(echo "$BUNDLE_BIN/jekyll") ]]; then
   #   echo \$BUNDLE_BIN
   #  printf "[Error] To perform the deploy of the compiled project. You need to have the Bundler installed and Jekyll installed through the Bundler. \n\n"
@@ -67,7 +67,7 @@ function _select_type_deploy(){
   type_branch="$list"
 
   if [[ "$type_branch" == "Compiled" ]]; then
-    _verify_bundle_and_jekyll
+    _build_project
     _get_destination "_config.yml"
     printf "\nYou are inside the folder: ${destination_build} \n"
     printf "This folder is the compiled project folder.\n"
@@ -125,6 +125,3 @@ function _start_deploy(){
 }
 
 _start_deploy
-
-
-
