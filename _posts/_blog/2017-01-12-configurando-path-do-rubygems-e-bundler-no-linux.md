@@ -43,7 +43,7 @@ $ gem --help
 
 Quando instalamos as Gems através do gerenciador **gem**, as mesmas são instaladas no diretório do usuário, porem ainda precisa configurar o reconhecimento de PATH, e isso é feito através do arquivo **~/.bashrc**, que veremos mais adiante.
 
-O [Bundler](https://bundler.io/){:target="_blank"} também é um gerenciador de Gems, porem de uma forma mais conjulgal, isso porque ele utiliza um arquivo chamado `Gemfile` para alocar todas Gems que necessitamos em nossos projetos, assim, não precisamos instalar Gems uma à uma com o gerenciador RubyGems. Assim como o RubyGems, também é necessário configurar o PATH para o Bundler no **~/.bashrc** e no próprio arquivo de configuração contido no diretório raiz do usuário, o **~/.bundle/config**. Esse arquivo de configuração do Bundler é global, ou seja, todas as Gems instaladas com o Bundler, serão instaladas no diretório de acordo com que está no arquivo **~/.bundle/config**, a menos que, o seu projeto contenha um arquivo de configuração local. Exemplo: **myproject/.bundle/config**. Nesse caso as Gems seriam instaladas no local do projeto.
+O [Bundler](https://bundler.io/){:target="_blank"} também é um gerenciador de Gems e trabalha em cima do RubyGems, porem de uma forma mais conjulgal, isso porque ele utiliza um arquivo chamado `Gemfile` para alocar todas Gems que necessitamos em nossos projetos, assim, não precisamos instalar Gems uma à uma com o gerenciador RubyGems. Assim como o RubyGems, também é necessário configurar o PATH para o Bundler no **~/.bashrc** e no próprio arquivo de configuração contido no diretório raiz do usuário, o **~/.bundle/config**. Esse arquivo de configuração do Bundler é global, ou seja, todas as Gems instaladas com o Bundler, serão instaladas no diretório de acordo com que está no arquivo **~/.bundle/config**, a menos que, o seu projeto contenha um arquivo de configuração local. Exemplo: **myproject/.bundle/config**. Nesse caso as Gems seriam instaladas no local do projeto.
 
 ## Instalando Ruby e Bundler
 
@@ -86,8 +86,7 @@ $ echo $GEM_PATH; echo $BUNDLE_PATH
 
 ## Configurando o Bundler no "~/.bundle/config".
 
-Como dito antes, o arquivo de configuração global do Bundler, é o **"~/.bundle/config"**, nele você pode configurar como o Bundler irá se comportar
-(Você pode ver a [documentação](){:target="_blank"} do Bundler para lhe servir o que deseja).
+Como dito antes, o arquivo de configuração global do Bundler, é o **"~/.bundle/config"**, nele você pode configurar como o Bundler irá se comportar.
 Mas aqui, vamos configurar somente o diretório onde nossas Gems irão ser instaladas e o diretório *bin* das mesmas. 
 
 Para isso, execute os comando abaixo:
@@ -108,12 +107,18 @@ Também, algo legal é que não há encomodo em senha de superusuário para inst
 
 ## Conclusão
 
-As Gems no PATH do Bundler poderão ser executadas somente através do próprio Bundler, com o comando `bundle exec <name_gem>`. Isso é uma segurança para que seus projetos sempre executem a versão adequada contida no arquivo `Gemfile`.
+As Gems no PATH do Bundler poderão ser executadas somente através do próprio Bundler, com o comando `bundle exec <name_gem>`. Isso é uma forma de consistência para que seus projetos sempre executem a versão adequada contida no arquivo `Gemfile`.
 
 Para ver mais detalhes sobre como está as configurações do `Gem Environment` na sua máquina, você pode executar o comando abaixo:
 
 {% highlight bash linenos %}
 $ gem env
 {% endhighlight %}
+
+Apenas compartilher algo básico de como configurar e usar o Ruby, RubyGems e Bundler, existe muito mais na documentação de ambos, o que pode lhe servir o que deseja:
+
+* [Ruby Doc](https://www.ruby-lang.org/pt/documentation/){:target="_blank"}
+* [RubyGems Doc](http://guides.rubygems.org/rubygems-basics/){:target="_blank"}
+* [Bundler Doc](https://bundler.io/docs.html){:target="_blank"}
 
 Finalizo por aqui, espero que estas linhas de alguma forma lhe sirva de ajuda. Obrigado por ler.
