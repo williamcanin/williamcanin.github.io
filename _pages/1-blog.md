@@ -22,4 +22,6 @@ script: [postlist.js]
 permalink: /blog/
 ---
 
-O que se segue neste weblog é uma lista de postagens desde {{ site.debutyear }}. O conteúdo é variado ao meu estado mental, então pode aparecer qualquer tipo de 'receita de bolo'. Espero que contemple.
+{% assign dbase = site.data.dbase %}
+
+O que se segue neste weblog é uma lista de postagens desde {{ dbase.website.launch }}. O conteúdo é variado ao meu estado mental, então pode aparecer qualquer tipo de 'receita de bolo'. Espero que contemple.
