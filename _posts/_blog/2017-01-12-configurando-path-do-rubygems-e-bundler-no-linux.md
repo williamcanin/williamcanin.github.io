@@ -31,6 +31,8 @@ O que você irá precisar para continuar com essa leitura:
 
 ## Introdução
 
+ Se você  necessita configurar o PATH do RubyGems e do Bundler para seu usuário, continue essa leitura e veja que um simples arquivo configurado pode facilitar as coisas para você.
+ 
 [RubyGems](https://pt.wikipedia.org/wiki/RubyGems){:target="_blank"} é um gerenciador de pacotes do Ruby, e para utiliza-lo você precisa instalar o Ruby que já contem o mesmo. Ele é responsável por instalar Gems (bibliotecas ou programas) em nossa máquina que servirão de base (ou não) para projetos em que criamos ou projetos que utilizamos. 
 
 Para instalar ou gerenciar pacotes com RubyGems, você pode usar o comando abaixo para um `help`.

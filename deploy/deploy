@@ -43,11 +43,11 @@ function _get_origin_name(){
 }
 
 function _verify_bundle_and_jekyll(){
-  if [[ ! -f $(echo "$GEM_BIN/bundle") ]] || [[ ! -f $(echo "$BUNDLE_BIN/jekyll") ]]; then
-    echo \$BUNDLE_BIN
-   printf "[Error] To perform the deploy of the compiled project. You need to have the Bundler installed and Jekyll installed through the Bundler. \n\n"
-   exit 1
-  fi
+  # if [[ ! -f $(echo "$GEM_BIN/bundle") ]] || [[ ! -f $(echo "$BUNDLE_BIN/jekyll") ]]; then
+  #   echo \$BUNDLE_BIN
+  #  printf "[Error] To perform the deploy of the compiled project. You need to have the Bundler installed and Jekyll installed through the Bundler. \n\n"
+  #  exit 1
+  # fi
    bundle exec jekyll b
 }
 
