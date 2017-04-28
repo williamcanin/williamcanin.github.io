@@ -61,7 +61,7 @@ spotify:
     jekyll: true
     dir: "_sass"
   title:
-    enable: true
+    enable: false
     text: "Curta um sonzinho..."
   content:
     enable: true
