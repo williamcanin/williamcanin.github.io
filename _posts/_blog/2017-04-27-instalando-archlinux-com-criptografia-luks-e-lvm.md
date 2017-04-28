@@ -20,7 +20,8 @@ script: [post.js]
 ## Requerimentos
 
 * Imagem do [Archlinux](https://www.archlinux.org/download/){:target="_blank"} queimada em DVD ou Pendrive Bootável.
-* Uma partição livre no HD(SSD) ou usar [VirtualBox](https://wiki.archlinux.org/index.php/VirtualBox){:target="_blank"} para realizar esse tutorial.
+* Espaço livre no HD(SSD) ou usar [VirtualBox](https://wiki.archlinux.org/index.php/VirtualBox){:target="_blank"} para realizar esse tutorial.
+* Conexão com a Internet.
 
 > Nota: Não irei entrar em detalhe de como realizar o procedimento de gravação
 > de imagem ou como usar VirtualBox, não é o foco do tutorial.
@@ -306,6 +307,13 @@ Terminamos a criação de nossa estrutura LVM , agora vamos para o próximo pass
 
 ## Formatando as partições
 
+**Sistema de Arquivos e Home**
+
+A formatação da partição de **Sistema de Arquivos** e **Home** nada mais é que a formatação do nosso "Logical Volume (LV)" criado, os:
+
+* /dev/mapper/linux-archlinux
+* /dev/mapper/linux-home
+
 Vamos utilizar o **ext4** para nossa partição de **sistema de arquivos* e nossa partição **home**. Então faremos:
 
 {% highlight bash linenos %}
@@ -313,7 +321,12 @@ mkfs -t ext4 /dev/mapper/linux-archlinux
 mkfs -t ext4 /dev/mapper/linux-home 
 {% endhighlight %}
 
-Observe que tem o nome **linux** antes do nome de nossa partições de "Logical Volume (LV)", esse nome é justamente o "Volume Group (VG)" que criamos. Ou seja, quando criamos nossos "Logical Volume (LV)", automáticamente é inserido o nome do  "Volume Group (VG)". Você pode rodar o comando abaixo para ter essa informação:
+> **NOTA:** Observe que tem o nome **linux** antes do nome de nossa partições 
+> de "Logical Volume (LV)", esse nome é justamente o "Volume Group (VG)" que 
+> criamos. Ou seja, quando criamos nossos "Logical Volume (LV)", 
+> automáticamente é inserido o nome do  "Volume Group (VG)". 
+
+Você pode rodar o comando abaixo para ver as informações:
 
 {% highlight bash linenos %}
 lsblk -f
@@ -323,21 +336,26 @@ lsblk -f
 > com dados dentro (o que não é nosso, pois criamos uma do zero). Ao executar 
 > uma formatação, todos os dados (caso tenha) contido na mesma, serão apagados.
 
+**Boot**
 
-Como dito antes, diferente das demais partições, a partição de **Boot**, é independentes do LVM, porem, precisamos formata-la e dar um tipo de partição para a mesma. Então faremos assim:
-
-**/dev/sda1 - Boot**
+Como dito antes, diferente das demais partições, a partição de **Boot**, é independentes do LVM, porém, precisamos formata-la e dar um tipo de partição para a mesma. Nossa partição de Boot é a **/dev/sda1**. Também usaremos o **ext4** para o tipo dessa partição. Então faremos assim:
 
 {% highlight bash linenos %}
 mkfs -t ext4 /dev/sda1
 {% endhighlight %}
 
+**Swap**
 
+A partição "Logical Volume (LV)" **swap**, também necessita de formatação e alem disso, necessita ser ativada, para isso, usamos o comando **mkswap** para formatar, e o **swapon** para ativa-la. Então faça:
+
+{% highlight bash linenos %}
+mkswap /dev/mapper/linux-swap
+swapon /dev/mapper/linux-swap
+{% endhighlight %}
 
 ## Montagem das partições
 
-Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Archlinux. Por padrão, montamos o **sistema de arquivos** no diretório **/mnt** e a partição **home** em um diretório que precisa ser criado, o **/mnt/home/** para sua montagem. Então vamos aos comandos para esse feito:
-
+Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Archlinux. Por padrão, montamos o **sistema de arquivos** no diretório **/mnt** e a partição **home** em um diretório que precisa ser criado para sua montagem, o **/mnt/home/** . Então vamos aos comandos para esse feito:
 
 {% highlight bash linenos %}
 mount /dev/mapper/linux-archlinux /mnt
@@ -345,19 +363,23 @@ mkdir /mnt/home
 mount /dev/mapper/linux-home /mnt/home
 {% endhighlight %}
 
+O mesmo devemos fazer para a partição de **Boot**, criando o diretório da mesma e montando. Então faremos assim:
+
+{% highlight bash linenos %}
+mkdir /mnt/boot
+mount /dev/sda2 /mnt/boot
+{% endhighlight %}
+
+Finalizamos aqui a criação das partições, as formatações e as montagens. Agora vamos dar inicio a instalação do sistema base do Archlinux.
 
 
+## Instalando o sistema base do Archlinux
 
-* A partição do **Windows** deve ser primária também, com tipo de partição **NTFS**.
-* 
-No menu do `fdisk`, a para altera o tipo de 
-não usa mais de que **200MB**, e a mesma é do Linux mesmo, porem vale resaltar que ao criar você tem que  e a partição de Linux, você pode definir o tamanho que quiser. Não se esquecendo de escolher o tipo de cada uma dessas partição.
+Até o momento não utilizamos internet para realizar todos esses passos, mas de agora em diante, você irá necessitar.
 
-*'Partição de Boot:  
+Se você está fazendo esse tutorial com VirtualBox, então automaticamente já terá internet para você. O mesmo vale se você não estiver em VirtualBox mas esta com internet cabeada na máquina.
 
-
-
-
+Se você está utilizando internet via Wifi, execute o comando `wifi-menu` que irá abrir um utilitário bem intuitivo para você fazer sua conexão com a internet.
 
 
 
@@ -369,26 +391,6 @@ não usa mais de que **200MB**, e a mesma é do Linux mesmo, porem vale resaltar
 
 Se você observou, não formatamos a partição de **NTFS** (do Windows) pelo fato que o próprio **Windows** faz isso ao instalar. Apenas criamos caso queremos instalar do sistema do senhor *Gates*. 
 
-Lembrando que, se você instalar o Windows depois de ter instalado o Archlinux (ou qualquer outra distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será sobrescrito pelo MBR do Windows. Se isso acontecer, você precisará reinstalar o Grub do Archlinux novamente com o DVD do Archlinux ou um pendrive bootável do mesmo. 
+Lembrando que, se você instalar o Windows depois de ter instalado o Archlinux (ou qualquer outra distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será sobrescrito pelo MBR do Windows, e o Grub não será iniciado. Se isso acontecer, você precisará reinstalar o Grub do Archlinux novamente com o DVD do Archlinux (ou um pendrive bootável do mesmo). 
 
-Eu criei um **script shell** para a recuperação do Grub no Archlinux, no momento ele serve somente para Archlinux, talvez eu dê um upgrade nele para outras distribuições também, mas ainda não acho válido. Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"}. Dê uma olhada, é bem fácil de usar.
-
-
-
-
-
-
-
-
-e não é o que queremos, pois Windows utiliza NTFS, então temos que editar essa partição que acabamos de criar. Você pode digitar **m** novamente para ver a letra que se aplica para deixar a partição em modo de edição, mas eu sou bonzinho e vou dizer, é a letra **t**, de **type**.
-
-> Digite: t
-
-O `fdisk` deixou sua partição em modo de edição, agora basta você escolher o tipo que essa partição vai ter, utilizando a própria sugestão do `fdisk`, onde pede para digitar **L** para listar os tipos de partições disponíveis (Tem que em maíusculo).
-
-> Digite: L
-
-
-Nesse momento você verá uma lista de códigos numeros de cada tipo de partição, a partição de **NTFS** é o código **86**.
-
-> Digite: 86 e dê Enter
+Eu criei um **script shell** para a recuperação do Grub no Archlinux, no momento ele serve somente para Archlinux, talvez eu dê um upgrade para server em outras distribuições também, mas ainda estou com preguiça hahaha. Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"}. Dê uma olhada, é bem fácil de usar.
