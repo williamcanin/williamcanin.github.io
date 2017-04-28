@@ -190,29 +190,147 @@ Agora, simplesmente escreve essas mudaçãs como já vimos antes com a opção *
 
 Como vamos trabalhar com LVM, o tipo da partição Linux, **O B R I G A T Ó R I A M E N T E**, tem que ser do tipo *'Linux LVM'*. Então crie essa nova partição com o código: **8e**.
 
-## LUKS e LVM
+
+Chegamos ao final de criação de partições com `fdisk`, veja uma imagem de exemplo ficou:
+
+{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_all_partitions.jpg|center %} 
+
+Memorize bem as partições pois iremos utilizar muito elas. Nesse exemplo é:
+
+* Boot > /dev/sda1
+* Windows > /dev/sda2
+* Linux > /dev/sda3
+
+## LUKS
+
+**Conceitos**
+
+Existe várias formadas de criptografar partições com LUKS. Selecionei 2(duas) delas que achei interessante para explicar, veja:
+
+- [x] Criptografar a partição inteira do Linux, através de uma senha.
+- [] Criptografar a partição **Home** apenas com senha.
+- [] Criptografar apenas a partição **Home** com opção de keyfile e usar um pendrive com o Keyfile dentro para montar a partição **Home** no Linux.
+
+Nesse caso, vamos usar a primeira opção de criptografia, a de todo os sistema Linux. Pois no meu ver, essa é a opção mais segura tanto para proteger seus dados de "terceiros", quanto para problemas futuros, porque se você criptografar somente a partição Home e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar *"dor de cabeça"*.
+
+> Nota: Não tem como criptografar a partição Linux inteira com LUKS através
+> de um keyfile no pendrive, isso porque você está mantendo o arquivo 
+> **/etc/fstab** criptografado também, e para um pendrive ser iniciado, ele 
+> necessita do **/etc/fstab**. Isso seria possível se ter uma partição apenas 
+> para o **/etc** e não criptografar ela. Mas pode te dar trabalho ao fazer 
+> isso, então vamos usar a primeira opção mesmo.
 
 
+**iniciando a criptografia da partição Linux LVM**
+
+Com a nova partição de **Linux LVM** criada, chegou a hora de trabalhar ela. Para iniciarmos a criptografia, usaremos o comando abaixo:
+
+{% highlight bash linenos %}
+cryptsetup -y -v luksFormat -c aes-xts-plain64 -s 512 /dev/sda3
+{% endhighlight %}
+
+O LUKS irá pedir pra você você confirme com um **yes** em uppercase, ou seja, assim: **YES**. 
+
+> Digite: **YES** e dê Enter
+
+Após isso, irá pedir para informar a senha de criptografia e logo em seguida para confirmar. Então faça isso.
+
+**A T E N Ç Ã O**: Nunca esqueça esse senha, pois é ela que você usuára para iniciar no seu sistema futuramente.
+
+Ok! Você já tem sua partição onde será instalada o Linux cirptografada. 
+
+Precisamos abrir a partição para poder trabalhar nela, isso faremos com o comando abaixo:
+
+{% highlight bash linenos %}
+cryptsetup open /dev/sda3 linux
+{% endhighlight %}
+
+**IMPORTANTE**: Observe que no final do comando tem a palavra **linux**.
+
+Ao fazer um **open** na partição criada, ele cria um volume fisico (physical volume) automaticamente. Então **linux** será de agora em diante o nome do meu *Volume Físico*. Não necessáriamente precisa ser **linux**, você pode colocar outro nome.
+
+## LVM
+
+Para explicar resumidamente o LVM, ele trabalha com:
+
+* Physical Volume (PV) - (volume físico)
+* Volume Group (VG) - (grupo de volume)
+* Logical Volume (LV) - (volume lógico)
+
+O "Physical Volume (PV)" foi criado quando demos um **open** na partição criptografada. O "Grupo de Volume (VG)" é criado para armazer um grupo de "Volume Group (VG)". O "Logical Volume (LV)" serão nossas partições (de distribuições) Linux. 
+
+Dê o comando abaixo para ver informações sobre o "Physical Volume (PV)" criado:
+
+{% highlight bash linenos %}
+pvs
+{% endhighlight %}
+
+Agora temos que criar um "Volume Group (VG)" para armazenar nos "Logical Volume (LV)". A syntax é `vgcreate <name group> <path physical volume>`. Então usaremos o comando:
+
+{% highlight bash linenos %}
+vgcreate linux /dev/mapper/linux
+{% endhighlight %}
+
+Observe que foi criado um "Volume Group (VG)" com nome de **linux** apontando para meu "Physical Volume (PV)" (**/dev/mapper/linux**). 
+Pode ficar tranquilo que não vai ter conflito de nome com o "Physical Volume (PV)", pois são elementos diferentes. Os únicos nomes que não podem ser iguais são nos "Logical Volume (LV)". Falando nisso, vamos a criação deles.
+
+Vamos criar nosso primeiro "Logical Volume (LV)", que é de **swap**. A Syntax é `lvcreate -L <size |M|G> <name group> -n <name logical volume>`. Então, para isso faremos com o comando:
+
+{% highlight bash linenos %}
+lvcreate -L 1G linux -n swap
+{% endhighlight %}
+
+Observe que ao criar, foi informado o "Volume Group (VG)", que criamos anteriormente, que no caso é **linux**, e o nome do "Logical Volume (LV)" que nesse caso será **swap**. Com 1G de tamanho.
+
+Dê o comando abaixo para ver como ficou nosso "Logical Volume (LV)":
+
+{% highlight bash linenos %}
+lvs
+{% endhighlight %}
+
+Repare que ao criamos nosso "Logical Volume (LV)", ele pertence ao "Volume Group (VG)" **linux**. Tudo ok!
+
+Agora resta criarmos nosso outros 2(dois) "Logical Volume (LV)" faltente, um para o **sistema de arquivos** e o outro será a partição **home**. Então faremos:
+
+{% highlight bash linenos %}
+lvcreate -L 8G linux -n archlinux
+lvcreate -l +100%FREE linux -n home
+{% endhighlight %}
+
+Observe que ao criarmos nosso "Logical Volume (LV)" **home**, foi usado a opção **+100%FREE**, isso faz com que ele pegue todo restante de espaço livre dentro do meu "Volume Group (VG)" para o **home**.
+
+Terminamos a criação de nossa estrutura LVM , agora vamos para o próximo passo que é formatar as mesmas com um determinado tipo de partição para cada uma.
+
+## Formatando as partições
+
+Vamos utilizar o **ext4** para nossa partição de **sistema de arquivos* e nossa partição **home**. Então faremos:
+
+{% highlight bash linenos %}
+mkfs -t ext4 /dev/mapper/linux-archlinux
+mkfs -t ext4 /dev/mapper/linux-home 
+{% endhighlight %}
+
+Observe que tem o nome **linux** antes do nome de nossa partições de "Logical Volume (LV)", esse nome é justamente o "Volume Group (VG)" que criamos. Ou seja, quando criamos nossos "Logical Volume (LV)", automáticamente foi inserido o nome do  "Logical Volume (LV)". Você pode rodar o comando abaixo para ter essa informação:
+
+{% highlight bash linenos %}
+lsblk -f
+{% endhighlight %}
+
+> Aviso: Muito cuidado ao formatar a partição **home** , você já pode ter ela
+> com dados dentro (o que não é nosso, pois criamos uma do zero). Ao executar 
+> uma formatação, todos os dados (caso tenha) contido na mesma, serão apagados.
 
 
+## Montagem das partições
+
+Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Archlinux. Por padrão, montamos o **sistema de arquivos** no diretório **/mnt** e a partição **home** em um diretório que precisa ser criado, o **/mnt/home/** para sua montagem. Então vamos aos comandos para esse feito:
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% highlight bash linenos %}
+mount /dev/mapper/linux-archlinux /mnt
+mkdir /mnt/home
+mount /dev/mapper/linux-home /mnt/home
+{% endhighlight %}
 
 
 
