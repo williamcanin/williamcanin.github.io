@@ -313,7 +313,7 @@ mkfs -t ext4 /dev/mapper/linux-archlinux
 mkfs -t ext4 /dev/mapper/linux-home 
 {% endhighlight %}
 
-Observe que tem o nome **linux** antes do nome de nossa partições de "Logical Volume (LV)", esse nome é justamente o "Volume Group (VG)" que criamos. Ou seja, quando criamos nossos "Logical Volume (LV)", automáticamente foi inserido o nome do  "Logical Volume (LV)". Você pode rodar o comando abaixo para ter essa informação:
+Observe que tem o nome **linux** antes do nome de nossa partições de "Logical Volume (LV)", esse nome é justamente o "Volume Group (VG)" que criamos. Ou seja, quando criamos nossos "Logical Volume (LV)", automáticamente é inserido o nome do  "Volume Group (VG)". Você pode rodar o comando abaixo para ter essa informação:
 
 {% highlight bash linenos %}
 lsblk -f
