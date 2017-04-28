@@ -168,7 +168,7 @@ Veja na imagem que existe uma nova partição do disco `/dev/sda`, e essa parti�
 
 Agora que você já sabe como criar partições com o `fdisk`, não tem o porque eu repetir todos passos para as outras duas partições que nos resta, a de **Windows** e a do **Linux**.
 
-As únicas coisa **I M P O R T A N T E** que você precisa saber, é que toda vez que criamos uma partição nova, ela irá obter o tipo 'Linux' de inicio. Neste caso como é uma partição para Windows, e Windows utiliza **NTFS**, demos que editar o tipo dessa partição. 
+As únicas coisa **I M P O R T A N T E** que você precisa saber, é que toda vez que criamos uma partição nova, ela irá obter o tipo 'Linux' de inicio. Neste caso como é uma partição para Windows, e Windows utiliza **NTFS**, devemos editar o tipo dessa partição. 
 
 Você pode digitar **m** novamente para ver a letra que se aplica para deixar a partição em modo de edição, mas como sou bonzinho vou dizer, é a letra **t**, de **type**.
 
@@ -190,15 +190,13 @@ Agora, simplesmente escreve essas mudaçãs como já vimos antes com a opção *
 
 Como vamos trabalhar com LVM, o tipo da partição Linux, **O B R I G A T Ó R I A M E N T E**, tem que ser do tipo *'Linux LVM'*. Então crie essa nova partição com o código: **8e**.
 
-
 Chegamos ao final de criação de partições com `fdisk`, veja uma imagem de exemplo ficou:
 
 {% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_all_partitions.jpg|center %} 
 
-Memorize bem as partições pois iremos utilizar muito elas. Nesse exemplo é:
+Memorize bem as seguintes partições abaixo, pois iremos utilizar elas mais pra frente:
 
 * Boot > /dev/sda1
-* Windows > /dev/sda2
 * Linux > /dev/sda3
 
 ## LUKS
@@ -207,37 +205,40 @@ Memorize bem as partições pois iremos utilizar muito elas. Nesse exemplo é:
 
 Existe várias formadas de criptografar partições com LUKS. Selecionei 2(duas) delas que achei interessante para explicar, veja:
 
-- [x] Criptografar a partição inteira do Linux, através de uma senha.
+- [x] Criptografar a partição inteira do Linux LVM, através de uma senha.
 - [] Criptografar a partição **Home** apenas com senha.
 - [] Criptografar apenas a partição **Home** com opção de keyfile e usar um pendrive com o Keyfile dentro para montar a partição **Home** no Linux.
 
-Nesse caso, vamos usar a primeira opção de criptografia, a de todo os sistema Linux. Pois no meu ver, essa é a opção mais segura tanto para proteger seus dados de "terceiros", quanto para problemas futuros, porque se você criptografar somente a partição Home e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar *"dor de cabeça"*.
 
-> Nota: Não tem como criptografar a partição Linux inteira com LUKS através
-> de um keyfile no pendrive, isso porque você está mantendo o arquivo 
-> **/etc/fstab** criptografado também, e para um pendrive ser iniciado, ele 
-> necessita do **/etc/fstab**. Isso seria possível se ter uma partição apenas 
-> para o **/etc** e não criptografar ela. Mas pode te dar trabalho ao fazer 
-> isso, então vamos usar a primeira opção mesmo.
+A primeira opção, é a criptografia de todo os sistema Linux LVM, ela que iremos utilizar nesse tutorial.
+A segunra opção também é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição **Home** , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma "brecha" de insegurança nessa opção.
+A terceira opção é a que eu menos recomendo, apensar de ser interessante usar um pendrive para iniciar meus dados. Porem, se você criptografar somente a partição Home e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar *"dor de cabeça"*.
+
+> Nota: Não tem como criptografar a partição de sistema de arquivos inteira 
+> com LUKS através de um keyfile no pendrive, isso porque você está mantendo o 
+> arquivo **/etc/fstab** criptografado também, e para um pendrive ser 
+> iniciado, ele necessita do **/etc/fstab**. Isso seria possível se ter uma 
+> partição apenas para o **/etc** e não criptografar ela. Mas pode te dar 
+> trabalho ao fazer isso, então vamos usar a primeira opção mesmo.
 
 
 **iniciando a criptografia da partição Linux LVM**
 
-Com a nova partição de **Linux LVM** criada, chegou a hora de trabalhar ela. Para iniciarmos a criptografia, usaremos o comando abaixo:
+Lembra qual é nossa partição de **Linux LVM**? É a **/dev/sda3**. Pois bem, com a nova partição de **Linux LVM** criada, chegou a hora de trabalhar ela. Para iniciarmos a criptografia na nossa partição de **Linux LVM**, usaremos o comando abaixo:
 
 {% highlight bash linenos %}
 cryptsetup -y -v luksFormat -c aes-xts-plain64 -s 512 /dev/sda3
 {% endhighlight %}
 
-O LUKS irá pedir pra você você confirme com um **yes** em uppercase, ou seja, assim: **YES**. 
+O LUKS irá pedir pra que você confirme com um **yes** (em uppercase), ou seja, assim: **YES**. 
 
 > Digite: **YES** e dê Enter
 
 Após isso, irá pedir para informar a senha de criptografia e logo em seguida para confirmar. Então faça isso.
 
-**A T E N Ç Ã O**: Nunca esqueça esse senha, pois é ela que você usuára para iniciar no seu sistema futuramente.
+**A T E N Ç Ã O**: Nunca esqueça essa senha, pois é ela que você usará para iniciar no seu sistema futuramente.
 
-Ok! Você já tem sua partição onde será instalada o Linux cirptografada. 
+Ok! Você já tem sua partição onde será instalada o Linux criptografado. 
 
 Precisamos abrir a partição para poder trabalhar nela, isso faremos com o comando abaixo:
 
@@ -247,7 +248,9 @@ cryptsetup open /dev/sda3 linux
 
 **IMPORTANTE**: Observe que no final do comando tem a palavra **linux**.
 
-Ao fazer um **open** na partição criada, ele cria um volume fisico (physical volume) automaticamente. Então **linux** será de agora em diante o nome do meu *Volume Físico*. Não necessáriamente precisa ser **linux**, você pode colocar outro nome.
+Ao fazer um **open** na partição criptografada, criará um "Physical Volume (PV)" automaticamente. Então **linux** será de agora em diante o "ponteiro" para meu Physical Volume (PV). Terá um link simbólico em **/dev/mapper**. 
+Então esse será meu o "Physical Volume (PV)": **/dev/mapper/linux**
+(não necessáriamente precisa ser **linux**, você pode colocar outro nome).
 
 ## LVM
 
@@ -257,7 +260,7 @@ Para explicar resumidamente o LVM, ele trabalha com:
 * Volume Group (VG) - (grupo de volume)
 * Logical Volume (LV) - (volume lógico)
 
-O "Physical Volume (PV)" foi criado quando demos um **open** na partição criptografada. O "Grupo de Volume (VG)" é criado para armazer um grupo de "Volume Group (VG)". O "Logical Volume (LV)" serão nossas partições (de distribuições) Linux. 
+O "Physical Volume (PV)" foi criado quando demos um **open** na partição criptografada. O "Grupo de Volume (VG)" é criado para armazenar nossos "Logical Volume (LV)". O "Logical Volume (LV)" serão nossas partições (de distribuições) Linux em si. 
 
 Dê o comando abaixo para ver informações sobre o "Physical Volume (PV)" criado:
 
@@ -265,7 +268,7 @@ Dê o comando abaixo para ver informações sobre o "Physical Volume (PV)" criad
 pvs
 {% endhighlight %}
 
-Agora temos que criar um "Volume Group (VG)" para armazenar nos "Logical Volume (LV)". A syntax é `vgcreate <name group> <path physical volume>`. Então usaremos o comando:
+Agora temos que criar um "Volume Group (VG)" para armazenar nossos "Logical Volume (LV)". A syntax é `vgcreate <name group> <path physical volume>`. Então usaremos o comando:
 
 {% highlight bash linenos %}
 vgcreate linux /dev/mapper/linux
@@ -290,14 +293,14 @@ lvs
 
 Repare que ao criamos nosso "Logical Volume (LV)", ele pertence ao "Volume Group (VG)" **linux**. Tudo ok!
 
-Agora resta criarmos nosso outros 2(dois) "Logical Volume (LV)" faltente, um para o **sistema de arquivos** e o outro será a partição **home**. Então faremos:
+Agora resta criarmos nosso outros 2(dois) "Logical Volume (LV)" restante, um para o **sistema de arquivos** e o outro será a partição **home**. Então faremos:
 
 {% highlight bash linenos %}
 lvcreate -L 8G linux -n archlinux
 lvcreate -l +100%FREE linux -n home
 {% endhighlight %}
 
-Observe que ao criarmos nosso "Logical Volume (LV)" **home**, foi usado a opção **+100%FREE**, isso faz com que ele pegue todo restante de espaço livre dentro do meu "Volume Group (VG)" para o **home**.
+Repare que ao criarmos nosso "Logical Volume (LV)" **home**, foi usado a opção **+100%FREE**, isso faz com que ele pegue todo restante de espaço livre dentro do meu "Volume Group (VG)" para o **home**.
 
 Terminamos a criação de nossa estrutura LVM , agora vamos para o próximo passo que é formatar as mesmas com um determinado tipo de partição para cada uma.
 
@@ -319,6 +322,16 @@ lsblk -f
 > Aviso: Muito cuidado ao formatar a partição **home** , você já pode ter ela
 > com dados dentro (o que não é nosso, pois criamos uma do zero). Ao executar 
 > uma formatação, todos os dados (caso tenha) contido na mesma, serão apagados.
+
+
+Como dito antes, diferente das demais partições, a partição de **Boot**, é independentes do LVM, porem, precisamos formata-la e dar um tipo de partição para a mesma. Então faremos assim:
+
+**/dev/sda1 - Boot**
+
+{% highlight bash linenos %}
+mkfs -t ext4 /dev/sda1
+{% endhighlight %}
+
 
 
 ## Montagem das partições
@@ -352,7 +365,13 @@ não usa mais de que **200MB**, e a mesma é do Linux mesmo, porem vale resaltar
 
 
 
+## Conclusão
 
+Se você observou, não formatamos a partição de **NTFS** (do Windows) pelo fato que o próprio **Windows** faz isso ao instalar. Apenas criamos caso queremos instalar do sistema do senhor *Gates*. 
+
+Lembrando que, se você instalar o Windows depois de ter instalado o Archlinux (ou qualquer outra distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será sobrescrito pelo MBR do Windows. Se isso acontecer, você precisará reinstalar o Grub do Archlinux novamente com o DVD do Archlinux ou um pendrive bootável do mesmo. 
+
+Eu criei um **script shell** para a recuperação do Grub no Archlinux, no momento ele serve somente para Archlinux, talvez eu dê um upgrade nele para outras distribuições também, mas ainda não acho válido. Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"}. Dê uma olhada, é bem fácil de usar.
 
 
 
