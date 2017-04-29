@@ -4,7 +4,7 @@ title: Instalando Archlinux com criptografia LUKS e LVM
 date: 2017-04-27 11:33:43
 categories: blog
 tags: ['linux','criptografia', 'luks', 'lvm']
-published: false
+published: true
 comments: true
 excerpted: |
           Este post, irá lhe informar como ter uma segurança forte para proteção do seu S.O Arch Linux. Iae, quer estar protegido?!
@@ -28,7 +28,7 @@ script: [post.js]
   * [Usando o fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#usando-o-fdisk)
   * [Criando a partição de Boot com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-a-partição-de-boot-com-fdisk)
   * [Criando partição do Windows com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-do-windows-com-fdisk)
-  * [Criando partição do Linux 'LVM' com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-do-linux-lvm-com-fdisk)
+  * [Criando partição do Linux "LVM" com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-do-linux-lvm-com-fdisk)
 * [O LUKS]({{site.url}}{{site.baseurl}}{{page.url}}#o-luks)
   * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos)
   * [Criptografando a partição Linux "LVM"]({{site.url}}{{site.baseurl}}{{page.url}}#criptografando-a-partição-linux-lvm)
@@ -38,8 +38,8 @@ script: [post.js]
   * [Criando Physical Volume (PV)]({{site.url}}{{site.baseurl}}{{page.url}}#criando-physical-volume-pv)
   * [Criando Volume Group (VG)]({{site.url}}{{site.baseurl}}{{page.url}}#criando-volume-group-vg)
   * [Criando Logical Volume (LV)]({{site.url}}{{site.baseurl}}{{page.url}}#criando-logical-volume-lv)
-* [Formatando as partições)]({{site.url}}{{site.baseurl}}{{page.url}}#formatando-as-partições)
-  * [Sistema de Arquivos e Home)]({{site.url}}{{site.baseurl}}{{page.url}}#sistema-de-arquivos-e-home)
+* [Formatando as partições]({{site.url}}{{site.baseurl}}{{page.url}}#formatando-as-partições)
+  * [Sistema de Arquivos e Home]({{site.url}}{{site.baseurl}}{{page.url}}#sistema-de-arquivos-e-home)
   * [Boot]({{site.url}}{{site.baseurl}}{{page.url}}#boot)
   * [Swap]({{site.url}}{{site.baseurl}}{{page.url}}#swap)
 * [Montagem das partições]({{site.url}}{{site.baseurl}}{{page.url}}#montagem-das-partições)
@@ -58,6 +58,13 @@ script: [post.js]
   * [Criando um usuário padrão]({{site.url}}{{site.baseurl}}{{page.url}}#criando-um-usuário-padrão)
   * [Configurando o /etc/fstab]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-etcfstab)
   * [Configurando o /etc/mkinitcpio.conf]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-etcmkinitcpioconf)
+* [O Grub]({{site.url}}{{site.baseurl}}{{page.url}}#o-grub)
+  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-3)
+  * [Instalando o Grub no sistema]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-grub-no-sistema)
+  * [Configurando o Grub]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-grub)
+  * [Gerando as configurações]({{site.url}}{{site.baseurl}}{{page.url}}#gerando-as-configurações)
+  * [Instalando o Grub na unidade]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-grub-na-unidade)
+* [Conclusão]({{site.url}}{{site.baseurl}}{{page.url}}#conclusão)
 
 
 
@@ -128,15 +135,15 @@ Vamos começar a partir de agora, a trabalhar com o `fdisk` para a criação de 
 
 Nessa instalação, vou usar a seguinte estrutura de 3(três) partições:
 
-* Uma para Windows
 * Uma para Linux Boot
+* Uma para Windows
 * Uma para Linux LVM
 
-Não sei quanto a você, mas eu uso Windows e outras distribuições Linux em outras partições na minha máquina, então já vou aproveitar e deixar essa intalação com esse tipo de ambiente. 
+Não sei quanto a você, mas eu uso [Windows](https://www.microsoft.com/pt-br/windows/){:target="_blank"} e outras distribuições Linux em outras partições na minha máquina, então já vou aproveitar e deixar essa intalação com esse tipo de ambiente. 
 
-Caso você não utilize Windows e nem outras distribuições Linux, você simplemente deve realizar a criação da partição de **Linux Boot** e uma para **Linux LVM**.
+Caso você não utilize Windows e nem outras distribuições Linux, você simplesmente deve realizar a criação da partição de **Linux Boot** e uma para **Linux LVM**.
 
-Como vamos utilizar **LVM** na partição Linux, nessa mesma partição podemos expandir outros volumes lógicos, ou seja, outras distribuições Linux dentro dessa partição do tipo LVM, podem ser criadas (desde que exista espaço).
+Como vamos utilizar **LVM** na partição Linux, nessa mesma partição podemos expandir outros volumes lógicos, ou seja, outras distribuições Linux dentro dessa partição do tipo LVM podem ser criadas (desde que exista espaço).
 
 ## Usando o fdisk
 
@@ -148,7 +155,7 @@ fdisk -l
 
 {% imager instalando-archlinux-com-criptografia-luks-e-lvm/fdisk_list.jpg|center %} 
 
-Observe: Como estou utilizando o Virtualbox, repare que na listagem dos HD acima, só existe o `/dev/sda`, porem você pode ter mais de um HD/SSD, então cabe a você saber qual irá trabalhar. Neste caso iremos usar o `/dev/sda`.
+Observe: Como estou utilizando o VirtualBox, repare que na listagem dos HD acima, só existe o `/dev/sda`, porem você pode ter mais de um HD/SSD, então cabe a você saber qual irá trabalhar. Neste caso iremos usar o `/dev/sda`.
 
 Digite o comando abaixo para inicarmos o trabalho no disco `/dev/sda`.
 
@@ -303,7 +310,7 @@ Então esse será meu o "Physical Volume (PV)": **/dev/mapper/linux**
 
 ## Conceitos
 
-Exemplicaficando o básico e resumidamente o LVM, para que seja o suficiente para trabalharmos nessa instalação do Archlinux, iremos utilizar 3(três) componentes do LVM, esses são:
+Exemplificando o básico e resumidamente o LVM, para que seja o suficiente para trabalharmos nessa instalação do Archlinux, iremos utilizar 3(três) componentes do LVM, esses são:
 
 * Physical Volume (PV) - (volume físico)
 * Volume Group (VG) - (grupo de volume)
@@ -434,7 +441,6 @@ mount /dev/sda2 /mnt/boot
 
 Finalizamos aqui a criação das partições, as formatações e as montagens. Agora vamos dar inicio a instalação do sistema base do Archlinux.
 
-
 # Instalando e configurando o Archlinux
 
 ## Conceitos 
@@ -453,7 +459,7 @@ Para instalar o sistema base use o comando abaixo:
 pacstrap -i /mnt base base-devel
 {% endhighlight %}
 
-Agora vá tomar um cafezinho, são mais de 200MB de download. A menos que tenha uma internet veloz, diferente de mim :(
+Agora vá tomar um cafezinho, são mais de 200MB de download. A menos que tenha uma internet veloz. :)
 
 ## Criando /etc/fstab
 
@@ -504,7 +510,7 @@ sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 sed -i 's/#pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/g' /etc/locale.gen
 {% endhighlight %}
 
-Habilitando:
+Agora vamos ativar os mesmoa com o comando abaixo:
 
 {% highlight bash linenos %}
 locale-gen
@@ -529,7 +535,7 @@ ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc --utc
 {% endhighlight %}
 
-> NOTA: Como estou em SP, configurei para essa localidade, coloque de acordo
+> NOTA: Como estou em SP, configurei para essa localidade. Coloque de acordo
 >  com a sua. Para isso pode listar as que estão disponiveis em com o comando :
 >  `ls /usr/share/zoneinfo/`.
 
@@ -544,7 +550,7 @@ Existe o comando `hostnamectl`, que você tambem pode alterar seu hostname futur
 
 ## Habilitando rede cabeada durando o boot
 
-Se você utiliza rede cabeada, será necessário habilitar a mesma durante o boot da máquina para que você precisa ficar habilitando a mesma ao inciar.
+Se você utiliza rede cabeada, será necessário habilitar [DHCP durante o boot](https://wiki.archlinux.org/index.php/Network_configuration_(Portugu%C3%AAs)#DHCP_durante_o_boot){:target="_blank"} da máquina para que você não precise ficar habilitando a mesma quando já estiver no sistema.
 
 Por padrão, no diretório **/sys/class/net** existe links simbólicos das interfaces de rede. Apenas de o comando `ls /sys/class/net` para listar.
 
@@ -582,14 +588,32 @@ Por padrão o **/etc/fstab** já está funcional, mas vamos acrescentar algunas 
 * Adicionar a partição Windows para ser montada no boot.
 * Adiciona o reconhecimento do dispositivo CD/DVD.
 
- Vou utilizar o **vim** para edição, pois instalei ele lá nos *pacotes necessários*, lembra?! Você pode usar outro, como o **nano**. Enfim, abra o arquivo **/etc/fstab** com o editor e adicione essas linhas:
+ Vou utilizar o **vim** para edição, pois instalei ele lá nos *pacotes necessários*, lembra?! Você pode usar outro, como o **nano**. 
+
+
+Abra o arquivo:
 
 {% highlight bash linenos %}
- # CD/DVD
- /dev/sr0  /media/cdrom0  udf,iso9660 user,noauto  0  0
- # Windows
- /dev/sda2 /mnt/windows  ntfs-3g defaults,user,rw,auto  0  0
+vim /etc/fstab
 {% endhighlight %}
+
+Para deixar o arquivo em modo de edição no **vim**...
+
+> Digite: **i**
+
+Posicione o ponteiro no final do arquivo e adicione essas linhas:
+
+> ######## CD/DVD   
+> /dev/sr0  /media/cdrom0  udf,iso9660 user,noauto  0  0   
+> ######## Windows   
+> /dev/sda2 /mnt/windows  ntfs-3g defaults,user,rw,auto  0  0   
+
+
+Saia do modo de edição com a tecla **Esc**, agora...
+
+> Digite: **:wq** 
+
+Isso irá salvar e sair do **vim**.
 
 Agora temos que criar a pasta e link simbólico onde será montados esses dispositivos. Para isso, execute os comandos abaixo:
 
@@ -599,26 +623,146 @@ Agora temos que criar a pasta e link simbólico onde será montados esses dispos
  mkdir /mnt/windows
 {% endhighlight %}
 
-Salve e sair do editor. Pronto! Terminamos toda do **/etc/fstab**. Na próxima reinicialização da máquina, esses dispositivos já serão montados.
+Pronto! Terminamos toda edição do **/etc/fstab**. Na próxima reinicialização da máquina, esses dispositivos já estarão montados.
 
 ## Configurando o /etc/mkinitcpio.conf
 
-O arquivo **/etc/mkinitcpio.conf** é responsável por configurar meu
+O arquivo **/etc/mkinitcpio.conf** é responsável por configurar a imagem de boot. Dentro deste arquivo você coloca valores que pode modificar a forma de como o Archlinux irá se comportar e carregar algumas funções.
+
+Por padrão, quando instalamos o Archlinux, não precisamos alterar em nada neste arquivo, porem, como utilizamos LVM e criptografia, devemos fazer algumas mudanças.
+
+Então, abra o arquivo com seu editor preferencial. Usarei o **vim** novamente:
+
+{% highlight bash linenos %}
+vim /etc/mkinitcpio.conf
+{% endhighlight %}
+
+Ok, agora procure a variável **HOOKS=".."**, vamos acrescentar alguns recursos a mais na mesma.
+
+> Nota: Se você observar os comentários logo acima de **HOOKS="..."**, vai ver 
+> que já nos dá uma dica de como devemos deixa-lá caso usamos criptografia e 
+> LVM.
+
+Então vamos deixar assim:
+
+> **HOOKS**=**"**base udev autodetect keymap **encrypt lvm2** modconf block
+>  filesystems keyboard fsck**"**
+
+Se você reparou no arquivo original, viu que foi adicionado somente o **encrypt** e o **lvm2**. 
+
+**O B R I G A T Ó R I A M E N T E** tem que ser nessa ordem, depois de **autodetect**.
+
+*Já pode SALVAR e FECHAR o editor*.
+
+Com o **/etc/mkinitcpio.conf** configurado, basta "subir" essas novas configurações, para isso, temos que executar o seguinte comando abaixo:
+
+{% highlight bash linenos %}
+mkinitcpio -p linux
+{% endhighlight %}
+
+OK! Concluímos toda instalação e configuração do Archlinux. Agora vamos para a etapa do gerenciamento de boot.
+
+# O Grub
+
+## Conceitos
+
+O Grub ([English](https://wiki.archlinux.org/index.php/GRUB){:target="_blank"}/[Portuguese](https://wiki.archlinux.org/index.php/GRUB_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o){:target="_blank"}) é o gerenciador de boot do Linux. Vamos utilizar o mesmo para gerenciar nosso boot. 
+
+## Instalando o Grub no sistema
+
+Para instalarmos fazemos assim:
+
+{% highlight bash linenos %}
+pacman -S grub --noconfirm
+{% endhighlight %}
+
+Se utilizar um sistema com [UEFI](https://wiki.archlinux.org/index.php/GRUB#UEFI_systems){:target="_blank"}, instale assim:
+
+{% highlight bash linenos %}
+pacman -S grub efibootmgr --noconfirm
+{% endhighlight %} 
+
+Caso não use UEFI, ignore o pacote **efibootmgr**.
+
+Se utilizar o Windows como dual boot, vai precisar usar o pacote **os-prober**, então ficaria assim:
+
+{% highlight bash linenos %}
+pacman -S grub os-prober --noconfirm
+{% endhighlight %} 
+
+Caso não utilize o Windows com dual boot, ignore o pacote **os-prober**.
 
 
+## Configurando o Grub
 
+Por padrão, quando instalamos o Archlinux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porem, como utilizamos, iremos fazer algumas mudanças necessárias no Grub.
+
+Novamente usando o **vim**, abra o arquivo **/etc/default/grub**:
+
+{% highlight bash linenos %}
+vim /etc/default/grub
+{% endhighlight %} 
+
+Agora deixe a variável **GRUB_CMDLINE_LINUX=""** da seguinte forma:
+
+{% highlight bash linenos %}
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda3:linux root=/dev/mapper/linux-archlinux"
+{% endhighlight %} 
+
+Observe que em **cryptdevice** utilizamos a partição **/dev/sda3** criada com 
+o `fdisk`, e logo a frente informamos o "Volume Group (VG)", o **linux**. Em **root** informamos nosso "Logical Volume (LV)" do nosso **sistema de arquivos**, o **/dev/mapper/linux-archlinux**.
+
+Agora adicione as seguintes linhas (ou configure-as caso já exista), assim:
+
+> GRUB_PRELOAD_MODULES="lvm"
+> GRUB_ENABLE_CRYPTODISK=y
+> GRUB_DISABLE_SUBMENU=y
+
+A linha **GRUB_DISABLE_SUBMENU=y** é para caso você estiver utilizando o VirtualBox, pois é necessário ter para não dar erro de boot do Grub.
+
+Pronto! Salve as alterações e feche o editor de texto.
+
+
+## Gerando as configurações 
+
+Com toda configuração realizada, vamos levantar as mesmas para nosso sistema com o comando abaixo:
+
+{% highlight bash linenos %}
+grub-mkconfig -o /boot/grub/grub.cfg
+{% endhighlight %}
+
+
+## Instalando o Grub na unidade
+
+Agora precisamos instalar de fato o Grub e toda configuração do mesmo que realizamos acima na unidade. Para isso usamos o comando:
+
+{% highlight bash linenos %}
+grub-install /dev/sda
+{% endhighlight %} 
+
+Se possua um sistema [UEFI](https://wiki.archlinux.org/index.php/GRUB#UEFI_systems){:target="_blank"}, faça dessa maneira:
+
+{% highlight bash linenos %}
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
+{% endhighlight %} 
 
 # Conclusão
 
-Se você observou, não formatamos a partição de **NTFS** (do Windows) pelo fato que o próprio **Windows** faz isso ao instalar. Apenas criamos caso queremos instalar do sistema do senhor *Gates*. 
+Este tutorial (que no meu ver está mais para manual rs) me esforcei para fazer detalhadamente, bem intuitivo para pessoas que estão començando possam compreender facilmente.
 
-Lembrando que, se você instalar o Windows depois de ter instalado o Archlinux (ou qualquer outra distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será sobrescrito pelo MBR do Windows, e o Grub não será iniciado. Se isso acontecer, você precisará reinstalar o Grub do Archlinux novamente com o DVD do Archlinux (ou um pendrive bootável do mesmo). 
+Se você observou, não formatamos a partição de **NTFS** (do Windows) pelo fato que o próprio **Windows** faz isso ao instalar. Apenas criamos caso queremos instalar do sistema do senhor *Gates*.  Lembrando que, se você instalar o Windows depois de ter instalado o Archlinux (ou qualquer outra distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será sobrescrito pelo MBR do Windows, e o Grub não será iniciado. Se isso acontecer, você precisará reinstalar o Grub do Archlinux novamente com o DVD do Archlinux (ou um pendrive bootável do mesmo). 
 
-Eu criei um **script shell** para a recuperação do Grub no Archlinux, no momento ele serve somente para Archlinux, talvez eu dê um upgrade para server em outras distribuições também, mas ainda estou com preguiça hahaha. Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"}. Dê uma olhada, é bem fácil de usar.
+Eu criei um **script shell** para a recuperação do Grub no Archlinux, no momento ele serve somente para Archlinux, talvez eu dê um upgrade para servir em outras distribuições também, mas ainda estou com preguiça hahaha. Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"}. Dê uma olhada, é bem fácil de usar.
 
-Sempre utilize a documentação dos comandos. A maioria dos comandos existe o **man**. `man <comando>` . Explore a aprenda.
+Toda vez que você iniciar o sistema, antes mesmo do boot, a senha de criptografia irá ser requerida.
 
-Agora toda vez que você iniciar o sistema, antes mesmo do boot, a senha de criptografia irá ser requerida.
+> Dica: Algo interessante que você pode fazer, é deixar o login automático sem 
+> necessidade de senha, pois você já será informado da senha de criptografia 
+> no começo, então não tem o porque informar senha de login também. Para esse 
+> feito, recomento ler [Getty](https://wiki.archlinux.org/index.php/Getty)
+> {:target="_blank"} no wiki do Archlinux.
+
+Sempre utilize a documentação contido no wiki do Archlinux ou nos próprios comandos. A maioria dos comandos existe o **man**. `man <app>` . Explore a aprenda.
 
 {% endpost #9D9D9D %}
 
