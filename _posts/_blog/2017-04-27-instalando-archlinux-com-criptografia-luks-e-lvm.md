@@ -28,7 +28,7 @@ script: [post.js]
   * [Usando o fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#usando-o-fdisk)
   * [Criando a partição de Boot com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-a-partição-de-boot-com-fdisk)
   * [Criando partição do Windows com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-do-windows-com-fdisk)
-  * [Criando partição do Linux "LVM" com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-do-linux-lvm-com-fdisk)
+  * [Criando partição "Linux LVM" com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-linux-lvm-com-fdisk)
 * [O LUKS]({{site.url}}{{site.baseurl}}{{page.url}}#o-luks)
   * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos)
   * [Criptografando a partição Linux "LVM"]({{site.url}}{{site.baseurl}}{{page.url}}#criptografando-a-partição-linux-lvm)
@@ -48,13 +48,13 @@ script: [post.js]
   * [Instalando o sistema base]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-sistema-base)
   * [Criando /etc/fstab]({{site.url}}{{site.baseurl}}{{page.url}}#criando-etcfstab)
   * [Entrando no sistema instalado]({{site.url}}{{site.baseurl}}{{page.url}}#entrando-no-sistema-instalado)
-  * [Carregando layout do teclado]({{site.url}}{{site.baseurl}}{{page.url}}#carregando-layout-do-teclado)
+  * [Configurando layout do teclado]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-layout-do-teclado)
   * [Criando um senha para usuário root]({{site.url}}{{site.baseurl}}{{page.url}}#criando-um-senha-para-usuário-root)
   * [Instalado pacotes necessários]({{site.url}}{{site.baseurl}}{{page.url}}#instalado-pacotes-necessários)
   * [Habilitando idiomas]({{site.url}}{{site.baseurl}}{{page.url}}#habilitando-idiomas)
   * [Configurando localidade]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-localidade)
   * [Configurando hostname]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-hostname)
-  * [Habilitando rede cabeada durante o boot]({{site.url}}{{site.baseurl}}{{page.url}}#habilitando-rede-cabeada-durando-o-boot)
+  * [Habilitando rede cabeada durante o boot]({{site.url}}{{site.baseurl}}{{page.url}}#habilitando-rede-cabeada-durante-o-boot)
   * [Criando um usuário padrão]({{site.url}}{{site.baseurl}}{{page.url}}#criando-um-usuário-padrão)
   * [Configurando o /etc/fstab]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-etcfstab)
   * [Configurando o /etc/mkinitcpio.conf]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-etcmkinitcpioconf)
@@ -81,21 +81,21 @@ Se você for instalar o Archlinux em uma máquina mesmo, você vai precisar de u
 
 # Introdução
 
-Uma das coisas mais preocupantes para quem usa um computador, pode se dizer que é a segurança dos dados contido nele. Dependendo de qual informação você tem em sua máquina, isso pode comprometer (e muito) sua vida pessoal, no trabalho, etc. 
+Uma das coisas mais temidas para quem usa um computador, pode se dizer que é os dados contido nele. Dependendo de qual informação você tem em sua máquina, isso pode comprometer (e muito) sua vida pessoal, no trabalho, etc. 
 
-Ter uma máquina com uma senha de login "forte", **N Ã O** irá manter seus dados seguros de alguem que tenha um conhecimento em montagem de partições através do Linux. Vou enfatizar melhor com o seguinte exemplo:
+Ter uma máquina com uma senha de login "forte", **N Ã O** irá manter seus dados seguros de alguém que tenha um conhecimento não leigo. Vou enfatizar melhor com o seguinte exemplo qual seria esse conhecimento:
 
 *Imagine você com sua linda máquina onde seu(s) S.O estão instalados em partições (ou até mesmo em um HD/SSD completo) que não tem criptografia. Simplesmente a pessoa pega um S.O bootável (no pendrive ou DVD), inicia sua máquina com o mesmo, monta as partições e, "tcharamm"! Os dados de sua máquina estão expostos para esse indivíduo 'esperto'.*
 
 Com base nesse pequeno exemplo acima, podemos pensar: 
 
-**E se você impedir que as partições sejam montadas através de LiveCD's ou um sistema bootável? E se para montar partições tivesse uma senha para isso?**
+**E se você impedir que as partições sejam montadas através de um sistema bootável? E se para montar partições tivesse uma senha para isso?**
 
-Bom, com criptografia LUKS e o alocador de volumes LVM no Linux, isso é possível! Eba :smirk:
-
-[Luks](https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup){:target="_blank"} é uma especificação de criptografia de disco originalmente planejada para Linux. 
+Bom, com o alocador de volumes LVM no Linux e criptografia LUKS, isso é possível! Eba :smirk:
 
 [LVM](http://web.mit.edu/rhel-doc/3/rhel-sag-pt_br-3/ch-lvm-intro.html){:target="_blank"} permite a criação de partições com a possibilidade de redimencioná-las. O disco ou seu conjunto é alocado em um ou mais volumes. O LVM trabalha com volumes físcos que são combinados com grupos lógicos.
+
+[Luks](https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup){:target="_blank"} é uma especificação de criptografia de disco originalmente planejada para Linux. 
 
 Essa criptografia pode ser aplicada a qualquer distribuição Linux. Porem, os passos são diferentes de acordo com a instalação da distribuição. Mas o conceito é o mesmo.
 
@@ -109,11 +109,22 @@ Já com o Archlinux em boot na máquina...
 
 {% imager instalando-archlinux-com-criptografia-luks-e-lvm/start_archlinux_boot.jpg|center %}    
 
-&nbsp;a primeira coisa a se fazer é carregar o layout do teclado, para isso você precisa saber qual é o seu, no meu caso é `br-abnt2`, então:
+&nbsp;a primeira coisa a se fazer é carregar o layout do teclado, para isso você precisa saber qual é o seu [KEYMAP](https://wiki.archlinux.org/index.php/KEYMAP_(Portugu%C3%AAs)){:target="_blank"}.
+
+Uma forma de fazer isso via console, é usando o comando abaixo para listar os layouts disponíveis:
+
+{% highlight bash linenos %}
+localectl list-keymaps
+{% endhighlight %}
+
+No meu caso é `br-abnt2`:
 
 {% highlight bash linenos %}
 loadkeys br-abnt2
 {% endhighlight %}
+
+> Nota: Essa configuração é temporária, isso porque ainda não estamos com
+> o sistema Archlinux instalado para deixar permanente.
 
 Agora iremos carregar alguns módulos **crypt**, que iremos usar para realizar toda criptografia:
 
@@ -212,7 +223,10 @@ fdisk -l
 
 Veja na imagem que existe uma nova partição do disco `/dev/sda`, e essa partição é a `/dev/sda1`. Então nossa partição do tipo Boot foi criada com sucesso! Yuupii! :pray:
 
-{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_boot_partition.jpg|center %} 
+{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_boot_partition.jpg|center %}
+
+> Lembrando que se você estiver usando um sistema com EFI, crie uma partição 
+> do tipo EFI!
 
 ## Criando partição do Windows com fdisk
 
@@ -220,9 +234,9 @@ Veja na imagem que existe uma nova partição do disco `/dev/sda`, e essa parti�
 > o LUKS só encarrega de gerenciar partições Linux. Então a partição Windows 
 > terá que ser independente.
 
-Agora que você já sabe como criar partições com o `fdisk`, não tem o porque eu repetir todos passos para as outras duas partições que nos resta, a de **Windows** e a do **Linux**.
+Agora que você já sabe como criar partições com o `fdisk`, os passoas anteriores não precisam ser repetidos para as duas partições que nos resta, a de **Windows** e a do **Linux**.
 
-As únicas coisa **I M P O R T A N T E** que você precisa saber, é que toda vez que criamos uma partição nova, ela irá obter o tipo 'Linux' de inicio. Neste caso como é uma partição para Windows, e Windows utiliza **NTFS**, devemos editar o tipo dessa partição. 
+Porém, algo **I M P O R T A N T E** que você precisa saber, é que toda vez que criamos uma partição nova, ela irá obter o tipo 'Linux' de inicio. Neste caso como é uma partição para Windows, e Windows utiliza **NTFS**, devemos editar o tipo dessa partição. 
 
 Você pode digitar **m** novamente para ver a letra que se aplica para deixar a partição em modo de edição, mas como sou bonzinho vou dizer, é a letra **t**, de **type**.
 
@@ -236,11 +250,11 @@ Nesse momento você verá a lista de tipos de partição, onde cada uma delas es
 
 > Digite: **86** e dê Enter
 
-Agora, simplesmente escreve essas mudaçãs como já vimos antes com a opção **w**.
+Agora, simplesmente escreve essas mudaçãs como já aprendemos anteriormente com a opção **w**.
 
 > Digite: **w** e dê Enter
 
-## Criando partição do Linux LVM com fdisk
+## Criando partição "Linux LVM" com fdisk
 
 Como vamos trabalhar com LVM, o tipo da partição Linux, **O B R I G A T Ó R I A M E N T E**, tem que ser do tipo *'Linux LVM'*. Então crie essa nova partição com o código: **8e**.
 
@@ -257,16 +271,16 @@ Memorize bem as seguintes partições abaixo, pois iremos utilizar elas mais pra
 
 ## Conceitos
 
-Existe várias formadas de criptografar partições com LUKS. Selecionei 3(três) delas que achei interessante para explicar, veja:
+Existe várias formadas de criptografar partições com LUKS. Selecionei 3(três) delas que achei interessante para levantar alguns conceitos, veja:
 
-- [x] Criptografar a partição inteira do Linux LVM, através de uma senha.
-- [] Criptografar a partição **Home** apenas com senha.
-- [] Criptografar apenas a partição **Home** com opção de keyfile e usar um pendrive com o Keyfile dentro para montar a partição **Home** no Linux.
+- Criptografar a partição **Home** apenas com senha.
+- Criptografar a partição **Home** com opção de keyfile e usar um pendrive com o mesmo Keyfile dentro para montar a partição **Home** no Linux.
+- Criptografar a partição "Linux LVM" inteira, através de uma senha.
 
 
-**A primeira** opção, é a criptografia de todo o sistema Linux LVM, ela que iremos utilizar nesse tutorial.
-**A segunda** opção também é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição **Home** , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma "brecha" de insegurança nessa opção.
-**A terceira** opção é a que eu menos recomendo, apensar de ser interessante usar um pendrive para iniciar meus dados. Porem, se você criptografar somente a partição Home e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar *"dor de cabeça"*.
+**A primeira** é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição **Home** , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma "brecha" de insegurança nessa opção.
+**A segunda** opção é a que eu menos recomendo, apensar de também ser interessante usar um pendrive para montar a **home**. Porem, se você criptografar somente a partição **home** e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar *"dor de cabeça"*.
+**A terceira** opção, é a criptografia de todo o sistema Linux LVM, ela que iremos utilizar nesse tutorial.
 
 > Nota: Não tem como criptografar a partição de sistema de arquivos inteira 
 > com LUKS através de um keyfile no pendrive, isso porque você está mantendo o 
@@ -276,7 +290,7 @@ Existe várias formadas de criptografar partições com LUKS. Selecionei 3(três
 > trabalho ao fazer isso, então vamos usar a primeira opção mesmo.
 
 
-## Criptografando a partição Linux "LVM"
+## Criptografando a partição "Linux LVM"
 
 Lembra qual é nossa partição de **Linux LVM**? É a **/dev/sda3**. Pois bem, com a nova partição de **Linux LVM** criada, chegou a hora de trabalhar ela. Para iniciarmos a criptografia na nossa partição de **Linux LVM**, usaremos o comando abaixo:
 
@@ -304,7 +318,7 @@ cryptsetup open /dev/sda3 linux
 
 Ao fazer um **open** na partição criptografada, criará um "Physical Volume (PV)" automaticamente. Então **linux** será de agora em diante o "ponteiro" para meu Physical Volume (PV). Terá um link simbólico em **/dev/mapper**. 
 Então esse será meu o "Physical Volume (PV)": **/dev/mapper/linux**
-(não necessáriamente precisa ser **linux**, você pode colocar outro nome).
+(não necessáriamente precisa ser **linux**, você pode colocar outro nome). Se não entendeu o que é um "Physical Volume (PV)", continue a leitura que é nosso próprio tópico.
 
 # O LVM
 
@@ -317,8 +331,8 @@ Exemplificando o básico e resumidamente o LVM, para que seja o suficiente para 
 * Logical Volume (LV) - (volume lógico)
 
 "Physical Volume (PV)": A unidade do armazenamento Physical Volume (PV) subjacente de um volume lógico LVM.
-"Volume Group (VG)": É criado para armazenar nossos "Logical Volume (LV)". 
-"Logical Volume (LV)": Serão nossas partições (de distribuições) Linux.
+"Volume Group (VG)": É criado para termos grupos para nossos "Logical Volume (LV)". 
+"Logical Volume (LV)": Serão nosso volume lógico, ou seja, nossas partições Linux que usaremos para o sistema.
 
 Lembrando que se você quer saber mais afundo sobre LVM, eu te recomendo esse manual [Logical Volume Manager Administration](https://access.redhat.com/documentation/pt-BR/Red_Hat_Enterprise_Linux/6/html-single/Logical_Volume_Manager_Administration/){:target="_blank"}, que é uma documentação da própria [Red Hat](https://www.redhat.com/pt-br){:target="_blank"} sobre administradores do LVM.
 
@@ -326,7 +340,7 @@ Lembrando que se você quer saber mais afundo sobre LVM, eu te recomendo esse ma
 
 ### Criando Physical Volume (PV)
 
-Iremos precisar apenas de 1(um) Physical Volume (PV), porem ele já foi criado automaticamente quando realizamos um **open** na partição criptografada(**/dev/sda3**) anteriormente.
+Iremos precisar apenas de 1(um) Physical Volume (PV), porem ele já foi criado automaticamente quando realizamos um **open** na partição criptografada(**/dev/sda3**) anteriormente, lembra?!
 
 Dê o comando abaixo para ver informações sobre o "Physical Volume (PV)" criado:
 
@@ -336,7 +350,7 @@ pvs
 
 ### Criando Volume Group (VG)
 
-Agora temos que criar um "Volume Group (VG)" para armazenar nossos "Logical Volume (LV)". A syntax é `vgcreate <name group> <path physical volume>`. Então usaremos o comando:
+Agora temos que criar um "Volume Group (VG)" para manter nossos "Logical Volume (LV)". A syntax é `vgcreate <name group> <path physical volume>`. Então usaremos o comando:
 
 {% highlight bash linenos %}
 vgcreate linux /dev/mapper/linux
@@ -353,7 +367,7 @@ Vamos criar nosso primeiro "Logical Volume (LV)", que é de **swap**. A Syntax �
 lvcreate -L 1G linux -n swap
 {% endhighlight %}
 
-Observe que ao criar, foi informado o "Volume Group (VG)", que criamos anteriormente, que no caso é **linux**, e o nome do "Logical Volume (LV)" que nesse caso será **swap**. Com 1G de tamanho.
+Veja que no comando acima, foi informado o "Volume Group (VG)", que criamos anteriormente, que no caso é **linux**, e o nome do "Logical Volume (LV)" que nesse caso será **swap**. Com 1 Gigabyte de tamanho.
 
 Dê o comando abaixo para ver como ficou nosso "Logical Volume (LV)":
 
@@ -370,9 +384,13 @@ lvcreate -L 8G linux -n archlinux
 lvcreate -l +100%FREE linux -n home
 {% endhighlight %}
 
-Repare que ao criarmos nosso "Logical Volume (LV)" **home**, foi usado a opção **+100%FREE**, isso faz com que ele pegue todo restante de espaço livre dentro do meu "Volume Group (VG)" para o **home**.
+Repare que o comando para criar nosso "Logical Volume (LV)" **home**, foi usado a opção **+100%FREE**, isso faz com que ele pegue todo restante de espaço livre dentro do meu "Volume Group (VG)" para o **home**.
 
 Terminamos a criação de nossa estrutura LVM , agora vamos para o próximo passo que é formatar as mesmas com um determinado tipo de partição para cada uma.
+
+Repare como ficou:
+
+{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_lvs.jpg %}
 
 # Formatando as partições
 
@@ -385,6 +403,10 @@ A formatação da partição de **Sistema de Arquivos** e **Home** nada mais é 
 
 Vamos utilizar o **ext4** para nossa partição de **sistema de arquivos* e nossa partição **home**. Então faremos:
 
+> Aviso: Muito cuidado ao formatar a partição **home** , você já pode ter ela
+> com dados dentro (o que não é nosso, pois criamos uma do zero). Ao executar 
+> uma formatação, todos os dados (caso tenha) contido na mesma, serão apagados.
+
 {% highlight bash linenos %}
 mkfs -t ext4 /dev/mapper/linux-archlinux
 mkfs -t ext4 /dev/mapper/linux-home 
@@ -393,7 +415,7 @@ mkfs -t ext4 /dev/mapper/linux-home
 > **NOTA:** Observe que tem o nome **linux** antes do nome de nossa partições 
 > de "Logical Volume (LV)", esse nome é justamente o "Volume Group (VG)" que 
 > criamos. Ou seja, quando criamos nossos "Logical Volume (LV)", 
-> automáticamente é inserido o nome do  "Volume Group (VG)". 
+> automaticamente é inserido o nome do  "Volume Group (VG)". 
 
 Você pode rodar o comando abaixo para ver as informações:
 
@@ -401,13 +423,9 @@ Você pode rodar o comando abaixo para ver as informações:
 lsblk -f
 {% endhighlight %}
 
-> Aviso: Muito cuidado ao formatar a partição **home** , você já pode ter ela
-> com dados dentro (o que não é nosso, pois criamos uma do zero). Ao executar 
-> uma formatação, todos os dados (caso tenha) contido na mesma, serão apagados.
-
 ## Boot
 
-Como dito antes, diferente das demais partições, a partição de **Boot**, é independentes do LVM, porém, precisamos formata-la e dar um tipo de partição para a mesma. Nossa partição de Boot é a **/dev/sda1**. Também usaremos o **ext4** para o tipo dessa partição. Então faremos assim:
+Como dito antes, diferente das demais partições, a partição de **Boot**, é independentes do LVM, porém, precisamos formatar a mesma e dar um tipo de partição. Nossa partição de Boot é a **/dev/sda1**. Também usaremos o **ext4** para o tipo dessa partição. Então faremos assim:
 
 {% highlight bash linenos %}
 mkfs -t ext4 /dev/sda1
@@ -415,7 +433,7 @@ mkfs -t ext4 /dev/sda1
 
 ## Swap
 
-A partição "Logical Volume (LV)" **swap**, também necessita de formatação e alem disso, necessita ser ativada, para isso, usamos o comando **mkswap** para formatar, e o **swapon** para ativa-la. Então faça:
+A partição "Logical Volume (LV)" **swap**, também necessita de formatação e além disso, necessita ser ativada, para isso, usamos o comando **mkswap** para formatar, e o **swapon** para ativar. Então faça:
 
 {% highlight bash linenos %}
 mkswap /dev/mapper/linux-swap
@@ -447,7 +465,7 @@ Finalizamos aqui a criação das partições, as formatações e as montagens. A
 
 Até o momento não utilizamos internet para realizar todos esses passos, mas de agora em diante, você irá necessitar.
 
-Se você está fazendo esse tutorial com VirtualBox, então automaticamente já terá internet para você. O mesmo vale se você não estiver com internet cabeada na máquina.
+Se você está fazendo esse tutorial com VirtualBox, então automaticamente já terá internet para você. O mesmo vale se você estiver com internet cabeada na máquina.
 
 Se você está utilizando internet via Wifi, execute o comando `wifi-menu` que irá abrir um utilitário bem intuitivo para você fazer sua conexão com a internet.
 
@@ -459,7 +477,7 @@ Para instalar o sistema base use o comando abaixo:
 pacstrap -i /mnt base base-devel
 {% endhighlight %}
 
-Agora vá tomar um cafezinho, são mais de 200MB de download. A menos que tenha uma internet veloz. :)
+Agora vá tomar um :coffee: , são mais de 200MB de download. A menos que tenha uma internet veloz. :smile:
 
 ## Criando /etc/fstab
 
@@ -477,13 +495,21 @@ Já podemos entrar dentro do nosso sistema instalado e começar a configurar o m
 arch-chroot /mnt /bin/bash
 {% endhighlight %}
 
-## Carregando layout do teclado
+## Configurando layout do teclado
 
-Devemos carregar o layout de teclado, ai se pergunta: *Eu ja fiz isso no começo*. Mas não estavamos dentro do sistema base instalado, então, devemos carregar novamente para podermos ter acesso a todas teclados no nosso teclado corretamente. Então, novamente: 
+Devemos carregar o layout de teclado, ai se pergunta: *Eu ja fiz isso no começo*. Mas agora estavamos dentro do sistema base instalado, então, devemos carregar novamente para podermos ter o layout corretamente a máquina. Então, novamente: 
 
 {% highlight bash linenos %}
 loadkeys br-abnt2
 {% endhighlight %}
+
+Essa configuração será perdida, então para manter no sistema faremos:
+
+{% highlight bash linenos %}
+echo "KEYMAP=br-abnt2" > /etc/vconsole.conf
+{% endhighlight %}
+
+Esse comando, certifica-se de manter as configurações do layout de teclado nos consoles.
 
 ## Criando um senha para usuário `root`
 
@@ -495,7 +521,7 @@ passwd
 
 ## Instalado pacotes necessários
 
-O gerenciador de pacotes padrão do Archlinux é o **pacman**. Caso você não saíba como utilizar, te recomendo dar um lida no [wiki](https://wiki.archlinux.org/){:target="_blank"} do Archlinux, é um local muito rico em informação sobre o Archlinux e configurações. O wiki do Pacman você pode encontrar lá também, ou clicar [AQUI](https://wiki.archlinux.org/index.php/Pacman_(Portugu%C3%AAs)){:target="_blank"}. Vamos instalar alguns pacotes necessários com o **pacman**, com o comando abaixo:
+O gerenciador de pacotes padrão do Archlinux é o **pacman**. Caso você não saíba como utilizar, te recomendo a leitura no [wiki](https://wiki.archlinux.org/){:target="_blank"} do Archlinux, é um local muito rico em informações sobre o Archlinux, programas e suas configurações. O wiki do Pacman você pode encontrar lá também, ou clicar [AQUI](https://wiki.archlinux.org/index.php/Pacman_(Portugu%C3%AAs)){:target="_blank"}. Vamos instalar alguns pacotes necessários com o **pacman**, com o comando abaixo:
 
 {% highlight bash linenos %}
 pacman -S bash-completion vim wireless_tools wpa_supplicant wpa_actiond ntfs-3g dialog --noconfirm
@@ -510,7 +536,7 @@ sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 sed -i 's/#pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/g' /etc/locale.gen
 {% endhighlight %}
 
-Agora vamos ativar os mesmoa com o comando abaixo:
+Agora vamos ativar os mesmos com o comando abaixo:
 
 {% highlight bash linenos %}
 locale-gen
@@ -539,6 +565,18 @@ hwclock --systohc --utc
 >  com a sua. Para isso pode listar as que estão disponiveis em com o comando :
 >  `ls /usr/share/zoneinfo/`.
 
+**Dica:**   
+Caso você use dual boot com Windows, você deve deixar para ambos UTC ou 
+LOCALTIME. Haverá conflito de hora se um S.O estiver um com UTC e outro com LOCALTIME.
+
+Para deixar o Archlinux configurado como LOCALTIME, execute o comando abaixo:
+
+{% highlight bash linenos %}
+printf "0.0 0.0 0.0\n0\nLOCAL\n" > /etc/adjtime
+{% endhighlight %}
+
+O aquivo **/etc/adjtime** é responsável por carregar o tipo da nossa hora (UTC ou LOCAL) na máquina. Atribuindo esse comando, irá deixar configurado para LOCALTIME.
+
 
 ## Configurando hostname
 
@@ -548,23 +586,31 @@ echo "archlinux" > /etc/hostname
 
 Existe o comando `hostnamectl`, que você tambem pode alterar seu hostname futuramente. Dê um `hostnamectl --help` e veja as opções.
 
-## Habilitando rede cabeada durando o boot
+## Habilitando rede cabeada durante o boot
 
-Se você utiliza rede cabeada, será necessário habilitar [DHCP durante o boot](https://wiki.archlinux.org/index.php/Network_configuration_(Portugu%C3%AAs)#DHCP_durante_o_boot){:target="_blank"} da máquina para que você não precise ficar habilitando a mesma quando já estiver no sistema.
+Se você utiliza rede cabeada, será necessário habilitar [DHCP durante o boot](https://wiki.archlinux.org/index.php/Network_configuration_(Portugu%C3%AAs)#DHCP_durante_o_boot){:target="_blank"} da máquina para que você não precise ficar habilitando o mesmo quando já estiver no sistema.
 
 Por padrão, no diretório **/sys/class/net** existe links simbólicos das interfaces de rede. Apenas de o comando `ls /sys/class/net` para listar.
 
-Toda interface que começa com `enp` será a sua rede cabeada. Nesse caso a listada foi `enp19s0`. Então será ela que devemos habilitar durante o boot. Para isso executamos o seguinte comando:
+{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_iface_net.jpg %}
+
+Toda interface que começa com `enp` será a sua rede cabeada. Nesse caso a listada foi `enp0s3`. Então será ela que devemos habilitar durante o boot. Para isso executamos o seguinte comando:
 
 {% highlight bash linenos %}
-systemctl enable dhcpcd@enp19s0
+systemctl enable dhcpcd@enp0s3
 {% endhighlight %}
 
-Será bom você ler sobre o [Systemctl](https://wiki.archlinux.org/index.php/Systemd_(Portugu%C3%AAs)){:target="_blank"}, pois você pode utilizar muito ele em seu Archlinux.
+... ou simplesmente o comando:
+
+{% highlight bash linenos %}
+systemctl enable dhcpcd
+{% endhighlight %}
+
+Leia sobre o [Systemctl](https://wiki.archlinux.org/index.php/Systemd_(Portugu%C3%AAs)){:target="_blank"}, pois você pode utilizar muito ele em seu Archlinux.
 
 ## Criando um usuário padrão
 
-Nunca é recomendável usar um sistema com o usuário **root**, pois pode comprometer a estrutura do seu **sistema de arquivos**. O recomendável é ter um usuário padrão, então vamos criar um com o comando abaixo:
+Nunca é recomendável usar um sistema com o usuário **root**, pois pode comprometer a estrutura do seu **sistema de arquivos** fazendo com que o sistema fique inutilizável. O recomendável é ter um usuário padrão, então vamos criar um com o comando abaixo usando o [useradd](https://wiki.archlinux.org/index.php/users_and_groups#User_management){:target="_blank"}:
 
 {% highlight bash linenos %}
 useradd -m -g users -G wheel,games,power,optical,storage,scanner,lp,audio,video -s /bin/bash <NAMEUSER>
@@ -581,15 +627,14 @@ passwd <NAMEUSER>
 
 ## Configurando o /etc/fstab
 
-Lembra que criamos o **/etc/fstab** antes de iniciarmos no sistema base do Archlinux? Pois bem, agora precisar fazer algumas alterações.
+Lembra que criamos o **/etc/fstab** antes de iniciarmos no sistema base do Archlinux? Pois bem, agora precisamos fazer algumas alterações.
 
-Por padrão o **/etc/fstab** já está funcional, mas vamos acrescentar algunas outras configurações. Essas são:
+Por padrão o **/etc/fstab** já está funcional, mas vamos acrescentar algumas outras configurações. Essas são:
 
-* Adicionar a partição Windows para ser montada no boot.
+* Adicionar a partição Windows para ser montada no boot (caso tenho Windows).
 * Adiciona o reconhecimento do dispositivo CD/DVD.
 
  Vou utilizar o **vim** para edição, pois instalei ele lá nos *pacotes necessários*, lembra?! Você pode usar outro, como o **nano**. 
-
 
 Abra o arquivo:
 
@@ -608,14 +653,13 @@ Posicione o ponteiro no final do arquivo e adicione essas linhas:
 > ######## Windows   
 > /dev/sda2 /mnt/windows  ntfs-3g defaults,user,rw,auto  0  0   
 
-
-Saia do modo de edição com a tecla **Esc**, agora...
+Saia do modo de edição com a tecla **Esc**, e ...
 
 > Digite: **:wq** 
 
-Isso irá salvar e sair do **vim**.
+Isso irá SALVAR e SAIR do **vim**.
 
-Agora temos que criar a pasta e link simbólico onde será montados esses dispositivos. Para isso, execute os comandos abaixo:
+Agora temos que criar a pasta e link simbólico onde será montados esses dispositivos. Para isso, execute os comandos:
 
 {% highlight bash linenos %}
  mkdir /media/cdrom0
@@ -627,7 +671,7 @@ Pronto! Terminamos toda edição do **/etc/fstab**. Na próxima reinicializaçã
 
 ## Configurando o /etc/mkinitcpio.conf
 
-O arquivo **/etc/mkinitcpio.conf** é responsável por configurar a imagem de boot. Dentro deste arquivo você coloca valores que pode modificar a forma de como o Archlinux irá se comportar e carregar algumas funções.
+O arquivo **/etc/mkinitcpio.conf** é responsável por configurar a imagem de boot. Dentro do **/etc/mkinitcpio.conf** você coloca valores que pode modificar a forma de como o Archlinux irá se comportar e carregar algumas funções.
 
 Por padrão, quando instalamos o Archlinux, não precisamos alterar em nada neste arquivo, porem, como utilizamos LVM e criptografia, devemos fazer algumas mudanças.
 
@@ -650,11 +694,11 @@ Então vamos deixar assim:
 
 Se você reparou no arquivo original, viu que foi adicionado somente o **encrypt** e o **lvm2**. 
 
-**O B R I G A T Ó R I A M E N T E** tem que ser nessa ordem, depois de **autodetect**.
+**OBRIGATÓRIAMENTE** tem que ser nessa ordem, depois de **autodetect**.
 
 *Já pode SALVAR e FECHAR o editor*.
 
-Com o **/etc/mkinitcpio.conf** configurado, basta "subir" essas novas configurações, para isso, temos que executar o seguinte comando abaixo:
+Com o **/etc/mkinitcpio.conf** configurado, basta "subir" essas novas configurações, para isso, temos que executar o seguinte comando:
 
 {% highlight bash linenos %}
 mkinitcpio -p linux
@@ -666,7 +710,7 @@ OK! Concluímos toda instalação e configuração do Archlinux. Agora vamos par
 
 ## Conceitos
 
-O Grub ([English](https://wiki.archlinux.org/index.php/GRUB){:target="_blank"}/[Portuguese](https://wiki.archlinux.org/index.php/GRUB_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o){:target="_blank"}) é o gerenciador de boot do Linux. Vamos utilizar o mesmo para gerenciar nosso boot. 
+O Grub ([English](https://wiki.archlinux.org/index.php/GRUB){:target="_blank"}/[Portuguese](https://wiki.archlinux.org/index.php/GRUB_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o){:target="_blank"}) é um dos gerenciador de boot do Linux. Vamos utilizar o mesmo para gerenciar nosso boot. 
 
 ## Instalando o Grub no sistema
 
@@ -676,7 +720,7 @@ Para instalarmos fazemos assim:
 pacman -S grub --noconfirm
 {% endhighlight %}
 
-Se utilizar um sistema com [UEFI](https://wiki.archlinux.org/index.php/GRUB#UEFI_systems){:target="_blank"}, instale assim:
+Se utilizar um sistema com [UEFI](https://wiki.archlinux.org/index.php/GRUB#UEFI_systems){:target="_blank"}, irá precisar de um pacote extra, o **efibootmgr**. Então instale assim:
 
 {% highlight bash linenos %}
 pacman -S grub efibootmgr --noconfirm
@@ -692,10 +736,9 @@ pacman -S grub os-prober --noconfirm
 
 Caso não utilize o Windows com dual boot, ignore o pacote **os-prober**.
 
-
 ## Configurando o Grub
 
-Por padrão, quando instalamos o Archlinux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porem, como utilizamos, iremos fazer algumas mudanças necessárias no Grub.
+Por padrão, quando instalamos o Archlinux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porém, como utilizamos, iremos fazer algumas mudanças necessárias no Grub.
 
 Novamente usando o **vim**, abra o arquivo **/etc/default/grub**:
 
@@ -709,8 +752,7 @@ Agora deixe a variável **GRUB_CMDLINE_LINUX=""** da seguinte forma:
 GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda3:linux root=/dev/mapper/linux-archlinux"
 {% endhighlight %} 
 
-Observe que em **cryptdevice** utilizamos a partição **/dev/sda3** criada com 
-o `fdisk`, e logo a frente informamos o "Volume Group (VG)", o **linux**. Em **root** informamos nosso "Logical Volume (LV)" do nosso **sistema de arquivos**, o **/dev/mapper/linux-archlinux**.
+Observe que em **cryptdevice** utilizamos a partição **/dev/sda3** que é a nossa *Linux LVM*. Logo a frente informamos o "Volume Group (VG)", o **linux**. Em **root** informamos nosso "Logical Volume (LV)" do nosso **sistema de arquivos**, o **/dev/mapper/linux-archlinux**.
 
 Agora adicione as seguintes linhas (ou configure-as caso já exista), assim:
 
@@ -718,23 +760,23 @@ Agora adicione as seguintes linhas (ou configure-as caso já exista), assim:
 > GRUB_ENABLE_CRYPTODISK=y
 > GRUB_DISABLE_SUBMENU=y
 
-A linha **GRUB_DISABLE_SUBMENU=y** é para caso você estiver utilizando o VirtualBox, pois é necessário ter para não dar erro de boot do Grub.
+A linha **GRUB_DISABLE_SUBMENU=y**, é para caso você estiver utilizando o VirtualBox, pois é necessário ter para não dar erro de boot no Grub conforme alguns testes que fiz.
 
-Pronto! Salve as alterações e feche o editor de texto.
-
+Pronto! SALVE as alterações e FECHE o editor de texto.
 
 ## Gerando as configurações 
 
-Com toda configuração realizada, vamos levantar as mesmas para nosso sistema com o comando abaixo:
+Com toda configuração realizada, vamos levantar as mesmas para nosso sistema. Execute o comando abaixo:
 
 {% highlight bash linenos %}
 grub-mkconfig -o /boot/grub/grub.cfg
 {% endhighlight %}
 
+No momento, o Grub está instalado apenas no sistema operacional, mas não na unidade, o que veremos logo a seguir.
 
 ## Instalando o Grub na unidade
 
-Agora precisamos instalar de fato o Grub e toda configuração do mesmo que realizamos acima na unidade. Para isso usamos o comando:
+Agora precisamos instalar de fato o Grub e toda configuração do mesmo que realizamos na unidade **/dev/sda**. Para isso usamos o comando:
 
 {% highlight bash linenos %}
 grub-install /dev/sda
