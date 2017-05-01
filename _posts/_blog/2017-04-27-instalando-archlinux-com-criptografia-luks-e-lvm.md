@@ -59,12 +59,12 @@ script: [post.js]
   * [Configurando o /etc/fstab]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-etcfstab)
   * [Configurando o /etc/mkinitcpio.conf]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-etcmkinitcpioconf)
 * [O Grub]({{site.url}}{{site.baseurl}}{{page.url}}#o-grub)
-  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-3)
+  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-4)
   * [Instalando o Grub no sistema]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-grub-no-sistema)
   * [Configurando o Grub]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-grub)
   * [Gerando as configurações]({{site.url}}{{site.baseurl}}{{page.url}}#gerando-as-configurações)
   * [Instalando o Grub na unidade]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-grub-na-unidade)
-* [Reiniciando sistema]({{site.url}}{{site.baseurl}}{{page.url}}#reiniciando-o-sistema)
+* [Reiniciando o sistema]({{site.url}}{{site.baseurl}}{{page.url}}#reiniciando-o-sistema)
 * [Conclusão]({{site.url}}{{site.baseurl}}{{page.url}}#conclusão)
 
 
