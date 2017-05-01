@@ -11,7 +11,7 @@ excerpted: |
 day_quote:
  title: "A Palavra: "
  content: |
-          "Put here your quote of the day"
+          "Eu sou o Senhor, o Deus de vocês; eu os seguro pela mão e lhes digo: 'Não fiquem com medo, pois eu os ajudo.' <br> (Isaias 41:13)"
 
 # Does not change and does not remove 'script' variable.
 script: [post.js]
@@ -23,17 +23,17 @@ script: [post.js]
 * [Introdução]({{site.url}}{{site.baseurl}}{{page.url}}#introdução)
 * [Preparando o básico]({{site.url}}{{site.baseurl}}{{page.url}}#preparando-o-básico)
 * [O fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#o-fdisk)
-  * [Conhecendo o fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#conhecendo-o-fdisk)
+  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos)
   * [Conhecendo a estrutura de partições]({{site.url}}{{site.baseurl}}{{page.url}}#conhecendo-a-estrutura-de-partições)
   * [Usando o fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#usando-o-fdisk)
   * [Criando a partição de Boot com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-a-partição-de-boot-com-fdisk)
   * [Criando partição do Windows com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-do-windows-com-fdisk)
   * [Criando partição "Linux LVM" com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-linux-lvm-com-fdisk)
 * [O LUKS]({{site.url}}{{site.baseurl}}{{page.url}}#o-luks)
-  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos)
+  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-1)
   * [Criptografando a partição Linux "LVM"]({{site.url}}{{site.baseurl}}{{page.url}}#criptografando-a-partição-linux-lvm)
 * [O LVM]({{site.url}}{{site.baseurl}}{{page.url}}#o-lvm)
-  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-1)
+  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-2)
   * [Utilizando os componentes do LVM]({{site.url}}{{site.baseurl}}{{page.url}}#utilizando-os-componentes-do-lvm)
   * [Criando Physical Volume (PV)]({{site.url}}{{site.baseurl}}{{page.url}}#criando-physical-volume-pv)
   * [Criando Volume Group (VG)]({{site.url}}{{site.baseurl}}{{page.url}}#criando-volume-group-vg)
@@ -44,7 +44,7 @@ script: [post.js]
   * [Swap]({{site.url}}{{site.baseurl}}{{page.url}}#swap)
 * [Montagem das partições]({{site.url}}{{site.baseurl}}{{page.url}}#montagem-das-partições)
 * [Instalando e configurando o Archlinux]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-e-configurando-o-archlinux)
-  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-2)
+  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-3)
   * [Instalando o sistema base]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-sistema-base)
   * [Criando /etc/fstab]({{site.url}}{{site.baseurl}}{{page.url}}#criando-etcfstab)
   * [Entrando no sistema instalado]({{site.url}}{{site.baseurl}}{{page.url}}#entrando-no-sistema-instalado)
@@ -64,6 +64,7 @@ script: [post.js]
   * [Configurando o Grub]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-grub)
   * [Gerando as configurações]({{site.url}}{{site.baseurl}}{{page.url}}#gerando-as-configurações)
   * [Instalando o Grub na unidade]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-grub-na-unidade)
+* [Reiniciando sistema]({{site.url}}{{site.baseurl}}{{page.url}}#reiniciando-o-sistema)
 * [Conclusão]({{site.url}}{{site.baseurl}}{{page.url}}#conclusão)
 
 
@@ -134,7 +135,7 @@ modprobe -a dm-mod dm-crypt
 
 # O fdisk
 
-## Conhecendo o fdisk
+## Conceitos
 
 O `fdisk` é uma ferramenta indispensável para quem usa Archlinux. É com ela que criamos todas partições em nosso disco durante a instalação. O `fdisk` é baseado através de linhas de comandos, como isso, você pode achar um pouco complexo no começo, mas com tempo se acostuma. :laughing: Caso realmente não queira utilizar o `fdisk`, existe o cfdisk. 
 
@@ -206,8 +207,8 @@ Algo **I M P O R T A N T E** que você precisa saber, é que a partição de **B
 
 > Digite: **+200M** e dê Enter
 
-Pronto, a partição foi criada, e o tipo da mesma como 'Linux'(isso se você observou o print que o `fdisk` deixou na tela rs). 
-A partição de Boot tem que ser do tipo Linux sim, para o grub reconhecer, mas alem de ser Linux, ela terá que ser bootável. Para isso usamos a opção **a** do `fdisk`, que deixa uma partição Ĺinux do tipo boot. Então:
+Pronto, a partição foi criada, e o tipo da mesma como 'Linux'(isso se você observou o print que o `fdisk` deixou na tela :D). 
+A partição de Boot tem que ser do tipo Linux, mas além de ser Linux, ela terá que ser bootável. Para isso usamos a opção **a** do `fdisk`, que deixa uma partição Ĺinux do tipo boot. Então:
 
 > Digite: **a** e dê Enter
 
@@ -390,7 +391,7 @@ Terminamos a criação de nossa estrutura LVM , agora vamos para o próximo pass
 
 Repare como ficou:
 
-{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_lvs.jpg %}
+{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_lvs.jpg|center %}
 
 # Formatando as partições
 
@@ -439,6 +440,22 @@ A partição "Logical Volume (LV)" **swap**, também necessita de formatação e
 mkswap /dev/mapper/linux-swap
 swapon /dev/mapper/linux-swap
 {% endhighlight %}
+
+
+> Nota: Não há necessidade de formatar a partição de **NTFS** (do Windows)
+> pelo fato que o próprio **Windows** faz isso ao instalar. Apenas cria-se 
+> caso queira instalar do sistema do senhor *Gates*.  Lembrando que, se você 
+> instalar o Windows depois de ter instalado o Archlinux (ou qualquer outra 
+> distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será 
+> sobrescrito pelo MBR do Windows, e o Grub não será iniciado. Se isso 
+> acontecer, você precisará reinstalar o Grub do 
+> Archlinux novamente com o DVD do Archlinux (ou um pendrive bootável do 
+> mesmo). Uma beleza pesquisa no Google pode ter ajudar sobre isso.
+> Eu criei um **script shell** para a recuperação do Grub no Archlinux, no
+> momento ele serve somente para Archlinux, talvez eu dê um upgrade para 
+> servir em outras distribuições também, mas ainda estou com preguiça hahaha. 
+> Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub)
+> {:target="_blank"}. Dê uma olhada, é bem fácil de usar.
 
 # Montagem das partições
 
@@ -592,7 +609,7 @@ Se você utiliza rede cabeada, será necessário habilitar [DHCP durante o boot]
 
 Por padrão, no diretório **/sys/class/net** existe links simbólicos das interfaces de rede. Apenas de o comando `ls /sys/class/net` para listar.
 
-{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_iface_net.jpg %}
+{% imager instalando-archlinux-com-criptografia-luks-e-lvm/list_iface_net.jpg|center %}
 
 Toda interface que começa com `enp` será a sua rede cabeada. Nesse caso a listada foi `enp0s3`. Então será ela que devemos habilitar durante o boot. Para isso executamos o seguinte comando:
 
@@ -788,23 +805,34 @@ Se possua um sistema [UEFI](https://wiki.archlinux.org/index.php/GRUB#UEFI_syste
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 {% endhighlight %} 
 
+Se não apresentar erros, concluímos toda nossa instalação do Arclinux criptografado com LVM.
+
+## Reiniciando o sistema
+
+Basta executar os comandos abaixo ordenadamente para sair do ambiente de instalação, desmontar as unidades e reiniciar o sistema:
+
+{% highlight bash linenos %}
+exit
+umount -R /mnt
+systemctl reboot
+{% endhighlight %}
+
+> Nota: Se estiver instalando com VirtualBox, não esquece de tirar a mídia do 
+> Archlinux, caso contrário em vez do Archlinux instalado iniciar, será a 
+> mídia que fará essa função.
+
+Agora, toda vez que iniciar o sistema (antes mesmo do boot), a senha de criptografia irá ser requerida, com isso, é interessante deixar o login automático para não ter que digitar senha no mesmo também. Para esse 
+feito, recomento ler [Getty](https://wiki.archlinux.org/index.php/Getty)
+{:target="_blank"} no wiki do Archlinux.
+
+
 # Conclusão
 
-Este tutorial (que no meu ver está mais para manual rs) me esforcei para fazer detalhadamente, bem intuitivo para pessoas que estão començando possam compreender facilmente.
+Me esforcei para fazer bem detalhadamente, bem intuitivo, para pessoas que estão començando possam compreender facilmente. Não é complicado a instalação, pois a extensão desde tutorial é válido mais pelos comentários, mas os comandos são poucos.
 
-Se você observou, não formatamos a partição de **NTFS** (do Windows) pelo fato que o próprio **Windows** faz isso ao instalar. Apenas criamos caso queremos instalar do sistema do senhor *Gates*.  Lembrando que, se você instalar o Windows depois de ter instalado o Archlinux (ou qualquer outra distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será sobrescrito pelo MBR do Windows, e o Grub não será iniciado. Se isso acontecer, você precisará reinstalar o Grub do Archlinux novamente com o DVD do Archlinux (ou um pendrive bootável do mesmo). 
+Sempre é recomendável seguir a documentação de qualquer software ou sistema operacional. A maioria dos comandos também existe documentação, o chamado **man**. Para usar, simplesmente digite: `man <app>` . 
 
-Eu criei um **script shell** para a recuperação do Grub no Archlinux, no momento ele serve somente para Archlinux, talvez eu dê um upgrade para servir em outras distribuições também, mas ainda estou com preguiça hahaha. Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"}. Dê uma olhada, é bem fácil de usar.
-
-Toda vez que você iniciar o sistema, antes mesmo do boot, a senha de criptografia irá ser requerida.
-
-> Dica: Algo interessante que você pode fazer, é deixar o login automático sem 
-> necessidade de senha, pois você já será informado da senha de criptografia 
-> no começo, então não tem o porque informar senha de login também. Para esse 
-> feito, recomento ler [Getty](https://wiki.archlinux.org/index.php/Getty)
-> {:target="_blank"} no wiki do Archlinux.
-
-Sempre utilize a documentação contido no wiki do Archlinux ou nos próprios comandos. A maioria dos comandos existe o **man**. `man <app>` . Explore a aprenda.
+Explorar e aprender nunca é exagero. Até a próxima! :)
 
 {% endpost #9D9D9D %}
 
