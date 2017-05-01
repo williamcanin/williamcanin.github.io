@@ -454,8 +454,7 @@ swapon /dev/mapper/linux-swap
 > Eu criei um **script shell** para a recuperação do Grub no Archlinux, no
 > momento ele serve somente para Archlinux, talvez eu dê um upgrade para 
 > servir em outras distribuições também, mas ainda estou com preguiça hahaha. 
-> Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub)
-> {:target="_blank"}. Dê uma olhada, é bem fácil de usar.
+> Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub). Dê uma olhada, é bem fácil de usar.
 
 # Montagem das partições
 
