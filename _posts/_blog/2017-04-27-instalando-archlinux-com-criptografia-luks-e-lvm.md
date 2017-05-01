@@ -208,11 +208,11 @@ Algo **I M P O R T A N T E** que você precisa saber, é que a partição de **B
 > Digite: **+200M** e dê Enter
 
 Pronto, a partição foi criada, e o tipo da mesma como 'Linux'(isso se você observou o print que o `fdisk` deixou na tela :D). 
-A partição de Boot tem que ser do tipo Linux, mas além de ser Linux, ela terá que ser bootável. Para isso usamos a opção **a** do `fdisk`, que deixa uma partição Ĺinux do tipo boot. Então:
+A partição de Boot tem que ser do tipo Linux, mas além de ser Linux, ela terá que ser bootável. Para isso usamos a opção **a** do `fdisk`, que deixa uma partição Ĺinux do tipo bootável. Então:
 
 > Digite: **a** e dê Enter
 
-Certo, a nova partição obtevo o tipo Bootável, mas ainda está gravado em memória do `fdisk` essas mudanças, precisamos salvar essas mudanças fisicamente. Para isso usa-se a letra **w** de **write**. Então:
+Certo, a nova partição obtevo o tipo bootável, mas ainda está gravado em memória do `fdisk` essas mudanças, precisamos salvar essas mudanças fisicamente. Para isso usa-se a letra **w** de **write**. Então:
 
 > Digite: **w** e dê Enter
 
@@ -279,9 +279,9 @@ Existe várias formadas de criptografar partições com LUKS. Selecionei 3(três
 - Criptografar a partição "Linux LVM" inteira, através de uma senha.
 
 
-**A primeira** é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição **Home** , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma "brecha" de insegurança nessa opção.
-**A segunda** opção é a que eu menos recomendo, apensar de também ser interessante usar um pendrive para montar a **home**. Porem, se você criptografar somente a partição **home** e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar *"dor de cabeça"*.
-**A terceira** opção, é a criptografia de todo o sistema Linux LVM, ela que iremos utilizar nesse tutorial.
+**A primeira** é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição **Home** , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma "brecha" de insegurança nessa opção.   
+**A segunda** opção é a que eu menos recomendo, apensar de também ser interessante usar um pendrive para montar a **home**. Porem, se você criptografar somente a partição **home** e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar *"dor de cabeça"*.   
+**A terceira** opção, é a criptografia de todo o sistema Linux LVM, ela que iremos utilizar nesse tutorial. Talvez em um outro tutorial, eu explique como fazer uma criptografia da **primeira** e **segunda** opção.   
 
 > Nota: Não tem como criptografar a partição de sistema de arquivos inteira 
 > com LUKS através de um keyfile no pendrive, isso porque você está mantendo o 
@@ -307,7 +307,7 @@ Após isso, irá pedir para informar a senha de criptografia e logo em seguida p
 
 **A T E N Ç Ã O**: Nunca esqueça essa senha, pois é ela que você usará para iniciar no seu sistema futuramente.
 
-Ok! Você já tem sua partição onde será instalada o Linux criptografado. 
+Ok! Você já tem sua partição onde será instalada o Linux criptografada. 
 
 Precisamos abrir a partição para poder trabalhar nela, isso faremos com o comando abaixo:
 
@@ -319,7 +319,7 @@ cryptsetup open /dev/sda3 linux
 
 Ao fazer um **open** na partição criptografada, criará um "Physical Volume (PV)" automaticamente. Então **linux** será de agora em diante o "ponteiro" para meu Physical Volume (PV). Terá um link simbólico em **/dev/mapper**. 
 Então esse será meu o "Physical Volume (PV)": **/dev/mapper/linux**
-(não necessáriamente precisa ser **linux**, você pode colocar outro nome). Se não entendeu o que é um "Physical Volume (PV)", continue a leitura que é nosso próprio tópico.
+(não necessáriamente precisa ser **linux**, você pode colocar outro nome). Se não entendeu o que é um "Physical Volume (PV)", continue a leitura que é nosso próprio assunto.
 
 # O LVM
 
@@ -331,9 +331,9 @@ Exemplificando o básico e resumidamente o LVM, para que seja o suficiente para 
 * Volume Group (VG) - (grupo de volume)
 * Logical Volume (LV) - (volume lógico)
 
-"Physical Volume (PV)": A unidade do armazenamento Physical Volume (PV) subjacente de um volume lógico LVM.
-"Volume Group (VG)": É criado para termos grupos para nossos "Logical Volume (LV)". 
-"Logical Volume (LV)": Serão nosso volume lógico, ou seja, nossas partições Linux que usaremos para o sistema.
+"Physical Volume (PV)": A unidade do armazenamento Physical Volume (PV) subjacente de um volume lógico LVM.   
+"Volume Group (VG)": É criado para termos grupos para nossos "Logical Volume (LV)".    
+"Logical Volume (LV)": Serão nosso volume lógico, ou seja, nossas partições Linux que usaremos para o sistema.   
 
 Lembrando que se você quer saber mais afundo sobre LVM, eu te recomendo esse manual [Logical Volume Manager Administration](https://access.redhat.com/documentation/pt-BR/Red_Hat_Enterprise_Linux/6/html-single/Logical_Volume_Manager_Administration/){:target="_blank"}, que é uma documentação da própria [Red Hat](https://www.redhat.com/pt-br){:target="_blank"} sobre administradores do LVM.
 
@@ -347,6 +347,12 @@ Dê o comando abaixo para ver informações sobre o "Physical Volume (PV)" criad
 
 {% highlight bash linenos %}
 pvs
+{% endhighlight %}
+
+Caso contrário não esteja criado (o que não deve ser o caso), crie o mesmo com o comando abaixo:
+
+{% highlight bash linenos %}
+pvcreate /dev/mapper/linux
 {% endhighlight %}
 
 ### Criando Volume Group (VG)
@@ -402,21 +408,22 @@ A formatação da partição de **Sistema de Arquivos** e **Home** nada mais é 
 * /dev/mapper/linux-archlinux
 * /dev/mapper/linux-home
 
-Vamos utilizar o **ext4** para nossa partição de **sistema de arquivos* e nossa partição **home**. Então faremos:
-
-> Aviso: Muito cuidado ao formatar a partição **home** , você já pode ter ela
-> com dados dentro (o que não é nosso, pois criamos uma do zero). Ao executar 
-> uma formatação, todos os dados (caso tenha) contido na mesma, serão apagados.
-
-{% highlight bash linenos %}
-mkfs -t ext4 /dev/mapper/linux-archlinux
-mkfs -t ext4 /dev/mapper/linux-home 
-{% endhighlight %}
-
 > **NOTA:** Observe que tem o nome **linux** antes do nome de nossa partições 
 > de "Logical Volume (LV)", esse nome é justamente o "Volume Group (VG)" que 
 > criamos. Ou seja, quando criamos nossos "Logical Volume (LV)", 
 > automaticamente é inserido o nome do  "Volume Group (VG)". 
+
+Vamos utilizar o **ext4** para nossa partição de **sistema de arquivos** e nossa partição **home**. Então faremos:
+
+> Aviso: Muito CUIDADO ao formatar a partição **home** , você já pode ter ela
+> com dados dentro (o que não é nosso, pois criamos uma do zero). Ao executar 
+> uma formatação, todos os dados (caso tenha) contido na mesma, serão apagados.
+
+Formatando:   
+{% highlight bash linenos %}
+mkfs -t ext4 /dev/mapper/linux-archlinux
+mkfs -t ext4 /dev/mapper/linux-home 
+{% endhighlight %}
 
 Você pode rodar o comando abaixo para ver as informações:
 
@@ -450,15 +457,16 @@ swapon /dev/mapper/linux-swap
 > sobrescrito pelo MBR do Windows, e o Grub não será iniciado. Se isso 
 > acontecer, você precisará reinstalar o Grub do 
 > Archlinux novamente com o DVD do Archlinux (ou um pendrive bootável do 
-> mesmo). Uma beleza pesquisa no Google pode ter ajudar sobre isso.
+> mesmo).
 > Eu criei um **script shell** para a recuperação do Grub no Archlinux, no
 > momento ele serve somente para Archlinux, talvez eu dê um upgrade para 
 > servir em outras distribuições também, mas ainda estou com preguiça hahaha. 
-> Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub). Dê uma olhada, é bem fácil de usar.
+> Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub). Dê uma 
+> olhada, é bem fácil de usar.
 
 # Montagem das partições
 
-Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Archlinux. Por padrão, montamos o **sistema de arquivos** no diretório **/mnt** e a partição **home** em um diretório que precisa ser criado para sua montagem, o **/mnt/home/** . Então vamos aos comandos para esse feito:
+Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Archlinux. Por padrão, montamos o **sistema de arquivos** no diretório **/mnt** e a partição **home** em um diretório que precisa ser criado para sua montagem, o **/mnt/home** . Então vamos aos comandos para esse feito:
 
 {% highlight bash linenos %}
 mount /dev/mapper/linux-archlinux /mnt
@@ -513,7 +521,11 @@ arch-chroot /mnt /bin/bash
 
 ## Configurando layout do teclado
 
-Devemos carregar o layout de teclado, ai se pergunta: *Eu ja fiz isso no começo*. Mas agora estavamos dentro do sistema base instalado, então, devemos carregar novamente para podermos ter o layout corretamente a máquina. Então, novamente: 
+Devemos carregar o layout de teclado, ai se pergunta: 
+
+*Eu ja fiz isso no começo!*   
+
+Mas agora estavamos dentro do sistema base instalado, então, devemos carregar novamente para podermos ter o layout corretamente a máquina. Então, novamente: 
 
 {% highlight bash linenos %}
 loadkeys br-abnt2
@@ -581,9 +593,10 @@ hwclock --systohc --utc
 >  com a sua. Para isso pode listar as que estão disponiveis em com o comando :
 >  `ls /usr/share/zoneinfo/`.
 
-**Dica:**   
-Caso você use dual boot com Windows, você deve deixar para ambos UTC ou 
-LOCALTIME. Haverá conflito de hora se um S.O estiver um com UTC e outro com LOCALTIME.
+> **Importante:**   
+> Caso você use dual boot com Windows, você deve deixar para ambos UTC ou 
+> LOCALTIME. Haverá conflito de hora se um S.O estiver um com UTC e outro com 
+> LOCALTIME.
 
 Para deixar o Archlinux configurado como LOCALTIME, execute o comando abaixo:
 
@@ -710,7 +723,7 @@ Então vamos deixar assim:
 
 Se você reparou no arquivo original, viu que foi adicionado somente o **encrypt** e o **lvm2**. 
 
-**OBRIGATÓRIAMENTE** tem que ser nessa ordem, depois de **autodetect**.
+**OBRIGATÓRIAMENTE** tem que ser nessa ordem, mais precisamente depois de **autodetect**.
 
 *Já pode SALVAR e FECHAR o editor*.
 
@@ -754,7 +767,7 @@ Caso não utilize o Windows com dual boot, ignore o pacote **os-prober**.
 
 ## Configurando o Grub
 
-Por padrão, quando instalamos o Archlinux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porém, como utilizamos, iremos fazer algumas mudanças necessárias no Grub.
+Por padrão, quando instalamos o Archlinux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porém, como utilizamos, iremos fazer algumas mudanças necessárias.
 
 Novamente usando o **vim**, abra o arquivo **/etc/default/grub**:
 
@@ -772,9 +785,9 @@ Observe que em **cryptdevice** utilizamos a partição **/dev/sda3** que é a no
 
 Agora adicione as seguintes linhas (ou configure-as caso já exista), assim:
 
-> GRUB_PRELOAD_MODULES="lvm"
-> GRUB_ENABLE_CRYPTODISK=y
-> GRUB_DISABLE_SUBMENU=y
+> GRUB_PRELOAD_MODULES="lvm"   
+> GRUB_ENABLE_CRYPTODISK=y   
+> GRUB_DISABLE_SUBMENU=y   
 
 A linha **GRUB_DISABLE_SUBMENU=y**, é para caso você estiver utilizando o VirtualBox, pois é necessário ter para não dar erro de boot no Grub conforme alguns testes que fiz.
 
@@ -821,15 +834,14 @@ systemctl reboot
 > mídia que fará essa função.
 
 Agora, toda vez que iniciar o sistema (antes mesmo do boot), a senha de criptografia irá ser requerida, com isso, é interessante deixar o login automático para não ter que digitar senha no mesmo também. Para esse 
-feito, recomento ler [Getty](https://wiki.archlinux.org/index.php/Getty)
-{:target="_blank"} no wiki do Archlinux.
+isso, recomendo ler [Getty](https://wiki.archlinux.org/index.php/Getty){:target="_blank"} no wiki do Archlinux.
 
 
 # Conclusão
 
 Me esforcei para fazer bem detalhadamente, bem intuitivo, para pessoas que estão començando possam compreender facilmente. Não é complicado a instalação, pois a extensão desde tutorial é válido mais pelos comentários, mas os comandos são poucos.
 
-Sempre é recomendável seguir a documentação de qualquer software ou sistema operacional. A maioria dos comandos também existe documentação, o chamado **man**. Para usar, simplesmente digite: `man <app>` . 
+Sempre é recomendável seguir a documentação de qualquer software ou sistema operacional. A maioria dos comandos também existe documentação, o chamado **man**. Para usar, simplesmente digite no console: `man <comando>` , exemplo: `man fdisk`.
 
 Explorar e aprender nunca é exagero. Até a próxima! :)
 
