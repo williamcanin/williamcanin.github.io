@@ -122,3 +122,7 @@ Apenas compartilher algo básico de como configurar e usar o Ruby, RubyGems e Bu
 * [Bundler Doc](https://bundler.io/docs.html){:target="_blank"}
 
 Finalizo por aqui, espero que estas linhas de alguma forma lhe sirva de ajuda. Obrigado por ler.
+
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/6VRghJeP6I0w1KxkdWFfIh %}
