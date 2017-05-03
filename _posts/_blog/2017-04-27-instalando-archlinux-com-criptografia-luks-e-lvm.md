@@ -833,8 +833,7 @@ systemctl reboot
 > Archlinux, caso contrário em vez do Archlinux instalado iniciar, será a 
 > mídia que fará essa função.
 
-Agora, toda vez que iniciar o sistema (antes mesmo do boot), a senha de criptografia irá ser requerida, com isso, é interessante deixar o login automático para não ter que digitar senha no mesmo também. Para esse 
-isso, recomendo ler [Getty](https://wiki.archlinux.org/index.php/Getty){:target="_blank"} no wiki do Archlinux.
+Agora, toda vez que iniciar o sistema (antes mesmo do boot), a senha de criptografia irá ser requerida, com isso, é interessante deixar o login automático para não ter que digitar senha no mesmo também. Para isso, recomendo ler [Getty](https://wiki.archlinux.org/index.php/Getty){:target="_blank"} no wiki do Archlinux.
 
 
 # Conclusão
