@@ -19,9 +19,9 @@ published: true
 script: [post.js]
 ---
 
-Essa é uma postagem que irá facilitar e otimizar seus comandos no terminal para bloquear módulos no Linux. Estou falando do Modbl, um script simples mas que lhe propoe um ganha tempo.
+Essa é uma postagem que irá facilitar e otimizar seus comandos no terminal para bloquear módulos no Linux. Estou falando do [Modbl](https://github.com/williamcanin/modbl){:target="_blank"}, um script simples mas que lhe propoe um ganha tempo.
 
-Se você habilita ou desabilita módulos de sua máquina durante o boot frequentemente no Linux, você precisa fazer isso de uma forma que lhe dê menos trabalho e mais praticidade. Pensando nisso, desenvolvi um simples script em Shell **(Modbl)**, que lhe possibilitar esses recursos.
+Se você habilita ou desabilita módulos de sua máquina durante o boot frequentemente no Linux, você precisa fazer isso de uma forma que lhe dê menos trabalho e mais praticidade. Pensando nisso, desenvolvi um simples script em Shell **(Modbl)**, que lhe possibilita esses recursos.
 
 O **Modbl** (uma abreviação de ModBlackList), você faz adição e remoção desses módulos com apenas uma linha de comando no terminal, não vai ter o trabalho de criar e abrir um arquivo em **"/etc/modprobe.d"** manualmente e inseriando módulos.
 
@@ -31,5 +31,5 @@ Código fonte:
 
 {% gist e3768a9398370bb80fa8 %}
 
-Você pode sugerir novas ideias acessando meu [GitHub](https://github.com/williamcanin){:target="_blank"}, vou estar atento a quanto isso. Espero que esse código lhe ajude. Obrigado pela leitura.
+Você pode sugerir novas ideias acessando [Issues](https://github.com/williamcanin/modbl/issues){:target="_blank"}, vou estar atento a quanto isso. Espero que esse código lhe ajude. Obrigado pela leitura.
 

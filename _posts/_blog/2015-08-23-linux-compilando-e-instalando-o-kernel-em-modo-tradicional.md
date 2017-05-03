@@ -19,17 +19,48 @@ published: true
 script: [post.js]
 ---
 
+# Índice
+
+* [Introdução](#introdução)
+* [Pacotes necessários](#pacotes-necessários)
+* [Criando base de trabalho](#criando-base-de-trabalho)
+* [Download do kernel](#download-do-kernel)
+* [Descompactando o kernel](#descompactando-o-kernel)
+* [Limpando a base](#limpando-a-base)
+* [Configurando o kernel](#configurando-o-kernel)
+  * [Manualmente](#manualmente)
+    * [Reconhecendo os módulos da máquina](#reconhecendo-os-módulos-da-máquina)
+      * [Metodo 1](#método-1)
+      * [Metodo 2](#método-2)
+      * [Metodo 3](#método-3)
+    * [Iniciando a configuração](#iniciando-a-configuração)
+    * [Manuseio para o “make menuconfig”](#manuseio-para-o-make-menuconfig)
+  * [Automaticamente](#automaticamente)
+    * [Carregando ".config" genérico](#carregando-config-genérico)
+    * [Entrando no menu do kernel](#entrando-no-menu-do-kernel)
+    * [Carregando drivers a partir do lsmod](#carregando-drivers-a-partir-do-lsmod)
+  * [Finalizando as configurações](#finalizando-as-configurações)
+* [Compilando o Kernel](#compilando-o-kernel)
+* [Instalando os módulos compilados](#instalando-os-módulos-compilados)
+  * [Instalação normal](#instalação-normal)
+  * [Instalação compactada](#instalação-compactada)
+* [Copiando o kernel para o /boot](#copiando-o-kernel-para-o-boot)
+* [Criando a RAMDISK](#criando-a-ramdisk)
+* [Copiando o “System.map” e “.config” para o /boot](#copiando-o-systemmap-e-config-para-o-boot)
+* [Atualizando o gerenciador de boot](#atualizando-o-gerenciador-de-boot)
+* [Conclusão](#conclusão)
+
+# Introdução
+
 Quando um usuário Linux já está em um nível de usabilidade Linux a tempos, algo que ele procura saber, é como compilar um kernel, e esse post falará exatamente sobre isso, mas uma compilação sem usar kernel-package, a tradicional.
 
-# Intro
+Ter uma máquina customizada para ter um melhor desempenho e reconhecimento dos hardwares, é a vontade de todos, independente de qual sistema operativo o indivíduo usa. Usuários linux, podem fazer essa customização através de uma "recompilação" no kernel Linux (se você não sabe o que é um Kernel de Linux, veja [aqui](https://www.kernel.org/category/about.html)).
 
-Ter uma máquina customizada para ter um melhor desempenho e reconhecimento dos hardwares, é a vontade de todos, independente de qual sistema operativo o indivíduo usa. Usuários linux, podem fazer essa customização através de uma "recompilação" no kernel Linux (se você não sabe o que é um Kernel, veja [aqui](https://www.kernel.org/category/about.html)).
+Compilar o Kernel para sua máquina, pode lhe trazer melhorias, bom desempenho e deixando a inicialização mais veloz, porém, isso é notável quando se tem uma máquina de baixa potência, pois compilar o kernel e utiliza-lo em uma máquina "top" você pode não perceber as alterações de desempenho se comparando com o kernel genérico, por ela ter uma gama de potência e um kernel genérico não deixará ela lenta. Mas é sempre recomendado deixar nosso S.O de acordo com nossos hardwares.
 
-Compilar o Kernel para sua máquina, pode lhe trazer melhorias, bom desempenho e deixando a inicialização mais veloz, porem, isso é notável quando se tem uma máquina de baixa potência, pois compilar o kernel e utiliza-lo em uma máquina "top" você pode não perceber as alterações de desempenho se comparando com o kernel genérico, por ela ter uma gama de potência e um kernel genérico não deixará ela lenta. Mas é sempre recomendado deixar nosso S.O de acordo com nossos hardwares.
+Caso queira compilar e deixar o núcleo que o titio Linus Torvalds criou, enxuto na sua máquina, você precisará ter um bom conhecimento dos hardwares da mesma no qual vai compilar, pois se não habilitar algo que a máquina necessita, pode não carregar modulos, e sem driver expecífico de algo que você use, por exemplo um driver da placa wireless.
 
-Caso queira compilar e deixar o núcleo que o titio Linus Torvalds criou enxuto na sua máquina, você precisará ter um bom conhecimento dos hardwares da máquina no qual vai compilar, pois se não habilitar algo que a máquina necessita, a mesma pode não carregar modulos, e você ficar sem driver expecífico de algo que você use, por exemplo um driver da placa wireless.
-
-Primeiro, não tenha medo, pois se você não habilitar um módulo que deveria ser habilitado, o máximo que você vai perder é o tempo da compilação do kernel, que é bem demorado dependendo da potência de sua máquina. E outra, se de um *"Kernel Panic"* você pode iniciar seu Linux com o kernel genérico de instalaçao quando reiniciar a máquina na próxima vez, pois quando se instala um novo kernel, seja qual for seu gerenciador de boot (Grub ou Lilo), ele vai aparecer na inicialização juntamente com o Kernel genérico/padrão de instalação do Linux (desde que atualize o Grub/Lilo), então não se preocupe. Medo devemos ter apenas do bicho papão. :D
+Primeiro, não tenha medo, pois se você não habilitar um módulo que deveria ser habilitado, o máximo que você vai perder é o tempo da compilação do kernel, que é bem demorado dependendo da potência de sua máquina. E outra, se de um *"Kernel Panic"* você pode iniciar seu Linux com o kernel genérico de instalação quando reiniciar a máquina na próxima vez, pois quando se instala um novo kernel, seja qual for seu gerenciador de boot (Grub ou Lilo), ele vai aparecer na inicialização juntamente com o Kernel genérico/padrão de instalação do Linux (desde que atualize o Grub/Lilo), então não se preocupe. Medo devemos ter apenas do bicho papão. :stuck_out_tongue_winking_eye:
 
 Segundo, existe várias formas para se compilar um kernel do Linux, várias distribuição Linux tem um jeito, porem irei fazer da forma mais tradicional nessa postagem, que **SERVIRÁ** para várias distro. Mas enfim, vamos deixar de teoria e começar logo essa aventura né? "Sigam-me os interessados!"
 
@@ -37,7 +68,7 @@ Segundo, existe várias formas para se compilar um kernel do Linux, várias dist
 > root (superusuário) e com usuário normal. Para comandos a serem executados
 > com root (superusuário), destaquei anúncio em vermelho.
 
-# Passo 1 - Instale os pacotes de desenvolvimento necessários para compilar.
+# Pacotes necessários
 
 Antes de começar precisamos verificar/instalar todos os pacotes necessários para a compilação do kernel. Então, instale esses pacotes de acordo com sua distro.
 
@@ -62,7 +93,7 @@ dnf install ncurses-devel qt3-devel libXi-devel gtk2-devel libglade2-devel
 *Não necessita instalar pacotes.*
 
 
-# Passo 2 - Criando base de trabalho.
+# Criando base de trabalho
 
 Após a instalação dos pacotes necessários, vamos criar uma pasta chamada **kernel** no $HOME de seu usúario e entrar nela. Essa pasta será a base onde realizaramos o download do kernel e realizar todos os processos.
 
@@ -76,11 +107,9 @@ Após a instalação dos pacotes necessários, vamos criar uma pasta chamada **k
 $ mkdir $HOME/kernel && cd $HOME/kernel
 {% endhighlight %}
 
-# Passo 3 - Download do kernel.
+# Download do kernel
 
-Agora teremos o privilégio de baixar o núcleo que o titio Linus Torvalds criou, no site:
-
-[https://www.kernel.org](https://www.kernel.org){:target="_blank"}
+Agora teremos o privilégio de baixar o núcleo que o titio Linus Torvalds criou, no site: [kernel.org](https://www.kernel.org){:target="_blank"}
 
 Utilizarei o gerenciador de download **wget**, que pra mim é o meio mais eficiente de realizar downloads no Linux, pois o mesmo te possibilita continuar o download com a opção **-c** caso a energia acabe...você cancele sem querer o download... a bateria do notebook exploda...ai já é demais né?! Vá se benzer! ¬¬'
 
@@ -90,20 +119,19 @@ Para utilizar o download  com o **wget**, faça no terminal:
 $ wget https://www.kernel.org/pub/linux/kernel/v4.x/linux-{VERSÃO}.tar.xz
 {% endhighlight %}
 
-Onde {VERSÃO}, é a versão do kernel que você irá baixar. Vou supor que estaremos utilizando o kernel 4.1.6 de agora em diante nesse tutorial, que é o kernel estável mais recente. Então ficaria assim:
+Onde {VERSÃO}, é a versão do kernel que você irá baixar. Vou supor que estaremos utilizando o kernel 4.1.6 de agora em diante nesse tutorial, que é o kernel estável mais recente no momento. Então ficaria assim:
 
 {% highlight bash linenos %}
 $ wget https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.1.6.tar.xz
 {% endhighlight %}
 
 > DICA: Como peguei o link de download do arquivo .tar.xz?
-> R: Clique com o botão direito do mouse no botão "pequenino" de cor amarela
-> no site **https://www.kernel.org**, e copie o *Endereço de link*. :)
+> Simples, clique com o botão direito do mouse no botão "pequenino" de cor 
+> amarela no site https://www.kernel.org, e copie o *Endereço de link*.
 
-Para saber mais sobre outras versões de kernel, acesse:
-[https://www.kernel.org/pub/linux/kernel](https://www.kernel.org/pub/linux/kernel/){:target="_blank"}
+Para saber mais sobre outras versões de kernel, acesse: [kernel versões](https://www.kernel.org/pub/linux/kernel/){:target="_blank"}
 
-# Passo 4 - Descompactando o kernel e entrando dentro da pasta do mesmo.
+# Descompactando o kernel
 
 Download realizado dentro da base de trabalho, agora vamos descompactar nosso 'ouro' utilizando o **tar** e entrar dentro da pasta do nosso kernel:
 
@@ -112,7 +140,7 @@ $ xz -cd linux-4.1.6.tar.xz | tar xvf - && cd linux-4.1.6
 {% endhighlight %}
 
 
-# Passo 5 - Limpando coisas desnecessárias.
+# Limpando a base
 
 Esse comando irá remover qualquer arquivo compilado que contenha na nossa querida pasta do kernel e volta para o estado primitivo das configurações, o que não é no nosso caso, pois não compilamos nada ainda, mas é sempre bom executá-lo para prevenção.
 
@@ -121,14 +149,13 @@ $ make mrproper && make clean
 {% endhighlight %}
 
 
-# Passo 6 - Configurando o kernel.
+# Configurando o kernel
 
-## Opção 1 - Manualmente (a partir do zero).
+## Manualmente
 
+### Reconhecendo os módulos da máquina
 
-**1 - Reconhecendo os driver/módulos da máquina:**
-
-A aventura começa aqui! Vamos saber os módulos que sua máquina necessita e posteriormente configurarmos esses módulos no kernel. Como foi dito no começo, recompilar o kernel exige um certo reconhecimento de hardware da máquina, mas existem meios para facilitar isso, então irei dizer em partes.
+A aventura começa aqui! Vamos saber os módulos e driver que sua máquina necessita e posteriormente configurarmos esses módulos no kernel. Como foi dito no começo, recompilar o kernel exige um certo reconhecimento de hardware da máquina, mas existem meios para facilitar isso, então irei dizer em partes.
 
 Quando instalamos o Linux, o kernel da instalação é um kernel genérico, ou seja, é um kernel que funciona na maioria das máquinas, isso porque, vários módulos de vários tipo de driver são incorporados. Então isso leva a entender que o kernel padrão da instalação do Linux tem módulos que não utilizamos. Esse é um dos motivos de muitos querer recompilar o kernel, deixa-lo adaptável para vossa máquina.
 
@@ -137,7 +164,7 @@ Quando instalamos o Linux, o kernel da instalação é um kernel genérico, ou s
 
 R: Assim que instalamos o Linux e iniciamos o mesmo, os módulos que nossa máquina necessita são carregados no boot(ou não) para que o sistema funcione, correto? Com isso, existe 3 métodos (que pelo menos eu conheço) para sabermos os modulos que a máquina iniciou, necessita e está usando no momento.
 
-### Método 1
+#### **Método 1**
 
 O primeiro método é usar o comando:
 
@@ -151,7 +178,7 @@ O que irá retornar os drivers **PCI** de sua máquina no título "Kernel module
 
 Com isso, você já saberá alguns principais módulos que sua máquina necessita.
 
-### Método 2
+#### **Método 2**
 
 Na verdade, esse segundo método é um complemento do primeiro para identificar os demais hardwares da máquina, porem este lista periféricos de USB.
 
@@ -159,11 +186,11 @@ Na verdade, esse segundo método é um complemento do primeiro para identificar 
 $ lsusb -t
 {% endhighlight %}
 
-Irá retornar os drivers e possíveis módulos de entrada **USB** no título "Driver". Um exemplo:
+Irá retornar os drivers e possíveis módulos de entrada **USB** na variável "Driver". Um exemplo:
 
 {% gist 8016fb7cedf5377a67d3 %}
 
-### Método 3
+#### **Método 3**
 
 Na terceira opção, para listar os drivers/módulos que sua máquina carregou, é usar o comando:
 
@@ -177,8 +204,8 @@ Na terceira opção, para listar os drivers/módulos que sua máquina carregou, 
 $ hwinfo | grep -i module && hwinfo | grep -i snd
 {% endhighlight %}
 
-> Obs: Observe que será executado dois comandos unidos por "&&", você pode
-> executa-los separadamente, para ter um retorno separadamente.
+> NOTA: Observe que será executado dois comandos unidos por "&&", você pode
+> executa-los separadamente, para ter um retorno separado.
 
 Na saída desse comando, o que pertencer ao título **"Driver Modules"** e tudo que começar com **"snd_"** será um driver que sua máquina possivelmente estará usando, necessita ou teŕá que ser carregado no kernel.
 
@@ -202,7 +229,7 @@ $ lshw -html > $HOME/harware-info.html
 
 Para mais informações de comandos, use: **$ man lshw**.
 
-Se não quiser instalar pacotes que faça esse retorno de harware para você, você pode utilizar os próprios pacotes/arquivos existentes que vem por padrão nas distro, que tambem lhe trás informações ricas do hardware. Executando os comandos abaixo terá muitas informações:
+Se não quiser instalar pacotes que faça esse retorno de harware para você, você pode utilizar os próprios pacotes/arquivos existentes que vem por padrão nas distros, que também lhe trás informações ricas do hardware. Executando os comandos abaixo terá muitas informações:
 
 {% highlight bash linenos %}
 $ lscpu
@@ -212,7 +239,7 @@ $ cat /proc/cpuinfo
 
 Sendo que o último, você deve instalar o pacote **dmidecode** e executá-lo como root/superusuário.
 
-**2 - Iniciando a configuração.**
+### Iniciando a configuração
 
 Agora que já sabe 3 métodos, execute o comando abaixo para entrar no menu de configuração do kernel do Linux e saber como pesquisar os módulos para sua máquina de acordo com os métodos que você utilizou acima.
 
@@ -220,12 +247,12 @@ Agora que já sabe 3 métodos, execute o comando abaixo para entrar no menu de c
 $ make menuconfig
 {% endhighlight %}
 
-> Obs: Existe outros tipo de layouts de menu, porem esse é o padrão e mais
+> NOTA: Existe outros tipo de layouts de menu, porem esse é o padrão e mais
 > utilizado por todos. É menu bem intuitivo, fácil de manusear, onde as setas
 > são as responsáveis por direcionar o foco. Mas se quiser tem o
-> **make nconfig, make config, make > gconfig e  make xconfig**.
+> **make nconfig, make config, make > gconfig e make xconfig**.
 
-**Manuseio para o "make menuconfig"**
+### Manuseio para o "make menuconfig"
 
 No menu de configuração kernel você irá se deparar com configurações desse tipo: [  ] , [ \* ], [ M ], < >, -\*-.
 
@@ -239,14 +266,12 @@ No menu de configuração kernel você irá se deparar com configurações desse
 
 -\*- indica que o módulo dever ser incorporado ao kernel na compilação, essa opção não dá pra alterar.
 
-
 Outro recurso importante é a pesquisa de módulos/driver no menu (menuconfig) de configuração do kernel, a qualquer lugar que esteje, você apertando a tecla de barra do seu teclado (/), irá abrir uma janela dialog de pesquisa.
 Por exemplo:
 
-
 {% imager search-kernel-linux.png|center %}
 
-Nessa dialog você coloca um módulo/driver que foi listado com os comandos dos Métodos 1, 2 ou 3, e assim vai pesquisando os drivers para sua máquina no kernel. No exemplo abaixo, pesquisei o driver *"r8169*" que listou no comando *$ lspci -k*. Veja:
+Nessa dialog, você coloca um módulo/driver que foi listado com os comandos dos Métodos 1, 2 ou 3, e assim vai pesquisando os drivers para sua máquina no kernel. No exemplo abaixo, pesquisei o driver *"r8169*" que listou no comando *$ lspci -k*. Veja:
 
 {% imager search-kernel-linux-return.png|center %}
 
@@ -263,14 +288,14 @@ Agora é só salvar toda configuração no "botão" Save, e com isso irá criar 
 *...pois ele é o conteúdo de toda essa <strike>trabalhosa pesquisa e</strike> configuração que você teve que fazer no kernel para sua máquina.*
 
 
-## Opção 2 - Automaticamente (localmodconfig).
+## Automaticamente
 
 Esse é o mais rápido meio de configurar o kernel de acordo com os módulos que sua máquina necessita. Você não precisa fazer pesquisa de todos módulos que sua máquina precisa no menu de configuração do kernel.
 Esse meio de configurar, irá usar *lsmod* para examinar quais módulos estão atualmente em uso, e, em seguida, configurar/criar o seu **".config"**. O resultado é um tempo de compilação mais curto e um kernel específico para o seu hardware. Porem, deve-se executar a partir de uma máquina que esteja usando um kernel genérico, para assim, trabalhar com os drivers para seu hardware carregados como módulos. Se não utilizar uma máquina iniciada com um kernel genérico, o *lsmod* não irá identificar os drivers embutidos no kernel. Então se estiver preparado, faça os seguintes procedimentos abaixo de acordo com sua distro Linux:
 
-#### Etapa 1 - Carregando .config genérico.
+### Carregando .config genérico.
 
-> Fedora/Debian/Ubuntu:
+Fedora/Debian/Ubuntu:
 
 `(Execute como root (superusuário))`
 
@@ -278,7 +303,7 @@ Esse meio de configurar, irá usar *lsmod* para examinar quais módulos estão a
 cp /boot/config-$(uname -r) .config
 {% endhighlight %}
 
-> Arch Linux:
+Arch Linux:
 
 `(Execute como root (superusuário))`
 
@@ -286,7 +311,7 @@ cp /boot/config-$(uname -r) .config
 zcat /proc/config.gz > .config
 {% endhighlight %}
 
-#### Etapa 2 - Entre no meu do Kernel para gerar arquivos de configuração.
+### Entrando no menu do kernel
 
 {% highlight bash linenos %}
 $ make menuconfig
@@ -294,7 +319,7 @@ $ make menuconfig
 
 Vá no botão de Salvar e salve. Sai do menu do kernel.
 
-#### Etapa 3 - Carregando drivers a partir do lsmod.
+### Carregando drivers a partir do lsmod
 
 {% highlight bash linenos %}
 $ make localmodconfig
@@ -315,9 +340,9 @@ Essa forma de configurar é mamão com açucar né?, porem, irei abrir um parent
 > de dispositivos, também deve estar habilitado para reconhecer o driver de
 > CRYPT. Se você usa Steam, inicie o aplicativo pois ele usa o driver HID.
 > Antes de criar o arquivo ".config", o comando 'localmodconfig' verifica as
-> entradas que está sendo utilizadas e possiveis programas que estão
+> entradas que está sendo utilizadas e possíveis programas que estão
 > utilizando (ou necessitam) de um determinado driver para sua máquina. Essas
-> foram algumas necessidades que precisei 'startar' no meu harware, porem,
+> foram algumas necessidades que precisei 'startar' no meu harware, porém,
 > existem vários aplicativos que irá usar algo do seu harware, cabe a você
 > saber quais irão usar, por isso, saber do seu harware e saber o que
 > habilitar no kernel, é fundamental sim, mesmo utilizando a opção
@@ -364,10 +389,8 @@ Eu sempre usei a opção "automática" de configurar o kernel, nunca tive proble
 > NOTA: Existe outras formas de configurar o kernel, você pode saber lendo o
 > arquivo "README" contido no kernel, na parte "CONFIGURING the kernel".
 
----
 
-
-# Passo 7 - Configurações finais.
+# Finalizando as configurações
 
 Para terminar as configurações do kernel, seja qual forma você preferiu seguir, "manualmente" ou "automaticamente", você tem que fazer uma configuração recomendada, para que não aconteça "cagada" futuramente, porque se esquecer de fazer essa configuração, você pode substituir um kernel já existente por essa nova compilação. Essa configuração é nada mais e nada a menos que o *"sobrenome"* (vou chamar assim) que seu kernel compilado irá receber. Por padrão, o kernel já terá um "nome", que é a versão do mesmo após compilar, mas é bom colocar um "sobrenome" para o kernel, afinal, qual filho não tem sobrenome nesse mundo, hein?! KKK ;)
 
@@ -377,7 +400,7 @@ Esse passo é feito através do submenu **"Local version"** do kernel, que tem u
 $ make menuconfig
 {% endhighlight %}
 
-Com o menu aberto, entre no seguinte local [Tecla 'Enter' seleciona o local]:
+Com o menu aberto, entre no seguinte local [A tecla 'Enter' seleciona o local]:
 
 {% highlight bash linenos %}
 -> General setup
@@ -400,27 +423,31 @@ Você pode colocar o que quiser, porem eu acho essa forma mais compreensível de
 
 > -x86_64-RC1
 
- Note que tem um traço no começo, será a separação da versão do kernel(nome) com a arquitetura e compilação (sobrenome), pois quando você digitar **uname -a** no terminal, irá aparecer algo parecido com isso:
+Note que tem um traço no começo, será a separação da versão do kernel(nome) com a arquitetura e compilação (sobrenome), pois quando você digitar **uname -a** no terminal, irá aparecer algo parecido com isso:
 
 > Linux 4.1.6-x86_64-RC1
 
- Após fazer essa configuração, salve no botão  Save  e saia do *menuconfig*.
+Após fazer essa configuração, salve no botão 'Save' e saia do *menuconfig*.
 
-# Passo 8 - Compilando.
+# Compilando o Kernel
 
-Agora é a tão sonada hora de todos! Após realizar a dedicada configuração do kernel (dedicada para quem fez a configuração manualmente, claro rs) você vai poder fazer aquele "descansinho"... dar uma longa caminhada, viajar para Fernando de Noronha (esse último descanso é mentira! :D), porque dependendo da sua máquina, esse processo demora entre 1 hora ou mais (e isso não é mentira :/). Então amigo, execute o comando abaixo e vá procurar algo para se distrair:
+Agora é a tão sonada hora de todos! Após realizar a dedicada configuração do kernel (dedicada para quem fez a configuração manualmente, claro rs) você vai poder fazer aquele "descansinho"... dar uma longa caminhada, viajar para Fernando de Noronha (esse último descanso é mentira! :D), porque dependendo da sua máquina, esse processo demora entre 1 hora ou mais (e isso não é mentira :frowning:). Então amigo, execute o comando abaixo e vá procurar algo para se distrair:
 
 {% highlight bash linenos %}
 make -j[NUMERO DE NÚCLEO DO PROCESSADOR +1] && make -j[NUMERO DE NÚCLEO DO PROCESSADOR +1] modules
 {% endhighlight %}
 
-**NOTA:** Onde está [NUMERO DE NÚCLEO DO PROCESSADOR +1] é o numero de núcleos
-do processsador da máquina + 1. Por exemplo, se a máquina possui 2(dois)
-núcleos de processadores então ficará 2+1=3. Exemplo: **"make -j3 && make -j3
-modules"**. Com isso, você fará sua máquina compilar o kernel com mais
-potência, o que diminuirá o tempo de compilação (e seu "descansinho" seria mais rápido rs). Caso você não saíba sobre quantos núcleos tem seu processador, execute o comando **lscpu** e veja algo como Núcleos. Porém, recomendo que utilize o comando: **$ make && make modules**, sem jobs(-j).
+> **NOTA:** Onde está [NUMERO DE NÚCLEO DO PROCESSADOR +1] é o numero de 
+> núcleos do processsador da máquina + 1. Por exemplo, se a máquina possui 
+> 2(dois) núcleos de processadores então ficará 2+1=3. 
+> Exemplo: **"make -j3 && make -j3 modules"**. Com isso, você fará sua máquina 
+> compilar o kernel com mais potência, o que diminuirá o tempo de compilação 
+> (e seu "descansinho" será mais rápido rs). Caso você não saíba sobre quantos 
+> núcleos tem seu processador, execute o comando **lscpu** e veja algo como 
+> Núcleos. Porém, recomendo que utilize o comando: 
+> **$ make && make modules**, sem jobs(-j).
 
-# Passo 9 - Instalando os módulos compilados.
+# Instalando os módulos compilados
 
 Iae indivíduo! Já voltou do seu outro afazer? Vamos instalar esses módulos?
 Pois de agora em diante os passos são "rapidinhos".
@@ -434,41 +461,41 @@ Pois de agora em diante os passos são "rapidinhos".
 > módulos em **"/lib/modules/4.1.6-x86_64-RC1"**, será compactada. Porém, é
 > algo opcional.
 
-`IMPORTANTE! O comando do passo 9 deverão que ser executados como root (superusuário).`
+`IMPORTANTE! Os comandos do "Instalando os módulos compilados" deverão que ser executados como root (superusuário).`
 
-#### Opção 1 - Instalação normal
+## Instalação normal
 
-> Usando núcleos do processador:
+**Usando núcleos do processador:**
 
 {% highlight bash linenos %}
 make -j[NUMERO DE NÚCLEO DO PROCESSADOR +1] modules_install
 {% endhighlight %}
 
-> NÃO usando núcleos do processador:
+**NÃO usando núcleos do processador:**
 
 {% highlight bash linenos %}
 make modules_install
 {% endhighlight %}
 
-#### Opção 2 - Instalação compactada
+## Instalação compactada
 
-> Usando núcleos do processador:
+**Usando núcleos do processador:**
 
 {% highlight bash linenos %}
 make -j[NUMERO DE NÚCLEO DO PROCESSADOR +1] INSTALL_MOD_STRIP=1 modules_install
 {% endhighlight %}
 
-> NÃO usando núcleos do processador:
+**NÃO usando núcleos do processador:**
 
 {% highlight bash linenos %}
 make INSTALL_MOD_STRIP=1 modules_install
 {% endhighlight %}
 
-# Passo 10 - Copiando o kernel para o /boot.
+# Copiando o kernel para o /boot
 
 Kernel compilado, módulos instalados... agora vamos copiar o **"bzImage"** gerado para a pasta de onde começa a iniciar todo o nosso sistema operativo Linux, que é a pasta **"/boot"**.
 
-`IMPORTANTE! O comando do passo 10 deverão que ser executados como root (superusuário).`
+`IMPORTANTE! O comando do "Copiando o kernel para o /boot" deverão que ser executados como root (superusuário).`
 
 {% highlight bash linenos %}
 cp -v arch/x86/boot/bzImage /boot/vmlinuz-{VERSION}-{ARCH}-{RC}
@@ -480,21 +507,20 @@ Lembra do "nome", que é a versão do nosso kernel, e o "sobrenome" (arquitetura
 > vmlinuz-4.1.6-x86_64-RC1
 
 
-# Passo 11 - Criação da RAMDISK
+# Criando a RAMDISK
 
 Nesse passo vai depender de sua distribuição Linux. Use um dos comandos abaixo para criação da RAMDISK:
 
-`IMPORTANTE! O comando do passo 11 deverão que ser executados como root (superusuário)..`
+`IMPORTANTE! O comando do "Criando a RAMDISK" deverão que ser executados como root (superusuário)..`
 
-> Para você, usuário de Arch Linux:
+Para você, usuário de [Arch Linux](https://www.archlinux.org/){:target="_blank"}
 
 {% highlight bash linenos %}
 mkinitcpio -k {VERSION}-{ARCH}-{RC} -c /etc/mkinitcpio.conf -g /boot/initramfs-{VERSION}-{ARCH}-{RC}.img
 {% endhighlight %}
 
 
-> Se você usa [Debian](http://debian.org)/[Ubuntu](http://www.ubuntu.com/), faça
-> assim:
+Se você usa [Debian](http://debian.org){:target="_blank"}/[Ubuntu](http://www.ubuntu.com/){:target="_blank"}, faça assim:
 
 {% highlight bash linenos %}
 mkinitramfs -o /boot/initrd-{VERSION}-{ARCH}-{RC}.img /lib/modules/{VERSION}-{ARCH}-{RC}
@@ -507,15 +533,15 @@ update-initramfs -c -k {VERSION}-{ARCH}-{RC}
 {% endhighlight %}
 
 
-Para usuário <strike>"Fedorendo" (haha brincadeira)</strike> [Fedora](https://getfedora.org/), faça assim:
+Para usuário <strike>"Fedorendo" (haha brincadeira)</strike> [Fedora](https://getfedora.org/){:target="_blank"}, faça assim:
 
 {% highlight bash linenos %}
 dracut /boot/initramfs-{VERSION}-{ARCH}-{RC}.img /lib/modules/{VERSION}-{ARCH}-{RC}
 {% endhighlight %}
 
-# Passo 12 - Copiando o "System.map" e ".config" para o */boot*.
+# Copiando o "System.map" e ".config" para o /boot
 
-`IMPORTANTE! O comando do passo 12 deverão que ser executados como root (superusuário).`
+`IMPORTANTE! O comando do "Copiando o "System.map" e ".config" para o /boot" deverão que ser executados como root (superusuário).`
 
 O arquivo **System.map** não é necessário para inicialização do Linux. É um tipo de *"lista telefônica"* de funções em uma construção particular de um kernel. O **.config** também não é necessário para iniciar o Linux, mas mesmo assim iremos copiar ambos para a pasta **/boot** para fins de organização e possíveis informações futuras. Para isso faça:
 
@@ -525,25 +551,25 @@ cp .config /boot/config-{VERSION}-{ARCH}-{RC}
 {% endhighlight %}
 
 
-# Passo 13 - Atualizando o gerenciador de boot.
+# Atualizando o gerenciador de boot
 
-`IMPORTANTE! O comando do passo 13 deverão que ser executados como root (superusuário).`
+`IMPORTANTE! O comando do "Atualizando o gerenciador de boot" deverão que ser executados como root (superusuário).`
 
 Após todo o processo, nesse passo você terá que atualizar o gerenciador de boot, póis só assim, a nova imagem de boot do kernel compilado será reconheciada ao inciarmos a máquina. Suponho que seu gerenciador de boot seja Grub. Então faça assim para atualizar:
 
-> Debian/Ubuntu:
+Debian/Ubuntu:
 
 {% highlight bash linenos %}
 update-grub && grub-install /dev/sda
 {% endhighlight %}
 
-> Fedora:
+Fedora:
 
 {% highlight bash linenos %}
 grub2-mkconfig -o /boot/grub2/grub.cfg && grub-install /dev/sda
 {% endhighlight %}
 
-> Arch Linux
+Arch Linux
 
 {% highlight bash linenos %}
 grub-mkconfig -o /boot/grub/grub.cfg && grub-install /dev/sda
@@ -551,12 +577,17 @@ grub-mkconfig -o /boot/grub/grub.cfg && grub-install /dev/sda
 
 
 > NOTA: Se sua distribuição usa o LILO como gerenciador de boot, não faça os
-> passos 10, 11 e 13. Após compilar o kernel utilize o comando seguinte para
-> realiazer a instalação através do próprio script de instalação do kernel:
-> Comando: \# make install.
+> "Copiando o kernel para o /boot", "Criando a RAMDISK" e 
+> "Atualizando o gerenciador de boot". Após compilar o kernel utilize o 
+> comando abaixo para realizar a instalação através do próprio script de 
+> instalação do kernel:
+
+{% highlight bash linenos %}
+\# make install
+{% endhighlight %}
 
 
-# É hora de dar tchau.
+# Conclusão
 
 Ufa! Terminou, e eu fico por aqui! :satisfied:. Espero que sua compilação do kernel tenha sido um sucesso,  mas caso não tenha, não desista, refaça os processos e procure saber sobre o problema e sobre o hardware da máquina se possível, pois o mundo Linux é muito prazeroso de se aprender. Até próxima leitor!
 
