@@ -70,7 +70,7 @@ Se observa agora que com a eliminação dos **"x2d"**, você terá o UUID separa
 4aed3ea2-5d85-4bc2-96e2-abc6ad877640
 {% endhighlight %}
 
-Pronto! Você já decifrar a numeração do UUID. Esse pode ser o "danado" que com problema de inicialiação. 
+Pronto! Numeração do UUID decifrada. Esse pode ser o "danado" que causa problema de inicialiação. 
 
 *Mas como saber que esse UUID dessa partição existe ou não?*
 
