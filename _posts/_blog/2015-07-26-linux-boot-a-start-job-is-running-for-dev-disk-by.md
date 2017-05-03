@@ -156,7 +156,7 @@ Na próxima inicialização do Ubuntu ele irá mostrar tudo que esta sendo carre
 
 ## Conclusão
 
-*Por que isso'acontece?*   
+*Por que isso acontece?*   
 No meu caso, eu tinha instalado outra distribuição Linux e configurado a minha SWAP para essa outra distro, o que resultou na mudança de UUID. Fique esperto em fazer essas configurações também.
 
 Espero que esse tutorial possa te ajudar se tiver esse problema. Até a próxima galera! :)
