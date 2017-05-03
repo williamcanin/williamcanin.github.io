@@ -32,7 +32,7 @@ Existem vários fatores para seu Linux demorar no boot, por exemplo:
 * ... a falta de otimização do kernel deixando o boot sobrecarregado de modulos não utilizados...
 * ... e até mesmo uma falta de reconhecimento de partição. Bingo! É disso que irei falar aqui: *Partição com erro de reconhecimento*.
 
-## Entendo a mensagem
+## Entendendo a mensagem
 
 > **A start job is running for dev-disk-by(...)**
 
