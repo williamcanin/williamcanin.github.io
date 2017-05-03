@@ -250,7 +250,7 @@ $ make menuconfig
 > NOTA: Existe outros tipo de layouts de menu, porem esse é o padrão e mais
 > utilizado por todos. É menu bem intuitivo, fácil de manusear, onde as setas
 > são as responsáveis por direcionar o foco. Mas se quiser tem o
-> **make nconfig, make config, make > gconfig e make xconfig**.
+> **make nconfig, make config, make gconfig e make xconfig**.
 
 ### Manuseio para o "make menuconfig"
 
