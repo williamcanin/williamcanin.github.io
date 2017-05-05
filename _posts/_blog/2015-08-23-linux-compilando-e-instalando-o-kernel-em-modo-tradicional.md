@@ -516,14 +516,14 @@ Nesse passo vai depender de sua distribuição Linux. Use um dos comandos abaixo
 Para você, usuário de [Arch Linux](https://www.archlinux.org/){:target="_blank"}
 
 {% highlight bash linenos %}
-mkinitcpio -k {VERSION}-{ARCH}-{RC} -c /etc/mkinitcpio.conf -g /boot/vmlinuz-{VERSION}-{ARCH}-{RC}.img
+mkinitcpio -k {VERSION}-{ARCH}-{RC} -c /etc/mkinitcpio.conf -g /boot/initramfs-{VERSION}-{ARCH}-{RC}.img
 {% endhighlight %}
 
 
 Se você usa [Debian](http://debian.org){:target="_blank"}/[Ubuntu](http://www.ubuntu.com/){:target="_blank"}, faça assim:
 
 {% highlight bash linenos %}
-mkinitramfs -o /boot/vmlinuz-{VERSION}-{ARCH}-{RC}.img /lib/modules/{VERSION}-{ARCH}-{RC}
+mkinitramfs -o /boot/initramfs-{VERSION}-{ARCH}-{RC}.img /lib/modules/{VERSION}-{ARCH}-{RC}
 {% endhighlight %}
 
 ou
@@ -536,7 +536,7 @@ update-initramfs -c -k {VERSION}-{ARCH}-{RC}
 Para usuário <strike>"Fedorendo" (haha brincadeira)</strike> [Fedora](https://getfedora.org/){:target="_blank"}, faça assim:
 
 {% highlight bash linenos %}
-dracut /boot/vmlinuz-{VERSION}-{ARCH}-{RC}.img /lib/modules/{VERSION}-{ARCH}-{RC}
+dracut /boot/initramfs-{VERSION}-{ARCH}-{RC}.img /lib/modules/{VERSION}-{ARCH}-{RC}
 {% endhighlight %}
 
 # Copiando o "System.map" e ".config" para o /boot
