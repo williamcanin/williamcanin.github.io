@@ -95,7 +95,7 @@ type wget >/dev/null 2>&1 || {
     exit 0
 }
 
-# Dunction download latest kernel (https://www.kernel.org/)
+# Function download latest kernel (https://www.kernel.org/)
 function _download_lastet_kernel()
   {
 
