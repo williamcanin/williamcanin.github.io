@@ -33,3 +33,7 @@ Código fonte:
 
 Você pode sugerir novas ideias acessando [Issues](https://github.com/williamcanin/modbl/issues){:target="_blank"}, vou estar atento a quanto isso. Espero que esse código lhe ajude. Obrigado pela leitura.
 
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/2zfFLgnzc9PspmqKMODS2g %}
+
