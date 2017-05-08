@@ -591,4 +591,6 @@ grub-mkconfig -o /boot/grub/grub.cfg && grub-install /dev/sda
 
 Ufa! Terminou, e eu fico por aqui! :satisfied:. Espero que sua compilação do kernel tenha sido um sucesso,  mas caso não tenha, não desista, refaça os processos e procure saber sobre o problema e sobre o hardware da máquina se possível, pois o mundo Linux é muito prazeroso de se aprender. Até próxima leitor!
 
+{% endpost #9D9D9D %}
 
+{% spotify spotify/track/73ULm2FVFnjICEBjZAmC3L %}

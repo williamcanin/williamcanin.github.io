@@ -323,3 +323,6 @@ Com essas configurações, todo acesso a internet através do navegador será mo
 
 Vou me despedindo aqui pessoal, espero que essa leitura foi útil para seu conhecimento. Até a próxima.
 
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/7ETav4026rcnTbTgwCmGNq %}

@@ -162,6 +162,9 @@ No meu caso, eu tinha instalado outra distribuição Linux e configurado a minha
 Espero que esse tutorial possa te ajudar se tiver esse problema. Até a próxima galera! :)
 
 
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/00bHVjPL7arXz9W59VKo5m %}
 
 
 
