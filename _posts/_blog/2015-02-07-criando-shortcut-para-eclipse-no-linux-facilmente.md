@@ -86,4 +86,8 @@ $ sudo sh install-shortcut.sh
 
 Clique [AQUI](https://github.com/williamcanin/install-shortcut-eclipse){:target="_blank"} para ter acesso ao Script Shell pronto.
 
-Obrigado pela leitura, teia.
+Obrigado pela leitura.
+
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/2AsL6DihoauWWCCY0wdycr %}

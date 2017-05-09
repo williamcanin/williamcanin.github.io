@@ -319,3 +319,7 @@ Como podem ver, ao criar (CREATE) um registro com CALL, dependendo de ser client
 
 Bom, vou me despedindo por aqui, espero que você tenha entendido um pouco de transações com procedure através de tabelas com herança no MySQL. Um abraço. Morfei!
 
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/2kPNfupzN6RAk2ehFcmjPG %}
+

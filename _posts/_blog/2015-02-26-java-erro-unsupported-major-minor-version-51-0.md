@@ -41,3 +41,7 @@ Exemplo:
 /home/user/jdk1.7.0_11/bin/javac
 
 /home/user/jdk1.7.0_11/bin/java.
+
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/2T79cwJ9xFcBC7vwH2xniy %}

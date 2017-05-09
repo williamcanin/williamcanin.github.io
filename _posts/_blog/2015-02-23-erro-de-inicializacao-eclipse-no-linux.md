@@ -138,3 +138,6 @@ export SWT_GTK3=0
 
 Com essas configurações, executei o Eclipse Luna novamente e o mesmo iniciou sem problema algum. :wink: É isso aí, bons códigos.
 
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/7ltu1Lz4mSKHsOjPK3bvNK %}

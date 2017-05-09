@@ -92,3 +92,8 @@ O atributo **if** será a verificação do **dd** para encontrar o arquivo grav�
 
 Para saber mais sobre a documentação do **dd**, use os comandos no terminal:`man dd` e `dd --help`. Espero que você economize bastante CDs e DVDs agora ;)
 Ate a próxima! Bye :hand:
+
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/0yhPEz5KxlDwckGJaMlZqM %}
+

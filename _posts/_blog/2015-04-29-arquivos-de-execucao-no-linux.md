@@ -113,3 +113,7 @@ Este arquivo do tipo **application/x-executable**, vai retornar a seguinte mensa
 Se você chegou até aqui, então é hora de eu me despedir :(
 Espero que você tenha entendido um pouco sobre arquivos **application/x-shellscript** e **application/x-executable** no Linux.
 Até a próxima!
+
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/5vS7DxElLuVKeZxfXf4lfZ %}

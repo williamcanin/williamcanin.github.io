@@ -99,3 +99,8 @@ Somos feitos de ação e repouso, ninguém vive apenas de trabalho, buscas em me
 O que devemos saber, é separar cada momento da nossa vida, cada tarefa, cada novidade, cada pessoa, eliminar o que nos regride nossos focos ou deixar no "banco de reserva" o que não vamos utilizar no momento. 
 
 Posso até usar Facebook um dia, mas nesse momento de minha vida é NÃO! É Possível se comunicar virtualmente com seus amigos e familiares no qual não tire sua atenção e não distribua informações suas na internet, como por exemplo: [WhatsApp](https://www.whatsapp.com/?l=pt_br){:target="_blank"}, [Skype](https://www.skype.com/pt-br/){:target="_blank"} e outros aplicativos de comunicação. Tudo temos que colocar em balança. A vida é feita de partes.
+
+
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/2YTaxQTTDndT3dAfsI1JjQ %}

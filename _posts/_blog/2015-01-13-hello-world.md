@@ -45,3 +45,7 @@ Bom, esses são alguns resumo dos conteúdos, e do porquê meu site existe.
 
 Quero que saibam que sempre que possível irei enviar conteúdos novos. Espero que você visite sempre, e que as atualizações de conteúdos sejam benéficas a você. Até uma próxima postagem!
 
+
+{% endpost #9D9D9D %}
+
+{% spotify spotify/track/3X9lGwcUJXFFkY6srtvMq1 %}
