@@ -6,7 +6,7 @@
       {% assign links = userdata.socials.links %}
       {% for item in links %}
         <div id="{{ item.id }}" class="col-sm-3 columns">
-          <a href="{{ item.url }}" target="_blank" title="{{ item.title }}" onclick="ga('send', 'event', 'linkTo', '{{ item.title }}', this.href);">
+          <a href="{{ item.url }}" target="_blank" title="{{ item.title }}" onclick="ga('send', 'pageview', 'linkTo', '{{ item.title }}', {useBeacon: true});">
             <i class="fa {{ item.icon }} icon" aria-hidden="true"></i>
           </a>
         </div>
