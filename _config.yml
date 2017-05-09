@@ -38,10 +38,10 @@ share_social:
   googleplus: true
 
 
-# Enable or disable icons on every website. Use:  "yes" | "no"
+# Enable or disable icons on every website. Use:  true | false
 screen:
   icons:
-    enable: yes
+    enable: true
 
 # Settings for the plugins in the _plugins folder.
 plugin:
