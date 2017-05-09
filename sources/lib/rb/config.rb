@@ -66,7 +66,7 @@ Example: rake post:blog TITLE=\"My post\"")
           \"Put here your quote of the day\"")
           file.puts("")
           file.puts("# Does not change and does not remove 'script' variable.")
-          file.puts("script: [post.js]")
+          file.puts("script: [post.js, ga_event.js]")
           file.puts("---")
           puts "Created successfully!"
         end

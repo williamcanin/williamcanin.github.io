@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Qual a utilidade do Facebook para você?
+ga_event: true
 date: 2015-01-25 15:17:19 -0300
 comments: true
 class: misc
@@ -16,7 +17,7 @@ categories: blog
 published: true
 
 # Does not change and does not remove 'script' variables
-script: [post.js]
+script: [post.js, ga_event.js]
 ---
 
 

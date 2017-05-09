@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Hello World
+ga_event: true
 date:   2015-01-13 05:16:01 -0300
 comments: false
 class: welcome
@@ -16,7 +17,7 @@ categories: blog
 published: true
 
 # Does not change and does not remove 'script' variables
-script: [post.js]
+script: [post.js, ga_event.js]
 ---
 
 

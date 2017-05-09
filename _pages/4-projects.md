@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projetos
+ga_event: true
 sitemap:
   priority: 0.7
   changefreq: 'monthly'

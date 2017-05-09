@@ -16,7 +16,7 @@ categories: blog
 published: true
 
 # Does not change and does not remove 'script' variables
-script: [post.js]
+script: [post.js, ga_event.js]
 ---
 
 <span class="fa fa-share" style="font-size: 80px; float: left; margin-right: 0.2em; border-radius: 100%; width: 80px; height: 80px; background-size: 80px; text-align: center; background-color: #F1F1F1;"></span>

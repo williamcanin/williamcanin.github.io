@@ -1,5 +1,6 @@
 ---
 layout: list_tags
+ga_event: false
 title: Tags
 
 # Icon feature uses Font Awesome

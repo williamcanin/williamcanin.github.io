@@ -1,5 +1,6 @@
 ---
 layout: null
+ga_event: true
 title: Feed
 
 # Icon feature uses Font Awesome

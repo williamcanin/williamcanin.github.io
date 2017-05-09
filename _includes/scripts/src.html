@@ -10,6 +10,11 @@
    <script type="text/javascript" src="{{ '/assets/javascripts/' | prepend: site.baseurl | prepend: site.url  | append: script_page }}"></script>
 {% endfor %}
 
+<!-- Specific function 'ga' Google Analytics to certain site links in Posts  -->
+<!-- {.% for ga_event in page.ga_event %.}
+   <script type="text/javascript" src="{{ '/assets/javascripts/' | prepend: site.baseurl | prepend: site.url  | append: ga_event }}"></script>
+{.% endfor %.} -->
+
 {% if page.url == '/' %}
   <script type="text/javascript" src="{{ '/assets/javascripts/hello.js' | prepend: site.baseurl | prepend: site.url }}"></script>
 {% endif %}

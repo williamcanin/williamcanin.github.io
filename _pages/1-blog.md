@@ -1,5 +1,6 @@
 ---
 layout: postlist
+ga_event: false
 title: Blog
 
 # Icon feature uses Font Awesome

@@ -16,7 +16,7 @@ categories: blog
 published: true
 
 # Does not change and does not remove 'script' variables
-script: [post.js]
+script: [post.js, ga_event.js]
 ---
 
 Essa é uma postagem que irá facilitar e otimizar seus comandos no terminal para bloquear módulos no Linux. Estou falando do [Modbl](https://github.com/williamcanin/modbl){:target="_blank"}, um script simples mas que lhe propoe um ganha tempo.

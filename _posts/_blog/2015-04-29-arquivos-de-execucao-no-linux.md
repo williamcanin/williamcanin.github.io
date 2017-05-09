@@ -16,7 +16,7 @@ categories: blog
 published: true
 
 # Does not change and does not remove 'script' variables
-script: [post.js]
+script: [post.js, ga_event.js]
 ---
 
 Essa postagem você irá entender melhor como são os arquivos executáveis no Linux, como se cria um com código aberto ou fechado, como dar permissão no Linux para um executável ter a permissão de execução e outras informações considerável.

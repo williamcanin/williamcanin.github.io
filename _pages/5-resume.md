@@ -1,6 +1,7 @@
 ---
 layout: resume
 title: Currículo
+ga_event: true
 sitemap:
   priority: 0.7
   changefreq: 'monthly'

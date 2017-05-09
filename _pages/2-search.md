@@ -1,5 +1,6 @@
 ---
 layout: search
+ga_event: false
 title: Pesquisar
 
 # Icon feature uses Font Awesome

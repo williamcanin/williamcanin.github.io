@@ -1,5 +1,6 @@
 ---
 layout: contact
+ga_event: true
 title: Contacto
 
 # Icon feature uses Font Awesome
