@@ -6,7 +6,7 @@
       {% assign links = userdata.socials.links %}
       {% for item in links %}
         <div id="{{ item.id }}" class="col-sm-3 columns">
-          <a href="{{ item.url }}" target="_blank" title="{{ item.title }}">
+          <a href="{{ item.url }}" target="_blank" title="{{ item.title }}" onclick="_gaq.push(['_trackEvent', 'linkTo', '{{item.title}}', this.href]);">
             <i class="fa {{ item.icon }} icon" aria-hidden="true"></i>
           </a>
         </div>
