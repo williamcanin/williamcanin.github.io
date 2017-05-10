@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-system ("git add .")
-system ("git commit -m \"Update - #{Time.now}\"")
-system ("git push origin master")
