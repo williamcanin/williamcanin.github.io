@@ -77,7 +77,7 @@ userdata:
   # You can add at most 4 social.
   socials:
     title: Siga-Me!
-    ga_event: false # Google Analytics Event (Hit). Usage: true | false
+    ga_event: true # Google Analytics Event (Hit). Usage: true | false
     links:
       - title: GitHub
         id: github

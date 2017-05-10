@@ -14,7 +14,7 @@ day_quote:
           "Eu sou o Senhor, o Deus de vocês; eu os seguro pela mão e lhes digo: 'Não fiquem com medo, pois eu os ajudo.' <br> (Isaias 41:13)"
 
 # Does not change and does not remove 'script' variable.
-script: [post.js, ga_event.js]
+script: [post.js]
 ---
 
 ## Indíce

@@ -16,7 +16,7 @@ categories: blog
 published: true
 
 # Does not change and does not remove 'script' variables
-script: [post.js, ga_event.js]
+script: [post.js]
 ---
 
 ## Introdução 

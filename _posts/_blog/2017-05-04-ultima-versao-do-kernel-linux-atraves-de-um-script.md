@@ -14,7 +14,7 @@ day_quote:
     "Filho meu, guarda o mandamento de, teu pai, e não abandones a instrução de tua mãe; ata-os perpetuamente ao teu coração, e pendura-os ao teu pescoço. Quando caminhares, isso te guiará, quando te deitares, te guardará; quando acordares, falará contigo. Porque o mandamento é uma lâmpada, e a instrução uma luz; e as repreensões da disciplina são o caminho da vida, para te guardarem da mulher má e das lisonjas da língua da adúltera." <br> (Provérbios 6:20-24)
 
 # Does not change and does not remove 'script' variable.
-script: [post.js, ga_event.js]
+script: [post.js]
 ---
 
 

@@ -14,5 +14,5 @@ day_quote:
           "Put here your quote of the day"
 
 # Does not change and does not remove 'script' variable.
-script: [post.js, ga_event.js]
+script: [post.js]
 ---

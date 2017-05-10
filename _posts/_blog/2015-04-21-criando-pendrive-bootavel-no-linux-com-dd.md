@@ -16,7 +16,7 @@ categories: blog
 published: true
 
 # Does not change and does not remove 'script' variables
-script: [post.js, ga_event.js]
+script: [post.js]
 ---
 
 Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou aquele outro sistema operacial no qual necessita de boot. Vamos aprenda a fazer isso no Linux com um comando poderoso. :wink:
