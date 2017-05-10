@@ -19,6 +19,8 @@
 
     $('.post > .row.content a').addClass('ga-event');
 
+    $('.page.spage > .row.content th a').addClass('ga-event');
+
     $('.row.content li a').removeClass('ga-event');
 
     $('a.ga-event').attr('onclick', 'ga(\'send\',\'event\',\'linkTo\',this.href,\'{{ site.url }}{{ site.baseurl }}{{ page.url }}\');');

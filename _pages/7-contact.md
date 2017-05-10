@@ -1,7 +1,9 @@
 ---
 layout: contact
-ga_event: true
 title: Contacto
+
+# Enable / Disable events Google Analytics for this link page.
+ga_event: true
 
 # Icon feature uses Font Awesome
 icon: fa-envelope

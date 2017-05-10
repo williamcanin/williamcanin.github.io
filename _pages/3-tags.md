@@ -1,7 +1,9 @@
 ---
 layout: list_tags
-ga_event: false
 title: Tags
+
+# Enable / Disable events Google Analytics for this link page.
+ga_event: false
 
 # Icon feature uses Font Awesome
 icon: fa-tags

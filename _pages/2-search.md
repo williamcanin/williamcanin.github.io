@@ -1,7 +1,9 @@
 ---
 layout: search
-ga_event: false
 title: Pesquisar
+
+# Enable / Disable events Google Analytics for this link page.
+ga_event: false
 
 # Icon feature uses Font Awesome
 icon: fa-search
