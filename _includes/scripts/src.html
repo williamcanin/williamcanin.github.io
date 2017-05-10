@@ -13,6 +13,7 @@
 {% endif %}
 
 <!-- Add 'ga' function from Google Analytics to certain site links in Posts  -->
+{% if dbase.website.google.analytics.events == true %}
 <script type="text/javascript">
   jQuery(document).ready(function($) {
 
@@ -24,6 +25,7 @@
 
   });
 </script>
+{% endif %}
 
 <!-- App | Global -->
 <script src="{{ '/assets/javascripts/global.js' | prepend: site.baseurl | prepend: site.url }}"></script>
