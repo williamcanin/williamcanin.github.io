@@ -17,57 +17,8 @@ day_quote:
 script: [post.js]
 ---
 
-## Indíce
-
-* [Requerimentos]({{site.url}}{{site.baseurl}}{{page.url}}#requerimentos)
-* [Introdução]({{site.url}}{{site.baseurl}}{{page.url}}#introdução)
-* [Preparando o básico]({{site.url}}{{site.baseurl}}{{page.url}}#preparando-o-básico)
-* [O fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#o-fdisk)
-  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos)
-  * [Conhecendo a estrutura de partições]({{site.url}}{{site.baseurl}}{{page.url}}#conhecendo-a-estrutura-de-partições)
-  * [Usando o fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#usando-o-fdisk)
-  * [Criando a partição de Boot com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-a-partição-de-boot-com-fdisk)
-  * [Criando partição do Windows com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-do-windows-com-fdisk)
-  * [Criando partição "Linux LVM" com fdisk]({{site.url}}{{site.baseurl}}{{page.url}}#criando-partição-linux-lvm-com-fdisk)
-* [O LUKS]({{site.url}}{{site.baseurl}}{{page.url}}#o-luks)
-  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-1)
-  * [Criptografando a partição Linux "LVM"]({{site.url}}{{site.baseurl}}{{page.url}}#criptografando-a-partição-linux-lvm)
-* [O LVM]({{site.url}}{{site.baseurl}}{{page.url}}#o-lvm)
-  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-2)
-  * [Utilizando os componentes do LVM]({{site.url}}{{site.baseurl}}{{page.url}}#utilizando-os-componentes-do-lvm)
-  * [Criando Physical Volume (PV)]({{site.url}}{{site.baseurl}}{{page.url}}#criando-physical-volume-pv)
-  * [Criando Volume Group (VG)]({{site.url}}{{site.baseurl}}{{page.url}}#criando-volume-group-vg)
-  * [Criando Logical Volume (LV)]({{site.url}}{{site.baseurl}}{{page.url}}#criando-logical-volume-lv)
-* [Formatando as partições]({{site.url}}{{site.baseurl}}{{page.url}}#formatando-as-partições)
-  * [Sistema de Arquivos e Home]({{site.url}}{{site.baseurl}}{{page.url}}#sistema-de-arquivos-e-home)
-  * [Boot]({{site.url}}{{site.baseurl}}{{page.url}}#boot)
-  * [Swap]({{site.url}}{{site.baseurl}}{{page.url}}#swap)
-* [Montagem das partições]({{site.url}}{{site.baseurl}}{{page.url}}#montagem-das-partições)
-* [Instalando e configurando o Archlinux]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-e-configurando-o-archlinux)
-  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-3)
-  * [Instalando o sistema base]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-sistema-base)
-  * [Criando /etc/fstab]({{site.url}}{{site.baseurl}}{{page.url}}#criando-etcfstab)
-  * [Entrando no sistema instalado]({{site.url}}{{site.baseurl}}{{page.url}}#entrando-no-sistema-instalado)
-  * [Configurando layout do teclado]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-layout-do-teclado)
-  * [Criando um senha para usuário root]({{site.url}}{{site.baseurl}}{{page.url}}#criando-um-senha-para-usuário-root)
-  * [Instalado pacotes necessários]({{site.url}}{{site.baseurl}}{{page.url}}#instalado-pacotes-necessários)
-  * [Habilitando idiomas]({{site.url}}{{site.baseurl}}{{page.url}}#habilitando-idiomas)
-  * [Configurando localidade]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-localidade)
-  * [Configurando hostname]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-hostname)
-  * [Habilitando rede cabeada durante o boot]({{site.url}}{{site.baseurl}}{{page.url}}#habilitando-rede-cabeada-durante-o-boot)
-  * [Criando um usuário padrão]({{site.url}}{{site.baseurl}}{{page.url}}#criando-um-usuário-padrão)
-  * [Configurando o /etc/fstab]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-etcfstab)
-  * [Configurando o /etc/mkinitcpio.conf]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-etcmkinitcpioconf)
-* [O Grub]({{site.url}}{{site.baseurl}}{{page.url}}#o-grub)
-  * [Conceitos]({{site.url}}{{site.baseurl}}{{page.url}}#conceitos-4)
-  * [Instalando o Grub no sistema]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-grub-no-sistema)
-  * [Configurando o Grub]({{site.url}}{{site.baseurl}}{{page.url}}#configurando-o-grub)
-  * [Gerando as configurações]({{site.url}}{{site.baseurl}}{{page.url}}#gerando-as-configurações)
-  * [Instalando o Grub na unidade]({{site.url}}{{site.baseurl}}{{page.url}}#instalando-o-grub-na-unidade)
-* [Reiniciando o sistema]({{site.url}}{{site.baseurl}}{{page.url}}#reiniciando-o-sistema)
-* [Conclusão]({{site.url}}{{site.baseurl}}{{page.url}}#conclusão)
-
-
+* Do not remove this line (it will not be displayed)
+{: toc}
 
 # Requerimentos
 
@@ -819,7 +770,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 
 Se não apresentar erros, concluímos toda nossa instalação do Arclinux criptografado com LVM.
 
-## Reiniciando o sistema
+# Reiniciando o sistema
 
 Basta executar os comandos abaixo ordenadamente para sair do ambiente de instalação, desmontar as unidades e reiniciar o sistema:
 

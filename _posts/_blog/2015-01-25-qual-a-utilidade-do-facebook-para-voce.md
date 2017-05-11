@@ -20,6 +20,8 @@ published: true
 script: [post.js]
 ---
 
+* Do not remove this line (it will not be displayed)
+{: toc}
 
 # Facebook: Você sabe a utilidade dele para você nesse momento da sua vida?
 

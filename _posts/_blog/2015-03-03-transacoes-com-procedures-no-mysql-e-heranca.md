@@ -19,6 +19,9 @@ published: true
 script: [post.js]
 ---
 
+* Do not remove this line (it will not be displayed)
+{: toc}
+
 Chega de ficar apenas aprendendo 'create table' no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.
 
 Quando se cria uma aplicação que se necessita de uma comunicação com bando de dados, seja ela de qual linguagem de programação for, o acesso entre "Aplicação Banco" sempre é um dos principais fatores para uma boa otimização, ganha tempo e velocidade de processos. A maioria da estrutura e performasse de uma aplicação, está na própria aplicação, mas isso não quer dizer que você não possa melhorar o desempenho realizando boas praticas de código no seu banco de dados. Você consegue fazer várias tarefas que poderiam ser feitas na aplicação, apenas com códigos PL/SQL.

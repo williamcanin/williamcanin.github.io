@@ -19,6 +19,9 @@ published: true
 script: [post.js]
 ---
 
+* Do not remove this line (it will not be displayed)
+{: toc}
+
 ### Introdução
 
 <img src="{{ "/assets/images/posts/sublime-text-logo.png" | prepend:site.baseurl | prepend:site.url }}" alt="Sublime Text 3" width="200" height="200" style="float: left;padding: 12px;" />

@@ -19,6 +19,9 @@ published: true
 script: [post.js]
 ---
 
+* Do not remove this line (it will not be displayed)
+{: toc}
+
 Quer aprender Proxy Squid? Essa postagem irá te dar uma noção de como configurar o Squid em modo Intercept e bloquear palavras e urls através do mesmo em uma navegação web.
 
 -------------
@@ -40,7 +43,7 @@ Existem programas que lhe permite fazer esse gerenciamento, mais a grande maiori
 
 Vamos la, primeiramente temos que instalar os pacotes que o Squid Proxy necessita para sua compilação.
 
-* ### 1 - Dependências de compilação
+* ### Dependências de compilação
 
 `Executar comando como root (superusuário)`
 
@@ -50,7 +53,7 @@ apt-get install gcc gcc cmake make g++ libssl-dev libcap-dev gawk c++ g++ gcc-mu
 
 Após a instalação, realizaremos o download do source do Squid proxy, no site oficial do mesmo, porem a versão que você terá que baixar tem que ser suportada pela versão de sua distribuição Linux, ou seja, não pode ser versão muita antiga (se sua distro for atual) e nem um muito nova (se sua distro for antiga). Comparando com a versão do meu **Ubuntu**, vou utilizar a versão [3.3.8](http://www.squid-cache.org/Versions/v3/3.3/squid-3.3.8.tar.gz), então fazemos o seguinte procedimento:
 
-* ### 2 - Download do source Squid proxy
+* ### Download do source Squid proxy
 
 `Executar comando como root (superusuário)`
 
@@ -59,7 +62,7 @@ cd /opt
 wget http://www.squid-cache.org/Versions/v3/3.3/squid-3.3.8.tar.gz
 {% endhighlight %}
 
-* ### 3 - Descompactando
+* ### Descompactando
 
 `Executar comando como root (superusuário)`
 
@@ -67,7 +70,7 @@ wget http://www.squid-cache.org/Versions/v3/3.3/squid-3.3.8.tar.gz
 tar zxvf squid-3.3.8.tar.gz
 {% endhighlight %}
 
-* ### 4 - Entrando na pasta para configuração, compilação e instalação
+* ### Entrando na pasta para configuração, compilação e instalação
 
 `Executar comando como root (superusuário)`
 
@@ -75,7 +78,7 @@ tar zxvf squid-3.3.8.tar.gz
 cd squid-3.3.8
 {% endhighlight %}
 
-* ### 5 - Configurando a instalação do Squid Proxy
+* ### Configurando a instalação do Squid Proxy
 
 `Executar comando como root (superusuário)`
 
@@ -95,7 +98,7 @@ cd squid-3.3.8
 
 Se não tiver nenhuma mensagem relatando erro no final da configuração, pode realizar a compilação do Squid Proxy. A compilação demora em torno de 7 a 10 minutos, porem isso é relevante, dependerá da potência de sua máquina. A minha demorou em torno de 7 minutos com um processador Intel Core i3 segunda geração :)
 
-* ### 6 - Compilando Squid Proxy
+* ### Compilando Squid Proxy
 
 `Executar comando como root (superusuário)`
 
@@ -103,7 +106,7 @@ Se não tiver nenhuma mensagem relatando erro no final da configuração, pode r
 make
 {% endhighlight %}
 
-* ### 7 - Instalando Squid Proxy
+* ### Instalando Squid Proxy
 
 `Executar comando como root (superusuário)`
 
@@ -111,7 +114,7 @@ make
 make install
 {% endhighlight %}
 
-* ### 8 - Permissões para o usuário padrão do Squid
+* ### Permissões para o usuário padrão do Squid
 
 Por padrão, nessa instalação, usamos o usuário **proxy**, que é o usuário responsável pelos diretórios de instalação de cache, log e execução do Squid, porem ainda NÃO foi realizado essa permissão para esse usuário, para isso faça:
 
@@ -128,7 +131,7 @@ chown proxy. -R /var/cache/squid
 > usuário de execução do Squid pode ser outro, como o usuário **squid**.
 
 
-* ### 9 - Criando uma lista de bloqueio
+* ### Criando uma lista de bloqueio
 
 Uma lista de bloqueio será especificamente para o Squid fazer a leitura da mesma e bloquear (ou liberar, dependendo das configurações) os respectivos sites ou palavras que se encontra na lista.
 Vamos cria-la no diretório `/etc/squid` com o nome de **blacklist** e coloque no seu conteúdo as palavras ou sites (sem o http), que queira bloquear, por exemplo assim:
@@ -146,9 +149,9 @@ clickjogos
 > submeter a configurações diferentes a essas no Squid, gerando chaves SSL e
 > importando para o navegador.
 
-* ### 10 - Configurando o Squid Proxy (arquivo squid.conf)
+* ### Configurando o Squid Proxy (arquivo squid.conf)
 
-Depois da instalação e demais, tem que realizar algumas configurações no arquivo responsável pela execução e monitoramento do Squid, que será no arquivo **squid.conf**. Utilizaremos uma configuração no arquivo **squid.conf**para rodar nosso Squid com opção de <strike>`transparent`</strike>`intercept`.
+Depois da instalação e demais, tem que realizar algumas configurações no arquivo responsável pela execução e monitoramento do Squid, que será no arquivo **squid.conf**. Utilizaremos uma configuração no arquivo **squid.conf** para rodar nosso Squid com opção de <strike>`transparent`</strike>`intercept`.
 
 > Com as configurações de instalação que foi feito no Squid, o arquivo **squid.
 > conf** se encontra no diretório: `/etc/squid/squid.conf`, abra-o com um
@@ -243,12 +246,12 @@ refresh_pattern .       0   20% 4320
 
 > * 1 - Observe as acls  **localnet**. Essas
 > ACLs são de sua rede local, se você usa DHCP em sua rede, provavelmente um
-> desses IP será da sua rede local, aqui se você usa um IP Estático, você deve
+> desses IP será da sua rede local, agora se você usa um IP Estático, você deve
 > obter a rede local dele. A rede local sempre termina com o **0(zero)** no
 > final.
-> * 2 - As linhas...
-> **acl acl_blacklist url_regex -i "/etc/squid/blacklist"**
-> **http_access deny acl_blacklist**
+> * 2 - As linhas:
+>  * **acl acl_blacklist url_regex -i "/etc/squid/blacklist"**
+>  * **http_access deny acl_blacklist**
 > ..devem existir caso você já criou sua lista de bloqueio. Saiba que a
 > palavra **deny**, é responsável por bloqueio e a palava **allow**,
 > responsável por permissão.
@@ -256,7 +259,7 @@ refresh_pattern .       0   20% 4320
 > **intercept** (dependendo da versão do seu Squid).
 
 
-* ### 11 - Criando cache, executando e parando o Squid Proxy
+* ### Criando cache, executando e parando o Squid Proxy
 
 Precisamos criar o cache do Squid Proxy, faça no terminal:
 
@@ -287,7 +290,7 @@ squid -k reconfigure
 squid -k kill
 {% endhighlight %}
 
-* ### 12 - Redirecionado a porta 80 para a porta 3128 do Squid Proxy
+* ### Redirecionado a porta 80 para a porta 3128 do Squid Proxy
 
 Para o Squid funcionar com a opção <strike> `transparent`</strike>`intercept`, precisamos redirecionar a porta de acesso a internet, que é porta **80**, para a porta padrão do Squid, que é a porta **3128**. Isso pode ser feito com o **IPTables**, que por padrão vem na maioria das distro Linux.
 

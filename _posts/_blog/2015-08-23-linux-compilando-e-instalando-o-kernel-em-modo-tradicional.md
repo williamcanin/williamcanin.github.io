@@ -19,36 +19,8 @@ published: true
 script: [post.js]
 ---
 
-# Índice
-
-* [Introdução](#introdução)
-* [Pacotes necessários](#pacotes-necessários)
-* [Criando base de trabalho](#criando-base-de-trabalho)
-* [Download do kernel](#download-do-kernel)
-* [Descompactando o kernel](#descompactando-o-kernel)
-* [Limpando a base](#limpando-a-base)
-* [Configurando o kernel](#configurando-o-kernel)
-  * [Manualmente](#manualmente)
-    * [Reconhecendo os módulos da máquina](#reconhecendo-os-módulos-da-máquina)
-      * [Metodo 1](#método-1)
-      * [Metodo 2](#método-2)
-      * [Metodo 3](#método-3)
-    * [Iniciando a configuração](#iniciando-a-configuração)
-    * [Manuseio para o “make menuconfig”](#manuseio-para-o-make-menuconfig)
-  * [Automaticamente](#automaticamente)
-    * [Carregando ".config" genérico](#carregando-config-genérico)
-    * [Entrando no menu do kernel](#entrando-no-menu-do-kernel)
-    * [Carregando drivers a partir do lsmod](#carregando-drivers-a-partir-do-lsmod)
-  * [Finalizando as configurações](#finalizando-as-configurações)
-* [Compilando o Kernel](#compilando-o-kernel)
-* [Instalando os módulos compilados](#instalando-os-módulos-compilados)
-  * [Instalação normal](#instalação-normal)
-  * [Instalação compactada](#instalação-compactada)
-* [Copiando o kernel para o /boot](#copiando-o-kernel-para-o-boot)
-* [Criando a RAMDISK](#criando-a-ramdisk)
-* [Copiando o “System.map” e “.config” para o /boot](#copiando-o-systemmap-e-config-para-o-boot)
-* [Atualizando o gerenciador de boot](#atualizando-o-gerenciador-de-boot)
-* [Conclusão](#conclusão)
+* Do not remove this line (it will not be displayed)
+{: toc}
 
 # Introdução
 
