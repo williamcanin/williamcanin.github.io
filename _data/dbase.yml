@@ -6,7 +6,7 @@
 website:
 
   under_maintenance:
-    enable: true
+    enable: false
     title: |
      <p> Desculpe :( </p>
       O domínio do meu site está em manutenção.
