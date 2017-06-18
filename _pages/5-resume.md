@@ -135,6 +135,6 @@ Realiazo diversos projetos Open-Source diariamente e armazeno tudo com [git](htt
 
 * [Jekyll Spotify Plugin](http://williamcanin.github.io/jekyll-spotify-plugin){:target="_blank"} - Jekyll plug-in para gerar fragmentos de código HTML para incorporar música do Spotify em templates Jekyll.
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script via Shell para realizar a recuperação do Grub no Arch Linux.
-* [iDisconnect ](http://williamcanin.com/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
+* [iDisconnect ](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
 Para ver todos meus projetos, acesse: [{{site.url}}{{site.baseurl}}/projects/]({{site.url}}{{site.baseurl}}/projects/){:target="_blank"}.
