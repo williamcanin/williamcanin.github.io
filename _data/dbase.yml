@@ -18,7 +18,7 @@ website:
   launch: 2015
   avatar: williamcanin.svg
   metatag:
-    google-site-verification: z0VQaZ4DGSF76FnHN2nExfv1aRDecav5baDQcSRv4eg
+    google-site-verification: "kFisEN5aqITDKsnq2_HXHtxA8ygFVE95XlKapU7Kz_I"
     type: "WebSite"
     locale: "pt-BR"
     expires:  # "Sun, 31 Dec 2017 00:10:00 GMT" # E.g: "Sat, 24 Dec 2017 00:10:00 GMT"
@@ -29,7 +29,7 @@ website:
   google:
     analytics:
       enable: true # Use: true | false
-      id: "UA-61340177-1" # tracking id, e.g. "UA-000000-01"
+      id: "UA-101186555-1" # tracking id, e.g. "UA-000000-01"
       events: true # Use: true | false . Events Google Analytics
   author:
     image: williamcanin.svg
@@ -51,6 +51,8 @@ website:
         name: Seu nome completo
         email: Seu email
         message: O que você gostaria de dizer?
+        btn:
+          text: Go message!
     resume:
       btnprint: Imprimir
     postlist:

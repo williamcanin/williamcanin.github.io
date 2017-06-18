@@ -31,6 +31,12 @@ Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcani
 
 ##  Autoria
 
+|[Skeleton Jekyll](https://github.com/williamcanin/skeleton-jekyll){:target="_blank"} <i class="fa fa-external-link"></i>|
+--------------------------|----------------------------
+| **Ramo**: Ruby / Template / Theme / Jekyll /  Web Development |
+| **Status**: <label style="color:green;">Ativo</label> |
+| **Descrição**: Skeleton Jekyll é um template esqueleto de Jekyll contendo vários recursos para iniciar um projeto de um site estático de forma rápida. |
+
 |[Go!Link](https://github.com/williamcanin/golink){:target="_blank"} <i class="fa fa-external-link"></i>|
 --------------------------|----------------------------
 | **Ramo**: Ruby / Template / Theme / Jekyll /  Web Development |

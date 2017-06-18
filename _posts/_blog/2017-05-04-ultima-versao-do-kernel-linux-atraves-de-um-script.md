@@ -6,6 +6,7 @@ categories: blog
 tags: ['shell-script','kernel','download', 'linux']
 published: true
 comments: true
+ga_event: false
 excerpted: |
     Dica rápida - Download da última versão estável do Kernel Linux através de um Shell script. Ideal para quem está somente com um sistema "cru".
 day_quote:
