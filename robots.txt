@@ -1,3 +1,9 @@
 # robotstxt.org/
 
 User-agent: *
+Disallow: /assets/
+Disallow: /jekyll-spotify-plugin/
+Disallow: /skeleton-jekyll/
+Disallow: /typing-jekyll-template/
+Disallow: /jekyll-cv-creator/
+Disallow: /golink/
