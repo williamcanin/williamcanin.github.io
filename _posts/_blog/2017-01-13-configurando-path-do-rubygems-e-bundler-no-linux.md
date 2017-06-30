@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Configurando PATH do RubyGems e Bundler no Linux
-date: 2017-01-12 16:02:37 -0300
+date: 2017-01-13 16:02:37 -0300
 comments: true
 class: rubygems
 tags: ["ruby","gems","linux", "bundler"]

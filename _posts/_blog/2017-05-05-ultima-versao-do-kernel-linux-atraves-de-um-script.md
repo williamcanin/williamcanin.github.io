@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Última versão do kernel linux através de um script
-date: 2017-05-04 23:16:57
+date: 2017-05-05 23:16:57
 categories: blog
 tags: ['shell-script','kernel','download', 'linux']
 published: true

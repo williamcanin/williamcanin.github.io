@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Instalando Archlinux com criptografia LUKS e LVM
-date: 2017-04-27 11:33:43
+date: 2017-04-28 11:33:43
 categories: blog
 tags: ['linux','criptografia', 'luks', 'lvm']
 published: true
