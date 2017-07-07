@@ -46,7 +46,7 @@ website:
       disable: Comentários desabilitado.
     # The Contact, uses the Formspree service. Need to register for the service.
     contact:
-      btn-send: Vai, menssagem!
+      btn-send: Vai, mensagem!
       placeholder:
         name: Seu nome completo
         email: Seu email
