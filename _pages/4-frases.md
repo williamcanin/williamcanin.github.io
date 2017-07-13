@@ -25,6 +25,10 @@ permalink: /sentences/
 
 Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
+| Compreensão |
+--------------------------|----------------------------
+| "A falta de compreensão cega o homem. E quando cego não faz bom convívio." - William C.Canin |
+
 | Confiança |
 --------------------------|----------------------------
 | "A atitude certa conta mais do que todas as posses físicas e materiais no mundo." - William C.Canin |
