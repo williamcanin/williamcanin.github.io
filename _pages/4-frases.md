@@ -23,7 +23,7 @@ script: [projects.js]
 permalink: /sentences/
 ---
 
-Aqui são algumas frases que de minha autoria quando estou refletindo na vida...
+Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
 | Confiança |
 --------------------------|----------------------------
