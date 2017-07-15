@@ -7,6 +7,7 @@ ga_event: true
 
 # Icon feature uses Font Awesome
 icon: fa-envelope
+icon-size: inherit
 
 # Enable / Disable this page in the main menu.
 menu: true

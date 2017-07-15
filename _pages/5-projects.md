@@ -11,6 +11,7 @@ ga_event: true
 
 # Icon feature uses Font Awesome
 icon: fa-briefcase
+icon-size: inherit
 
 # Enable / Disable this page in the main menu.
 menu: true

@@ -7,6 +7,7 @@ ga_event: false
 
 # Icon feature uses Font Awesome
 icon: fa-search
+icon-size: inherit
 
 # Enable / Disable this page in the main menu.
 menu: true

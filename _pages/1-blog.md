@@ -7,6 +7,7 @@ ga_event: false
 
 # Icon feature uses Font Awesome
 icon: fa-edit
+icon-size: inherit
 
 # Strings used for posts counter message
 msg_qtd: ['São','postagens no total.']
