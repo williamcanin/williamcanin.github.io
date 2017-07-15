@@ -70,9 +70,11 @@ Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:tar
 
 Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, então eu diria que conheço bem suas lógicas. 
 
-Hoje estou mais para desenvolvimento Web ([Front-End](#front-end)), porém, sempre utilizo desenvolvimento [Back-End](#back-end).  Sou um defensor do código `open source`.
+Hoje estou mais para desenvolvimento Web ([Front-End](#front-end)), porém, sempre utilizo desenvolvimento [Back-End](#back-end).  Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [habilidades](#habilidades) em [outras ferramentas](#outras-ferramentas).
 
 No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Arch Linux](https://www.archlinux.org/){:target="_blank"}.
+
+Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog]({{ site.url }}{{ site.baseurl }}/blog/){:target="_blank"}.
 
 ## Objetivo
 
@@ -88,7 +90,7 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 
 ## Habilidades
 
-Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novas habilidades em diversas linguagens de programação.
+Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novas habilidades em diversas linguagens de programação e softwares.
 
 #### **Front-End:**
 
@@ -127,6 +129,14 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 {% label Linux|16px %}
 {% label Windows|16px %}
+
+#### **Outras ferramentas:**
+
+{% label Gimp|16px %}
+{% label Adobe Photoshop|16px %}
+{% label Sony Vegas|16px %}
+{% label LibreOffice|16px %}
+{% label Microsoft Office|16px %}
 
 
 ## Projetos

@@ -25,6 +25,10 @@ permalink: /sentences/
 
 Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
+| Confunsão |
+--------------------------|----------------------------
+| "O sentimento de confusão é o motor para girar a roda que nos proporciona a ação de seguir em frente." - William C.Canin |
+
 | Compreensão |
 --------------------------|----------------------------
 | "A falta de compreensão cega o homem. E quando cego não faz bom convívio." - William C.Canin |
