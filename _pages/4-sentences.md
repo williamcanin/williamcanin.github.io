@@ -26,6 +26,14 @@ permalink: /sentences/
 
 Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
+| Derrotas |
+--------------------------|----------------------------
+| "Se hoje você perde hoje, vá em busca da vitória amanhã! Se colocar na cabeça que não consegue, todos os dias vão ser a Derrota. Uma vida é feita de várias horas, vários dias, vários anos...não é feita de um único momento para se martilizar dele. Vai existir mais momentos! Viva, sorria para as derrotas que assim ela vai ter vergonha de estar dentro de você.﻿" - William C.Canin |
+
+| Agrado |
+--------------------------|----------------------------
+| "Viver tentando agradar, lhe obriga a esconder quem você é de verdade, se preocupando como alguém há de olhar para você. Viva em função de você, porém, agrade pessoas através de suas convicções e não através das convicções das pessoas." - William C.Canin |
+
 | Confunsão |
 --------------------------|----------------------------
 | "O sentimento de confusão é o motor para girar a roda que nos proporciona a ação de seguir em frente." - William C.Canin |
