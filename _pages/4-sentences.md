@@ -28,7 +28,7 @@ Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
 | Derrotas |
 --------------------------|----------------------------
-| "Se hoje você perde hoje, vá em busca da vitória amanhã! Se colocar na cabeça que não consegue, todos os dias vão ser a Derrota. Uma vida é feita de várias horas, vários dias, vários anos...não é feita de um único momento para se martilizar dele. Vai existir mais momentos! Viva, sorria para as derrotas que assim ela vai ter vergonha de estar dentro de você.﻿" - William C.Canin |
+| "Se hoje você perde, vá em busca da vitória amanhã! Se colocar na cabeça que não consegue, todos os dias vão ser a Derrota. Uma vida é feita de várias horas, vários dias, vários anos...não é feita de um único momento para se martilizar dele. Vai existir mais momentos! Viva, sorria para as derrotas que assim ela vai ter vergonha de estar dentro de você.﻿" - William C.Canin |
 
 | Agrado |
 --------------------------|----------------------------
