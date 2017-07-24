@@ -26,6 +26,10 @@ permalink: /sentences/
 
 Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
+| Amor |
+--------------------------|----------------------------
+| "Se você não sabe quem "amar" e como "amar", o próprio "amor" pode tornar sua vida uma ruína. Com isso, não confunda prudência em "amar" com apatia, pois, os prudentes estão apenas se previnindo da ruína, já os apáticos em "amar", estão criando a ruína em dobro.﻿" - William C.Canin |
+
 | Derrotas |
 --------------------------|----------------------------
 | "Se hoje você perde, vá em busca da vitória amanhã! Se colocar na cabeça que não consegue, todos os dias vão ser a Derrota. Uma vida é feita de várias horas, vários dias, vários anos...não é feita de um único momento para se martilizar dele. Vai existir mais momentos! Viva, sorria para as derrotas que assim ela vai ter vergonha de estar dentro de você.﻿" - William C.Canin |
