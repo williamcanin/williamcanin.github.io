@@ -26,6 +26,22 @@ permalink: /sentences/
 
 Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
+| Vida |
+--------------------------|----------------------------
+| "Todos temos amor, raiva, sentimentalismo, frieza, apego, desapego, intolerância, tolerância, decisão, indecisão, paz, preocupação, etc...tudo isso é o "TEMPERO", e a VIDA será a "COMIDA" no seu prato, você tem que experimentar um pouco de cada "TEMPERO", se exagerar ou esquecer de algum, não vai sentir prazer na "COMIDA".  " - William C.Canin |
+
+| Vida |
+--------------------------|----------------------------
+| "Se você é uma pessoa que fica ponderando as coisas; como viver; se preocupando; está vivendo da forma errada. Isso vai acabar te deixando sentimental e com culpa de sí mesmo, querendo ser perfeccionista. O sentimentalismo, a culpa e a preocupação, corroe o coração, e deixa-o entristecido. Apenas se jogue pra vida, sempre com Deus dentro de ti, e viva sem barreiras.﻿ Nunca viva a vida de uma forma ponderada na base dos outros também. Prefira comer o pão que o diabo amassou, só assim saberá a sua resistência, e não será manipulado por alguém. Viva a sua fórmula...se tiver vontade, faça, se não tiver, não faça." - William C.Canin |
+
+| Convício |
+--------------------------|----------------------------
+| "As pessoas descartam muito as outras, mas não param pra pensar que quando partirem pra vida eterna, talvez se encontrem novamente no Reino de Deus, caso, ambas as partes tenham o mesmo propósito. E com certeza, Deus não permitirá um descartando o outro em seu Reino.﻿ Vale a pena fazer inimizade?" - William C.Canin |
+
+| Sofrimento |
+--------------------------|----------------------------
+| "Como as chicoteadas que Jesus suportou; o sofrimento; ao olhar do Diabo, suporte às suas chicoteadas também.﻿" - William C.Canin |
+
 | Amor |
 --------------------------|----------------------------
 | "Se você não sabe quem "amar" e como "amar", o próprio "amor" pode tornar sua vida uma ruína. Com isso, não confunda prudência em "amar" com apatia, pois, os prudentes estão apenas se previnindo da ruína, já os apáticos em "amar", estão criando a ruína em dobro.﻿" - William C.Canin |

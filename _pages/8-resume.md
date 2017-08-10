@@ -30,8 +30,6 @@ tcontents:
       id: "#dados-pessoais"
     - name: Biografia
       id: "#biografia"
-    - name: Objetivo
-      id: "#objetivo"      
     - name: Educação
       id: "#educação"
     - name: Habilidades
@@ -59,8 +57,10 @@ permalink: /resume/
 **Nacionalidade**: Brasileiro   
 **Data Nasc.**: 25/04/1988  
 **Estado Civil**: Solteiro   
+<!-- **Endereço**: Rua General Osório, 1149 / Apto 13 / Centro    -->
+<!-- **Cidade**: Ribeirão Preto/SP    -->
+<!-- **CEP**: 14010-000    -->
 **País**: Brasil   
-**Província**: Lins/SP   
 **E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})   
 **Website**: [{{ site.url }}{{ site.baseurl }}]({{ site.url }}{{ site.baseurl }}){:target="_blank"}   
 
@@ -77,10 +77,6 @@ No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como S
 
 Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog]({{ site.url }}{{ site.baseurl }}/blog/){:target="_blank"}.
 
-## Objetivo
-
-Encargo na área de TI.
-
 ## Educação
 
 ### Centro Universitário de Lins (Unilins)
@@ -89,9 +85,9 @@ Encargo na área de TI.
 
 Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Java, Banco de Dados* e pouco de *Web Design*. Na conclusão de curso, foi realizado um sistema ERP (Beta) para uma loja de eletrodomésticos local. A jornada durou 4 anos, onde obtive a conclusão no final do ano 2013.
 
-## Habilidades
+## Conhecimentos / Habilidades
 
-Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novas habilidades em diversas linguagens de programação e softwares.
+Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novos conhecimentos em diversas linguagens de programação e softwares.
 
 #### **Front-End:**
 
