@@ -26,9 +26,17 @@ permalink: /sentences/
 
 Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
+| Liberdade |
+--------------------------|----------------------------
+| "Jesus quer nos jogar do ninho para aprendermos a voar! Fortificar-se em Jesus, é diferente de ficar debaixo de suas asas." - William C.Canin |
+
+| Inveja |
+--------------------------|----------------------------
+| "A inveja, não é querer ter o que o outro tem, ao contrário, isso é bonito, é um sinal de reconhecimento. A inveja é querer que o outro não tenha o que você tem ou não tem. A inveja é querer que pessoa saia de um modo de vida (sendo que ela está vivendo bem) ou que ela deixe de ter algo por falta de concordância de outra pessoa. Cuidado com a inveja! A inveja retirou Lúcifer do céu por querer que Deus não fosse Deus, por querer ser Deus. Não se contentou em querer ter apenas algumas qualidades de Deus igual o resto dos arcanjos, ele queria ser o Deus. Não se contentou com as escolhas de Deus. Podemos ter qualidades igual as dos outros, mas não podemos ser o outro ou ocupar o lugar do outro. A inveja é não saber concordar com o modo que o outro vive." - William C.Canin |
+
 | Vida |
 --------------------------|----------------------------
-| "Todos temos amor, raiva, sentimentalismo, frieza, apego, desapego, intolerância, tolerância, decisão, indecisão, paz, preocupação, etc...tudo isso é o "TEMPERO", e a VIDA será a "COMIDA" no seu prato, você tem que experimentar um pouco de cada "TEMPERO", se exagerar ou esquecer de algum, não vai sentir prazer na "COMIDA".  " - William C.Canin |
+| "Todos temos amor, raiva, sentimentalismo, frieza, apego, desapego, intolerância, tolerância, decisão, indecisão, paz, preocupação, etc...tudo isso é o "TEMPERO", e a VIDA será a "COMIDA" no seu prato, você tem que experimentar um pouco de cada "TEMPERO", se exagerar ou esquecer de algum, não vai sentir prazer na "COMIDA"." - William C.Canin |
 
 | Vida |
 --------------------------|----------------------------

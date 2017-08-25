@@ -56,22 +56,29 @@ permalink: /resume/
 
 **Nacionalidade**: Brasileiro   
 **Data Nasc.**: 25/04/1988  
-**Estado Civil**: Solteiro   
+<!-- **Estado Civil**: Solteiro    -->
+<!-- **Filhos?** Não    -->
+<!-- **Fumante?** Não    -->
 <!-- **Endereço**: Rua General Osório, 1149 / Apto 13 / Centro    -->
 <!-- **Cidade**: Ribeirão Preto/SP    -->
 <!-- **CEP**: 14010-000    -->
+**Cidade**: Lins/SP   
 **País**: Brasil   
+<!-- **Fone:** (14) 99795-9006    -->
 **E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})   
 **Website**: [{{ site.url }}{{ site.baseurl }}]({{ site.url }}{{ site.baseurl }}){:target="_blank"}   
 
+<!-- ## Pretensão salarial -->
+
+<!-- A Combinar -->
 
 ## Biografia
 
-Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em [linguagens de programação](#habilidades) e tarefas voltadas a computação.
+Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação](#habilidades) e tarefas voltadas a computação.
 
-Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, então eu diria que conheço bem suas lógicas. 
+Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade. 
 
-Hoje estou mais para desenvolvimento Web ([Front-End](#front-end)), porém, sempre utilizo desenvolvimento [Back-End](#back-end).  Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [habilidades](#habilidades) em [outras ferramentas](#outras-ferramentas).
+Hoje estou mais para desenvolvimento Web ([Front-End](#front-end)), porém, sempre utilizo desenvolvimento [Back-End](#back-end).  Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
 
 No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Arch Linux](https://www.archlinux.org/){:target="_blank"}.
 
@@ -83,7 +90,7 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 *Lins, São Paulo - Análise e Desenvolvimento de Sistemas*
 
-Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Java, Banco de Dados* e pouco de *Web Design*. Na conclusão de curso, foi realizado um sistema ERP (Beta) para uma loja de eletrodomésticos local. A jornada durou 4 anos, onde obtive a conclusão no final do ano 2013.
+Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Java, Banco de Dados(Oracle)* e pouco de *Web Design*. Na conclusão de curso, foi realizado um sistema ERP (Beta) para uma loja de eletrodomésticos local. A jornada durou 4 anos, onde obtive a conclusão no final do ano 2013.
 
 ## Conhecimentos / Habilidades
 
@@ -101,7 +108,10 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 {% label Ruby|16px %}
 {% label UNIX / GNU via Bash|16px %}
 {% label Delphi|16px %}
-{% label Java|16px %}
+
+#### **Banco de Dados:**
+
+{% label MySQL|16px %}
 
 #### **Automatizadores:**
 
@@ -138,10 +148,11 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 ## Projetos
 
-Realiazo diversos projetos Open-Source diariamente e armazeno tudo com [git](https://git-scm.com/){:target="_blank"} no meu [GitHub](https://github.com/williamcanin){:target="_blank"}. Aqui está alguns:
+Realiazo diversos projetos Open-Source e armazeno tudo com [git](https://git-scm.com/){:target="_blank"} no meu [GitHub](https://github.com/williamcanin){:target="_blank"}. Aqui está alguns:
 
 * [Jekyll Spotify Plugin](http://williamcanin.github.io/jekyll-spotify-plugin){:target="_blank"} - Jekyll plug-in para gerar fragmentos de código HTML para incorporar música do Spotify em templates Jekyll.
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script via Shell para realizar a recuperação do Grub no Arch Linux.
 * [iDisconnect ](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
 Para ver todos meus projetos, acesse: [{{site.url}}{{site.baseurl}}/projects/]({{site.url}}{{site.baseurl}}/projects/){:target="_blank"}.
+
