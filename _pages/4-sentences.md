@@ -26,6 +26,34 @@ permalink: /sentences/
 
 Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
+| Filosofia |
+--------------------------|----------------------------
+| "Filosofar; é pensar pra depois de algum tempo transmitir esse pensamento; transmitir a filosofia instantaneamente ocorrem erros." - William C.Canin |
+
+| Maturidade |
+--------------------------|----------------------------
+| "A sua maturidade está relacionada ao seu conhecimento. A idade é relacionada a sua carne; e o conhecimento ao espírito." - William C.Canin |
+
+| Ofensas |
+--------------------------|----------------------------
+| "Se você imaginar que Deus é o único que pode dizer como seu coração é; você nunca se preocupará com ofensas ou opiniões negativas de humanos contra ti." - William C.Canin |
+
+| Bondade |
+--------------------------|----------------------------
+| "Não coloque expectativas que pessoas são boas, mas sim nas ações boas dessas pessoas; pois, se acreditarmos que a bondade é a pessoa em si, em algum momento da vida elas te decepcionaram." - William C.Canin |
+
+| Escolhas |
+--------------------------|----------------------------
+| "Não precisamos seguir os costumes e ensinamentos mundano. Não precisamos dizer palavões para desabafar; Não precisamos ter ódio se não nos dão amor; Não precisamos beber álcool para ficarmos alegre; Não precisamos fumar para sermos descolados; Não precisamos usar drogas ilícitas para termos prazer; Não precisamos assumir um romance para mostrar maturidade; Não precisamos da luxúria para viver bem; Não precisamos ir na igreja cotidianeamente para termos fé e Deus em nós, porém, só precisamos abrir a Bíblia e seguir as palavras de Deus, que tem os ensinamentos mais corretos de todos." - William C.Canin |
+
+| Humilhados |
+--------------------------|----------------------------
+| "Hoje; ironiza-se o humilhado; mas amanhã o semblante do irônico, se tornará pasmo." - William C.Canin |
+
+| Bíblia |
+--------------------------|----------------------------
+| "Pegar a Bíblia para ler, é um estudo, não uma religiosidade. Todos temos que nos formar na palavra de Deus para sabermos viver." - William C.Canin |
+
 | Liberdade |
 --------------------------|----------------------------
 | "Jesus quer nos jogar do ninho para aprendermos a voar! Fortificar-se em Jesus, é diferente de ficar debaixo de suas asas." - William C.Canin |
