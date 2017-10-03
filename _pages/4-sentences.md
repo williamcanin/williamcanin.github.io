@@ -26,6 +26,18 @@ permalink: /sentences/
 
 Aqui são algumas frases de minha autoria quando estou refletindo na vida...
 
+| Felicidade |
+--------------------------|----------------------------
+| "A egrenagem para a vida, é procurar a felicidade. Até quando erramos, de alguma forma; estamos querendo ser feliz." - William C.Canin |
+
+| Seriedade |
+--------------------------|----------------------------
+| "Um rosto fechado e sem sorriso, nem sempre significa maldade e arrogância, mas sim maciço; determinado; um escudo de defesa." - William C.Canin |
+
+| Oração |
+--------------------------|----------------------------
+| "Mais vale aquela pessoa que ora por 1 minuto todos os dias constante; do que aquela que ora por 1 hora em um dia específico." - William C.Canin |
+
 | Filosofia |
 --------------------------|----------------------------
 | "Filosofar; é pensar pra depois de algum tempo transmitir esse pensamento; transmitir a filosofia instantaneamente ocorrem erros." - William C.Canin |
