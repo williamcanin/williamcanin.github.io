@@ -4,4 +4,3 @@ node_modules
 _vendor
 dev
 .jekyll-metadata
-Gemfile.lock
