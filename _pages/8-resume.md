@@ -54,19 +54,19 @@ permalink: /resume/
 
 ## Dados Pessoais
 
-**Nacionalidade**: Brasileiro   
-**Data Nasc.**: 25/04/1988  
+**Nacionalidade**: Brasileiro
+**Data Nasc.**: 25/04/1988
 <!-- **Estado Civil**: Solteiro    -->
 <!-- **Filhos?** Não    -->
 <!-- **Fumante?** Não    -->
 <!-- **Endereço**: Rua General Osório, 1149 / Apto 13 / Centro    -->
 <!-- **Cidade**: Ribeirão Preto/SP    -->
 <!-- **CEP**: 14010-000    -->
-**Cidade**: Lins/SP   
-**País**: Brasil   
+**Cidade**: Lins/SP
+**País**: Brasil
 <!-- **Fone:** (14) 99795-9006    -->
-**E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})   
-**Website**: [{{ site.url }}{{ site.baseurl }}]({{ site.url }}{{ site.baseurl }}){:target="_blank"}   
+**E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})
+**Website**: [{{ site.url }}{{ site.baseurl }}]({{ site.url }}{{ site.baseurl }}){:target="_blank"}
 
 <!-- ## Pretensão salarial -->
 
@@ -76,11 +76,11 @@ permalink: /resume/
 
 Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação](#habilidades) e tarefas voltadas a computação.
 
-Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade. 
+Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade.
 
 Hoje estou mais para desenvolvimento Web ([Front-End](#front-end)), porém, sempre utilizo desenvolvimento [Back-End](#back-end).  Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
 
-No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Arch Linux](https://www.archlinux.org/){:target="_blank"}.
+No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"} e [Arch Linux](https://www.archlinux.org/){:target="_blank"} como secundária.
 
 Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog]({{ site.url }}{{ site.baseurl }}/blog/){:target="_blank"}.
 
