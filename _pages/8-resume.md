@@ -78,7 +78,7 @@ Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:tar
 
 Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade.
 
-Hoje estou mais para desenvolvimento Web ([Front-End](#front-end)), porém, sempre utilizo desenvolvimento [Back-End](#back-end).  Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
+Hoje estou mais para desenvolvimento Web ([Front-End](#front-end)), porém, sempre utilizo desenvolvimento [Back-End](#back-end), ou seja, me considerando um desenvolvedor full-stack.  Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
 
 No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"} e [Arch Linux](https://www.archlinux.org/){:target="_blank"} como secundária.
 
