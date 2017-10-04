@@ -54,31 +54,38 @@ permalink: /resume/
 
 ## Dados Pessoais
 
-**Nacionalidade**: Brasileiro
-**Data Nasc.**: 25/04/1988
+**Nacionalidade**: Brasileiro   
+**Naturalidade:** Santo André/SP   
+**Data Nasc.**: 25/04/1988   
 <!-- **Estado Civil**: Solteiro    -->
 <!-- **Filhos?** Não    -->
 <!-- **Fumante?** Não    -->
-<!-- **Endereço**: Rua General Osório, 1149 / Apto 13 / Centro    -->
-<!-- **Cidade**: Ribeirão Preto/SP    -->
-<!-- **CEP**: 14010-000    -->
-**Cidade**: Lins/SP
-**País**: Brasil
-<!-- **Fone:** (14) 99795-9006    -->
-**E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})
-**Website**: [{{ site.url }}{{ site.baseurl }}]({{ site.url }}{{ site.baseurl }}){:target="_blank"}
+<!-- **Endereço**: Rua, Floriano Peixoto, 1255 / Centro    -->
+<!-- **CEP**: 16440-000    -->
+<!-- **Cidade**: Sabino/SP    -->
+**País**: Brasil   
+**Fone:** +55 14 99795-9006   
+**E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})   
+**Website**: [{{ site.url }}{{ site.baseurl }}]({{ site.url }}{{ site.baseurl }}){:target="_blank"}   
 
 <!-- ## Pretensão salarial -->
 
 <!-- A Combinar -->
 
+<!-- ## Objetico -->
+
+<!-- Area de TI / Informática -->
+
 ## Biografia
 
-Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação](#habilidades) e tarefas voltadas a computação.
+Apaixonado por desafios, tecnologia, design , pessoas e melhoramento pessoal; onde tenho a convicção de que tudo é possível com dedicação e resiliência.
+
+Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação](#habilidades) e tarefas voltadas a computação. 
 
 Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade.
 
-Hoje estou mais para desenvolvimento Web ([Front-End](#front-end)), porém, sempre utilizo desenvolvimento [Back-End](#back-end), ou seja, me considerando um desenvolvedor full-stack.  Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
+Atualmente exerço mais o desenvolvimento Web ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento [Back-End](#back-end), ou seja, me considerando um desenvolvedor full-stack. Se tratando de [redes](#redes), me adaptei com os servidores Linux; no qual os conheço por usar o
+sistema diariamente baseado no mesmo. Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
 
 No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"} e [Arch Linux](https://www.archlinux.org/){:target="_blank"} como secundária.
 
@@ -88,7 +95,7 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 ### Centro Universitário de Lins (Unilins)
 
-*Lins, São Paulo - Análise e Desenvolvimento de Sistemas*
+*Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas*
 
 Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Java, Banco de Dados(Oracle)* e pouco de *Web Design*. Na conclusão de curso, foi realizado um sistema ERP (Beta) para uma loja de eletrodomésticos local. A jornada durou 4 anos, onde obtive a conclusão no final do ano 2013.
 
@@ -112,6 +119,7 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 #### **Banco de Dados:**
 
 {% label MySQL|16px %}
+{% label Firebird|16px %}
 
 #### **Automatizadores:**
 
@@ -122,6 +130,7 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 #### **Metodologias:**
 
+{% label Design Responsivo (Mobile First)|16px %}
 {% label UML|16px %}
 {% label OOP|16px %}
 {% label PL/SQL|16px %}
@@ -129,10 +138,13 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 #### **Redes:**
 
+{% label Ubuntu Server|16px %}
+{% label Red Hat Enterprise Linux Server|16px %}
+{% label TCP/IP|16px %}
 {% label IPTables|16px %}
 {% label Squid|16px %}
 
-#### **S.O:**
+#### **Sistemas Operacionais:**
 
 {% label Linux|16px %}
 {% label Windows|16px %}
@@ -141,7 +153,6 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 {% label Gimp|16px %}
 {% label Adobe Photoshop|16px %}
-{% label Sony Vegas|16px %}
 {% label LibreOffice|16px %}
 {% label Microsoft Office|16px %}
 
@@ -155,4 +166,8 @@ Realiazo diversos projetos Open-Source e armazeno tudo com [git](https://git-scm
 * [iDisconnect ](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
 Para ver todos meus projetos, acesse: [{{site.url}}{{site.baseurl}}/projects/]({{site.url}}{{site.baseurl}}/projects/){:target="_blank"}.
+
+<!-- ## Informações adicionais -->
+
+<!-- CNH - AB -->
 

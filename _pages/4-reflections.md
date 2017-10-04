@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Frases
+title: Reflexões
 sitemap:
   priority: 0.7
   changefreq: 'monthly'
@@ -24,7 +24,7 @@ script: [projects.js]
 permalink: /sentences/
 ---
 
-Aqui são algumas frases de minha autoria quando estou refletindo na vida...
+Reflexões por William C. Canin
 
 | Felicidade |
 --------------------------|----------------------------
