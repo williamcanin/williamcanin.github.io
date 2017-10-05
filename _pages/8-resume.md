@@ -99,6 +99,27 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Java, Banco de Dados(Oracle)* e pouco de *Web Design*. Na conclusão de curso, foi realizado um sistema ERP (Beta) para uma loja de eletrodomésticos local. A jornada durou 4 anos, onde obtive a conclusão no final do ano 2013.
 
+
+## Experiências
+
+*LPI Linux*
+
+### Linux Essentials - Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux
+
+### LPIC-1 101 - Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede
+
+* Arquitetura do Sistema
+* Instalação e manutenção de pacotes linux
+* Comandos GNU e Unix
+* Devices, Linux Filesystems, Hieraquia Padrão dos Filesystem
+
+### LPIC-1 102 - Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede
+
+* Shell, Scripting e Gerenciamento de Dados
+* Interfaces e Desktops
+* Tarefas administrativas
+* Serviços Essenciais do sistema
+
 ## Conhecimentos / Habilidades
 
 Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novos conhecimentos em diversas linguagens de programação e softwares.
