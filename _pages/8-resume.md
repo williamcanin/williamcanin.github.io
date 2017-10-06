@@ -66,7 +66,7 @@ permalink: /resume/
 **País**: Brasil   
 **Fone:** +55 14 99795-9006   
 **E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})   
-**Website**: [https://williamcanin.me   ](http://williamcanin.github.io)
+**Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}   
 
 <!-- ## Pretensão salarial -->
 
