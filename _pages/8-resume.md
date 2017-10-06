@@ -57,7 +57,7 @@ permalink: /resume/
 **Nacionalidade**: Brasileiro   
 **Naturalidade:** Santo André/SP   
 **Data Nasc.**: 25/04/1988   
-<!-- **Estado Civil**: Solteiro    -->
+**Estado Civil**: Solteiro   
 <!-- **Filhos?** Não    -->
 <!-- **Fumante?** Não    -->
 <!-- **Endereço**: Rua, Floriano Peixoto, 1255 / Centro    -->
@@ -66,7 +66,7 @@ permalink: /resume/
 **País**: Brasil   
 **Fone:** +55 14 99795-9006   
 **E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})   
-**Website**: [{{ site.url }}{{ site.baseurl }}]({{ site.url }}{{ site.baseurl }}){:target="_blank"}   
+**Website**: [https://williamcanin.me   ](http://williamcanin.github.io)
 
 <!-- ## Pretensão salarial -->
 
@@ -78,7 +78,7 @@ permalink: /resume/
 
 ## Biografia
 
-Apaixonado por desafios, tecnologia, design , pessoas e melhoramento pessoal; onde tenho a convicção de que tudo é possível com dedicação e resiliência.
+Apaixonado por desafios, tecnologia, design, pessoas e melhoramento pessoal; onde tenho a convicção de que tudo é possível com dedicação e resiliência.
 
 Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação](#habilidades) e tarefas voltadas a computação. 
 
@@ -87,9 +87,9 @@ Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou
 Atualmente exerço mais o desenvolvimento Web ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento [Back-End](#back-end), ou seja, me considerando um desenvolvedor full-stack. Se tratando de [redes](#redes), me adaptei com os servidores Linux; no qual os conheço por usar o
 sistema diariamente baseado no mesmo. Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
 
-No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"} e [Arch Linux](https://www.archlinux.org/){:target="_blank"} como secundária.
+No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"}. Em todos esses anos de usuário, adquiri alguns conhecimentos em [Linux LPI](#linux-lpi).
 
-Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog]({{ site.url }}{{ site.baseurl }}/blog/){:target="_blank"}.
+Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}.
 
 ## Educação
 
@@ -102,18 +102,18 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 
 ## Experiências
 
-*LPI Linux*
+#### Linux LPI
 
-### Linux Essentials - Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux
+**Linux Essentials - Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux**
 
-### LPIC-1 101 - Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede
+**LPIC-1 101 - Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede**
 
 * Arquitetura do Sistema
 * Instalação e manutenção de pacotes linux
 * Comandos GNU e Unix
 * Devices, Linux Filesystems, Hieraquia Padrão dos Filesystem
 
-### LPIC-1 102 - Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede
+**LPIC-1 102 - Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede**
 
 * Shell, Scripting e Gerenciamento de Dados
 * Interfaces e Desktops
@@ -186,7 +186,7 @@ Realiazo diversos projetos Open-Source e armazeno tudo com [git](https://git-scm
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script via Shell para realizar a recuperação do Grub no Arch Linux.
 * [iDisconnect ](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
-Para ver todos meus projetos, acesse: [{{site.url}}{{site.baseurl}}/projects/]({{site.url}}{{site.baseurl}}/projects/){:target="_blank"}.
+Para ver todos meus projetos, acesse: [https://williamcanin.me/projects](https://williamcanin.me/projects/){:target="_blank"}.
 
 <!-- ## Informações adicionais -->
 
