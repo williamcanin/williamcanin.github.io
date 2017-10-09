@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Última versão do kernel linux através de um script | William Canin</title>
+<meta name="description" content="Iae terráqueos, firmeza total? Espero que sim.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="kFisEN5aqITDKsnq2_HXHtxA8ygFVE95XlKapU7Kz_I">
+<meta http-equiv="cache-control" content="max-age">
+<meta http-equiv="pragma" content="public">
+<meta name="keywords" content="William, Canin, Analista, Programador, WebDesign, Geek">
+<meta name="author" content="William Canin">
+<meta property="og:locale" content="pt-BR">
+<meta property="og:site_name" content="William Canin">
+<meta property="og:type" content="WebSite">
+<meta property="og:url" content="http://localhost:4000/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/">
+<meta property="og:description" content="Analista e Desenvolvedor de Sistemas / Programador">
+<meta property="og:title" content="Última versão do kernel linux através de um script - William Canin">
+<link rel="canonical" href="http://localhost:4000/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/">
+<link rel="alternate" type="application/rss+xml" title="William Canin" href="http://localhost:4000/feed.xml"> <script type="application/ld+json"> {"@context": "http://schema.org", "@type": "WebSite", "name": "William Canin", "headline": "William Canin", "author": {"@type": "Person", "name": {"William Canin"}}, "description": "Analista e Desenvolvedor de Sistemas / Programador", "url": "http://localhost:4000"} </script> <script type="text/javascript"> var GLOBAL_BASEURL = "http://localhost:4000"; </script><link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/images/favicon/favicon-32x32.png">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i,700,700i,800,800i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+<link rel="stylesheet" href="http://localhost:4000/assets/stylesheets/main.css"> <script> var url_site = "http://localhost:4000", url_production = "http://localhost:4000"; if (url_site != url_production) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-101186555-1', 'auto'); ga('set', 'forceSSL', true); ga('send', 'pageview'); }; </script>
+</head>
+<body>
+<div class="main" id="top">
+<div class="container wrapper"><div class="row">
+<div class="col-sm-3 sidebar">
+<div class="row avatar"> <a href="http://localhost:4000"> <img class="img-responsive center-block avatar-img" src="http://localhost:4000/assets/images/avatar/williamcanin.svg" height="165" width="165" alt="William Canin"> </a>
+</div>
+<div class="row header"><h2><a href="http://localhost:4000">Hey, <br> I'm William. </a></h2></div>
+<div class="row menu">
+<ul>
+<li> <i class="fa fa-home" aria-hidden="true"></i> <a href="http://localhost:4000/">Hello</a>
+</li>
+<hr class="breakline">
+<li class="li-fa-edit"> <i style="font-size: inherit;" class="fa fa-edit" aria-hidden="true"></i> <a href="http://localhost:4000/blog/">Blog</a>
+</li>
+<li class="li-fa-search"> <i style="font-size: inherit;" class="fa fa-search" aria-hidden="true"></i> <a href="http://localhost:4000/blog/search/">Pesquisar</a>
+</li>
+<li class="li-fa-tags"> <i style="font-size: inherit;" class="fa fa-tags" aria-hidden="true"></i> <a href="http://localhost:4000/blog/tags/">Tags</a>
+</li>
+<li class="li-fa-lightbulb-o"> <i style="font-size: 18px;" class="fa fa-lightbulb-o" aria-hidden="true"></i> <a href="http://localhost:4000/sentences/" onclick="ga('send', 'event', 'linkTo', 'http://localhost:4000/sentences/', 'Reflexões');">Reflexões</a>
+</li>
+<li class="li-fa-briefcase"> <i style="font-size: inherit;" class="fa fa-briefcase" aria-hidden="true"></i> <a href="http://localhost:4000/projects/" onclick="ga('send', 'event', 'linkTo', 'http://localhost:4000/projects/', 'Projetos');">Projetos</a>
+</li>
+<li class="li-fa-rss"> <i style="font-size: inherit;" class="fa fa-rss" aria-hidden="true"></i> <a href="http://localhost:4000/feed.xml">Feed</a>
+</li>
+<li class="li-fa-envelope"> <i style="font-size: inherit;" class="fa fa-envelope" aria-hidden="true"></i> <a href="http://localhost:4000/contact/" onclick="ga('send', 'event', 'linkTo', 'http://localhost:4000/contact/', 'Contacto');">Contacto</a>
+</li>
+<li class="li-fa-file-text-o"> <i style="font-size: inherit;" class="fa fa-file-text-o" aria-hidden="true"></i> <a href="http://localhost:4000/resume/" onclick="ga('send', 'event', 'linkTo', 'http://localhost:4000/resume/', 'Currículo');">Currículo</a>
+</li>
+</ul>
+<div class="socials"><div class="row">
+<p></p>
+<p>Siga-Me!</p>
+<div id="github" class="col-sm-3 columns"> <a href="https://github.com/williamcanin" target="_blank" title="GitHub" onclick="ga('send', 'event', 'linkTo', 'GitHub', 'Social Network', {useBeacon: true});"> <i class="fa fa-github icon" aria-hidden="true"></i> </a>
+</div>
+<div id="google-plus" class="col-sm-3 columns"> <a href="https://plus.google.com/+WilliamCanin" target="_blank" title="Google Plus" onclick="ga('send', 'event', 'linkTo', 'Google Plus', 'Social Network', {useBeacon: true});"> <i class="fa fa-google-plus icon" aria-hidden="true"></i> </a>
+</div>
+<div id="linkedin" class="col-sm-3 columns"> <a href="https://br.linkedin.com/in/williamcostacanin" target="_blank" title="LinkedIn" onclick="ga('send', 'event', 'linkTo', 'LinkedIn', 'Social Network', {useBeacon: true});"> <i class="fa fa-linkedin icon" aria-hidden="true"></i> </a>
+</div>
+<div id="twitter" class="col-sm-3 columns"> <a href="https://twitter.com/williamcanin" target="_blank" title="Twitter" onclick="ga('send', 'event', 'linkTo', 'Twitter', 'Social Network', {useBeacon: true});"> <i class="fa fa-twitter icon" aria-hidden="true"></i> </a>
+</div>
+</div></div>
+</div>
+</div>
+<div class="col-sm-9 content-main"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><div class="row title"><h1>Última versão do kernel linux através de um script</h1></div>
+<div class="row meta" datetime="2017-05-05"> <time class="col-sm-6 datetime"> <i class="fa fa-calendar" aria-hidden="true"></i><span class="text tmargin "> 05 Maio, 2017 </span> </time><div class="col-sm-6 count-comments"> <span class="wrap"><i class="fa fa-comments" aria-hidden="true"></i> <a href="#comments" data-disqus-identifier="/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/">0</a></span>
+</div>
+</div>
+<div class="row tag-list"> <i class="fa fa-tags" aria-hidden="true"></i> <a href="http://localhost:4000/blog/tags//shell-script">shell-script</a> <a href="http://localhost:4000/blog/tags//kernel">kernel</a> <a href="http://localhost:4000/blog/tags//download">download</a> <a href="http://localhost:4000/blog/tags//linux">linux</a>
+</div>
+<div class="row"> Leia isto "em cerca de 5 minutos".</div>
+<div class="row content">
+<p>Iae terráqueos, firmeza total? Espero que sim.</p>
+<p>Vou compartilhar com vocês um Shell script simples, mas que pode ser de bastante utilidade dependendo do caso. Esse script fará o download da última versão estável do <a href="https://www.kernel.org/" target="_blank">kernel</a> Linux.</p>
+<p>Ai tu se pergunta:</p>
+<p><em>Mas porque raios eu deveria ter um script para realizar o donwload do kernel, se eu posso ir diretamente no navegador e baixar?</em></p>
+<p>Simples, talves você esteja usando uma distribuição como servidor (ou não) sem interface gráfica e necessita compilar o kernel. Nesse caso vai ser você e a “telinha preta” de amiguinhos. <img class="emoji" title=":smile:" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" height="20" width="20"></p>
+<p>Enfim …</p>
+<p>1) Crie um arquivo vazio:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>touch kerneldown</code></pre></figure><p>2) Abra esse arquivo vazio com um editor preferencial e copie o conteúdo abaixo do script:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno"> 1 </span><span class="ch">#!/bin/bash</span>
+<span class="lineno"> 2 </span>
+<span class="lineno"> 3 </span><span class="c1"># Type: Shell Script</span>
+<span class="lineno"> 4 </span><span class="c1"># Description: Download latest version stable kernel Linux.</span>
+<span class="lineno"> 5 </span><span class="c1"># Program Name: kerneldown</span>
+<span class="lineno"> 6 </span><span class="c1"># Release Status: 0.0.1</span>
+<span class="lineno"> 7 </span>
+<span class="lineno"> 8 </span><span class="c1"># Author: William C. Canin</span>
+<span class="lineno"> 9 </span><span class="c1">#   E-Mail: william.costa.canin@gmail.com</span>
+<span class="lineno">10 </span><span class="c1">#   WebSite: http://williamcanin.github.io</span>
+<span class="lineno">11 </span><span class="c1">#   GitHub: https://github.com/williamcanin</span>
+<span class="lineno">12 </span>
+<span class="lineno">13 </span><span class="c1"># Copyright © 2017 William C. Canin</span>
+<span class="lineno">14 </span>
+<span class="lineno">15 </span><span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="lineno">16 </span><span class="c1"># of this software and associated documentation files (the "Software"), to deal</span>
+<span class="lineno">17 </span><span class="c1"># in the Software without restriction, including without limitation the rights</span>
+<span class="lineno">18 </span><span class="c1"># to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="lineno">19 </span><span class="c1"># copies of the Software, and to permit persons to whom the Software is</span>
+<span class="lineno">20 </span><span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="lineno">21 </span>
+<span class="lineno">22 </span><span class="c1"># The above copyright notice and this permission notice shall be included in all</span>
+<span class="lineno">23 </span><span class="c1"># copies or substantial portions of the Software.</span>
+<span class="lineno">24 </span>
+<span class="lineno">25 </span><span class="c1"># THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="lineno">26 </span><span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="lineno">27 </span><span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="lineno">28 </span><span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="lineno">29 </span><span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="lineno">30 </span><span class="c1"># OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="lineno">31 </span><span class="c1"># SOFTWARE.</span>
+<span class="lineno">32 </span>
+<span class="lineno">33 </span><span class="c1"># Dependencies:</span>
+<span class="lineno">34 </span>  <span class="c1"># curl, wget</span>
+<span class="lineno">35 </span>
+<span class="lineno">36 </span><span class="c1"># Usage:</span>
+<span class="lineno">37 </span>  <span class="c1"># bash kerneldown</span>
+<span class="lineno">38 </span>
+<span class="lineno">39 </span>
+<span class="lineno">40 </span>
+<span class="lineno">41 </span><span class="c1">#  Begin</span>
+<span class="lineno">42 </span>
+<span class="lineno">43 </span><span class="c1"># Variables global</span>
+<span class="lineno">44 </span><span class="nv">CWD</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/kernel"</span>
+<span class="lineno">45 </span>
+<span class="lineno">46 </span><span class="c1"># require Curl and WGet.</span>
+<span class="lineno">47 </span><span class="nb">type</span> curl &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="o">{</span>
+<span class="lineno">48 </span>    <span class="nb">echo</span> &gt;<span class="p">&amp;</span><span class="m">2</span> <span class="s2">"I require curl but it's not installed. Aborting."</span>
+<span class="lineno">49 </span>    <span class="nb">exit</span> <span class="m">0</span>
+<span class="lineno">50 </span><span class="o">}</span>
+<span class="lineno">51 </span><span class="nb">type</span> wget &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="o">{</span>
+<span class="lineno">52 </span>    <span class="nb">echo</span> &gt;<span class="p">&amp;</span><span class="m">2</span> <span class="s2">"I require wget but it's not installed. Aborting."</span>
+<span class="lineno">53 </span>    <span class="nb">exit</span> <span class="m">0</span>
+<span class="lineno">54 </span><span class="o">}</span>
+<span class="lineno">55 </span>
+<span class="lineno">56 </span><span class="c1"># Function download latest kernel (https://www.kernel.org/)</span>
+<span class="lineno">57 </span><span class="k">function</span> _download_lastet_kernel<span class="o">()</span>
+<span class="lineno">58 </span>  <span class="o">{</span>
+<span class="lineno">59 </span>
+<span class="lineno">60 </span>    <span class="c1"># Prepare base download</span>
+<span class="lineno">61 </span>   <span class="o">[</span> ! -d <span class="s2">"</span><span class="nv">$CWD</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> mkdir <span class="nv">$CWD</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$CWD</span> <span class="o">||</span> <span class="nb">cd</span> <span class="nv">$CWD</span>
+<span class="lineno">62 </span>
+<span class="lineno">63 </span>    <span class="nb">printf</span> <span class="s2">"\n</span><span class="k">$(</span>tput setaf <span class="m">38</span><span class="k">)</span><span class="s2">→ Downloading the latest version of Kernel. Wait ...</span><span class="k">$(</span>tput sgr0<span class="k">)</span><span class="s2">\n"</span>
+<span class="lineno">64 </span>
+<span class="lineno">65 </span>    <span class="c1"># Capture latest version stable kernel</span>
+<span class="lineno">66 </span>    <span class="nv">latest_stable</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>curl -s https://www.kernel.org/releases.json <span class="p">|</span> grep <span class="s2">"version"</span> <span class="p">|</span> cut -d<span class="s2">":"</span> -f2 <span class="p">|</span> cut -d<span class="s2">"\""</span> -f2 <span class="p">|</span> sed <span class="s1">'2,900d'</span><span class="k">)</span><span class="s2">"</span>
+<span class="lineno">67 </span>
+<span class="lineno">68 </span>    <span class="c1"># Capture full url package kernel</span>
+<span class="lineno">69 </span>    <span class="nv">url_source</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">echo</span> https:<span class="k">$(</span>curl -s https://www.kernel.org/releases.json <span class="p">|</span> grep <span class="s2">"source"</span> <span class="p">|</span> grep <span class="s2">"</span><span class="si">${</span><span class="nv">latest_stable</span><span class="si">}</span><span class="s2">"</span> <span class="p">|</span> cut -d<span class="s2">":"</span> -f3 <span class="p">|</span> cut -d<span class="s2">"\""</span> -f1<span class="k">))</span><span class="s2">"</span>
+<span class="lineno">70 </span>
+<span class="lineno">71 </span>    <span class="c1"># Start download kernel</span>
+<span class="lineno">72 </span>    wget -c <span class="nv">$url_source</span>
+<span class="lineno">73 </span>
+<span class="lineno">74 </span>    <span class="c1"># Message finish</span>
+<span class="lineno">75 </span>    <span class="nb">printf</span> <span class="s2">"\n</span><span class="k">$(</span>tput setaf <span class="m">76</span><span class="k">)</span><span class="s2">✔ Download completed! Finished in: \"</span><span class="nv">$CWD</span><span class="s2">\"</span><span class="k">$(</span>tput sgr0<span class="k">)</span><span class="s2">\n"</span>
+<span class="lineno">76 </span>
+<span class="lineno">77 </span><span class="o">}</span>
+<span class="lineno">78 </span>
+<span class="lineno">79 </span><span class="c1"># Start function '_download_lastet_kernel'</span>
+<span class="lineno">80 </span>_download_lastet_kernel
+<span class="lineno">81 </span>
+<span class="lineno">82 </span><span class="c1"># End</span></code></pre></figure><p>3) Dê permissão de execução para esse script:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>chmod +x kerneldown</code></pre></figure><p>Pronto! Execute o script para realizar o download do Kernel Linux.</p>
+<p><strong>Dica:</strong></p>
+<p>Você pode copiar esse script para o <strong>/usr/bin</strong>, assim você pode executar o mesmo em qualquer PATH do sistema operacional.</p>
+<p>Eu fico por aqui, espero que gostem. Abraços!</p>
+<hr style="border-top: 1px solid #9D9D9D ; color: #9D9D9D ;" class="endpost">
+<div class="jsp-theme-base jsp-theme-light jsp-theme-custom">
+<nav class="navbar navbar-default navbar-default-jsp" role="navigation"><div class="container-fluid"><div class="navbar-header">
+<p class="navbar-text navbar-left navbar-text-jsp">  © 2017 - <a href="https://williamcanin.github.io/jekyll-spotify-plugin" target="_blank" class="navbar-link navbar-link-jsp"> Jekyll Spotify Plugin </a></p>
+<button type="button" class="btn btn-default navbar-btn navbar-btn-jsp" data-toggle="collapse" data-target="#jsp-content-7kIunRqo3botlYCadX0IRM"> Hide </button>
+</div></div></nav><main class="collapse in navbar-jsp-collapse jsp-content" id="jsp-content-7kIunRqo3botlYCadX0IRM"><div class="container-fluid">
+<div class="wrapper-txt" style="display: block">
+<h1 style="display: none;">Curta um sonzinho...</h1>
+<p style="display: block;">Post ao som de :</p>
+</div>
+<div class="track-list"> <iframe id="frame-track" class="frame-track" src="https://embed.spotify.com/?uri=spotify:track:7kIunRqo3botlYCadX0IRM&amp;theme=white" width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
+</div>
+</div></main>
+</div>
+<div class="row sharebutton"><ul class="wrapper">
+<li class="title">Compartilhar:</li>
+<li class="fb"> <a href="#" title="Compartilhar no Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
+</li>
+<li class="linkedin"> <a href="http://www.linkedin.com/cws/share?url=http://localhost:4000/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=700,resizable=0,top=50,left=100");return false;' target="_blank" title="Compartilhar no LinkedIn">Linkedin</a>
+</li>
+<li class="googleplus"> <a href="https://plus.google.com/share?url=http://localhost:4000/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=700,resizable=0,top=50,left=100");return false;' target="_blank" title="Compartilhar no Google Plus">Google+</a>
+</li>
+</ul></div>
+<div class="day-quote">
+<div class="title"> A Palavra:</div>
+<div class="content"> "Filho meu, guarda o mandamento de, teu pai, e não abandones a instrução de tua mãe; ata-os perpetuamente ao teu coração, e pendura-os ao teu pescoço. Quando caminhares, isso te guiará, quando te deitares, te guardará; quando acordares, falará contigo. Porque o mandamento é uma lâmpada, e a instrução uma luz; e as repreensões da disciplina são o caminho da vida, para te guardarem da mulher má e das lisonjas da língua da adúltera." <br> (Provérbios 6:20-24)</div>
+</div>
+<div class="row author">
+<div class="col-sm-2 image"> <img class="img-responsive center-block" src="http://localhost:4000/assets/images/author/williamcanin.svg" alt="">
+</div>
+<div class="col-sm-10 bio">
+<p class="title">Autor</p>
+<p class="name">William Canin</p>
+<p class="content">Formado em Analise e Desenvolvimento de Sistemas e fascinado pelo mundo do GNU/Linux, lê avidamente tudo sobre o assunto e sobre tecnologia em geral.</p>
+</div>
+</div>
+<div class="disqus" id="comments">
+<div class="title"><h3>
+<i class="fa fa-comments" aria-hidden="true"></i> Deixe um comentário</h3></div>
+<div class="content">
+<div id="disqus_thread"></div>
+<script type="text/javascript"> var disqus_shortname = 'williamcanin'; var disqus_identifier = '/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/'; var disqus_title = 'Última versão do kernel linux através de um script'; var disqus_url = 'http://localhost:4000/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script>
+</div>
+</div>
+</div></article></div>
+</div></div>
+<div style="margin: 30px 0px;font-size: 1.2rem;" class="license"><div class="container-fluid"><div style="text-align: center;" class="row-fluid license"> <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/br/" target="_blank"><img style="margin-bottom: 8px;" alt="Licença Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/br/88x31.png"></a><br>Este <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">website</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://williamcanin.com/" property="cc:attributionName" rel="cc:attributionURL" target="_blank">William Canin</a> está licenciado com uma Licença <br><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/br/" target="_blank">Creative Commons - Atribuição-CompartilhaIgual 3.0 Brasil</a>.</div></div></div>
+<div class="footer"><div class="container-fluid"><div class="row-fluid">
+<div class="col-sm-4 copyright"> <span>William Canin © 2015-2017 • All right reserved.</span>
+</div>
+<div class="col-sm-4 message"> <span>In Jesus I Trust.</span>
+</div>
+<div class="col-sm-4 madeby"> <span>Made with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> using <a href="https://github.com/williamcanin/typing-jekyll-template" target="_blank">Typing</a> Theme.</span>
+</div>
+<a class="pull-right top" href="#top"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+</div></div></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> <script src="http://localhost:4000/assets/javascripts/jekyll-spotify-plugin.min.js"></script> <script type="text/javascript" src="http://localhost:4000/assets/javascripts/post.js"></script> <script type="text/javascript"> jQuery(document).ready(function($) { $('.post > .row.content a').addClass('ga-event'); $('.page.spage > .row.content th a').addClass('ga-event'); $('.row.content li a').removeClass('ga-event'); $('a.ga-event').attr('onclick', 'ga(\'send\',\'event\',\'linkTo\',this.href,\'http://localhost:4000/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/\');'); }); </script> <script src="http://localhost:4000/assets/javascripts/global.js"></script>
+</body>
+</html>

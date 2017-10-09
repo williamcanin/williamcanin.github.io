@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Instalando o Sublime Text 3 no Debian | William Canin</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="kFisEN5aqITDKsnq2_HXHtxA8ygFVE95XlKapU7Kz_I">
+<meta http-equiv="cache-control" content="max-age">
+<meta http-equiv="pragma" content="public">
+<meta name="keywords" content="William, Canin, Analista, Programador, WebDesign, Geek">
+<meta name="author" content="William Canin">
+<meta property="og:locale" content="pt-BR">
+<meta property="og:site_name" content="William Canin">
+<meta property="og:type" content="WebSite">
+<meta property="og:url" content="http://localhost:4000/blog/instalando-sublime-text-no-debian/">
+<meta property="og:description" content="Analista e Desenvolvedor de Sistemas / Programador">
+<meta property="og:title" content="Instalando o Sublime Text 3 no Debian - William Canin">
+<link rel="canonical" href="http://localhost:4000/blog/instalando-sublime-text-no-debian/">
+<link rel="alternate" type="application/rss+xml" title="William Canin" href="http://localhost:4000/feed.xml"> <script type="application/ld+json"> {"@context": "http://schema.org", "@type": "WebSite", "name": "William Canin", "headline": "William Canin", "author": {"@type": "Person", "name": {"William Canin"}}, "description": "Analista e Desenvolvedor de Sistemas / Programador", "url": "http://localhost:4000"} </script> <script type="text/javascript"> var GLOBAL_BASEURL = "http://localhost:4000"; </script><link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/images/favicon/favicon-32x32.png">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i,700,700i,800,800i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+<link rel="stylesheet" href="http://localhost:4000/assets/stylesheets/main.css"> <script> var url_site = "http://localhost:4000", url_production = "http://localhost:4000"; if (url_site != url_production) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-101186555-1', 'auto'); ga('set', 'forceSSL', true); ga('send', 'pageview'); }; </script>
+</head>
+<body>
+<div class="main" id="top">
+<div class="container wrapper"><div class="row">
+<div class="col-sm-3 sidebar">
+<div class="row avatar"> <a href="http://localhost:4000"> <img class="img-responsive center-block avatar-img" src="http://localhost:4000/assets/images/avatar/williamcanin.svg" height="165" width="165" alt="William Canin"> </a>
+</div>
+<div class="row header"><h2><a href="http://localhost:4000">Hey, <br> I'm William. </a></h2></div>
+<div class="row menu">
+<ul>
+<li> <i class="fa fa-home" aria-hidden="true"></i> <a href="http://localhost:4000/">Hello</a>
+</li>
+<hr class="breakline">
+<li class="li-fa-edit"> <i style="font-size: inherit;" class="fa fa-edit" aria-hidden="true"></i> <a href="http://localhost:4000/blog/">Blog</a>
+</li>
+<li class="li-fa-search"> <i style="font-size: inherit;" class="fa fa-search" aria-hidden="true"></i> <a href="http://localhost:4000/blog/search/">Pesquisar</a>
+</li>
+<li class="li-fa-tags"> <i style="font-size: inherit;" class="fa fa-tags" aria-hidden="true"></i> <a href="http://localhost:4000/blog/tags/">Tags</a>
+</li>
+<li class="li-fa-lightbulb-o"> <i style="font-size: 18px;" class="fa fa-lightbulb-o" aria-hidden="true"></i> <a href="http://localhost:4000/sentences/" onclick="ga('send', 'event', 'linkTo', 'http://localhost:4000/sentences/', 'Reflexões');">Reflexões</a>
+</li>
+<li class="li-fa-briefcase"> <i style="font-size: inherit;" class="fa fa-briefcase" aria-hidden="true"></i> <a href="http://localhost:4000/projects/" onclick="ga('send', 'event', 'linkTo', 'http://localhost:4000/projects/', 'Projetos');">Projetos</a>
+</li>
+<li class="li-fa-rss"> <i style="font-size: inherit;" class="fa fa-rss" aria-hidden="true"></i> <a href="http://localhost:4000/feed.xml">Feed</a>
+</li>
+<li class="li-fa-envelope"> <i style="font-size: inherit;" class="fa fa-envelope" aria-hidden="true"></i> <a href="http://localhost:4000/contact/" onclick="ga('send', 'event', 'linkTo', 'http://localhost:4000/contact/', 'Contacto');">Contacto</a>
+</li>
+<li class="li-fa-file-text-o"> <i style="font-size: inherit;" class="fa fa-file-text-o" aria-hidden="true"></i> <a href="http://localhost:4000/resume/" onclick="ga('send', 'event', 'linkTo', 'http://localhost:4000/resume/', 'Currículo');">Currículo</a>
+</li>
+</ul>
+<div class="socials"><div class="row">
+<p></p>
+<p>Siga-Me!</p>
+<div id="github" class="col-sm-3 columns"> <a href="https://github.com/williamcanin" target="_blank" title="GitHub" onclick="ga('send', 'event', 'linkTo', 'GitHub', 'Social Network', {useBeacon: true});"> <i class="fa fa-github icon" aria-hidden="true"></i> </a>
+</div>
+<div id="google-plus" class="col-sm-3 columns"> <a href="https://plus.google.com/+WilliamCanin" target="_blank" title="Google Plus" onclick="ga('send', 'event', 'linkTo', 'Google Plus', 'Social Network', {useBeacon: true});"> <i class="fa fa-google-plus icon" aria-hidden="true"></i> </a>
+</div>
+<div id="linkedin" class="col-sm-3 columns"> <a href="https://br.linkedin.com/in/williamcostacanin" target="_blank" title="LinkedIn" onclick="ga('send', 'event', 'linkTo', 'LinkedIn', 'Social Network', {useBeacon: true});"> <i class="fa fa-linkedin icon" aria-hidden="true"></i> </a>
+</div>
+<div id="twitter" class="col-sm-3 columns"> <a href="https://twitter.com/williamcanin" target="_blank" title="Twitter" onclick="ga('send', 'event', 'linkTo', 'Twitter', 'Social Network', {useBeacon: true});"> <i class="fa fa-twitter icon" aria-hidden="true"></i> </a>
+</div>
+</div></div>
+</div>
+</div>
+<div class="col-sm-9 content-main"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><div class="row title"><h1>Instalando o Sublime Text 3 no Debian</h1></div>
+<div class="row meta" datetime="2015-01-26"> <time class="col-sm-6 datetime"> <i class="fa fa-calendar" aria-hidden="true"></i><span class="text tmargin "> 26 Janeiro, 2015 </span> </time><div class="col-sm-6 count-comments"> <span class="wrap"><i class="fa fa-comments" aria-hidden="true"></i> <a href="#comments" data-disqus-identifier="/blog/instalando-sublime-text-no-debian/">0</a></span>
+</div>
+</div>
+<div class="row tag-list"> <i class="fa fa-tags" aria-hidden="true"></i> <a href="http://localhost:4000/blog/tags//editor">editor</a> <a href="http://localhost:4000/blog/tags//sublime-text">sublime-text</a> <a href="http://localhost:4000/blog/tags//debian">debian</a>
+</div>
+<div class="row"> Leia isto "em cerca de 3 minutos".</div>
+<div class="row content">
+<ul id="markdown-toc">
+<li><a href="#introdu%C3%A7%C3%A3o" id="markdown-toc-introdução">Introdução</a></li>
+<li><a href="#pre-requisitos" id="markdown-toc-pre-requisitos">Pre requisitos</a></li>
+<li><a href="#download" id="markdown-toc-download">Download</a></li>
+<li><a href="#instala%C3%A7%C3%A3o" id="markdown-toc-instalação">Instalação</a></li>
+<li><a href="#dica-extra" id="markdown-toc-dica-extra">Dica extra</a></li>
+</ul>
+<h3 id="introdução">Introdução</h3>
+<p><img src="http://localhost:4000/assets/images/posts/sublime-text-logo.png" alt="Sublime Text 3" width="200" height="200" style="float: left;padding: 12px;"></p>
+<p>O <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a> é um editor de textos, ou melhor, um “super editor de textos” que todos que atuam na área de desenvolvimento deveriam ter em suas máquinas. Além de suportar várias sintaxes, o Sublime Text é baseado em plugins, ou seja, você pode customizar seu Sublime Text da maneira que lhe seja adaptável a sua usabilidade, como plugins para snippets, compactadores e muito mais.</p>
+<p>O Sublime Text pode ser instalado em qualquer Sistema Operacional e em qualquer distribuição Linux, isso porque além de ter pacotes pré compilados para determinadas distribuições, ele também tem o pacote <strong>.tar.bz2</strong> que te permite extrair e sair usando, porem tu irá ter que criar os atalhos e ícones para o mesmo manualmente, mas primeiro vamos saber como instalar na distribuição Linux <a href="http://debian.org" target="_blank">Debian</a> e distribuições derivadas do mesmo, como o <a href="http://ubuntu.com/" target="_blank">Ubuntu</a> ( <code>testado no Debian Wheezy e Ubuntu 15.10</code> ).</p>
+<h3 id="pre-requisitos">Pre requisitos</h3>
+<p>Não necessáriamente é uma <em>obrigação</em>, mas recomendo quando for instalar a <strong>ultima</strong> versão de qualquer programa no Linux, é sempre recomendável que configure sua <strong>sources.list</strong> com repositórios oficiais da distribuição, e em seguida atualize a distribuição. Execute os comandos abaixo para o feito:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>$ sudo apt-get update <span class="o">&amp;&amp;</span> apt-get dist-upgrade</code></pre></figure><p>Após deixar a distribuição atualizada, vamos para o processo de download e instalação do Sublime Text:</p>
+<h3 id="download">Download</h3>
+<ul>
+<li>Acesse a página de download do Sublime Text 3 <a href="http://www.sublimetext.com/3" target="_blank">Aqui</a>
+</li>
+<li>Baixe a ultima versão do pacote para Ubuntu de acordo com a arquitetura de seu computador (32 bit ou 64 bit).</li>
+</ul>
+<h3 id="instalação">Instalação</h3>
+<p>Para instalar entre no diretório que se encontra o pacote baixado através do terminal e digite o comando do DPKG para a instalação:</p>
+<p>Exemplo:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>$ <span class="nb">cd</span> Downloads
+<span class="lineno">2 </span>$ sudo dpkg --install sublime-text_build-<span class="o">{</span>VERSION<span class="o">}</span>_<span class="o">{</span>ARCH<span class="o">}</span>.deb</code></pre></figure><blockquote><p>Nota: Onde está <strong>VERSION</strong> é a versão do Sublime Text baixado e onde está <strong>ARCH</strong> é a arquitetura que você escolheu ao baixar o Sublime Text.</p></blockquote>
+<p>Aguarde a instalação terminar. Ao terminar você já terá o Sublime Text instalado em sua máquina. Procure o Sublime Text no menu de aplicativos de sua distribuição.</p>
+<h3 id="dica-extra">Dica extra</h3>
+<p>Caso você não utilize o Debian, Ubuntu ou nenhuma outra distribuição que use pacotes <strong>.deb</strong>, pode instalar o Sublime Text através de um Script shell que criei. Esse script irá fazer o download da última versão do Sublime Text, instalar, criar um link simbólico do mesmo em <strong>/usr/bin</strong> e ainda criar atalhos com ícones no menu de aplicativos de sua distribuição.</p>
+<p>Faça o download do script <a href="https://github.com/williamcanin/subl3" target="_blank">AQUI</a>.</p>
+<p>Isso é tudo pessoal. Até a próxima! <img class="emoji" title=":wave:" alt=":wave:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"></p>
+<hr style="border-top: 1px solid #9D9D9D ; color: #9D9D9D ;" class="endpost">
+<div class="jsp-theme-base jsp-theme-light jsp-theme-custom">
+<nav class="navbar navbar-default navbar-default-jsp" role="navigation"><div class="container-fluid"><div class="navbar-header">
+<p class="navbar-text navbar-left navbar-text-jsp">  © 2017 - <a href="https://williamcanin.github.io/jekyll-spotify-plugin" target="_blank" class="navbar-link navbar-link-jsp"> Jekyll Spotify Plugin </a></p>
+<button type="button" class="btn btn-default navbar-btn navbar-btn-jsp" data-toggle="collapse" data-target="#jsp-content-0sTU90RmUkBJwS4MmxvaFa"> Hide </button>
+</div></div></nav><main class="collapse in navbar-jsp-collapse jsp-content" id="jsp-content-0sTU90RmUkBJwS4MmxvaFa"><div class="container-fluid">
+<div class="wrapper-txt" style="display: block">
+<h1 style="display: none;">Curta um sonzinho...</h1>
+<p style="display: block;">Post ao som de :</p>
+</div>
+<div class="track-list"> <iframe id="frame-track" class="frame-track" src="https://embed.spotify.com/?uri=spotify:track:0sTU90RmUkBJwS4MmxvaFa&amp;theme=white" width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
+</div>
+</div></main>
+</div>
+<div class="row sharebutton"><ul class="wrapper">
+<li class="title">Compartilhar:</li>
+<li class="fb"> <a href="#" title="Compartilhar no Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
+</li>
+<li class="linkedin"> <a href="http://www.linkedin.com/cws/share?url=http://localhost:4000/blog/instalando-sublime-text-no-debian/" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=700,resizable=0,top=50,left=100");return false;' target="_blank" title="Compartilhar no LinkedIn">Linkedin</a>
+</li>
+<li class="googleplus"> <a href="https://plus.google.com/share?url=http://localhost:4000/blog/instalando-sublime-text-no-debian/" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=700,resizable=0,top=50,left=100");return false;' target="_blank" title="Compartilhar no Google Plus">Google+</a>
+</li>
+</ul></div>
+<div class="day-quote">
+<div class="title"> A Palavra:</div>
+<div class="content"> "Não se junte com descrentes para trabalhar com eles. Pois como é que o certo pode ter alguma coisa a ver com o errado? Como é que a luz e a escuridão podem viver juntas? Como podem Cristo e o Diabo estar de acordo? O que um cristão e um descrente têm em comum?" <br> (2 Coríntios 6:15:15 NTLH)</div>
+</div>
+<div class="row author">
+<div class="col-sm-2 image"> <img class="img-responsive center-block" src="http://localhost:4000/assets/images/author/williamcanin.svg" alt="">
+</div>
+<div class="col-sm-10 bio">
+<p class="title">Autor</p>
+<p class="name">William Canin</p>
+<p class="content">Formado em Analise e Desenvolvimento de Sistemas e fascinado pelo mundo do GNU/Linux, lê avidamente tudo sobre o assunto e sobre tecnologia em geral.</p>
+</div>
+</div>
+<div class="disqus" id="comments">
+<div class="title"><h3>
+<i class="fa fa-comments" aria-hidden="true"></i> Deixe um comentário</h3></div>
+<div class="content">
+<div id="disqus_thread"></div>
+<script type="text/javascript"> var disqus_shortname = 'williamcanin'; var disqus_identifier = '/blog/instalando-sublime-text-no-debian/'; var disqus_title = 'Instalando o Sublime Text 3 no Debian'; var disqus_url = 'http://localhost:4000/blog/instalando-sublime-text-no-debian/'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script>
+</div>
+</div>
+</div></article></div>
+</div></div>
+<div style="margin: 30px 0px;font-size: 1.2rem;" class="license"><div class="container-fluid"><div style="text-align: center;" class="row-fluid license"> <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/br/" target="_blank"><img style="margin-bottom: 8px;" alt="Licença Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/br/88x31.png"></a><br>Este <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">website</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://williamcanin.com/" property="cc:attributionName" rel="cc:attributionURL" target="_blank">William Canin</a> está licenciado com uma Licença <br><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/br/" target="_blank">Creative Commons - Atribuição-CompartilhaIgual 3.0 Brasil</a>.</div></div></div>
+<div class="footer"><div class="container-fluid"><div class="row-fluid">
+<div class="col-sm-4 copyright"> <span>William Canin © 2015-2017 • All right reserved.</span>
+</div>
+<div class="col-sm-4 message"> <span>In Jesus I Trust.</span>
+</div>
+<div class="col-sm-4 madeby"> <span>Made with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> using <a href="https://github.com/williamcanin/typing-jekyll-template" target="_blank">Typing</a> Theme.</span>
+</div>
+<a class="pull-right top" href="#top"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+</div></div></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> <script src="http://localhost:4000/assets/javascripts/jekyll-spotify-plugin.min.js"></script> <script type="text/javascript" src="http://localhost:4000/assets/javascripts/post.js"></script> <script type="text/javascript"> jQuery(document).ready(function($) { $('.post > .row.content a').addClass('ga-event'); $('.page.spage > .row.content th a').addClass('ga-event'); $('.row.content li a').removeClass('ga-event'); $('a.ga-event').attr('onclick', 'ga(\'send\',\'event\',\'linkTo\',this.href,\'http://localhost:4000/blog/instalando-sublime-text-no-debian/\');'); }); </script> <script src="http://localhost:4000/assets/javascripts/global.js"></script>
+</body>
+</html>
