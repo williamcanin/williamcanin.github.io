@@ -5,18 +5,18 @@
     
     <title>William Canin</title>
     <description>Analista e Desenvolvedor de Sistemas / Programador</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Oct 2017 10:52:55 -0300</pubDate>
-    <lastBuildDate>Mon, 09 Oct 2017 10:52:55 -0300</lastBuildDate>
+    <link>https://williamcanin.me/</link>
+    <atom:link href="https://williamcanin.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 09 Oct 2017 10:56:31 -0300</pubDate>
+    <lastBuildDate>Mon, 09 Oct 2017 10:56:31 -0300</lastBuildDate>
     <generator>Jekyll v3.4.5</generator>
     
       <item>
         <title>Última versão do kernel linux através de um script</title>
         <description>&lt;p&gt;Iae terráqueos, firmeza total? Espero que sim.&lt;/p&gt; &lt;p&gt;Vou compartilhar com vocês um Shell script simples, mas que pode ser de bastante utilidade dependendo do caso. Esse script fará o download da última versão estável do &lt;a href=&quot;https://www.kernel.org/&quot; target=&quot;_blank&quot;&gt;kernel&lt;/a&gt; Linux.&lt;/p&gt; &lt;p&gt;Ai tu se pergunta:&lt;/p&gt; &lt;p&gt;&lt;em&gt;Mas porque raios eu deveria ter um script para realizar o donwload do kernel, se eu posso ir diretamente no navegador e baixar?&lt;/em&gt;&lt;/p&gt; &lt;p&gt;Simples, talves você esteja usando uma distribuição como servidor (ou não) sem interface gráfica e necessita compilar o kernel. Nesse caso vai ser você e a “telinha preta” de amiguinhos. :smile:&lt;/p&gt; &lt;p&gt;Enfim …&lt;/p&gt; &lt;p&gt;1)...</description>
         <pubDate>Fri, 05 May 2017 20:16:57 -0300</pubDate>
-        <link>http://localhost:4000/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/</guid>
+        <link>https://williamcanin.me/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/</guid>
         
         <tag>shell-script</tag>
         
@@ -32,8 +32,8 @@
         <title>Instalando Archlinux com criptografia LUKS e LVM</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#preparando-o-básico&quot; id=&quot;markdown-toc-preparando-o-básico&quot;&gt;Preparando o básico&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-fdisk&quot; id=&quot;markdown-toc-o-fdisk&quot;&gt;O fdisk&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#conceitos&quot; id=&quot;markdown-toc-conceitos&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#conhecendo-a-estrutura-de-partições&quot; id=&quot;markdown-toc-conhecendo-a-estrutura-de-partições&quot;&gt;Conhecendo a estrutura de partições&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#usando-o-fdisk&quot; id=&quot;markdown-toc-usando-o-fdisk&quot;&gt;Usando o fdisk&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-a-partição-de-boot-com-fdisk&quot; id=&quot;markdown-toc-criando-a-partição-de-boot-com-fdisk&quot;&gt;Criando a partição de Boot com fdisk&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-partição-do-windows-com-fdisk&quot; id=&quot;markdown-toc-criando-partição-do-windows-com-fdisk&quot;&gt;Criando partição do Windows com fdisk&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-partição-linux-lvm-com-fdisk&quot; id=&quot;markdown-toc-criando-partição-linux-lvm-com-fdisk&quot;&gt;Criando partição “Linux LVM” com fdisk&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-luks&quot; id=&quot;markdown-toc-o-luks&quot;&gt;O LUKS&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#conceitos-1&quot; id=&quot;markdown-toc-conceitos-1&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criptografando-a-partição-linux-lvm&quot; id=&quot;markdown-toc-criptografando-a-partição-linux-lvm&quot;&gt;Criptografando a partição “Linux LVM”&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-lvm&quot; id=&quot;markdown-toc-o-lvm&quot;&gt;O LVM&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#conceitos-2&quot; id=&quot;markdown-toc-conceitos-2&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#utilizando-os-componentes-do-lvm&quot; id=&quot;markdown-toc-utilizando-os-componentes-do-lvm&quot;&gt;Utilizando os componentes do LVM&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando-physical-volume-pv&quot; id=&quot;markdown-toc-criando-physical-volume-pv&quot;&gt;Criando Physical Volume (PV)&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a...</description>
         <pubDate>Fri, 28 Apr 2017 08:33:43 -0300</pubDate>
-        <link>http://localhost:4000/blog/instalando-archlinux-com-criptografia-luks-e-lvm/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/instalando-archlinux-com-criptografia-luks-e-lvm/</guid>
+        <link>https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm/</guid>
         
         <tag>linux</tag>
         
@@ -49,8 +49,8 @@
         <title>Configurando PATH do RubyGems e Bundler no Linux</title>
         <description>&lt;h2 id=&quot;requerimentos&quot;&gt;Requerimentos&lt;/h2&gt; &lt;p&gt;O que você irá precisar para continuar com essa leitura:&lt;/p&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;Requerido&lt;/th&gt; &lt;th&gt;Como verificar&lt;/th&gt; &lt;th&gt;Como instalar&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;Ruby&lt;/td&gt; &lt;td&gt;&lt;code&gt;ruby -v&lt;/code&gt;&lt;/td&gt; &lt;td&gt;&lt;a href=&quot;https://www.ruby-lang.org&quot; target=&quot;_blank&quot;&gt;Ruby&lt;/a&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Gem&lt;/td&gt; &lt;td&gt;&lt;code&gt;gem -v&lt;/code&gt;&lt;/td&gt; &lt;td&gt;&lt;strong&gt;Ruby&lt;/strong&gt; contém &lt;strong&gt;Gem&lt;/strong&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Bundler&lt;/td&gt; &lt;td&gt;&lt;code&gt;bundler -v&lt;/code&gt;&lt;/td&gt; &lt;td&gt;&lt;code&gt;gem install bundler&lt;/code&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;h2 id=&quot;introdução&quot;&gt;Introdução&lt;/h2&gt; &lt;p&gt;Se você necessita configurar o PATH do RubyGems e do Bundler para seu usuário, continue essa leitura e veja que um simples arquivo configurado pode facilitar as coisas para você.&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://pt.wikipedia.org/wiki/RubyGems&quot; target=&quot;_blank&quot;&gt;RubyGems&lt;/a&gt; é um gerenciador de pacotes do Ruby, e para utiliza-lo você precisa instalar o Ruby que...</description>
         <pubDate>Fri, 13 Jan 2017 17:02:37 -0200</pubDate>
-        <link>http://localhost:4000/blog/configurando-path-do-rubygems-e-bundler-no-linux/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/configurando-path-do-rubygems-e-bundler-no-linux/</guid>
+        <link>https://williamcanin.me/blog/configurando-path-do-rubygems-e-bundler-no-linux/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/configurando-path-do-rubygems-e-bundler-no-linux/</guid>
         
         <tag>ruby</tag>
         
@@ -66,8 +66,8 @@
         <title>Bloqueando módulos durante o boot com o Modbl</title>
         <description>&lt;p&gt;Essa é uma postagem que irá facilitar e otimizar seus comandos no terminal para bloquear módulos no Linux. Estou falando do &lt;a href=&quot;https://github.com/williamcanin/modbl&quot; target=&quot;_blank&quot;&gt;Modbl&lt;/a&gt;, um script simples mas que lhe propoe um ganha tempo.&lt;/p&gt; &lt;p&gt;Se você habilita ou desabilita módulos de sua máquina durante o boot frequentemente no Linux, você precisa fazer isso de uma forma que lhe dê menos trabalho e mais praticidade. Pensando nisso, desenvolvi um simples script em Shell &lt;strong&gt;(Modbl)&lt;/strong&gt;, que lhe possibilita esses recursos.&lt;/p&gt; &lt;p&gt;O &lt;strong&gt;Modbl&lt;/strong&gt; (uma abreviação de ModBlackList), você faz adição e remoção desses módulos com apenas uma linha de comando no terminal, não...</description>
         <pubDate>Wed, 30 Sep 2015 13:55:19 -0300</pubDate>
-        <link>http://localhost:4000/blog/bloqueando-modulos-no-boot-com-modbl/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/bloqueando-modulos-no-boot-com-modbl/</guid>
+        <link>https://williamcanin.me/blog/bloqueando-modulos-no-boot-com-modbl/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/bloqueando-modulos-no-boot-com-modbl/</guid>
         
         <tag>modprobe</tag>
         
@@ -85,8 +85,8 @@
         <title>Linux: Compilando e instalando o kernel em modo tradicional</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#pacotes-necessários&quot; id=&quot;markdown-toc-pacotes-necessários&quot;&gt;Pacotes necessários&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-base-de-trabalho&quot; id=&quot;markdown-toc-criando-base-de-trabalho&quot;&gt;Criando base de trabalho&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#download-do-kernel&quot; id=&quot;markdown-toc-download-do-kernel&quot;&gt;Download do kernel&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#descompactando-o-kernel&quot; id=&quot;markdown-toc-descompactando-o-kernel&quot;&gt;Descompactando o kernel&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#limpando-a-base&quot; id=&quot;markdown-toc-limpando-a-base&quot;&gt;Limpando a base&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#configurando-o-kernel&quot; id=&quot;markdown-toc-configurando-o-kernel&quot;&gt;Configurando o kernel&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#manualmente&quot; id=&quot;markdown-toc-manualmente&quot;&gt;Manualmente&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#reconhecendo-os-módulos-da-máquina&quot; id=&quot;markdown-toc-reconhecendo-os-módulos-da-máquina&quot;&gt;Reconhecendo os módulos da máquina&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#método-1&quot; id=&quot;markdown-toc-método-1&quot;&gt;&lt;strong&gt;Método 1&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#método-2&quot; id=&quot;markdown-toc-método-2&quot;&gt;&lt;strong&gt;Método 2&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#método-3&quot; id=&quot;markdown-toc-método-3&quot;&gt;&lt;strong&gt;Método 3&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#iniciando-a-configuração&quot; id=&quot;markdown-toc-iniciando-a-configuração&quot;&gt;Iniciando a configuração&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#manuseio-para-o-make-menuconfig&quot; id=&quot;markdown-toc-manuseio-para-o-make-menuconfig&quot;&gt;Manuseio para o “make menuconfig”&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#automaticamente&quot; id=&quot;markdown-toc-automaticamente&quot;&gt;Automaticamente&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#carregando-config-genérico&quot; id=&quot;markdown-toc-carregando-config-genérico&quot;&gt;Carregando .config genérico.&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#entrando-no-menu-do-kernel&quot; id=&quot;markdown-toc-entrando-no-menu-do-kernel&quot;&gt;Entrando no menu do kernel&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#carregando-drivers-a-partir-do-lsmod&quot; id=&quot;markdown-toc-carregando-drivers-a-partir-do-lsmod&quot;&gt;Carregando drivers a partir do lsmod&lt;/a&gt;&lt;/li&gt;...</description>
         <pubDate>Sun, 23 Aug 2015 17:52:44 -0300</pubDate>
-        <link>http://localhost:4000/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/</guid>
+        <link>https://williamcanin.me/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/</guid>
         
         <tag>kernel</tag>
         
@@ -100,8 +100,8 @@
         <title>Linux Boot: A start job is running for dev-disk-by</title>
         <description>&lt;h2 id=&quot;introdução&quot;&gt;Introdução&lt;/h2&gt; &lt;p&gt;Esperar hoje em dia não é uma tarefa que agrada as pessoas, ainda mais se tratando de software. Pois bem, essa postagem vai te informar uma configuração errada que pode te deixar de “cabelos em pé” :triumph: e esperando meados 1m30s para o Linux sair do boot.&lt;/p&gt; &lt;p&gt;Muitas pessoas se preocupam muito com boot da máquina, até mesmo a Microsoft, que devo adimitir: “&lt;em&gt;Fizeram um ótimo trabalho no Windows 8/10 se comparando com o Windows 7 na inicialização do boot&lt;/em&gt;”. Mas vamos falar de Linux aqui, ok?!&lt;/p&gt; &lt;p&gt;Existem vários fatores para seu Linux demorar no boot, por exemplo:&lt;/p&gt;...</description>
         <pubDate>Sun, 26 Jul 2015 10:29:04 -0300</pubDate>
-        <link>http://localhost:4000/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/</guid>
+        <link>https://williamcanin.me/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/</guid>
         
         <tag>boot</tag>
         
@@ -115,8 +115,8 @@
         <title>Compilando e configurando Squid</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#dependências-de-compilação&quot; id=&quot;markdown-toc-dependências-de-compilação&quot;&gt;Dependências de compilação&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#download-do-source-squid-proxy&quot; id=&quot;markdown-toc-download-do-source-squid-proxy&quot;&gt;Download do source Squid proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#descompactando&quot; id=&quot;markdown-toc-descompactando&quot;&gt;Descompactando&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#entrando-na-pasta-para-configuração-compilação-e-instalação&quot; id=&quot;markdown-toc-entrando-na-pasta-para-configuração-compilação-e-instalação&quot;&gt;Entrando na pasta para configuração, compilação e instalação&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#configurando-a-instalação-do-squid-proxy&quot; id=&quot;markdown-toc-configurando-a-instalação-do-squid-proxy&quot;&gt;Configurando a instalação do Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#compilando-squid-proxy&quot; id=&quot;markdown-toc-compilando-squid-proxy&quot;&gt;Compilando Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#instalando-squid-proxy&quot; id=&quot;markdown-toc-instalando-squid-proxy&quot;&gt;Instalando Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#permissões-para-o-usuário-padrão-do-squid&quot; id=&quot;markdown-toc-permissões-para-o-usuário-padrão-do-squid&quot;&gt;Permissões para o usuário padrão do Squid&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-uma-lista-de-bloqueio&quot; id=&quot;markdown-toc-criando-uma-lista-de-bloqueio&quot;&gt;Criando uma lista de bloqueio&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#configurando-o-squid-proxy-arquivo-squidconf&quot; id=&quot;markdown-toc-configurando-o-squid-proxy-arquivo-squidconf&quot;&gt;Configurando o Squid Proxy (arquivo squid.conf)&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-cache-executando-e-parando-o-squid-proxy&quot; id=&quot;markdown-toc-criando-cache-executando-e-parando-o-squid-proxy&quot;&gt;Criando cache, executando e parando o Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#redirecionado-a-porta-80-para-a-porta-3128-do-squid-proxy&quot; id=&quot;markdown-toc-redirecionado-a-porta-80-para-a-porta-3128-do-squid-proxy&quot;&gt;Redirecionado a porta 80 para a porta 3128 do Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Quer aprender Proxy Squid? Essa postagem irá...</description>
         <pubDate>Thu, 14 May 2015 09:13:57 -0300</pubDate>
-        <link>http://localhost:4000/blog/compilando-e-configurando-squid-transparent/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/compilando-e-configurando-squid-transparent/</guid>
+        <link>https://williamcanin.me/blog/compilando-e-configurando-squid-transparent/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/compilando-e-configurando-squid-transparent/</guid>
         
         <tag>squid</tag>
         
@@ -132,8 +132,8 @@
         <title>Arquivos de execução no Linux</title>
         <description>&lt;p&gt;Essa postagem você irá entender melhor como são os arquivos executáveis no Linux, como se cria um com código aberto ou fechado, como dar permissão no Linux para um executável ter a permissão de execução e outras informações considerável.&lt;/p&gt; &lt;p&gt;Bem, la vem eu novamente a dizer sobre Linux(me amarro!)…porem o tema agora será sobre arquivos de execução. Arquivos de execução no Linux pode ser criado de diversas formas, por exemplo, um arquivo de texto com a extensão &lt;strong&gt;.sh&lt;/strong&gt; e com comandos shell(ou não) em seu conteúdo, já pode ser chamado de um arquivo de execução, que tem como tipo &lt;strong&gt;application/x-shellscript&lt;/strong&gt;(script...</description>
         <pubDate>Wed, 29 Apr 2015 12:29:32 -0300</pubDate>
-        <link>http://localhost:4000/blog/arquivos-de-execucao-no-linux/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/arquivos-de-execucao-no-linux/</guid>
+        <link>https://williamcanin.me/blog/arquivos-de-execucao-no-linux/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/arquivos-de-execucao-no-linux/</guid>
         
         <tag>linux</tag>
         
@@ -149,8 +149,8 @@
         <title>Criando pendrive bootavel no Linux com dd</title>
         <description>&lt;p&gt;Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou aquele outro sistema operacial no qual necessita de boot. Vamos aprenda a fazer isso no Linux com um comando poderoso. :wink:&lt;/p&gt; &lt;p&gt;Já cansou de comprar CDs e DVDs para gravar aquela imagem ISO de um sistema operacional ou qualquer outro programa que necessite iniciar no boot de sua máquina? Creio que a resposta é Sim, e por isso existe programas para fazer um pendrive bootavel. Mas o que recém usuários Linux não sabe, é de um certo “malandro” que vem por padrão na maioria das...</description>
         <pubDate>Tue, 21 Apr 2015 18:42:04 -0300</pubDate>
-        <link>http://localhost:4000/blog/criando-pendrive-bootavel-no-linux-com-dd/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/criando-pendrive-bootavel-no-linux-com-dd/</guid>
+        <link>https://williamcanin.me/blog/criando-pendrive-bootavel-no-linux-com-dd/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/criando-pendrive-bootavel-no-linux-com-dd/</guid>
         
         <tag>dd</tag>
         
@@ -168,8 +168,8 @@
         <title>Transações com procedures no MySQL e Herança</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#criando--database-e-tables&quot; id=&quot;markdown-toc-criando--database-e-tables&quot;&gt;Criando: Database e Tables&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-view-de-clientes&quot; id=&quot;markdown-toc-criando-view-de-clientes&quot;&gt;Criando: View de Clientes&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-trigger&quot; id=&quot;markdown-toc-criando-trigger&quot;&gt;Criando: Trigger&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-procedure&quot; id=&quot;markdown-toc-criando-procedure&quot;&gt;Criando: Procedure&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#um-exemplo&quot; id=&quot;markdown-toc-um-exemplo&quot;&gt;Um exemplo:&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Chega de ficar apenas aprendendo ‘create table’ no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.&lt;/p&gt; &lt;p&gt;Quando se cria uma aplicação que se necessita de uma comunicação com bando de dados, seja ela de qual linguagem de programação for, o acesso entre “Aplicação Banco” sempre é um dos principais fatores para uma boa otimização, ganha tempo e velocidade de processos. A maioria...</description>
         <pubDate>Tue, 03 Mar 2015 01:02:32 -0300</pubDate>
-        <link>http://localhost:4000/blog/transacoes-com-procedures-no-mysql-e-heranca/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/transacoes-com-procedures-no-mysql-e-heranca/</guid>
+        <link>https://williamcanin.me/blog/transacoes-com-procedures-no-mysql-e-heranca/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/transacoes-com-procedures-no-mysql-e-heranca/</guid>
         
         <tag>database</tag>
         
@@ -185,8 +185,8 @@
         <title>Java - Erro: Unsupported major.minor version 51.0</title>
         <description>&lt;p&gt;Este é a correção de um Erro no Java, ou melhor, um erro humano, pois esse erro só é dispertado se você realizar a execução de um programa em Java que não suporta a versão no qual o programa foi compilado.&lt;/p&gt; &lt;p&gt;Provavelmente muitos que desenvolvem com Java já passaram por erros, uns sabem como resolver e outros não sabem pelo fato de se depararem pela primeira vez com o tal erro.&lt;/p&gt; &lt;p&gt;Um erro comum, é o &lt;strong&gt;Unsupported major.minor version 51.0&lt;/strong&gt;. Este erro, expecifica que você está tentando executar o seu programa com uma versão de Java que não suporta a...</description>
         <pubDate>Thu, 26 Feb 2015 18:07:00 -0300</pubDate>
-        <link>http://localhost:4000/blog/java-erro-unsupported-major-minor-version-51-0/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/java-erro-unsupported-major-minor-version-51-0/</guid>
+        <link>https://williamcanin.me/blog/java-erro-unsupported-major-minor-version-51-0/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/java-erro-unsupported-major-minor-version-51-0/</guid>
         
         <tag>java</tag>
         
@@ -200,8 +200,8 @@
         <title>Eclipse Luna - Erro de inicialização no Linux</title>
         <description>&lt;p&gt;Apesar do Eclipse ser uma IDE famosa e de ótimos recursos, ele (como qualquer outras aplicação) não está livre de bugs. Esse post é para uma correção de um bug no Eclipse Luna para o Linux.&lt;/p&gt; &lt;p&gt;Recentemente instalei o &lt;a href=&quot;https://eclipse.org&quot; target=&quot;_blank&quot;&gt;Eclipse&lt;/a&gt; Luna (Version: Luna Release (4.4.0)) no meu &lt;a href=&quot;https://debian.org&quot; target=&quot;_blank&quot;&gt;Debian&lt;/a&gt; Wheezy (7.8) e após inicia-lo me deparei que o Eclipse não carregava. Para um entendimento melhor, a tela de splash do Eclipse Luna carregava, só que depois a mesma desaparecia e o Eclipse não iniciava.&lt;/p&gt; &lt;p&gt;Resolvi iniciar o Eclipse Luna pelo terminal e obtive esta saída de informações...</description>
         <pubDate>Mon, 23 Feb 2015 18:14:01 -0300</pubDate>
-        <link>http://localhost:4000/blog/erro-de-inicializacao-eclipse-no-linux/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/erro-de-inicializacao-eclipse-no-linux/</guid>
+        <link>https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/</guid>
         
         <tag>eclipse</tag>
         
@@ -213,8 +213,8 @@
         <title>Criando um shortcut para o Eclipse no Linux</title>
         <description>&lt;p&gt;&lt;span class=&quot;fa fa-share&quot; style=&quot;font-size: 80px; float: left; margin-right: 0.2em; border-radius: 100%; width: 80px; height: 80px; background-size: 80px; text-align: center; background-color: #F1F1F1;&quot;&gt;&lt;/span&gt;&lt;/p&gt; &lt;p&gt;Nos dias de hoje, o Eclipse no momento não possui um instalador para Linux assim com tem para Windows, com isso não se cria um shortcut (Lançador) para a aplicação juntamento com outros programas já instalados.&lt;/p&gt; &lt;p&gt;Muitos que usam Eclipse no Linux, já sentiram a ausência e falta de um lançador(shortcut) para o Eclipse, não é verdade? Eu sou um desses “muitos”. Isso acontece porque, o Eclipse não tem um instalador para criação do ícone, ele é uma IDE...</description>
         <pubDate>Sat, 07 Feb 2015 20:50:20 -0200</pubDate>
-        <link>http://localhost:4000/blog/criando-shortcut-para-eclipse-no-linux-facilmente/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/criando-shortcut-para-eclipse-no-linux-facilmente/</guid>
+        <link>https://williamcanin.me/blog/criando-shortcut-para-eclipse-no-linux-facilmente/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/criando-shortcut-para-eclipse-no-linux-facilmente/</guid>
         
         <tag>eclipse</tag>
         
@@ -226,10 +226,10 @@
     
       <item>
         <title>Instalando o Sublime Text 3 no Debian</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#pre-requisitos&quot; id=&quot;markdown-toc-pre-requisitos&quot;&gt;Pre requisitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#download&quot; id=&quot;markdown-toc-download&quot;&gt;Download&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#instalação&quot; id=&quot;markdown-toc-instalação&quot;&gt;Instalação&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#dica-extra&quot; id=&quot;markdown-toc-dica-extra&quot;&gt;Dica extra&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;introdução&quot;&gt;Introdução&lt;/h3&gt; &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/sublime-text-logo.png&quot; alt=&quot;Sublime Text 3&quot; width=&quot;200&quot; height=&quot;200&quot; style=&quot;float: left;padding: 12px;&quot; /&gt;&lt;/p&gt; &lt;p&gt;O &lt;a href=&quot;http://www.sublimetext.com/&quot; target=&quot;_blank&quot;&gt;Sublime Text&lt;/a&gt; é um editor de textos, ou melhor, um “super editor de textos” que todos que atuam na área de desenvolvimento deveriam ter em suas máquinas. Além de suportar várias sintaxes, o Sublime Text é baseado em plugins, ou seja, você pode customizar seu Sublime Text da maneira que lhe seja adaptável a sua usabilidade, como plugins para snippets, compactadores e muito mais.&lt;/p&gt;...</description>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#pre-requisitos&quot; id=&quot;markdown-toc-pre-requisitos&quot;&gt;Pre requisitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#download&quot; id=&quot;markdown-toc-download&quot;&gt;Download&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#instalação&quot; id=&quot;markdown-toc-instalação&quot;&gt;Instalação&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#dica-extra&quot; id=&quot;markdown-toc-dica-extra&quot;&gt;Dica extra&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;introdução&quot;&gt;Introdução&lt;/h3&gt; &lt;p&gt;&lt;img src=&quot;https://williamcanin.me/assets/images/posts/sublime-text-logo.png&quot; alt=&quot;Sublime Text 3&quot; width=&quot;200&quot; height=&quot;200&quot; style=&quot;float: left;padding: 12px;&quot; /&gt;&lt;/p&gt; &lt;p&gt;O &lt;a href=&quot;http://www.sublimetext.com/&quot; target=&quot;_blank&quot;&gt;Sublime Text&lt;/a&gt; é um editor de textos, ou melhor, um “super editor de textos” que todos que atuam na área de desenvolvimento deveriam ter em suas máquinas. Além de suportar várias sintaxes, o Sublime Text é baseado em plugins, ou seja, você pode customizar seu Sublime Text da maneira que lhe seja adaptável a sua usabilidade, como plugins para snippets, compactadores e muito mais.&lt;/p&gt;...</description>
         <pubDate>Mon, 26 Jan 2015 18:13:27 -0200</pubDate>
-        <link>http://localhost:4000/blog/instalando-sublime-text-no-debian/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/instalando-sublime-text-no-debian/</guid>
+        <link>https://williamcanin.me/blog/instalando-sublime-text-no-debian/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/instalando-sublime-text-no-debian/</guid>
         
         <tag>editor</tag>
         
@@ -243,8 +243,8 @@
         <title>Qual a utilidade do Facebook para você?</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#facebook-você-sabe-a-utilidade-dele-para-você-nesse-momento-da-sua-vida&quot; id=&quot;markdown-toc-facebook-você-sabe-a-utilidade-dele-para-você-nesse-momento-da-sua-vida&quot;&gt;Facebook: Você sabe a utilidade dele para você nesse momento da sua vida?&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#as-ideias-por-de-trás-da-exclusão&quot; id=&quot;markdown-toc-as-ideias-por-de-trás-da-exclusão&quot;&gt;As ideias por de trás da exclusão.&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#conclusão&quot; id=&quot;markdown-toc-conclusão&quot;&gt;Conclusão&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;facebook-você-sabe-a-utilidade-dele-para-você-nesse-momento-da-sua-vida&quot;&gt;Facebook: Você sabe a utilidade dele para você nesse momento da sua vida?&lt;/h1&gt; &lt;p&gt;Hoje, o &lt;a href=&quot;https://www.facebook.com&quot; target=&quot;_blank&quot;&gt;Facebook&lt;/a&gt; não é apenas uma rede social para ter um perfil próprio, pode-se ter uma página em divulgação de seu negócio, empreender. Mas se você não é um empreendedor através do Facebook, você já deve ter se perguntado assim como eu:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Será que excluo meu Facebook definitivamente? Será que...</description>
         <pubDate>Sun, 25 Jan 2015 16:17:19 -0200</pubDate>
-        <link>http://localhost:4000/blog/qual-a-utilidade-do-facebook-para-voce/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/qual-a-utilidade-do-facebook-para-voce/</guid>
+        <link>https://williamcanin.me/blog/qual-a-utilidade-do-facebook-para-voce/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/qual-a-utilidade-do-facebook-para-voce/</guid>
         
         <tag>facebook</tag>
         
@@ -258,8 +258,8 @@
         <title>Hello World</title>
         <description>&lt;p&gt;Vou descrever um pouco os motivos por eu ter um domínio e ter um site próprio. Vamos lá:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Página Blog&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Decidi criar uma página para mim na internet com Blog, porque acredito que o compartilhamento entre ideias , de uma forma livre, é benéfico para que uma pessoa possa chegar em uma opinião própria de suas duvidas ou ajudando-a a criar novos horizontes de conhecimentos. Você ensina e aprende, e isso muito gratificante para levar na vida. Faço porque gosto de estar em frente a um computador/notebook: combinando o teclado, mouse e eu. Me da emoção em me aventurar no...</description>
         <pubDate>Tue, 13 Jan 2015 06:16:01 -0200</pubDate>
-        <link>http://localhost:4000/blog/hello-world/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/hello-world/</guid>
+        <link>https://williamcanin.me/blog/hello-world/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/hello-world/</guid>
         
         <tag>misc</tag>
         
