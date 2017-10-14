@@ -57,7 +57,7 @@ permalink: /resume/
 **Nacionalidade**: Brasileiro   
 **Naturalidade:** Santo André/SP   
 **Data Nasc.**: 25/04/1988   
-**Estado Civil**: Solteiro   
+<!-- **Estado Civil**: Solteiro    -->
 <!-- **Filhos?** Não    -->
 <!-- **Fumante?** Não    -->
 <!-- **Endereço**: Rua, Floriano Peixoto, 1255 / Centro    -->
