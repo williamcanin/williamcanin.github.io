@@ -64,7 +64,7 @@ permalink: /resume/
 <!-- **CEP**: 16440-000    -->
 <!-- **Cidade**: Sabino/SP    -->
 **País**: Brasil   
-**Fone:** +55 14 99795-9006   
+<!-- **Fone:** +55 14 99795-9006    -->
 **E-mail**: [{{ dbase.userdata.email }}](mailto:{{ dbase.userdata.email | encode_email }})   
 **Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}   
 
