@@ -28,13 +28,27 @@ HAHA
 Deixando de conversa fiada, vamos ao que interessa; o Post!
 
 
-# Introdução
+## Introdução
 
 Essa é uma dica rápida pra você que utiliza [Jekyll](https://jekyllrb.com/){:target="_blank"} como gerador de sites estáticos. 
 
 Colocar seus códigos Javascript tudo em apenas um arquivo .js, não é tão recomendável assim, independente de seu utilizat geradores de sistes estáticos ou ou html puro. Isso porque ao ser carregado pelo navegador, pode existir um trecho de código de uma determinada página, que não deveria ser carregado, assim irá carregar códigos extras sem necessidade. Isso 
 
-A melhor forma de fazer isso, é cada página carregar seu próprio Javascript.
+A melhor forma de fazer isso, é cada página carregar seu próprio Javascript, isso irá otimizar muito a velocidade de carregamento seu site caso possua uma gama de códigos Javascript em seu carregamento.
+
+
+## Requerimentos
+
+O que você irá precisar para continuar com essa leitura:
+
+| Requerido       | Como verificar      | Como instalar  |
+| --------------- | ------------------- | -------------- | 
+| Ruby            | `ruby -v`           | [Ruby](https://www.ruby-lang.org){:target="_blank"} |
+| Gem             | `gem -v`            | **Ruby** contém **Gem** |
+| Jekyll         | `bundler -v`        | `gem install jekyll` |
+
+## O laço For
+
 Você pode fazer isso com Jekyll e uma forma simples, usando um laço **for** no final do arquivo *layout/defaul.html*.
 
 {% highlight html linenos %}
@@ -45,5 +59,15 @@ Você pode fazer isso com Jekyll e uma forma simples, usando um laço **for** no
 {% endhighlight %}
 
 > NOTA: Sem espaços entre as chaves. 
+
+### Entendendo o laço
+
+Observe que o diretório de meus javascripts está apontando para */assets/javascripts/*, ou seja, você deve modificar esse PATH para o local onde esteja seus javascripts.
+
+Na linha *{ % for script_page in page.script % }* , a variável **script_page** é responsável por amarzenar os valores do laço.
+O **page.script** é uma variável que deve ser criado no arquivo .md dos arquivos de post ou page no Jekyll.
+
+
+
 
 
