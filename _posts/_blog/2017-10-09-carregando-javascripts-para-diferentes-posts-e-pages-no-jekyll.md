@@ -8,7 +8,7 @@ published: true
 comments: true
 excerpted: |
         Será que seu projeto em Jekyll está carregados códigos desnecessário?
-        Esse posto te ensinará como otimizar o carregamentos de javascripts no projeto.
+        Esse post te ensinará como otimizar o carregamento de javascripts no projeto.
 day_quote:
  title: "A Palavra:"
  content: |
