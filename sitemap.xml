@@ -2,6 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+      <loc>https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/</loc>
+      
+        <lastmod>2017-10-09T15:31:36-03:00</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  
+    <url>
       <loc>https://williamcanin.me/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/</loc>
       
         <lastmod>2017-05-05T20:16:57-03:00</lastmod>
@@ -183,6 +192,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
        </url>
+    
+  
+    
+  
+    
+  
     
   
     

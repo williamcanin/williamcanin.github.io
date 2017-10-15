@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "Carregando Javascripts para diferentes posts e pages no Jekyll",
+      "tags"     : "jekyll, javascripts, dicas",
+      "url"     : "/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/",
+      "date"     : "2017-10-09 18:31:36 +0000"
+    } ,
+  
+    {
       "title"    : "Última versão do kernel linux através de um script",
       "tags"     : "shell-script, kernel, download, linux",
       "url"     : "/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/",

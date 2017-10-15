@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Carregando Javascripts para diferentes posts e pages no Jekyll | William Canin</title>
+<meta name="description" content="Faaaala pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Como diz o saudoso filósofo Serjão do Youtube:">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="kFisEN5aqITDKsnq2_HXHtxA8ygFVE95XlKapU7Kz_I">
+<meta http-equiv="cache-control" content="max-age">
+<meta http-equiv="pragma" content="public">
+<meta name="keywords" content="William, Canin, Analista, Programador, WebDesign, Geek">
+<meta name="author" content="William Canin">
+<meta property="og:locale" content="pt-BR">
+<meta property="og:site_name" content="William Canin">
+<meta property="og:type" content="WebSite">
+<meta property="og:url" content="https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/">
+<meta property="og:description" content="Analista e Desenvolvedor de Sistemas / Programador">
+<meta property="og:title" content="Carregando Javascripts para diferentes posts e pages no Jekyll - William Canin">
+<link rel="canonical" href="https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/">
+<link rel="alternate" type="application/rss+xml" title="William Canin" href="https://williamcanin.me/feed.xml"> <script type="application/ld+json"> {"@context": "http://schema.org", "@type": "WebSite", "name": "William Canin", "headline": "William Canin", "author": {"@type": "Person", "name": {"William Canin"}}, "description": "Analista e Desenvolvedor de Sistemas / Programador", "url": "https://williamcanin.me"} </script> <script type="text/javascript"> var GLOBAL_BASEURL = "https://williamcanin.me"; </script><link rel="icon" type="image/png" sizes="32x32" href="https://williamcanin.me/assets/images/favicon/favicon-32x32.png">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i,700,700i,800,800i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+<link rel="stylesheet" href="https://williamcanin.me/assets/stylesheets/main.css"> <script> var url_site = "https://williamcanin.me", url_production = "http://localhost:4000"; if (url_site != url_production) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-101186555-1', 'auto'); ga('set', 'forceSSL', true); ga('send', 'pageview'); }; </script>
+</head>
+<body>
+<div class="main" id="top">
+<div class="container wrapper"><div class="row">
+<div class="col-sm-3 sidebar">
+<div class="row avatar"> <a href="https://williamcanin.me"> <img class="img-responsive center-block avatar-img" src="https://williamcanin.me/assets/images/avatar/williamcanin.svg" height="165" width="165" alt="William Canin"> </a>
+</div>
+<div class="row header"><h2><a href="https://williamcanin.me">Hey, <br> I'm William. </a></h2></div>
+<div class="row menu">
+<ul>
+<li> <i class="fa fa-home" aria-hidden="true"></i> <a href="https://williamcanin.me/">Hello</a>
+</li>
+<hr class="breakline">
+<li class="li-fa-edit"> <i style="font-size: inherit;" class="fa fa-edit" aria-hidden="true"></i> <a href="https://williamcanin.me/blog/">Blog</a>
+</li>
+<li class="li-fa-search"> <i style="font-size: inherit;" class="fa fa-search" aria-hidden="true"></i> <a href="https://williamcanin.me/blog/search/">Pesquisar</a>
+</li>
+<li class="li-fa-tags"> <i style="font-size: inherit;" class="fa fa-tags" aria-hidden="true"></i> <a href="https://williamcanin.me/blog/tags/">Tags</a>
+</li>
+<li class="li-fa-lightbulb-o"> <i style="font-size: 18px;" class="fa fa-lightbulb-o" aria-hidden="true"></i> <a href="https://williamcanin.me/sentences/" onclick="ga('send', 'event', 'linkTo', 'https://williamcanin.me/sentences/', 'Reflexões');">Reflexões</a>
+</li>
+<li class="li-fa-briefcase"> <i style="font-size: inherit;" class="fa fa-briefcase" aria-hidden="true"></i> <a href="https://williamcanin.me/projects/" onclick="ga('send', 'event', 'linkTo', 'https://williamcanin.me/projects/', 'Projetos');">Projetos</a>
+</li>
+<li class="li-fa-rss"> <i style="font-size: inherit;" class="fa fa-rss" aria-hidden="true"></i> <a href="https://williamcanin.me/feed.xml">Feed</a>
+</li>
+<li class="li-fa-envelope"> <i style="font-size: inherit;" class="fa fa-envelope" aria-hidden="true"></i> <a href="https://williamcanin.me/contact/" onclick="ga('send', 'event', 'linkTo', 'https://williamcanin.me/contact/', 'Contacto');">Contacto</a>
+</li>
+<li class="li-fa-file-text-o"> <i style="font-size: inherit;" class="fa fa-file-text-o" aria-hidden="true"></i> <a href="https://williamcanin.me/resume/" onclick="ga('send', 'event', 'linkTo', 'https://williamcanin.me/resume/', 'Currículo');">Currículo</a>
+</li>
+</ul>
+<div class="socials"><div class="row">
+<p></p>
+<p>Siga-Me!</p>
+<div id="github" class="col-sm-3 columns"> <a href="https://github.com/williamcanin" target="_blank" title="GitHub" onclick="ga('send', 'event', 'linkTo', 'GitHub', 'Social Network', {useBeacon: true});"> <i class="fa fa-github icon" aria-hidden="true"></i> </a>
+</div>
+<div id="google-plus" class="col-sm-3 columns"> <a href="https://plus.google.com/+WilliamCanin" target="_blank" title="Google Plus" onclick="ga('send', 'event', 'linkTo', 'Google Plus', 'Social Network', {useBeacon: true});"> <i class="fa fa-google-plus icon" aria-hidden="true"></i> </a>
+</div>
+<div id="linkedin" class="col-sm-3 columns"> <a href="https://br.linkedin.com/in/williamcostacanin" target="_blank" title="LinkedIn" onclick="ga('send', 'event', 'linkTo', 'LinkedIn', 'Social Network', {useBeacon: true});"> <i class="fa fa-linkedin icon" aria-hidden="true"></i> </a>
+</div>
+<div id="twitter" class="col-sm-3 columns"> <a href="https://twitter.com/williamcanin" target="_blank" title="Twitter" onclick="ga('send', 'event', 'linkTo', 'Twitter', 'Social Network', {useBeacon: true});"> <i class="fa fa-twitter icon" aria-hidden="true"></i> </a>
+</div>
+</div></div>
+</div>
+</div>
+<div class="col-sm-9 content-main"><article class="post" itemscope itemtype="http://schema.org/BlogPosting"><div class="row title"><h1>Carregando Javascripts para diferentes posts e pages no Jekyll</h1></div>
+<div class="row meta" datetime="2017-10-09"> <time class="col-sm-6 datetime"> <i class="fa fa-calendar" aria-hidden="true"></i><span class="text tmargin "> 09 Outubro, 2017 </span> </time><div class="col-sm-6 count-comments"> <span class="wrap"><i class="fa fa-comments" aria-hidden="true"></i> <a href="#comments" data-disqus-identifier="/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/">0</a></span>
+</div>
+</div>
+<div class="row tag-list"> <i class="fa fa-tags" aria-hidden="true"></i> <a href="https://williamcanin.me/blog/tags//jekyll">jekyll</a> <a href="https://williamcanin.me/blog/tags//javascripts">javascripts</a> <a href="https://williamcanin.me/blog/tags//dicas">dicas</a>
+</div>
+<div class="row"> Leia isto "em cerca de 4 minutos".</div>
+<div class="row content">
+<p>Faaaala pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Como diz o saudoso filósofo Serjão do Youtube:</p>
+<blockquote><p>“E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu berrante tocá”.</p></blockquote>
+<p>HAHA <img class="emoji" title=":joy:" alt=":joy:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f602.png" height="20" width="20"></p>
+<p>Deixando a brincadeira de lado, vamos ao que interessa; o Post!</p>
+<ul id="markdown-toc">
+<li><a href="#introdu%C3%A7%C3%A3o" id="markdown-toc-introdução">Introdução</a></li>
+<li><a href="#requerimentos" id="markdown-toc-requerimentos">Requerimentos</a></li>
+<li>
+<a href="#o-la%C3%A7o-for-no-layoutdefaulthtml" id="markdown-toc-o-laço-for-no-layoutdefaulthtml">O laço ‘For’ no layout/default.html</a><ul><li><a href="#entendendo-o-for" id="markdown-toc-entendendo-o-for">Entendendo o ‘For’</a></li></ul>
+</li>
+<li>
+<a href="#o-arquivo-de-postagem" id="markdown-toc-o-arquivo-de-postagem">O arquivo de postagem</a><ul>
+<li><a href="#exemplo-para-arquivos-de-posts" id="markdown-toc-exemplo-para-arquivos-de-posts">Exemplo para arquivos de posts</a></li>
+<li><a href="#exemplo-para-arquivos-de-pages" id="markdown-toc-exemplo-para-arquivos-de-pages">Exemplo para arquivos de pages</a></li>
+</ul>
+</li>
+<li><a href="#conclus%C3%A3o" id="markdown-toc-conclusão">Conclusão</a></li>
+</ul>
+<h2 id="introdução">Introdução</h2>
+<p>Essa é uma dica rápida pra você que utiliza <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> como gerador de sites estáticos.</p>
+<p>Colocar seus códigos Javascript tudo em apenas um arquivo .js, não é tão recomendável assim, independente de utilizar geradores de sites estáticos ou ou não. Isso porque ao ser carregado pelo navegador, pode existir um trecho de código de uma determinada página, que não deveria ser carregado, assim irá carregar códigos extras sem necessidade.</p>
+<p>A melhor forma de fazer isso, é cada página carregar seu próprio Javascript, isso irá otimizar muito a velocidade de carregamento seu website, caso possua uma gama de códigos javascript em seu carregamento.</p>
+<h2 id="requerimentos">Requerimentos</h2>
+<p>O que você irá precisar para continuar com essa leitura:</p>
+<table>
+<thead><tr>
+<th>Requerido</th>
+<th>Como verificar</th>
+<th>Como instalar</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Ruby</td>
+<td><code>ruby -v</code></td>
+<td><a href="https://www.ruby-lang.org" target="_blank">Ruby</a></td>
+</tr>
+<tr>
+<td>Gem</td>
+<td><code>gem -v</code></td>
+<td>
+<strong>Ruby</strong> contém <strong>Gem</strong>
+</td>
+</tr>
+<tr>
+<td>Jekyll</td>
+<td><code>jekyll -v</code></td>
+<td><code>gem install jekyll</code></td>
+</tr>
+</tbody>
+</table>
+<p>Instale conforme o seu sistema operacional.</p>
+<h2 id="o-laço-for-no-layoutdefaulthtml">O laço ‘For’ no layout/default.html</h2>
+<p>Você pode fazer essa otimização de carregamento de javascripts com <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> de uma forma simples, usando um laço <strong>for</strong> no final do arquivo <em>layout/default.html</em>. Veja:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="c">&lt;!-- Specific for each pages. --&gt;</span>
+<span class="lineno">2 </span>{ % for script_page in page.script % }
+<span class="lineno">3 </span>   <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span> <span class="na">src</span><span class="o">=</span><span class="s">"{ { '/assets/javascripts/' | prepend: site.baseurl | prepend: site.url  | append: script_page } }"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="lineno">4 </span>{ % endfor % }</code></pre></figure><blockquote><p>NOTA: Sem espaços entre as chaves.</p></blockquote>
+<h3 id="entendendo-o-for">Entendendo o ‘For’</h3>
+<p>Observe que o diretório de meus javascripts está com PATH para <em>/assets/javascripts/</em>, ou seja, você deve modificar esse PATH para o local onde esteja seus javascripts.</p>
+<p>Na linha <em>{ % for script_page in page.script % }</em>, a variável <strong>script_page</strong> é responsável por amarzenar os valores do laço. A variável <strong>page</strong> é uma variável padrão do Jekyll, que carrega os arquivos de posts e pages, e a variável <strong>script</strong> temos que criar nos arquivos de post e page.</p>
+<h2 id="o-arquivo-de-postagem">O arquivo de postagem</h2>
+<p>Como dito antes, temos que criar a variável de <strong>script</strong> dentro do cabeçalho de nossos arquivos de post e page. Dentro de um arquivo no diretório <strong>_posts/mypost.md</strong> por exemplo, adicionaremos:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span># Does not change and does not remove 'script' variable.
+<span class="lineno">2 </span>script: [post.js]</code></pre></figure><p>Nesse casso, você deve colocar essa linha para todos arquivos dentro de <strong>_posts</strong> . Para os arquivos de páginas, você deve colocar também, porém deves mudar o nome do valor da variável <strong>script</strong> para <strong>pages.js</strong>, assim:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span># Does not change and does not remove 'script' variable.
+<span class="lineno">2 </span>script: [pages.js]</code></pre></figure><h3 id="exemplo-para-arquivos-de-posts">Exemplo para arquivos de posts</h3>
+<figure class="highlight"><pre><code class="language-text" data-lang="text"><span></span><span class="lineno">1 </span>---
+<span class="lineno">2 </span>layout: post
+<span class="lineno">3 </span>title: My Post 1
+<span class="lineno">4 </span>date: 2017-05-09 18:31:36
+<span class="lineno">5 </span># Does not change and does not remove 'script' variable.
+<span class="lineno">6 </span>script: [post.js]
+<span class="lineno">7 </span>---</code></pre></figure><h3 id="exemplo-para-arquivos-de-pages">Exemplo para arquivos de pages</h3>
+<figure class="highlight"><pre><code class="language-text" data-lang="text"><span></span><span class="lineno">1 </span>---
+<span class="lineno">2 </span>layout: page
+<span class="lineno">3 </span>title: My Page 1
+<span class="lineno">4 </span>date: 2017-05-09 18:31:36
+<span class="lineno">5 </span># Does not change and does not remove 'script' variable.
+<span class="lineno">6 </span>script: [page1.js]
+<span class="lineno">7 </span>---</code></pre></figure><p>Nesse caso todos os posts irá carregar o código javascript contido no arquivo <strong>/assets/javascripts/post.js</strong>, ou seja, será um arquivo global para todos os posts, mas você pode especificar um para cada post se quiser também. Os arquivos de páginas, segue o mesmo raciocínio. Nesse exemplo está carregando o <strong>/assets/javascripts/page1.js</strong>, mas também pode ter um glogal para todas as páginas.</p>
+<h2 id="conclusão">Conclusão</h2>
+<p>Fazendo dessa forma, você tem maior controle de qual página ou qual post deve carregar um determinado javascript para si próprio. Otimização de código é um marco importante para um bom desenvolvedor. Eu fico por aqui, espero que você possa ter entendido como otimizar o carregamento de javascripts no <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Abraço pessoa, <img class="emoji" title=":punch:" alt=":punch:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44a.png" height="20" width="20">.</p>
+<hr style="border-top: 1px solid #9D9D9D ; color: #9D9D9D ;" class="endpost">
+<div class="jsp-theme-base jsp-theme-light jsp-theme-custom">
+<nav class="navbar navbar-default navbar-default-jsp" role="navigation"><div class="container-fluid"><div class="navbar-header">
+<p class="navbar-text navbar-left navbar-text-jsp">  © 2017 - <a href="https://williamcanin.github.io/jekyll-spotify-plugin" target="_blank" class="navbar-link navbar-link-jsp"> Jekyll Spotify Plugin </a></p>
+<button type="button" class="btn btn-default navbar-btn navbar-btn-jsp" data-toggle="collapse" data-target="#jsp-content-0QQIc8RRZADy75CjvBLsiZ"> Hide </button>
+</div></div></nav><main class="collapse in navbar-jsp-collapse jsp-content" id="jsp-content-0QQIc8RRZADy75CjvBLsiZ"><div class="container-fluid">
+<div class="wrapper-txt" style="display: block">
+<h1 style="display: none;">Curta um sonzinho...</h1>
+<p style="display: block;">Post ao som de :</p>
+</div>
+<div class="track-list"> <iframe id="frame-track" class="frame-track" src="https://embed.spotify.com/?uri=spotify:track:0QQIc8RRZADy75CjvBLsiZ&amp;theme=white" width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
+</div>
+</div></main>
+</div>
+<div class="row sharebutton"><ul class="wrapper">
+<li class="title">Compartilhar:</li>
+<li class="fb"> <a href="#" title="Compartilhar no Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
+</li>
+<li class="linkedin"> <a href="http://www.linkedin.com/cws/share?url=https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=700,resizable=0,top=50,left=100");return false;' target="_blank" title="Compartilhar no LinkedIn">Linkedin</a>
+</li>
+<li class="googleplus"> <a href="https://plus.google.com/share?url=https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=700,resizable=0,top=50,left=100");return false;' target="_blank" title="Compartilhar no Google Plus">Google+</a>
+</li>
+</ul></div>
+<div class="day-quote">
+<div class="title"> A Palavra:</div>
+<div class="content"> "Quem bebe demais fica barulhento e caçoa dos outros; o escravo da bebida nunca será sábio. <br> Provérbios 20:1 NTLH"</div>
+</div>
+<div class="row author">
+<div class="col-sm-2 image"> <img class="img-responsive center-block" src="https://williamcanin.me/assets/images/author/williamcanin.svg" alt="">
+</div>
+<div class="col-sm-10 bio">
+<p class="title">Autor</p>
+<p class="name">William Canin</p>
+<p class="content">Formado em Analise e Desenvolvimento de Sistemas e fascinado pelo mundo do GNU/Linux, lê avidamente tudo sobre o assunto e sobre tecnologia em geral.</p>
+</div>
+</div>
+<div class="disqus" id="comments">
+<div class="title"><h3>
+<i class="fa fa-comments" aria-hidden="true"></i> Deixe um comentário</h3></div>
+<div class="content">
+<div id="disqus_thread"></div>
+<script type="text/javascript"> var disqus_shortname = 'williamcanin'; var disqus_identifier = '/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/'; var disqus_title = 'Carregando Javascripts para diferentes posts e pages no Jekyll'; var disqus_url = 'https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script>
+</div>
+</div>
+</div></article></div>
+</div></div>
+<div style="margin: 30px 0px;font-size: 1.2rem;" class="license"><div class="container-fluid"><div style="text-align: center;" class="row-fluid license"> <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/br/" target="_blank"><img style="margin-bottom: 8px;" alt="Licença Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/br/88x31.png"></a><br>Este <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">website</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="https://williamcanin.com/" property="cc:attributionName" rel="cc:attributionURL" target="_blank">William Canin</a> está licenciado com uma Licença <br><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/br/" target="_blank">Creative Commons - Atribuição-CompartilhaIgual 3.0 Brasil</a>.</div></div></div>
+<div class="footer"><div class="container-fluid"><div class="row-fluid">
+<div class="col-sm-4 copyright"> <span>William Canin © 2015-2017 • All right reserved.</span>
+</div>
+<div class="col-sm-4 message"> <span>In Jesus I Trust.</span>
+</div>
+<div class="col-sm-4 madeby"> <span>Made with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> using <a href="https://github.com/williamcanin/typing-jekyll-template" target="_blank">Typing</a> Theme.</span>
+</div>
+<a class="pull-right top" href="#top"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+</div></div></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> <script src="https://williamcanin.me/assets/javascripts/jekyll-spotify-plugin.min.js"></script> <script type="text/javascript" src="https://williamcanin.me/assets/javascripts/post.js"></script> <script type="text/javascript"> jQuery(document).ready(function($) { $('.post > .row.content a').addClass('ga-event'); $('.page.spage > .row.content th a').addClass('ga-event'); $('.row.content li a').removeClass('ga-event'); $('a.ga-event').attr('onclick', 'ga(\'send\',\'event\',\'linkTo\',this.href,\'https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/\');'); }); </script> <script src="https://williamcanin.me/assets/javascripts/global.js"></script>
+</body>
+</html>

@@ -7,9 +7,24 @@
     <description>Analista e Desenvolvedor de Sistemas / Programador</description>
     <link>https://williamcanin.me/</link>
     <atom:link href="https://williamcanin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Oct 2017 14:13:51 -0300</pubDate>
-    <lastBuildDate>Sat, 14 Oct 2017 14:13:51 -0300</lastBuildDate>
+    <pubDate>Sun, 15 Oct 2017 10:29:21 -0200</pubDate>
+    <lastBuildDate>Sun, 15 Oct 2017 10:29:21 -0200</lastBuildDate>
     <generator>Jekyll v3.4.5</generator>
+    
+      <item>
+        <title>Carregando Javascripts para diferentes posts e pages no Jekyll</title>
+        <description>&lt;p&gt;Faaaala pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Como diz o saudoso filósofo Serjão do Youtube:&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;“E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu berrante tocá”.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;HAHA :joy:&lt;/p&gt; &lt;p&gt;Deixando a brincadeira de lado, vamos ao que interessa; o Post!&lt;/p&gt; &lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-laço-for-no-layoutdefaulthtml&quot; id=&quot;markdown-toc-o-laço-for-no-layoutdefaulthtml&quot;&gt;O laço ‘For’ no layout/default.html&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#entendendo-o-for&quot; id=&quot;markdown-toc-entendendo-o-for&quot;&gt;Entendendo o ‘For’&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-arquivo-de-postagem&quot; id=&quot;markdown-toc-o-arquivo-de-postagem&quot;&gt;O arquivo de postagem&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#exemplo-para-arquivos-de-posts&quot; id=&quot;markdown-toc-exemplo-para-arquivos-de-posts&quot;&gt;Exemplo para arquivos de posts&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#exemplo-para-arquivos-de-pages&quot; id=&quot;markdown-toc-exemplo-para-arquivos-de-pages&quot;&gt;Exemplo para...</description>
+        <pubDate>Mon, 09 Oct 2017 15:31:36 -0300</pubDate>
+        <link>https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/</guid>
+        
+        <tag>jekyll</tag>
+        
+        <tag>javascripts</tag>
+        
+        <tag>dicas</tag>
+        
+      </item>
     
       <item>
         <title>Última versão do kernel linux através de um script</title>
