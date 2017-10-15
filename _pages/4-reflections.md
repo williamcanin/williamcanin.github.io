@@ -24,7 +24,13 @@ script: [projects.js]
 permalink: /sentences/
 ---
 
-Reflexões por William C. Canin
+| Descrença em Deus |
+--------------------------|----------------------------
+| "Nesse mundo, você consegue ter uma vida afastado(a) da palavra e ensinamentos de Deus; mas quando partires para a vida eterna, irás suplicar por não se afastar." - William C.Canin |
+
+| Julgar |
+--------------------------|----------------------------
+| "Não julgue alguém pelo o que faz ou fez de errado, pois Deus, nosso Senhor, também ama e usa essas pessoas errôneas; assim como fez com Paulo (Saulo, o perseguidor)." - William C.Canin |
 
 | Felicidade |
 --------------------------|----------------------------
