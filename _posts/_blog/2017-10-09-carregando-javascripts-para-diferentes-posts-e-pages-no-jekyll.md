@@ -24,9 +24,9 @@ Faaaala pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que ti
 > "E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu 
 > berrante tocá". 
 
-HAHA :joy:
+:wink:
 
-Deixando a brincadeira de lado, vamos ao que interessa; o Post!
+Deixando as desculpas de lado, vamos ao que interessa; o Post!
 
 * Do not remove this line (it will not be displayed)
 {: toc}
