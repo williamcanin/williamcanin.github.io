@@ -24,6 +24,10 @@ script: [projects.js]
 permalink: /sentences/
 ---
 
+| Aprendizagem |
+--------------------------|----------------------------
+| "A aprendizagem é um ciclo repetitivo, pois; tudo que é falado se repete 80% porque os aprendizes que esquecem." - William C.Canin |
+
 | Descrença em Deus |
 --------------------------|----------------------------
 | "Nesse mundo, você consegue ter uma vida afastado(a) da palavra e ensinamentos de Deus; mas quando partires para a vida eterna, irás suplicar por não se afastar." - William C.Canin |

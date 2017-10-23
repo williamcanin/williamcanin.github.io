@@ -10,7 +10,7 @@
 
 # Author: William C. Canin
 #   E-Mail: william.costa.canin@gmail.com
-#   Home page: https://williamcanin.com
+#   Home page: https://williamcanin.me
 
 # License:
 # The MIT License (MIT)
@@ -37,7 +37,7 @@
 # ******************************************************************************
 #
 # Note: Not use with root.
-# Usage: bash ghoost help
+# Usage: ./init.sh help
 #
 
 # Import LIBs
