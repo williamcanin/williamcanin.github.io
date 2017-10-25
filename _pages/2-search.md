@@ -19,5 +19,5 @@ published: true
 permalink: /blog/search/
 ---
 
-Digite algo no campo para executar uma pesquisa igual o papaléguas no [Weblog]({{site.url}}{{site.baseurl}}/blog/). Boa caçada!
+Digite algo no campo para executar uma pesquisa no [Weblog]({{site.url}}{{site.baseurl}}/blog/) igual a velocidade do papaléguas. Não tem coiote.
 

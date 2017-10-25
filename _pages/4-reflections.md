@@ -24,6 +24,8 @@ script: [projects.js]
 permalink: /sentences/
 ---
 
+Sou bem estranho com pensamentos nos momentos livres; flutuando e prognosticando, sai tudo essas receitas de bolo de fubá aqui:
+
 | Aprendizagem |
 --------------------------|----------------------------
 | "A aprendizagem é um ciclo repetitivo, pois; tudo que é falado se repete 80% porque os aprendizes que esquecem." - William C.Canin |

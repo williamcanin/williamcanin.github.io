@@ -21,4 +21,5 @@ permalink: /contact/
 ---
 
 DETALHES   
-Nessa área você pode me contatar para trabalho ou simplesmente tirar dúvidas.
+
+Nessa área você pode me contatar para trabalho; fazer feedbacks sobre correções deste site (eu corrijo rapidão); ou simplesmente tirar outras dúvidas (menos sobre a novela das 8).

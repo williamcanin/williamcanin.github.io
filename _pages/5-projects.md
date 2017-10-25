@@ -24,11 +24,11 @@ script: [projects.js]
 permalink: /projects/
 ---
 
-Meus projetos principais encontra-se aqui! São realizações próprias ou participações que tem minha "mão". 
+Meus projetos principais encontra-se aqui! São links redirecionando para realizações próprias ou participações que tem minha "mão de mágico" para outra página. 
 
-Os projetos Inativos, são os que eu não atualizo versão por um tempo, porem, funcionam. Eu preciso mudar isso...talvez um dia.
+Coleguinha, os projetos "Inativos", são os que eu não atualizo a versão por um tempo, porém, funcionam. Eu preciso mudar isso...talvez um dia quando encontrar um patrocínio que me dê um cheque sem fundo.
 
-Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcanin){:target="_blank"}.
+Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcanin){:target="_blank"} curioso(a).
 
 ##  Autoria
 
