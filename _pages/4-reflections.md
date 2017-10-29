@@ -34,6 +34,10 @@ Sou bem estranho com pensamentos nos momentos livres; flutuando e prognosticando
 --------------------------|----------------------------
 | "Nesse mundo, você consegue ter uma vida afastado(a) da palavra e ensinamentos de Deus; mas quando partires para a vida eterna, irás suplicar por não se afastar." - William C.Canin |
 
+| Passado |
+--------------------------|----------------------------
+| "Não materialize o passado como sendo a única razão da felicidade." - William C.Canin |
+
 | Julgar |
 --------------------------|----------------------------
 | "Não julgue alguém pelo o que faz ou fez de errado, pois Deus, nosso Senhor, também ama e usa essas pessoas errôneas; assim como fez com Paulo (Saulo, o perseguidor)." - William C.Canin |

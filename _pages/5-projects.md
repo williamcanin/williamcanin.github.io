@@ -28,7 +28,7 @@ Meus projetos principais encontra-se aqui! São links redirecionando para realiz
 
 Coleguinha, os projetos "Inativos", são os que eu não atualizo a versão por um tempo, porém, funcionam. Eu preciso mudar isso...talvez um dia quando encontrar um patrocínio que me dê um cheque sem fundo.
 
-Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcanin){:target="_blank"} curioso(a).
+Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcanin){:target="_blank"}, curioso(a).
 
 ##  Autoria
 

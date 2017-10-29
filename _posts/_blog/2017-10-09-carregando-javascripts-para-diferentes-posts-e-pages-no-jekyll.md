@@ -35,7 +35,7 @@ Deixando as desculpas de lado, vamos ao que interessa; o Post!
 
 Essa é uma dica rápida pra você que utiliza [Jekyll](https://jekyllrb.com/){:target="_blank"} como gerador de sites estáticos. 
 
-Colocar seus códigos Javascript tudo em apenas um arquivo .js, não é tão recomendável assim, independente de utilizar geradores de sites estáticos ou ou não. Isso porque ao ser carregado pelo navegador, pode existir um trecho de código de uma determinada página, que não deveria ser carregado, assim irá carregar códigos extras sem necessidade.
+Colocar seus códigos Javascript tudo em apenas um arquivo .js, não é tão recomendável assim, independente de utilizar geradores de sites estáticos ou não. Isso porque ao ser carregado pelo navegador, pode existir um trecho de código de uma determinada página, que não deveria ser carregado, assim irá carregar códigos extras sem necessidade.
 
 A melhor forma de fazer isso, é cada página carregar seu próprio Javascript, isso irá otimizar muito a velocidade de carregamento seu website, caso possua uma gama de códigos javascript em seu carregamento.
 
