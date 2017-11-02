@@ -28,7 +28,7 @@ Sou bem estranho com pensamentos nos momentos livres; flutuando e prognosticando
 
 | Aprendizagem |
 --------------------------|----------------------------
-| "A aprendizagem é um ciclo repetitivo, pois; tudo que é falado se repete 80% porque os aprendizes que esquecem." - William C.Canin |
+| "A aprendizagem é um ciclo repetitivo, pois; tudo que é falado se repete 80% porque os aprendizes esquecem." - William C.Canin |
 
 | Descrença em Deus |
 --------------------------|----------------------------
