@@ -33,7 +33,7 @@ tcontents:
     - name: Educação
       id: "#educação"
     - name: Habilidades
-      id: "#habilidades"
+      id: "#conhecimentos--habilidades"
     - name: Projetos
       id: "#projetos"
 
