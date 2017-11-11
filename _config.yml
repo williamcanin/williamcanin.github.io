@@ -86,6 +86,10 @@ destination: _site
 port: 4000
 host: localhost
 
+# [ Vendor Off ]
+# Using: true | false
+vendor-off: true
+
 # Config SASS
 sass:
   sass_dir: _sass
@@ -121,7 +125,7 @@ exclude:
   - notes
   - sources
   - Rakefile
-  - dev/
+  # - dev/
   - src/
   - deploy/deploy
 

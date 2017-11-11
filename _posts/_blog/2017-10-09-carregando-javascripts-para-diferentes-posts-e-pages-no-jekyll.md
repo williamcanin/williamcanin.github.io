@@ -12,7 +12,7 @@ excerpted: |
 day_quote:
  title: "A Palavra:"
  content: |
-          "Quem bebe demais fica barulhento e caçoa dos outros; o escravo da bebida nunca será sábio. <br> Provérbios 20:1 NTLH"
+          "Quem bebe demais fica barulhento e caçoa dos outros; o escravo da bebida nunca será sábio." <br> Provérbios 20:1 NTLH
 
 # Does not change and does not remove 'script' variable.
 script: [post.js]
