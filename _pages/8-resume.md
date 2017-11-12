@@ -48,7 +48,7 @@ permalink: /resume/
 {% include dbase/dbase %}
 
 #  William da Costa Canin
-### Analista e Desenvolvedor de Sistemas
+### Desenvolvedor de Sistemas
 
 <br>
 
@@ -84,8 +84,8 @@ Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:tar
 
 Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade.
 
-Atualmente exerço mais o desenvolvimento Web ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento [Back-End](#back-end), ou seja, me considerando um desenvolvedor full-stack. Se tratando de [redes](#redes), me adaptei com os servidores Linux; no qual os conheço por usar o
-sistema diariamente baseado no mesmo. Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
+Atualmente exerço mais o desenvolvimento Web ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento [Back-End](#back-end), ou seja, me considerando com aptdão a full-stack. Se tratando de [redes](#redes), me adaptei com os servidores Linux; no qual os conheço por usar diariamente um
+sistema operacional baseado no mesmo. Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
 
 No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"}. Em todos esses anos de usuário, adquiri alguns conhecimentos em [Linux LPI](#linux-lpi).
 
@@ -130,6 +130,7 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 {% label Bootstrap|16px %}
 {% label CSS3|16px %}
 {% label JQuery|16px %}
+{% label Design Responsivo|16px %}
 
 #### **Back-End:**
 
@@ -151,7 +152,6 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 #### **Metodologias:**
 
-{% label Design Responsivo (Mobile First)|16px %}
 {% label UML|16px %}
 {% label OOP|16px %}
 {% label PL/SQL|16px %}
