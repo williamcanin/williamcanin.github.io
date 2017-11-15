@@ -16,7 +16,7 @@ website:
   title: William Canin
   description: "Desenvolvedor de Sistemas"
   launch: 2015
-  avatar: williamcanin.jpg
+  avatar: williamcanin.png
   metatag:
     google-site-verification: "kFisEN5aqITDKsnq2_HXHtxA8ygFVE95XlKapU7Kz_I"
     type: "WebSite"
@@ -32,7 +32,7 @@ website:
       id: "UA-101186555-1" # tracking id, e.g. "UA-000000-01"
       events: true # Use: true | false . Events Google Analytics
   author:
-    image: williamcanin.svg
+    image: williamcanin.png
   strings:
     sidebar:
       title: |
