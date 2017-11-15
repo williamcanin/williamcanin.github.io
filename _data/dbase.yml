@@ -32,7 +32,7 @@ website:
       id: "UA-101186555-1" # tracking id, e.g. "UA-000000-01"
       events: true # Use: true | false . Events Google Analytics
   author:
-    image: williamcanin.png
+    image: williamcanin.jpg
   strings:
     sidebar:
       title: |
