@@ -26,6 +26,7 @@ html,body{
       @media (min-width: 769px) {
         @if $border-dashed == true {
           border-left: 2px dashed $border-dashed-color;
+          border-right: 2px dashed $border-dashed-color;
         }
       }
     }
