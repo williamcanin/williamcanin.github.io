@@ -83,11 +83,6 @@ function _verify_remote(){
   fi
 }
 
-# Function that captures the origin of the remote.
-function _get_origin_name(){
-  origin_name=$(git remote -v | awk '{ print $1 }' | sed '2d')
-}
-
 # Function to compile the project.
 function _build_project(){
   printf "Compiling the project ...\n"
@@ -160,6 +155,12 @@ function _select_branch(){
   branch_deploy="$list"
   _enter_branch "$branch_deploy"
 }
+
+# Function that captures the origin of the remote.
+function _get_origin_name(){
+  origin_name=$(git remote -v | awk '{ print $1 }' | sed '2d')
+}
+
 
 # Function where everything starts.
 function _start_deploy(){

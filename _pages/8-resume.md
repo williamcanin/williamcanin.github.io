@@ -177,6 +177,10 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 {% label LibreOffice|16px %}
 {% label Microsoft Office|16px %}
 
+## Certificados
+
+* [NodeStudio - HTML5 & CSS3](https://www.nodestudio.com.br/certificado/58780178){:target="_blank"}
+* [NodeStudio - Design Responsivo](https://www.nodestudio.com.br/certificado/58780174){:target="_blank"}
 
 ## Projetos
 
