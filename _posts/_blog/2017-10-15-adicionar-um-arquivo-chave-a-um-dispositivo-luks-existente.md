@@ -23,6 +23,8 @@ script: [post.js]
 
 # Introdução
 
+Piada: A linha abaixo é um mistério, dou um pirulito a quem descobrir para que serve.
+
 
 # Requerimentos
 
