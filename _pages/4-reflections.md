@@ -24,7 +24,12 @@ script: [projects.js]
 permalink: /sentences/
 ---
 
-Sou bem estranho com pensamentos nos momentos livres; flutuando e prognosticando, sai tudo essas receitas de bolo de fubá aqui:
+Sou bem incomum com pensamentos nos momentos livres; flutuando e prognosticando, sai tudo essas palavras aqui:
+
+
+| Consolação |
+--------------------------|----------------------------
+| "Não há conforto melhor nas dificuldades, que ficar perto de lábios quietos e corações saturado de bondade e mansidão, pois, quando os sons vocais se propagam muito, o consolar entra escoamento de falha." - William C.Canin |
 
 | Aprendizagem |
 --------------------------|----------------------------
@@ -72,7 +77,7 @@ Sou bem estranho com pensamentos nos momentos livres; flutuando e prognosticando
 
 | Escolhas |
 --------------------------|----------------------------
-| "Não precisamos seguir os costumes e ensinamentos mundano. Não precisamos dizer palavões para desabafar; Não precisamos ter ódio se não nos dão amor; Não precisamos beber álcool para ficarmos alegre; Não precisamos fumar para sermos descolados; Não precisamos usar drogas ilícitas para termos prazer; Não precisamos assumir um romance para mostrar maturidade; Não precisamos da luxúria para viver bem; Não precisamos ir na igreja cotidianeamente para termos fé e Deus em nós, porém, só precisamos abrir a Bíblia e seguir as palavras de Deus, que tem os ensinamentos mais corretos de todos." - William C.Canin |
+| "Não precisamos seguir os costumes e ensinamentos mundanos. Não precisamos dizer palavões para desabafar; Não precisamos ter ódio se não nos dão amor; Não precisamos beber álcool para ficarmos alegre; Não precisamos fumar para sermos descolados; Não precisamos usar drogas ilícitas para termos prazer; Não precisamos assumir um romance para mostrar maturidade; Não precisamos da luxúria para viver bem; Não precisamos ir na igreja cotidianeamente para termos fé e Deus em nós, porém, só precisamos abrir a Bíblia e seguir as palavras de Deus, que tem os ensinamentos mais corretos de todos." - William C.Canin |
 
 | Humilhados |
 --------------------------|----------------------------
