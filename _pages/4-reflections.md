@@ -24,7 +24,7 @@ script: [projects.js]
 permalink: /sentences/
 ---
 
-Sou bem incomum com pensamentos nos momentos livres; flutuando e prognosticando, sai tudo essas palavras aqui:
+Sou bem incomum com pensamentos nos momentos livres; flutuando e prognosticando, sai todas essas ideias aqui:
 
 
 | Consolação |
