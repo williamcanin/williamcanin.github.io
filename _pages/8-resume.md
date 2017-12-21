@@ -80,12 +80,12 @@ permalink: /resume/
 
 Apaixonado por desafios, tecnologia, design, pessoas e melhoramento pessoal; onde tenho a convicção de que tudo é possível com dedicação e resiliência.
 
-Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação](#habilidades) e tarefas voltadas a computação. 
+Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação](#habilidades) e tarefas voltadas a computação.
 
 Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade.
 
-Atualmente exerço mais o desenvolvimento Web ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento [Back-End](#back-end), ou seja, me considerando com aptdão a full-stack. Se tratando de [redes](#redes), me adaptei com os servidores Linux; no qual os conheço por usar diariamente um
-sistema operacional baseado no mesmo. Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas).
+Atualmente exerço mais o aprendizado de desenvolvimento Web ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento [Back-End](#back-end), ou seja, me considerando com aptdão a full-stack. Se tratando de [redes](#redes), me adaptei com os servidores Linux; no qual os conheço por usar diariamente um
+sistema operacional baseado no mesmo. Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas). Me considero leigo em tudo, e é por isso que me motiva estudar sempre.
 
 No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"}. Em todos esses anos de usuário, adquiri alguns conhecimentos em [Linux LPI](#linux-lpi).
 
@@ -195,4 +195,3 @@ Para ver todos meus projetos, acesse: [https://williamcanin.me/projects](https:/
 <!-- ## Informações adicionais -->
 
 <!-- CNH - AB -->
-
