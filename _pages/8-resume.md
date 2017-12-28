@@ -82,7 +82,7 @@ Apaixonado por desafios, tecnologia, design, pessoas e melhoramento pessoal; ond
 
 Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação](#habilidades) e tarefas voltadas a computação.
 
-Diarimente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade.
+Diariamente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade.
 
 Atualmente exerço mais o aprendizado de desenvolvimento Web ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento [Back-End](#back-end), ou seja, me considerando com aptdão a full-stack. Se tratando de [redes](#redes), me adaptei com os servidores Linux; no qual os conheço por usar diariamente um
 sistema operacional baseado no mesmo. Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas). Me considero leigo em tudo, e é por isso que me motiva estudar sempre.
