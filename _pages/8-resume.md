@@ -48,7 +48,7 @@ permalink: /resume/
 {% include dbase/dbase %}
 
 #  William da Costa Canin
-### Desenvolvedor de Sistemas
+### Desenvolvedor
 
 <br>
 
