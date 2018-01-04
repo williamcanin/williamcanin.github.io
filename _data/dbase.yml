@@ -106,8 +106,8 @@ userdata:
         icon: fa-linkedin
         url: https://br.linkedin.com/in/williamcostacanin
 
-      - title: Twitter
-        id: twitter
-        icon: fa-twitter
-        url: https://twitter.com/williamcanin
+      # - title: Twitter
+      #  id: twitter
+      #  icon: fa-twitter
+      #  url: https://twitter.com/williamcanin
 
