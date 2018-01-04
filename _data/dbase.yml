@@ -106,6 +106,10 @@ userdata:
         icon: fa-linkedin
         url: https://br.linkedin.com/in/williamcostacanin
 
+      - title: "Viva O Linux"
+        id: linux
+        icon: fa-linux
+        url: https://www.vivaolinux.com.br/~willnux
       # - title: Twitter
       #  id: twitter
       #  icon: fa-twitter
