@@ -57,7 +57,7 @@ plugin:
 spotify:
   enable: true
   open: true
-  theme: "light" # dark | light
+  theme: "dark" # dark | light
   sass:
     jekyll: true
     dir: "_sass"
