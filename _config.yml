@@ -57,7 +57,7 @@ plugin:
 spotify:
   enable: true
   open: true
-  theme: "dark" # dark | light
+  theme: "light" # dark | light
   sass:
     jekyll: true
     dir: "_sass"
@@ -130,7 +130,3 @@ exclude:
   - deploy/deploy
 
 #  --- SESSION PRIVATE ---
-
-
-
-
