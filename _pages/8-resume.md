@@ -186,11 +186,10 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 Realiazo diversos projetos Open-Source e armazeno tudo com [git](https://git-scm.com/){:target="_blank"} no meu [GitHub](https://github.com/williamcanin){:target="_blank"}. Aqui está alguns:
 
-* [Jekyll Spotify Plugin](http://williamcanin.github.io/jekyll-spotify-plugin){:target="_blank"} - Jekyll plug-in para gerar fragmentos de código HTML para incorporar música do Spotify em templates Jekyll.
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script via Shell para realizar a recuperação do Grub no Arch Linux.
 * [iDisconnect ](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
-Para ver todos meus projetos, acesse: [https://williamcanin.me/projects](https://williamcanin.me/projects/){:target="_blank"}.
+Para ver todos meus projetos, acesse: [Meu Github](https://github.com/williamcanin){:target="_blank"}.
 
 <!-- ## Informações adicionais -->
 
