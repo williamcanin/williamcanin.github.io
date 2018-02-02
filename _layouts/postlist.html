@@ -29,11 +29,13 @@ layout: default
     {% for post in site.categories.blog %}
     <div class="wrap">
       <div class="time-and-count-comments" datetime="{{ post.date | date:'%Y-%m-%d' }}">
+        {% if dbase.website.strings.postlist.date.enable == true %}
         <time class="time">
           {% datelang post %}
           {% include datelang/post %}
         </time>
-        {% if post.comments and dbase.userdata.disqus.username %}
+        {% endif %}
+        {% if post.comments and dbase.userdata.disqus.username and dbase.website.strings.postlist.comments.enable == true %}
           <div class="count-comments">
             {% if site.screen.icons.enable == true %}<i class="fa fa-comments"></i>{% endif %}<span class="disqus-comment-count" data-disqus-identifier="{{ post.url }}">0</span>
           </div>
@@ -43,7 +45,7 @@ layout: default
         <h1>
           <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </h1>
-        {% if post.excerpted %}<p class="excerpted">{{ post.excerpted | strip_html | truncatewords:26 }}<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" class="continue">{{ dbase.website.strings.postlist.continue }}</a></p>{% endif %}
+        {% if post.excerpted and dbase.website.strings.postlist.excerpted.enable == true %}<p class="excerpted">{{ post.excerpted | strip_html | truncatewords:26 }}<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" class="continue">{{ dbase.website.strings.postlist.continue }}</a></p>{% endif %}
       </div>
     </div>
     {% endfor %}
