@@ -16,7 +16,7 @@ icon-size: 18px
 # Enable / Disable this page in the main menu.
 menu: true
 
-published: true
+published: false
 
 # Does not change and does not remove 'script' variables
 script: [projects.js]
