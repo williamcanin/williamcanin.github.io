@@ -44,10 +44,12 @@ layout: default
       </div>
     </div>
     <div class="row author">
+      {% if dbase.website.author.image %}
       <div class="col-sm-2 image">
         <img class="img-responsive center-block" src="{{ '/assets/images/author' | prepend: site.baseurl | prepend: site.url }}/{{ dbase.website.author.image }}" alt="">
       </div>
-      <div class="col-sm-10 bio">
+      {% endif %}
+      <div class="{% if dbase.website.author.image %} col-sm-10 {% else %} col-sm-12 {% endif %} bio">
         <p class="title">{{ dbase.website.strings.post.author.title }}</p>
         <p class="name">{{ dbase.website.strings.post.author.name }}</p>
         <p class="content">{{ dbase.website.strings.post.author.bio }}</p>

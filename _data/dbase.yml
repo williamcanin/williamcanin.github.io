@@ -32,7 +32,7 @@ website:
       id: "UA-101186555-1" # tracking id, e.g. "UA-000000-01"
       events: true # Use: true | false . Events Google Analytics
   author:
-    image: williamcanin.jpg
+    image:
   strings:
     sidebar:
       title: |
@@ -62,7 +62,7 @@ website:
         title: Autor
         name: William Canin
         bio: |
-          Formado em Analise e Desenvolvimento de Sistemas e fascinado pelo mundo do GNU/Linux, lê avidamente tudo sobre o assunto e sobre tecnologia em geral.
+          Formado em Analise de Sistemas e fascinado pelo mundo do GNU/Linux. Atualmente atual no desenvolvimento web.
     search:
       input:
         placeholder: ['Pesquisar em','arquivos(s)']
@@ -87,32 +87,31 @@ userdata:
   disqus:
     username: williamcanin
   # You can add at most 4 social.
-  socials:
-    title: Siga-Me!
-    ga_event: true # Google Analytics Event (Hit). Usage: true | false
-    links:
-      - title: GitHub
-        id: github
-        icon: fa-github
-        url: https://github.com/williamcanin
+  # socials:
+  #   title: Siga-Me!
+  #   ga_event: true # Google Analytics Event (Hit). Usage: true | false
+  #   links:
+  #     - title: GitHub
+  #       id: github
+  #       icon: fa-github
+  #       url: https://github.com/williamcanin
+  #
+  #     - title: Google Plus
+  #       id: google-plus
+  #       icon: fa-google-plus
+  #       url: https://plus.google.com/+WilliamCanin
+  #
+  #     - title: LinkedIn
+  #       id: linkedin
+  #       icon: fa-linkedin
+  #       url: https://br.linkedin.com/in/williamcostacanin
+  #
+  #     - title: "Viva O Linux"
+  #       id: linux
+  #       icon: fa-linux
+  #       url: https://www.vivaolinux.com.br/~willnux
 
-      - title: Google Plus
-        id: google-plus
-        icon: fa-google-plus
-        url: https://plus.google.com/+WilliamCanin
-
-      - title: LinkedIn
-        id: linkedin
-        icon: fa-linkedin
-        url: https://br.linkedin.com/in/williamcostacanin
-
-      - title: "Viva O Linux"
-        id: linux
-        icon: fa-linux
-        url: https://www.vivaolinux.com.br/~willnux
-        
       # - title: Twitter
       #  id: twitter
       #  icon: fa-twitter
       #  url: https://twitter.com/williamcanin
-
