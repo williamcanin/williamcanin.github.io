@@ -106,14 +106,16 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 
 **Linux Essentials - Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux**
 
-**LPIC-1 101 - Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede**
+**Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede**
+
+**LPIC-1 101**
 
 * Arquitetura do Sistema
 * Instalação e manutenção de pacotes linux
 * Comandos GNU e Unix
 * Devices, Linux Filesystems, Hieraquia Padrão dos Filesystem
 
-**LPIC-1 102 - Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede**
+**LPIC-1 102**
 
 * Shell, Scripting e Gerenciamento de Dados
 * Interfaces e Desktops
