@@ -80,16 +80,15 @@ permalink: /resume/
 
 Apaixonado por desafios, tecnologia, design, pessoas e melhoramento pessoal; onde tenho a convicção de que tudo é possível com dedicação e resiliência.
 
-Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação](#habilidades) e tarefas voltadas a computação.
+Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação e tarefas voltadas a computação](#conhecimentos--habilidades).
 
-Diariamente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período de faculdade.
+Diariamente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período no ensino superior.
 
-Atualmente exerço mais o aprendizado de desenvolvimento Web ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento [Back-End](#back-end), ou seja, me considerando com aptdão a full-stack. Se tratando de [redes](#redes), me adaptei com os servidores Linux; no qual os conheço por usar diariamente um
-sistema operacional baseado no mesmo. Sou um defensor do código `open source`. Em questão de ferramentas fora do ciclo de programação, pode-se encontrar na seção de [Conhecimentos / Habilidades](#conhecimentos--habilidades) em [outras ferramentas](#outras-ferramentas). Me considero leigo em tudo, e é por isso que me motiva estudar sempre.
+Atualmente exerço mais o aprendizado de "Web development" ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento com [Back-End](#back-end), ou seja, me considerando com aptdão a full-stack.
 
-No ano de 2008, conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"}. Em todos esses anos de usuário, adquiri alguns conhecimentos em [Linux LPI](#linux-lpi).
+Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"}. Desde então, vou adquiri alguns conhecimentos em [Network](#networks) e [Linux LPI](#linux-lpi).
 
-Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}.
+Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, e é por isso que me motiva estudar sempre.
 
 ## Educação
 
@@ -97,7 +96,7 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 *Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas*
 
-Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Java, Banco de Dados(Oracle)* e pouco de *Web Design*. Na conclusão de curso, foi realizado um sistema ERP (Beta) para uma loja de eletrodomésticos local. A jornada durou 4 anos, onde obtive a conclusão no final do ano 2013.
+Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Java, Banco de Dados(Oracle)* e *Web development*. Na conclusão de curso, foi realizado um sistema ERP não aplicável para uma loja de eletrodomésticos local usando [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}. A jornada durou 4 anos, onde obtive a conclusão do curso no final do ano 2013.
 
 
 ## Experiências
@@ -124,42 +123,46 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 
 ## Conhecimentos / Habilidades
 
-Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novos conhecimentos em diversas linguagens de programação e softwares.
+Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novos conhecimentos em diversas áreas:
 
-#### **Front-End:**
+#### **Front end**
 
-{% label HTML|16px %}
-{% label Bootstrap|16px %}
+{% label HTML5|16px %}
 {% label CSS3|16px %}
-{% label JQuery|16px %}
-{% label Design Responsivo|16px %}
+{% label Bootstrap|16px %}
+{% label Javascript/ES6|16px %}
+{% label Responsive Web Design|16px %}
+{% label BEM|16px %}
+{% label SASS|16px %}
+{% label Gulp|16px %}
+{% label NPM|16px %}
 
-#### **Back-End:**
+#### **Back end**
 
-{% label Ruby|16px %}
-{% label UNIX / GNU via Bash|16px %}
+{% label Ruby/RubyGems|16px %}
+{% label Shell|16px %}
 {% label Delphi|16px %}
 
-#### **Banco de Dados:**
+#### **Version Control System**
+
+{% label Git|16px %}
+
+#### **SSG**
+
+{% label Jekyll|16px %}
+
+#### **Graphics**
+
+{% label Gimp|16px %}
+{% label Inkscape|16px %}
+{% label Adobe Photoshop|16px %}
+
+#### **Databases**
 
 {% label MySQL|16px %}
 {% label Firebird|16px %}
 
-#### **Automatizadores:**
-
-{% label Git|16px %}
-{% label Jekyll|16px %}
-{% label Gulp|16px %}
-{% label SASS|16px %}
-
-#### **Metodologias:**
-
-{% label UML|16px %}
-{% label OOP|16px %}
-{% label PL/SQL|16px %}
-
-
-#### **Redes:**
+#### **Networks**
 
 {% label Ubuntu Server|16px %}
 {% label Red Hat Enterprise Linux Server|16px %}
@@ -167,17 +170,10 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 {% label IPTables|16px %}
 {% label Squid|16px %}
 
-#### **Sistemas Operacionais:**
+#### **Operational systems**
 
 {% label Linux|16px %}
 {% label Windows|16px %}
-
-#### **Outras ferramentas:**
-
-{% label Gimp|16px %}
-{% label Adobe Photoshop|16px %}
-{% label LibreOffice|16px %}
-{% label Microsoft Office|16px %}
 
 ## Certificados
 
@@ -190,8 +186,6 @@ Realiazo diversos projetos Open-Source e armazeno tudo com [git](https://git-scm
 
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script via Shell para realizar a recuperação do Grub no Arch Linux.
 * [iDisconnect ](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
-
-Para ver todos meus projetos, acesse: [Meu Github](https://github.com/williamcanin){:target="_blank"}.
 
 <!-- ## Informações adicionais -->
 
