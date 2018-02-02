@@ -1,4 +1,4 @@
-{% if dbase.userdata.disqus.username %}
+{% if dbase.userdata.disqus.enable == true %}
   <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname  = '{{ dbase.userdata.disqus.username }}';

@@ -64,7 +64,12 @@ website:
         enable : false
       continue: Continue
     post:
+      comments:
+        enable: false
+      day_quote:
+        enable: false
       author:
+        enable: false
         title: Autor
         name: William Canin
         bio: |
@@ -91,6 +96,7 @@ userdata:
   email: william.costa.canin@gmail.com
   twitter:
   disqus:
+    enable: false
     username: williamcanin
   # You can add at most 4 social.
   # socials:

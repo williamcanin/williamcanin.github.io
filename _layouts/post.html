@@ -35,6 +35,7 @@ layout: default
     {{ content }}
     {% include pieces/share_social.html %}
 
+    {% if dbase.website.strings.post.day_quote.enable == true %}
     <div class="day-quote">
       <div class="title">
         {{ page.day_quote.title }}
@@ -43,6 +44,8 @@ layout: default
         {{ page.day_quote.content }}
       </div>
     </div>
+    {% endif %}
+    {% if dbase.website.strings.post.author.enable == true %}
     <div class="row author">
       {% if dbase.website.author.image %}
       <div class="col-sm-2 image">
@@ -55,20 +58,21 @@ layout: default
         <p class="content">{{ dbase.website.strings.post.author.bio }}</p>
       </div>
     </div>
+    {% endif %}
+
+    {% if page.comments and dbase.userdata.disqus.enable == true %}
     <div class="disqus" id="comments">
-    {% if page.comments and dbase.userdata.disqus.username %}
       <div class="title">
         <h3><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;{{ dbase.website.strings.comments.title }}</h3>
       </div>
       <div class="content">
         {% include scripts/disqus_comments.html %}
       </div>
-    {% else %}
-      <div class="title">
-        <h3><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;{{ dbase.website.strings.comments.disable }}</h3>
-      </div>
-    {% endif %}
     </div>
+    <!-- { % else % }
+      <h3><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;{{ dbase.website.strings.comments.disable }}</h3>
+    -->
+    {% endif %}
 
   </div>
 </article>

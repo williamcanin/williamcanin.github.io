@@ -55,7 +55,7 @@ plugin:
 
 # Plugin music.
 spotify:
-  enable: true
+  enable: false
   open: true
   theme: "light" # dark | light
   sass:
