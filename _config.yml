@@ -19,7 +19,7 @@ url: "https://williamcanin.me" # the base hostname & protocol for your site, e.g
 
 # Add Avatar in: Sidebar or page Hello, and configure.
 avatar:
-  sidebar: true
+  sidebar: false
   hello: false
   size:
     enable: true
