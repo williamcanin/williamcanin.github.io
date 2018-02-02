@@ -177,8 +177,9 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 ## Certificados
 
-* [NodeStudio - HTML5 & CSS3](https://www.nodestudio.com.br/certificado/58780178){:target="_blank"}
-* [NodeStudio - Design Responsivo](https://www.nodestudio.com.br/certificado/58780174){:target="_blank"}
+* [HTML](https://github.com/williamcanin/williamcanin.github.io/blob/master/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf)
+* [HTML5 & CSS3](https://github.com/williamcanin/williamcanin.github.io/blob/master/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}
+* [Design Responsivo](https://github.com/williamcanin/williamcanin.github.io/blob/master/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf)
 
 ## Projetos
 
