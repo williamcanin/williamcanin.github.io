@@ -24,7 +24,7 @@ script: [projects.js]
 permalink: /projects/
 ---
 
-Meus projetos principais encontra-se aqui! São links redirecionando para realizações próprias ou participações que tem minha "mão de mágico" para outra página. 
+Meus projetos principais encontra-se aqui! São links redirecionando para realizações próprias ou participações que tem minha "mão de mágico" para outra página.
 
 Coleguinha, os projetos "Inativos", são os que eu não atualizo a versão por um tempo, porém, funcionam. Eu preciso mudar isso...talvez um dia quando encontrar um patrocínio que me dê um cheque sem fundo.
 
@@ -43,12 +43,6 @@ Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcani
 | **Ramo**: Ruby / Template / Theme / Jekyll /  Web Development |
 | **Status**: <label style="color:green;">Ativo</label> |
 | **Descrição**: Go!Link é um tema mínimo para Jekyll, especialmente para aqueles que querem ter uma página apenas para redirecionar links para outros endereços. |
-
-|[Jekyll Spotify Plugin](http://williamcanin.github.io/jekyll-spotify-plugin){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Ruby / HTML / SCSS / JQuery / Web Development |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Jekyll plug-in para gerar fragmentos de código HTML para incorporar música do Spotify em templates Jekyll. |
 
 |[Typing Jekyll Template](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} <i class="fa fa-external-link"></i>|
 --------------------------|----------------------------
