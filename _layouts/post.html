@@ -16,7 +16,7 @@ layout: default
     <time class="col-sm-6 datetime">
       {% if site.screen.icons.enable == true %}<i class="fa fa-calendar" aria-hidden="true"></i>{% endif %}<span class="text {% if site.screen.icons.enable == true %} tmargin {% endif %}">{% datelang page %}{% include datelang/page %}</span>
     </time>
-    {% if page.comments and dbase.userdata.disqus.username %}
+    {% if page.comments and dbase.userdata.disqus.enable == true %}
     <div class="col-sm-6 count-comments">
       <span class="wrap">{% if site.screen.icons.enable == true %}<i class="fa fa-comments" aria-hidden="true"></i>&nbsp;{% endif %}<a href="#comments" data-disqus-identifier="{{ page.url }}">0</a></span>
     </div>
