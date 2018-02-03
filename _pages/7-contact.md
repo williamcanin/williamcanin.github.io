@@ -22,4 +22,4 @@ permalink: /contact/
 
 DETALHES   
 
-Nessa área você pode me contatar para trabalho; fazer feedbacks sobre correções deste site (eu corrijo rapidão); ou simplesmente tirar outras dúvidas (menos sobre a novela das 8).
+Nessa área você pode me contatar para trabalho, fazer feedbacks sobre correções posts, ou simplesmente tirar outras dúvidas.

@@ -19,8 +19,7 @@ menu: true
 # Enable / Disable button for print resume.
 btnprint: true
 
-excerpt: |
-    Este é o resumo de minhas realizações. Pode ser imprimido usando o atalho do navegador (Ctrl + P) ou usando o botão 'Imprimir'.
+excerpt:
 
 tcontents:
   enable: true
