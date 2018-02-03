@@ -14,7 +14,7 @@ day_quote:
         "Não se junte com descrentes para trabalhar com eles. Pois como é que o certo pode ter alguma coisa a ver com o errado? Como é que a luz e a escuridão podem viver juntas? Como podem Cristo e o Diabo estar de acordo? O que um cristão e um descrente têm em comum?"<br>
         (2 Coríntios 6:15:15 NTLH)
 categories: blog
-published: true
+published: false
 
 # Does not change and does not remove 'script' variables
 script: [post.js]
@@ -33,8 +33,8 @@ Se você já se fez essas perguntas, significa que o Facebook não tem nenhum ti
 
 Um boa forma de sair dessa duvida, é fazer algumas perguntas importantes para você mesmo em relação a sua conta no Facebook. Saber qual a finalidade dele pra você. Isso vai te levar a tomar a decisão correta.
 
-> Nota: Não estou induzindo ninguém, estou apenas compartilhando um pouco 
-> sobre minha opinião em eu não ter uma conta no Facebook. É claro, isso vai 
+> Nota: Não estou induzindo ninguém, estou apenas compartilhando um pouco
+> sobre minha opinião em eu não ter uma conta no Facebook. É claro, isso vai
 > depender da forma de vivência e necessidade de cada um.
 
 **Qual é o foco que eu quero para o tempo da minha vida no momento, diversão, entreter ou evolução pessoal?**
@@ -57,7 +57,7 @@ Isso é porque, boa parte dessa geração estão sendo escravos da rede social p
 
 Em uma comunicação virtual, as pessoas tem um tempo de resposta para cada comentário ou pergunta(s) que lhe é feita, 1 minutos, 2 minutos, que seja, esse fator a pessoa pode achar que é uma vantagem para ela...
 
-> **...MAS NÃO NÉ UMA VANTAGEM, PELO MENOS PARA A COMUNICAÇÃO INTERPESSOAL 
+> **...MAS NÃO NÉ UMA VANTAGEM, PELO MENOS PARA A COMUNICAÇÃO INTERPESSOAL
 > PRESENCIAL NÃO É**.
 
 Em uma comunicação virtual, você irá pensar mais em responder e enviar uma resposta para a pessoa, porem, em uma comunicação presencial você não vai conseguir atingir esse tempo de resposta quando estiver em uma conversa, sua resposta terá que ser instantânea, seu cérebro vai ter que estar preparado para isso. Ter um vício de comunicação virtual não vai ajudar seu cérebro nessa tarefa. A dificuldade em convívio humano dificultaria. Optei por ser mais off-line e melhorar minha comunicação pessoal.
@@ -77,7 +77,7 @@ Nenhuma empresa quer ter o trabalho de possuir um funcionário (mesmo que seja b
 
 ***3) Gaste seu tempo com informações válidas***
 
-Caso tenha um foco, como estudo ou muito trabalho a se fazer, o Facebook pode ser um vilão nisso se você não sabe administra-lo. Geralmente as pessoas usam mais Facebook para ter um perfil próprio e ficar navegando de perfil em perfil de cada usuário, buscando informações sem sentido, no português claro, xeretando. 
+Caso tenha um foco, como estudo ou muito trabalho a se fazer, o Facebook pode ser um vilão nisso se você não sabe administra-lo. Geralmente as pessoas usam mais Facebook para ter um perfil próprio e ficar navegando de perfil em perfil de cada usuário, buscando informações sem sentido, no português claro, xeretando.
 
 > Isso eu chamo de E.V.A (Entretenimento da Vida Alheia).
 
@@ -99,7 +99,7 @@ Minha decisão em não ter uma conta no Facebook, não significa que irá funcio
 
 Somos feitos de ação e repouso, ninguém vive apenas de trabalho, buscas em melhorias profissional ou em estudos, precisamos relaxar a mente, e o entretenimento e a hora lazer são ótimos para isso. Mas quando sua meta é X, e o entretenimento é Y, e Y está além de X, chegou a hora de usar o freio.
 
-O que devemos saber, é separar cada momento da nossa vida, cada tarefa, cada novidade, cada pessoa, eliminar o que nos regride nossos focos ou deixar no "banco de reserva" o que não vamos utilizar no momento. 
+O que devemos saber, é separar cada momento da nossa vida, cada tarefa, cada novidade, cada pessoa, eliminar o que nos regride nossos focos ou deixar no "banco de reserva" o que não vamos utilizar no momento.
 
 Posso até usar Facebook um dia, mas nesse momento de minha vida é NÃO! É Possível se comunicar virtualmente com seus amigos e familiares no qual não tire sua atenção e não distribua informações suas na internet, como por exemplo: [WhatsApp](https://www.whatsapp.com/?l=pt_br){:target="_blank"}, [Skype](https://www.skype.com/pt-br/){:target="_blank"} e outros aplicativos de comunicação. Tudo temos que colocar em balança. A vida é feita de partes.
 

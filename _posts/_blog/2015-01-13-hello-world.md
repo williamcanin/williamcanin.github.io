@@ -14,7 +14,7 @@ day_quote:
         "Respeite o seu pai e a sua mãe. E esse é o primeiro mandamento que tem uma promessa, a qual é: 'Faça isso a fim de que tudo corra bem para você, e você viva muito tempo na terra"<br>
         (Efésios 6:23 NTLH)
 categories: blog
-published: true
+published: false
 
 # Does not change and does not remove 'script' variables
 script: [post.js]
