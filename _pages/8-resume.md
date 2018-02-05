@@ -122,8 +122,6 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 
 ## Conhecimentos / Habilidades
 
-Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no decorrer do tempo fui adquirindo novos conhecimentos em diversas áreas:
-
 #### **Front end**
 
 {% label HTML5|16px %}
