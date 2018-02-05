@@ -184,6 +184,7 @@ Com o termino do *Curso Superior em Análise e Desenvolvimento de Sistemas*, no 
 
 Realiazo diversos projetos Open-Source e armazeno tudo com [git](https://git-scm.com/){:target="_blank"} no meu [GitHub](https://github.com/williamcanin){:target="_blank"}. Aqui está alguns:
 
+* [Jektify](https://jektify.github.io){:target="_blank"} - Jektify é uma gem que usa para inserir uma entrada de faixa, lista de reprodução, álbuns e artistas de Spotify, em templates Jekyll.
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script via Shell para realizar a recuperação do Grub no Arch Linux.
 * [iDisconnect ](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
