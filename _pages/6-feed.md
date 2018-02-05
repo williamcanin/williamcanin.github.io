@@ -12,7 +12,7 @@ icon-size: inherit
 # Enable / Disable this page in the main menu.
 menu: true
 
+target: true
 published: true
 permalink: /feed.xml
 ---
-
