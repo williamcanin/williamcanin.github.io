@@ -87,7 +87,7 @@ Atualmente exerço mais o aprendizado de "Web development" ([Front-End](#front-e
 
 Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Fedora](https://getfedora.org/pt_BR/){:target="_blank"}. Desde então, vou adquiri alguns conhecimentos em [Network](#networks) e [Linux LPI](#linux-lpi).
 
-Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, e é por isso que me motiva estudar sempre.
+Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre.
 
 ## Educação
 
