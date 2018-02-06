@@ -8,7 +8,7 @@ excerpted: |
     Se você  necessita configurar o PATH do RubyGems e do Bundler para seu usuário, continue essa leitura e veja que um simples arquivo configurado pode facilitar as coisas para você.
 day_quote:
     title: "A Palavra:"
-    content: |
+    description: |
         "A pessoa que aceita e obedece aos meus mandamentos prova que me ama. E a pessoa que me ama será amado pelo meu Pai, e eu também a amarei e lhe mostrarei quem sou." <br>
         (João 14:21 NTLH)
 published: true
