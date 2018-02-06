@@ -17,6 +17,10 @@ published: true
 script: [post.js]
 ---
 
+
+* Do not remove this line (it will not be displayed)
+{: toc}
+
 ## Introdução
 
 Esperar hoje em dia não é uma tarefa que agrada as pessoas, ainda mais se tratando de software.
