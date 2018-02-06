@@ -65,12 +65,15 @@ website:
         title: "Deixe seu comentário"
 # Contact
     contact:
-      btn_send: "Vai, mensagem!"
+      language: "pt-BR"
       placeholder:
         name: "Seu nome completo"
         subject: "Qual assunto?"
         email: "Seu Email"
         message: "O que você gostaria de dizer?"
+      send:
+        permalink: "/contact/sent/successful/"
+        button: "Vai, mensagem!"
 # Resume
     resume:
       button:
