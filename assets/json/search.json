@@ -4,105 +4,98 @@
       "title"    : "Carregando Javascripts para diferentes posts e pages no Jekyll",
       "tags"     : "jekyll, javascripts, dicas",
       "url"     : "/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/",
-      "date"     : "2017-10-09 18:31:36 +0000"
+      "date"     : "9/10/2017"
     } ,
   
     {
       "title"    : "Última versão do kernel linux através de um script",
       "tags"     : "shell-script, kernel, download, linux",
       "url"     : "/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/",
-      "date"     : "2017-05-05 23:16:57 +0000"
-    } ,
-  
-    {
-      "title"    : "Instalando Archlinux com criptografia LUKS e LVM",
-      "tags"     : "linux, criptografia, luks, lvm",
-      "url"     : "/blog/instalando-archlinux-com-criptografia-luks-e-lvm/",
-      "date"     : "2017-04-28 11:33:43 +0000"
+      "date"     : "5/5/2017"
     } ,
   
     {
       "title"    : "Configurando PATH do RubyGems e Bundler no Linux",
       "tags"     : "ruby, gems, linux, bundler",
       "url"     : "/blog/configurando-path-do-rubygems-e-bundler-no-linux/",
-      "date"     : "2017-01-13 16:02:37 -0300"
+      "date"     : "13/1/2017"
     } ,
   
     {
       "title"    : "Bloqueando módulos durante o boot com o Modbl",
       "tags"     : "modprobe, boot, linux, shell, script",
       "url"     : "/blog/bloqueando-modulos-no-boot-com-modbl/",
-      "date"     : "2015-09-30 13:55:19 -0300"
+      "date"     : "30/9/2015"
     } ,
   
     {
       "title"    : "Linux: Compilando e instalando o kernel em modo tradicional",
       "tags"     : "kernel, linux, instalar",
       "url"     : "/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/",
-      "date"     : "2015-08-23 17:52:44 -0300"
+      "date"     : "23/8/2015"
     } ,
   
     {
       "title"    : "Linux Boot: A start job is running for dev-disk-by",
       "tags"     : "boot, swap, linux",
       "url"     : "/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/",
-      "date"     : "2015-07-26 10:29:04 -0300"
+      "date"     : "26/7/2015"
     } ,
   
     {
       "title"    : "Compilando e configurando Squid",
       "tags"     : "squid, proxy, linux, servidor",
       "url"     : "/blog/compilando-e-configurando-squid-transparent/",
-      "date"     : "2015-05-14 09:13:57 -0300"
+      "date"     : "14/5/2015"
     } ,
   
     {
       "title"    : "Arquivos de execução no Linux",
       "tags"     : "linux, executavel, bash, script",
       "url"     : "/blog/arquivos-de-execucao-no-linux/",
-      "date"     : "2015-04-29 12:29:32 -0300"
+      "date"     : "29/4/2015"
     } ,
   
     {
       "title"    : "Criando pendrive bootavel no Linux com dd",
       "tags"     : "dd, linux, iso, boot, pendrive",
       "url"     : "/blog/criando-pendrive-bootavel-no-linux-com-dd/",
-      "date"     : "2015-04-21 18:42:04 -0300"
+      "date"     : "21/4/2015"
     } ,
   
     {
       "title"    : "Transações com procedures no MySQL e Herança",
       "tags"     : "database, mysql, procedure, trigger",
       "url"     : "/blog/transacoes-com-procedures-no-mysql-e-heranca/",
-      "date"     : "2015-03-03 01:02:32 -0300"
+      "date"     : "3/3/2015"
     } ,
   
     {
       "title"    : "Java - Erro: Unsupported major.minor version 51.0",
       "tags"     : "java, major, unsupported",
       "url"     : "/blog/java-erro-unsupported-major-minor-version-51-0/",
-      "date"     : "2015-02-26 18:07:00 -0300"
+      "date"     : "26/2/2015"
     } ,
   
     {
       "title"    : "Eclipse Luna - Erro de inicialização no Linux",
       "tags"     : "eclipse, linux",
       "url"     : "/blog/erro-de-inicializacao-eclipse-no-linux/",
-      "date"     : "2015-02-23 18:14:01 -0300"
+      "date"     : "23/2/2015"
     } ,
   
     {
       "title"    : "Criando um shortcut para o Eclipse no Linux",
       "tags"     : "eclipse, shortcut, linux",
       "url"     : "/blog/criando-shortcut-para-eclipse-no-linux-facilmente/",
-      "date"     : "2015-02-07 19:50:20 -0300"
+      "date"     : "7/2/2015"
     } ,
   
     {
       "title"    : "Instalando o Sublime Text 3 no Debian",
       "tags"     : "editor, sublime-text, debian",
       "url"     : "/blog/instalando-sublime-text-no-debian/",
-      "date"     : "2015-01-26 17:13:27 -0300"
+      "date"     : "26/1/2015"
     } 
   
 ]

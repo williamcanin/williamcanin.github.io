@@ -3,13 +3,25 @@
   <channel>
     <!-- Include Data Base  -->
     
+
+
+
+
+
+
+
+
+
+
+
+
     <title>William Canin</title>
     <description>Desenvolvedor</description>
     <link>https://williamcanin.me/</link>
     <atom:link href="https://williamcanin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Feb 2018 12:04:26 -0200</pubDate>
-    <lastBuildDate>Mon, 05 Feb 2018 12:04:26 -0200</lastBuildDate>
-    <generator>Jekyll v3.4.5</generator>
+    <pubDate>Tue, 06 Feb 2018 18:01:44 -0200</pubDate>
+    <lastBuildDate>Tue, 06 Feb 2018 18:01:44 -0200</lastBuildDate>
+    <generator>Jekyll v3.7.2</generator>
     
       <item>
         <title>Carregando Javascripts para diferentes posts e pages no Jekyll</title>
@@ -40,23 +52,6 @@
         <tag>download</tag>
         
         <tag>linux</tag>
-        
-      </item>
-    
-      <item>
-        <title>Instalando Archlinux com criptografia LUKS e LVM</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#preparando-o-básico&quot; id=&quot;markdown-toc-preparando-o-básico&quot;&gt;Preparando o básico&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-fdisk&quot; id=&quot;markdown-toc-o-fdisk&quot;&gt;O fdisk&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#conceitos&quot; id=&quot;markdown-toc-conceitos&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#conhecendo-a-estrutura-de-partições&quot; id=&quot;markdown-toc-conhecendo-a-estrutura-de-partições&quot;&gt;Conhecendo a estrutura de partições&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#usando-o-fdisk&quot; id=&quot;markdown-toc-usando-o-fdisk&quot;&gt;Usando o fdisk&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-a-partição-de-boot-com-fdisk&quot; id=&quot;markdown-toc-criando-a-partição-de-boot-com-fdisk&quot;&gt;Criando a partição de Boot com fdisk&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-partição-do-windows-com-fdisk&quot; id=&quot;markdown-toc-criando-partição-do-windows-com-fdisk&quot;&gt;Criando partição do Windows com fdisk&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-partição-linux-lvm-com-fdisk&quot; id=&quot;markdown-toc-criando-partição-linux-lvm-com-fdisk&quot;&gt;Criando partição “Linux LVM” com fdisk&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-luks&quot; id=&quot;markdown-toc-o-luks&quot;&gt;O LUKS&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#conceitos-1&quot; id=&quot;markdown-toc-conceitos-1&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criptografando-a-partição-linux-lvm&quot; id=&quot;markdown-toc-criptografando-a-partição-linux-lvm&quot;&gt;Criptografando a partição “Linux LVM”&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-lvm&quot; id=&quot;markdown-toc-o-lvm&quot;&gt;O LVM&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#conceitos-2&quot; id=&quot;markdown-toc-conceitos-2&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#utilizando-os-componentes-do-lvm&quot; id=&quot;markdown-toc-utilizando-os-componentes-do-lvm&quot;&gt;Utilizando os componentes do LVM&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando-physical-volume-pv&quot; id=&quot;markdown-toc-criando-physical-volume-pv&quot;&gt;Criando Physical Volume (PV)&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a...</description>
-        <pubDate>Fri, 28 Apr 2017 08:33:43 -0300</pubDate>
-        <link>https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm/</link>
-        <guid isPermaLink="true">https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm/</guid>
-        
-        <tag>linux</tag>
-        
-        <tag>criptografia</tag>
-        
-        <tag>luks</tag>
-        
-        <tag>lvm</tag>
         
       </item>
     
