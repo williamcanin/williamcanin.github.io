@@ -160,6 +160,7 @@ gist:
 
 # Exclude files (or folders) in compilation.
 exclude:
+  - docs
   - development
   - src
   - vendor
