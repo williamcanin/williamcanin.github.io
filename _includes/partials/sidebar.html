@@ -15,7 +15,7 @@
       {% endif %}
 
       <div class="{% if site.sidebar.avatar.enable == true and loadData.website.sidebar.avatar %} col-9 col-sm-9 {% else %} col-12 col-sm-12 {% endif %} col-lg-12">
-        <a class="text-d-none sidebar__title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+        <a class="text-d-none {% if site.sidebar.avatar.enable != true %} text-left {% endif %} sidebar__title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
           <h1 class="sidebar__title--text">{{ loadData.website.sidebar.title }}</h1>
         </a>
       </div>
@@ -40,12 +40,12 @@
           <a class="sidebar__menu-item__link" href="{{ '/blog/' | prepend: site.baseurl | prepend: site.url }}">{{ loadData.website.sidebar.menu.blog.text }}</a>
         </li>
 
-        <li class="ml-0 ml-lg-3 mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+        <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
           {% if site.sidebar.icons.enable == true %}<i class="mr-1 fas fa-search"></i>{% endif %}
           <a class="sidebar__menu-item__link" href="{{ '/blog/search/' | prepend: site.baseurl | prepend: site.url }}">{{ loadData.website.sidebar.menu.blog.search.text }}</a>
         </li>
 
-        <li class="ml-0 ml-lg-3 mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+        <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
           {% if site.sidebar.icons.enable == true %}<i class="mr-1 fas fa-tags"></i>{% endif %}
           <a class="sidebar__menu-item__link" href="{{ '/blog/tags/' | prepend: site.baseurl | prepend: site.url }}">{{ loadData.website.sidebar.menu.blog.tags.text }}</a>
         </li>
