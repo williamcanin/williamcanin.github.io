@@ -3,6 +3,7 @@
 User-agent: *
 Disallow: /assets/
 Disallow: /jekyll-spotify-plugin/
+Disallow: /jektify/
 Disallow: /skeleton-jekyll/
 Disallow: /typing-jekyll-template/
 Disallow: /jekyll-cv-creator/

@@ -57,8 +57,8 @@ module Jekyll
         @config_json_read = File.read(@config_json)
         @data_hash_json = JSON.parse(@config_json_read)
         @data_hash_yml = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), '../_config.yml'))
-        @locale = @data_hash_yml['plugin']['datelang']['locale']
-        @reload = @data_hash_yml['plugin']['datelang']['reload']
+        @locale = @data_hash_yml['_plugins']['datelang']['locale']
+        @reload = @data_hash_yml['_plugins']['datelang']['reload']
         @path_datelang = File.join("./", "_includes/datelang")
       end # end get_configs
      def tplate(path,fileC,data_hash_json,locale, reload)
@@ -77,22 +77,22 @@ Do not change this file. It will be generated every time it is not present.
 Thank you. :) att. William Canin
 {% endcomment %}
 
-{{ #{@fileC}.date | date: \"%d\" }}
 {% assign m = #{@fileC}.date | date: \"%-m\" %}
 {% case m %}
-  {% when '1' %}#{@data_hash_json[@locale]['DateLang']['month1']},
-  {% when '2' %}#{@data_hash_json[@locale]['DateLang']['month2']},
-  {% when '3' %}#{@data_hash_json[@locale]['DateLang']['month3']},
-  {% when '4' %}#{@data_hash_json[@locale]['DateLang']['month4']},
-  {% when '5' %}#{@data_hash_json[@locale]['DateLang']['month5']},
-  {% when '6' %}#{@data_hash_json[@locale]['DateLang']['month6']},
-  {% when '7' %}#{@data_hash_json[@locale]['DateLang']['month7']},
-  {% when '8' %}#{@data_hash_json[@locale]['DateLang']['month8']},
-  {% when '9' %}#{@data_hash_json[@locale]['DateLang']['month9']},
-  {% when '10' %}#{@data_hash_json[@locale]['DateLang']['month10']},
-  {% when '11' %}#{@data_hash_json[@locale]['DateLang']['month11']},
-  {% when '12' %}#{@data_hash_json[@locale]['DateLang']['month12']},
+  {% when '1' %}#{@data_hash_json[@locale]['DateLang']['month1']}
+  {% when '2' %}#{@data_hash_json[@locale]['DateLang']['month2']}
+  {% when '3' %}#{@data_hash_json[@locale]['DateLang']['month3']}
+  {% when '4' %}#{@data_hash_json[@locale]['DateLang']['month4']}
+  {% when '5' %}#{@data_hash_json[@locale]['DateLang']['month5']}
+  {% when '6' %}#{@data_hash_json[@locale]['DateLang']['month6']}
+  {% when '7' %}#{@data_hash_json[@locale]['DateLang']['month7']}
+  {% when '8' %}#{@data_hash_json[@locale]['DateLang']['month8']}
+  {% when '9' %}#{@data_hash_json[@locale]['DateLang']['month9']}
+  {% when '10' %}#{@data_hash_json[@locale]['DateLang']['month10']}
+  {% when '11' %}#{@data_hash_json[@locale]['DateLang']['month11']}
+  {% when '12' %}#{@data_hash_json[@locale]['DateLang']['month12']}
 {% endcase %}
+{{ #{@fileC}.date | date: \"%d,\" }}
 {{ #{@fileC}.date | date: \"%-Y\" }}"
             end
           end
