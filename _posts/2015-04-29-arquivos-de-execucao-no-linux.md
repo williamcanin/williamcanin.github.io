@@ -17,6 +17,9 @@ published: true
 script: [post.js]
 ---
 
+
+## Introdução
+
 Essa postagem você irá entender melhor como são os arquivos executáveis no Linux, como se cria um com código aberto ou fechado, como dar permissão no Linux para um executável ter a permissão de execução e outras informações considerável.
 
 Bem, la vem eu novamente a dizer sobre Linux(me amarro!)...porem o tema agora será sobre arquivos de execução.
@@ -25,7 +28,7 @@ Alem dos scripts executáveis(script do shell), existe outro tipo de arquivo de 
 Diferente dos scripts executaveis(**application/x-shellscript**), os arquivos de execução do tipo **application/x-executable** só podem ser criados com o auxilio de uma linguagem de programação, como por exemplo a Linguagem C.
 Agora que já fiz um resumo básico sobre esses dois tipos arquivos de execução, vamos ir no ponto da prática.
 
-## Application/x-shellscript
+# Application/x-shellscript
 
 Para criar um `script executável`(**application/x-shellscript**), não precisa necessariamente colocar a extensão **.sh** no final do arquivo.
 Acrescentando a linha...
@@ -65,7 +68,7 @@ $ sh seu_script
 
 > O script irá criar um arquivo chamado **file.txt**, caso tente rodar o script novamente e o arquivo já existe, irá retornar uma mensagem.
 
-## Application/x-executable
+# Application/x-executable
 
 Suponho que esteja curioso(a) para criar um arquivo do tipo **application/x-executable** em seu Linux, correto? Vamos la então...
 
