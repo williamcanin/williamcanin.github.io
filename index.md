@@ -1,6 +1,6 @@
 ---
 layout: hello
-title: Typing
+title: William Canin
 script: [hello.js]
 ---
 
