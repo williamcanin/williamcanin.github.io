@@ -1,6 +1,6 @@
 ---
 layout: resume
-title: Resume
+title: CV
 sitemap:
   priority: 0.7
   changefreq: 'monthly'
