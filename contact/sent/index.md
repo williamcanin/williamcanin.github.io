@@ -8,4 +8,4 @@ published: true
 permalink: /contact/sent/successful/
 ---
 
-### Sua mensagem foi enviada! Entrarei em contato com você o mais rápido possível.
+Sua mensagem foi enviada! Entrarei em contato com você o mais rápido possível.
