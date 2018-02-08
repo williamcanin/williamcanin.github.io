@@ -3,7 +3,7 @@ layout: post
 title: Qual a utilidade do Facebook para você?
 date: 2015-01-25 15:17:19 -0300
 comments: true
-tags: ["facebook","rede-sociais","misc"]
+tags: ["facebook","social","misc"]
 excerpted: |
     Será que o Facebook te ajuda ou lhe atrasa as horas do seu dia?! Vou opinar um pouco o porque eu não tenho Facebook e alguns efeitos do mesmo faz com várias pessoas que tem uma conta.
 day_quote:

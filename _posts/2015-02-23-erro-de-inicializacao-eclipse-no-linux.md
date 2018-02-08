@@ -3,7 +3,7 @@ layout: post
 title: Eclipse Luna - Erro de inicialização no Linux
 date: 2015-02-23 18:14:01 -0300
 comments: true
-tags: ["eclipse", "linux"]
+tags: ["eclipse","linux"]
 excerpted: |
     Apesar do Eclipse ser uma IDE famosa e de ótimos recursos, ele (como qualquer outras aplicação) não está livre de bugs. Esse post é para uma correção de um bug no Eclipse Luna para o Linux.
 day_quote:

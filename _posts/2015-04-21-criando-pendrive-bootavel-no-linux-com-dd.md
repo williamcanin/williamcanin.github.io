@@ -3,7 +3,7 @@ layout: post
 title: Criando pendrive bootavel no Linux com dd
 date: 2015-04-21 18:42:04 -0300
 comments: true
-tags: ["dd","linux","iso","boot","pendrive"]
+tags: ["dd","linux","iso","pendrive"]
 excerpted: |
    Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou aquele outro sistema operacial no qual necessita de boot. Vamos aprenda a fazer isso no Linux com um comando poderoso.
 day_quote:

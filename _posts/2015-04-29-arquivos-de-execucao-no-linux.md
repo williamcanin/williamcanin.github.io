@@ -3,7 +3,7 @@ layout: post
 title: Arquivos de execução no Linux
 date: 2015-04-29 12:29:32 -0300
 comments: true
-tags: ["linux","executavel","bash","script"]
+tags: ["linux","shell","script"]
 excerpted: |
     Essa postagem você irá entender melhor como são os arquivos executáveis no Linux, como se cria um com código aberto ou fechado, como dar permissão no Linux para um executável ter a permissão de execução e outras informações considerável.
 day_quote:

@@ -3,7 +3,7 @@ layout: post
 title: Instalando o Sublime Text 3 no Debian
 date: 2015-01-26 17:13:27 -0300
 comments: true
-tags: ["editor","sublime-text", "debian"]
+tags: ["editor","sublime","debian"]
 excerpted: |
     Se você está começando a usar Linux, provavelmente não sabéra certas coisas mesmo que elas sejam simples como instalar o Sublime Text.
 day_quote:

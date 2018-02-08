@@ -3,7 +3,7 @@ layout: post
 title:  Hello World
 date:   2015-01-13 05:16:01 -0300
 comments: false
-tags: ["misc","inicio","bem-vindo"]
+tags: ["misc","hello"]
 excerpted: |
     Olá! Bem-Vindo ao meu Site, Blog, Portfólio e o que vier em minha cabeça de compartilhar por aqui ;)
 day_quote:

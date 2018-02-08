@@ -2,7 +2,7 @@
 layout: post
 title: Carregando Javascripts para diferentes posts e pages no Jekyll
 date: 2017-10-09 18:31:36
-tags: ['jekyll','javascripts','dicas']
+tags: ['jekyll','javascripts','liquid']
 published: true
 comments: true
 excerpted: |

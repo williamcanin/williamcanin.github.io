@@ -3,7 +3,7 @@ layout: post
 title: "Java - Erro: Unsupported major.minor version 51.0"
 date: 2015-02-26 18:07:00 -0300
 comments: true
-tags: ["java","major","unsupported"]
+tags: ["java"]
 excerpted: |
     Este é a correção de um Erro no Java, ou melhor, um erro humano, pois esse erro só é dispertado se você realizar a execução de um programa em Java que não suporta a versão no qual o programa foi compilado.
 day_quote:

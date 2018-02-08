@@ -3,7 +3,7 @@ layout: post
 title: Compilando e configurando Squid
 date: 2015-05-14 09:13:57 -0300
 comments: true
-tags: ["squid","proxy","linux","servidor"]
+tags: ["squid","proxy","linux","server"]
 excerpted: |
     Quer aprender Proxy Squid? Essa postagem irá te dar uma noção de como configurar o Squid em modo Intercept e bloquear palavras e urls através do mesmo em uma navegação web.
 day_quote:

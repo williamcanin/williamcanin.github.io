@@ -3,7 +3,7 @@ layout: post
 title: "Linux: Compilando e instalando o kernel em modo tradicional"
 date: 2015-08-23 17:52:44 -0300
 comments: true
-tags: ["kernel","linux","instalar"]
+tags: ["kernel","linux","compile"]
 excerpted: |
    Quando um usuário Linux já está em um nível de usabilidade Linux a tempos, algo que ele procura saber, é como compilar um kernel, e esse post falará exatamente sobre isso, mas uma compilação sem usar kernel-package, a tradicional.
 day_quote:
