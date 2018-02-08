@@ -16,7 +16,7 @@
   
     {
       "title"    : "Instalando Archlinux com criptografia LUKS e LVM",
-      "tags"     : "archlinux, cripto, luks, lvm",
+      "tags"     : "archlinux, encryption, luks, lvm",
       "url"     : "/blog/instalando-archlinux-com-criptografia-luks-e-lvm/",
       "date"     : "27/4/2017"
     } ,
