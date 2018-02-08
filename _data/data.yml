@@ -9,8 +9,8 @@ website:
       Desculpe :(  O domínio do meu site está em manutenção.
     subtitle: |
       Não terá previsão de volta. Enquanto isso, me acompanhe nas rede sociais abaixo.
-# Theme - Values [ typing | whiteglass | hacking | littlegirl ]
-  theme: "whiteglass"
+# Theme - Values [ typing | whiteglass | hacking | littlegirl | custom ]
+  theme: "custom"
 # Configuration default
   title: "William Canin"
   description: "Developer_"

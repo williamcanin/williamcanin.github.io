@@ -71,6 +71,8 @@
   <link rel="stylesheet" href="{{ '/assets/css/whiteglass.css' | prepend: site.baseurl }}">
   {% elsif loadData.website.theme == "littlegirl" %}
   <link rel="stylesheet" href="{{ '/assets/css/littlegirl.css' | prepend: site.baseurl }}">
+  {% elsif loadData.website.theme == "custom" %}
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | prepend: site.baseurl }}">
   {% else %}
   <link rel="stylesheet" href="{{ '/assets/css/typing.css' | prepend: site.baseurl }}">
   {% endif %}
