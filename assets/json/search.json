@@ -15,6 +15,13 @@
     } ,
   
     {
+      "title"    : "Instalando Archlinux com criptografia LUKS e LVM",
+      "tags"     : "archlinux, cripto, luks, lvm",
+      "url"     : "/blog/instalando-archlinux-com-criptografia-luks-e-lvm/",
+      "date"     : "27/4/2017"
+    } ,
+  
+    {
       "title"    : "Configurando PATH do RubyGems e Bundler no Linux",
       "tags"     : "ruby, gems, linux, bundler",
       "url"     : "/blog/configurando-path-do-rubygems-e-bundler-no-linux/",
