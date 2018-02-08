@@ -2,14 +2,14 @@
   
     {
       "title"    : "Carregando Javascripts para diferentes posts e pages no Jekyll",
-      "tags"     : "jekyll, javascripts, dicas",
+      "tags"     : "jekyll, javascripts, liquid",
       "url"     : "/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/",
       "date"     : "9/10/2017"
     } ,
   
     {
       "title"    : "Última versão do kernel linux através de um script",
-      "tags"     : "shell-script, kernel, download, linux",
+      "tags"     : "shell, kernel, linux",
       "url"     : "/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/",
       "date"     : "5/5/2017"
     } ,
@@ -30,7 +30,7 @@
   
     {
       "title"    : "Linux: Compilando e instalando o kernel em modo tradicional",
-      "tags"     : "kernel, linux, instalar",
+      "tags"     : "kernel, linux, compile",
       "url"     : "/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/",
       "date"     : "23/8/2015"
     } ,
@@ -44,21 +44,21 @@
   
     {
       "title"    : "Compilando e configurando Squid",
-      "tags"     : "squid, proxy, linux, servidor",
+      "tags"     : "squid, proxy, linux, server",
       "url"     : "/blog/compilando-e-configurando-squid-transparent/",
       "date"     : "14/5/2015"
     } ,
   
     {
       "title"    : "Arquivos de execução no Linux",
-      "tags"     : "linux, executavel, bash, script",
+      "tags"     : "linux, shell, script",
       "url"     : "/blog/arquivos-de-execucao-no-linux/",
       "date"     : "29/4/2015"
     } ,
   
     {
       "title"    : "Criando pendrive bootavel no Linux com dd",
-      "tags"     : "dd, linux, iso, boot, pendrive",
+      "tags"     : "dd, linux, iso, pendrive",
       "url"     : "/blog/criando-pendrive-bootavel-no-linux-com-dd/",
       "date"     : "21/4/2015"
     } ,
@@ -72,7 +72,7 @@
   
     {
       "title"    : "Java - Erro: Unsupported major.minor version 51.0",
-      "tags"     : "java, major, unsupported",
+      "tags"     : "java",
       "url"     : "/blog/java-erro-unsupported-major-minor-version-51-0/",
       "date"     : "26/2/2015"
     } ,
@@ -93,7 +93,7 @@
   
     {
       "title"    : "Instalando o Sublime Text 3 no Debian",
-      "tags"     : "editor, sublime-text, debian",
+      "tags"     : "editor, sublime, debian",
       "url"     : "/blog/instalando-sublime-text-no-debian/",
       "date"     : "26/1/2015"
     } 

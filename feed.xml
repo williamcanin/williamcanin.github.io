@@ -19,8 +19,8 @@
     <description>Developer_</description>
     <link>https://williamcanin.me/</link>
     <atom:link href="https://williamcanin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 08 Feb 2018 14:49:40 -0200</pubDate>
-    <lastBuildDate>Thu, 08 Feb 2018 14:49:40 -0200</lastBuildDate>
+    <pubDate>Thu, 08 Feb 2018 15:04:25 -0200</pubDate>
+    <lastBuildDate>Thu, 08 Feb 2018 15:04:25 -0200</lastBuildDate>
     <generator>Jekyll v3.7.2</generator>
     
       <item>
@@ -34,7 +34,7 @@
         
         <tag>javascripts</tag>
         
-        <tag>dicas</tag>
+        <tag>liquid</tag>
         
       </item>
     
@@ -45,11 +45,9 @@
         <link>https://williamcanin.me/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/</link>
         <guid isPermaLink="true">https://williamcanin.me/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/</guid>
         
-        <tag>shell-script</tag>
+        <tag>shell</tag>
         
         <tag>kernel</tag>
-        
-        <tag>download</tag>
         
         <tag>linux</tag>
         
@@ -102,7 +100,7 @@
         
         <tag>linux</tag>
         
-        <tag>instalar</tag>
+        <tag>compile</tag>
         
       </item>
     
@@ -134,7 +132,7 @@
         
         <tag>linux</tag>
         
-        <tag>servidor</tag>
+        <tag>server</tag>
         
       </item>
     
@@ -147,9 +145,7 @@
         
         <tag>linux</tag>
         
-        <tag>executavel</tag>
-        
-        <tag>bash</tag>
+        <tag>shell</tag>
         
         <tag>script</tag>
         
@@ -167,8 +163,6 @@
         <tag>linux</tag>
         
         <tag>iso</tag>
-        
-        <tag>boot</tag>
         
         <tag>pendrive</tag>
         
@@ -199,10 +193,6 @@
         <guid isPermaLink="true">https://williamcanin.me/blog/java-erro-unsupported-major-minor-version-51-0/</guid>
         
         <tag>java</tag>
-        
-        <tag>major</tag>
-        
-        <tag>unsupported</tag>
         
       </item>
     
@@ -243,7 +233,7 @@
         
         <tag>editor</tag>
         
-        <tag>sublime-text</tag>
+        <tag>sublime</tag>
         
         <tag>debian</tag>
         
