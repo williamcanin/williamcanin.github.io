@@ -100,7 +100,7 @@ function _git_checkout(){
 function _deploy_site(){
 
   if [[ $compile == "yes" ]]; then
-    bundle exec jekyll b
+    JEKYLL_ENV=production bundle exec jekyll b
   fi
 
   _get_destination "_config.yml"
