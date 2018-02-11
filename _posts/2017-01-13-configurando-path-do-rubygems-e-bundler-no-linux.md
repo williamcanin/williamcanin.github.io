@@ -17,12 +17,23 @@ published: true
 script: [post.js]
 ---
 
-Se você  necessita configurar o ambiente do RubyGems e do Bundler para seu usuário, continue essa leitura e veja que um simples arquivo configurado pode facilitar as coisas para você.
-
 * indice
 {: toc}
 
-## Requerimentos
+
+# Introdução
+
+Nesse tutorial será realizado uma série de abstrações das estrutura de pasta do RubyGems e do Bundler no ato de uma instalação de gem. Para isso, é importante que você faça o backup de gems instaladas na pasta **~/.gem**, pois a mesma será altamente altera e removida. Também da pasta **~/bin** (caso ela existir) e dos arquivos **~/.gemrc** e **~/.bundle/config**.
+
+# Limpando no ambiente de trabalho
+
+Vamos limpar tudo que está realacionado no diretório onde as gems são instaladas e suas configurações com o comando abaixo:
+
+{% highlight shell linenos %}
+$ rm -rf ~/.gem ~/.bundle ~/.gemrc
+{% endhighlight %}
+
+# Requerimentos
 
 | Requerido       | Versão      |  Como verificar    | Como instalar  |
 | --------------- | ------------|------------------- | -------------- |
@@ -71,7 +82,7 @@ Repare que a gem **bundler** é instalado no diretório **~/.gem**, o que é con
 
 Não queremos essa estrutura! Então vamos desinstalar a gem **bundler** e remover a estrutura de pastas onde foi instalado a *gem*:
 
-> Note: Digite "Y" quando pedir para desinstalar o **bundler**. Se você estiver executáveis dentro da pasta **~/bin** sem ser de gems, faça o backup antes de remover as pastas:
+> Note: Digite "Y" quando pedir para desinstalar o **bundler**.
 
 {% highlight shell linenos %}
 $ gem uninstall bundler
