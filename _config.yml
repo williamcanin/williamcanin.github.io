@@ -123,7 +123,7 @@ _plugins:
 ### BEGIN - [IRRELEVANT PROPERTIES] - These properties have no need to change unless you know what you are doing. WATCH OUT!
 
 # Settings Default
-include: ['_pages']
+include: ['_blog','_pages','_contact']
 markdown: kramdown
 highlighter: pygments
 permalink: /blog/:title/
