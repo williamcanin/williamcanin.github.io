@@ -137,11 +137,11 @@ case $1 in
     msg_finish "Done!"
   ;;
   serve )
-      bundle exec jekyll s
+      JEKYLL_ENV=development bundle exec jekyll s
       msg_finish "Done!"
     ;;
   build )
-      bundle exec jekyll b
+      JEKYLL_ENV=production bundle exec jekyll b
       msg_finish "Done!"
     ;;
   post)

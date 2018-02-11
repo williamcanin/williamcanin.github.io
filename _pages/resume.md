@@ -31,7 +31,7 @@ excerpt:
 <!-- **Fumante?** Não    -->
 <!-- **Endereço**: Rua, Floriano Peixoto, 1255 / Centro    -->
 <!-- **CEP**: 16440-000    -->
-<!-- **Cidade**: Sabino/SP    -->
+<!-- **Cidade**: Lins/SP  -->
 **País**: Brasil   
 <!-- **Fone:** +55 14 99795-9006    -->
 **E-mail**: [{{ loadData.userdata.email }}](mailto:{{ loadData.userdata.email | encode_email }})   
