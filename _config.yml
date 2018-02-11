@@ -133,6 +133,7 @@ destination: _site
 port: 4000
 host: localhost
 
+# Load plugins [gems]
 plugins:
   - jektify
   - bootstrap

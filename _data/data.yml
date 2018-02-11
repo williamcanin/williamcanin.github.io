@@ -53,6 +53,8 @@ website:
         notfound: "Oh céus, nenhum resultado :("
 # Post
     post:
+      count_comments:
+        text: "Comentários:"
       author:
         avatar: "williamcanin.jpg"
         title: "Autor"
