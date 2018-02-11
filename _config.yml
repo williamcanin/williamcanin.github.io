@@ -133,6 +133,10 @@ destination: _site
 port: 4000
 host: localhost
 
+plugins:
+  - jektify
+  - bootstrap
+
 # Config SASS
 sass:
   sass_dir: _sass
