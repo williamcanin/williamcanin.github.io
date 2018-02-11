@@ -1,1 +1,26 @@
-var disqus_shortname="williamcanin";!function(){var e=document.createElement("script");e.async=!0,e.type="text/javascript",e.src="//"+disqus_shortname+".disqus.com/count.js",(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(e)}();
+/*Include Data Base*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Count comments
+
+    var disqus_shortname  = 'williamcanin';
+
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+
+    }());
+
