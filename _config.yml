@@ -40,7 +40,7 @@ content:
     expected:
       enable: false
     tags:
-      enable: false
+      enable: true
     comments:
       enable: false
   tagpost:
@@ -132,11 +132,6 @@ permalink: /blog/:title/
 destination: _site
 port: 4000
 host: localhost
-
-# Load plugins [gems]
-plugins:
-  - jektify
-  - bootstrap
 
 # Config SASS
 sass:
