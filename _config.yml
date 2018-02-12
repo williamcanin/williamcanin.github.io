@@ -40,7 +40,7 @@ content:
     expected:
       enable: false
     tags:
-      enable: true
+      enable: false
     comments:
       enable: false
   tagpost:
