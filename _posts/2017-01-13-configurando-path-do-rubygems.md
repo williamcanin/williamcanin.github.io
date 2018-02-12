@@ -2,7 +2,7 @@
 layout: post
 title: Configurando PATH do RubyGems e Bundler no Linux
 date: 2017-01-13 16:02:37 -0300
-comments: true
+comments: false
 tags: ["ruby","gems","linux", "bundler"]
 excerpted: |
     Se você  necessita configurar o PATH do RubyGems e do Bundler para seu usuário, veja alguns simples arquivos configurado pode facilitar as coisas para você.
