@@ -142,7 +142,7 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 {% badge Linux|16px %}
 {% badge Windows|16px %}
 
-## Certificados
+## Certificados virtuais
 
  [HTML](https://williamcanin.me/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}, [HTML5 & CSS3](https://williamcanin.me/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}, [Design Responsivo](https://williamcanin.me/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
 
@@ -154,6 +154,6 @@ Realiazo diversos projetos Open-Source e armazeno tudo com [git](https://git-scm
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script via Shell para realizar a recuperação do Grub no Arch Linux.
 * [iDisconnect ](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
-<!-- ## Informações adicionais -->
+## Informações adicionais
 
-<!-- CNH - AB -->
+CNH - AB

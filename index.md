@@ -9,7 +9,7 @@ script: [hello.js]
 
 Hey, guy! Bem-vindo à casa de Internet de William Canin. (Este sou eu!)
 
-Tenho {{age}} anos. Me considero um desenvolvedor assíduo e autodidata. Eu escrevo ocasionalmente no meu [weblog]({{site.url}}{{site.baseurl}}/blog/).
+Me considero um desenvolvedor assíduo e autodidata. Eu escrevo ocasionalmente no meu [weblog]({{site.url}}{{site.baseurl}}/blog/).
 
 Confira meu último post, {% for last_post in site.posts limit:1 %}
 "<a href="{{site.url}}{{site.baseurl}}{{last_post.url}}">{{last_post.title}}</a>". {% endfor %}

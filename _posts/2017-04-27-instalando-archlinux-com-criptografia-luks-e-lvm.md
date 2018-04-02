@@ -609,7 +609,7 @@ Lembra que criamos o **/etc/fstab** antes de iniciarmos no sistema base do Archl
 
 Por padrão o **/etc/fstab** já está funcional, mas vamos acrescentar algumas outras configurações. Essas são:
 
-* Adicionar a partição Windows para ser montada no boot (caso tenho Windows).
+* Adicionar a partição Windows para ser montada no boot (caso tenha Windows).
 * Adiciona o reconhecimento do dispositivo CD/DVD.
 
  Vou utilizar o **vim** para edição, pois instalei ele lá nos *pacotes necessários*, lembra?! Você pode usar outro, como o **nano**.
