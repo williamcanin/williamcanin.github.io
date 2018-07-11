@@ -14,7 +14,7 @@ Me considero um desenvolvedor assíduo e autodidata. Eu escrevo ocasionalmente n
 Confira meu último post, {% for last_post in site.posts limit:1 %}
 "<a href="{{site.url}}{{site.baseurl}}{{last_post.url}}">{{last_post.title}}</a>". {% endfor %}
 
-Meu sistema operacional é Linux, com a distribuição [Archlinux](https://archlinux.org){:target="_blank"}.
+Meu sistema operacional é Linux, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"}.
 
 Tenho uma relação de amor e "ódio" com a maioria das linguagens de programação, mas eu encontrei casas felizes em Ruby, Shell e Front end.
 
