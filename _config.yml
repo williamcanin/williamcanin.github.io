@@ -26,7 +26,7 @@ google:
     enable: true
 sidebar:
   avatar:
-    enable: false
+    enable: true
   icons:
     enable: false
   socials:

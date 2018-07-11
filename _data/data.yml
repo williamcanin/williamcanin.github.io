@@ -28,7 +28,7 @@ website:
       id: "UA-101186555-1" # tracking id, e.g. "UA-000000-01"
 # Sidebar
   sidebar:
-    avatar: "williamcanin.png"
+    avatar: "williamcanin.jpg"
     title:  "Hey, <br> I'm William."
     menu:
       home:
