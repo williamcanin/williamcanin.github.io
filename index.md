@@ -35,5 +35,5 @@ Mais alguma coisa...? Oh, sim, aqui estão os demais lugares na internet que voc
  [Spotify](https://open.spotify.com/user/williamcanin){:target="_blank"}
 
 
-**NOTA: NÃO PASSO meu número celular para desconhecidos em Internet. Provavelmente deve ser alguem de má intenção que fez isso.**
+**NOTA: NÃO PASSO meu número celular para desconhecidos em Internet. Se alguem falar em meu nome, provavelmente deve ser alguem de má intenção se passando por mim.**
 
