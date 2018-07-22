@@ -34,3 +34,6 @@ Mais alguma coisa...? Oh, sim, aqui estão os demais lugares na internet que voc
 * [Disqus](https://disqus.com/by/williamcanin/){:target="_blank"}
 * [Spotify](https://open.spotify.com/user/williamcanin){:target="_blank"}
 
+
+NOTA: Estão fazendo fake meu. Não acredite porque não passo meu número celular pra ninguem.
+
