@@ -33,7 +33,7 @@ Mais alguma coisa...? Oh, sim, aqui estão os demais lugares na internet que voc
  [StackOverflow](https://pt.stackoverflow.com/users/15113/williamcanin?tab=profile){:target="_blank"}
  [Disqus](https://disqus.com/by/williamcanin/){:target="_blank"}
  [Spotify](https://open.spotify.com/user/williamcanin){:target="_blank"}
-
+ [Não tenho Facebook]
 
 **NOTA: NÃO PASSO meu número celular para desconhecidos em Internet. Se alguem falar em meu nome, provavelmente deve ser alguem de má intenção se passando por mim.**
 
