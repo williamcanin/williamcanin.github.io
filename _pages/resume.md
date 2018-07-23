@@ -33,7 +33,7 @@ excerpt:
 <!-- **CEP**: 16440-000    -->
 **Cidade**: Bauru/SP 
 **País**: Brasil   
-<!-- **Fone:** +55 14 99795-9006    -->
+<!-- **Fone:** +5514996352509    -->
 **E-mail**: [{{ loadData.userdata.email }}](mailto:{{ loadData.userdata.email | encode_email }})   
 **Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}   
 
