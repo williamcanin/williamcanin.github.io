@@ -11,4 +11,4 @@ DETALHES
 
 Nessa área você pode me contatar para trabalho, fazer feedbacks sobre posts, ou simplesmente tirar outras dúvidas.
 
-**NOTA: NÃO PASSO meu número celular para desconhecidos em Internet. Se alguém falar em meu nome, provavelmente deve ser alguém de má intenção se passando por mim.**
+**NOTA: NÃO PASSO meu número de celular para desconhecidos em Internet. Se alguém falar em meu nome, provavelmente deve ser alguém de má intenção se passando por mim.**
