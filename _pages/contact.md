@@ -19,7 +19,7 @@ Nessa área você pode me contatar para trabalho, fazer feedbacks sobre posts, o
 Se desejar entrar em contato com e-mail criptografado, envie o e-mail para *william.costa.canin[at]gmail.com*,
 com minha chave GPG pública que pode ser adquirida [aqui](http://williamcanin.github.io/key/public.asc), e sua impressão digital é:
 
-**3BB26A48BC21BB5A8B31BD5F2C07ABF9BB9A75EE**
+**3BB2 6A48 BC21 BB5A 8B31  BD5F 2C07 ABF9 BB9A 75EE**
 
 Não esqueça de me enviar sua chave GPG pública também.
 
