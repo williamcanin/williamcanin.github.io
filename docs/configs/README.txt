@@ -1,6 +1,6 @@
 [ABOUT]
 
-    This file is encrypted using GPG in Linux.
+    This file is encrypted using GPG (GnuPG) in Linux.
 
 Encrypt:
 
@@ -16,3 +16,8 @@ Decrypt:
 
     * Domain config.
     * Address for CV.
+
+
+[DESCRIPTION CERTIFICATE]
+
+    Impressão digital: 3BB26A48BC21BB5A8B31BD5F2C07ABF9BB9A75EE
