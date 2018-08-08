@@ -196,7 +196,7 @@ case $1 in
     _deploy_site
   ;;
   *|help)
-     msg_warning "Usage: $0 { install | build | serve | post:blog | deploy:source | deploy:site | reset }"
+     msg_warning "Usage: $0 { install | build | serve | post | page | deploy:source | deploy:site | reset }"
   ;;
 esac
 
