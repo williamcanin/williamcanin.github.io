@@ -8,3 +8,6 @@ Disallow: /skeleton-jekyll/
 Disallow: /typing-jekyll-template/
 Disallow: /jekyll-cv-creator/
 Disallow: /golink/
+Disallow: /key/
+Disallow: /docs/
+Disallow: /certificate/
