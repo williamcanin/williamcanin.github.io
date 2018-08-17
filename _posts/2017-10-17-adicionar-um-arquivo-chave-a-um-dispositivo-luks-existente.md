@@ -1,8 +1,8 @@
 ---
 layout: post
-font: "https://access.redhat.com/solutions/230993"
+font: "https://access.redhat.com/solutions/230993, http://ptcomputador.com/Sistemas/linux/205343.html"
 title: Adicionar um arquivo chave a um dispositivo LUKS existente
-date: 2017-10-15 07:19:51
+date: 2017-10-17 07:19:51
 tags: ['luks','encryption','security']
 published: false
 comments: true
