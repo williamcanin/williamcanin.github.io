@@ -1,6 +1,6 @@
 ---
 layout: post
-font: "https://access.redhat.com/solutions/230993, http://ptcomputador.com/Sistemas/linux/205343.html"
+font: "https://access.redhat.com/solutions/230993"
 title: Adicionar um arquivo chave a um dispositivo LUKS existente
 date: 2017-10-17 07:19:51
 tags: ['luks','encryption','security']
@@ -16,6 +16,8 @@ day_quote:
 # Does not change and does not remove 'script' variable.
 script: [post.js]
 ---
+
+<!-- Fontes: https://access.redhat.com/solutions/230993, http://ptcomputador.com/Sistemas/linux/205343.html -->
 
 * Do not remove this line (it will not be displayed)
 {: toc}
