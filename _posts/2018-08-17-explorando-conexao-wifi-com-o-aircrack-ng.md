@@ -28,7 +28,7 @@ O que você irá fazer com o conhecimento obtido nessa postagem, é de sua respo
 
 # Introdução
 
-Falar o que é seguro nos dias de hoje em termos de tecnologia é algo bem relativo, isso porque existem inúmeras brechas de segurança e fragilidades que aplicativos exploram de uma maneira muito simples. Esse post irei falar de uma dessas fragilidades em redes WiFi usando o pacote [aircrack-ng](){:target="_blank"}. O pacote [aircrack-ng](){:target="_blank"} vem com vários recursos para explorarmos a fragilidade de uma conexão via WiFi, alguns desses recursos que irá abordar nessa postagem é ataques DoS e "quebra" de senha WiFi.
+Falar o que é seguro nos dias de hoje em termos de tecnologia é algo bem relativo, isso porque existem inúmeras brechas de segurança e fragilidades que aplicativos exploram de uma maneira muito simples. Esse post irei falar de uma dessas fragilidades em redes WiFi usando o pacote [aircrack-ng](https://www.aircrack-ng.org){:target="_blank"}. O pacote [aircrack-ng](){:target="_blank"} vem com [vários](https://www.aircrack-ng.org/doku.php?id=Main#documentation){:target="_blank"} recursos para explorarmos a fragilidade de uma conexão via WiFi, alguns desses recursos que irá abordar nessa postagem é ataques DoS e "quebra" de senha WiFi.
 
 
 ## Os preparativos
@@ -116,11 +116,15 @@ Para tirar do modo monitor, digite o comando abaixo:
 # airmon-ng stop wlp7s0mon
 {% endhighlight %}
 
+
+## Monitorando redes
+
+
 ## DoS 
 
-O ataque DoS (Denial of Service), para o português "Negação de Serviço", é bem famoso para site e redes, porém o **aircrack-ng** também possibilita fazer essa ataque em uma rede WiFi. Essa possibilidade é de deixa uma rede WiFi inativa. Esse ataque envia vários pacotes por segundos na rede WiFi a ponto de fazer a mesma se perder com tamanho conteudo de dados e não possibilitando uma conexão com a Internet através de um dispositivo mobile, seja um smarthphone, tablet ou até mesmo notebook através da Wireless. 
+O ataque DoS (Denial of Service), para o português "Negação de Serviço", é bem usado em servidores web para tornar as páginas hospedadas indisponível na web, porém o **aircrack-ng** possibilita fazer esse ataque em uma rede WiFi através da Deauthentication. Essa possibilidade é de deixa uma rede WiFi inativa, derrubando todos que tiverem conectados e impossibilitando a conectividade até que o ataque seja interrompido. Esse ataque envia vários pacotes por segundos na rede WiFi a ponto de fazer a mesma se perder com tamanho conteúdo de dados e não possibilitando uma conexão com a Internet através de um dispositivo mobile, seja um smarthphone, tablet ou até mesmo notebook através da Wireless. 
 
-O objetivo principal do **aircrack-ng** não é fazer um ataque DoS em rede WiFi, mas sim capturar dados que é o que a própria descrição da aplicação diz, `Key cracker for the 802.11 WEP and WPA-PSK protocols`.
+O objetivo principal do **aircrack-ng** não é fazer um ataque DoS em rede WiFi, mas sim capturar dados da mesma, o que a  própria descrição do **aircrack-ng** diz: `Key cracker for the 802.11 WEP and WPA-PSK protocols`.
 
 
 
@@ -137,3 +141,8 @@ Vamos para a prática para que você entenda de uma você.
 
 Quando alguem lhe mostra fazendo uma quebra de uma handshake em um tutorial, seja em texto ou vídeo, não se iluda, pois o mesmo personagem já sabia a senha da rede WiFi e colocou dentro da wordlist. Assim, quando o aircrack-ng foi realizar a quebra da handshake, ele fez rapidamente por a password da rede WiFi já esta contida manualmente no wordlist pelo autor.
 
+
+
+Fontes: 
+
+https://www.aircrack-ng.org/doku.php?id=deauthentication
