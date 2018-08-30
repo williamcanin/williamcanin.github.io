@@ -76,6 +76,10 @@ website:
       send:
         permalink: "/contact/sent/successful/"
         button: "Vai, mensagem!"
+      note:
+        title: "NOTA"
+        description: |
+          NÃO PASSO meu número de celular para desconhecidos em Internet. 
 # Resume
     resume:
       button:

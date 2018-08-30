@@ -17,33 +17,23 @@ excerpt:
 {% include liquid/data %}
 
 #  William da Costa Canin
-### Desenvolvedor
 
-<br>
+### Desenvolvedor
 
 ## Dados Pessoais
 
 **Nacionalidade**: Brasileiro   
-**Naturalidade:** Santo André/SP   
+**Naturalidade:** Santo André-SP  
 **Data Nasc.**: 25/04/1988   
-<!-- **Estado Civil**: Solteiro    -->
-<!-- **Filhos?** Não    -->
-<!-- **Fumante?** Não    -->
-<!-- **Endereço**: Rua, Floriano Peixoto, 1255 / Centro    -->
-<!-- **CEP**: 16440-000    -->
-**Cidade**: Bauru/SP 
+**Estado Civil**: Solteiro   
+**Filhos?** Não   
+**Fumante?** Não   
+**Endereço**: Rua, Waldomiro Gomes Ferreira, 291 / Residencial Henrique Bertin   
+**CEP**: 16403-450   
+**Cidade**: Lins/SP   
 **País**: Brasil   
-<!-- **Fone:** +5514996352509    -->
-**E-mail**: [{{ loadData.userdata.email }}](mailto:{{ loadData.userdata.email | encode_email }})   
+**E-mail**: [{{ loadData.userdata.email }}](mailto:{{ loadData.userdata.email | encode_email }})  
 **Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}   
-
-<!-- ## Pretensão salarial -->
-
-<!-- A Combinar -->
-
-<!-- ## Objetico -->
-
-<!-- Area de TI / Informática -->
 
 ## Biografia
 
@@ -58,6 +48,7 @@ Atualmente exerço mais o aprendizado de "Web development" ([Front-End](#front-e
 Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"}. Desde então, vou adquiri alguns conhecimentos em [Network](#networks) e [Linux LPI](#linux-lpi).
 
 Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre.
+
 
 ## Educação
 
@@ -75,6 +66,7 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 **Linux Essentials - Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux**
 
 **Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede**
+
 
 **LPIC-1 101**
 
