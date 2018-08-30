@@ -93,9 +93,10 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 
 #### **Back end**
 
-{% badge Ruby/RubyGems|16px %}
 {% badge Shell|16px %}
+{% badge Ruby/RubyGems|16px %}
 {% badge Delphi|16px %}
+{% badge Go|16px %}
 
 #### **Version Control System**
 
