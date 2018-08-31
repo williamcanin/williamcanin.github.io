@@ -25,10 +25,6 @@ excerpt:
 **Nacionalidade**: Brasileiro   
 **Naturalidade:** Santo André-SP  
 **Data Nasc.**: 25/04/1988   
-**Estado Civil**: Solteiro   
-**Endereço**: Rua, Waldomiro Gomes Ferreira, 291 / Residencial Henrique Bertin   
-**CEP**: 16403-450   
-**Cidade**: Lins/SP   
 **País**: Brasil   
 **E-mail**: [{{ loadData.userdata.email }}](mailto:{{ loadData.userdata.email | encode_email }})  
 **Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}   
