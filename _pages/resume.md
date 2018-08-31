@@ -28,7 +28,7 @@ excerpt:
 **Data Nasc.**: 25/04/1988   
 **Estado Civil**: Solteiro   
 **País**: Brasil   
-**E-mail**: [{{ loadData.userdata.email }}](mailto:{{ loadData.userdata.email | encode_email }})  
+**E-mail**: [contato[at]williamcanin.me](mailto:{{ "contato@williamcanin.me" | encode_email }}) | [william.costa.canin[at]gmail.com](mailto:{{ "william.costa.canin@gmail.com" | encode_email }})   
 **Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}   
 
 ## Biografia

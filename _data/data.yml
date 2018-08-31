@@ -95,7 +95,7 @@ website:
     message: "In Jesus I Trust."
 # User data
 userdata:
-  email: "william.costa.canin@gmail.com" # E.g: youremail@domain.com
+  email: "contato@williamcanin.me" # E.g: youremail@domain.com
   twitter: # E.g: "@my_twitter"
   disqus:
     username: "williamcanin" # E.g: myuser
