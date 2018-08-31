@@ -57,7 +57,11 @@
   margin: 10px 0px;
   display: inline-block;
   padding: 10px;
-  font-weight: lighter;
+  @if $font-family__primary == $font-family__load1 {
+    font-weight: lighter;
+  } @else {
+    font-weight: bold;
+  }
   border-radius: 0px;
 }
 
@@ -78,4 +82,38 @@
     color: #fff;
     text-decoration: none;
   }
+}
+
+/* #######################
+Components for Markdown.
+##########################
+*/
+// Margin top 20px
+.markdown__mt10{
+  margin-top: 10px;
+}
+
+// Margin bottom 20px
+.markdown__bt10{
+  margin-top: 10px;
+}
+
+// Margin top 20px
+.markdown__mt20{
+  margin-top: 20px;
+}
+
+// Margin bottom 20px
+.markdown__bt20{
+  margin-top: 20px;
+}
+
+// Margin top 40px
+.markdown__mt40{
+  margin-top: 40px;
+}
+
+// Margin bottom 40px
+.markdown__bt40{
+  margin-top: 40px;
 }

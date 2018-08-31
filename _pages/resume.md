@@ -1,6 +1,6 @@
 ---
 layout: resume
-title: CV
+title: Currículo
 sitemap:
   priority: 0.7
   changefreq: 'monthly'
@@ -20,11 +20,13 @@ excerpt:
 
 ### Desenvolvedor
 
+{:.markdown__mt40}
 ## Dados Pessoais
 
 **Nacionalidade**: Brasileiro   
 **Naturalidade:** Santo André-SP  
 **Data Nasc.**: 25/04/1988   
+**Estado Civil**: Solteiro   
 **País**: Brasil   
 **E-mail**: [{{ loadData.userdata.email }}](mailto:{{ loadData.userdata.email | encode_email }})  
 **Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}   
