@@ -10,7 +10,7 @@ website:
     subtitle: |
       Não terá previsão de volta. Enquanto isso, me acompanhe nas rede sociais abaixo.
 # Theme - Values [ typing | whiteglass | hacking | littlegirl | custom ]
-  theme: "custom"
+  theme: "hacking"
 # Configuration default
   title: "William Canin"
   description: "Developer_"

@@ -70,7 +70,7 @@
 .btn-typing{
   padding: 10px;
   background-color: $color__links;
-  color: #fff;
+  color: $btn-typing__color;
   text-decoration: none;
   min-width: 120px;
   margin: 5px auto;
@@ -79,7 +79,7 @@
     background-color: $color__links;
     opacity: 0.95;
     box-shadow: none !important;
-    color: #fff;
+    color: $btn-typing__color;
     text-decoration: none;
   }
 }

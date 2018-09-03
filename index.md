@@ -1,6 +1,6 @@
 ---
 layout: hello
-title: William Canin
+title: whoami
 script: [hello.js]
 ---
 
