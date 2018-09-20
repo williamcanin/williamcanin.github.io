@@ -34,3 +34,5 @@ Mais alguma coisa...? Oh, sim, aqui estão os demais lugares na internet que voc
  [Disqus](https://disqus.com/by/williamcanin/){:target="_blank"} |
  [Spotify](https://open.spotify.com/user/williamcanin){:target="_blank"} |
  Facebook Error 404 | Instagram Error 404 
+
+*"O tolo não se interessa em aprender, mas só em dar as suas opiniões." [ Provébios 18:2 ]*
