@@ -157,6 +157,7 @@ tag_page_layout: tag
 tag_page_dir: blog/tags
 tag_permalink_style: pretty
 
+
 # Config for plugin 'jekyll-gist'
 gist:
   noscript: false
