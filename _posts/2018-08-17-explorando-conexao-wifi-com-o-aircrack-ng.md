@@ -127,7 +127,6 @@ O ataque DoS (Denial of Service), para o português "Negação de Serviço", é 
 O objetivo principal do **aircrack-ng** não é fazer um ataque DoS em rede WiFi, mas sim capturar dados da mesma, o que a  própria descrição do **aircrack-ng** diz: `Key cracker for the 802.11 WEP and WPA-PSK protocols`.
 
 
-
 ## Handshake
 
 Outro recurso do **aircrack-ng**, é fazer uma captura de uma handshake criptografada, que nada mais é que os dados da conexão WiFi, ou seja, essa handshake contem a senha da conexão WiFi. Muito interessante, não é mesmo?! Mas apesar do **aircrack-ng** fazer essa captura da handshake, não é simples fazer a quebra da mesma.
