@@ -6,8 +6,8 @@ sitemap:
   changefreq: 'monthly'
   lastmod: 2018-01-13T17:38:23-05:00
 icon: fa-lightbulb-o
-in_menu: true
-published: true
+in_menu: false
+published: false
 permalink: /philosophy/
 ---
 
