@@ -13,7 +13,7 @@ $dashed_color: #fff;
 $color__links: #ffe609; /* default: #26ff09 */
 $sidebar__bg: #2e2e2e;
 $sidebar__title-color: #fff;
-$sidebar__img-bg: #302f2f;
+$sidebar__img-bg: transparent;
 $blockquote__bg: #4e4e4e;
 $footer__bg: #111111;
 $footer__bordertop: 0.1rem solid #111111;
@@ -34,7 +34,7 @@ $font-weight__layout_postlist-link: bold;
 $sidebar__menu-hover-color: inherit;
 $sidebar__menu-decoration: underline;
 $sidebar__menu-hover-decoration: none;
-$sidebar__img-shadow: transparent; /* default: 0px 0px 20px rgba(0,0,0,0.2) */
+$sidebar__img-shadow: none; /* default: 0px 0px 20px rgba(0,0,0,0.2) */
 $layout_postlist__hover-title-color: $color__links;
 $layout_postlist__title-decoration: underline;
 $layout_postlist__hover-title-decoration: underline;
