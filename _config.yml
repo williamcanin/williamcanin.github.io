@@ -85,7 +85,7 @@ content:
 
 ### EXTRA BEGIN - These properties are extra features, such as built-in third-party plugins.
 jektify:
-  enable: true
+  enable: false
   open: true
   toggle:
     enable: true

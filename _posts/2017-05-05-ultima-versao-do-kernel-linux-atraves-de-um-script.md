@@ -17,7 +17,7 @@ script: [post.js]
 ---
 
 
-Iae terráqueos, firmeza total? Espero que sim.
+Oi, tudo bem com você? :) Espero que sim.
 
 Vou compartilhar com vocês um Shell script simples, mas que pode ser de bastante utilidade dependendo do caso. Esse script fará o download da última versão estável do [kernel](https://www.kernel.org/){:target="_blank"} Linux.
 

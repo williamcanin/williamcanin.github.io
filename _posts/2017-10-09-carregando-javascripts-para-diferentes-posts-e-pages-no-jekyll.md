@@ -18,7 +18,7 @@ script: [post.js]
 ---
 
 
-Faaaala pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Como diz o saudoso filósofo Serjão do Youtube:
+Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:
 
 > "E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu
 > berrante tocá".
