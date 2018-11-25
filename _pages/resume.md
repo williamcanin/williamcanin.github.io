@@ -133,7 +133,7 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 
 ## Certificados virtuais
 
- [HTML](https://williamcanin.me/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}, [HTML5 & CSS3](https://williamcanin.me/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}, [Design Responsivo](https://williamcanin.me/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}, [Python Básico](https://williamcanin.me/certificate/backend/solyd-curses-python-basic.pdf)
+ [HTML](https://williamcanin.me/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}, [HTML5 & CSS3](https://williamcanin.me/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}, [Design Responsivo](https://williamcanin.me/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}, [Python Básico](https://williamcanin.me/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
 
 ## Projetos
 
