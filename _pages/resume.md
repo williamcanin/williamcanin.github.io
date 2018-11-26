@@ -47,11 +47,27 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 ## Educação
 
-### Centro Universitário de Lins (Unilins)
+#### [Centro Universitário de Lins - Unilins](http://www.unilins.edu.br/){:target="_blank"}
 
-*Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas*
+* *Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas - 2009/2013 - Concluído*
 
-Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Java, Banco de Dados(Oracle)* e *Web development*. Na conclusão de curso, foi realizado um sistema ERP não aplicável para uma loja de eletrodomésticos local usando [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}. A jornada durou 4 anos, onde obtive a conclusão do curso no final do ano 2013.
+#### [Fundação Bradesco - Escola Virtual](https://www.ev.org.br/){:target="_blank"}
+
+* *HTML Básico - Concluído em 11/2017* - [Certificado](https://williamcanin.me/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}
+
+#### [NodeStudio Treinamentos - Cursos de Desenvolvimento Web](https://www.nodestudio.com.br/){:target="_blank"}
+
+* *HTML5 & CSS3 - Concluído em 11/2017* - [Certificado](https://williamcanin.me/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}
+
+* *Design Responsivo - Concluído em 11/2017* - [Certificado](https://williamcanin.me/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
+
+#### [Solyd - Treinamentos e Cursos Online](https://solyd.com.br/){:target="_blank"}
+
+* *Python Básico* - Concluído em 11/2018 - [Certificado](https://williamcanin.me/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
+
+#### [Udemy - Cursos Online](https://udemy.com/){:target="_blank"}
+
+* *Aprenda Programação em Python 3 com Facilidade do Zero* - Concluído em 11/2018 - [Certificado](https://williamcanin.me/certificate/backend/udemy-curses-python3-zero.pdf){:target="_blank"}
 
 
 ## Experiências
@@ -116,7 +132,6 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 #### **Databases**
 
 {% badge MySQL|16px %}
-{% badge Firebird|16px %}
 
 #### **Networks**
 
@@ -130,10 +145,6 @@ Encetei na faculdade no ano de 2009, onde estudei grades como: *UML, Delphi, Jav
 
 {% badge Linux|16px %}
 {% badge Windows|16px %}
-
-## Certificados virtuais
-
- [HTML](https://williamcanin.me/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}, [HTML5 & CSS3](https://williamcanin.me/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}, [Design Responsivo](https://williamcanin.me/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}, [Python Básico](https://williamcanin.me/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
 
 ## Projetos
 
