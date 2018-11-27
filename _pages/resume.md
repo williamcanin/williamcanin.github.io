@@ -34,13 +34,13 @@ excerpt:
 
 Apaixonado por desafios, tecnologia, design, pessoas e melhoramento pessoal; onde tenho a convicção de que tudo é possível com dedicação e resiliência.
 
-Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação e tarefas voltadas a computação](#conhecimentos--habilidades).
+Sou graduado da [Centro Universitário de Lins](http://www.unilins.edu.br/){:target="_blank"} e codificador assíduo com comprometimento com as atividades que realizo. Autodidata e proficiente em algumas [linguagens de programação e tarefas voltadas a computação](#conhecimentos).
 
 Diariamente, gosto de aprender novas linguagens de programação, onde as uso (ou não) regularmente. Eu aprendi a programar usando [Free Pascal](http://www.freepascal.org/){:target="_blank"} e [Delphi](https://www.embarcadero.com/products/delphi){:target="_blank"}, durante o período no ensino superior.
 
-Atualmente exerço mais o aprendizado de "Web development" ([Front-End](#front-end)), porém, também tenho facilidades em alguns desenvolvimento com [Back-End](#back-end), ou seja, me considerando com aptidão a full-stack.
+Atualmente exerço mais o aprendizado [Front-End](#front-end), porém, também tenho facilidades em alguns desenvolvimento com [Back-End](#back-end), ou seja, me considerando com aptidão a full-stack.
 
-Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"}. Desde então, vou adquiri alguns conhecimentos em [Network](#networks) e [Linux LPI](#linux-lpi).
+Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"}. Desde então, vou adquirindo alguns conhecimentos em [Linux](#linux).
 
 Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre.
 
@@ -53,48 +53,41 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 #### [Fundação Bradesco - Escola Virtual](https://www.ev.org.br/){:target="_blank"}
 
-* *HTML Básico - Concluído em 11/2017* - [Certificado](https://williamcanin.me/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}
+* *Curso Online - HTML Básico - Concluído em 11/2017* - [Certificado](https://williamcanin.me/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}
 
 #### [NodeStudio Treinamentos - Cursos de Desenvolvimento Web](https://www.nodestudio.com.br/){:target="_blank"}
 
-* *HTML5 & CSS3 - Concluído em 11/2017* - [Certificado](https://williamcanin.me/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}
+* *Curso Online - HTML5 & CSS3 - Concluído em 11/2017* - [Certificado](https://williamcanin.me/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}
 
-* *Design Responsivo - Concluído em 11/2017* - [Certificado](https://williamcanin.me/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
+* *Curso Online - Design Responsivo - Concluído em 11/2017* - [Certificado](https://williamcanin.me/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
 
 #### [Solyd - Treinamentos e Cursos Online](https://solyd.com.br/){:target="_blank"}
 
-* *Python Básico* - Concluído em 11/2018 - [Certificado](https://williamcanin.me/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
+* *Curso Online - Python Básico* - Concluído em 11/2018 - [Certificado](https://williamcanin.me/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
 
 #### [Udemy - Cursos Online](https://udemy.com/){:target="_blank"}
 
-* *Aprenda Programação em Python 3 com Facilidade do Zero* - Concluído em 11/2018 - [Certificado](https://williamcanin.me/certificate/backend/udemy-curses-python3-zero.pdf){:target="_blank"}
+* *Curso Online - Aprenda Programação em Python 3 com Facilidade do Zero* - Concluído em 11/2018 - [Certificado](https://williamcanin.me/certificate/backend/udemy-curses-python3-zero.pdf){:target="_blank"}
 
 
 ## Experiências
 
-#### Linux LPI
+#### Linux 
 
-**Linux Essentials - Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux**
+**Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux**
 
 **Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede**
-
-
-
-**LPIC-1 101**
 
 * Arquitetura do Sistema
 * Instalação e manutenção de pacotes linux
 * Comandos GNU e Unix
 * Devices, Linux Filesystems, Hieraquia Padrão dos Filesystem
-
-**LPIC-1 102**
-
 * Shell, Scripting e Gerenciamento de Dados
 * Interfaces e Desktops
 * Tarefas administrativas
 * Serviços Essenciais do sistema
 
-## Conhecimentos / Habilidades
+## Conhecimentos
 
 #### **Front end**
 
@@ -148,7 +141,7 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 ## Projetos
 
-Realiazo diversos projetos Open-Source e armazeno tudo com [git](https://git-scm.com/){:target="_blank"} no meu [GitHub](https://github.com/williamcanin){:target="_blank"}. Aqui está alguns:
+Boa parte dos meus projetos são Open-Source e armazeno tudo com [git](https://git-scm.com/){:target="_blank"} no meu [GitHub](https://github.com/williamcanin){:target="_blank"}. Aqui está alguns:
 
 * [Jektify](https://jektify.github.io){:target="_blank"} - Jektify é uma gem que usa para inserir uma entrada de faixa, lista de reprodução, álbuns e artistas de Spotify, em templates Jekyll.
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script via Shell para realizar a recuperação do Grub no Arch Linux.
