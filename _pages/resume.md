@@ -29,7 +29,7 @@ excerpt:
 **País**: Brasil   
 **E-mail**: [contato[at]williamcanin.me](mailto:{{ "contato@williamcanin.me" | encode_email }}) | [william.costa.canin[at]gmail.com](mailto:{{ "william.costa.canin@gmail.com" | encode_email }})   
 **Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}   
- 
+
 ## Biografia
 
 Apaixonado por desafios, tecnologia, design, pessoas e melhoramento pessoal; onde tenho a convicção de que tudo é possível com dedicação e resiliência.
@@ -67,12 +67,12 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 #### [Udemy - Cursos Online](https://udemy.com/){:target="_blank"}
 
-* *Curso Online - Aprenda Programação em Python 3 com Facilidade do Zero* - Concluído em 11/2018 - [Certificado](https://williamcanin.me/certificate/backend/udemy-curses-python3-zero.pdf){:target="_blank"}
+* *Curso Online - Aprenda Programação em Python 3 com Facilidade do Zero* - Concluído em 12/2018 - [Certificado](https://williamcanin.me/certificate/backend/udemy-curses-python3-zero.pdf){:target="_blank"}
 
 
 ## Experiências
 
-#### Linux 
+#### Linux
 
 **Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux**
 
