@@ -13,22 +13,22 @@ permalink: /resume/
 excerpt:
 ---
 
-
 {% include liquid/data %}
 
-#  William da Costa Canin
+# William da Costa Canin
 
-### Desenvolvedor
+Desenvolvedor
 
 {:.markdown__mt40}
+
 ## Dados Pessoais
 
-**Nacionalidade**: Brasileiro   
+**Nacionalidade**: Brasileiro  
 **Naturalidade:** Santo André-SP  
-**Data Nasc.**: 25/04/1988   
-**País**: Brasil   
-**E-mail**: [contato[at]williamcanin.me](mailto:{{ "contato@williamcanin.me" | encode_email }}) | [william.costa.canin[at]gmail.com](mailto:{{ "william.costa.canin@gmail.com" | encode_email }})   
-**Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}   
+**Data Nasc.**: 25/04/1988  
+**País**: Brasil  
+**E-mail**: [contato[at]williamcanin.me](mailto:{{ "contato@williamcanin.me" | encode_email }}) | [william.costa.canin[at]gmail.com](mailto:{{ "william.costa.canin@gmail.com" | encode_email }})  
+**Website**: [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}  
 
 ## Biografia
 
@@ -43,7 +43,6 @@ Atualmente exerço mais o aprendizado [Front-End](#front-end), porém, também t
 Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"} / [Ubuntu](https://ubuntu.com){:target="_blank"}. Desde então, vou adquirindo alguns conhecimentos em [Linux](#linux).
 
 Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre.
-
 
 ## Educação
 
@@ -73,14 +72,13 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 * *Curso Online - Aprenda Programação em Python 3 com Facilidade do Zero* - Concluído em 12/2018 - [Certificado](https://williamcanin.me/certificate/backend/udemy-curses-python3-zero.pdf){:target="_blank"}
 
-
 ## Experiências
 
-#### Linux
+### Linux
 
-**Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux**
+Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux
 
-**Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede**
+Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede
 
 * Arquitetura do Sistema
 * Instalação e manutenção de pacotes linux
@@ -93,7 +91,7 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 ## Conhecimentos
 
-#### **Front end**
+### Front end
 
 {% badge HTML5|16px %}
 {% badge CSS3|16px %}
@@ -143,7 +141,7 @@ Boa parte dos meus projetos são Open-Source e armazeno tudo com [git](https://g
 
 * [Jektify](https://jektify.github.io){:target="_blank"} - Jektify é uma gem que usa para inserir uma entrada de faixa, lista de reprodução, álbuns e artistas de Spotify, em templates Jekyll.
 * [Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script em Python para realizar a recuperação do Grub no Linux.
-* [iDisconnect ](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
+* [iDisconnect](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
 ## Informações adicionais
 
