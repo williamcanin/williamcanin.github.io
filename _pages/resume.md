@@ -47,9 +47,13 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 ## Educação
 
+### Ensino Superior
+
 #### [Centro Universitário de Lins - Unilins](http://www.unilins.edu.br/){:target="_blank"}
 
 * *Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas - 2009/2013 - Concluído*
+
+### Cursos
 
 #### [Fundação Bradesco - Escola Virtual](https://www.ev.org.br/){:target="_blank"}
 
