@@ -70,7 +70,15 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 #### [Udemy - Cursos Online](https://udemy.com/){:target="_blank"}
 
+* *Curso Online - Orientação a objetos em Java, C#, Python, PHP e Javascript* - [Cursando](https://www.udemy.com/orientacao-a-objetos-em-java-c-python-php-e-javascript/){:target="_blank"}
+
 * *Curso Online - Aprenda Programação em Python 3 com Facilidade do Zero* - Concluído em 12/2018 - [Certificado](https://williamcanin.me/certificate/backend/udemy-curses-python3-zero.pdf){:target="_blank"}
+
+* *Curso Online - Python 3 na Web com Django (Básico e Intermediário)* - [Cursando](https://www.udemy.com/python-3-na-web-com-django-basico-intermediario/){:target="_blank"}
+
+* *Curso Online - Django 2.0 - Aprendendo os conceitos fundamentais* - [Cursando](https://www.udemy.com/django-20-aprendendo-os-conceitos-fundamentais/){:target="_blank"}
+
+* *Curso Online - Django 2.0 avancado, 100+ aulas domine framework like a boss* - [Cursando](https://www.udemy.com/django-avancado-100-aulas/){:target="_blank"}
 
 ## Experiências
 
@@ -89,57 +97,31 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 * Tarefas administrativas
 * Serviços Essenciais do sistema
 
-## Conhecimentos
+## Nuvem de Conhecimentos
 
-### Front end
-
-{% badge HTML5|16px %}
-{% badge CSS3|16px %}
-{% badge Javascript/ES6|16px %}
-{% badge Responsive Web Design|16px %}
-{% badge BEM|16px %}
-{% badge SASS|16px %}
-
-### **Tasks**
-
-{% badge Gulp|16px %}
-
-### **Back end**
-
-{% badge Shell script|16px %}
-{% badge Python|16px %}
-{% badge Ruby/RubyGems|16px %}
-{% badge Delphi|16px %}
-
-### **Web Framework**
-
-{% badge Bootstrap|16px %}
-{% badge Django|16px %}
-
-### **Version Control System**
-
-{% badge Git|16px %}
-
-### **SSG**
-
-{% badge Jekyll|16px %}
-
-### **Databases**
-
-{% badge MySQL|16px %}
-
-### **Networks**
-
-{% badge Ubuntu Server|16px %}
-{% badge Red Hat Enterprise Linux Server|16px %}
-{% badge TCP/IP|16px %}
-{% badge IPTables|16px %}
-{% badge Squid|16px %}
-
-### **Operational systems**
-
-{% badge Linux|16px %}
-{% badge Windows|16px %}
+{% badge [**HTML5**](https://www.w3schools.com/html/html5_intro.asp){:target="_blank"}|16px %}
+{% badge [**CSS3**](https://www.w3schools.com/css/){:target="_blank"}|16px %}
+{% badge [**Javascript**](https://www.javascript.com/){:target="_blank"}|16px %}
+{% badge [**Responsive Web Design**](https://www.w3schools.com/html/html_responsive.asp){:target="_blank"}|16px %}
+{% badge [**BEM**](http://getbem.com/){:target="_blank"}|16px %}
+{% badge [**SASS**](https://sass-lang.com/){:target="_blank"}|16px %}
+{% badge [**Gulp**](https://gulpjs.com/){:target="_blank"}|16px %}
+{% badge [**Shell script**](http://linuxcommand.org/lc3_learning_the_shell.php){:target="_blank"}|16px %}
+{% badge [**Python**](https://www.python.org/){:target="_blank"}|16px %}
+{% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %}
+{% badge [**Delphi**](https://www.embarcadero.com/br/products/delphi){:target="_blank"}|16px %}
+{% badge [**Bootstrap**](https://getbootstrap.com/){:target="_blank"}|16px %}
+{% badge [**Django**](https://www.djangoproject.com/){:target="_blank"}|16px %}
+{% badge [**Git**](https://git-scm.com/){:target="_blank"}|16px %}
+{% badge [**Jekyll**](https://jekyllrb.com/){:target="_blank"}|16px %}
+{% badge [**MySQL**](https://www.mysql.com/
+){:target="_blank"}|16px %}
+{% badge [**Ubuntu Server**](https://www.ubuntu.com/download/server){:target="_blank"}|16px %}
+{% badge [**Red Hat Enterprise Linux Server**](https://www.redhat.com/pt-br/resources/red-hat-enterprise-linux-server){:target="_blank"}|16px %}
+{% badge [**IPTables**](https://pt.wikipedia.org/wiki/Iptables){:target="_blank"}|16px %}
+{% badge [**Squid Proxy**](http://www.squid-cache.org/){:target="_blank"}|16px %}
+{% badge [**Linux OS**](https://pt.wikipedia.org/wiki/Linux){:target="_blank"}|16px %}
+{% badge [**Windows OS**](https://www.microsoft.com/pt-br/windows){:target="_blank"}|16px %}
 
 ## Projetos
 
