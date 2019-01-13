@@ -99,6 +99,9 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 
 ## Nuvem de Conhecimentos
 
+{% badge [**Python**](https://www.python.org/){:target="_blank"}|16px %}
+{% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %}
+{% badge [**Delphi**](https://www.embarcadero.com/br/products/delphi){:target="_blank"}|16px %}
 {% badge [**HTML5**](https://www.w3schools.com/html/html5_intro.asp){:target="_blank"}|16px %}
 {% badge [**CSS3**](https://www.w3schools.com/css/){:target="_blank"}|16px %}
 {% badge [**Javascript**](https://www.javascript.com/){:target="_blank"}|16px %}
@@ -107,9 +110,6 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**SASS**](https://sass-lang.com/){:target="_blank"}|16px %}
 {% badge [**Gulp**](https://gulpjs.com/){:target="_blank"}|16px %}
 {% badge [**Shell script**](http://linuxcommand.org/lc3_learning_the_shell.php){:target="_blank"}|16px %}
-{% badge [**Python**](https://www.python.org/){:target="_blank"}|16px %}
-{% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %}
-{% badge [**Delphi**](https://www.embarcadero.com/br/products/delphi){:target="_blank"}|16px %}
 {% badge [**Bootstrap**](https://getbootstrap.com/){:target="_blank"}|16px %}
 {% badge [**Django**](https://www.djangoproject.com/){:target="_blank"}|16px %}
 {% badge [**Git**](https://git-scm.com/){:target="_blank"}|16px %}
