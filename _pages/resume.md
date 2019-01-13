@@ -95,34 +95,40 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 
 {% badge HTML5|16px %}
 {% badge CSS3|16px %}
-{% badge Bootstrap|16px %}
 {% badge Javascript/ES6|16px %}
 {% badge Responsive Web Design|16px %}
 {% badge BEM|16px %}
 {% badge SASS|16px %}
-{% badge Gulp|16px %}
-{% badge NPM|16px %}
 
-#### **Back end**
+### **Tasks**
+
+{% badge Gulp|16px %}
+
+### **Back end**
 
 {% badge Shell script|16px %}
 {% badge Python|16px %}
 {% badge Ruby/RubyGems|16px %}
 {% badge Delphi|16px %}
 
-#### **Version Control System**
+### **Web Framework**
+
+{% badge Bootstrap|16px %}
+{% badge Django|16px %}
+
+### **Version Control System**
 
 {% badge Git|16px %}
 
-#### **SSG**
+### **SSG**
 
 {% badge Jekyll|16px %}
 
-#### **Databases**
+### **Databases**
 
 {% badge MySQL|16px %}
 
-#### **Networks**
+### **Networks**
 
 {% badge Ubuntu Server|16px %}
 {% badge Red Hat Enterprise Linux Server|16px %}
@@ -130,7 +136,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge IPTables|16px %}
 {% badge Squid|16px %}
 
-#### **Operational systems**
+### **Operational systems**
 
 {% badge Linux|16px %}
 {% badge Windows|16px %}
