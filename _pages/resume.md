@@ -68,6 +68,10 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 * *Curso Online - Python Básico* - Concluído em 11/2018 - [Certificado](https://williamcanin.me/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
 
+#### [USP - Universidade de São Paulo](https://www5.usp.br/){:target="_blank"}
+
+* *Curso Online - Introdução à Ciência da Computação com Python* - [Cursando](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"}
+
 #### [Udemy - Cursos Online](https://udemy.com/){:target="_blank"}
 
 * *Curso Online - Orientação a objetos em Java, C#, Python, PHP e Javascript* - [Cursando](https://www.udemy.com/orientacao-a-objetos-em-java-c-python-php-e-javascript/){:target="_blank"}
