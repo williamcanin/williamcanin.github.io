@@ -76,7 +76,7 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 * *Curso Online - Python 3 na Web com Django (Básico e Intermediário)* - [Cursando](https://www.udemy.com/python-3-na-web-com-django-basico-intermediario/){:target="_blank"}
 
-* *Curso Online - Django 2.0 - Aprendendo os conceitos fundamentais* - [Cursando](https://www.udemy.com/django-20-aprendendo-os-conceitos-fundamentais/){:target="_blank"}
+* *Curso Online - Django 2.0 - Aprendendo os conceitos fundamentais* - Concluído em 01/2019
 
 * *Curso Online - Django 2.0 avancado, 100+ aulas domine framework like a boss* - [Cursando](https://www.udemy.com/django-avancado-100-aulas/){:target="_blank"}
 
