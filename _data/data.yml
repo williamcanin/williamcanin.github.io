@@ -26,6 +26,13 @@ website:
   google:
     analytics:
       id: "UA-101186555-1" # tracking id, e.g. "UA-000000-01"
+  # Terminal for theme Hacking.
+  terminal:
+    user: william
+    os: linux
+    home:
+      bg: "#2a2a2a"
+      border_radius: "30px"
 # Sidebar
   sidebar:
     avatar: "avatar.png"

@@ -24,6 +24,9 @@ maintenance:
 google:
   analytics:
     enable: true
+home:
+  terminal:
+    enable: true
 sidebar:
   avatar:
     enable: true
