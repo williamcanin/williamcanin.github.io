@@ -88,9 +88,9 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 ### Linux
 
-Conhecimentos básicos em open source e nas diferenças entre as várias distribuições Linux
+Conhecimentos em open source e nas diferenças entre as várias distribuições Linux
 
-Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração  básica de rede
+Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração básica de rede
 
 * Arquitetura do Sistema
 * Instalação e manutenção de pacotes linux
