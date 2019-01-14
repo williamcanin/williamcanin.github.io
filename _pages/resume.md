@@ -132,5 +132,5 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 Boa parte dos meus projetos são Open-Source e armazeno tudo com [git](https://git-scm.com/){:target="_blank"} no meu [GitHub](https://github.com/williamcanin){:target="_blank"}. Aqui está alguns:
 
 * [**Jektify**](https://jektify.github.io){:target="_blank"} - Jektify é uma gem em **Ruby**, que insere uma entrada de faixa, lista de reprodução, álbuns e artistas de Spotify, em templates **Jekyll**.
-* [**Recover Grub**](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script em **Python 3.x** para realizar a recuperação do Grub no Linux.
+* [**Recover Grub**](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script em **Python** (3.x) para realizar a recuperação do Grub no Linux.
 * [**iDisconnect**](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
