@@ -84,9 +84,9 @@ Com o Python instaladinho, vamos instalar uns módulos bacana para nos auxiliar 
 
 Usar um linter ajuda bastante a gente enxergar erros que dificilmente perceberiamos em nosso código caso não houvesse um, por isso um linter para Python que gosto é o [Flake8](http://flake8.pycqa.org/en/latest/){:target="_blank"}.
 
-O **Flake8** é uma ferramenta para aplicação de guia de estilo. Irá auxiliar na procura de problemas de identação ou outros erros mais no nosso código.
-
 ### Flake8
+
+O **Flake8** é uma ferramenta para aplicação de guia de estilo. Irá auxiliar na procura de problemas de identação ou outros erros mais no nosso código.
 
 {% highlight bash linenos %}
 $ python -m pip3 install flake8 --user
@@ -108,9 +108,9 @@ max-line-length = 120
 
 Criar nossos projetos com máquinas virtuais é uma técnica essencial para não comprometermos as versões globais de módulos já instaladas em nossa máquina e não ficarmos com módulos globais instalados e não usar depois. Sempre que criamos uma máquina virtual para nossos projetos, podemos instalar qualquer versão de qualquer módulo. Vamos ver dois pacotes que nos possibilita criar máquinas virtuais para nossos códigos em Pythom, o **Venv** (Virtualenv) e o **Pipenv**.
 
-### Virtualenv
+### Venv/Virtualenv
 
-O **Virtualenv** (Virtualenv) já instalamos através dos pacotes que distribuição Linux nos disponibiliza. Caso a distribuição não tenha o pacotes **python{x}-virtualenv**, então podemos instalar pelo **pip** da seguinte maneira:
+O Python 3.x já dispinibiliza um pacote para criar máquinas virtuais, que é o **venv**, já instalamos através dos pacotes que distribuição Linux nos disponibiliza. Caso a distribuição não tenha o pacotes **python3-venv** ou **python-venv**, então podemos instalar pelo **pip** o **virtualenv** da seguinte maneira:
 
 {% highlight text linenos %}
 $ python -m pip install virtualenv --user
@@ -121,13 +121,44 @@ $ python -m pip install virtualenv --user
 
 Quando criamos máquinas virtuais com o **Virtualenv**, suas configurações são armarzenadas em uma pasta no projeto que vocẽ esta desenvolvendo.
 
-#### Usando o Virtualenv
+#### Usando o Venv/Virtualenv
 
-"Não vou reenventar a roda!". Como já existe a própria documentação do **Virtualenv**, então você pode ir conferir como usa-la clicando [aqui](https://virtualenv.pypa.io/en/latest/userguide/){:target="_blank"}
+Para usar o **venv** do Python; criar uma máquina virtual, ativar e desativar a mesma, acompanhe os seguintes comandos abaixo:
+
+**Criando máquina virtual**
+
+{% highlight text linenos %}
+$ cd myproject
+$ python -m venv
+{% endhighlight %}
+
+**Ativando a máquina virtual**
+
+{% highlight text linenos %}
+$ cd myproject
+$ source env/bin/activate
+{% endhighlight %}
+
+**Desativando a máquina virtual**
+
+{% highlight text linenos %}
+$ cd myproject
+$ deactivate
+{% endhighlight %}
+
+> Nota: Assim que ativar a máquina virtual, você pode instalar módulo para a mesma usando o gerenciador de pacote **pip**.
+
+"Não vou reenventar a roda!". Como já existe a própria documentação do **virtualenv**, então você pode ir conferir como usa-la clicando [aqui](https://virtualenv.pypa.io/en/latest/userguide/){:target="_blank"}
 
 ### Pipenv
 
-Eu particulamento não uso o **Pipenv**, prefiro o **Virtualenv**, acho que o conceito do **Pipenv** armarzenar os módulos instalados para a máquina virtual fora da máquina virtual, é algo que incomoda muito. Quando criamos uma máquina virtual com **Pipenv**, as configurações e módulos instalados vão para o diretório padrão: **~/.local/share/virtualenvs/**.
+Eu particulamento não uso o **Pipenv**, prefiro o **Virtualenv** ou até mesmo o **venv** do Python, acho que o conceito do **Pipenv** armarzenar os módulos instalados para a máquina virtual fora da máquina virtual, é algo que incomoda muito. Quando criamos uma máquina virtual com **Pipenv**, as configurações e módulos instalados vão para o diretório padrão: **~/.local/share/virtualenvs/**.
+
+Instalando Pipenv:
+
+{% highlight text linenos %}
+$ python -m pip install pipenv --user
+{% endhighlight %}
 
 > Nota: Ao expecificar a flag '--user', o módulo irá instalar no direttório do usuário, ou seja,
 > **~/.local/lib/python3.x/site-packages**.
