@@ -6,11 +6,12 @@ tags: ['vscode','code','python', 'config', 'virtualenv']
 published: false
 comments: false
 excerpted: |
-          Put here your excerpt
+          Esse post contem meu setup básico de desenvolvimento em Python, caso você tenha dúvidas pode estar dando uma lida.
 day_quote:
- title: "Put here title quote of the day"
+ title: "A Palavra"
  description: |
-          "Put here your quote of the day"
+          "O tolo não se interessa em aprender, mas só em dar as suas opiniões." </br>
+          (Provébios 18:2 NTLH)
 
 # Does not change and does not remove 'script' variable.
 script: [post.js]
@@ -76,20 +77,24 @@ O que estamos fazendo é criando um **alias** para o comando `python`, usar a ve
 
 *Nota: Se quiser pode fazer isso para o 'pip' também.*
 
-# Instalando módulos no Python
+# Instalando módulos no Python com o Pip
 
-Com o Python instaladinho, vamos instalar uns módulos bacana para nos auxiliar em um desenvolvimento mais amigável.
+Com o Python 3.x já instalado, vamos instalar uns módulos globais bacana para nos auxiliar em um desenvolvimento mais amigável, para isso usaremos o **Pip**.
+
+O **Pip** é o gerenciador de módulos/pacotes do Python, com ele podemos instalar novas bibliotecas para nossos projetos e não ter que reinventar a roda em códigos.
 
 ## Linter
 
-Usar um linter ajuda bastante a gente enxergar erros que dificilmente perceberiamos em nosso código caso não houvesse um, por isso um linter para Python que gosto é o [Flake8](http://flake8.pycqa.org/en/latest/){:target="_blank"}.
+Usar um linter ajuda bastante a gente enxergar erros que dificilmente não perceberiamos em nosso código caso não houvesse um, por isso um linter para Python que gosto é o [Flake8](http://flake8.pycqa.org/en/latest/){:target="_blank"}.
 
 ### Flake8
 
-O **Flake8** é uma ferramenta para aplicação de guia de estilo. Irá auxiliar na procura de problemas de identação ou outros erros mais no nosso código.
+O **Flake8** é uma ferramenta para aplicação de guia de estilo. Irá auxiliar na procura de problemas de identação ou outros erros a mais no nosso código.
+
+Instalando Flake8:
 
 {% highlight bash linenos %}
-$ python -m pip3 install flake8 --user
+\# python -m pip3 install flake8 --user
 {% endhighlight %}
 
 > Nota: Ao expecificar a flag '--user', o módulo irá instalar no direttório do usuário, ou seja,
@@ -106,22 +111,18 @@ max-line-length = 120
 
 ## Máquinas virtuais
 
-Criar nossos projetos com máquinas virtuais é uma técnica essencial para não comprometermos as versões globais de módulos já instaladas em nossa máquina e não ficarmos com módulos globais instalados e não usar depois. Sempre que criamos uma máquina virtual para nossos projetos, podemos instalar qualquer versão de qualquer módulo. Vamos ver dois pacotes que nos possibilita criar máquinas virtuais para nossos códigos em Pythom, o **Venv** (Virtualenv) e o **Pipenv**.
+Criar nossos projetos com máquinas virtuais é uma ação essencial para não comprometermos as versões globais de módulos já instaladas em nossa máquina e não ficarmos com módulos globais instalados e não usar depois. Sempre que criamos uma máquina virtual para nossos projetos, podemos instalar qualquer versão de qualquer módulo. Vamos ver alguns pacotes que nos possibilita criar máquinas virtuais para nossos códigos em Pythom, o **venv**, **virtualenv** e o **pipenv**.
 
-### Venv/Virtualenv
+### Venv / Virtualenv
 
-O Python 3.x já dispinibiliza um pacote para criar máquinas virtuais, que é o **venv**, já instalamos através dos pacotes que distribuição Linux nos disponibiliza. Caso a distribuição não tenha o pacotes **python3-venv** ou **python-venv**, então podemos instalar pelo **pip** o **virtualenv** da seguinte maneira:
+O Python 3.x já dispinibiliza um pacote para criar máquinas virtuais, que é o **venv**, já instalamos através dos pacotes que distribuição Linux nos disponibiliza. Caso a distribuição não tenha o **venv**, então pode-se usar o **virtualenv**. Na prática os dois tem o mesmo efeito de criação de máquinas vistuais.
 
-{% highlight text linenos %}
-$ python -m pip install virtualenv --user
-{% endhighlight %}
+#### Instalando o Venv
 
-> Nota: Ao expecificar a flag '--user', o módulo irá instalar no direttório do usuário, ou seja,
-> **~/.local/lib/python3.x/site-packages**
+Para instalar 
+Como dito acima, o **venv** já foi instalado mais acima desse post.
 
-Quando criamos máquinas virtuais com o **Virtualenv**, suas configurações são armarzenadas em uma pasta no projeto que vocẽ esta desenvolvendo.
-
-#### Usando o Venv/Virtualenv
+#### Usando o Venv
 
 Para usar o **venv** do Python; criar uma máquina virtual, ativar e desativar a mesma, acompanhe os seguintes comandos abaixo:
 
@@ -129,7 +130,7 @@ Para usar o **venv** do Python; criar uma máquina virtual, ativar e desativar a
 
 {% highlight text linenos %}
 $ cd myproject
-$ python -m venv
+$ python -m venv env
 {% endhighlight %}
 
 **Ativando a máquina virtual**
@@ -146,15 +147,30 @@ $ cd myproject
 $ deactivate
 {% endhighlight %}
 
-> Nota: Assim que ativar a máquina virtual, você pode instalar módulo para a mesma usando o gerenciador de pacote **pip**.
+> Nota: Assim que ativar a máquina virtual, você pode instalar módulos para a mesma usando o gerenciador de pacote **pip**.
+
+#### Instalando o Virtualenv
+
+{% highlight text linenos %}
+$ python -m pip3 install virtualenv --user
+{% endhighlight %}
+
+> Nota: Ao expecificar a flag '--user', o módulo irá instalar no direttório do usuário, ou seja,
+> **~/.local/lib/python3.x/site-packages**
+
+Quando criamos máquinas virtuais com o **venv** ou **virtualenv**, suas configurações são armarzenadas em uma pasta no projeto que vocẽ esta desenvolvendo.
+
+#### Usando o Virtualenv
 
 "Não vou reenventar a roda!". Como já existe a própria documentação do **virtualenv**, então você pode ir conferir como usa-la clicando [aqui](https://virtualenv.pypa.io/en/latest/userguide/){:target="_blank"}
 
 ### Pipenv
 
-Eu particulamento não uso o **Pipenv**, prefiro o **Virtualenv** ou até mesmo o **venv** do Python, acho que o conceito do **Pipenv** armarzenar os módulos instalados para a máquina virtual fora da máquina virtual, é algo que incomoda muito. Quando criamos uma máquina virtual com **Pipenv**, as configurações e módulos instalados vão para o diretório padrão: **~/.local/share/virtualenvs/**.
+Eu particulamento não uso o **pipenv**, prefiro o **virtualenv** ou até mesmo o **venv** do Python, acho que o conceito do **pipenv** armarzenar os módulos instalados para a máquina virtual fora do ambiente do meu projeto, é algo que incomoda muito, enfim, gosto é gosto. 
 
-Instalando Pipenv:
+Quando criamos uma máquina virtual com **pipenv**, as configurações e módulos instalados vão para o diretório padrão: **~/.local/share/virtualenvs/**.
+
+#### Instalando Pipenv
 
 {% highlight text linenos %}
 $ python -m pip install pipenv --user
@@ -170,3 +186,6 @@ O **Pipenv** também tem sua própria documentação, então saia um minutinho d
 [ubu]: (https://ubuntu.com){:target="_blank"}
 [vscode]: (https://code.visualstudio.com/){:target="_blank"}
 [py]: (https://www.python.org/){:target="_blank"}
+
+
+{% jektify spotify/track/3sZkxs0BWOlHQiNNF7vFHp/dark %}
