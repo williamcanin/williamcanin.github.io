@@ -2,7 +2,7 @@
 layout: post
 title: "Preparando ambiente de desenvolvimento Python no Linux"
 date: 2018-11-30 00:06:28
-tags: ['vscode','code','python', 'config']
+tags: ['vscode','code','python', 'config', 'virtualenv']
 published: false
 comments: false
 excerpted: |
@@ -18,7 +18,6 @@ script: [post.js]
 
 <!-- Write from here your post !!! -->
 
-
 * Do not remove this line (it will not be displayed)
 {: toc}
 
@@ -26,7 +25,7 @@ script: [post.js]
 
 Olá pessoas, tudo bem? Espero que sim.
 
-Resolvi criar esses post para mostrar como configuro meu ambiente de desenvolvimento do [Python][py] no Linux. Então vamos lá.
+Resolvi criar esses post para mostrar como configurar o ambiente básico para um desenvolvimento em [Python][py] no Linux. Então vamos lá.
 
 O [Python][py] por padrão já vem instalado na maioria das distribuições Linux, porem atualmente (2019), está instalado a versão 2.x, e a versão atual do Python é a 3.x. Muitas coisas legais mudou da versão 2.x para a 3.x, então, sempre é bom usarmos a versão mais resente de qualquer linguagem de programação, assim conseguimos nos livrar de possível bugs e aderir novos recursos :)
 
@@ -42,7 +41,7 @@ $ sudo apt install python3 python3-venv python3-pip python3-all-dev
 
 ## Archlinux/Manjaro
 
-*Nota: Como o Archlinux (derivados) é Rolling Release, então o pacote 'python' já é a versão atual*
+> Nota: Como o Archlinux (derivados) é Rolling Release, então o pacote 'python' já é a versão atual
 
 {% highlight bash linenos %}
 $ sudo pacman -S python python-virtualenv python-pip
@@ -50,7 +49,7 @@ $ sudo pacman -S python python-virtualenv python-pip
 
 ## Red Hat/Fedora
 
-*Nota: No Fedora o Python 3.x já vem instalado*
+> Nota: No Fedora o Python 3.x já vem instalado
 
 {% highlight bash linenos %}
 $ sudo dnf install python3 python3-pip python3-virtualenv
@@ -79,16 +78,51 @@ O que estamos fazendo é criando um **alias** para o comando `python`, usar a ve
 
 # Instalando módulos no Python
 
-Com o Python instaladinho, vamos instalar uns módulos bacana para nos auxiliar em um desenvolvimento mais fácil.
+Com o Python instaladinho, vamos instalar uns módulos bacana para nos auxiliar em um desenvolvimento mais amigável.
 
-## Flake8
+## Linter
 
+Usar um linter ajuda bastante a gente enxergar erros que dificilmente perceberiamos em nosso código caso não houvesse um, por isso um linter para Python que gosto é o [Flake8](http://flake8.pycqa.org/en/latest/){:target="_blank"}.
 
+O **Flake8** é uma ferramenta para aplicação de guia de estilo. Irá auxiliar na procura de problemas de identação ou outros erros mais no nosso código.
 
-Mas cá entre nós, eu nem precisaria fazer um post sobre isso, pois a própria [documentação](https://code.visualstudio.com/docs/languages/python){:target="_blank"} do Visual Studio Code tem detalhadamente como se configura, mas, vou deixar uns extras.
+### Instalando Flake8
 
-Primeiramente vou partir que você já tenha o "VsCode" instalado no seu S.O.
+{% highlight bash linenos %}
+$ python -m pip3 install flake8 --user
+{% endhighlight %}
 
-[ubu]: (https://ubuntu.com){:target="_blank"} 
-[vscode]: (https://code.visualstudio.com/){:target="_blank"} 
-[py]: (https://www.python.org/){:target="_blank"} 
+> Nota: Ao expecificar a flag '--user', o módulo irá instalar no direttório do usuário, ou seja,
+> **~/.local/lib/python3.x/site-packages**.
+
+O arquivo de configuração do Flake8 no Linux, fica em "**~/.config/flake8**", caso esse arquivo não existe você pode estar criando o mesmo (sem extensão nenhuma) e aplicando suas configurações.
+
+Uma configuração que gosto de utilizar é o **max-line-length**, para ampliar o espaço da linha quando for escrever o código. O valor que deixo é de **120**, você pode configurar a seu gosto. Assim que a linha atingir mais de 120 caracteres, o Flake8 irá lhe mostrar uma Warning pedindo para que você faça uma quebra de linha no código. Confira a configuração do arquivo:
+
+{% highlight text linenos %}
+[flake8]
+max-line-length = 120
+{% endhighlight %}
+
+## Máquinas virtuais
+
+Criar nossos projetos com máquinas virtuais é uma técnica essencial para não comprometermos as versões globais de módulos já instaladas em nossa máquina e não ficarmos com módulos globais instalados e não usar depois. Sempre que criamos uma máquina virtual para nossos projetos, podemos instalar qualquer versão de qualquer módulo. Vamos ver dois pacotes que nos possibilita criar máquinas virtuais para nossos códigos em Pythom, o **Venv** (Virtualenv) e o **Pipenv**.
+
+### Instalando **Venv** (Virtualenv)
+
+O **Venv** (Virtualenv) já instalamos através dos pacotes que distribuição Linux nos disponibiliza. Caso a distribuição não tenha o pacotes **python{x}-virtualenv**, então podemos instalar pelo **pip** da seguinte maneira:
+
+{% highlight text linenos %}
+$ python -m pip install virtualenv --user
+{% endhighlight %}
+
+> Nota: Ao expecificar a flag '--user', o módulo irá instalar no direttório do usuário, ou seja,
+
+### Instalando Pipenv
+
+> Nota: Ao expecificar a flag '--user', o módulo irá instalar no direttório do usuário, ou seja,
+> **~/.local/lib/python3.x/site-packages**.
+
+[ubu]: (https://ubuntu.com){:target="_blank"}
+[vscode]: (https://code.visualstudio.com/){:target="_blank"}
+[py]: (https://www.python.org/){:target="_blank"}

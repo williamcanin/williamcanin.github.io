@@ -62,7 +62,6 @@ dnf install ncurses-devel qt3-devel libXi-devel gtk2-devel libglade2-devel
 
 *Não necessita instalar pacotes.*
 
-
 # Criando base de trabalho
 
 Após a instalação dos pacotes necessários, vamos criar uma pasta chamada **kernel** no $HOME de seu usúario e entrar nela. Essa pasta será a base onde realizaramos o download do kernel e realizar todos os processos.
