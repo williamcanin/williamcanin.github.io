@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python: Transformando conteúdo de um arquivo em dicionário."
+title: "Transformando conteúdo de um arquivo em dicionário com Python."
 date: 2018-12-11 00:34:35
 tags: ['python','linux']
 published: false
