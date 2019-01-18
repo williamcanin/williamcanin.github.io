@@ -33,6 +33,6 @@ Mais alguma coisa...? Oh, sim, aqui estão os demais lugares na internet que voc
  [StackOverflow](https://pt.stackoverflow.com/users/15113/williamcanin?tab=profile){:target="_blank"} |
  [Disqus](https://disqus.com/by/williamcanin/){:target="_blank"} |
  [Spotify](https://open.spotify.com/user/williamcanin){:target="_blank"} |
- Facebook Error 404 | Instagram Error 404 
+ <span style="color: red;">Facebook Error 404</span> | <span style="color: red;">Instagram Error 404</span>
 
 <!-- *"O tolo não se interessa em aprender, mas só em dar as suas opiniões." [ Provébios 18:2 ]* -->
