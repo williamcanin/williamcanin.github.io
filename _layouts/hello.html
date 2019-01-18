@@ -34,19 +34,19 @@ layout: default
 
     <div class="d-block row">
     <div class="wow fadeInRight intro__terminal">
-      <header class="header" style="background: {{ loadData.website.terminal.border_top }};">
+      <header class="header" style="background: {{ loadData.website.terminal.style.border_top__color }};">
         <div class="btn header__btn header__btn--red"></div>
         <div class="btn header__btn header__btn--yellow"></div>
         <div class="btn header__btn header__btn--green"></div>
         <div class="title">
-          <span class="title__text" style="color: {{ loadData.website.terminal.title_color }};">{{ loadData.website.terminal.user }}@{{ loadData.website.terminal.os }}:/home/{{ loadData.website.terminal.user }}</span>
+          <span class="title__text" style="color: {{ loadData.website.terminal.style.title_color }};">{{ loadData.website.terminal.text.user }}@{{ loadData.website.terminal.text.os }}:/home/{{ loadData.website.terminal.text.user }}</span>
         </div>
       </header>
-      <section class="body" style="background: {{ loadData.website.terminal.background }}; color: {{ loadData.website.terminal.color }};">
+      <section class="body" style="background: {{ loadData.website.terminal.style.background }}; color: {{ loadData.website.terminal.style.color }};">
         {% comment %} ./brief_description.py {% endcomment %}
-        <p>{{ loadData.website.terminal.user }}@{{ loadData.website.terminal.os }}:~$ python brief_description.py</p>
+        <p>{{ loadData.website.terminal.text.user }}@{{ loadData.website.terminal.text.os }}:~$ python brief_description.py</p>
         {{ content }}
-        <p class="body__output"><span>{{ loadData.website.terminal.user }}@{{ loadData.website.terminal.os }}:~$</span>
+        <p class="body__output"><span>{{ loadData.website.terminal.text.user }}@{{ loadData.website.terminal.text.os }}:~$</span>
           <span class="layout_hello__cursor">_</span>
         </p>
       </section>

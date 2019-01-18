@@ -24,7 +24,7 @@ layout: compress
       <div class="row">
 
         {% if page.url == "/"  and site.home.terminal.enable == true %}
-          <div class="p-0 col-lg-3 sidebar sidebar__bg" style="background-color: {{ loadData.website.terminal.home.bg }} !important;">
+          <div class="p-0 col-lg-3 sidebar sidebar__bg" style="background-color: {{ loadData.website.terminal.home.background }} !important;">
         {% else %}
           <div class="p-0 col-lg-3 sidebar sidebar__bg">
         {% endif %}
@@ -32,7 +32,7 @@ layout: compress
         </div>
         
         {% if page.url == "/" and site.home.terminal.enable == true %}
-          <div class="pt-4 pt-lg-0 col-lg-9 border-l-dashed border-r-dashed layout_default__content" style="border-bottom-right-radius: {{ loadData.website.terminal.home.border_radius }} !important;">
+          <div class="pt-4 pt-lg-0 col-lg-9 border-l-dashed border-r-dashed layout_default__content" style="border-bottom-right-radius: {{ loadData.website.terminal.home.border_radius }} !important; background-color: {{ loadData.website.terminal.home.background }} !important;">
         {% else %}
           <div class="pt-4 pt-lg-0 col-lg-9 border-l-dashed border-r-dashed layout_default__content">
         {% endif %}
