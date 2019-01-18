@@ -34,15 +34,15 @@ layout: default
 
     <div class="d-block row">
     <div class="wow fadeInRight intro__terminal">
-      <header class="header">
+      <header class="header" style="background: {{ loadData.website.terminal.border_top }};">
         <div class="btn header__btn header__btn--green"></div>
           <div class="btn header__btn header__btn--yellow"></div>
           <div class="btn header__btn header__btn--red"></div>
           <div class="title">
-            <span class="title__text">{{ loadData.website.terminal.user }}@{{ loadData.website.terminal.os }}:/home/{{ loadData.website.terminal.user }}</span>
+            <span class="title__text" style="color: {{ loadData.website.terminal.title_color }};">{{ loadData.website.terminal.user }}@{{ loadData.website.terminal.os }}:/home/{{ loadData.website.terminal.user }}</span>
           </div>
       </header>
-      <section class="body">
+      <section class="body" style="background: {{ loadData.website.terminal.background }}; color: {{ loadData.website.terminal.color }};">
         {% comment %} ./brief_description.py {% endcomment %}
         <p>{{ loadData.website.terminal.user }}@{{ loadData.website.terminal.os }}:~$ python brief_description.py</p>
         {{ content }}
