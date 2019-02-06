@@ -27,7 +27,6 @@ Mais alguma coisa...? Oh, sim, aqui estão os demais lugares na internet que voc
 <!-- {: .markdown__listhome} -->
  [LinkedIn](https://www.linkedin.com/in/williamcostacanin/){:target="_blank"} |
  [GitHub](https://github.com/williamcanin){:target="_blank"} |
- [Google Plus](https://plus.google.com/+WilliamCanin){:target="_blank"} |
  [VivaOLinux](https://www.vivaolinux.com.br/~willnux){:target="_blank"} |
  [Archlinux - Fórum BR](https://forum.archlinux-br.org/profile.php?id=5539){:target="_blank"} |
  [StackOverflow](https://pt.stackoverflow.com/users/15113/williamcanin?tab=profile){:target="_blank"} |
