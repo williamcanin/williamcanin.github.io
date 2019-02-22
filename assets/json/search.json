@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "Instalando Python automaticamente em qualquer sistema Linux.",
+      "tags"     : "python, tarball, linux",
+      "url"     : "/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/",
+      "date"     : "21/6/2018"
+    } ,
+  
+    {
       "title"    : "Carregando Javascripts para diferentes posts e pages no Jekyll",
       "tags"     : "jekyll, javascripts, liquid",
       "url"     : "/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/",

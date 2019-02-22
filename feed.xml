@@ -19,9 +19,24 @@
     <description>Developer_</description>
     <link>https://williamcanin.me/</link>
     <atom:link href="https://williamcanin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Feb 2019 02:45:19 -0300</pubDate>
-    <lastBuildDate>Mon, 18 Feb 2019 02:45:19 -0300</lastBuildDate>
+    <pubDate>Fri, 22 Feb 2019 01:10:06 -0300</pubDate>
+    <lastBuildDate>Fri, 22 Feb 2019 01:10:06 -0300</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>Instalando Python automaticamente em qualquer sistema Linux.</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Olá :hand:, essa é uma dica rápida para você que deseja instalar o Python :snake: compilado através do código fonte (tarball). Boa leitura.&lt;/p&gt; &lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#instalação&quot; id=&quot;markdown-toc-instalação&quot;&gt;Instalação&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando-script-de-instalação-automática&quot; id=&quot;markdown-toc-criando-script-de-instalação-automática&quot;&gt;Criando script de instalação automática&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#entendendo-o-que-cada-comando-do-script-faz&quot; id=&quot;markdown-toc-entendendo-o-que-cada-comando-do-script-faz&quot;&gt;Entendendo o que cada comando do script faz&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#salvando-o-script-e-executando-o-para-a-instalação-do-python&quot; id=&quot;markdown-toc-salvando-o-script-e-executando-o-para-a-instalação-do-python&quot;&gt;Salvando o script, e executando-o para a instalação do Python&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#desinstalação&quot; id=&quot;markdown-toc-desinstalação&quot;&gt;Desinstalação&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando-script-de-remoção-automática&quot; id=&quot;markdown-toc-criando-script-de-remoção-automática&quot;&gt;Criando script de remoção automática.&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#salvando-o-script-e-executando-o-para-a-remoção-do-python&quot; id=&quot;markdown-toc-salvando-o-script-e-executando-o-para-a-remoção-do-python&quot;&gt;Salvando o script, e executando-o para a remoção do Python&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#conclusão&quot; id=&quot;markdown-toc-conclusão&quot;&gt;Conclusão&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;...</description>
+        <pubDate>Thu, 21 Jun 2018 15:54:14 -0300</pubDate>
+        <link>https://williamcanin.me/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/</guid>
+        
+        <tag>python</tag>
+        
+        <tag>tarball</tag>
+        
+        <tag>linux</tag>
+        
+      </item>
     
       <item>
         <title>Carregando Javascripts para diferentes posts e pages no Jekyll</title>
