@@ -239,7 +239,6 @@ Existe várias formadas de criptografar partições com LUKS. Selecionei 3(três
 > partição apenas para o **/etc** e não criptografar ela. Mas pode te dar
 > trabalho ao fazer isso, então vamos usar a primeira opção mesmo.
 
-
 ## Criptografando a partição "Linux LVM"
 
 Lembra qual é nossa partição de **Linux LVM**? É a **/dev/sda3**. Pois bem, com a nova partição de **Linux LVM** criada, chegou a hora de trabalhar ela. Para iniciarmos a criptografia na nossa partição de **Linux LVM**, usaremos o comando abaixo:
