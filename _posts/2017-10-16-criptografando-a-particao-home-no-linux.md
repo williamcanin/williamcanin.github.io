@@ -2,7 +2,7 @@
 layout: post
 title: "Criptografando a partição HOME no Linux"
 date: 2017-10-16 03:51:44
-tags: ['tag1','tag2','tag3']
+tags: ['crypt','linux','security']
 published: false
 comments: false
 excerpted: |
@@ -17,3 +17,5 @@ script: [post.js]
 ---
 
 <!-- Write from here your post !!! -->
+
+

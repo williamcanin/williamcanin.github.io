@@ -119,7 +119,7 @@ O Python 3.x já dispinibiliza um pacote para criar máquinas virtuais, que é o
 
 #### Instalando o Venv
 
-Para instalar 
+Para instalar
 Como dito acima, o **venv** já foi instalado mais acima desse post.
 
 #### Usando o Venv
@@ -152,7 +152,7 @@ $ deactivate
 #### Instalando o Virtualenv
 
 {% highlight text linenos %}
-$ python -m pip3 install virtualenv --user
+$ python -m pip install virtualenv --user
 {% endhighlight %}
 
 > Nota: Ao expecificar a flag '--user', o módulo irá instalar no direttório do usuário, ou seja,

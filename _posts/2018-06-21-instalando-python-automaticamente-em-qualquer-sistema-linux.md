@@ -97,7 +97,7 @@ printf "\nInstallation complete!\n"
 
 > Linha **23**: Essa linha é opcional, por padrão está comentada, porém, esse comando serve para mostrar quais passos foram feitos e onde foi colocado cada arquivo/pasta da instalação.
 
-> Linha **25**: Printa uma mensagem de "*Installation complete!*"
+> Linha **25**: Essa linha é um mistério, dou um pirulito a quem descobrir para que serve. :D"
 
 ## Salvando o script, e executando-o para a instalação do Python
 
