@@ -88,7 +88,7 @@ content:
 
 ### EXTRA BEGIN - These properties are extra features, such as built-in third-party plugins.
 jektify:
-  enable: false
+  enable: true
   open: true
   toggle:
     enable: true
@@ -106,6 +106,9 @@ jektify:
     enable: false
     text: |
       Sonzera que ouço.
+
+plugins:
+  - jemoji
 
 # Settings for the plugins in the _plugins folder.
 _plugins:
