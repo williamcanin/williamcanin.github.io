@@ -427,7 +427,7 @@ O mesmo devemos fazer para a partição de **Boot**, criando o diretório da mes
 
 {% highlight bash linenos %}
 mkdir /mnt/boot
-mount /dev/sda2 /mnt/boot
+mount /dev/sda1 /mnt/boot
 {% endhighlight %}
 
 Finalizamos aqui a criação das partições, as formatações e as montagens. Agora vamos dar inicio a instalação do sistema base do Archlinux.
