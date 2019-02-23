@@ -110,7 +110,8 @@
 <p>B - Salve o arquivo com o nome de “<strong>pyinstaller.sh</strong>”.</p>
 <p>C - Dê permissão de execução para o script com o comando abaixo:</p>
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>chmod +x pyinstaller.sh</code></pre></figure><p>D - Execute o script com o comando abaixo e aguarde a instalação da última versão estável do <a href="https://www.python.org/" target="_blank">Python</a>:</p>
-<blockquote><p>Nota 1: Você precisa ter privilégio de superusuário (root) ou sudo. Nota 2: Por padrão, a instalação do executável do Python é no diretório **/usr/local/bin/python<version>**, a não ser que seja mudado o PATH não configuração (sudo ./configure).</version></p></blockquote>
+<blockquote><p>Nota 1: Você precisa ter privilégio de superusuário (root) ou sudo.</p></blockquote>
+<blockquote><p>Nota 2: Por padrão, a instalação do executável do Python é no diretório <em>/usr/local/bin/python[version]</em>, a não ser que seja mudado o PATH na configuração (sudo ./configure).</p></blockquote>
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>bash pyinstaller.sh</code></pre></figure><p>Pronto! Se tudo deu certo, a instalação foi concluída. Você pode verificar o executável no diretório <strong>/usr/local/bin</strong>.</p>
 <h1 id="desinstalação">Desinstalação</h1>
 <p>Infelizmente, até o momento o pacote de source code do Python (tarball), não tem uma opção de comando para desinstalar, como por exemplo o comando <strong>make uninstall</strong>, isso porque, você pode ter várias versões do Python instalada através da compilação, e então não tem um desinstalador saber qual é que você queira remover.</p>
