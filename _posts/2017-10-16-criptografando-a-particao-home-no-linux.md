@@ -3,14 +3,14 @@ layout: post
 title: "Criptografando a partição HOME no Linux"
 date: 2017-10-16 03:51:44
 tags: ['crypt','linux','security']
-published: false
+published: true
 comments: true
 excerpted: |
-          Que tal esconder suas coisinhas da /home de possiveis pessoas "espertas"? Siga em frente neste post e descubra.
+          Que tal esconder suas coisinhas da /home de possíveis pessoas "espertas"? Siga em frente neste post e descubra.
 day_quote:
- title: "Put here title quote of the day"
+ title: "A Palavra"
  description: |
-          "Put here your quote of the day"
+          "Não nos casemos de fazer o bem. Pois, se não desanimarmos, chegará o tempo certo em que faremos a colheita." </br> (Gálatas 6:9 NTLH)
 
 # Does not change and does not remove 'script' variable.
 script: [post.js]
@@ -28,7 +28,7 @@ Esse é um post de segurança...é o que todos querem, não é?! hehe Então lá
 
 Todos usuários Linux sabem que o diretório **/home** é onde fica armazenado toda nossa "bancada" de arquivos importantes, ou seja, é onde tudo é salvo, e tudo acontece. Pensando nisto, pensei um fazer um post como proteger a **/home**, o que é muito legal. Então vamos lá.
 
-Mesmo que você coloque uma senha muito difícil de login, você não está seguro de alguem pegar seus arquivos. Se alguem ligar sua máquina com um sistema bootavémem pendrive ou DVD, essa pessoa consegue montar a partição Linux e acessar seus arquivos.
+Mesmo que você coloque uma senha muito difícil de login, você não está seguro de alguem pegar seus arquivos. Se alguém ligar sua máquina com um sistema bootável pendrive ou DVD, essa pessoa consegue montar a partição Linux e acessar seus arquivos.
 
 *Como me protejo disso?*
 
@@ -48,7 +48,7 @@ Os seguintes requisitos baixo precisam existir em sua distribuição Linux:
 
 ## Logar como Root
 
-Para dar continuidade a este tutorial, você precisa estar logar no sistema como ROOT. Se você não conseguir logar como ROOT, você pode fazer logout da sessão (caso esteja com usuário comum) e abrir um novo tty digitando `Ctrl + Alt + F4`, após isso, você faz o login com root. É necessário usar o usuário *root* para realizar as etapas, porque a home do usuário root não fica no **/home** no qual vamos configurar, e sim em **/root**.
+Para dar continuidade a este tutorial, você precisa estar logar no sistema como ROOT. Se você não conseguir logar como ROOT, você pode fazer logout da sessão (caso esteja com usuário comum) e abrir um novo **tty** digitando `Ctrl + Alt + F4`, após isso, você faz o login com root. É necessário usar o usuário *root* para realizar as etapas, porque a home do usuário root não fica no **/home** no qual vamos configurar, e sim em **/root**.
 
 Após logar com root, vamos carregar os módulos de criptografia, qual vamos usar executando no console:
 
@@ -69,7 +69,7 @@ Caso não tenha, você pode estar usando um **HD/SSD** ou até mesmo um **pendri
 
 ## Listando nossas partições
 
-Dê o comando abaixo para listar nossas partições e identificar nossa partição /home atual:
+Dê o comando abaixo para listar nossas partições e identificar nossa partição **/home** atual:
 
 {% highlight bash linenos %}
 lsblk -f /dev/sda
@@ -77,11 +77,12 @@ lsblk -f /dev/sda
 
 ## Criptografando a partição
 
-Vamos imaginar que nossa partição **/home** seja a **/dev/sda2**, com isso vamos criptografar a mesma com criptografia LUKS através do **cryptsetup** da seguinte maneira:
+Vamos imaginar que nossa partição **/home** seja a **/dev/sda2**, com isso vamos desmontar a mesma e logo em seguida criptografar através do **cryptsetup** da seguinte maneira:
 
 > NOTA: LEMBRE-SE DE TER FEITO O BACKUP DE TODA SUA /home POIS ELA SERÁ DESTRUÍDA AGORA.
 
 {% highlight bash linenos %}
+umount /home
 cryptsetup -y -v luksFormat -c aes-xts-plain64 -s 512 /dev/sda2
 {% endhighlight %}
 
@@ -105,11 +106,11 @@ cryptsetup luksOpen /dev/sda2 home
 
 **IMPORTANTE**: Observe que no final do comando tem a palavra **home** (Não necessáriamente precisa ser **home**, você pode colocar outro nome).
 
-Ao fazer um **open** na partição criptografada, criará um "ponteiro" para nossa **home** no diretório **/dev/mapper**, ou seja, será encontrado assim: **/dev/mapper/home**. Porem, esse ponteiro **/dev/mapper/home** será excluido após desmontarmos essa partição ou quando desligar/reiniciar a máquina, para essas configurações se manter usaremos 2(dois) arquivos para isso, onde veremos mais a seguinte, enquanto isso vamos seguir passo por passo.
+Ao fazer um **open** na partição criptografada, criará um "ponteiro" para nossa **home** no diretório **/dev/mapper**, ou seja, será encontrado assim: **/dev/mapper/home**. Porem, esse ponteiro **/dev/mapper/home** será excluído após desmontarmos essa partição ou quando desligar/reiniciar a máquina, para essas configurações se manter usaremos 2(dois) arquivos para isso, onde veremos mais a seguinte, enquanto isso vamos seguir passo por passo.
 
 *A senha que você colocou para criptografar irá ser requerida nesse momento, então informe-a para abrir nossa partição criptografada.*
 
-## Formatando a pratição criptografada
+## Formatando a partição criptografada
 
 Com nossa partição criptografada já aberta, precisamos formatar a sua montagem (**/dev/mapper/home**) para o tipo ext4. Para isso faremos:
 
@@ -125,7 +126,7 @@ Agora, vamos montar essa partição formatada e fazer a restauração do nosso b
 mkdir -p /mnt/home
 mount -t ext4 /dev/mapper/home /mnt/home
 cp -rf /opt/backup/home/* /mnt/home # Essa linha irá restaurar seu backup.
-chown usuário -R /mnt/home/usuário
+chown usuário:usuário -R /mnt/home/usuário
 chmod 770 -R /mnt/home/usuário
 {% endhighlight %}
 
@@ -143,5 +144,96 @@ rm -rf /mnt/home
 {% endhighlight %}
 
 # Criando arquivos para montagem automática
+
+Como foi mencionado acima, a partição que abrir com o cryptsetup **/dev/mapper/home** ela não fica permanente, então precisamos criar ou editar 2 (dois) arquivos no **/etc**.
+
+## Crypttab
+
+O arquivo **/etc/crypttab** é responsável por informar nosso sistema que existe um dispositivo criptografado. Caso ele não exista crie e adiciona as seguintes linhas:
+
+{% highlight bash linenos %}
+# <target name>	<source device>		<key file>	<options>
+home UUID=00000000-0000-0000-0000-0000000000 none discard
+{% endhighlight %}
+
+O número de **UID** que está tudo zerado, coloquei para ilustrar. Esse número é o **UID**  que você terá que colocar no **/etc/crypttab** da partição criptografada. Porém, antes disso dê o comando abaixo para lhe retornar informações da partição criptografada e você saber o **UID** da mesma:
+
+{% highlight bash linenos %}
+lsblk -f | grep "cryp"
+{% endhighlight %}
+
+Vai lhe retornar um número extenso, é este que você tem que colocar. Por exemplo, a saída do comando em minha máquina foi essa:
+
+{% highlight bash linenos %}
+william at ubuntu in folder ~  ○
+ ⇨ lsblk -f | grep "cryp"
+  └─linux-home    crypto_LUKS                        824049e5-d6a1-4e91-a1fd-682456b6b500
+
+  william at ubuntu in folder ~  ○
+ ⇨
+ {% endhighlight %}
+
+Com isso meu arquivo **/etc/crypttab** deveria ficar assim:
+
+{% highlight bash linenos %}
+# <target name>	<source device>		<key file>	<options>
+home UUID=824049e5-d6a1-4e91-a1fd-682456b6b500 none discard
+{% endhighlight %}
+
+Pronto! Terminamos toda configuração do arquivo **/etc/crypttab**.
+
+## Fstab
+
+O arquivo **/etc/fstab** é responsável por carregar todo dispositivo na inicialização de nossa máquina. Ao criamos (ou editarmos) o arquivo **/etc/crypttab**, precisamos informar o mesmo no arquivo **/etc/fstab** para que nossa máquina reconheça que existe um dispositivo criptografado a ser lançado na inicialização da máquina.
+
+Para isso, vamos adicionar no **/etc/fstab** a seguinte linha abaixo:
+
+{% highlight bash linenos %}
+/dev/mapper/home /home ext4 rw,relatime,data=ordered 0 2
+{% endhighlight %}
+
+Feito, as configurações do arquivo **/etc/fstab** foram concluídas.
+
+# Colocando partição para funcionar
+
+Terminamos aqui toda configuração da partição **/home** criptografada e dos arquivos que a mesma partição necessita. Porém, antes de reiniciar, execute os comandos abaixo com o **grub-mkconfig** (ou *grub2-mkconfig* dependendo da distro que você usa) para criar novamente nossa imagem de boot:
+
+{% highlight bash linenos %}
+grub-mkconfig -o /boot/grub/grub.cfg && grub-install /dev/sda
+{% endhighlight %}
+
+Agora, basta você reiniciar sua máquina, e durante o boot, antes de montar sua **/home**, o sistema irá pedir a senha para descriptografar a **/home** e montar a mesma.
+
+# Archlinux e derivados
+
+Essas configurações são válidas para a maiorias das distribuições Linux, porem, se você usa [Archlinux](https://www.archlinux.org/){:target="_blank"} ou derivados, você precisa fazer algumas configurações a mais no arquivo **/etc/mkinitcpio.conf** e **/etc/default/grub**.
+
+## Arquivo /etc/mkinitcpio.conf
+
+No arquivo **/etc/mkinitcpio.conf**, você terá que adicionar em **HOOKS** a palavra **encrypt**. Se usar [Plymouth](https://aur.archlinux.org/packages/plymouth/){:target="_blank"}, você deve colocar **plymouth-encrypt**.
+
+Agora você precisa gerar uma imagem nova do **mkinicipo** com o comando abaixo:
+
+{% highlight bash linenos %}
+mkinitcpio -p linux
+{% endhighlight %}
+
+## Arquivo /etc/default/grub
+
+No arquivo **/etc/default/grub**, você deve deixar o **GRUB_CMDLINE_LINUX** da seguinte maneira:
+
+{% highlight bash linenos %}
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:home"
+{% endhighlight %}
+
+Vamos refazer a imagem de boot e instalar o grub com o comando:
+
+{% highlight bash linenos %}
+grub-mkconfig -o /boot/grub/grub.cfg && grub-install /dev/sda
+{% endhighlight %}
+
+# Conclusão
+
+Esse foi um tutorial bem básico de como deixar nossa **/home** criptografada no Linux. É de certo que alguma distribuição Linux pode ter suas particularidades e você tem que configurar algo a mais na mesma, porem o principio parte dessa lógica desse tutorial. Espero que você goste e principalmente que suas dúvidas foram eliminadas, mas caso não foi, deixe aqui um comentário informando suas dúvidas. Abraço.
 
 {% jektify spotify/track/5YaLFRpqpUzgLLDcukNn0H/dark %}
