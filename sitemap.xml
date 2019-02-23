@@ -11,6 +11,15 @@
     </url>
   
     <url>
+      <loc>https://williamcanin.me/blog/criptografando-a-particao-home-no-linux/</loc>
+      
+        <lastmod>2017-10-16T01:51:44-02:00</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  
+    <url>
       <loc>https://williamcanin.me/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/</loc>
       
         <lastmod>2017-10-09T15:31:36-03:00</lastmod>
@@ -183,6 +192,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
        </url>
+    
+  
+    
+  
     
   
     

@@ -19,8 +19,8 @@
     <description>Developer_</description>
     <link>https://williamcanin.me/</link>
     <atom:link href="https://williamcanin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 Feb 2019 00:36:34 -0300</pubDate>
-    <lastBuildDate>Sat, 23 Feb 2019 00:36:34 -0300</lastBuildDate>
+    <pubDate>Sat, 23 Feb 2019 02:20:14 -0300</pubDate>
+    <lastBuildDate>Sat, 23 Feb 2019 02:20:14 -0300</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -35,6 +35,21 @@
         <tag>tarball</tag>
         
         <tag>linux</tag>
+        
+      </item>
+    
+      <item>
+        <title>Criptografando a partição HOME no Linux</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Olá para você pessoa, como vai? Eu vou bem graças a Deus e obrigado por perguntar mentalmente hehe. Esse é um post de segurança…é o que todos querem, não é?! hehe Então lá vai…&lt;/p&gt; &lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#requisitos&quot; id=&quot;markdown-toc-requisitos&quot;&gt;Requisitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#preparando-a-partição&quot; id=&quot;markdown-toc-preparando-a-partição&quot;&gt;Preparando a partição&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#logar-como-root&quot; id=&quot;markdown-toc-logar-como-root&quot;&gt;Logar como Root&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#fazendo-backup-da-nossa-home-atual&quot; id=&quot;markdown-toc-fazendo-backup-da-nossa-home-atual&quot;&gt;Fazendo backup da nossa /home atual&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#listando-nossas-partições&quot; id=&quot;markdown-toc-listando-nossas-partições&quot;&gt;Listando nossas partições&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criptografando-a-partição&quot; id=&quot;markdown-toc-criptografando-a-partição&quot;&gt;Criptografando a partição&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#abrindo-partição-criptografada&quot; id=&quot;markdown-toc-abrindo-partição-criptografada&quot;&gt;Abrindo partição criptografada&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#formatando-a-partição-criptografada&quot; id=&quot;markdown-toc-formatando-a-partição-criptografada&quot;&gt;Formatando a partição criptografada&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#montando-a-partição-e-restaurando-backup&quot; id=&quot;markdown-toc-montando-a-partição-e-restaurando-backup&quot;&gt;Montando a partição e restaurando backup&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#fechando-nossa-partição-criptografada&quot;...</description>
+        <pubDate>Mon, 16 Oct 2017 01:51:44 -0200</pubDate>
+        <link>https://williamcanin.me/blog/criptografando-a-particao-home-no-linux/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/criptografando-a-particao-home-no-linux/</guid>
+        
+        <tag>crypt</tag>
+        
+        <tag>linux</tag>
+        
+        <tag>security</tag>
         
       </item>
     

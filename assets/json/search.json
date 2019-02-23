@@ -8,6 +8,13 @@
     } ,
   
     {
+      "title"    : "Criptografando a partição HOME no Linux",
+      "tags"     : "crypt, linux, security",
+      "url"     : "/blog/criptografando-a-particao-home-no-linux/",
+      "date"     : "16/10/2017"
+    } ,
+  
+    {
       "title"    : "Carregando Javascripts para diferentes posts e pages no Jekyll",
       "tags"     : "jekyll, javascripts, liquid",
       "url"     : "/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/",
