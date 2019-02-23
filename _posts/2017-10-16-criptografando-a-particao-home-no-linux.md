@@ -10,7 +10,7 @@ excerpted: |
 day_quote:
  title: "A Palavra"
  description: |
-          "Não nos casemos de fazer o bem. Pois, se não desanimarmos, chegará o tempo certo em que faremos a colheita." </br> (Gálatas 6:9 NTLH)
+          "Não nos cansemos de fazer o bem. Pois, se não desanimarmos, chegará o tempo certo em que faremos a colheita." </br> (Gálatas 6:9 NTLH)
 
 # Does not change and does not remove 'script' variable.
 script: [post.js]
