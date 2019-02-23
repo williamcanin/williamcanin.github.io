@@ -112,7 +112,8 @@ chmod +x pyinstaller.sh
 D - Execute o script com o comando abaixo e aguarde a instalação da última versão estável do [Python](https://www.python.org/){:target="_blank"}:
 
 > Nota 1: Você precisa ter privilégio de superusuário (root) ou sudo.
-> Nota 2: Por padrão, a instalação do executável do Python é no diretório **/usr/local/bin/python<version>**, a não ser que seja mudado o PATH não configuração (sudo ./configure).
+
+> Nota 2: Por padrão, a instalação do executável do Python é no diretório */usr/local/bin/python[version]*, a não ser que seja mudado o PATH na configuração (sudo ./configure).
 
 {% highlight bash linenos %}
 bash pyinstaller.sh
