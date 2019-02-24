@@ -55,14 +55,15 @@
 <li><a href="#conclus%C3%A3o" id="markdown-toc-conclusão">Conclusão</a></li>
 </ul>
 <h1 id="introdução">Introdução</h1>
-<p>Muitas vezes precisamos instalar um determinado programa para sistemas Linux e não temos o pacote de acordo com nossa distribuição, como por exemplo, distribuições derivadas do Debian usam pacotes .deb. Como isso, várias empresas de determinados softwares nos disponibiliza os pacotes <code>tarball</code>, onde podemos compilar o programa e assim instala-lo, ou seja, esses pacotes é o <code>source code</code> (código fonte) do software a ser compilado.</p>
-<p>Geralmente, o padrão para a instalação de pacotes tarball, são apenas 3 comandos:</p>
+<p>Muitas vezes precisamos instalar um determinado programa para sistemas Linux e não temos o pacote de acordo com nossa distribuição. Como isso, várias empresas de determinados softwares nos disponibiliza os pacotes <code>tarball</code>, onde podemos compilar o programa e assim instala-lo, ou seja, esses pacotes é o <code>source code</code> (código fonte) do software genérico que ser a qualquer distribuição Linux.</p>
+<p>Existe dois tipos de instalação genérica para Linux, programas com com a extensão .run, onde apenas executamos o mesmo para que a instalação comece e programas de código fonte para compilarmos e instalarmos. A última opção é a que vamos trabalhar nesse post.</p>
+<p>Geralmente, o padrão para a instalação de pacotes genéricos (tarball), são apenas 3 comandos:</p>
 <ul>
 <li>O de configurar;</li>
 <li>O de compilar;</li>
 <li>O de instalar;</li>
 </ul>
-<p>Veremos abaixo, como instalar a ultima versão estável do <a href="https://www.python.org/" target="_blank">Python</a> automaticamente com um script shell.</p>
+<p>Veremos abaixo, como instalar a ultima versão estável do <a href="https://www.python.org/" target="_blank">Python</a> automaticamente com um script shell, usando pacote tarball.</p>
 <h1 id="instalação">Instalação</h1>
 <h2 id="criando-script-de-instalação-automática">Criando script de instalação automática</h2>
 <p>A - Abra seu editor de texto preferido e acrescente esses comando abaixo:</p>
