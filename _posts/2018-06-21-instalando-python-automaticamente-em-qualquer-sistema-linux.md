@@ -196,7 +196,7 @@ bash pyuninstaller.sh
 
 # Conclusão
 
-Esse tutorial pode ficar obsoleto com o tempo, então, lembre-se de ler o arquivo de **README.rst** que vem junto no pacote **tar.xz**, nele contém informações mais detalhadas de como instalar (ou até mesmo remover) o *Python* de uma maneira bem completa.
+Esse tutorial pode ficar obsoleto com o tempo, então, lembre-se de ler o arquivo de **README.rst** que vem junto no pacote **tar.xz** no Python, nele contém informações mais detalhadas de como instalar (ou até mesmo remover) o *Python* de uma maneira bem completa.
 
 Eu fico por aqui, abraço pra você. :smile:
 
