@@ -87,9 +87,9 @@ printf "\nInstallation complete!\n"
 
 > Linha **11**: Descompacta o pacote *tar.xz* para o diretório **/opt**.
 
-> Linha **13**: Dá permissão 775 para pasta **Python-<VERSION>** e suas subpastas e arquivos.
+> Linha **13**: Dá permissão 775 para pasta **Python-[VERSION]** e suas subpastas e arquivos.
 
-> Linha **15**: Entrando no diretório **/opt/Python-<VERSION>** para realizar a *configuração*, *compilação* e *instalação* do Python.
+> Linha **15**: Entrando no diretório **/opt/Python-[VERSION]** para realizar a *configuração*, *compilação* e *instalação* do Python.
 
 > Linha **17**: Configurando o Python para compilação.
 
