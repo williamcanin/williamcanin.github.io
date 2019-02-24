@@ -26,15 +26,17 @@ Olá :hand:, essa é uma dica rápida para você que deseja instalar o Python :s
 
 # Introdução
 
-Muitas vezes precisamos instalar um determinado programa para sistemas Linux e não temos o pacote de acordo com nossa distribuição, como por exemplo, distribuições derivadas do Debian usam pacotes .deb. Como isso, várias empresas de determinados softwares nos disponibiliza os pacotes `tarball`, onde podemos compilar o programa e assim instala-lo, ou seja, esses pacotes é o `source code` (código fonte) do software a ser compilado.
+Muitas vezes precisamos instalar um determinado programa para sistemas Linux e não temos o pacote de acordo com nossa distribuição. Como isso, várias empresas de determinados softwares nos disponibiliza os pacotes `tarball`, onde podemos compilar o programa e assim instala-lo, ou seja, esses pacotes é o `source code` (código fonte) do software genérico que ser a qualquer distribuição Linux.
 
-Geralmente, o padrão para a instalação de pacotes tarball, são apenas 3 comandos: 
+Existe dois tipos de instalação genérica para Linux, programas com com a extensão .run, onde apenas executamos o mesmo para que a instalação comece e programas de código fonte para compilarmos e instalarmos. A última opção é a que vamos trabalhar nesse post.
+
+Geralmente, o padrão para a instalação de pacotes genéricos (tarball), são apenas 3 comandos: 
 
 * O de configurar;
 * O de compilar;
 * O de instalar;
 
-Veremos abaixo, como instalar a ultima versão estável do [Python](https://www.python.org/){:target="_blank"} automaticamente com um script shell.
+Veremos abaixo, como instalar a ultima versão estável do [Python](https://www.python.org/){:target="_blank"} automaticamente com um script shell, usando pacote tarball.
 
 # Instalação
 
