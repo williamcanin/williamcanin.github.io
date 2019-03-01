@@ -72,7 +72,7 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 * *Curso Online - Introdução à Ciência da Computação com Python -  [Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"} - Concluído em 03/2019*
 
-* *Curso Online - Introdução à Ciência da Computação com Python - [Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"} Cursando*
+* *Curso Online - Introdução à Ciência da Computação com Python - [Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"} - Cursando*
 
 
 
