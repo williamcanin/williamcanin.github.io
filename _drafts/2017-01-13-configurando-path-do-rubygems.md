@@ -78,9 +78,9 @@ william
      └── specs  
 {% endhighlight %}  
 
-Repare que a gem **bundler** é instalado no diretório **~/.gem**, o que é conformidável, porém, algo que fica um pouco incomodo, é a criação da pasta **bin** na raiz do usuário para armazenar os executaveis das gems. Isso aconteceu algumas vezes comigo, não sei dizer se é comum esse ocorrido, porém, sei que é realmente incomodativo, pois o diretório **~/bin** por ser usado para outros eventuais executáveis, como por exemplo, executáveis **shell**.
+Repare que a gem **bundler** é instalado no diretório **~/.gem**, o que é conformidável, porém, algo que fica um pouco incomodo, é a criação da pasta **bin** na raiz do usuário para armazenar os executaveis das gems. Isso é realmente incomodativo, pois o diretório **~/bin** por ser usado para outros eventuais executáveis, como por exemplo, executáveis **shell**.
 
-Não queremos que isso aconteça! Então vamos desinstalar a gem **bundler** e remover a estrutura de pastas onde foi instalado a *gem*:
+Não queremos essa estrutura! Então vamos desinstalar a gem **bundler** e remover a estrutura de pastas onde foi instalado a *gem*:
 
 > Note: Digite "Y" quando pedir para desinstalar o **bundler**.
 
@@ -89,7 +89,6 @@ $ gem uninstall bundler
 $ rm -rf ~/.gem ~/bin
 {% endhighlight %}
 
-> NOTA: Se for remover o diretório **~/bin**, verifique se não tem outros scripts que você criou no mesmo.
 
 ## Variáveis de ambiente para RubyGems
 
@@ -125,7 +124,13 @@ Para forçar os executáveis das gems, a serem instalados na nova configuração
 
 {% highlight shell linenos %}
 cat << EOF > ~/.gemrc
-gem: --user-install --no-document
+---
+gem:
+  --bindir $GEM_BIN
+  --no-ri --no-rdoc
+gemhome: $GEM_HOME
+gempath:
+- $GEM_PATH
 :benchmark: false
 :update_sources: true
 :verbose: true
@@ -136,6 +141,8 @@ gem: --user-install --no-document
 :bulk_threshold: 1000
 EOF
 {% endhighlight %}
+
+O **--bindir** será o cara responsável por mudar o diretório dos executáveis das gems de "**~/bin**" para o valor que está na variáveis de ambiente `$GEM_BIN`, ou seja, o diretório será: "/home/USER/.gem/ruby/bin". O `$GEM_PATH` e `$GEM_HOME` vão ter o mesmo valor da configuração padrão "Gem Environment" do RubyGems.
 
 Com o novo ambiente RubyGems configurado, vamos instalar novamente o **bundler**:
 
