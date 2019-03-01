@@ -19,9 +19,24 @@
     <description>Developer_</description>
     <link>https://williamcanin.me/</link>
     <atom:link href="https://williamcanin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Mar 2019 05:29:46 -0300</pubDate>
-    <lastBuildDate>Fri, 01 Mar 2019 05:29:46 -0300</lastBuildDate>
+    <pubDate>Fri, 01 Mar 2019 19:40:24 -0300</pubDate>
+    <lastBuildDate>Fri, 01 Mar 2019 19:40:24 -0300</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Transações no banco de dados através do ShellScript</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Olá pessoas, vamos falar de shellscript, que é algo que gosto muito. :)&lt;/p&gt; &lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#postgresql&quot; id=&quot;markdown-toc-postgresql&quot;&gt;PostgreSQL&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#preparando-ambiente&quot; id=&quot;markdown-toc-preparando-ambiente&quot;&gt;Preparando ambiente&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando-um-database-no-postgresql&quot; id=&quot;markdown-toc-criando-um-database-no-postgresql&quot;&gt;Criando um DATABASE no PostgreSQL&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#iniciando-projeto&quot; id=&quot;markdown-toc-iniciando-projeto&quot;&gt;Iniciando projeto&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-pasta-de-ambiente-do-projeto&quot; id=&quot;markdown-toc-criando-pasta-de-ambiente-do-projeto&quot;&gt;Criando pasta de ambiente do projeto&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-arquivo-de-configuração&quot; id=&quot;markdown-toc-criando-arquivo-de-configuração&quot;&gt;Criando arquivo de configuração&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-bibliotecas-para-nosso-projeto&quot; id=&quot;markdown-toc-criando-bibliotecas-para-nosso-projeto&quot;&gt;Criando bibliotecas para nosso projeto&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#biblioteca-create_databasebash&quot; id=&quot;markdown-toc-biblioteca-create_databasebash&quot;&gt;Biblioteca &lt;strong&gt;create_database.bash&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#biblioteca-create_tablebash&quot; id=&quot;markdown-toc-biblioteca-create_tablebash&quot;&gt;Biblioteca &lt;strong&gt;create_table.bash&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-o-programa-principal&quot; id=&quot;markdown-toc-criando-o-programa-principal&quot;&gt;Criando o programa principal&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#estrutura-do-projeto-para-postgresql&quot; id=&quot;markdown-toc-estrutura-do-projeto-para-postgresql&quot;&gt;Estrutura do projeto para PostgreSQL&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#executando-nosso-programa&quot; id=&quot;markdown-toc-executando-nosso-programa&quot;&gt;Executando nosso...</description>
+        <pubDate>Tue, 28 Aug 2018 02:23:33 -0300</pubDate>
+        <link>https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/</guid>
+        
+        <tag>shell</tag>
+        
+        <tag>postgresql</tag>
+        
+        <tag>mysql</tag>
+        
+      </item>
     
       <item>
         <title>Instalando Python automaticamente em qualquer sistema Linux.</title>

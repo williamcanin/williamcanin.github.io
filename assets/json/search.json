@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "Transações no banco de dados através do ShellScript",
+      "tags"     : "shell, postgresql, mysql",
+      "url"     : "/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/",
+      "date"     : "28/8/2018"
+    } ,
+  
+    {
       "title"    : "Instalando Python automaticamente em qualquer sistema Linux.",
       "tags"     : "python, tarball, linux",
       "url"     : "/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/",
