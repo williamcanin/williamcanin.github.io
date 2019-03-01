@@ -70,7 +70,7 @@ Tenho uma [página na internet]({{ site.url }}{{ site.baseurl }}){:target="_blan
 
 #### [USP - Universidade de São Paulo](https://www5.usp.br/){:target="_blank"}
 
-* *Curso Online - Introdução à Ciência da Computação com Python - Cursando Parte [1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"} & [2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"}*
+* *Curso Online - Introdução à Ciência da Computação com Python -  [ Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"} - Concluído em 03/2019 [Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"} Cursando*
 
 #### [Udemy - Cursos Online](https://udemy.com/){:target="_blank"}
 
