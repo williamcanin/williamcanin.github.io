@@ -13,4 +13,8 @@
       padding-bottom: 5px;
     }
   }
+  &__badge{
+    background-color: $badge-resume-bg;
+    color: $badge-resume-color;
+  }
 }

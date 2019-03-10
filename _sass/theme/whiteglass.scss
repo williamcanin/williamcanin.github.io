@@ -10,7 +10,7 @@ $highlight__bordercolor: #d0d0d0;
 $highlight__color: #373737;
 $layout_postlist__bg: $bg__full;
 $dashed_color: $bg__full;
-$color__links: #b1333d;
+$color__links: #353535; // Default: #b1333d;
 $sidebar__bg: $bg__full;
 $sidebar__title-color: $color-text;
 $sidebar__img-bg: #FFF;
@@ -22,10 +22,10 @@ $layout-search__input-color: #000;
 $btn-typing__color: #FFF;
 
 // Fonts
-$font-weight__all-links: bold; 
+$font-weight__all-links: 400; 
 $font-size__content: 17px;
 $font-size__sidebar-menu: 20px;
-$font-weight__sidebar-menu: bold;
+$font-weight__sidebar-menu: 400;
 $font-size__layout_postlist-link: 25px;
 $font-size__layout_resume_content: 17px;
 $font-weight__layout_postlist-link: bold;
@@ -70,3 +70,17 @@ $gist-function-color: #569CD6;
 $gist-function-name-color: #FFFFFF;
 $gist-string-color: #D69D85;
 $gist-variables-color: #a4c9ef;
+
+// Terminal home (if enabled)
+$terminal_is_enable: "yes"; // yes / no
+$terminal-light-around: #FFF;
+$terminal-text-color: #38f020;
+$terminal-link-color: #9fff92;
+$terminal-font-font-weight: 400;
+$terminal-header-bg: #1f1f1f;
+$terminal-content-bg: #1f1f1f;
+$terminal-title-color: #FFF;
+
+// Resume
+$badge-resume-bg: #cecece;
+$badge-resume-color: #1f1f1f;

@@ -28,7 +28,7 @@ module Jekyll
         skill = input_split[0].strip
         fsize = input_split[1].strip
         # Write the output HTML string
-        %(<span style="font-size: #{fsize};" class="badge badge-secondary badge-plugin">#{skill}</span>)
+        %(<span style="font-size: #{fsize};" class="badge badge-secondary badge-plugin layout_resume__badge">#{skill}</span>)
       end
       def split_params(params)
         params.split("|")

@@ -22,7 +22,7 @@ $layout-search__input-color: #FFF;
 $btn-typing__color: #000;
 
 // Fonts
-$font-weight__all-links: lighter; 
+$font-weight__all-links: bold; 
 $font-size__content: 17px;
 $font-size__sidebar-menu: 20px;
 $font-weight__sidebar-menu: bold;
@@ -70,3 +70,17 @@ $gist-function-color: #569CD6;
 $gist-function-name-color: #FFFFFF;
 $gist-string-color: #D69D85;
 $gist-variables-color: #a4c9ef;
+
+// Terminal home (if enabled)
+$terminal_is_enable: "yes"; // yes / no
+$terminal-light-around: #2a2a2a;
+$terminal-text-color: #3bff1a;
+$terminal-link-color: #ffe609;
+$terminal-font-font-weight: 400;
+$terminal-header-bg: #000;
+$terminal-content-bg: #000;
+$terminal-title-color: #FFF;
+
+// Resume
+$badge-resume-bg: #5c5c5c;
+$badge-resume-color: #ffffff;

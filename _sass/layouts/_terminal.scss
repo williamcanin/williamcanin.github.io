@@ -14,7 +14,7 @@
 
         /* .intro__terminal .header */
         .header{
-        background: #1e1e1f;
+        background: $terminal-header-bg;
         border-radius: 7px 7px 0 0;
         padding-left: 10px;
         color: #fff;
@@ -58,6 +58,7 @@
         /* .intro__terminal .title__text */
         &__text{
             margin-left: -56px;
+            color: $terminal-title-color;
         } /* END -.intro__terminal .title__text */
 
         } /* END - .intro__terminal .titl */
@@ -65,9 +66,9 @@
 
         /* .intro__terminal .body */
         .body{
-        color: white;
+        color: $terminal-text-color;
         font-size: 15pt;
-        background: rgba(30, 30, 31, 0.96);
+        background: $terminal-content-bg;
         @media (max-width: 1200px) {
             background: rgba(30, 30, 31, 1);
         }
@@ -75,11 +76,15 @@
         box-sizing: border-box;
         width: 100%;
         overflow: auto;
+        font-weight: $terminal-font-font-weight;
         min-height: 250px;
         font-family: 'Inconsolata', monospace;
         border-radius: 0 0 5px 5px;
         p{
             font-size: 12pt;
+            a{
+                color: $terminal-link-color;
+            }
         }
 
         /* .intro__terminal .body__output */

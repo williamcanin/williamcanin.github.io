@@ -34,15 +34,15 @@ layout: default
 
     <div class="d-block row">
     <div class="wow fadeInRight intro__terminal">
-      <header class="header" style="background: {{ loadData.website.terminal.style.border_top__color }};">
-        <div class="btn header__btn header__btn--red"></div>
-        <div class="btn header__btn header__btn--yellow"></div>
-        <div class="btn header__btn header__btn--green"></div>
+      <header class="header">
+        <div class="btn header__btn header__btn--red" style="cursor: pointer;"></div>
+        <div class="btn header__btn header__btn--yellow" style="cursor: pointer;"></div>
+        <div class="btn header__btn header__btn--green" style="cursor: pointer;"></div>
         <div class="title">
-          <span class="title__text" style="color: {{ loadData.website.terminal.style.title_color }};">{{ loadData.website.terminal.text.user }}@{{ loadData.website.terminal.text.os }}:/home/{{ loadData.website.terminal.text.user }}</span>
+          <span class="title__text">{{ loadData.website.terminal.text.user }}@{{ loadData.website.terminal.text.os }}:/home/{{ loadData.website.terminal.text.user }}</span>
         </div>
       </header>
-      <section class="body" style="background: {{ loadData.website.terminal.style.background }}; color: {{ loadData.website.terminal.style.color }};">
+      <section class="body">
         {% comment %} ./brief_description.py {% endcomment %}
         <p>{{ loadData.website.terminal.text.user }}@{{ loadData.website.terminal.text.os }}:~$ python brief_description.py</p>
         {{ content }}
