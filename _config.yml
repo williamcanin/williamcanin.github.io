@@ -31,30 +31,30 @@ sidebar:
   avatar:
     enable: true
   icons:
-    enable: false
+    enable: true
   socials:
     enable: false
 content:
   icons:
-    enable: false
+    enable: true
   postlist:
     date:
-      enable: false
+      enable: true
     expected:
-      enable: false
+      enable: true
     tags:
-      enable: false
+      enable: true
     comments:
-      enable: false
+      enable: true
   tagpost:
     date:
-      enable: false
+      enable: true
     expected:
-      enable: false
+      enable: true
     tags:
-      enable: false
+      enable: true
     comments:
-      enable: false
+      enable: true
   post:
     author:
       enable: true
