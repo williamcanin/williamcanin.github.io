@@ -40,13 +40,14 @@
 
   &__img{
     img{
-      @if $sidebar__img-rounded == "circle" {
-        border-radius: 50%;
-      }
       -webkit-box-shadow: $sidebar__img-shadow;
       -moz-box-shadow: $sidebar__img-shadow;
       box-shadow: $sidebar__img-shadow;        
-      background-color: $sidebar__img-bg;   
+      background-color: $sidebar__img-bg;
+      @if $sidebar__img-rounded == "circle" {
+        border-radius: 50%;
+	padding: 7px;
+      }
     }
   }
 

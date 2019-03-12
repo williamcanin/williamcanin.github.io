@@ -13,7 +13,8 @@ $dashed_color: $bg__full;
 $color__links: #353535; // Default: #b1333d;
 $sidebar__bg: $bg__full;
 $sidebar__title-color: $color-text;
-$sidebar__img-bg: #FFF;
+$sidebar__img-bg: #333;
+$sidebar__img-rounded: "circle"; // Options: circle | square
 $blockquote__bg: #f0f0f0;
 $footer__bg: $bg__full;
 $footer__bordertop: 0.1rem solid $bg__full;
@@ -21,8 +22,11 @@ $layout-search__input-bgcolor: #FFF;
 $layout-search__input-color: #000;
 $btn-typing__color: #FFF;
 
+ 
+
+
 // Fonts
-$font-weight__all-links: 400; 
+$font-weight__all-links: bold; 
 $font-size__content: 17px;
 $font-size__sidebar-menu: 20px;
 $font-weight__sidebar-menu: 400;
@@ -31,10 +35,10 @@ $font-size__layout_resume_content: 17px;
 $font-weight__layout_postlist-link: bold;
 
 // Hover / decoration
-$sidebar__menu-hover-color: inherit;
+$sidebar__menu-hover-color: #000;
 $sidebar__menu-decoration: underline;
 $sidebar__menu-hover-decoration: underline;
-$sidebar__img-shadow: none;
+$sidebar__img-shadow: 0px 0px 20px rgba(0,0,0,0.2);
 $layout_postlist__hover-title-color: $color__links;
 $layout_postlist__title-decoration: underline;
 $layout_postlist__hover-title-decoration: underline;
