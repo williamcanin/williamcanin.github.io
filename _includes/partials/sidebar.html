@@ -21,29 +21,11 @@
             </div>
           </div>
         {% else %}
-          <a class="sidebar__img" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+          <a class="sidebar__img sidebar__img-noflip" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
             <img class="img-fluid mx-auto d-block border-dashed" src="{{ '/assets/images/avatar' | prepend: site.baseurl }}/{{ loadData.website.sidebar.avatar }}" width="165" height="165" alt="Avatar">
           </a>
         {% endif %}
 
-{% comment %} 
-        <div class="flip">
-          <div class="card"> 
-            <div class="face front"> 
-              <div class="sidebar__img inner">
-                <img class="img-fluid mx-auto d-block border-dashed" src="{{ '/assets/images/avatar' | prepend: site.baseurl }}/{{ loadData.website.sidebar.avatar }}" width="165" height="165" alt="Avatar">
-              </div>
-            </div>
-            <div class="face back"> 
-              <div class="sidebar__img inner text-center">
-                <img class="img-fluid mx-auto d-block border-dashed" src="{{ '/assets/images/avatar' | prepend: site.baseurl }}/avatar.jpg" width="165" height="165" alt="Avatar">
-              </div>
-            </div>
-          </div>
-        </div> {% endcomment %}
-
-
-      
       </div>
       {% endif %}
 

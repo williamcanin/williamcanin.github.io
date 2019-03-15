@@ -37,6 +37,14 @@
       text-align: center;
     }
   }
+
+  &__img{
+    &-noflip{
+      img{
+        padding: 7px;
+      }
+    }
+  }
   
   &__img{
     // AVATAR FLIP: http://css3.bradshawenterprises.com/flip/
