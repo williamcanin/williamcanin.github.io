@@ -34,6 +34,7 @@ website:
 # Sidebar
   sidebar:
     avatar: "avatar.svg"
+    flip-img: "avatar_flip.jpg"
     title:  "Hey, <br> I'm William."
     menu:
       home:
