@@ -102,7 +102,10 @@ layout: default
           {% if total_page > 1 %}
             <li class="page-item">
               <span class="page-link layout_postlist__pagination-counter">
-                Página {{ paginator.page }} de {{ total_page }}
+                {{ loadData.website.content.postlist.pagination.counter[0] }}
+                {{ paginator.page }}
+                {{ loadData.website.content.postlist.pagination.counter[1] }}
+                {{ total_page }}
               </span>
             </li>          
           {% endif %}

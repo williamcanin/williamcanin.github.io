@@ -76,6 +76,7 @@ website:
     postlist:
       pagination:
         newer_text: "Mais recentes"
+        counter: ['Página', 'de']
         older_text: "Mais velhos"
 
 # Contact
