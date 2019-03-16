@@ -90,8 +90,16 @@ $badge-resume-bg: #979797;
 $badge-resume-color: #1f1f1f;
 
 // Pagination
-$pagination-btn-bg: #e0e0e0;
-$pagination-btn-bg-hover: #FFF;
-$pagination-color: #353535;
-$pagination-color-hover: #000;
 $pagination-text-decoration: none;
+$pagination-newer-bg: #e0e0e0;
+$pagination-newer-color: #353535;
+$pagination-newer-bg-hover: #FFF;
+$pagination-newer-color-hover: #000; 
+$pagination-counter-bg: #FFF;
+$pagination-counter-color: #353535;
+$pagination-counter-bg-hover: #FFF;
+$pagination-counter-color-hover: #353535;
+$pagination-older-bg: #e0e0e0;
+$pagination-older-color: #353535;
+$pagination-older-bg-hover: #FFF;
+$pagination-older-color-hover: #000; 

@@ -34,17 +34,38 @@
   }
 
   &__pagination{
-    li {
-      a{
-        background-color: $pagination-btn-bg;
-        color: $pagination-color;
-        text-decoration: $pagination-text-decoration;
-        &:hover{
-          color: $pagination-color-hover;
-          background-color: $pagination-btn-bg-hover;
-        }
+    &-newer{
+      background-color: $pagination-newer-bg;
+      color: $pagination-newer-color;
+      border: 1px solid $pagination-newer-bg;
+      text-decoration: $pagination-text-decoration;
+      &:hover{
+        background-color: $pagination-newer-bg-hover;
+        color: $pagination-newer-color-hover;
       }
     }
+    &-counter{
+      background-color: $pagination-counter-bg;
+      color: $pagination-counter-color;
+      border: 1px solid $pagination-newer-bg;
+      &:hover{
+        background-color: $pagination-counter-bg-hover;
+        color: $pagination-counter-color-hover;
+        border: 1px solid $pagination-newer-bg;   
+      }
+    }
+
+    &-older{
+      background-color: $pagination-older-bg;
+      color: $pagination-older-color;
+      text-decoration: $pagination-text-decoration;
+      border: 1px solid $pagination-older-bg;
+      &:hover{
+        background-color: $pagination-older-bg-hover;
+        color: $pagination-older-color-hover;
+      }
+    }
+
   }
 
 }

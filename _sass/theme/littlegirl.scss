@@ -23,7 +23,7 @@ $layout-search__input-color: #000;
 $btn-typing__color: #FFF;
 
 // Fonts
-$font-weight__all-links: lighter; 
+$font-weight__all-links: bold; 
 $font-size__content: 17px;
 $font-size__sidebar-menu: 20px;
 $font-weight__sidebar-menu: bold;
@@ -97,8 +97,16 @@ $badge-resume-bg: #979797;
 $badge-resume-color: #1f1f1f;
 
 // Pagination
-$pagination-btn-bg: #e0e0e0;
-$pagination-btn-bg-hover: #FFF;
-$pagination-color: $color__links;
-$pagination-color-hover: $color__links;
 $pagination-text-decoration: none;
+$pagination-newer-bg: $color__links;
+$pagination-newer-color: #fff;
+$pagination-newer-bg-hover: #a32cc7;
+$pagination-newer-color-hover: #fff; 
+$pagination-counter-bg: #FFF;
+$pagination-counter-color: #353535;
+$pagination-counter-bg-hover: #FFF;
+$pagination-counter-color-hover: #353535;
+$pagination-older-bg: $color__links;
+$pagination-older-color: #fff;
+$pagination-older-bg-hover: #a32cc7;
+$pagination-older-color-hover: #fff; 
