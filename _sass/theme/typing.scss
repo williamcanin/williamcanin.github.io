@@ -75,7 +75,7 @@ $gist-variables-color: #132b44;
 
 
 // Terminal home (if enabled)
-$terminal_is_enable: "yes"; // yes / no
+// $terminal_is_enable: "false"; // true / false DEPRECATED
 $terminal-light-around: #f3e8ba;
 $terminal-text-color: #3bff1a;
 $terminal-link-color: #3BB662;
@@ -92,7 +92,6 @@ $badge-resume-color: #1f1f1f;
 $pagination-text-decoration: none;
 $pagination-newer-bg: $color__links;
 $pagination-newer-color: #FFF;
-$pagination-newer-bg-hover: #e9404b;
 $pagination-newer-color-hover: #FFF; 
 $pagination-counter-bg: #FFF;
 $pagination-counter-color: #353535;
@@ -100,5 +99,4 @@ $pagination-counter-bg-hover: #FFF;
 $pagination-counter-color-hover: #353535;
 $pagination-older-bg:  $color__links;
 $pagination-older-color: #FFF;
-$pagination-older-bg-hover: #e9404b;
 $pagination-older-color-hover: #FFF; 

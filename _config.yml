@@ -122,7 +122,7 @@ _plugins:
   # To see language support, go to the plugin "_plugins/datelang.rb"
   datelang:
     locale: pt_PT
-    reload: true
+    reload: false
 ### EXTRA END - These properties are extra features, such as built-in third-party plugins.
 
 
