@@ -33,4 +33,18 @@
     font-size: 1.1rem;
   }
 
+  &__pagination{
+    li {
+      a{
+        background-color: $pagination-btn-bg;
+        color: $pagination-color;
+        text-decoration: $pagination-text-decoration;
+        &:hover{
+          color: $pagination-color-hover;
+          background-color: $pagination-btn-bg-hover;
+        }
+      }
+    }
+  }
+
 }

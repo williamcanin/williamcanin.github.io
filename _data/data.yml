@@ -71,6 +71,13 @@ website:
         title: "Compartilhe!"
       comments:
         title: "Deixe seu comentário"
+  
+# Postlist
+    postlist:
+      pagination:
+        newer_text: "Mais recentes"
+        older_text: "Mais velhos"
+
 # Contact
     contact:
       language: "pt-BR"

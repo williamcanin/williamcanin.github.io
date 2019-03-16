@@ -4,6 +4,8 @@ title: Blog
 msg_qtd: ['São','posts no total.']
 script: [postlist.js]
 permalink: /blog/
+pagination: 
+  enabled: true
 ---
 
 {% include liquid/data %}

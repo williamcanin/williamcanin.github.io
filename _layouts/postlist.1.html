@@ -29,8 +29,9 @@ layout: default
     </div>
 
   <!-- Loop of posts -->
+    {% if site.posts.size > 0 %}
 
-      {% for post in paginator.posts %}
+      {% for post in site.posts %}
       <div class="mt-4 mb-4 layout_postlist__content">
 
         <div class="container-fluid">
@@ -87,26 +88,6 @@ layout: default
       </div>
       {% endfor %}
 
-
-    {% if paginator.total_pages > 1 %}
-      <nav>
-        <ul class="pagination justify-content-center layout_postlist__pagination">
-          {% if paginator.previous_page %}
-          <li class="page-item">
-            <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">
-              {{ loadData.website.content.postlist.pagination.newer_text }}
-            </a>
-          </li>
-          {% endif %}
-          {% if paginator.next_page %}
-          <li class="page-item">
-            <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl }}">
-              {{ loadData.website.content.postlist.pagination.older_text }}
-            </a>
-          </li>
-          {% endif %}
-        </ul>
-      </nav>
-    {% endif %}
+    { % endif % } 
 
 </div>

@@ -27,7 +27,7 @@ $font-weight__all-links: bold;
 $font-size__content: 17px;
 $font-size__sidebar-menu: 20px;
 $font-weight__sidebar-menu: 400;
-$font-size__layout_postlist-link: 25px;
+$font-size__layout_postlist-link: 40px;
 $font-size__layout_resume_content: 17px;
 $font-weight__layout_postlist-link: bold;
 
@@ -85,3 +85,11 @@ $terminal-title-color: #FFF;
 // Resume
 $badge-resume-bg: #cecece;
 $badge-resume-color: #1f1f1f;
+
+// Pagination
+$pagination-btn-bg: #e0e0e0;
+$pagination-btn-bg-hover: #FFF;
+$pagination-color: #353535;
+$pagination-color-hover: #000;
+$pagination-text-decoration: none;
+

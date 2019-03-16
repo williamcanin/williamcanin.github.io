@@ -110,6 +110,7 @@ jektify:
 
 plugins:
   - jemoji
+  - jekyll-paginate-v2
 
 # Settings for the plugins in the _plugins folder.
 _plugins:
@@ -164,6 +165,18 @@ tag_page_layout: tag
 tag_page_dir: blog/tags
 tag_permalink_style: pretty
 
+# Pagination
+# https://github.com/sverrirs/jekyll-paginate-v2
+pagination:
+  enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 5
+  permalink: '/blog/:num/'
+  title: ':title - Página :num'
+  limit: 0
+  extension: html
+  indexpage: 'index'
 
 # Config for plugin 'jekyll-gist'
 gist:

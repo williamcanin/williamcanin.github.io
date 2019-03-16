@@ -23,6 +23,7 @@ group :jekyll_plugins do
   gem 'jemoji'
   gem 'jekyll-email-protect'
   gem 'jektify'
+  gem 'jekyll-paginate-v2'
 end
 
 # END
