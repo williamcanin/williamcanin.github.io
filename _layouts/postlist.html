@@ -30,7 +30,15 @@ layout: default
 
   <!-- Loop of posts -->
 
-      {% for post in paginator.posts %}
+      {% if site.posts.size > 0 %}
+
+      {% if page.pagination.enabled == true and site.pagination.enabled == true %}
+        {% assign style_page = paginator.posts %}
+      {% else %}
+        {% assign style_page = site.posts %}
+      {% endif %}
+
+      {% for post in style_page %}
       <div class="mt-4 mb-4 layout_postlist__content">
 
         <div class="container-fluid">
@@ -86,6 +94,8 @@ layout: default
         </div>
       </div>
       {% endfor %}
+
+      {% endif %}
 
     {% assign total_page = paginator.total_pages %}
     {% if total_page > 1 %}

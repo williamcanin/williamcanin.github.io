@@ -167,10 +167,15 @@ tag_permalink_style: pretty
 
 # Pagination
 # https://github.com/sverrirs/jekyll-paginate-v2
+# NOTE: To disable paging, leave "enabled" for "false", 
+#       and in the "_blog/index.md" file, also leave "enabled"
+#       for "false."
 pagination:
   enabled: true
   debug: false
   collection: 'posts'
+  sort_field: 'date'
+  sort_reverse: true
   per_page: 5
   permalink: '/blog/:num/'
   title: ':title - Página :num'

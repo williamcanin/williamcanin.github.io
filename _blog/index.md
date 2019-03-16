@@ -1,7 +1,7 @@
 ---
 layout: postlist
 title: Blog
-msg_qtd: ['São','posts no total separados por páginas.']
+msg_qtd: ['No total, são','posts separados por páginas.']
 script: [postlist.js]
 permalink: /blog/
 pagination: 
