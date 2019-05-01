@@ -115,7 +115,7 @@
 <blockquote><p>Nota 2: Por padrão, a instalação do executável do Python é no diretório <em>/usr/local/bin/python[version]</em>, a não ser que seja mudado o PATH na configuração (sudo ./configure).</p></blockquote>
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>bash pyinstaller.sh</code></pre></figure><p>Pronto! Se tudo deu certo, a instalação foi concluída. Você pode verificar o executável no diretório <strong>/usr/local/bin</strong>.</p>
 <h1 id="desinstalação">Desinstalação</h1>
-<p>Infelizmente, até o momento o pacote de source code do Python (tarball), não tem uma opção de comando para desinstalar, como por exemplo o comando <strong>make uninstall</strong>, isso porque, você pode ter várias versões do Python instalada através da compilação, e então não tem um desinstalador saber qual é que você queira remover.</p>
+<p>Infelizmente, até o momento o pacote de source code do Python (tarball), não tem uma opção de comando para desinstalar, como por exemplo o comando <strong>make uninstall</strong>, isso porque, você pode ter várias versões do Python instalada através da compilação, e então não tem como um desinstalador saber qual é que você queira remover.</p>
 <p>Para resolver isso, o comando <strong>make -n install</strong> que está comentado no script que criamos, é justamente para lhe mostrar onde foi instalado os arquivos e pastas. Com base nessas informações, você deve remover a instalação manualmente apenas excluindo esses arquivos e pastas.</p>
 <p>Para facilitar, criei um script que pode lhe poupar tempo de achar esses arquivos e pastas.</p>
 <h2 id="criando-script-de-remoção-automática">Criando script de remoção automática.</h2>
