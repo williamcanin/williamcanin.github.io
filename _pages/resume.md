@@ -46,13 +46,13 @@ Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_
 
 ## Educação
 
-### Ensino Superior
+### Formação acadêmica
 
 #### [Centro Universitário de Lins - Unilins](http://www.unilins.edu.br/){:target="_blank"}
 
 * *Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas - 2009/2013 - Concluído*
 
-### Cursos
+### Licenças e certificados
 
 #### [Fundação Bradesco - Escola Virtual](https://www.ev.org.br/){:target="_blank"}
 
@@ -73,7 +73,6 @@ Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_
 * *Curso Online - Introdução à Ciência da Computação com Python -  [Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"} - Concluído em 03/2019*
 
 * *Curso Online - Introdução à Ciência da Computação com Python - [Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"} - Cursando*
-
 
 
 #### [Udemy - Cursos Online](https://udemy.com/){:target="_blank"}
