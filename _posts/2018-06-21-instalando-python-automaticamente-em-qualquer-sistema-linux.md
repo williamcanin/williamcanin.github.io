@@ -126,7 +126,7 @@ Você pode verificar o executável no diretório **/usr/local/bin**.
 
 # Desinstalação
 
-Infelizmente, até o momento o pacote de source code do Python (tarball), não tem uma opção de comando para desinstalar, como por exemplo o comando **make uninstall**, isso porque, você pode ter várias versões do Python instalada através da compilação, e então não tem um desinstalador saber qual é que você queira remover.
+Infelizmente, até o momento o pacote de source code do Python (tarball), não tem uma opção de comando para desinstalar, como por exemplo o comando **make uninstall**, isso porque, você pode ter várias versões do Python instalada através da compilação, e então não tem como um desinstalador saber qual é que você queira remover.
 
 Para resolver isso, o comando **make -n install** que está comentado no script que criamos, é justamente para lhe mostrar onde foi instalado os arquivos e pastas. Com base nessas informações, você deve remover a instalação manualmente apenas excluindo esses arquivos e pastas.
 
