@@ -44,15 +44,14 @@ Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e at
 
 Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre.
 
-## Educação
 
-### Formação acadêmica
+## Formação acadêmica
 
 #### [Centro Universitário de Lins - Unilins](http://www.unilins.edu.br/){:target="_blank"}
 
 * *Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas - 2009/2013 - Concluído*
 
-### Licenças e certificados
+## Licenças e certificados
 
 #### [Fundação Bradesco - Escola Virtual](https://www.ev.org.br/){:target="_blank"}
 
