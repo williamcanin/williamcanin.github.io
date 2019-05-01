@@ -103,7 +103,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 * Tarefas administrativas
 * Serviços Essenciais do sistema
 
-## Nuvem de Conhecimentos**
+## Nuvem de Conhecimentos
 
 {% badge [**Python**](https://www.python.org/){:target="_blank"}|16px %}
 {% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %}
@@ -129,7 +129,6 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**Linux OS**](https://pt.wikipedia.org/wiki/Linux){:target="_blank"}|16px %}
 {% badge [**Windows OS**](https://www.microsoft.com/pt-br/windows){:target="_blank"}|16px %}
 
-** básicos.
 
 ## Projetos
 
