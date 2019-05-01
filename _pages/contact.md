@@ -9,7 +9,7 @@ permalink: /contact/
 
 DETALHES   
 
-Nessa área você pode me contatar para trabalho, fazer feedbacks sobre posts, ou simplesmente tirar outras dúvidas.
+Nessa área você pode me contatar para trabalho, fazer feedbacks sobre posts, ou simplesmente tirar outras dúvidas; menos, sobre a novela das 8(oito).
 
 > E-mail COM criptografia:
 
