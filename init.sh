@@ -132,6 +132,7 @@ function _deploy_source(){
 # Menu
 case $1 in
   install )
+    rm -f Gemfile.lock
     gem install bundler --pre
     bundle install
     msg_finish "Done!"

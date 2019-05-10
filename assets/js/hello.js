@@ -6,3 +6,9 @@ layout: null
 setInterval(function() {
   $(".layout_hello__cursor").toggle()
 },600);
+
+$(function () {
+  $('.header__btn').popover({
+    container: 'body'
+  })
+})
