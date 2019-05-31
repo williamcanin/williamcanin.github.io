@@ -25,7 +25,7 @@ Desenvolvedor/Programador
 ---
 
 **Sexo:** Masculino  
-**Crença:** Cristão praticante  
+**Crença:** Cristão  
 **Nacionalidade:** Brasileiro  
 **Naturalidade:** Santo André-SP  
 **Data Nasc.:** 25/04/1988  
