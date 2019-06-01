@@ -67,8 +67,7 @@ Curso Online de Django 2.0 avancado, 100+ aulas domine framework like a boss
 
 **2019**  
 [**USP - Universidade de São Paulo**](https://www5.usp.br/){:target="_blank"}  
-Curso Online de Introdução à Ciência da Computação com Python - [Módulo I](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"}  
-Curso Online de Introdução à Ciência da Computação com Python - [Módulo II](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"}
+Curso Online de Introdução à Ciência da Computação com Python - [Módulo I](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"} e [Módulo II](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"}
 
 **2018**  
 [**Solyd - Treinamentos e Cursos Online**](https://solyd.com.br/){:target="_blank"}  

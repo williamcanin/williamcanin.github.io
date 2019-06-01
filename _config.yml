@@ -111,6 +111,10 @@ jektify:
 plugins:
   - jemoji
   - jekyll-paginate-v2
+  - jekyll-feed
+
+feed:
+  path: atom.xml
 
 # Settings for the plugins in the _plugins folder.
 _plugins:

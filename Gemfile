@@ -21,6 +21,8 @@ group :jekyll_plugins do
   gem 'bootstrap'
   gem 'jekyll-tagging'
   gem 'jemoji'
+  gem 'jekyll-feed'
+  gem 'jekyll-seo-tag'
   gem 'jekyll-email-protect'
   gem 'jektify'
   gem 'jekyll-paginate-v2'
