@@ -128,7 +128,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 ### Idiomas
 ---
 
-**Português:** Fluente (Nativo)
+**Português:** Fluente (Nativo)  
 **Inglês:** Básico (Técnico)
 
 ### Projetos
