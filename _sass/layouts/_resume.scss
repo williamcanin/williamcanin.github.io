@@ -6,7 +6,20 @@
     margin: 5% 0% 15% 0%;
     // &-text{}
   }
+  &__header{
+    margin-bottom: 50px;
+  }
   &__content{
+    // Image resolution: 375x500
+    .img_cv{
+      float: right;
+      margin-right: 50px;
+      margin-top: -95px;
+      img{
+        width: 120px;
+        height: auto;
+      }
+    }
     font-size: $font-size__layout_resume_content;
     hr{
       border-top: 1px solid rgba(0, 0, 0, 0.59);

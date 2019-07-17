@@ -34,7 +34,7 @@
     &:hover{
       color: inherit;
     }
-    @media (min-width: 768px) {
+    @media (min-width: 770px) {
       text-align: center;
     }
   }
@@ -67,8 +67,10 @@
       transition: all 1.0s linear;
     }
 
-    &:hover .sidebar__img-card {
-      transform: rotateY(180deg);
+    @media (min-width: 768px){
+      &:hover .sidebar__img-card {
+        transform: rotateY(180deg);
+      }
     }
 
     &-face{
