@@ -89,3 +89,6 @@ Caso o erro de chave persista mesmo você fazendo os passos acima, dê uma olhad
 {% highlight bash linenos %}
 yay -S --mflags --skipinteg spotify
 {% endhighlight %}
+
+
+Até a próxima ;)
