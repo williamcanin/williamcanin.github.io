@@ -92,3 +92,7 @@ yay -S --mflags --skipinteg spotify
 
 
 Até a próxima ;)
+
+{% endpost #9D9D9D %}
+
+{% jektify spotify/track/3iC3Numiy9P3AkF7iioKmx/dark %}
