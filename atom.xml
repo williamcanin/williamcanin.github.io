@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://williamcanin.me/atom.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2019-08-11T13:10:30-03:00</updated><id>https://williamcanin.me/atom.xml</id><entry><title type="html">Corrigindo erro de chaves no Archlinux</title><link href="https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux/" rel="alternate" type="text/html" title="Corrigindo erro de chaves no Archlinux" /><published>2019-03-07T06:13:17-03:00</published><updated>2019-03-07T06:13:17-03:00</updated><id>https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux</id><content type="html" xml:base="https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://williamcanin.me/atom.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2019-08-11T13:13:26-03:00</updated><id>https://williamcanin.me/atom.xml</id><entry><title type="html">Corrigindo erro de chaves no Archlinux</title><link href="https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux/" rel="alternate" type="text/html" title="Corrigindo erro de chaves no Archlinux" /><published>2019-03-07T06:13:17-03:00</published><updated>2019-03-07T06:13:17-03:00</updated><id>https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux</id><content type="html" xml:base="https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Se alguma vez você se deparou com erro de chaves públicas ao instalar um pacote no Archlinux e não soube como resolver,então talvez essa dica abaixo pode te ajudar.&lt;/p&gt;
 
@@ -61,7 +61,34 @@
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;yay -S --mflags --skipinteg spotify&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Até a próxima ;)&lt;/p&gt;</content><author><name></name></author><category term="archlinux" /><category term="keys" /><category term="dicas" /><summary type="html"></summary></entry><entry><title type="html">Transações no banco de dados através do ShellScript</title><link href="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do ShellScript" /><published>2018-08-28T02:23:33-03:00</published><updated>2018-08-28T02:23:33-03:00</updated><id>https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/">&lt;!-- Write from here your post !!! --&gt;
+&lt;p&gt;Até a próxima ;)&lt;/p&gt;
+
+&lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt;
+
+&lt;dl class=&quot;jektify jektify--dark jektify--custom&quot;&gt;
+
+          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
+
+            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
+
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+          &lt;/dt&gt;
+
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+
+            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Veja-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Veja-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+
+            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Música&lt;/h1&gt;
+
+            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Sonzera que ouço.
+&lt;/p&gt;
+
+            &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
+              &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:3iC3Numiy9P3AkF7iioKmx&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+            &lt;/div&gt;
+          &lt;/dd&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="archlinux" /><category term="keys" /><category term="dicas" /><summary type="html"></summary></entry><entry><title type="html">Transações no banco de dados através do ShellScript</title><link href="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do ShellScript" /><published>2018-08-28T02:23:33-03:00</published><updated>2018-08-28T02:23:33-03:00</updated><id>https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá pessoas, vamos falar de shellscript, que é algo que gosto muito. :)&lt;/p&gt;
 
