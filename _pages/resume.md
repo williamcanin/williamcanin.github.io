@@ -55,7 +55,7 @@ Gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:targe
 [**Centro Universitário de Lins - Unilins**](http://www.unilins.edu.br/){:target="_blank"}  
 Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas
 
-### Licenças e certificados
+### Certificados
 ---
 
 **2019**  

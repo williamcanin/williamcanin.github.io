@@ -70,7 +70,7 @@ content:
       twitter:
         enable: true
       googleplus:
-        enable: true
+        enable: false
     day_quote:
       enable: true
     comments:
