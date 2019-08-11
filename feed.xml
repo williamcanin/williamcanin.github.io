@@ -19,9 +19,24 @@
     <description>Developer_</description>
     <link>https://williamcanin.me/</link>
     <atom:link href="https://williamcanin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Jul 2019 20:45:32 -0300</pubDate>
-    <lastBuildDate>Wed, 17 Jul 2019 20:45:32 -0300</lastBuildDate>
-    <generator>Jekyll v3.8.5</generator>
+    <pubDate>Sun, 11 Aug 2019 13:08:43 -0300</pubDate>
+    <lastBuildDate>Sun, 11 Aug 2019 13:08:43 -0300</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Corrigindo erro de chaves no Archlinux</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Se alguma vez você se deparou com erro de chaves públicas ao instalar um pacote no Archlinux e não soube como resolver,então talvez essa dica abaixo pode te ajudar.&lt;/p&gt; &lt;p&gt;Abaixo você pode perceber que tentei instalar o pacote &lt;a href=&quot;https://aur.archlinux.org/packages/spotify&quot; target=&quot;_blank&quot;&gt;spotify&lt;/a&gt; no meu &lt;a href=&quot;https://archlinux.org&quot; target=&quot;_blank&quot;&gt;Archlinux&lt;/a&gt; através do repositório AUR com o &lt;a href=&quot;https://aur.archlinux.org/packages/yay/&quot; target=&quot;_blank&quot;&gt;yay&lt;/a&gt;, e me retornou um erro de chave pública.&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt; 1 &lt;/span&gt; william at archlinux in folder ~ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;python-3.7.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ○ &lt;span class=&quot;lineno&quot;&gt; 2 &lt;/span&gt; ⇨ yay -S spotify --nodiffmenu --noeditmenu --noupgrademenu &lt;span...</description>
+        <pubDate>Thu, 07 Mar 2019 06:13:17 -0300</pubDate>
+        <link>https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux/</link>
+        <guid isPermaLink="true">https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux/</guid>
+        
+        <tag>archlinux</tag>
+        
+        <tag>keys</tag>
+        
+        <tag>dicas</tag>
+        
+      </item>
     
       <item>
         <title>Transações no banco de dados através do ShellScript</title>

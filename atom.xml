@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://williamcanin.me/atom.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2019-07-17T20:45:32-03:00</updated><id>https://williamcanin.me/atom.xml</id><entry><title type="html">Transações no banco de dados através do ShellScript</title><link href="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do ShellScript" /><published>2018-08-28T02:23:33-03:00</published><updated>2018-08-28T02:23:33-03:00</updated><id>https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://williamcanin.me/atom.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2019-08-11T13:08:43-03:00</updated><id>https://williamcanin.me/atom.xml</id><entry><title type="html">Corrigindo erro de chaves no Archlinux</title><link href="https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux/" rel="alternate" type="text/html" title="Corrigindo erro de chaves no Archlinux" /><published>2019-03-07T06:13:17-03:00</published><updated>2019-03-07T06:13:17-03:00</updated><id>https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux</id><content type="html" xml:base="https://williamcanin.me/blog/corrigindo-erro-de-chaves-no-archlinux/">&lt;!-- Write from here your post !!! --&gt;
+
+&lt;p&gt;Se alguma vez você se deparou com erro de chaves públicas ao instalar um pacote no Archlinux e não soube como resolver,então talvez essa dica abaixo pode te ajudar.&lt;/p&gt;
+
+&lt;p&gt;Abaixo você pode perceber que tentei instalar o pacote &lt;a href=&quot;https://aur.archlinux.org/packages/spotify&quot; target=&quot;_blank&quot;&gt;spotify&lt;/a&gt; no meu &lt;a href=&quot;https://archlinux.org&quot; target=&quot;_blank&quot;&gt;Archlinux&lt;/a&gt; através do repositório AUR com o &lt;a href=&quot;https://aur.archlinux.org/packages/yay/&quot; target=&quot;_blank&quot;&gt;yay&lt;/a&gt;, e me retornou um erro de chave pública.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt; 1 &lt;/span&gt;  william at archlinux in folder ~ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;python-3.7.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ○ 
+&lt;span class=&quot;lineno&quot;&gt; 2 &lt;/span&gt; ⇨ yay -S spotify --nodiffmenu --noeditmenu --noupgrademenu
+&lt;span class=&quot;lineno&quot;&gt; 3 &lt;/span&gt;:: There are &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; providers available &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; spotify:
+&lt;span class=&quot;lineno&quot;&gt; 4 &lt;/span&gt;:: Repository AUR
+&lt;span class=&quot;lineno&quot;&gt; 5 &lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; spotify &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; spotify-dev &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; spotify-legacy &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; spotify094 &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; spotio 
+&lt;span class=&quot;lineno&quot;&gt; 6 &lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7 &lt;/span&gt;Enter a number &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8 &lt;/span&gt;:: Checking &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; conflicts...
+&lt;span class=&quot;lineno&quot;&gt; 9 &lt;/span&gt;:: Checking &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; inner conflicts...
+&lt;span class=&quot;lineno&quot;&gt;10 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Aur: &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;  spotify-1:1.1.10.546-1
+&lt;span class=&quot;lineno&quot;&gt;11 &lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12 &lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; spotify                                  &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Build Files Exist&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Packages to cleanBuild?
+&lt;span class=&quot;lineno&quot;&gt;14 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;N&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;one &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;A&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;ll &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Ab&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;ort &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;I&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;nstalled &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;No&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;tInstalled or &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;-3, ^4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; N
+&lt;span class=&quot;lineno&quot;&gt;16 &lt;/span&gt;:: PKGBUILD up to date, Skipping &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;/1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: spotify
+&lt;span class=&quot;lineno&quot;&gt;17 &lt;/span&gt;:: Parsing SRCINFO &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;/1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: &lt;span class=&quot;nv&quot;&gt;spotify&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;18 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Criando o pacote: spotify &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;:1.1.10.546-1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;dom &lt;span class=&quot;m&quot;&gt;11&lt;/span&gt; ago &lt;span class=&quot;m&quot;&gt;2019&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;11&lt;/span&gt;:11:33 -03&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;19 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Obtendo fontes...
+&lt;span class=&quot;lineno&quot;&gt;20 &lt;/span&gt;  -&amp;gt; Encontrado spotify.protocol
+&lt;span class=&quot;lineno&quot;&gt;21 &lt;/span&gt;  -&amp;gt; Encontrado LICENSE
+&lt;span class=&quot;lineno&quot;&gt;22 &lt;/span&gt;  -&amp;gt; Encontrado spotify-1.1.10.546-Release
+&lt;span class=&quot;lineno&quot;&gt;23 &lt;/span&gt;  -&amp;gt; Encontrado spotify-1.1.10.546-Release.sig
+&lt;span class=&quot;lineno&quot;&gt;24 &lt;/span&gt;  -&amp;gt; Encontrado spotify-1.1.10.546-x86_64.deb
+&lt;span class=&quot;lineno&quot;&gt;25 &lt;/span&gt;  -&amp;gt; Encontrado spotify-1.1.10.546-x86_64-Packages
+&lt;span class=&quot;lineno&quot;&gt;26 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Validando &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; arquivos com sha512sums...
+&lt;span class=&quot;lineno&quot;&gt;27 &lt;/span&gt;    spotify.protocol ... Passou
+&lt;span class=&quot;lineno&quot;&gt;28 &lt;/span&gt;    LICENSE ... Passou
+&lt;span class=&quot;lineno&quot;&gt;29 &lt;/span&gt;    spotify-1.1.10.546-Release ... Ignorada
+&lt;span class=&quot;lineno&quot;&gt;30 &lt;/span&gt;    spotify-1.1.10.546-Release.sig ... &lt;span class=&quot;nv&quot;&gt;Ignorada&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;31 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Validando source_x86_64 arquivos com sha512sums...
+&lt;span class=&quot;lineno&quot;&gt;32 &lt;/span&gt;    spotify-1.1.10.546-x86_64.deb ... Passou
+&lt;span class=&quot;lineno&quot;&gt;33 &lt;/span&gt;    spotify-1.1.10.546-x86_64-Packages ... &lt;span class=&quot;nv&quot;&gt;Passou&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;34 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; Verificando assinatura de arquivo fonte com gpg...
+&lt;span class=&quot;lineno&quot;&gt;35 &lt;/span&gt;    spotify-1.1.10.546-Release ... FALHOU &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;chave pública inválida 2EBF997C15BDA244B6EBF5D84773BD5E130D1D45&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;36 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt; ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!
+&lt;span class=&quot;lineno&quot;&gt;37 &lt;/span&gt;Error downloading sources: spotify
+&lt;span class=&quot;lineno&quot;&gt;38 &lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;39 &lt;/span&gt;  william at archlinux in folder ~ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;python-3.7.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ○ 
+&lt;span class=&quot;lineno&quot;&gt;40 &lt;/span&gt; ⇨ &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Observe que ao final do comando me retornou a chave que está dando problema, nesse caso é a chave &lt;strong&gt;2EBF997C15BDA244B6EBF5D84773BD5E130D1D45&lt;/strong&gt;. É essa chave que vamos adicionar.&lt;/p&gt;
+
+&lt;p&gt;Para corrigir erros de chave no Archlinux, você usará o comando &lt;code&gt;pacman-key&lt;/code&gt;. Veja abaixo como adicionar uma chave no ficheiro do seu Archlinux.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;sudo pacman-key -r 2EBF997C15BDA244B6EBF5D84773BD5E130D1D45
+&lt;span class=&quot;lineno&quot;&gt;2 &lt;/span&gt;sudo pacman-key --lsign-key 2EBF997C15BDA244B6EBF5D84773BD5E130D1D45
+&lt;span class=&quot;lineno&quot;&gt;3 &lt;/span&gt;sudo pacman-key --refresh-keys&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Após executar todos comando acima, você deve repetir o processo de instalação do pacote novamente com o seguinte comando no &lt;code&gt;yay&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;yay -S spotify --nodiffmenu --noeditmenu&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Caso o erro de chave persista mesmo você fazendo os passos acima, dê uma olhada nos comentários da página do pacote para ver se o erro é do desenvolvedor. Nesse caso, você pode instalar qualquer pacote do AUR com erros de chaves ignorando a assinatura PGP com o comando abaixo:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;yay -S --mflags --skipinteg spotify&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name></name></author><category term="archlinux" /><category term="keys" /><category term="dicas" /><summary type="html"></summary></entry><entry><title type="html">Transações no banco de dados através do ShellScript</title><link href="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do ShellScript" /><published>2018-08-28T02:23:33-03:00</published><updated>2018-08-28T02:23:33-03:00</updated><id>https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá pessoas, vamos falar de shellscript, que é algo que gosto muito. :)&lt;/p&gt;
 
@@ -2857,168 +2918,4 @@ instalação do kernel:&lt;/p&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:73ULm2FVFnjICEBjZAmC3L&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="kernel" /><category term="linux" /><category term="compile" /><summary type="html"></summary></entry><entry><title type="html">Linux Boot: A start job is running for dev-disk-by</title><link href="https://williamcanin.me/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/" rel="alternate" type="text/html" title="Linux Boot: A start job is running for dev-disk-by" /><published>2015-07-26T10:29:04-03:00</published><updated>2015-07-26T10:29:04-03:00</updated><id>https://williamcanin.me/blog/linux-boot-a-start-job-is-running-for-dev-disk-by</id><content type="html" xml:base="https://williamcanin.me/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#entendendo-a-mensagem&quot; id=&quot;markdown-toc-entendendo-a-mensagem&quot;&gt;Entendendo a mensagem&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#decifrando-a-numeração&quot; id=&quot;markdown-toc-decifrando-a-numeração&quot;&gt;Decifrando a numeração&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#listando-os-uuid-das-partições&quot; id=&quot;markdown-toc-listando-os-uuid-das-partições&quot;&gt;Listando os UUID das partições&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#verificando-o-etcfstab&quot; id=&quot;markdown-toc-verificando-o-etcfstab&quot;&gt;Verificando o /etc/fstab&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#dica&quot; id=&quot;markdown-toc-dica&quot;&gt;Dica&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#conclusão&quot; id=&quot;markdown-toc-conclusão&quot;&gt;Conclusão&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;introdução&quot;&gt;Introdução&lt;/h2&gt;
-
-&lt;p&gt;Esperar hoje em dia não é uma tarefa que agrada as pessoas, ainda mais se tratando de software.
-Pois bem, essa postagem vai te informar uma configuração errada que pode te deixar de “cabelos em pé” :triumph: e esperando meados 1m30s para o Linux sair do boot.&lt;/p&gt;
-
-&lt;p&gt;Muitas pessoas se preocupam muito com boot da máquina, até mesmo a Microsoft, que devo adimitir: “&lt;em&gt;Fizeram um ótimo trabalho no Windows 8/10 se comparando com o Windows 7 na inicialização do boot&lt;/em&gt;”. Mas vamos falar de Linux aqui, ok?!&lt;/p&gt;
-
-&lt;p&gt;Existem vários fatores para seu Linux demorar no boot, por exemplo:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A grande quantidade de software e pacotes que se inicializa junta com o sistema…&lt;/li&gt;
-  &lt;li&gt;… a falta de otimização do kernel deixando o boot sobrecarregado de modulos não utilizados…&lt;/li&gt;
-  &lt;li&gt;… e até mesmo uma falta de reconhecimento de partição. Bingo! É disso que irei falar aqui: &lt;em&gt;Partição com erro de reconhecimento&lt;/em&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;entendendo-a-mensagem&quot;&gt;Entendendo a mensagem&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;A start job is running for dev-disk-by(…)&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Para o português: &lt;strong&gt;Um trabalho inicial está sendo executado para dev-disk-by(…)&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Essa mensagem é acompanhada com um monte de letras e números onde está (…). As letras e números representam um UUID de uma determinada partição que está com problema para ser reconhecida, ou seja, você irá encontrar algo parecido como isso:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;A start job is running &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; dev-disk-by&lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2duuid-4aed3ea2&lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2d5d85&lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2d4bc2&lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2d96e2&lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2dabc6ad877640.device &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;44s / 1min 30s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;A única diferença, é que os números e letras irá mudar no seu caso, porém, vai ser exatamente parecido com isso, com uma contagem crescente no final e demorada, e enjoativa :sweat: .&lt;/p&gt;
-
-&lt;h2 id=&quot;decifrando-a-numeração&quot;&gt;Decifrando a numeração&lt;/h2&gt;
-
-&lt;p&gt;Se você observou bem a estrutura da numeração da mensagem, vai perceber que não são todos os números e letras que representa o UUID da partição.&lt;/p&gt;
-
-&lt;p&gt;Observe o conteúdo de todas essas letras e numeros do UUID:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2duuid-4aed3ea2&lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2d5d85&lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2d4bc2&lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2d96e2&lt;span class=&quot;se&quot;&gt;\x&lt;/span&gt;2dabc6ad877640.device&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Repare que o &lt;strong&gt;“x2d”&lt;/strong&gt; está sendo repetido em cada bloco, e se você eliminar o &lt;strong&gt;“x2d”&lt;/strong&gt;, deixando a estrutura assim:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\u&lt;/span&gt;uid-4aed3ea2&lt;span class=&quot;se&quot;&gt;\5&lt;/span&gt;d85&lt;span class=&quot;se&quot;&gt;\4&lt;/span&gt;bc2&lt;span class=&quot;se&quot;&gt;\9&lt;/span&gt;6e2&lt;span class=&quot;se&quot;&gt;\a&lt;/span&gt;bc6ad877640.device&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Elimine o “\uuid”.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Se observa agora que com a eliminação dos &lt;strong&gt;“x2d”&lt;/strong&gt;, você terá o UUID separado por casas através de barras, só que por padrão, as casas do UUID nas partições, é separado por “traços”, dessa forma:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;4aed3ea2-5d85-4bc2-96e2-abc6ad877640&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Pronto! Numeração do UUID decifrada. Esse pode ser o “danado” que causa problema de inicialiação.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Mas como saber que esse UUID dessa partição existe ou não?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;A primeira coisa a se fazer é listar os UUID das partição que você tem em sua máquina, com o comando &lt;strong&gt;lsblk -f&lt;/strong&gt;. Assim:&lt;/p&gt;
-
-&lt;h2 id=&quot;listando-os-uuid-das-partições&quot;&gt;Listando os UUID das partições&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;$ lsblk -f&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;script src=&quot;https://gist.github.com/24d4d0247fd1530a5db8.js&quot;&gt; &lt;/script&gt;
-
-&lt;p&gt;Repare na saída, não tem nenhum UUID igual ao decifrado
-(&lt;strong&gt;4aed3ea2-5d85-4bc2-96e2-abc6ad877640&lt;/strong&gt;).&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Aí tu se pergunta:&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Mas por que no boot ele está sendo mostrado?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Para ter essa resposta, dê uma olhada no arquivo &lt;strong&gt;/etc/fstab&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Obs: O &lt;strong&gt;/etc/fstab&lt;/strong&gt; é responsável por iniciar(ou não) as partições e
-outros dispositivos na inicialização durante o boot.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;verificando-o-etcfstab&quot;&gt;Verificando o /etc/fstab&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;$ cat /etc/fstab&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;script src=&quot;https://gist.github.com/05f78da4153625ad9d12.js&quot;&gt; &lt;/script&gt;
-
-&lt;p&gt;Xeque-Mate! Repare que o &lt;strong&gt;4aed3ea2-5d85-4bc2-96e2-abc6ad877640&lt;/strong&gt;, está configurado para a partição SWAP, porém na saída do comando &lt;strong&gt;lsblk -f&lt;/strong&gt;, o UUID do SWAP não é este que está no arquivo &lt;strong&gt;/etc/fstab&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Por isso que o boot da máquina pode estar demorando, por tentar reconhecer a partição SWAP sendo que o UUID da mesma não estava configurado corretamente no arquivo &lt;strong&gt;/etc/fstab&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Agora coloque o UUID verdadeiro da partição swap no &lt;strong&gt;/etc/fstab&lt;/strong&gt;, deixando assim:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;UUID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;035b2802-752a-45b6-a87c-c4d466cdf53d none            swap    sw              &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;No próximo boot, a mensagem &lt;strong&gt;A start job is running for dev-disk-by()&lt;/strong&gt;&lt;br /&gt;
-não irá te encomodar mais.&lt;/p&gt;
-
-&lt;h2 id=&quot;dica&quot;&gt;Dica&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Tirando o Splash do Ubuntu&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Se você usa Ubuntu (ou até mesmo outras que tenha Splash na inicialização), por padrão, não irá mostrar o que esta sendo inicializado (modo verbose). Caso queira desabilitar o Splash de boot do Ubuntu (15.04). Faça:&lt;/p&gt;
-
-&lt;p&gt;Abra o arquivo &lt;strong&gt;/etc/default/grub&lt;/strong&gt; com um editor preferido.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;$ nano /etc/default/grub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Altere a linha …&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;quiet splash&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;… para&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;quiet&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;e salve e execute o comando abaixo:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;lineno&quot;&gt;1 &lt;/span&gt;$ sudo update-grub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Na próxima inicialização do Ubuntu ele irá mostrar tudo que esta sendo carregado (modo verbose). Caso queira voltar como estava, faça o inverso, acrescente a palavra “splash” e atualize o Grub novamente.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Nota: Agora, se não quer dar o trabalho de fazer a configuração no Grub,
-simplesmente aperte a tecla F11 quando o Splash do Ubuntu aparecer, que
-verá o modo verbose do mesmo jeito.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;Por que isso acontece?&lt;/em&gt; &lt;br /&gt;
-No meu caso, eu tinha instalado outra distribuição Linux e configurado a minha SWAP para essa outra distro, o que resultou na mudança de UUID. Fique esperto em fazer essas configurações também.&lt;/p&gt;
-
-&lt;p&gt;Espero que esse tutorial possa te ajudar se tiver esse problema. Até a próxima galera! :)&lt;/p&gt;
-
-&lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt;
-
-&lt;dl class=&quot;jektify jektify--dark jektify--custom&quot;&gt;
-
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Veja-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Veja-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Música&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Sonzera que ouço.
-&lt;/p&gt;
-
-            &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
-              &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:00bHVjPL7arXz9W59VKo5m&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
-            &lt;/div&gt;
-          &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="boot" /><category term="swap" /><category term="linux" /><summary type="html"></summary></entry></feed>
+        &lt;/dl&gt;</content><author><name></name></author><category term="kernel" /><category term="linux" /><category term="compile" /><summary type="html"></summary></entry></feed>
