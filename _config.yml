@@ -30,7 +30,7 @@ home:
 sidebar:
   avatar:
     enable: true
-    flip: true
+    flip: false
   icons:
     enable: true
   socials:
