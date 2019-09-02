@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "Manipulando arquivo JSON com Python.",
+      "tags"     : "python, json",
+      "url"     : "/blog/manipulando-arquivo-json-com-python/",
+      "date"     : "2/9/2019"
+    } ,
+  
+    {
       "title"    : "Corrigindo erro de chaves no Archlinux",
       "tags"     : "archlinux, keys, dicas",
       "url"     : "/blog/corrigindo-erro-de-chaves-no-archlinux/",
