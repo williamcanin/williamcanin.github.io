@@ -25,7 +25,7 @@ script: [post.js]
 
 # Leitura de um arquivo JSON
 
-{% youtube "https://www.youtube.com/watch?v=rlB6sWAAcy0&t=29s" %}
+{% youtube "https://www.youtube.com/watch?v=rlB6sWAAcy0" %}
 
 {% endpost #9D9D9D %}
 
