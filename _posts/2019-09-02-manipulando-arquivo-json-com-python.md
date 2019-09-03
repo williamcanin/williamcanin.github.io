@@ -23,6 +23,10 @@ script: [post.js]
 
 {% youtube "https://www.youtube.com/watch?v=pM7EQKKs6Vg" %}
 
+# Leitura de um arquivo JSON
+
+{% youtube "https://www.youtube.com/watch?v=rlB6sWAAcy0&t=29s" %}
+
 {% endpost #9D9D9D %}
 
 {% jektify spotify/track/2W7CvGjipq3EmHqNGN7lN9/dark %}
