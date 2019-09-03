@@ -23,6 +23,9 @@ script: [post.js]
 
 {% youtube "https://www.youtube.com/watch?v=pM7EQKKs6Vg" %}
 
+
+
+
 # Leitura de um arquivo JSON.
 
 {% youtube "https://www.youtube.com/watch?v=rlB6sWAAcy0" %}
