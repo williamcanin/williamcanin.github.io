@@ -37,12 +37,14 @@ Olá :v:, me chamo **William**, e sou apaixonado por desafios; tecnologia; desig
 
 Autodidata e proficiente em algumas [**linguagens de programação e tarefas voltadas a computação**](#nuvem-de-conhecimentos).
 
-Regularmente, gosto de codificar com uma determinada linguagem de programação.
-Atualmente exerço mais o aprendizado **Front-End**, porém, também tenho facilidades em alguns desenvolvimento com **Back-End**, ou seja, me considerando com aptidão a [**full-stack**](#nuvem-de-conhecimentos).
+Regularmente, codifico com uma tecnologias contidas nas minhas "`skills`" abaixo.
+Tenho uma relação de revezamento de **Front-End** e **Back-End**, ou seja, me considerando com aptidão a [**full-stack**](#nuvem-de-conhecimentos).
 
-Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [**Archlinux**](https://archlinux.org){:target="_blank"} / [Ubuntu](https://ubuntu.com){:target="_blank"}. Desde então, vou adquirindo alguns conhecimentos em [**Linux**](#linux).
+Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [**Archlinux**](https://archlinux.org){:target="_blank"} / [Ubuntu](https://ubuntu.com){:target="_blank"}.
 
-Gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:target="_blank"}; usar emojis; assistir séries/filmes; assuntos sobre psicologia e teologia. Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre. :stuck_out_tongue_winking_eye:
+Em meu lazer, gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:target="_blank"}; usar emojis; assistir séries/filmes; assuntos sobre teologia.
+
+Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre. :stuck_out_tongue_winking_eye:
 
 ### Formação acadêmica
 ---
