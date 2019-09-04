@@ -1,6 +1,6 @@
 ---
 layout: resume
-title: Sobre mim
+title: Sobre
 sitemap:
   priority: 0.7
   changefreq: 'monthly'
