@@ -102,7 +102,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**HTML5**](https://www.w3schools.com/html/html5_intro.asp){:target="_blank"}|16px %}
 {% badge [**CSS3**](https://www.w3schools.com/css/){:target="_blank"}|16px %}
 {% badge [**Javascript**](https://www.javascript.com/){:target="_blank"}|16px %}
-{% badge [**Responsive Web Design**](https://www.w3schools.com/html/html_responsive.asp){:target="_blank"}|16px %}
+<!-- {% badge [**Responsive Web Design**](https://www.w3schools.com/html/html_responsive.asp){:target="_blank"}|16px %} -->
 {% badge [**BEM**](http://getbem.com/){:target="_blank"}|16px %}
 {% badge [**SASS**](https://sass-lang.com/){:target="_blank"}|16px %}
 {% badge [**Gulp**](https://gulpjs.com/){:target="_blank"}|16px %}
