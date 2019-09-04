@@ -56,29 +56,27 @@ Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas
 
 **2019**  
 [**Udemy**](https://udemy.com/){:target="_blank"}  
-Curso Online de Aprenda Programação em Python 3 com Facilidade do Zero - [*Certificado*](https://williamcanin.me/certificate/backend/udemy-curses-python3-zero.pdf){:target="_blank"}  
-Curso Online de Python 3 na Web com Django (Básico e Intermediário)  
-Curso Online de Django 2.0 - Aprendendo os conceitos fundamentais
-Curso Online de Django 2.0 avancado, 100+ aulas domine framework like a boss
+Programação em Python - Básico/Avançado  
+Django - Básico/Intermediário  
 
 **2019**  
 [**USP - Universidade de São Paulo**](https://www5.usp.br/){:target="_blank"}  
-Curso Online de Introdução à Ciência da Computação com Python - [Módulo I](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"} e [Módulo II](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"}
+Introdução à Ciência da Computação com Python - [Módulo I](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"} e [Módulo II](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"}
 
 **2018**  
 [**Solyd - Treinamentos e Cursos Online**](https://solyd.com.br/){:target="_blank"}  
-Curso Online de Python Básico - [Certificado](https://williamcanin.me/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
+Python Básico - [Certificado](https://williamcanin.me/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
 
 **2018**  
 [**NodeStudio Treinamentos - Cursos de Desenvolvimento Web**](https://www.nodestudio.com.br/){:target="_blank"}  
-Curso Online de HTML5 & CSS3 - [Certificado](https://williamcanin.me/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}  
-Curso Online de Design Responsivo - [Certificado](https://williamcanin.me/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
+HTML5 & CSS3 - [Certificado](https://williamcanin.me/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}  
+Design Responsivo - [Certificado](https://williamcanin.me/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
 
 **2017**  
 [**Fundação Bradesco - Escola Virtual**](https://www.ev.org.br/){:target="_blank"}  
-Curso Online - HTML Básico - [Certificado](https://williamcanin.me/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}
+HTML Básico - [Certificado](https://williamcanin.me/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}
 
-### Experiências
+<!-- ### Experiências -->
 ---
 
 <!-- **Linux**
@@ -103,7 +101,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 <!-- {% badge [**Delphi**](https://www.embarcadero.com/br/products/delphi){:target="_blank"}|16px %} -->
 {% badge [**HTML5**](https://www.w3schools.com/html/html5_intro.asp){:target="_blank"}|16px %}
 {% badge [**CSS3**](https://www.w3schools.com/css/){:target="_blank"}|16px %}
-<!-- {% badge [**Javascript**](https://www.javascript.com/){:target="_blank"}|16px %} -->
+{% badge [**Javascript**](https://www.javascript.com/){:target="_blank"}|16px %}
 {% badge [**Responsive Web Design**](https://www.w3schools.com/html/html_responsive.asp){:target="_blank"}|16px %}
 {% badge [**BEM**](http://getbem.com/){:target="_blank"}|16px %}
 {% badge [**SASS**](https://sass-lang.com/){:target="_blank"}|16px %}
