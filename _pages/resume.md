@@ -1,6 +1,6 @@
 ---
 layout: resume
-title: Currículo
+title: Sobre mim
 sitemap:
   priority: 0.7
   changefreq: 'monthly'
@@ -25,10 +25,7 @@ Desenvolvedor/Programador
 ---
 
 **Sexo:** Masculino  
-**Religião:** Cristão  
 **Nacionalidade:** Brasileiro  
-**Naturalidade:** Santo André-SP  
-**Data Nasc.:** 25/04/1988  
 **País:** Brasil  
 **E-mail:** [contato[at]williamcanin.me](mailto:{{ "contato@williamcanin.me" | encode_email }}) | [william.costa.canin[at]gmail.com](mailto:{{ "william.costa.canin@gmail.com" | encode_email }})  
 **Website:** [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}  
@@ -55,7 +52,7 @@ Gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:targe
 [**Centro Universitário de Lins - Unilins**](http://www.unilins.edu.br/){:target="_blank"}  
 Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas
 
-### Certificados
+### Cursos
 ---
 
 **2019**  
@@ -85,7 +82,7 @@ Curso Online - HTML Básico - [Certificado](https://williamcanin.me/certificate/
 ### Experiências
 ---
 
-**Linux**
+<!-- **Linux**
 
 Conhecimentos em open source e nas diferenças entre as várias distribuições Linux  
 Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração básica de rede
@@ -97,7 +94,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 * Shell, Scripting e Gerenciamento de Dados
 * Interfaces e Desktops
 * Tarefas administrativas
-* Serviços Essenciais do sistema
+* Serviços Essenciais do sistema -->
 
 ### Nuvem de Conhecimentos
 ---
@@ -119,7 +116,6 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**Jekyll**](https://jekyllrb.com/){:target="_blank"}|16px %}
 {% badge [**MySQL**](https://www.mysql.com/
 ){:target="_blank"}|16px %}
-{% badge [**Ubuntu Server**](https://www.ubuntu.com/download/server){:target="_blank"}|16px %}
 {% badge [**Red Hat Enterprise Linux Server**](https://www.redhat.com/pt-br/resources/red-hat-enterprise-linux-server){:target="_blank"}|16px %}
 <!-- {% badge [**Iptables**](https://pt.wikipedia.org/wiki/Iptables){:target="_blank"}|16px %} -->
 {% badge [**Linux**](https://pt.wikipedia.org/wiki/Linux){:target="_blank"}|16px %}
@@ -142,4 +138,4 @@ Boa parte dos meus projetos são **open source** e armazeno tudo com [git](https
 
 [**iDisconnect**](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
-*"Leve a vida com responsabilidade mas nunca deixe de ser divertido(a) :smile:".* Obrigado por ler.
+<!-- *"Leve a vida com responsabilidade mas nunca deixe de ser divertido(a) :smile:".* Obrigado por ler. -->
