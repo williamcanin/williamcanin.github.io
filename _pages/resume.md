@@ -133,6 +133,8 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 
 [**Recover Grub**](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script em **Python** (3.x) para realizar a recuperação do Grub no Linux.
 
+[**Typing**](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} - Typing, é um template para o Jekyll criado especialmente para quem deseja ter um site estático e páginas com rapidez, leveza e muitas customizações.
+
 [**iDisconnect**](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
 
 <!-- *"Leve a vida com responsabilidade mas nunca deixe de ser divertido(a) :smile:".* Obrigado por ler. -->
