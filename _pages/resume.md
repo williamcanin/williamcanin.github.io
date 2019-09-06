@@ -37,12 +37,11 @@ Olá :v:, me chamo **William**, e sou apaixonado por desafios; tecnologia; desig
 
 Autodidata e proficiente em algumas [**linguagens de programação e tarefas voltadas a computação**](#nuvem-de-conhecimentos).
 
-Regularmente, codifico com uma tecnologias contidas nas minhas "`skills`" abaixo.
-Tenho uma relação de revezamento de **Front-End** e **Back-End**, ou seja, me considerando com aptidão a [**full-stack**](#nuvem-de-conhecimentos).
+Regularmente, tenho revezamentos entre **Front-End** e **Back-End**, ou seja, me considerando com aptidão a [**full-stack**](#nuvem-de-conhecimentos).
 
 Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [**Archlinux**](https://archlinux.org){:target="_blank"} / [Ubuntu](https://ubuntu.com){:target="_blank"}.
 
-Em meu lazer, gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:target="_blank"}; assistir séries/filmes; leitura sobre teologia; e, passear em campo.
+Em meu lazer, gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:target="_blank"}; assistir séries/filmes; leitura sobre teologia; e, estar com boas companhias.
 
 Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre. :stuck_out_tongue_winking_eye:
 
