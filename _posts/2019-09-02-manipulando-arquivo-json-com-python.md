@@ -23,12 +23,17 @@ script: [post.js]
 
 {% youtube "https://www.youtube.com/watch?v=pM7EQKKs6Vg" %}
 
-
-
-
 # Leitura de um arquivo JSON.
 
 {% youtube "https://www.youtube.com/watch?v=rlB6sWAAcy0" %}
+
+# Criando método para registrar login.
+
+{% youtube "https://youtu.be/ADSVVJ3umUI" %}
+
+# Criando método para logar no sistema.
+
+{% youtube "https://youtu.be/9-hcqcaSyoM" %}
 
 {% endpost #9D9D9D %}
 
