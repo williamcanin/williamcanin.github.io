@@ -33,7 +33,7 @@ layout: default
     {% else %}
 
     <div class="d-block row">
-    <div class="wow fadeInRight intro__terminal">
+    <div class="wow fadeInRight intro__terminal {% if site.home.terminal.animation == true %} animation {% endif %}">
       <header class="header">
         <div class="btn header__btn header__btn--red" style="cursor: pointer;" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Opa, te enganei hehe. Esse terminal não é real."></div>
         <div class="btn header__btn header__btn--yellow" style="cursor: pointer;" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Opa, te enganei hehe. Esse terminal não é real."></div>
@@ -44,9 +44,9 @@ layout: default
       </header>
       <section class="body">
         {% comment %} ./brief_description.py {% endcomment %}
-        <p>{{ loadData.website.terminal.text.user }}@{{ loadData.website.terminal.text.os }}:~$ python brief_description.py</p>
+        <p class="body__input"><span><span class="body__input__user">{{ loadData.website.terminal.text.user }}</span><span class="body__input__at">@</span><span class="body__input__os">{{ loadData.website.terminal.text.os }}</span>:<span class="body__input__dir">~$</span> python brief_description.py</p>
         {{ content }}
-        <p class="body__output"><span>{{ loadData.website.terminal.text.user }}@{{ loadData.website.terminal.text.os }}:~$</span>
+        <p class="body__output"><span><span class="body__output__user">{{ loadData.website.terminal.text.user }}</span><span class="body__output__at">@</span><span class="body__output__os">{{ loadData.website.terminal.text.os }}</span>:<span class="body__output__dir">~$</span></span>
           <span class="layout_hello__cursor">_</span>
         </p>
       </section>

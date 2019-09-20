@@ -3,8 +3,6 @@
 
 .intro{
     &__terminal{
-        animation-name: fade;
-        animation-duration: 900ms;
         @media (max-width: 768px) {
         // display: none;
         }
@@ -88,6 +86,20 @@
                 color: $terminal-link-color;
             }
         }
+        &__input{
+            &__user{
+                color: #e342f7;
+            }
+            &__at{
+                color: white;
+            }
+            &__os{
+                color: #cec811;
+            }
+            &__dir{
+                color: #0e8bf7;
+            }
+        }
 
         /* .intro__terminal .body__output */
         &__output{
@@ -102,6 +114,18 @@
             color: white;
             animation: cursor 1s infinite;
             min-height: 21px !important;
+            }
+            &__user{
+                color: #e342f7;
+            }
+            &__at{
+                color: white;
+            }
+            &__os{
+                color: #cec811;
+            }
+            &__dir{
+                color: #0e8bf7;
             }
         } /* END - .intro__terminal .body__output */
 

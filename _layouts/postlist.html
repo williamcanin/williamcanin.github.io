@@ -9,7 +9,7 @@ layout: default
   {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %}
 {% endfor %}
 
-<div class="p-lg-4 layout_postlist" itemscope="itemscope" itemtype="http://schema.org/Blog">
+<div class="p-lg-4 layout_postlist {% if site.content.postlist.animation == true %} animation {% endif %}" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
     <!-- This is a Blog Title -->
     <div class="layout_postlist__header">

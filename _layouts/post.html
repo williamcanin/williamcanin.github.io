@@ -5,7 +5,7 @@ layout: default
 <!-- Include Data Base  -->
 {% include liquid/data %}
 
-<div class="p-lg-4 mt-4 mt-lg-0 layout_post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="p-lg-4 mt-4 mt-lg-0 layout_post {% if site.content.post.animation == true %} animation {% endif %}" itemscope itemtype="http://schema.org/BlogPosting">
 
   <div class="container-fluid">
 
