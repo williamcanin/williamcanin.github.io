@@ -5,6 +5,7 @@ layout: null
 /*Include Data Base*/
 {% include liquid/data %}
 
+
 // Count comments
 {% if loadData.userdata.disqus.username %}
     var disqus_shortname  = '{{ loadData.userdata.disqus.username }}';
@@ -17,3 +18,5 @@ layout: null
 
     }());
 {% endif %}
+
+
