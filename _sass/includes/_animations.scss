@@ -51,6 +51,26 @@
             animation-delay: 660ms;
             animation-fill-mode: backwards;
         }
+        &__socialtitle{
+            animation: move 500ms;
+            animation-delay: 710ms;
+            animation-fill-mode: backwards;
+        }
+        &__fa-github{
+            animation: move 500ms;
+            animation-delay: 790ms;
+            animation-fill-mode: backwards;
+        }
+        &__fa-youtube{
+            animation: move 500ms;
+            animation-delay: 850ms;
+            animation-fill-mode: backwards;
+        }
+        &__fa-linkedin{
+            animation: move 500ms;
+            animation-delay: 930ms;
+            animation-fill-mode: backwards;
+        }
     }
 
 }

@@ -115,17 +115,17 @@ userdata:
     username: "williamcanin" # E.g: myuser
   # You can add at most 4 social. If you do not want 4, you can remove the block containing: title, id, icon, url.
   socials:
-    title: Follow Me!
+    title: Siga-Me!
     links:
       - title: GitHub
         id: github
         icon: fa-github
         url: https://github.com/williamcanin
 
-      - title: GitLab
-        id: gitlab
-        icon: fa-gitlab
-        url: https://gitlab.com/williamcanin
+      - title: Youtube
+        id: youtube
+        icon: fa-youtube
+        url: http://www.youtube.com/c/WilliamCanin
 
       - title: LinkedIn
         id: linkedin

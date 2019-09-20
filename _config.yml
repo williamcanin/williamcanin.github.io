@@ -31,7 +31,7 @@ home:
 sidebar:
   animation: true
   avatar:
-    # NOTE: Sidebar animation doesn't work with flip true
+    # NOTE: Avatar animation doesn't work with flip true
     animation: true
     enable: true
     flip: false

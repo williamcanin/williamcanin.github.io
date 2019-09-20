@@ -6,12 +6,12 @@
       {% assign links = userdata.socials.links %}
 
         <div class="mt-0 mb-0 mt-lh-1 mb-lg-1 d-block row">
-          <h4 class="font-weight-bold text-center sidebar__socials-title">{{ userdata.socials.title }}</h4>
+          <h4 class="font-weight-bold text-center sidebar__socials-title animation__socialtitle">{{ userdata.socials.title }}</h4>
         </div>
 
         {% for item in links %}
           <li id="{{ item.id }}" class="sidebar__socials-item">
-            <a class="mr-3 sidebar__socials-link" title="{{ item.title }}" href="{{ item.url }}" target="_blank"><i class="fab {{ item.icon }} sidebar__socials-icon" aria-hidden="true"></i></a>
+            <a class="mr-3 sidebar__socials-link" title="{{ item.title }}" href="{{ item.url }}" target="_blank"><i class="fab {{ item.icon }} sidebar__socials-icon animation__{{ item.icon }}" aria-hidden="true"></i></a>
           </li>
         {% endfor %}
 
