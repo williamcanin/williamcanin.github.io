@@ -3,6 +3,8 @@
 
 .intro{
     &__terminal{
+        animation-name: fade;
+        animation-duration: 900ms;
         @media (max-width: 768px) {
         // display: none;
         }

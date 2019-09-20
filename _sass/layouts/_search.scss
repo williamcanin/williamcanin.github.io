@@ -2,6 +2,8 @@
 ––––––––––––––––––––––––––––––––––––––––––––––––––  */
 
 .layout-search{
+  animation-name: fade;
+  animation-duration: 500ms;
   &__form{
     border: 1px solid $color__links;
     border-radius: 0px;

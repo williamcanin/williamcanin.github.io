@@ -3,6 +3,9 @@
 
 .layout_postlist{
 
+  animation-name: fade;
+  animation-duration: 500ms;
+
   background-color: $layout_postlist__bg;
 
   &__header{}

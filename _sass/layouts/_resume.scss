@@ -2,6 +2,8 @@
 ––––––––––––––––––––––––––––––––––––––––––––––––––  */
 
 .layout_resume{
+  animation-name: fade;
+  animation-duration: 500ms;
   &__excerpt{
     margin: 5% 0% 15% 0%;
     // &-text{}

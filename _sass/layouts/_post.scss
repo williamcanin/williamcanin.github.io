@@ -2,6 +2,9 @@
 ––––––––––––––––––––––––––––––––––––––––––––––––––  */
 
 .layout_post{
+  animation-name: fade;
+  animation-duration: 500ms;
+  
   &__time{
     font-size: 1rem;
     @if $elements__bg-enable == true {

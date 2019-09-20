@@ -2,6 +2,8 @@
 ––––––––––––––––––––––––––––––––––––––––––––––––––  */
 
 .layout_contact{
+  animation-name: fade;
+  animation-duration: 500ms;
   &__description{
     font-size: 1.2rem;
   }
