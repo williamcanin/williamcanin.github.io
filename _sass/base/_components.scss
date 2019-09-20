@@ -117,3 +117,33 @@ Components for Markdown.
 .markdown__bt40{
   margin-top: 40px;
 }
+
+.scrollbar_modern{
+  $boder: 10px;
+  $size: 9px;
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    margin-right: 9px;
+    background: #ffffff;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: $boder;
+    border-radius: $boder;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: $boder;
+    border-radius: $boder;
+    background: #131313;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+  background: #131313;
+  }
+}
