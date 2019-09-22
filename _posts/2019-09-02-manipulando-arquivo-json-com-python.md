@@ -19,21 +19,29 @@ script: [post.js]
 
 <!-- Write from here your post !!! -->
 
-# Criação de um arquivo JSON.
+# Parte 1
 
 {% youtube "https://www.youtube.com/watch?v=pM7EQKKs6Vg" %}
 
-# Leitura de um arquivo JSON.
+# Parte 2
 
 {% youtube "https://www.youtube.com/watch?v=rlB6sWAAcy0" %}
 
-# Criando método para registrar login.
+# Parte 3
 
 {% youtube "https://youtu.be/ADSVVJ3umUI" %}
 
-# Criando método para logar no sistema.
+# Parte 4
 
 {% youtube "https://youtu.be/9-hcqcaSyoM" %}
+
+# Parte 5
+
+{% youtube https://www.youtube.com/watch?v=1ZufpELTFAk %}
+
+# Parte 6
+
+{% youtube https://www.youtube.com/watch?v=i3ZM-7J7i-M %}
 
 {% endpost #9D9D9D %}
 
