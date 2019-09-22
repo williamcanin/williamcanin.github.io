@@ -37,11 +37,11 @@ script: [post.js]
 
 # Parte 5
 
-{% youtube https://www.youtube.com/watch?v=1ZufpELTFAk %}
+{% youtube "https://www.youtube.com/watch?v=1ZufpELTFAk" %}
 
 # Parte 6
 
-{% youtube https://www.youtube.com/watch?v=i3ZM-7J7i-M %}
+{% youtube "https://www.youtube.com/watch?v=i3ZM-7J7i-M" %}
 
 {% endpost #9D9D9D %}
 
