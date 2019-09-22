@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://williamcanin.me/atom.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2019-09-22T16:08:35-03:00</updated><id>https://williamcanin.me/atom.xml</id><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.me/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://williamcanin.me/atom.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2019-09-22T16:10:24-03:00</updated><id>https://williamcanin.me/atom.xml</id><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.me/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;h1 id=&quot;parte-1&quot;&gt;Parte 1&lt;/h1&gt;
 
@@ -23,12 +23,12 @@
 &lt;h1 id=&quot;parte-5&quot;&gt;Parte 5&lt;/h1&gt;
 
 &lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
-&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/1ZufpELTFAk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;parte-6&quot;&gt;Parte 6&lt;/h1&gt;
 
 &lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
-&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/i3ZM-7J7i-M&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
 
 &lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt;
 
