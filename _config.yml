@@ -81,7 +81,7 @@ content:
       googleplus:
         enable: false
     day_quote:
-      enable: true
+      enable: false
     comments:
       enable: true
   contact:
