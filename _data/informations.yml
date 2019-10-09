@@ -136,7 +136,7 @@ userdata:
   email: "contato@williamcanin.me" # E.g: youremail@domain.com
   twitter: "@williamcanin" # E.g: "@my_twitter"
   disqus:
-    username: "williamcanin" # E.g: myuser
+    username: williamcanin # E.g: myuser
   socials:
     title: Siga-Me!
     links:
