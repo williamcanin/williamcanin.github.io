@@ -1,37 +1,60 @@
-# File: Rakefile
-# Language: RakeFile
+# File name: Rakefile
+# Stript type: Rake
 # Country/State: Brazil/SP
-# Author : William C. Canin <http://williamcanin.github.com>
-# Page author: http://williamcanin.com
-# Description: Task creation file for the 'config.rb' file.
+# Author : William C. Canin
+# Page author: http://williamcanin.me
+# Description: Task creation file for the 'manager.rb' file.
 
-LIB_DIR = "./src/lib"
+require "./_src/lib/rb/manager.rb"
 
-require "#{LIB_DIR}/rb/config.rb"
+# Instance class
+manager = Manager.new
 
-# require "./src/lib/rb/config.rb"
-
-
-# Task create header Post
-# Example1: rake post TITLE="First post"
-# Note: TITLE is Required
+# Task create header post
+# Example: rake post
 desc "Create new post"
 task :post do
-  confs = Main.new
-  confs.post_create('postsDir')
+  manager.post_create
 end
 
-# Task create header Page
-# Example1: rake page TITLE="First page"
-# Note: TITLE is Required
+# Task create header page
+# Example: rake page
 desc "Create new page"
 task :page do
-  confs = Main.new
-  confs.page_create('pageDir')
+  manager.page_create
 end
 
+# Task to set up after installation
+# Example: rake postinstall
+desc "Setup after installation"
+task :postinstall do
+  manager.postinstall
+end
 
-# Default configuration
+# Task to deploy the compiled project
+# Example: rake deploy:public
+desc "Deploy the compiled project"
+namespace :deploy do
+  task :public do
+    manager.deploy('public', 'public')
+  end
+end
+
+# Task to deploy the project source.
+# Example: rake deploy:source
+desc "Deploy the project source"
+namespace :deploy do
+  task :source do
+    manager.deploy('.', 'src')
+  end
+end
+
+# Other outputs
+def get_stdin(message)
+  print message
+  STDIN.gets.chomp
+end
+
 def ask(message, valid_options)
   if valid_options
     answer = get_stdin("#{message} #{valid_options.to_s.gsub(/"/, '').gsub(/, /,'/')} ") while !valid_options.include?(answer)
@@ -39,9 +62,4 @@ def ask(message, valid_options)
     answer = get_stdin(message)
   end
   answer
-end
-
-def get_stdin(message)
-  print message
-  STDIN.gets.chomp
 end

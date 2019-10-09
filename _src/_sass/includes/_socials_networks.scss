@@ -1,0 +1,14 @@
+.socials_network{
+    &__header, &__body{
+        background-color: $background__full !important;
+    }
+    &__icon{
+        font-size: 3.5rem;
+    }
+    &__close{
+        color: $color__text;
+        &:hover{
+            color: $color__text;
+        }
+    }
+}

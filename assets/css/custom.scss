@@ -1,11 +1,15 @@
 ---
 ---
 
-//// Uncomment the lines below and start editing your theme in the file "_sass/theme/custom".
-// @import "theme/custom";
-// @import "options";
-// @import "base/base";
-// @import "layouts/layouts";
-// @import "includes/includes";
-// @import "mobile/mobile";
-// @import "print/print";
+@import "themes/custom";
+@import "highlighter/highlighter";
+@import "base/base";
+@import "markdown/markdown";
+@import "layouts/layouts";
+@import "includes/includes";
+@import "gist/gist";
+@import "print/print";
+@import "plugins/plugins";
+
+// Mobile
+@import "mobile/mobile";

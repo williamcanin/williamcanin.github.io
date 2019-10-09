@@ -1,189 +1,95 @@
-# Welcome to Jekyll! ... and Typing!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# the base hostname & protocol for your site, e.g. http://example.com
+url: "https://williamcanin.me"
+# the subpath of your site, e.g. /blog
+baseurl: "/typing-jekyll-template"
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ data_string.website.title }}, {{  data_string.website.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://williamcanin.me" # the base hostname & protocol for your site, e.g. http://example.com
-
-
-### BEGIN - This property enables and disables template features. Use to taste.
-maintenance:
-  enable: false
-google:
-  analytics:
-    enable: true
-home:
-  terminal:
-    animation: true
-    enable: true
-sidebar:
-  animation: true
-  avatar:
-    # NOTE: Avatar animation doesn't work with flip true
-    animation: true
-    enable: true
-    flip: false
-  icons:
-    enable: true
-  socials:
-    enable: false
-content:
-  icons:
-    enable: true
-  page:
-    animation: true
-  postlist:
-    animation: true
-    date:
-      enable: true
-    expected:
-      enable: true
-    tags:
-      enable: true
-    comments:
-      enable: true
-  tagpost:
-    animation: true
-    date:
-      enable: true
-    expected:
-      enable: true
-    tags:
-      enable: true
-    comments:
-      enable: true
-  post:
-    animation: true
-    author:
-      enable: true
-      avatar:
-        enable: false
-    share:
-      enable: true
-      facebook:
-        enable: true
-      linkedin:
-        enable: true
-      twitter:
-        enable: true
-      googleplus:
-        enable: false
-    day_quote:
-      enable: false
-    comments:
-      enable: true
-  contact:
-    animation: true
-    note:
-      enable: true      
-### END - This property enables and disables template features. Use to taste.
-
-
-
-
-
-
-
-
-### EXTRA BEGIN - These properties are extra features, such as built-in third-party plugins.
+# Plugins de player - Jektify
 jektify:
   enable: true
   open: true
   toggle:
     enable: true
   spotify:
-    user: "williamcanin"
-    text: "Veja-me no Spotify"
+    user: # "you_user_spotify"
+    text: "See me no Spotify"
   sass:
     jekyll: true
     other:
       dir: "way/to/your/SASS"
   title:
     enable: false
-    text: "Música"
+    text: "Music name"
   description:
     enable: false
     text: |
-      Sonzera que ouço.
+      Jekyll plugin to generate html snippets for embedding Spotify Musics.
+      To listen to the full song, open your Spotify and start these musics.
+
+
+# Attention! Do not change the information below as it is 
+# for development unless you know what you are doing.
 
 plugins:
   - jemoji
   - jekyll-paginate-v2
+  - jekyll-gist
+  - jekyll-sitemap
+  - jekyll-jsminify
+  - jekyll-email-protect
   - jekyll-feed
+  - jekyll-coffeescript
 
-feed:
-  path: atom.xml
+include: ['_blog','_pages']
 
-# Settings for the plugins in the _plugins folder.
-_plugins:
-  imager:
-    dir_posts: "assets/images/posts"
-  # To see language support, go to the plugin "_plugins/reading_time.rb"
-  reading_time:
-    locale: pt_PT
-  # To see language support, go to the plugin "_plugins/datelang.rb"
-  datelang:
-    locale: pt_PT
-    reload: false
-### EXTRA END - These properties are extra features, such as built-in third-party plugins.
-
-
-
-
-
-
-
-### BEGIN - [IRRELEVANT PROPERTIES] - These properties have no need to change unless you know what you are doing. WATCH OUT!
-
-# Settings Default
-include: ['_blog','_pages','_contact']
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
 permalink: /blog/:title/
 
-# Build local / Server
-destination: _site
+layouts_dir: _src/_layouts
+includes_dir: _src/_includes
+plugins_dir: _src/_plugins
+
+destination: public
 port: 4000
 host: localhost
 
-# Config SASS
 sass:
-  sass_dir: _sass
+  load_paths:
+  - _src/_sass
+  - vendor/node_modules
   style: compressed
 
-# Config feed for atom
 feed:
-  path: atom.xml
+  path: feed.xml
 
-# Config for Compress HTML
 compress_html:
   clippings: all
   comments: all
   endings: []
   profile: false
 
-# Config plugin 'jekyll-tagging'
 tag_page_layout: tag
 tag_page_dir: blog/tags
 tag_permalink_style: pretty
 
-# Pagination
-# https://github.com/sverrirs/jekyll-paginate-v2
-# NOTE: To disable paging, leave "enabled" for "false", 
-#       and in the "_blog/index.md" file, also leave "enabled"
-#       for "false."
+imager:
+  dir_posts: "assets/images/posts"
+
+# Readingtime and Datelang
+## supported languages:
+### ch_CH - Chinese | de_DE - Deutschland | en_US - English
+### es_ES - Spanish | fr_FR - French | it_IT - Italian
+### ja_JP - Japan | pt_PT - Portuguese | ru_RU - Russian
+reading_time:
+  locale: en_US
+
+datelang:
+  locale: en_US
+  reload: true
+
 pagination:
   enabled: true
   debug: false
@@ -191,32 +97,30 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
   per_page: 5
-  permalink: '/blog/:num/'
+  permalink: '/:num/'
   locale: ''
-  title: ':title - Página :num'
+  title: ':title - Page :num'
   limit: 0
   extension: html
   indexpage: 'index'
 
-# Config for plugin 'jekyll-gist'
 gist:
   noscript: false
 
-# Exclude files (or folders) in compilation.
 exclude:
-  - docs
-  - development
-  - src
+  - temp
+  - .hidden
+  - node_modules
+  - _src
   - vendor
   - Gemfile
   - Gemfile.lock
   - screenshot.png
   - CHANGELOG
-  - LICENSE.txt
   - COPYING
-  - "**/*.txt"
+  - package-lock.json
+  - package.json
   - README.md
-  - init.sh
   - Rakefile
-  - deploy.conf
-### END - [IRRELEVANT PROPERTIES] - These properties have no need to change unless you know what you are doing. WATCH OUT!
+  - yarn.lock
+  - Makefile

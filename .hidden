@@ -1,0 +1,11 @@
+vendor
+_src
+Rakefile
+yarn.lock
+Gemfile.lock
+package-lock.json
+package.json
+COPYING
+CREDITS
+README.md
+Gemfile

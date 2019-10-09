@@ -1,99 +1,30 @@
 ---
 layout: page
-title: Projetos
+order: 2
+title: Projects
 sitemap:
   priority: 0.7
   changefreq: 'monthly'
-  lastmod: 2018-02-06T12:49:30-05:00
-in_menu: false
+  lastmod: 2017-05-04T12:49:30-05:00
+# Use icons of: https://fontawesome.com/icons
+# E.g: fa-briefcase
 icon: fa-briefcase
-published: false
-permalink: /projects/
+menu:
+  enable: true
+  local: [default]
+script: []
+published: true
+permalink: /projects/ # add permilink for page. E.g: /smallparty/
 ---
+ 
+If you wanted to know about my favorite chores, this is the correct page. You find my designs of my own, or participation.
+
+## Major collaborations
+
+[Typing Theme](https://github.com/williamcanin/typing-jekyll-template) : Creating themes for Jekyll
 
 
-Meus projetos principais encontra-se aqui! São links redirecionando para realizações próprias ou participações que tem minha "mão de mágico" para outra página.
-
-Coleguinha, os projetos "Inativos", são os que eu não atualizo a versão por um tempo, porém, funcionam. Eu preciso mudar isso...talvez um dia quando encontrar um patrocínio que me dê um cheque sem fundo.
-
-Você pode encontar mais projetos no meu [GitHub](https://github.com/williamcanin){:target="_blank"}, curioso(a).
-
-##  Autoria
-
-|[Skeleton Jekyll](https://github.com/williamcanin/skeleton-jekyll){:target="_blank"} <i class="fa fa-external-link"></i>|
+|[Typing Jekyll Template](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"}|
 --------------------------|----------------------------
-| **Ramo**: Ruby / Template / Theme / Jekyll /  Web Development |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Skeleton Jekyll é um template esqueleto de Jekyll contendo vários recursos para iniciar um projeto de um site estático de forma rápida. |
-
-|[Go!Link](https://github.com/williamcanin/golink){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Ruby / Template / Theme / Jekyll /  Web Development |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Go!Link é um tema mínimo para Jekyll, especialmente para aqueles que querem ter uma página apenas para redirecionar links para outros endereços. |
-
-|[Typing Jekyll Template](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Ruby / HTML / SCSS / JQuery / Web Development / Template |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Template para Jekyll, construído especialmente para aqueles que querem ter uma página própria na web, veloz e leve. |
-
-|[Skeleton Go!Sync](https://github.com/williamcanin/skeleton-gosync){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: NodeJs / Gulp / HTML / Web Development |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Projeto que permite uma facilidade de criar seus website's com gerenciadores de tarefas. |
-
-|[Jekyll CV Creator](https://github.com/williamcanin/jekyll-cv-creator){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: NodeJs / Gulp / HTML / SCSS / JQuery / Web Development |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Um tema para Jekyll que realizar a criação de Currículos com opção de impressão responsiva. |
-
-|[Jekyll Skeleton Bootstrap](https://github.com/williamcanin/jekyll-skeleton){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: NodeJs / Gulp / HTML / SCSS / JQuery / Web Development |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Um template (esqueleto) que ajuda a iniciar a criação de sites estáticos com Jekyll. |
-
-|[CRUD Java - TableModel](https://github.com/williamcanin/crud-j2se-netbeans-tablemodel){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Development Back-End / Java |
-| **Status**: <label style="color:red;">Inativo</label> |
-| **Descrição**: Um simples CRUD em Java realizado com NetBeans usando TableModel. |
-
-|[iDisconnect](http://williamcanin.com/idisconnect){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Development Back-End / Delphi |
-| **Status**: <label style="color:red;">Inativo</label> |
-| **Descrição**: Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador. |
-
-|[X-Eclipse](https://github.com/williamcanin/x-eclipse){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Development Back-End / Script via Shell / Bash |
-| **Status**: <label style="color:red;">Inativo</label> |
-| **Descrição**: Script via Shell que realiza a instalação da última versão estável do Eclipse no Linux. Compatível com qualquer distribuição Linux. |
-
-|[OJDK Get](https://github.com/williamcanin/ojdk-get){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Development Back-End / Script via Shell / Bash |
-| **Status**: <label style="color:red;">Inativo</label> |
-| **Descrição**: Script via Shell que realiza a instalação da última versão do Oracle Java SE Development Kit no Linux. |
-
-|[Recover Grub](https://github.com/williamcanin/recover-grub){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Development Back-End / Script via Shell / Bash |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Script via Shell para realizar a recuperação do Grub no Arch Linux. |
-
-|[Modbl](https://github.com/williamcanin/modbl){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Development Back-End / Script via Shell / Bash |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Script via Shell que faz a adição de módulos em uma lista negra (blacklist) para que esses módulos não sejam carregados na inicialização da máquina (boot). |
-
-|[Get Yaourt](https://github.com/williamcanin/get-yaourt){:target="_blank"} <i class="fa fa-external-link"></i>|
---------------------------|----------------------------
-| **Ramo**: Development Back-End / Script via Shell / Bash |
-| **Status**: <label style="color:green;">Ativo</label> |
-| **Descrição**: Script via Shell que faz a instalação/reinstalação do Yaourt no Arch Linux. |
+| **Status**: <label style="color:green;">Active</label> |
+| **Description**: Typing, is a template for Jekyll built especially for those who want to have a blog and pages quickly and lightly. |

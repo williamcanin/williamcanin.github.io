@@ -1,0 +1,34 @@
+{
+  "name": "typing-jekyll-template",
+  "version": "4.0.0",
+  "description": "Typing, is a template for Jekyll built especially for those who want to have a blog and pages quickly and lightly.",
+  "main": "index.md",
+  "scripts": {
+    "preinstall": "bundle install",
+    "postinstall": "bundle exec rake postinstall",
+    "build": "bundle exec rake postinstall && bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve",
+    "page": "bundle exec rake page",
+    "post": "bundle exec rake post",
+    "deploy:source": "bundle exec rake deploy:source",
+    "deploy:public": "bundle exec rake deploy:public"
+  },
+  "repository": "git+https://github.com/williamcanin/typing-jekyll-template.git",
+  "keywords": [
+    "typing",
+    "template",
+    "jekyll"
+  ],
+  "author": "William Canin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamcanin/typing-jekyll-template/issues"
+  },
+  "homepage": "https://github.com/williamcanin/typing-jekyll-template#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "simple-jekyll-search": "^1.7.2"
+  }
+}

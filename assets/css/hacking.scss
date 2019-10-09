@@ -1,10 +1,15 @@
 ---
 ---
 
-@import "theme/hacking";
-@import "options";
+@import "themes/hacking";
+@import "highlighter/highlighter";
 @import "base/base";
+@import "markdown/markdown";
 @import "layouts/layouts";
 @import "includes/includes";
-@import "mobile/mobile";
+@import "gist/gist";
 @import "print/print";
+@import "plugins/plugins";
+
+// Mobile
+@import "mobile/mobile";
