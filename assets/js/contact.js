@@ -5,8 +5,10 @@ layout: null
 /*Include Data Base*/
 {% include liquid/data %}
 
+{% if load_data.website.content.contact.formspree.plan != 'free' %}
+
 $(function($){
-	$("#layout_contact__form").submit(function(event) {
+	$("form").submit(function(event) {
 		event.preventDefault();
 		$.ajax({
 	    url: "https://formspree.io/{{ load_data.userdata.email | encode_email }}", 
@@ -29,3 +31,14 @@ $(function($){
 		});
 	});
 }) ;
+
+{% else %}
+
+if (location.href.indexOf("{{ '/contact/#email_successfully_sent' | prepend: site.baseurl | prepend: site.url }}") === 0) {
+	$('#email_successfully_sent').modal('show');
+	$("#email_successfully_sent").on("hidden.bs.modal", function () {
+		document.location.href = String( document.location.href ).replace( "#email_successfully_sent", "" );
+	});
+}
+
+{% endif %}

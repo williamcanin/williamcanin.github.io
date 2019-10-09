@@ -89,6 +89,8 @@ website:
 
   # Contact
     contact:
+      formspree:
+        plan: "free" # Using: free | paid
       language: "pt-BR"
       placeholder:
         name: "Seu nome completo"
