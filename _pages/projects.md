@@ -13,7 +13,7 @@ menu:
   enable: true
   local: [default]
 script: []
-published: true
+published: false
 permalink: /projects/ # add permilink for page. E.g: /smallparty/
 ---
  

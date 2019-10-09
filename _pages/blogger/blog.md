@@ -3,7 +3,7 @@ layout: postlist
 order: 1
 title: Blog
 posts_quantity:
-  message: ['There are','posts in total.']
+  message: ['No total, são','post(s) separados por páginas.']
 # Use icons of: https://fontawesome.com/icons
 # E.g: fa-briefcase
 icon: fa-edit
@@ -21,4 +21,6 @@ permalink: /blog/ # add permilink for page. E.g: /smallparty/
 
 <!-- Do not delete this file! Put your text below. -->
 
-What follows is a list of weblog posts from as early as {{ site.debutyear }}. I hope you enjoy
+{% include liquid/data %}
+
+O que se segue neste weblog é uma lista de postagens desde {{ load_data.website.launch }}. Cada postagem tem seu próprio personagem, já que foram escritos com muitos dias de intervalo. Sinta-se à vontade para fazer quaisquer pensamento que você possa ter. Espero que contemple.

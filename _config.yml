@@ -1,7 +1,7 @@
 # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://williamcanin.me"
 # the subpath of your site, e.g. /blog
-baseurl: "/typing-jekyll-template"
+baseurl: ""
 
 # Plugins de player - Jektify
 jektify:
@@ -10,8 +10,8 @@ jektify:
   toggle:
     enable: true
   spotify:
-    user: # "you_user_spotify"
-    text: "See me no Spotify"
+    user: "williamcanin" # "you_user_spotify"
+    text: "Siga-me no Spotify"
   sass:
     jekyll: true
     other:
@@ -84,10 +84,10 @@ imager:
 ### es_ES - Spanish | fr_FR - French | it_IT - Italian
 ### ja_JP - Japan | pt_PT - Portuguese | ru_RU - Russian
 reading_time:
-  locale: en_US
+  locale: pt_PT
 
 datelang:
-  locale: en_US
+  locale: pt_PT
   reload: true
 
 pagination:
@@ -110,6 +110,7 @@ gist:
 exclude:
   - temp
   - .hidden
+  - docs/config
   - node_modules
   - _src
   - vendor

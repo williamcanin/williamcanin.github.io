@@ -8,14 +8,37 @@ published: true
 script: [hello.js]
 ---
 
-Hey, I'am [Typing](https://github.com/williamcanin/typing-jekyll-template){: target="_blank"}. I'm a theme [Jekyll](https://jekyllrb.com){: target="_blank"} Inspired by the habit of typing. Using an appearance that resembles the typewriter. A simple, fast and efficient way of reading, just like the old days.
 
-'Typing' is intended for users with more technical content than for users who wish to have a stylish page. Keep it simple!
+{% assign age = site.time | date: '%Y' | minus: 1988 %}
 
-**Let's see some details about this page:**
+Hey, guy! Bem-vindo à casa de Internet de William Canin. (Este sou eu!)
 
-This page Hello exists to put everything about you, as if it were a simplified 'About'. The file for editing this page is in the directory root: `index.md`.
+Me considero um desenvolvedor assíduo e autodidata. Eu escrevo ocasionalmente no meu [weblog]({{site.url}}{{site.baseurl}}/blog/).
 
-Hey Nerd! How is it? You're analyzing me, but are not you using me? Use me now! I'm not into embellishment. 
+Confira meu último post, {% for last_post in site.posts limit:1 %}
+"<a href="{{site.url}}{{site.baseurl}}{{last_post.url}}">{{last_post.title}}</a>". {% endfor %}
 
-[Download](https://github.com/williamcanin/typing-jekyll-template){: target="_blank"}
+Meu sistema operacional é Linux, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"} / [Ubuntu](https://www.ubuntu.com/){:target="_blank"}.
+
+Tenho uma relação de amor e "ódio" com a maioria das linguagens de programação, mas eu encontrei casas felizes em [Python](https://python.org/){:target="_blank"}, Shell script, [Ruby](https://www.ruby-lang.org){:target="_blank"}, e Frontend.
+
+Você pode ver uma lista de meus projetos na minha página do [GitHub](https://github.com/williamcanin){:target="_blank"}. É provável que alguns esteja `out-of-date` e eu deveria corrigir isso...algum dia talvez.
+
+Mais alguma coisa...? Oh sim, aqui estão os demais lugares na internet que você pode me encontrar e descobrir alguns enigmas:
+
+<!-- Add class 'markdown__listhome' for float: left -->
+
+<!-- {: .markdown__listhome} -->
+ [LinkedIn](https://www.linkedin.com/in/williamcostacanin/){:target="_blank"} |
+ [GitHub](https://github.com/williamcanin){:target="_blank"} |
+ [YouTube](https://youtube.com/c/williamcanin){:target="_blank"} |
+ [GitLab](https://gitlab.com/williamcanin){:target="_blank"} |
+ [Twitter](https://twitter.com/williamcanin/){:target="_blank"} |
+ [VivaOLinux](https://www.vivaolinux.com.br/~willnux){:target="_blank"} |
+ [ArchlinuxBR](https://forum.archlinux-br.org/profile.php?id=5539){:target="_blank"} |
+ [StackOverflow](https://pt.stackoverflow.com/users/15113/williamcanin?tab=profile){:target="_blank"} |
+ [Spotify](https://open.spotify.com/user/williamcanin){:target="_blank"} |
+ <span style="color: red;">Facebook Error 404</span> | <span style="color: red;">Instagram Error 404</span>
+
+"The pain that hurts me is the same as it teaches me."
+<!-- *"O tolo não se interessa em aprender, mas só em dar as suas opiniões." [ Provébios 18:2 ]* -->

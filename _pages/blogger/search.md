@@ -1,7 +1,7 @@
 ---
 layout: search
 order: 3
-title: Search
+title: Pesquisar
 # Use icons of: https://fontawesome.com/icons
 # E.g: fa-briefcase
 icon: fa-search
@@ -15,4 +15,4 @@ permalink: /blog/search/ # add permilink for page. E.g: /smallparty/
 
 <!-- Do not delete this file! Put your text below. -->
 
-Type something in the field to perform a search for an article in the Blog. Good hunting!
+Digite algo no campo para executar uma pesquisa no [Weblog]({{site.url}}{{site.baseurl}}/blog/) igual a velocidade do papa-léguas. Não tem coiote.

@@ -15,4 +15,5 @@ permalink: /blog/tags/ # add permilink for page. E.g: /smallparty/
 
 <!-- Do not delete this file! Put your text below. -->
 
-Here you find the option to find content through Tags. An easy way to know what kind of content there is on the Blog. Good hunting!
+Aqui você encontra a opção de encontrar conteúdos através dessa Nuvem de Tags. Uma maneira fácil de saber que tipo de conteúdo existe no meu
+[**Weblog**]({{site.url}}{{site.baseurl}}/blog/). Aproveita que essa nuvem não tem raios.

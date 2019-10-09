@@ -14,7 +14,7 @@ menu:
   enable: true
   local: [default]
 script: []
-published: true
+published: false
 permalink: /about/ # add permilink for page. E.g: /smallparty/
 ---
  

@@ -102,7 +102,7 @@ layout: blog
     <div class="row mt-5 layout_post__author">
       {% if load_options.content.post.author.avatar.enable == true and load_data.website.content.post.author.avatar %}
       <div class="col-2">
-        <img class="img-fluid layout_post__author-img" src="{{ '/assets/images/author' | prepend: site.baseurl }}/{{ load_data.website.content.post.author.avatar }}" width="140" height="auto" alt="{{ load_data.website.content.post.author.name }}">
+        <img class="img-fluid rounded layout_post__author-img" src="{{ '/assets/images/author' | prepend: site.baseurl }}/{{ load_data.website.content.post.author.avatar }}" width="140" height="auto" alt="{{ load_data.website.content.post.author.name }}">
       </div>
       {% endif %}
       <div class="col-10 {% if load_options.content.post.author.avatar.enable != true %} col-12 {% endif %}">
