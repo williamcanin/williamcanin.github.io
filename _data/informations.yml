@@ -133,7 +133,7 @@ website:
 
 # User data
 userdata:
-  email: "contato@williamcanin.me" # E.g: youremail@domain.com
+  email: contato@williamcanin.me # E.g: youremail@domain.com
   twitter: "@williamcanin" # E.g: "@my_twitter"
   disqus:
     username: williamcanin # E.g: myuser
