@@ -109,7 +109,7 @@ website:
             message: |
               Falha ao enviar o e-mail :(
           body: |
-            Infelizmente, por algum motivo, seu e=mail não foi enviado.
+            Infelizmente, por algum motivo, seu e-mail não foi enviado.
             Você pode entrar em contato comigo pelo e-mail "william.costa.canin@gmail.com"
         button: "Vai, mensagem!"
       note:
