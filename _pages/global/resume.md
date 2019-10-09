@@ -1,7 +1,7 @@
 ---
 layout: resume
 order: 3
-title: Currículo
+title: Sobre
 sitemap:
   priority: 0.7
   changefreq: 'monthly'
