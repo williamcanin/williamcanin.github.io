@@ -1,176 +1,161 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1"><title> Eclipse Luna - Erro de inicialização no Linux | William Canin - Developer_</title><meta name=description content="Apesar do Eclipse ser uma IDE famosa e de ótimos recursos, ele (como qualquer outras aplicação) não está livre de bugs. Esse post é para uma correção de um b..."><meta name="google-site-verification" content="kFisEN5aqITDKsnq2_HXHtxA8ygFVE95XlKapU7Kz_I"><meta http-equiv="cache-control" content="max-age=29030400"/><meta http-equiv="pragma" content="public"><meta name="keywords" content="William, Canin, Analista, Desenvolvedor, Programador, WebDesign, Geek" /><meta name="author" content="William Canin" /><meta http-equiv="Content-Language" content="pt-BR"><meta property="og:locale" content="pt-BR" /><meta property="og:site_name" content="William Canin" /><meta property="og:type" content="WebSite" /><meta property="og:url" content="https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/" /><meta property="og:description" content="Developer_" /><meta property="og:title" content="Eclipse Luna - Erro de inicialização no Linux" /><link rel="canonical" href="https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/"><link type="application/atom+xml" rel="alternate" title="William Canin" href="https://williamcanin.me/feed.xml"><link rel="icon" type="image/png" sizes="32x32" href="https://williamcanin.me/assets/images/favicon/favicon-32x32.png"><link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Space+Mono:400,400i,700,700i" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"> <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"><link rel="stylesheet" href="/assets/css/vendor.css"><link rel="stylesheet" href="/assets/css/whiteglass.css"> <script> if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-101186555-1', 'auto'); ga('send', 'pageview'); } </script></head><body id="top"><div class="layout_default layout_default__bg">
-<div class="container layout_default__container"><div class="row">
-<div class="p-0 col-lg-3 sidebar sidebar__bg"><div class="container-fluid">
-<div class="sidebar__header"><div class="mt-4 row">
-<div class="mb-0 mb-lg-4 col-3 col-sm-3 col-lg-12"> <a class="sidebar__img sidebar__img-noflip" href="https://williamcanin.me/"> <img class="img-fluid mx-auto d-block border-dashed animation__pulse " src="/assets/images/avatar/avatar.svg" width="165" height="165" alt="Avatar"> </a>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1"><title> Eclipse Luna - Erro de inicialização no Linux | William Canin - Developer_</title><meta name=description content="Apesar do Eclipse ser uma IDE famosa e de ótimos recursos, ele (como qualquer outras aplicação) não está livre de bugs. Esse post é para uma correção de um b... "><meta name="google-site-verification" content="kFisEN5aqITDKsnq2_HXHtxA8ygFVE95XlKapU7Kz_I"><meta http-equiv="cache-control" content="max-age=29030400"/><meta http-equiv="pragma" content="public"><meta name="keywords" content="William, Canin, Analista, Desenvolvedor, Programador, WebDesign, Geek" /><meta name="author" content="William Canin" /><meta http-equiv="Content-Language" content="pt-BR"><meta property="og:locale" content="pt-BR" /><meta property="og:site_name" content="William Canin" /><meta property="og:type" content="WebSite" /><meta property="og:url" content="https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/" /><meta property="og:description" content=" Developer_" /><meta property="og:title" content="Eclipse Luna - Erro de inicialização no Linux " /><link rel="canonical" href="https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/"><link type="application/atom+xml" rel="alternate" title="William Canin" href="https://williamcanin.me/feed.xml"><link rel="icon" type="image/png" sizes="32x32" href="https://williamcanin.me/assets/images/favicon/favicon-32x32.png"><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet"> <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script><link rel="stylesheet" href="https://williamcanin.me/assets/css/vendor.css"><link rel="stylesheet" href="https://williamcanin.me/assets/css/custom.css"></head><body class="body underline_links " id="top"><div class="container layout_default"><div class="row">
+<div class="col-lg-3 px-0 mt-0 sidebar"><div class=" py-3 sticky-top flex-grow-1"><div class="pt-3 sidebar__wrapper"><div class="nav flex-lg-column mx-3 mx-lg-0">
+<div class="d-none d-sm-block sidebar__avatar_flip"><div class="sidebar__avatar_flip-card"> <a class="sidebar__avatar_flip-front sidebar__avatar_flip-face" href="https://williamcanin.me/"> <img class="p-1 img-fluid mx-auto d-block animation__pulse sidebar_avatar_circle sidebar_avatar_background sidebar_avatar_border " src="/assets/images/avatar/avatar.svg" width="165" height="165" alt="Avatar"> </a> <a class="sidebar__avatar_flip-back sidebar__avatar_flip-face" href="https://williamcanin.me/"> <img class="p-1 img-fluid mx-auto d-block animation__pulse sidebar_avatar_circle sidebar_avatar_background sidebar_avatar_border " src="/assets/images/avatar/avatar_flip.svg" width="165" height="165" alt="Avatar"> </a>
+</div></div>
+<h1 class="p-2 text-center d-md-flex align-items-center mx-auto animation__sidebar-title sidebar__title"> <a href="https://williamcanin.me/" class="nav-link" style="font-size: 2.3rem">Hey, <br> I'm William.</a>
+</h1>
+<div class="p-2 mx-3 d-md-flex flex-md-column align-items-md-start align-items-center align-items-lg-start flex-lg-column mx-auto mr-lg-3 ml-lg-3 sidebar__menu animation__sidebar-menu ">
+<div class="my-1 d-none d-md-block mr-3 sidebar__menu-title">Menu: Blog</div>
+<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item"> <i class="mr-1 fas fa-edit"></i> <a class="sidebar__menu-link" href="https://williamcanin.me/blog/">Blog</a>
+</li>
+<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item"> <i class="mr-1 fas fa-tags"></i> <a class="sidebar__menu-link" href="https://williamcanin.me/blog/tags/">Tags</a>
+</li>
+<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item"> <i class="mr-1 fas fa-search"></i> <a class="sidebar__menu-link" href="https://williamcanin.me/blog/search/">Pesquisar</a>
+</li>
+<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item"> <i class="mr-1 fas fa-rss"></i> <a class="sidebar__menu-link" href="https://williamcanin.me/feed.xml">Feed</a>
+</li>
 </div>
-<div class=" col-9 col-sm-9 col-lg-12"> <a class="text-d-none sidebar__title" href="https://williamcanin.me/"><h1 class="sidebar__title--text animation__move">Hey, <br> I'm William.</h1></a>
+</div></div></div></div>
+<div class="px-0 py-4 col-lg-9" id="main"><div class="content"><div class="content__wrapper"><div class="mt-lg-0 layout_post animation__content " itemscope itemtype="http://schema.org/BlogPosting"><div class="container-fluid">
+<div class="p-3 mb-4 layout_post__header">
+<h1 class="font-weight-bold layout_post__title">Eclipse Luna - Erro de inicialização no Linux</h1>
+<div class="layout_post__date"> <time class="layout_post__time"> <i class="far fa-calendar-alt"></i> Fevereiro 23, 2015 </time>
 </div>
-</div></div>
-<div class="mt-4 sidebar__menu"><div class="row"><ul class="px-3 mx-2 px-lg-3 mx-lg-3 sidebar__menu-list">
-<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item animation__menuhello "> <i class="mr-1 fas fa-home"></i> <a class="sidebar__menu-item__link" href="https://williamcanin.me/">Olá!</a>
-</li>
-<hr class="hr-dashed">
-<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item animation__menublog "> <i class="mr-1 fas fa-edit"></i> <a class="sidebar__menu-item__link" href="https://williamcanin.me/blog/">Blog</a>
-</li>
-<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item animation__menusearch "> <i class="mr-1 fas fa-search"></i> <a class="sidebar__menu-item__link" href="https://williamcanin.me/blog/search/">Pesquisar</a>
-</li>
-<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item animation__menutag "> <i class="mr-1 fas fa-tags"></i> <a class="sidebar__menu-item__link" href="https://williamcanin.me/blog/tags/">Tags</a>
-</li>
-<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item sidebar__menu-item-pages animation__menuContato "> <i class="mr-1 fas fa-envelope"></i> <a class="sidebar__menu-item__link" href="https://williamcanin.me/contact/">Contato</a>
-</li>
-<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item sidebar__menu-item-pages animation__menuSobre "> <i class="mr-1 fas fa-file-alt"></i> <a class="sidebar__menu-item__link" href="https://williamcanin.me/resume/">Sobre</a>
-</li>
-<li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item animation__menufeed "> <i class="mr-1 fas fa-rss"></i> <a class="sidebar__menu-item__link" href="https://williamcanin.me/feed.xml" target="_blank">Feed</a>
-</li>
-</ul></div></div>
-</div></div>
-<div class="pt-4 pt-lg-0 col-lg-9 border-l-dashed border-r-dashed layout_default__content"><div class="p-lg-4 mt-4 mt-lg-0 layout_post animation " itemscope itemtype="http://schema.org/BlogPosting"><div class="container-fluid">
-<div class="row"><h1 class="font-weight-bold layout_post__title">Eclipse Luna - Erro de inicialização no Linux</h1></div>
-<div class="mb-2 mt-2 mb-lg-4 mt-lg-4 layout_post__date"><div class="row">
-<div class=" col-8 col-lg-4 offset-lg-0 col-sm-6 "><div class="row justify-content-start"> <time class="layout_post__time"> <i class="far fa-calendar-alt"></i> Fevereiro 23, 2015 </time>
-</div></div>
-<div class="col-4 col-lg-4 offset-lg-4 col-sm-6"><div class="row justify-content-end"><div class="layout_postlist__comments"> <i class="fas fa-comments"></i><a href="#layout_post__disqus" data-disqus-identifier="/blog/erro-de-inicializacao-eclipse-no-linux/">0</a>
-</div></div></div>
-</div></div>
-<div class="layout_post__tags"><div class="row"> <i class="fa fa-tags"></i> Tags:  <a class="layout-post__tags-link" href="https://williamcanin.me/blog/tags//eclipse">eclipse</a>,  <a class="layout-post__tags-link" href="https://williamcanin.me/blog/tags//linux">linux</a>, </div></div>
-<div class="layout-post__reading_time"><div class="row"> Leia isto "em cerca de 5 minutos".</div></div>
-<div class="layout_post__content"><div class="row d-block">
+<div class="layout_post__tags"> <i class="fa fa-tags"></i> Tags:  <a class="layout_post__tags-link" href="https://williamcanin.me/blog/tags//eclipse">eclipse</a> | <a class="layout_post__tags-link" href="https://williamcanin.me/blog/tags//linux">linux</a> |</div>
+<div class="layout_post__reading_time"> <i class="far fa-clock"></i> Leia isto "em cerca de 4 minutos".</div>
+</div>
+<div class="p-3 mb-4 layout_post__content"><div class="d-block">
 <p>Apesar do Eclipse ser uma IDE famosa e de ótimos recursos, ele (como qualquer outras aplicação) não está livre de bugs. Esse post é para uma correção de um bug no Eclipse Luna para o Linux.</p>
 <p>Recentemente instalei o <a href="https://eclipse.org" target="_blank">Eclipse</a> Luna (Version: Luna Release (4.4.0)) no meu <a href="https://debian.org" target="_blank">Debian</a> Wheezy (7.8) e após inicia-lo me deparei que o Eclipse não carregava. Para um entendimento melhor, a tela de splash do Eclipse Luna carregava, só que depois a mesma desaparecia e o Eclipse não iniciava.</p>
 <p>Resolvi iniciar o Eclipse Luna pelo terminal e obtive esta saída de informações e erro:</p>
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno"> 1 </span>org.eclipse.m2e.logback.configuration: The org.eclipse.m2e.logback.configuration bundle was activated before the state location was initialized.  Will retry after the state location is initialized.
-<span class="lineno"> 2 </span>
-<span class="lineno"> 3 </span><span class="o">(</span>java:4348<span class="o">)</span>: GLib-GObject-WARNING **: cannot register existing <span class="nb">type</span> <span class="sb">`</span>GdkDisplayManager<span class="s1">'</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span><span class="s1">(java:4348): GLib-CRITICAL **: g_once_init_leave: assertion `result != 0'</span> failed
-<span class="lineno"> 6 </span>
-<span class="lineno"> 7 </span><span class="o">(</span>java:4348<span class="o">)</span>: GLib-GObject-CRITICAL **: g_object_new: assertion <span class="sb">`</span>G_TYPE_IS_OBJECT <span class="o">(</span>object_type<span class="o">)</span><span class="s1">' failed</span>
-<span class="lineno"> 8 </span>
-<span class="lineno"> 9 </span><span class="s1">(java:4348): GLib-GObject-WARNING **: invalid (NULL) pointer instance</span>
-<span class="lineno">10 </span>
-<span class="lineno">11 </span><span class="s1">(java:4348): GLib-GObject-CRITICAL **: g_signal_connect_data: assertion `G_TYPE_CHECK_INSTANCE (instance)'</span> failed
-<span class="lineno">12 </span>
-<span class="lineno">13 </span><span class="o">(</span>java:4348<span class="o">)</span>: GLib-GObject-WARNING **: invalid <span class="o">(</span>NULL<span class="o">)</span> pointer instance
-<span class="lineno">14 </span>
-<span class="lineno">15 </span><span class="o">(</span>java:4348<span class="o">)</span>: GLib-GObject-CRITICAL **: g_signal_connect_data: assertion <span class="sb">`</span>G_TYPE_CHECK_INSTANCE <span class="o">(</span>instance<span class="o">)</span><span class="s1">' failed</span>
-<span class="lineno">16 </span>
-<span class="lineno">17 </span><span class="s1">(java:4348): GLib-GObject-WARNING **: cannot register existing type `GdkDisplay'</span>
-<span class="lineno">18 </span>
-<span class="lineno">19 </span><span class="o">(</span>java:4348<span class="o">)</span>: GLib-CRITICAL **: g_once_init_leave: assertion <span class="sb">`</span>result !<span class="o">=</span> <span class="m">0</span><span class="s1">' failed</span>
-<span class="lineno">20 </span>
-<span class="lineno">21 </span><span class="s1">(java:4348): GLib-GObject-CRITICAL **: g_type_register_static: assertion `parent_type &gt; 0'</span> failed
-<span class="lineno">22 </span>
-<span class="lineno">23 </span><span class="o">(</span>java:4348<span class="o">)</span>: GLib-CRITICAL **: g_once_init_leave: assertion <span class="sb">`</span>result !<span class="o">=</span> <span class="m">0</span><span class="s1">' failed</span>
-<span class="lineno">24 </span>
-<span class="lineno">25 </span><span class="s1">(java:4348): GLib-GObject-CRITICAL **: g_object_new: assertion `G_TYPE_IS_OBJECT (object_type)'</span> failed
-<span class="lineno">26 </span><span class="c1">#</span>
-<span class="lineno">27 </span><span class="c1"># A fatal error has been detected by the Java Runtime Environment:</span>
-<span class="lineno">28 </span><span class="c1">#</span>
-<span class="lineno">29 </span><span class="c1">#  SIGSEGV (0xb) at pc=0x00007ff64d98073f, pid=4348, tid=140696239372032</span>
-<span class="lineno">30 </span><span class="c1">#</span>
-<span class="lineno">31 </span><span class="c1"># JRE version: 6.0_34-b34</span>
-<span class="lineno">32 </span><span class="c1"># Java VM: OpenJDK 64-Bit Server VM (23.25-b01 mixed mode linux-amd64 compressed oops)</span>
-<span class="lineno">33 </span><span class="c1"># Derivative: IcedTea6 1.13.6</span>
-<span class="lineno">34 </span><span class="c1"># Distribution: Debian GNU/Linux 7.6 (wheezy), package 6b34-1.13.6-1~deb7u1</span>
-<span class="lineno">35 </span><span class="c1"># Problematic frame:</span>
-<span class="lineno">36 </span><span class="c1"># C  [libgdk-x11-2.0.so.0+0x5173f]  gdk_display_open+0x3f</span>
-<span class="lineno">37 </span><span class="c1">#</span>
-<span class="lineno">38 </span><span class="c1"># Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again</span>
-<span class="lineno">39 </span><span class="c1">#</span>
-<span class="lineno">40 </span><span class="c1"># An error report file with more information is saved as:</span>
-<span class="lineno">41 </span><span class="c1"># /home/william/eclipse/hs_err_pid4348.log</span>
-<span class="lineno">42 </span><span class="c1">#</span>
-<span class="lineno">43 </span><span class="c1"># If you would like to submit a bug report, please include</span>
-<span class="lineno">44 </span><span class="c1"># instructions how to reproduce the bug and visit:</span>
-<span class="lineno">45 </span><span class="c1">#   http://icedtea.classpath.org/bugzilla</span>
-<span class="lineno">46 </span><span class="c1"># The crash happened outside the Java Virtual Machine in native code.</span>
-<span class="lineno">47 </span><span class="c1"># See problematic frame for where to report the bug.</span>
-<span class="lineno">48 </span><span class="c1">#</span></code></pre></figure><p>Quando olhei essas informações percebi que tinha algo estranho com GTK, e com pesquisas e mais pesquisas no <a href="http://www.google.com.br" target="_blank">Google</a>, descobri que para resolver o problema de inicialização do Eclipse Luna, bastava realizar umas configurações no arquivo <strong>eclipse.ini</strong> que está presente no diretório do Eclipse e também configurar o arquivo <strong>~/.bashrc</strong> no home d seu usuário no Linux.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">org.eclipse.m2e.logback.configuration: The org.eclipse.m2e.logback.configuration bundle was activated before the state location was initialized.  Will retry after the state location is initialized.
+
+<span class="o">(</span>java:4348<span class="o">)</span>: GLib-GObject-WARNING <span class="k">**</span>: cannot register existing <span class="nb">type</span> <span class="sb">`</span>GdkDisplayManager<span class="s1">'
+
+(java:4348): GLib-CRITICAL **: g_once_init_leave: assertion `result != 0'</span> failed
+
+<span class="o">(</span>java:4348<span class="o">)</span>: GLib-GObject-CRITICAL <span class="k">**</span>: g_object_new: assertion <span class="sb">`</span>G_TYPE_IS_OBJECT <span class="o">(</span>object_type<span class="o">)</span><span class="s1">' failed
+
+(java:4348): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(java:4348): GLib-GObject-CRITICAL **: g_signal_connect_data: assertion `G_TYPE_CHECK_INSTANCE (instance)'</span> failed
+
+<span class="o">(</span>java:4348<span class="o">)</span>: GLib-GObject-WARNING <span class="k">**</span>: invalid <span class="o">(</span>NULL<span class="o">)</span> pointer instance
+
+<span class="o">(</span>java:4348<span class="o">)</span>: GLib-GObject-CRITICAL <span class="k">**</span>: g_signal_connect_data: assertion <span class="sb">`</span>G_TYPE_CHECK_INSTANCE <span class="o">(</span>instance<span class="o">)</span><span class="s1">' failed
+
+(java:4348): GLib-GObject-WARNING **: cannot register existing type `GdkDisplay'</span>
+
+<span class="o">(</span>java:4348<span class="o">)</span>: GLib-CRITICAL <span class="k">**</span>: g_once_init_leave: assertion <span class="sb">`</span>result <span class="o">!=</span> 0<span class="s1">' failed
+
+(java:4348): GLib-GObject-CRITICAL **: g_type_register_static: assertion `parent_type &gt; 0'</span> failed
+
+<span class="o">(</span>java:4348<span class="o">)</span>: GLib-CRITICAL <span class="k">**</span>: g_once_init_leave: assertion <span class="sb">`</span>result <span class="o">!=</span> 0<span class="s1">' failed
+
+(java:4348): GLib-GObject-CRITICAL **: g_object_new: assertion `G_TYPE_IS_OBJECT (object_type)'</span> failed
+<span class="c">#</span>
+<span class="c"># A fatal error has been detected by the Java Runtime Environment:</span>
+<span class="c">#</span>
+<span class="c">#  SIGSEGV (0xb) at pc=0x00007ff64d98073f, pid=4348, tid=140696239372032</span>
+<span class="c">#</span>
+<span class="c"># JRE version: 6.0_34-b34</span>
+<span class="c"># Java VM: OpenJDK 64-Bit Server VM (23.25-b01 mixed mode linux-amd64 compressed oops)</span>
+<span class="c"># Derivative: IcedTea6 1.13.6</span>
+<span class="c"># Distribution: Debian GNU/Linux 7.6 (wheezy), package 6b34-1.13.6-1~deb7u1</span>
+<span class="c"># Problematic frame:</span>
+<span class="c"># C  [libgdk-x11-2.0.so.0+0x5173f]  gdk_display_open+0x3f</span>
+<span class="c">#</span>
+<span class="c"># Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again</span>
+<span class="c">#</span>
+<span class="c"># An error report file with more information is saved as:</span>
+<span class="c"># /home/william/eclipse/hs_err_pid4348.log</span>
+<span class="c">#</span>
+<span class="c"># If you would like to submit a bug report, please include</span>
+<span class="c"># instructions how to reproduce the bug and visit:</span>
+<span class="c">#   http://icedtea.classpath.org/bugzilla</span>
+<span class="c"># The crash happened outside the Java Virtual Machine in native code.</span>
+<span class="c"># See problematic frame for where to report the bug.</span>
+<span class="c">#</span></code></pre></figure><p>Quando olhei essas informações percebi que tinha algo estranho com GTK, e com pesquisas e mais pesquisas no <a href="http://www.google.com.br" target="_blank">Google</a>, descobri que para resolver o problema de inicialização do Eclipse Luna, bastava realizar umas configurações no arquivo <strong>eclipse.ini</strong> que está presente no diretório do Eclipse e também configurar o arquivo <strong>~/.bashrc</strong> no home d seu usuário no Linux.</p>
 <p>As configurações que fiz foram as seguintes:</p>
 <p><strong>Arquivo:</strong> eclipse.ini</p>
-<figure class="highlight"><pre><code class="language-ini" data-lang="ini"><span></span><span class="lineno"> 1 </span><span class="na">-startup</span>
-<span class="lineno"> 2 </span><span class="na">plugins/org.eclipse.equinox.launcher_1.3.0.v20140415-2008.jar</span>
-<span class="lineno"> 3 </span><span class="na">--launcher.library</span>
-<span class="lineno"> 4 </span><span class="na">plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.200.v20140603-1326</span>
-<span class="lineno"> 5 </span><span class="na">-product</span>
-<span class="lineno"> 6 </span><span class="na">org.eclipse.epp.package.jee.product</span>
-<span class="lineno"> 7 </span><span class="na">--launcher.defaultAction</span>
-<span class="lineno"> 8 </span><span class="na">openFile</span>
-<span class="lineno"> 9 </span><span class="na">-showsplash</span>
-<span class="lineno">10 </span><span class="na">org.eclipse.platform</span>
-<span class="lineno">11 </span><span class="na">--launcher.XXMaxPermSize</span>
-<span class="lineno">12 </span><span class="na">256m</span>
-<span class="lineno">13 </span><span class="na">--launcher.defaultAction</span>
-<span class="lineno">14 </span><span class="na">openFile</span>
-<span class="lineno">15 </span><span class="na">--launcher.GTK_version</span>
-<span class="lineno">16 </span><span class="na">2</span>
-<span class="lineno">17 </span><span class="na">--launcher.appendVmargs</span>
-<span class="lineno">18 </span><span class="na">-vmargs</span>
-<span class="lineno">19 </span><span class="na">-Dosgi.requiredJavaVersion</span><span class="o">=</span><span class="s">1.6</span>
-<span class="lineno">20 </span><span class="na">-XX:MaxPermSize</span><span class="o">=</span><span class="s">256m</span>
-<span class="lineno">21 </span><span class="na">-Xms40m</span>
-<span class="lineno">22 </span><span class="na">-Xmx512m</span></code></pre></figure><p>A configurações realizadas no arquivo <strong>eclipse.ini</strong>, foram o acrescentamento de duas linhas:</p>
-<figure class="highlight"><pre><code class="language-ini" data-lang="ini"><span></span><span class="lineno">1 </span><span class="na">--launcher.GTK_version</span>
-<span class="lineno">2 </span><span class="na">2</span></code></pre></figure><p>Essas duas linhas faz com que o Eclipse Luna passa a usar o GTK versão 2. Essas linhas devem ser acrescentadas entre da linha <strong>openFile</strong> e a linha <strong>–launcher.appendVmargs</strong>.</p>
+<figure class="highlight"><pre><code class="language-ini" data-lang="ini"><span class="err">-startup</span>
+<span class="err">plugins/org.eclipse.equinox.launcher_1.3.0.v20140415-2008.jar</span>
+<span class="err">--launcher.library</span>
+<span class="err">plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.200.v20140603-1326</span>
+<span class="err">-product</span>
+<span class="err">org.eclipse.epp.package.jee.product</span>
+<span class="err">--launcher.defaultAction</span>
+<span class="err">openFile</span>
+<span class="err">-showsplash</span>
+<span class="err">org.eclipse.platform</span>
+<span class="err">--launcher.XXMaxPermSize</span>
+<span class="err">256m</span>
+<span class="err">--launcher.defaultAction</span>
+<span class="err">openFile</span>
+<span class="err">--launcher.GTK_version</span>
+<span class="err">2</span>
+<span class="err">--launcher.appendVmargs</span>
+<span class="err">-vmargs</span>
+<span class="py">-Dosgi.requiredJavaVersion</span><span class="p">=</span><span class="s">1.6</span>
+<span class="err">-XX:</span><span class="py">MaxPermSize</span><span class="p">=</span><span class="s">256m</span>
+<span class="err">-Xms40m</span>
+<span class="err">-Xmx512m</span></code></pre></figure><p>A configurações realizadas no arquivo <strong>eclipse.ini</strong>, foram o acrescentamento de duas linhas:</p>
+<figure class="highlight"><pre><code class="language-ini" data-lang="ini"><span class="err">--launcher.GTK_version</span>
+<span class="err">2</span></code></pre></figure><p>Essas duas linhas faz com que o Eclipse Luna passa a usar o GTK versão 2. Essas linhas devem ser acrescentadas entre da linha <strong>openFile</strong> e a linha <strong>–launcher.appendVmargs</strong>.</p>
 <p><strong>Arquivo:</strong> ~/.bashrc</p>
 <p>O arquivo <strong>.bashrc</strong> fica oculto na pasta de seu usuário no Linux. Para configura-lo faça:</p>
 <ul><li>1 - Abra o arquivo:</li></ul>
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="lineno">1 </span>$ vim ~/.bashrc</code></pre></figure><ul><li>2 - Adicione a seguinte linha no final:</li></ul>
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="nb">export</span> <span class="nv">SWT_GTK3</span><span class="o">=</span><span class="m">0</span></code></pre></figure><blockquote><p>Obs: Para abrir o arquivo <strong>./bashrc</strong>, utilizei o editor <strong>vim</strong>. Você pode usar um de sua preferência.</p></blockquote>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>vim ~/.bashrc</code></pre></figure><ul><li>2 - Adicione a seguinte linha no final:</li></ul>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">SWT_GTK3</span><span class="o">=</span>0</code></pre></figure><blockquote><p>Obs: Para abrir o arquivo <strong>./bashrc</strong>, utilizei o editor <strong>vim</strong>. Você pode usar um de sua preferência.</p></blockquote>
 <blockquote><p>Nota: Lembrando que tive esse problema com o Eclipse Luna foi no ambiente gráfico XFCE, não testei o Eclipse com outros ambientes gráficos como o KDE ou Gnome por exemplo.</p></blockquote>
 <p>Com essas configurações, executei o Eclipse Luna novamente e o mesmo iniciou sem problema algum. <img class="emoji" title=":wink:" alt=":wink:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png" height="20" width="20"> É isso aí, bons códigos.</p>
 <dl class="jektify jektify--dark jektify--custom">
 <dt class="jektify__header jektify__header--dark jektify__header--custom"> <a class="jektify__brand jektify__brand--dark jektify__brand--custom" href="https://jektify.github.io" target="_blank">jektify</a> <i class="jektify__year jektify__year--dark jektify__year--custom">© 2019 </i> <span class="jektify__button jektify__button--dark jektify__button--custom jektify__button--open">+</span>
 </dt>
 <dd class="jektify__body jektify__body--dark jektify__body--custom" style="display: block">
-<div class="jektify__user"><a href="https://open.spotify.com/user/williamcanin" target="_blank" class="jektify__user-link jektify__user-link--dark jektify__user-link--custom" title="Veja-me no Spotify"><span class="jektify__user-text jektify__user-text--dark jektify__user-text--custom">Veja-me no Spotify</span></a></div>
-<h1 class="jektify__title jektify__title--dark jektify__user--dark jektify__title--custom" style="display: none;">Música</h1>
-<p class="jektify__description jektify__description--dark jektify__description--custom" style="display: none;">Sonzera que ouço.</p>
+<div class="jektify__user"><a href="https://open.spotify.com/user/williamcanin" target="_blank" class="jektify__user-link jektify__user-link--dark jektify__user-link--custom" title="Siga-me no Spotify"><span class="jektify__user-text jektify__user-text--dark jektify__user-text--custom">Siga-me no Spotify</span></a></div>
+<h1 class="jektify__title jektify__title--dark jektify__user--dark jektify__title--custom" style="display: none;">Music name</h1>
+<p class="jektify__description jektify__description--dark jektify__description--custom" style="display: none;">Jekyll plugin to generate html snippets for embedding Spotify Musics. To listen to the full song, open your Spotify and start these musics.</p>
 <div class="jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom"> <iframe id="jektify__track" class="jektify__track jektify__track--dark jektify__track--custom" src="https://embed.spotify.com/?uri=spotify:track:7ltu1Lz4mSKHsOjPK3bvNK&amp;theme=dark" width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>
 </div>
 </dd>
 </dl>
 </div></div>
+<div class="p-3 mb-4 layout_post__footer">
+<div class="mb-5 layout_post__dayquote">
+<h2 class="layout_post__dayquote-title">A Palavra:</h2>
+<p class="layout_post__dayquote-description">"Preocupações roubam a felicidade da gente, mas as palavras amáveis nos alegram.""<br> (Provérbios 12:25 NTLH)</p>
+</div>
 <div class="layout_post__share">
 <div class="row justify-content-center"><h2>Compartilhe!</h2></div>
 <div class="row justify-content-center">
 <div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div>
-<div class="text-center col-12 col-sm-3 col-md-3 col-lg-2"> <a class="btn btn-link btn-typing layout_post__share-fb" href="#" title="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
+<div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2"> <a class="btn btn-link btn-typing layout_post__share-fb" href="#" title="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
 </div>
-<div class="text-center col-12 col-sm-3 col-md-3 col-lg-2"> <a class="btn btn-link btn-typing layout_post__share-ln" href="http://www.linkedin.com/cws/share?url=https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=700,resizable=0,top=50,left=100");return false;' target="_blank" title="">Linkedin</a>
+<div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2"> <a class="btn btn-link btn-typing layout_post__share-ln" href="http://www.linkedin.com/cws/share?url=https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=700,resizable=0,top=50,left=100");return false;' target="_blank" title="">Linkedin</a>
 </div>
-<div class="text-center col-12 col-sm-3 col-md-3 col-lg-2"> <a class="btn btn-link btn-typing layout_post__share-tw" href="https://twitter.com/intent/tweet?text=https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/%20-%20Eclipse%20Luna%20-%20Erro%20de%20inicializa%C3%A7%C3%A3o%20no%20Linux%20by%20" target="_blank" title="">Twitter</a>
+<div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2"> <a class="btn btn-link btn-typing layout_post__share-tw" href="https://twitter.com/intent/tweet?text=https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/%20-%20Eclipse%20Luna%20-%20Erro%20de%20inicializa%C3%A7%C3%A3o%20no%20Linux%20by%20" target="_blank" title="">Twitter</a>
 </div>
 <div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div>
 </div>
 </div>
-<div class="layout_post__author"><div class="row"><div class="col-12 p-0 col-lg-12 ">
+<div class="row mt-5 layout_post__author">
+<div class="col-2"> <img class="img-fluid rounded layout_post__author-img" src="/assets/images/author/williamcanin.jpg" width="140" height="auto" alt="William Canin">
+</div>
+<div class="col-10 ">
 <p class="layout_post__author-title">Autor</p>
 <h2 class="font-weight-bold layout_post__author-name">William Canin</h2>
 <p class="layout_post__author-description">Formado em Analise de Sistemas; fascinado pelo mundo do Linux e programação geral.</p>
-</div></div></div>
-<div id="layout_post__disqus" class="layout_post__disqus">
-<div class="mt-4 mb-4 row justify-content-center"> <i class="fas fa-comments layout_post__disqus-icon"></i><h2 class="ml-3 layout_post__disqus-title">Deixe seu comentário</h2>
-</div>
-<div class="layout_post__disqus-content">
-<div id="disqus_thread"></div>
-<script type="text/javascript"> var disqus_shortname = 'williamcanin'; var disqus_identifier = '/blog/erro-de-inicializacao-eclipse-no-linux/'; var disqus_title = 'Eclipse Luna - Erro de inicialização no Linux'; var disqus_url = 'https://williamcanin.me/blog/erro-de-inicializacao-eclipse-no-linux/'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-</noscript>
 </div>
 </div>
-</div></div></div>
-</div></div>
-<div class="footer">
-<div class="container-fluid"><div class="row">
-<div class="col-12 col-md-4"> <span class="text-center footer__copyright">William Canin © 2015-2019 • All right reserved.</span>
 </div>
-<div class="col-12 col-md-4 d-none d-md-block"> <span class="text-center footer__message">In Jesus I Trust.</span>
+</div></div></div></div></div>
+</div></div><div class="py-1 position-fixed fixed-bottom w-100 footer"><div class="container-fluid"><div class="row">
+<div class="text-center col-12 col-md-4"> <span class="footer__copyright">William Canin © 2015-2019 • All right reserved.</span>
 </div>
-<div class="col-12 col-md-4"> <span class="text-center footer__madeby">Made with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> using <a href="https://github.com/williamcanin/typing-jekyll-template" target="_blank">Typing</a> Theme.</span>
+<div class="text-center col-12 col-md-4 d-none d-md-block"> <span class="footer__message">In Jesus I Trust.</span>
 </div>
-</div></div>
-<a class="footer__scrrolltop" href="#top"><i class="fas fa-caret-up"></i></a>
+<div class="text-center col-12 col-md-4"> <span class="footer__madeby">Made with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> using <a href="https://github.com/williamcanin/typing-jekyll-template" target="_blank">Typing</a> Theme.</span>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <script type="text/javascript" src="https://williamcanin.me/assets/js/post.js"></script> <script src="https://williamcanin.me/assets/vendor/jektify/js/jektify.min.js"></script>
-</div></body></html>
+</div></div></div><div class="d-block d-lg-none position-fixed fixed-bottom w-100 scrolltop"><div class="float-right mr-3 scrolltop__wrapper"> <a class="mr-3 scrolltop__button" href="#top"><i class="fas fa-caret-up"></i></a>
+</div></div><script type="text/javascript" src="https://williamcanin.me/assets/vendor/js/jquery.min.js"></script> <script type="text/javascript" src="https://williamcanin.me/assets/vendor/js/popper.min.js"></script> <script type="text/javascript" src="https://williamcanin.me/assets/vendor/js/bootstrap.min.js"></script> <script type="text/javascript" src="https://williamcanin.me/assets/vendor/js/simple-jekyll-search.min.js"></script> <script type="text/javascript" src="https://williamcanin.me/assets/js/global.js"></script> <script type="text/javascript" src="https://williamcanin.me/assets/js/post.js"></script> <script src="https://williamcanin.me/assets/vendor/jektify/js/jektify.min.js"></script></body></html>
