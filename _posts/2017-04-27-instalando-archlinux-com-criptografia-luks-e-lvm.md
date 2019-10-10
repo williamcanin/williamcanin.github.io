@@ -12,7 +12,7 @@ day_quote:
  title: "A Palavra: "
  description: |
     "Eu sou o Senhor, o Deus de vocês; eu os seguro pela mão e lhes digo: 'Não fiquem com medo, pois eu os ajudo.' <br> (Isaias 41:13)"
-script_js: [post.js]
+script: [post.js]
 ---
 
 * Do not remove this line (it will not be displayed)

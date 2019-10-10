@@ -1,4 +1,5 @@
 vendor
+node_modules
 assets/vendor
 _site
 public

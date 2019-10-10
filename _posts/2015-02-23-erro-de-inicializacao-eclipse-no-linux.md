@@ -9,7 +9,7 @@ excerpted: |
 day_quote:
     title: "A Palavra:"
     description: |
-        "Preocupações roubam a felicidade da gente, mas as palavras amáveis nos alegram.""<br>
+        "Preocupações roubam a felicidade da gente, mas as palavras amáveis nos alegram."<br>
         (Provérbios 12:25 NTLH)
 published: true
 

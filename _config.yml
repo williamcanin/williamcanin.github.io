@@ -28,17 +28,7 @@ jektify:
 
 # Attention! Do not change the information below as it is 
 # for development unless you know what you are doing.
-
-plugins:
-  - jemoji
-  - jekyll-paginate-v2
-  - jekyll-gist
-  - jekyll-sitemap
-  - jekyll-jsminify
-  - jekyll-email-protect
-  - jekyll-feed
-  - jekyll-coffeescript
-
+        
 include: ['_blog','_pages']
 
 markdown: kramdown
@@ -60,16 +50,17 @@ sass:
   load_paths:
   - _src/_sass
   - vendor/node_modules
+  - node_modules
   style: compressed
 
 feed:
   path: feed.xml
 
-compress_html:
-  clippings: all
-  comments: all
-  endings: []
-  profile: false
+# compress_html:
+#   clippings: all
+#   comments: all
+#   endings: []
+#   profile: false
 
 tag_page_layout: tag
 tag_page_dir: blog/tags

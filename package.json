@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "bundle install",
     "postinstall": "bundle exec rake postinstall",
-    "build": "bundle exec rake postinstall && JEKYLL_ENV=production bundle exec jekyll build",
+    "build": "bundle exec rake postinstall && JEKYLL_ENV=production bundle exec jekyll build && yarn run gulp build",
     "serve": "bundle exec jekyll serve",
     "page": "bundle exec rake page",
     "post": "bundle exec rake post",
@@ -30,5 +30,17 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "simple-jekyll-search": "^1.7.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "eslint": "^6.5.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-uglify": "^3.0.2"
   }
 }
