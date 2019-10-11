@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2019-10-09T16:45:23-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.me/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2019-10-11T02:21:29-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.me/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;h1 id=&quot;parte-1&quot;&gt;Parte 1&lt;/h1&gt;
 
@@ -39,10 +39,10 @@
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 
@@ -130,10 +130,10 @@ Error downloading sources: spotify
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 
@@ -500,10 +500,10 @@ bash setup.bash createtb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 
@@ -740,10 +740,10 @@ Você pode verificar o executável no diretório &lt;strong&gt;/usr/local/bin&lt
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 
@@ -984,10 +984,10 @@ home &lt;span class=&quot;nv&quot;&gt;UUID&lt;/span&gt;&lt;span class=&quot;o&qu
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 
@@ -1137,10 +1137,10 @@ script: [page1.js]
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 
@@ -1276,10 +1276,10 @@ _download_lastet_kernel
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 
@@ -2122,10 +2122,10 @@ mídia que fará essa função.&lt;/p&gt;
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 
@@ -2394,10 +2394,10 @@ Na &lt;code class=&quot;highlighter-rouge&quot;&gt;linha 3&lt;/code&gt; é opcio
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 
@@ -2434,10 +2434,10 @@ To listen to the full song, open your Spotify and start these musics.
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
             &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2019&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--open&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: block&quot;&gt;
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
 
             &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 

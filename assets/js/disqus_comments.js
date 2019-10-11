@@ -1,1 +1,1 @@
-var disqus_config=function(){this.page.url="https://williamcanin.me/assets/js/disqus_comments.js",this.page.identifier="https://williamcanin.me/assets/js/disqus_comments.js"};!function(){var s=document,t=s.createElement("script");t.src="https://williamcanin.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(s.head||s.body).appendChild(t)}();
+(function(){}).call(this);
