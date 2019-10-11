@@ -8,7 +8,9 @@
         background-color: $texts__background;
         font-size: 0.97rem;
         color: $color__text;
-        &-count{}
+        &-count{
+            margin-right: 5px;
+        }
     }
     &__time{
         background-color: $texts__background;
