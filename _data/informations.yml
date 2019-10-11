@@ -39,7 +39,7 @@ website:
     avatar:
       img: "avatar.svg"
       flip:
-        img: "avatar_flip.svg"
+        img: "avatar_flip_green.svg"
     title:
       text: "Hey, <br> I'm William."
       size: "2.3rem"
