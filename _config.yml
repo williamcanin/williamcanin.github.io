@@ -28,7 +28,7 @@ jektify:
 
 # Attention! Do not change the information below as it is 
 # for development unless you know what you are doing.
-        
+
 include: ['_blog','_pages']
 
 markdown: kramdown
