@@ -12,7 +12,7 @@ website:
     subtitle: |
       Não terá previsão de volta.
 # Theme - Values [ typing | whiteglass | cloudysky | hacking | littlegirl | custom ]
-  theme: "cloudysky"
+  theme: "custom"
 # Configuration default
   title: "William Canin"
   description: "Developer_"
