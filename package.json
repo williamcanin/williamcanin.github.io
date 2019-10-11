@@ -25,11 +25,6 @@
     "url": "https://github.com/williamcanin/typing-jekyll-template/issues"
   },
   "homepage": "https://github.com/williamcanin/typing-jekyll-template#readme",
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
