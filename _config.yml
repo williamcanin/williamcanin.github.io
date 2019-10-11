@@ -93,6 +93,8 @@ gist:
   noscript: false
 
 exclude:
+  - README-ptbr.md
+  - yarn-error.log
   - temp
   - .hidden
   - docs/config
