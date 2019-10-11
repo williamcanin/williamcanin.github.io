@@ -6,7 +6,7 @@ baseurl: ""
 # Plugins de player - Jektify
 jektify:
   enable: true
-  open: true
+  open: false
   toggle:
     enable: true
   spotify:
@@ -56,12 +56,6 @@ sass:
 feed:
   path: feed.xml
 
-# compress_html:
-#   clippings: all
-#   comments: all
-#   endings: []
-#   profile: false
-
 tag_page_layout: tag
 tag_page_dir: blog/tags
 tag_permalink_style: pretty
@@ -90,7 +84,7 @@ pagination:
   per_page: 5
   permalink: '/:num/'
   locale: ''
-  title: ':title - Page :num'
+  title: ':title - Página :num'
   limit: 0
   extension: html
   indexpage: 'index'
@@ -102,6 +96,7 @@ exclude:
   - temp
   - .hidden
   - docs/config
+  - gulpfile.js
   - node_modules
   - _src
   - vendor
