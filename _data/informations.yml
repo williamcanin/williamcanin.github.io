@@ -58,9 +58,9 @@ website:
       button:
         text: "Limpar"
       input:
-        placeholder: ['Pesquisar em', 'artigo(s)']
+        placeholder: ['Pesquisar em','artigo(s)']
         onfocus: "Pesquisar por: título ou tags"
-        onblur:  ['Pesquisar em', 'artigo(s)']
+        onblur:  ['Pesquisar em','artigo(s)']
         notfound: "Oh céus, nenhum resultado :("
   # Post
     post:
