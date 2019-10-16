@@ -28,10 +28,7 @@ layout: blog
           <div class="input-group">
             <i class="layout-search__shellicon" aria-hidden="true">>></i>
             <input id="layout-search__input" type="text" 
-              placeholder="
-                {{ load_data.website.content.search.input.placeholder[0] }}
-                {{ post_count }}
-                {{ load_data.website.content.search.input.placeholder[1] }}
+              placeholder="{{ load_data.website.content.search.input.placeholder[0] }} {{ post_count }} {{ load_data.website.content.search.input.placeholder[1] }}
               "
               onfocus="
                 this.placeholder = '{{ load_data.website.content.search.input.onfocus }}'
