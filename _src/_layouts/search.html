@@ -36,10 +36,7 @@ layout: blog
               onfocus="
                 this.placeholder = '{{ load_data.website.content.search.input.onfocus }}'
               "
-              onblur="this.placeholder = ' {{ load_data.website.content.search.input.onblur[0] }}
-                {{ post_count }}
-                {{ load_data.website.content.search.input.onblur[1] }}'
-              "
+              onblur="this.placeholder = '{{ load_data.website.content.search.input.onblur[0] } {{ post_count }} {{ load_data.website.content.search.input.onblur[1] }}'"
                 class="form-control form-control-sm ml-3 layout-search__input"
             >
             <span class="d-none d-lg-block input-group-btn">
