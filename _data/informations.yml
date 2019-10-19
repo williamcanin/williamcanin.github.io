@@ -12,7 +12,7 @@ website:
     subtitle: |
       Não terá previsão de volta.
 # Theme - Values [ typing | whiteglass | cloudysky | hacking | littlegirl | custom ]
-  theme: "hacking"
+  theme: "custom"
 # Configuration default
   title: "William Canin"
   description: "Developer_"
@@ -39,7 +39,7 @@ website:
     avatar:
       img: "avatar.svg"
       flip:
-        img: "avatar_flip_green.svg"
+        img: "avatar_flip_yellow.svg"
     title:
       text: "Hey, <br> I'm William."
       size: "2.3rem"
