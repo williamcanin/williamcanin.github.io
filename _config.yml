@@ -109,7 +109,6 @@ exclude:
   - COPYING
   - package-lock.json
   - package.json
-  - README.md
   - Rakefile
   - yarn.lock
   - Makefile
