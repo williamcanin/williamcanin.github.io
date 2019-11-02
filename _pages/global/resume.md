@@ -133,12 +133,12 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 ### Projetos
 ---
 
-[**Jektify**](https://jektify.github.io){:target="_blank"} - Jektify é uma gem em **Ruby**, que insere uma entrada de faixa, lista de reprodução, álbuns e artistas de Spotify, em templates **Jekyll**.
-
-[**Recover Grub**](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script em **Python** (3.x) para realizar a recuperação do Grub no Linux.
+[**Snakypy Prompt**](https://github.com/snakypy/snakypy-prompt){:target="_blank"} - Um tema para o [ZSH](http://zsh.org){:target="_blank"} usando a framework [Oh My Zsh](https://ohmyz.sh). O tema tem um gerenciador próprio que faz alterações de atualização, instalação, desinstalação, habilitar e desabilitar no próprio tema.
 
 [**Typing**](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} - Typing, é um template para o Jekyll criado especialmente para quem deseja ter um site estático e páginas com rapidez, leveza e muitas customizações.
 
-[**iDisconnect**](http://williamcanin.github.io/idisconnect){:target="_blank"} - Um programa para Windows, com funções de agendar o desligamento, reinicialização e hibernação do computador.
+[**Jektify**](https://jektify.github.io){:target="_blank"} - Jektify é uma gem em **Ruby**, que insere uma entrada de faixa, lista de reprodução, álbuns e artistas de Spotify, em templates **Jekyll**.
+
+[**Recover Grub**](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script em **Python** (3.x) para realizar a recuperação do Grub no Linux.
 
 <!-- *"Leve a vida com responsabilidade mas nunca deixe de ser divertido(a) :smile:".* Obrigado por ler. -->
