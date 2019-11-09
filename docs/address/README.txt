@@ -4,18 +4,17 @@
 
 Encrypt:
 
-    $ gpg2 --encrypt --sign --armor --recipient <e-mail> <file.zip>
+    $ gpg2 --encrypt --sign --armor --recipient <e-mail> <file.txt>
 
 
 Decrypt:
 
-    $ gpg2 --output <file.zip> --decrypt <encrypted.asc>
+    $ gpg2 --output <file.txt> --decrypt <file.asc>
 
 
 [CONTENT]
 
-    * Domain config.
-    * Address for CV.
+    * My CV Addresses.
 
 
 [CERTIFICATE DETAILS]
