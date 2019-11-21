@@ -95,7 +95,7 @@ gist:
 exclude:
   - README-ptbr.md
   - yarn-error.log
-  - docs/address
+  - docs/data
   - temp
   - .hidden
   - docs/config
