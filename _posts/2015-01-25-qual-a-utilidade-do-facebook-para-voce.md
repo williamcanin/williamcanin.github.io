@@ -11,7 +11,7 @@ day_quote:
     description: |
         "Não se junte com descrentes para trabalhar com eles. Pois como é que o certo pode ter alguma coisa a ver com o errado? Como é que a luz e a escuridão podem viver juntas? Como podem Cristo e o Diabo estar de acordo? O que um cristão e um descrente têm em comum?"<br>
         (2 Coríntios 6:15:15 NTLH)
-published: false
+published: true
 
 # Does not change and does not remove 'script' variables
 script: [post.js]
@@ -71,7 +71,6 @@ Hoje em dia esta cada vez mais dificil o mercado de trabalho (independente da á
 
 Nenhuma empresa quer ter o trabalho de possuir um funcionário (mesmo que seja bom no que ele faz) que tenha um estilo de vida que não combina com o perfil da empresa; que faça atividades que possa comprometer o convivio no fluxo de trabalho ou simplesmente fazer(ou ser marcado) em um comentário polêmico na rede social. Dizendo no português claro: Não querem um funcionário viciado na farra ou que tenha pessoas na sua vida que possa induzir a entrar na mesma.
 
-
 ***3) Gaste seu tempo com informações válidas***
 
 Caso tenha um foco, como estudo ou muito trabalho a se fazer, o Facebook pode ser um vilão nisso se você não sabe administra-lo. Geralmente as pessoas usam mais Facebook para ter um perfil próprio e ficar navegando de perfil em perfil de cada usuário, buscando informações sem sentido, no português claro, xeretando.
@@ -82,10 +81,17 @@ Essa obseção de xeretar, acaba se tornando um vício no qual a pessoa vai busc
 
 ***4) Facebook não é um bom lugar para manter ou criar relações duradouras***
 
-Ter um papo pessoalmente, faz com que a pessoa fique mais segura e observa suas intenções e sua forma de agir com mais facilidade. É fácil ignorar sua mensagem virtual, responder depois de horas ou nunca responder, mas é difícil ignorar sua presença pessoal após conseguir o interesse da pessoa. Se você quer apenas manter "amizade" por virtual, a tendência da pessoa te esquecer é grande. Invista mais em comunicação pessoal ou até mesmo conversar em voz por telefone.
+Ter um papo pessoalmente, faz com que a pessoa fique mais segura e observa suas intenções e sua forma de agir com mais facilidade. É fácil ignorar sua mensagem virtual, responder depois de horas ou nunca responder, mas é difícil ignorar sua presença pessoal após conseguir o interesse da pessoa. Se você quer apenas manter "amizade" por virtual, a tendência da pessoa te esquecer é grande. Invista mais em comunicação pessoal.
 
 Outra questão é que as pessoas adicionam outras por segundas intenções, com uma possível esperança que possa se envolver em termos de relacionamento, mas Facebook e outras redes sociais (na minha opinião) não é uma boa forma de começar um relacionamento profundo com alguém.
-A posssibilidade da pessoa se interessar por você, não são tão grandes assim, isso porque, a pessoa tem todas informações sua facilmente, como: Fotos, Gostos (estilos musicais, programações, etc), Amizades, Ideias, etc. Quando uma pessoa é revelada dessa tal forma, com facilidade, o interesse pela mesma tende a diminuir. Quanto mais as informações de uma pessoa é descoberta por outra de uma forma naturalmente, vagarosamente, com uma conversa pessoal, mas interessante fica a vontade de manter um relacionamento.
+
+Hoje em dia a comunicação está muito fácil através das redes sociais e internet, e se tratando de relacionamento, isso nos leva a um limbo bem frustante pela falta de afeto que sentimos. 
+
+Não só o Facebook, mas como outras rede sociais de relacionamento, como [Tinder](https://www.tinder.com){:target="_blank"}, [Badoo](https://badoo.com){:target="_blank"}, etc, tem o proposito de fazer com que as pessoas se comuniquem e até encontrem o par perfeito, mas vale lembrar que não é só você na "disputa" pela aquela pessoa, o que gera o desconforto e um querer abusivo pela pessoa.
+
+Quando não existia essa facilidade de comunicação através da internet, as pessoas tinham que batalhar muito para conquistar o coração de outra, e era na maioria do tempo tudo face a face. Hoje as coisas estão muito superficiais com essas redes sociais de relacionamento, porque as pessoas tem um cardapio de escolhas de pessoas quando elas quiserem.
+
+A posssibilidade da pessoa se interessar por você, não são tão grandes assim, isso porque, a pessoa pode adquirir informações sua facilmente, como: Fotos, Gostos (estilos musicais, programações, etc), Amizades, Ideias, etc. Quando uma pessoa é revelada dessa tal forma, com facilidade, o interesse pela mesma pode diminuir. É como se a pessoa pensasse: **-Há, eu sei tudo dessa pessoa, enjoei, vou partir pra outra**. O que vem fácil vai fácil. Quanto mais as informações de uma pessoa é descoberta por outra de uma forma naturalmente, vagarosamente, com uma conversa pessoal, mas interessante fica a vontade de manter um relacionamento.
 
 
 ## Conclusão

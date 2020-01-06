@@ -19,29 +19,12 @@ script: [post.js]
 
 <!-- Write from here your post !!! -->
 
-# Parte 1
+Olá pessoa, meu nome é William e este será um post para compartilhar uma minissérie de vídeo sobre a manipulação de arquivo JSON com Python.
 
-{% youtube "https://www.youtube.com/watch?v=pM7EQKKs6Vg" %}
+Abaixo você terá acesso a playlist que criei sobre esse feito, dê uma olhada. Eu fico por aqui, abraços. :D
 
-# Parte 2
 
-{% youtube "https://www.youtube.com/watch?v=rlB6sWAAcy0" %}
-
-# Parte 3
-
-{% youtube "https://youtu.be/ADSVVJ3umUI" %}
-
-# Parte 4
-
-{% youtube "https://youtu.be/9-hcqcaSyoM" %}
-
-# Parte 5
-
-{% youtube "https://www.youtube.com/watch?v=1ZufpELTFAk" %}
-
-# Parte 6
-
-{% youtube "https://www.youtube.com/watch?v=i3ZM-7J7i-M" %}
+{% youtube "https://www.youtube.com/watch?v=pM7EQKKs6Vg&list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" %}
 
 {% endpost #9D9D9D %}
 
