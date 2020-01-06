@@ -23,7 +23,7 @@ Olá pessoa, meu nome é William e este será um post para compartilhar uma mini
 
 Abaixo você terá acesso a playlist que criei sobre esse feito, dê uma olhada. Eu fico por aqui, abraços. :D
 
-<iframe style="width:100%; height:100%; min-height:400px;" src="https://www.youtube.com/embed/videoseries?list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/videoseries?list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {% endpost #9D9D9D %}
 
