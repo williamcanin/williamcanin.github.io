@@ -24,7 +24,7 @@ Olá pessoa, meu nome é William e este será um post para compartilhar uma mini
 Abaixo você terá acesso a playlist que criei sobre esse feito, dê uma olhada. Eu fico por aqui, abraços. :D
 
 
-{% youtube "https://www.youtube.com/watch?v=pM7EQKKs6Vg&list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" %}
+{% youtube "https://www.youtube.com/playlist?list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" %}
 
 {% endpost #9D9D9D %}
 
