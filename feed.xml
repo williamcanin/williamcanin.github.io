@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-01-06T12:44:50-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python (ANSI Code)</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python (ANSI Code)" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-01-06T14:48:55-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python (ANSI Code)</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python (ANSI Code)" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em &lt;a href=&quot;https://python.org&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/a&gt; que deixar as cores do terminal (sistemas baseado em &lt;strong&gt;UNIX&lt;/strong&gt;) coloridas. É claro que você pode implementar mais coisas para este módulo, porem esse é apenas um conceito básico de como o poder de sua criação pode se expandir ;)&lt;/p&gt;
 
@@ -31,7 +31,112 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:7r73WiEt7wpiD331EEivcp&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.me/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">Como encurtar URL Raw do Github e ter uma url personalizada</title><link href="https://williamcanin.me/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/" rel="alternate" type="text/html" title="Como encurtar URL Raw do Github e ter uma url personalizada" /><published>2019-10-20T10:49:01-03:00</published><updated>2019-10-20T10:49:01-03:00</updated><id>https://williamcanin.me/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada</id><content type="html" xml:base="https://williamcanin.me/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/">&lt;!-- Write from here your post !!! --&gt;
+
+&lt;p&gt;Olá, tudo joinha? Meu nome é William, e nesse post vou demonstrar como você pode deixar as urls RAW no &lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Github&lt;/strong&gt;&lt;/a&gt; bem mais encurtadas e eficientes. Vamos lá.&lt;/p&gt;
+
+&lt;p&gt;Primeiro você precisa do &lt;a href=&quot;https://curl.haxx.se/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;curl&lt;/strong&gt;&lt;/a&gt; na sua máquina, pois vamos precisar dele para realizar uma façanha. _&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nota: _O &lt;a href=&quot;https://curl.haxx.se/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;curl&lt;/strong&gt;&lt;/a&gt; está disponível praticamente em todos sistemas operacionais. Sinta-se a vontade para instalar o mesmo da maneira que mais lhe convém.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Agora precisamos usar o serviço de encurtamento de url que a própria &lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Github&lt;/strong&gt;&lt;/a&gt; fornece, que é o &lt;a href=&quot;https://git.io&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Git.io&lt;/strong&gt;&lt;/a&gt;. Se você encurtar suas URL’s através do site, a URL encurtada terá um &lt;strong&gt;code&lt;/strong&gt; de “&lt;em&gt;sopa de letrinhas&lt;/em&gt;” automaticamente escolhida pelo serviço. Por exemplo:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git.io/abcdef123456
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Como faço para ter uma url personalizada com o git.io?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Essa é uma pergunta muito fácil, mande outra mais difícil&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ta bem, eu respondo… a resposta é: &lt;strong&gt;curl&lt;/strong&gt;! No qual foi requisitado acima. Ele quem faz esse trabalho.&lt;/p&gt;
+
+&lt;p&gt;A sintaxe para o encurtamento de URL com nome personalizável é:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; https://git.io &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;url=**URL_ORIGINAL_RAW**&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;code=**NOME_DESEJADO**&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Onde em &lt;strong&gt;URL_ORIGINAL_RAW&lt;/strong&gt; você deve colocar a URL original Raw completa, incluindo o http ou https.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Onde em &lt;strong&gt;NOME_DESEJADO&lt;/strong&gt; você deve escolher um nome/código para sua URL.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nota: Em &lt;strong&gt;NOME_DESEJADO&lt;/strong&gt;, o mesmo deve ser único, ou seja, você tem que escolher um nome/código que ninguem escolheu ainda. Para saber disso, simplesmente execute o comando, e veja se na saída obteve sucesso, ou não.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Vamos a um exemplo:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemplo de encurtamento:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; https://git.io &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;url=https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;code=**scriptizinho**&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemplo de saída do encurtamento:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Sun, 20 Oct 2019 14:20:01 GMT
+Status: 201 Created
+Content-Type: text/html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8
+&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;Location:&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt; https://git.io/scriptizinho
+Content-Length: 94
+X-Xss-Protection: 1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.009777
+X-Node: 836916c6-b665-4105-9926-2f6f6c1d3cc4
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;31536000&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; includeSubDomains
+Via: 1.1 vegur
+
+https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Caso de tudo certo, você terá uma saída parecida com essa acima, onde já na primeira linha o resultado é &lt;strong&gt;Created&lt;/strong&gt;. Em &lt;strong&gt;Location&lt;/strong&gt;, você pode ver sua &lt;strong&gt;nova&lt;/strong&gt; URL personalizada.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://git.io/scriptizinho
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Você também pode ignorar a url personalizada e deixar que o serviço escolha um &lt;strong&gt;code&lt;/strong&gt; automaticamente para você, para isso remova a opção &lt;strong&gt;-F “code=”&lt;/strong&gt; do comando.&lt;/p&gt;
+
+&lt;p&gt;Exemplo:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; https://git.io &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;url=https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://git.io/dfsds4r
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Eu fico por aqui, espero que eu tenha te ajuda. Abraços.&lt;/p&gt;
+
+&lt;dl class=&quot;jektify jektify--dark jektify--custom&quot;&gt;
+
+          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
+
+            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
+
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2020&amp;nbsp;&lt;/i&gt;
+              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
+          &lt;/dt&gt;
+
+          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
+
+            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+
+            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
+
+            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
+To listen to the full song, open your Spotify and start these musics.
+&lt;/p&gt;
+
+            &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
+              &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:6be1c0AWyPxxSS0qiYzoUC&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+            &lt;/div&gt;
+          &lt;/dd&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="github" /><category term="git" /><category term="url" /><category term="shortener" /><summary type="html"></summary></entry><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.me/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;h1 id=&quot;parte-1&quot;&gt;Parte 1&lt;/h1&gt;
 
@@ -2174,274 +2279,4 @@ To listen to the full song, open your Spotify and start these musics.
           &lt;/dd&gt;
         &lt;/dl&gt;
 
-&lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt;</content><author><name></name></author><category term="archlinux" /><category term="encryption" /><category term="luks" /><category term="lvm" /></entry><entry><title type="html">Configurando PATH do RubyGems e Bundler no Linux</title><link href="https://williamcanin.me/blog/configurando-path-do-rubygems/" rel="alternate" type="text/html" title="Configurando PATH do RubyGems e Bundler no Linux" /><published>2017-01-13T17:02:37-02:00</published><updated>2017-01-13T17:02:37-02:00</updated><id>https://williamcanin.me/blog/configurando-path-do-rubygems</id><content type="html" xml:base="https://williamcanin.me/blog/configurando-path-do-rubygems/">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#limpando-no-ambiente-de-trabalho&quot; id=&quot;markdown-toc-limpando-no-ambiente-de-trabalho&quot;&gt;Limpando no ambiente de trabalho&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#rubygems&quot; id=&quot;markdown-toc-rubygems&quot;&gt;RubyGems&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#diretórios-padrão-do-rubygems&quot; id=&quot;markdown-toc-diretórios-padrão-do-rubygems&quot;&gt;Diretórios padrão do RubyGems&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#variáveis-de-ambiente-para-rubygems&quot; id=&quot;markdown-toc-variáveis-de-ambiente-para-rubygems&quot;&gt;Variáveis de ambiente para RubyGems&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#configuração-do-environment-do-rubygems&quot; id=&quot;markdown-toc-configuração-do-environment-do-rubygems&quot;&gt;Configuração do Environment do RubyGems&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#bundler&quot; id=&quot;markdown-toc-bundler&quot;&gt;Bundler&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#diretórios-padrão-do-bundler&quot; id=&quot;markdown-toc-diretórios-padrão-do-bundler&quot;&gt;Diretórios padrão do Bundler&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#variáveis-de-ambiente-do-bundler&quot; id=&quot;markdown-toc-variáveis-de-ambiente-do-bundler&quot;&gt;Variáveis de ambiente do Bundler&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#configuração-do-environment-do-bundler&quot; id=&quot;markdown-toc-configuração-do-environment-do-bundler&quot;&gt;Configuração do Environment do Bundler&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#conclusão&quot; id=&quot;markdown-toc-conclusão&quot;&gt;Conclusão&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;introdução&quot;&gt;Introdução&lt;/h1&gt;
-
-&lt;p&gt;Nesse tutorial será realizado uma série de abstrações das estrutura de pasta do RubyGems e do Bundler no ato de uma instalação de gem. Para isso, é importante que você faça o backup de gems instaladas na pasta &lt;strong&gt;~/.gem&lt;/strong&gt;, pois a mesma será altamente altera e removida. Também da pasta &lt;strong&gt;~/bin&lt;/strong&gt; (caso ela existir) e dos arquivos &lt;strong&gt;~/.gemrc&lt;/strong&gt; e &lt;strong&gt;~/.bundle/config&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;limpando-no-ambiente-de-trabalho&quot;&gt;Limpando no ambiente de trabalho&lt;/h1&gt;
-
-&lt;p&gt;Vamos limpar tudo que está realacionado no diretório onde as gems são instaladas e suas configurações com o comando abaixo:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; ~/.gem ~/.bundle ~/.gemrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;requerimentos&quot;&gt;Requerimentos&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Requerido&lt;/th&gt;
-      &lt;th&gt;Versão&lt;/th&gt;
-      &lt;th&gt;Como verificar&lt;/th&gt;
-      &lt;th&gt;Como instalar&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Fedora&lt;/td&gt;
-      &lt;td&gt;27&lt;/td&gt;
-      &lt;td&gt;lsb_release -a | grep Release&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://getfedora.org/&quot; target=&quot;_blank&quot;&gt;Fedora Download&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Ruby&lt;/td&gt;
-      &lt;td&gt;2.4.3p205&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://www.ruby-lang.org&quot; target=&quot;_blank&quot;&gt;Ruby&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Gem&lt;/td&gt;
-      &lt;td&gt;2.6.14&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gem -v&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Ruby&lt;/strong&gt; contém &lt;strong&gt;Gem&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Nota: Foi usado a distribuição Linux Fedora 27, mas a configuração pode ser compatível com outras distribuições também.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;rubygems&quot;&gt;RubyGems&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://pt.wikipedia.org/wiki/RubyGems&quot; target=&quot;_blank&quot;&gt;RubyGems&lt;/a&gt; é um gerenciador de pacotes do Ruby, e para utiliza-lo você precisa instalar o Ruby que já contém o mesmo. Para instalar o Ruby no Linux e o gerenciador de pacotes RubyGems, você pode olhar a pŕópria documentação do Ruby &lt;a href=&quot;https://www.ruby-lang.org/pt/documentation/installation/#package-management-systems&quot; target=&quot;_blank&quot;&gt;AQUI&lt;/a&gt;, instalando de acordo com sua distribuição. RubyGems é responsável por instalar/gerenciar Gems (bibliotecas ou programas) em nossa máquina que servirão de base (ou não) para projetos em que criamos ou projetos que utilizamos.&lt;/p&gt;
-
-&lt;p&gt;Quando instalamos as Gems através do gerenciador &lt;strong&gt;gem&lt;/strong&gt;, as mesmas são instaladas no diretório do usuário, caso precise mudar o algo onde será intalado, precisa configurar o reconhecimento de PATH (variáveis de ambiente), que é feito através do arquivo &lt;strong&gt;~/.bashrc&lt;/strong&gt;. Também necessita criar um arquivo de configuração do “Gem Environment”, o &lt;strong&gt;~/.gemrc&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;diretórios-padrão-do-rubygems&quot;&gt;Diretórios padrão do RubyGems&lt;/h2&gt;
-
-&lt;p&gt;Vamos entender a arquitetura de pastas das gems instalados com o gerenciador do RubyGems, para isso, vamos instalar a próprio &lt;strong&gt;bundler&lt;/strong&gt; que mais para frente vamos configurar.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;NOTA: Dependendo da versão do ruby que você estiver usando, esses comportamento de pastas não serão igual a desse tutorial. Aqui está sendo utilizado a versão 2.4.3 do Ruby, porém, mesmo assim pode usar esse tutorial para ter uma noção de configuração.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;A estrutura de pastas padrão criada foi a seguinte:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;william
-├── bin
-│   ├── bundle
-│   └── bundler
-└── .gem
-     ├── ruby
-     │   ├── build_info
-     │   ├── cache
-     │   ├── doc
-     │   ├── extensions
-     │   ├── gems
-     │   └── specifications
-     └── specs  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;  &lt;/p&gt;
-
-&lt;p&gt;Repare que a gem &lt;strong&gt;bundler&lt;/strong&gt; é instalado no diretório &lt;strong&gt;~/.gem&lt;/strong&gt;, o que é conformidável, porém, algo que fica um pouco incomodo, é a criação da pasta &lt;strong&gt;bin&lt;/strong&gt; na raiz do usuário para armazenar os executaveis das gems. Isso aconteceu algumas vezes comigo, não sei dizer se é comum esse ocorrido, porém, sei que é realmente incomodativo, pois o diretório &lt;strong&gt;~/bin&lt;/strong&gt; por ser usado para outros eventuais executáveis, como por exemplo, executáveis &lt;strong&gt;shell&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Não queremos que isso aconteça! Então vamos desinstalar a gem &lt;strong&gt;bundler&lt;/strong&gt; e remover a estrutura de pastas onde foi instalado a &lt;em&gt;gem&lt;/em&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Note: Digite “Y” quando pedir para desinstalar o &lt;strong&gt;bundler&lt;/strong&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem uninstall bundler
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; ~/.gem ~/bin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;NOTA: Se for remover o diretório &lt;strong&gt;~/bin&lt;/strong&gt;, verifique se não tem outros scripts que você criou no mesmo.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;variáveis-de-ambiente-para-rubygems&quot;&gt;Variáveis de ambiente para RubyGems&lt;/h2&gt;
-
-&lt;p&gt;Após ter a noção de estrutura de pastas padrão do “Gem Environment”, vamos configurar nossas variáveis de ambiente no arquivo &lt;strong&gt;~/.bashrc&lt;/strong&gt; para adiante mudarmos o local onde é instalado nossas gems.&lt;/p&gt;
-
-&lt;p&gt;Abra &lt;strong&gt;~/.bashrc&lt;/strong&gt; com um editor de sua preferência, coloca as seguintes variáveis de ambiente abaixo e salve-o:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# RubyGems environment variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;GEM_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;ruby &lt;span class=&quot;nt&quot;&gt;-rubygems&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'puts Gem.user_dir'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;GEM_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$GEM_PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;GEM_BIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$GEM_PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/bin&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$GEM_PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$GEM_HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$GEM_BIN&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Na &lt;code class=&quot;highlighter-rouge&quot;&gt;linha 1&lt;/code&gt;, está sendo definido o PATH das gems, que no caso é: &lt;code class=&quot;highlighter-rouge&quot;&gt;/home/USER/.gem/ruby&lt;/code&gt;
-Na &lt;code class=&quot;highlighter-rouge&quot;&gt;linha 2&lt;/code&gt;, está sendo definido o diretório HOME das gems, que nã verdade é o mesmo do &lt;code class=&quot;highlighter-rouge&quot;&gt;$GEM_PATH&lt;/code&gt;.
-Na &lt;code class=&quot;highlighter-rouge&quot;&gt;linha 3&lt;/code&gt;, é definido o PATH de onde irá ficar os executaveis de algumas gems, no caso é: &lt;code class=&quot;highlighter-rouge&quot;&gt;/home/USER/.gem/ruby/bin&lt;/code&gt;
-Na &lt;code class=&quot;highlighter-rouge&quot;&gt;linha 4&lt;/code&gt;, é responsável por exportar essas configurações para o bash reconhecer os PATHS.&lt;/p&gt;
-
-&lt;p&gt;Feito isso, execute o comando abaixo para as altereções entrarem em vigor.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Pronto, foi criado as variáveis de ambiente necessárias para o ambiente do RubyGems, porém, repare que a minha pasta &lt;strong&gt;bin&lt;/strong&gt; na variável &lt;code class=&quot;highlighter-rouge&quot;&gt;$GEM_BIN&lt;/code&gt;, está  apontando para um diretório que não é onde os executáveis das gems são instalados por padrão.&lt;/p&gt;
-
-&lt;h2 id=&quot;configuração-do-environment-do-rubygems&quot;&gt;Configuração do Environment do RubyGems&lt;/h2&gt;
-
-&lt;p&gt;Para forçar os executáveis das gems, a serem instalados na nova configuração das variáveis de ambientes, necessita criar o arquivo “&lt;strong&gt;~/.gemrc&lt;/strong&gt;” na raiz do usuário que modificará o “Gem Environment” do RubyGems. Para isso faça no terminal:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt; &amp;gt; ~/.gemrc
-gem: --user-install --no-document
-:benchmark: false
-:update_sources: true
-:verbose: true
-:backtrace: false
-:sources:
-- http://gems.rubyforge.org/
-- http://rubygems.org/
-:bulk_threshold: 1000
-EOF&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Com o novo ambiente RubyGems configurado, vamos instalar novamente o &lt;strong&gt;bundler&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Agora, dê o seguinte comando abaixo, e verás que os executáveis do &lt;strong&gt;bundler&lt;/strong&gt; estão no diretório que foi configurado na variável de ambiente $GEM_BIN, e não mais no diretório &lt;strong&gt;~/bin&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$GEM_BIN&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Agora, você tem um ambiente do RubyGems configurado com uma estrutura de pasta um pouco mais organizada.&lt;/p&gt;
-
-&lt;p&gt;Para saber mais o que cada linha do arquivo “&lt;strong&gt;~/.gemrc&lt;/strong&gt;” faz, dê uma olhada na &lt;a href=&quot;http://guides.rubygems.org/command-reference/&quot; target=&quot;_blank&quot;&gt;documentação&lt;/a&gt; da própria RubyGems.&lt;/p&gt;
-
-&lt;h1 id=&quot;bundler&quot;&gt;Bundler&lt;/h1&gt;
-
-&lt;p&gt;O &lt;a href=&quot;https://bundler.io/&quot; target=&quot;_blank&quot;&gt;Bundler&lt;/a&gt; também é um gerenciador de Gems e trabalha junto com o RubyGems, porém de uma forma mais conjulgal, isso porque ele utiliza um arquivo chamado &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; para alocar todas Gems que necessitamos em nossos projetos, assim, não precisamos instalar Gems uma à uma com o gerenciador RubyGems.&lt;/p&gt;
-
-&lt;p&gt;A instalação das gems através do &lt;strong&gt;bundler&lt;/strong&gt; com Gemfile, também jogará os executáveis das gems para o diretório &lt;strong&gt;~/bin&lt;/strong&gt;. Então se pergunta: &lt;strong&gt;Mas eu configurei meu “Gem Environment” tracando a estrutura de pastas onde são instaladas, por que o Bundler não obedece essa configuração?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;R:- Assim como o RubyGems, também é necessário configurar o PATH para o Bundler no &lt;strong&gt;~/.bashrc&lt;/strong&gt; e no próprio arquivo de configuração contido no diretório raiz do usuário, o &lt;strong&gt;~/.bundle/config&lt;/strong&gt;. Esse arquivo de configuração do Bundler é global, ou seja, todas as Gems instaladas com o Bundler, serão instaladas no diretório de acordo com que está no arquivo &lt;strong&gt;~/.bundle/config&lt;/strong&gt;, a menos que, o seu projeto contenha um arquivo de configuração local. Exemplo: &lt;strong&gt;myproject/.bundle/config&lt;/strong&gt;. Nesse caso as Gems seriam instaladas no local do projeto.&lt;/p&gt;
-
-&lt;h2 id=&quot;diretórios-padrão-do-bundler&quot;&gt;Diretórios padrão do Bundler&lt;/h2&gt;
-
-&lt;p&gt;Vamos entender melhor a estrutura de pastas criadas pelo &lt;strong&gt;Bundler&lt;/strong&gt; quando instalamos GEMS com o arquivo &lt;strong&gt;Gemfile&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;william
-├── bin
-│   ├── sass
-│   ├── sass-convert
-│   └── scss
-└── .gem
-     ├── ruby
-     │   ├── bin
-     │   ├── build_info
-     │   ├── cache
-     │   ├── doc
-     │   ├── extensions
-     │   ├── gems
-     │   ├── ruby
-     │   │   └── 2.4.0
-     │   │        ├── bin
-     │   │        ├── build_info
-     │   │        ├── cache   
-     │   │        ├── doc   
-     │   │        ├── extensions   
-     │   │        ├── gems                           
-     │   │        └── specifications       
-     │   └── specifications
-     └── specs  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;Nesse caso, foi instalado o &lt;strong&gt;Sass&lt;/strong&gt; com um arquivo &lt;strong&gt;Gemfile&lt;/strong&gt;, e repare o Bundler criou uma pasta &lt;strong&gt;ruby&lt;/strong&gt; dentro da pasta &lt;strong&gt;ruby&lt;/strong&gt; do RubyGems, contendo uma subpasta com nome de &lt;strong&gt;2.4.0&lt;/strong&gt; que é a versão atual do Ruby que está sendo usada.&lt;/p&gt;
-
-&lt;h2 id=&quot;variáveis-de-ambiente-do-bundler&quot;&gt;Variáveis de ambiente do Bundler&lt;/h2&gt;
-
-&lt;p&gt;Vamos configurar as variáveis de ambiente para &lt;strong&gt;Bundler&lt;/strong&gt;. No arquivo &lt;strong&gt;~/.bashrc&lt;/strong&gt; adicione as seguintes variáveis e salve-o:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Bundler environment variables&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;BUNDLE_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.gem/bundle&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;BUNDLE_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$BUNDLE_PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;BUNDLE_BIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$BUNDLE_HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/bin&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$BUNDLE_PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$BUNDLE_HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$BUNDLE_BIN&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Feito isso, execute o comando abaixo para as altereções entrarem em vigor.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;configuração-do-environment-do-bundler&quot;&gt;Configuração do Environment do Bundler&lt;/h2&gt;
-
-&lt;p&gt;Dê os comandos abaixo, para criar o arquivo &lt;strong&gt;~/.bundle/config&lt;/strong&gt;. Esse arquivo é as configurações global do Bundler.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; PATH &lt;span class=&quot;nv&quot;&gt;$BUNDLE_PATH&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; BIN &lt;span class=&quot;nv&quot;&gt;$BUNDLE_BIN&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; DISABLE_SHARED_GEMS &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Na &lt;code class=&quot;highlighter-rouge&quot;&gt;linha 1&lt;/code&gt; atribuimos o PATH o local raiz onde nossas Gems global irá ser instaladas. &lt;br /&gt;
-Na &lt;code class=&quot;highlighter-rouge&quot;&gt;linha 2&lt;/code&gt; atribuimos o PATH para os executáveis das Gems. &lt;br /&gt;
-Na &lt;code class=&quot;highlighter-rouge&quot;&gt;linha 3&lt;/code&gt; é opcional, onde desabilitamos o compartilhamento de Gems.&lt;/p&gt;
-
-&lt;p&gt;Para ver mais detalhes sobre como está as configurações do &lt;code class=&quot;highlighter-rouge&quot;&gt;Gem Environment&lt;/code&gt; na sua máquina, você pode executar o comando abaixo:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h1&gt;
-
-&lt;p&gt;Apenas compartilhei algo básico de como configurar o RubyGems e Bundler. Existe muito mais na documentação de ambos, o que pode lhe servir o que deseja:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://guides.rubygems.org/rubygems-basics/&quot; target=&quot;_blank&quot;&gt;RubyGems Doc&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://bundler.io/docs.html&quot; target=&quot;_blank&quot;&gt;Bundler Doc&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finalizo por aqui, espero que estas linhas de alguma forma lhe sirva de ajuda. Obrigado por ler. Fica com um sonzinho abaixo. :)&lt;/p&gt;
-
-&lt;dl class=&quot;jektify jektify--dark jektify--custom&quot;&gt;
-
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2020&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-To listen to the full song, open your Spotify and start these musics.
-&lt;/p&gt;
-
-            &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
-              &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:6VRghJeP6I0w1KxkdWFfIh&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
-            &lt;/div&gt;
-          &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="ruby" /><category term="gems" /><category term="linux" /><category term="bundler" /></entry></feed>
+&lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt;</content><author><name></name></author><category term="archlinux" /><category term="encryption" /><category term="luks" /><category term="lvm" /></entry></feed>
