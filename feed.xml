@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-01-06T14:52:46-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-01-06T14:54:15-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em &lt;a href=&quot;https://python.org&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/a&gt; que deixar as cores do terminal (sistemas baseado em &lt;strong&gt;UNIX&lt;/strong&gt;) coloridas. É claro que você pode implementar mais coisas para este módulo, porem esse é apenas um conceito básico de como o poder de sua criação pode se expandir ;)&lt;/p&gt;
 
@@ -83,7 +83,7 @@ Connection: keep-alive
 Date: Sun, 20 Oct 2019 14:20:01 GMT
 Status: 201 Created
 Content-Type: text/html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8
-&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;Location:&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt; https://git.io/scriptizinho
+Location: https://git.io/scriptizinho
 Content-Length: 94
 X-Xss-Protection: 1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;block
 X-Content-Type-Options: nosniff
@@ -107,7 +107,10 @@ https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py&lt;/
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; https://git.io &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;url=https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://git.io/dfsds4r
+&lt;p&gt;Saida do comando:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTTP/1.1 201 Created
+Location: https://git.io/dfsds4r
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Eu fico por aqui, espero que eu tenha te ajudado. Abraços :D&lt;/p&gt;
