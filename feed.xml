@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-01-01T04:26:12-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.me/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-01-06T12:02:34-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python (ANSI Code)</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python (ANSI Code)" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
+
+&lt;p&gt;Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em &lt;a href=&quot;https://python.org&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/a&gt; que deixar as cores do terminal (sistemas baseado em &lt;strong&gt;UNIX&lt;/strong&gt;) coloridas. É claro que você pode implementar mais coisas para este módulo, porem esse é apenas um conceito básico de como o poder de sua criação pode se expandir ;)&lt;/p&gt;
+
+&lt;p&gt;Acesse o vídeo abaixo. Voilá!&lt;/p&gt;
+
+&lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
+&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/VW-UphhjJ3E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;</content><author><name></name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.me/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;h1 id=&quot;parte-1&quot;&gt;Parte 1&lt;/h1&gt;
 
@@ -2411,44 +2418,4 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:6VRghJeP6I0w1KxkdWFfIh&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="ruby" /><category term="gems" /><category term="linux" /><category term="bundler" /></entry><entry><title type="html">Bloqueando módulos durante o boot com o Modbl</title><link href="https://williamcanin.me/blog/bloqueando-modulos-no-boot-com-modbl/" rel="alternate" type="text/html" title="Bloqueando módulos durante o boot com o Modbl" /><published>2015-09-30T13:55:19-03:00</published><updated>2015-09-30T13:55:19-03:00</updated><id>https://williamcanin.me/blog/bloqueando-modulos-no-boot-com-modbl</id><content type="html" xml:base="https://williamcanin.me/blog/bloqueando-modulos-no-boot-com-modbl/">&lt;p&gt;Essa é uma postagem que irá facilitar e otimizar seus comandos no terminal para bloquear módulos no Linux. Estou falando do &lt;a href=&quot;https://github.com/williamcanin/modbl&quot; target=&quot;_blank&quot;&gt;Modbl&lt;/a&gt;, um script simples mas que lhe propoe um ganha tempo.&lt;/p&gt;
-
-&lt;p&gt;Se você habilita ou desabilita módulos de sua máquina durante o boot frequentemente no Linux, você precisa fazer isso de uma forma que lhe dê menos trabalho e mais praticidade. Pensando nisso, desenvolvi um simples script em Shell &lt;strong&gt;(Modbl)&lt;/strong&gt;, que lhe possibilita esses recursos.&lt;/p&gt;
-
-&lt;p&gt;O &lt;strong&gt;Modbl&lt;/strong&gt; (uma abreviação de ModBlackList), você faz adição e remoção desses módulos com apenas uma linha de comando no terminal, não vai ter o trabalho de criar e abrir um arquivo em &lt;strong&gt;“/etc/modprobe.d”&lt;/strong&gt; manualmente e inseriando módulos.&lt;/p&gt;
-
-&lt;p&gt;Se você quer mais informações sobre o &lt;strong&gt;“Modbl”&lt;/strong&gt; explicando como instalar e o seu funcionamento, pode acessá-lo no meu GitHub clicando &lt;a href=&quot;https://github.com/williamcanin/modbl&quot; target=&quot;_blank&quot;&gt;AQUI&lt;/a&gt;, se quer apesar visualizar a ideia do script, veja o código fonte abaixo.&lt;/p&gt;
-
-&lt;p&gt;Código fonte:&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/e3768a9398370bb80fa8.js&quot;&gt; &lt;/script&gt;
-
-&lt;p&gt;Você pode sugerir novas ideias acessando &lt;a href=&quot;https://github.com/williamcanin/modbl/issues&quot; target=&quot;_blank&quot;&gt;Issues&lt;/a&gt;, vou estar atento a quanto isso. Espero que esse código lhe ajude. Obrigado pela leitura.&lt;/p&gt;
-
-&lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt;
-
-&lt;dl class=&quot;jektify jektify--dark jektify--custom&quot;&gt;
-
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2020&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-To listen to the full song, open your Spotify and start these musics.
-&lt;/p&gt;
-
-            &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
-              &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:2zfFLgnzc9PspmqKMODS2g&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
-            &lt;/div&gt;
-          &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="modprobe" /><category term="boot" /><category term="linux" /><category term="shell" /><category term="script" /><summary type="html">Essa é uma postagem que irá facilitar e otimizar seus comandos no terminal para bloquear módulos no Linux. Estou falando do Modbl, um script simples mas que lhe propoe um ganha tempo.</summary></entry></feed>
+        &lt;/dl&gt;</content><author><name></name></author><category term="ruby" /><category term="gems" /><category term="linux" /><category term="bundler" /></entry></feed>

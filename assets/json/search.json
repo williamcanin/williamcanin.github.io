@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "Criando módulo para colorir print e input no Python (ANSI Code)",
+      "tags"     : "python",
+      "url"     : "/blog/criando-modulo-para-colorir-print-e-input-no-python/",
+      "date"     : "10/12/2019"
+    } ,
+  
+    {
       "title"    : "Manipulando arquivo JSON com Python.",
       "tags"     : "python, json",
       "url"     : "/blog/manipulando-arquivo-json-com-python/",
