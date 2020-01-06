@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-01-06T14:54:55-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-01-06T15:10:18-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em &lt;a href=&quot;https://python.org&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/a&gt; que deixar as cores do terminal (sistemas baseado em &lt;strong&gt;UNIX&lt;/strong&gt;) coloridas. É claro que você pode implementar mais coisas para este módulo, porem esse é apenas um conceito básico de como o poder de sua criação pode se expandir ;)&lt;/p&gt;
 
@@ -143,35 +143,12 @@ To listen to the full song, open your Spotify and start these musics.
           &lt;/dd&gt;
         &lt;/dl&gt;</content><author><name></name></author><category term="github" /><category term="git" /><category term="url" /><category term="shortener" /><summary type="html"></summary></entry><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.me/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.me/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
 
-&lt;h1 id=&quot;parte-1&quot;&gt;Parte 1&lt;/h1&gt;
+&lt;p&gt;Olá pessoa, meu nome é William e este será um post para compartilhar uma minissérie de vídeo sobre a manipulação de arquivo JSON com Python.&lt;/p&gt;
+
+&lt;p&gt;Abaixo você terá acesso a playlist que criei sobre esse feito, dê uma olhada. Eu fico por aqui, abraços. :D&lt;/p&gt;
 
 &lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
 &lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/pM7EQKKs6Vg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;parte-2&quot;&gt;Parte 2&lt;/h1&gt;
-
-&lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
-&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/rlB6sWAAcy0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;parte-3&quot;&gt;Parte 3&lt;/h1&gt;
-
-&lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
-&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/ADSVVJ3umUI&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;parte-4&quot;&gt;Parte 4&lt;/h1&gt;
-
-&lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
-&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/9-hcqcaSyoM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;parte-5&quot;&gt;Parte 5&lt;/h1&gt;
-
-&lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
-&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/1ZufpELTFAk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;parte-6&quot;&gt;Parte 6&lt;/h1&gt;
-
-&lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
-&lt;div class=&quot;embed-container&quot;&gt;    &lt;iframe title=&quot;YouTube video player&quot; width=&quot;640&quot; height=&quot;390&quot; src=&quot;//www.youtube.com/embed/i3ZM-7J7i-M&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
 
 &lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt;
 
