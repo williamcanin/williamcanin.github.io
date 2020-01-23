@@ -18,9 +18,9 @@ script: [post.js]
 
 <!-- Write from here your post !!! -->
 
-Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em [**Python**](https://python.org){:target="_blank"} que deixar as cores do terminal (sistemas baseado em **UNIX**) coloridas. É claro que você pode implementar mais coisas para este módulo, porem esse é apenas um conceito básico de como o poder de sua criação pode se expandir ;)
+Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em [**Python**](https://python.org){:target="_blank"} deixando as cores do terminal (sistemas baseado em **UNIX**) coloridas. É claro que você pode implementar mais coisas para este módulo, porém esse é apenas um conceito básico de como o poder de sua criação pode criar coisas bacanas com Python ;)
 
-Acesse o vídeo abaixo. Voilá!
+Acesse a playlist abaixo. Voilá!
 
 
 {% youtube "https://youtu.be/VW-UphhjJ3E" %}
