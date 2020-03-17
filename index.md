@@ -29,7 +29,7 @@ Mais alguma coisa...? Oh sim, aqui est√£o os demais lugares na internet que voc√
 <!-- Add class 'markdown__listhome' for float: left -->
 
 <!-- {: .markdown__listhome} -->
- [Sourcerer](https://sourcerer.io/williamcanin)
+ [Sourcerer](https://sourcerer.io/williamcanin) |
  [LinkedIn](https://www.linkedin.com/in/williamcostacanin/){:target="_blank"} |
  [GitHub](https://github.com/williamcanin){:target="_blank"} |
  [YouTube](https://youtube.com/c/williamcanin){:target="_blank"} |
