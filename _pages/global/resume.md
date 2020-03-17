@@ -108,7 +108,6 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**HTML5**](https://www.w3schools.com/html/html5_intro.asp){:target="_blank"}|16px %}
 {% badge [**CSS3**](https://www.w3schools.com/css/){:target="_blank"}|16px %}
 {% badge [**Javascript**](https://www.javascript.com/){:target="_blank"}|16px %}
-<!-- {% badge [**Responsive Web Design**](https://www.w3schools.com/html/html_responsive.asp){:target="_blank"}|16px %} -->
 {% badge [**BEM**](http://getbem.com/){:target="_blank"}|16px %}
 {% badge [**SASS**](https://sass-lang.com/){:target="_blank"}|16px %}
 {% badge [**Gulp**](https://gulpjs.com/){:target="_blank"}|16px %}
@@ -117,14 +116,10 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**Django**](https://www.djangoproject.com/){:target="_blank"}|16px %}
 {% badge [**Git**](https://git-scm.com/){:target="_blank"}|16px %}
 {% badge [**Jekyll**](https://jekyllrb.com/){:target="_blank"}|16px %}
-{% badge [**MySQL**](https://www.mysql.com/
-){:target="_blank"}|16px %}
-{% badge [**Red Hat Enterprise Linux Server**](https://www.redhat.com/pt-br/resources/red-hat-enterprise-linux-server){:target="_blank"}|16px %}
-<!-- {% badge [**Iptables**](https://pt.wikipedia.org/wiki/Iptables){:target="_blank"}|16px %} -->
+{% badge [**MySQL**](https://www.mysql.com/){:target="_blank"}|16px %}
 {% badge [**Linux**](https://pt.wikipedia.org/wiki/Linux){:target="_blank"}|16px %}
-{% badge [**Windows**](https://www.microsoft.com/pt-br/windows){:target="_blank"}|16px %}
 
-Para saber mais sobre meus conhecimentos em desenvolvimento, acesse meu perfil na Sourcerer: https://sourcerer.io/williamcanin.
+Para saber mais sobre meus conhecimentos em desenvolvimento, acesse meu perfil na Sourcerer: [https://sourcerer.io/williamcanin](https://sourcerer.io/williamcanin).
 
 ### Idiomas
 ---
