@@ -124,6 +124,8 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**Linux**](https://pt.wikipedia.org/wiki/Linux){:target="_blank"}|16px %}
 {% badge [**Windows**](https://www.microsoft.com/pt-br/windows){:target="_blank"}|16px %}
 
+Para saber mais sobre meus conhecimentos em desenvolvimento, acesse meu perfil na Sourcerer: https://sourcerer.io/williamcanin.
+
 ### Idiomas
 ---
 
