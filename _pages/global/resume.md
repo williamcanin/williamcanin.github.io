@@ -133,7 +133,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 ### Projetos
 ---
 
-[**Snakypy Prompt**](https://github.com/snakypy/snakypy-prompt){:target="_blank"} - Um tema para o [ZSH](http://zsh.org){:target="_blank"} usando a framework [Oh My Zsh](https://ohmyz.sh). O tema tem um gerenciador próprio que faz alterações de atualização, instalação, desinstalação, habilitar e desabilitar no próprio tema.
+[**ZSHPower**](https://github.com/snakypy/zshpower){:target="_blank"} - Um tema para o [ZSH](http://zsh.org){:target="_blank"} usando a framework [Oh My Zsh](https://ohmyz.sh).
 
 [**Typing**](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} - Typing, é um template para o Jekyll criado especialmente para quem deseja ter um site estático e páginas com rapidez, leveza e muitas customizações.
 
