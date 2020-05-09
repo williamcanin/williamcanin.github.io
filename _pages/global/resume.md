@@ -130,6 +130,8 @@ Para saber mais sobre meus conhecimentos em desenvolvimento, acesse meu perfil n
 ### Projetos
 ---
 
+[**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"} - Um gerenciador CLI de dotfiles para sistemas Linux.
+
 [**ZSHPower**](https://github.com/snakypy/zshpower){:target="_blank"} - Um tema para o [ZSH](http://zsh.org){:target="_blank"} usando a framework [Oh My Zsh](https://ohmyz.sh).
 
 [**Typing**](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} - Typing, é um template para o Jekyll criado especialmente para quem deseja ter um site estático e páginas com rapidez, leveza e muitas customizações.
