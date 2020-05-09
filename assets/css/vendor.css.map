@@ -91,7 +91,7 @@
 		"node_modules/bootstrap/scss/utilities/_text.scss",
 		"node_modules/bootstrap/scss/utilities/_visibility.scss",
 		"node_modules/bootstrap/scss/_print.scss",
-		"vendor/bundle/ruby/2.7.0/gems/jektify-1.0.5/assets/vendor/jektify/sass/_jektify.scss"
+		"../typing-jekyll-template/vendor/bundle/ruby/2.7.0/gems/jektify-1.0.5/assets/vendor/jektify/sass/_jektify.scss"
 	],
 	"sourcesContent": [
 		"@import \"vendor/vendor\";\n",
