@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-04-27 11:33:43
-title: Instalando Archlinux com criptografia LUKS e LVM
+title: Instalando Arch Linux com criptografia LUKS e LVM
 tags: ['archlinux','encryption', 'luks', 'lvm']
 published: true
 comments: true
@@ -20,14 +20,14 @@ script: [post.js]
 
 # Requerimentos
 
-* Imagem do [Archlinux](https://www.archlinux.org/download/){:target="_blank"} queimada em DVD ou Pendrive Bootável.
+* Imagem do [Arch Linux](https://www.archlinux.org/download/){:target="_blank"} queimada em DVD ou Pendrive Bootável.
 * Espaço livre no HD(SSD) ou usar [VirtualBox](https://www.virtualbox.org/){:target="_blank"} para realizar esse tutorial.
 * Conexão com a Internet.
 
 > Nota: Não irei entrar em detalhe de como realizar o procedimento de gravação
 > de imagem ou como usar VirtualBox, não é o foco do tutorial.
 
-Se você for instalar o Archlinux em uma máquina mesmo, você vai precisar de um celular, tablet, notebook, ou até mesmo outro desktop para poder acompanhar esse tutorial. Isso porque você vai cair em uma "tela preta" de comandos, e realmente é só você e "ela". Não tem um ambiente desktop para você acessar o navegador e pesquisar enquando instala igual outras distribuições.
+Se você for instalar o Arch Linux em uma máquina mesmo, você vai precisar de um celular, tablet, notebook, ou até mesmo outro desktop para poder acompanhar esse tutorial. Isso porque você vai cair em uma "tela preta" de comandos, e realmente é só você e "ela". Não tem um ambiente desktop para você acessar o navegador e pesquisar enquando instala igual outras distribuições.
 
 # Introdução
 
@@ -51,13 +51,13 @@ Essa criptografia pode ser aplicada a qualquer distribuição Linux. Porem, os p
 
 Então, neste caso, para podermos utilizar esse conceito de criptografia e de alocamento de disco com o LVM, temos que passar pelo processo de instalação da distribuição. Então, vamos a instalação...
 
- *Archlinux! Eu escolho você!*
+ *Arch Linux! Eu escolho você!*
 
 # Preparando o básico
 
-Já com o Archlinux em boot na máquina...
+Já com o Arch Linux em boot na máquina...
 
-{% imager instalando-archlinux-com-criptografia-luks-e-lvm/start_archlinux_boot.jpg|center %}    
+{% imager instalando-archlinux-com-criptografia-luks-e-lvm/start_archlinux_boot.jpg|center %}
 
 &nbsp;a primeira coisa a se fazer é carregar o layout do teclado, para isso você precisa saber qual é o seu [KEYMAP](https://wiki.archlinux.org/index.php/KEYMAP_(Portugu%C3%AAs)){:target="_blank"}.
 
@@ -74,7 +74,7 @@ loadkeys br-abnt2
 {% endhighlight %}
 
 > Nota: Essa configuração é temporária, isso porque ainda não estamos com
-> o sistema Archlinux instalado para deixar permanente.
+> o sistema Arch Linux instalado para deixar permanente.
 
 Agora iremos carregar alguns módulos **crypt**, que iremos usar para realizar toda criptografia:
 
@@ -86,7 +86,7 @@ modprobe -a dm-mod dm-crypt
 
 ## Conceitos
 
-O `fdisk` é uma ferramenta indispensável para quem usa Archlinux. É com ela que criamos todas partições em nosso disco durante a instalação. O `fdisk` é baseado através de linhas de comandos, como isso, você pode achar um pouco complexo no começo, mas com tempo se acostuma. :laughing: Caso realmente não queira utilizar o `fdisk`, existe o cfdisk.
+O `fdisk` é uma ferramenta indispensável para quem usa Arch Linux. É com ela que criamos todas partições em nosso disco durante a instalação. O `fdisk` é baseado através de linhas de comandos, como isso, você pode achar um pouco complexo no começo, mas com tempo se acostuma. :laughing: Caso realmente não queira utilizar o `fdisk`, existe o cfdisk.
 
 O [cfdisk](https://en.wikipedia.org/wiki/Cfdisk){:target="_blank"}, é como se fosse um "fork" do `fdisk`, porem, baseado em uma interface usando as setas direcionais do teclado.
 
@@ -228,9 +228,9 @@ Existe várias formadas de criptografar partições com LUKS. Selecionei 3(três
 - Criptografar a partição "Linux LVM" inteira, através de uma senha.
 
 
-**A primeira** é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição **Home** , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma "brecha" de insegurança nessa opção.   
-**A segunda** opção é a que eu menos recomendo, apensar de também ser interessante usar um pendrive para montar a **home**. Porem, se você criptografar somente a partição **home** e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar *"dor de cabeça"*.   
-**A terceira** opção, é a criptografia de todo o sistema Linux LVM, ela que iremos utilizar nesse tutorial. Talvez em um outro tutorial, eu explique como fazer uma criptografia da **primeira** e **segunda** opção.   
+**A primeira** é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição **Home** , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma "brecha" de insegurança nessa opção.
+**A segunda** opção é a que eu menos recomendo, apensar de também ser interessante usar um pendrive para montar a **home**. Porem, se você criptografar somente a partição **home** e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar *"dor de cabeça"*.
+**A terceira** opção, é a criptografia de todo o sistema Linux LVM, ela que iremos utilizar nesse tutorial. Talvez em um outro tutorial, eu explique como fazer uma criptografia da **primeira** e **segunda** opção.
 
 > Nota: Não tem como criptografar a partição de sistema de arquivos inteira
 > com LUKS através de um keyfile no pendrive, isso porque você está mantendo o
@@ -273,15 +273,15 @@ Então esse será meu o "Physical Volume (PV)": **/dev/mapper/linux**
 
 ## Conceitos
 
-Exemplificando o básico e resumidamente o LVM, para que seja o suficiente para trabalharmos nessa instalação do Archlinux, iremos utilizar 3(três) componentes do LVM, esses são:
+Exemplificando o básico e resumidamente o LVM, para que seja o suficiente para trabalharmos nessa instalação do Arch Linux, iremos utilizar 3(três) componentes do LVM, esses são:
 
 * Physical Volume (PV) - (volume físico)
 * Volume Group (VG) - (grupo de volume)
 * Logical Volume (LV) - (volume lógico)
 
-"Physical Volume (PV)": A unidade do armazenamento Physical Volume (PV) subjacente de um volume lógico LVM.   
-"Volume Group (VG)": É criado para termos grupos para nossos "Logical Volume (LV)".    
-"Logical Volume (LV)": Serão nosso volume lógico, ou seja, nossas partições Linux que usaremos para o sistema.   
+"Physical Volume (PV)": A unidade do armazenamento Physical Volume (PV) subjacente de um volume lógico LVM.
+"Volume Group (VG)": É criado para termos grupos para nossos "Logical Volume (LV)".
+"Logical Volume (LV)": Serão nosso volume lógico, ou seja, nossas partições Linux que usaremos para o sistema.
 
 Lembrando que se você quer saber mais afundo sobre LVM, eu te recomendo esse manual [Logical Volume Manager Administration](https://access.redhat.com/documentation/pt-BR/Red_Hat_Enterprise_Linux/6/html-single/Logical_Volume_Manager_Administration/){:target="_blank"}, que é uma documentação da própria [Red Hat](https://www.redhat.com/pt-br){:target="_blank"} sobre administradores do LVM.
 
@@ -367,7 +367,7 @@ Vamos utilizar o **ext4** para nossa partição de **sistema de arquivos** e nos
 > com dados dentro (o que não é nosso, pois criamos uma do zero). Ao executar
 > uma formatação, todos os dados (caso tenha) contido na mesma, serão apagados.
 
-Formatando:   
+Formatando:
 {% highlight bash  %}
 mkfs -t ext4 /dev/mapper/linux-archlinux
 mkfs -t ext4 /dev/mapper/linux-home
@@ -400,21 +400,21 @@ swapon /dev/mapper/linux-swap
 > Nota: Não há necessidade de formatar a partição de **NTFS** (do Windows)
 > pelo fato que o próprio **Windows** faz isso ao instalar. Apenas cria-se
 > caso queira instalar do sistema do senhor *Gates*.  Lembrando que, se você
-> instalar o Windows depois de ter instalado o Archlinux (ou qualquer outra
+> instalar o Windows depois de ter instalado o Arch Linux (ou qualquer outra
 > distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será
 > sobrescrito pelo MBR do Windows, e o Grub não será iniciado. Se isso
 > acontecer, você precisará reinstalar o Grub do
-> Archlinux novamente com o DVD do Archlinux (ou um pendrive bootável do
+> Arch Linux novamente com o DVD do Arch Linux (ou um pendrive bootável do
 > mesmo).
-> Eu criei um **script shell** para a recuperação do Grub no Archlinux, no
-> momento ele serve somente para Archlinux, talvez eu dê um upgrade para
+> Eu criei um **script shell** para a recuperação do Grub no Arch Linux, no
+> momento ele serve somente para Arch Linux, talvez eu dê um upgrade para
 > servir em outras distribuições também, mas ainda estou com preguiça hahaha.
 > Ele é o [Recover Grub](https://github.com/williamcanin/recover-grub). Dê uma
 > olhada, é bem fácil de usar.
 
 # Montagem das partições
 
-Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Archlinux. Por padrão, montamos o **sistema de arquivos** no diretório **/mnt** e a partição **home** em um diretório que precisa ser criado para sua montagem, o **/mnt/home** . Então vamos aos comandos para esse feito:
+Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Arch Linux. Por padrão, montamos o **sistema de arquivos** no diretório **/mnt** e a partição **home** em um diretório que precisa ser criado para sua montagem, o **/mnt/home** . Então vamos aos comandos para esse feito:
 
 {% highlight bash  %}
 mount /dev/mapper/linux-archlinux /mnt
@@ -429,9 +429,9 @@ mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 {% endhighlight %}
 
-Finalizamos aqui a criação das partições, as formatações e as montagens. Agora vamos dar inicio a instalação do sistema base do Archlinux.
+Finalizamos aqui a criação das partições, as formatações e as montagens. Agora vamos dar inicio a instalação do sistema base do Arch Linux.
 
-# Instalando e configurando o Archlinux
+# Instalando e configurando o Arch Linux
 
 ## Conceitos
 
@@ -453,7 +453,7 @@ Agora vá tomar um :coffee: , são mais de 200MB de download. A menos que tenha 
 
 ## Criando /etc/fstab
 
-Após a instalação do sistema base do Archlinux, vamos criar o arquivo **/etc/fstab**, que é responsável por dar "arranque" ao nosso sistema e partições. Para criar, faça:
+Após a instalação do sistema base do Arch Linux, vamos criar o arquivo **/etc/fstab**, que é responsável por dar "arranque" ao nosso sistema e partições. Para criar, faça:
 
 {% highlight bash  %}
 genfstab -p /mnt >> /mnt/etc/fstab
@@ -471,7 +471,7 @@ arch-chroot /mnt /bin/bash
 
 Devemos carregar o layout de teclado, ai se pergunta:
 
-*Eu ja fiz isso no começo!*   
+*Eu ja fiz isso no começo!*
 
 Mas agora estavamos dentro do sistema base instalado, então, devemos carregar novamente para podermos ter o layout corretamente a máquina. Então, novamente:
 
@@ -497,7 +497,7 @@ passwd
 
 ## Instalado pacotes necessários
 
-O gerenciador de pacotes padrão do Archlinux é o **pacman**. Caso você não saíba como utilizar, te recomendo a leitura no [wiki](https://wiki.archlinux.org/){:target="_blank"} do Archlinux, é um local muito rico em informações sobre o Archlinux, programas e suas configurações. O wiki do Pacman você pode encontrar lá também, ou clicar [AQUI](https://wiki.archlinux.org/index.php/Pacman_(Portugu%C3%AAs)){:target="_blank"}. Vamos instalar alguns pacotes necessários com o **pacman**, com o comando abaixo:
+O gerenciador de pacotes padrão do Arch Linux é o **pacman**. Caso você não saíba como utilizar, te recomendo a leitura no [wiki](https://wiki.archlinux.org/){:target="_blank"} do Arch Linux, é um local muito rico em informações sobre o Arch Linux, programas e suas configurações. O wiki do Pacman você pode encontrar lá também, ou clicar [AQUI](https://wiki.archlinux.org/index.php/Pacman_(Portugu%C3%AAs)){:target="_blank"}. Vamos instalar alguns pacotes necessários com o **pacman**, com o comando abaixo:
 
 {% highlight bash  %}
 pacman -S bash-completion vim wireless_tools wpa_supplicant wpa_actiond ntfs-3g dialog --noconfirm
@@ -520,7 +520,7 @@ locale-gen
 
 ## Informando o idioma padrão para o sistema
 
-Como já temos o idioma de **pt_BR** habilitado, você já pode setar o mesmo para nosso sistema Archlinux (caso queira pt_BR). Para isso faremos os comando abaixo:
+Como já temos o idioma de **pt_BR** habilitado, você já pode setar o mesmo para nosso sistema Arch Linux (caso queira pt_BR). Para isso faremos os comando abaixo:
 
 {% highlight bash  %}
 echo LANG=pt_BR.UTF-8 > /etc/locale.conf
@@ -541,12 +541,12 @@ hwclock --systohc --utc
 >  com a sua. Para isso pode listar as que estão disponiveis em com o comando :
 >  `ls /usr/share/zoneinfo/`.
 
-> **Importante:**   
+> **Importante:**
 > Caso você use dual boot com Windows, você deve deixar para ambos UTC ou
 > LOCALTIME. Haverá conflito de hora se um S.O estiver um com UTC e outro com
 > LOCALTIME.
 
-Para deixar o Archlinux configurado como LOCALTIME, execute o comando abaixo:
+Para deixar o Arch Linux configurado como LOCALTIME, execute o comando abaixo:
 
 {% highlight bash  %}
 printf "0.0 0.0 0.0\n0\nLOCAL\n" > /etc/adjtime
@@ -583,7 +583,7 @@ systemctl enable dhcpcd@enp0s3
 systemctl enable dhcpcd
 {% endhighlight %}
 
-Leia sobre o [Systemctl](https://wiki.archlinux.org/index.php/Systemd_(Portugu%C3%AAs)){:target="_blank"}, pois você pode utilizar muito ele em seu Archlinux.
+Leia sobre o [Systemctl](https://wiki.archlinux.org/index.php/Systemd_(Portugu%C3%AAs)){:target="_blank"}, pois você pode utilizar muito ele em seu Arch Linux.
 
 ## Criando um usuário padrão
 
@@ -604,7 +604,7 @@ passwd <NAMEUSER>
 
 ## Configurando o /etc/fstab
 
-Lembra que criamos o **/etc/fstab** antes de iniciarmos no sistema base do Archlinux? Pois bem, agora precisamos fazer algumas alterações.
+Lembra que criamos o **/etc/fstab** antes de iniciarmos no sistema base do Arch Linux? Pois bem, agora precisamos fazer algumas alterações.
 
 Por padrão o **/etc/fstab** já está funcional, mas vamos acrescentar algumas outras configurações. Essas são:
 
@@ -625,10 +625,10 @@ Para deixar o arquivo em modo de edição no **vim**...
 
 Posicione o ponteiro no final do arquivo e adicione essas linhas:
 
-> ######## CD/DVD   
-> /dev/sr0  /media/cdrom0  udf,iso9660 user,noauto  0  0   
-> ######## Windows   
-> /dev/sda2 /mnt/windows  ntfs-3g defaults,user,rw,auto  0  0   
+> ######## CD/DVD
+> /dev/sr0  /media/cdrom0  udf,iso9660 user,noauto  0  0
+> ######## Windows
+> /dev/sda2 /mnt/windows  ntfs-3g defaults,user,rw,auto  0  0
 
 Saia do modo de edição com a tecla **Esc**, e ...
 
@@ -648,9 +648,9 @@ Pronto! Terminamos toda edição do **/etc/fstab**. Na próxima reinicializaçã
 
 ## Configurando o /etc/mkinitcpio.conf
 
-O arquivo **/etc/mkinitcpio.conf** é responsável por configurar a imagem de boot. Dentro do **/etc/mkinitcpio.conf** você coloca valores que pode modificar a forma de como o Archlinux irá se comportar e carregar algumas funções.
+O arquivo **/etc/mkinitcpio.conf** é responsável por configurar a imagem de boot. Dentro do **/etc/mkinitcpio.conf** você coloca valores que pode modificar a forma de como o Arch Linux irá se comportar e carregar algumas funções.
 
-Por padrão, quando instalamos o Archlinux, não precisamos alterar em nada neste arquivo, porem, como utilizamos LVM e criptografia, devemos fazer algumas mudanças.
+Por padrão, quando instalamos o Arch Linux, não precisamos alterar em nada neste arquivo, porem, como utilizamos LVM e criptografia, devemos fazer algumas mudanças.
 
 Então, abra o arquivo com seu editor preferencial. Usarei o **vim** novamente:
 
@@ -681,7 +681,7 @@ Com o **/etc/mkinitcpio.conf** configurado, basta "subir" essas novas configura�
 mkinitcpio -p linux
 {% endhighlight %}
 
-OK! Concluímos toda instalação e configuração do Archlinux. Agora vamos para a etapa do gerenciamento de boot.
+OK! Concluímos toda instalação e configuração do Arch Linux. Agora vamos para a etapa do gerenciamento de boot.
 
 # O Grub
 
@@ -715,7 +715,7 @@ Caso não utilize o Windows com dual boot, ignore o pacote **os-prober**.
 
 ## Configurando o Grub
 
-Por padrão, quando instalamos o Archlinux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porém, como utilizamos, iremos fazer algumas mudanças necessárias.
+Por padrão, quando instalamos o Arch Linux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porém, como utilizamos, iremos fazer algumas mudanças necessárias.
 
 Novamente usando o **vim**, abra o arquivo **/etc/default/grub**:
 
@@ -780,10 +780,10 @@ systemctl reboot
 {% endhighlight %}
 
 > Nota: Se estiver instalando com VirtualBox, não esquece de tirar a mídia do
-> Archlinux, caso contrário em vez do Archlinux instalado iniciar, será a
+> Arch Linux, caso contrário em vez do Arch Linux instalado iniciar, será a
 > mídia que fará essa função.
 
-Agora, toda vez que iniciar o sistema (antes mesmo do boot), a senha de criptografia irá ser requerida, com isso, é interessante deixar o login automático para não ter que digitar senha no mesmo também. Para isso, recomendo ler [Getty](https://wiki.archlinux.org/index.php/Getty){:target="_blank"} no wiki do Archlinux.
+Agora, toda vez que iniciar o sistema (antes mesmo do boot), a senha de criptografia irá ser requerida, com isso, é interessante deixar o login automático para não ter que digitar senha no mesmo também. Para isso, recomendo ler [Getty](https://wiki.archlinux.org/index.php/Getty){:target="_blank"} no wiki do Arch Linux.
 
 
 # Conclusão
