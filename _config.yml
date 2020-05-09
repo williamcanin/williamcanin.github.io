@@ -98,6 +98,7 @@ exclude:
   - docs/data
   - temp
   - .hidden
+  - public.sh
   - docs/config
   - gulpfile.js
   - node_modules
