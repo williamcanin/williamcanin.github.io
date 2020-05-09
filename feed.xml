@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-03-17T20:52:02-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-05-09T08:15:08-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em &lt;a href=&quot;https://python.org&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/a&gt; deixando as cores do terminal (sistemas baseado em &lt;strong&gt;UNIX&lt;/strong&gt;) coloridas. É claro que você pode implementar mais coisas para este módulo, porém esse é apenas um conceito básico de como o poder de sua criação pode criar coisas bacanas com Python ;)&lt;/p&gt;
 
@@ -1412,7 +1412,7 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:7kIunRqo3botlYCadX0IRM&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="shell" /><category term="kernel" /><category term="linux" /><summary type="html">Oi, tudo bem com você? :) Espero que sim.</summary></entry><entry><title type="html">Instalando Archlinux com criptografia LUKS e LVM</title><link href="https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm/" rel="alternate" type="text/html" title="Instalando Archlinux com criptografia LUKS e LVM" /><published>2017-04-27T08:33:43-03:00</published><updated>2017-04-27T08:33:43-03:00</updated><id>https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm</id><content type="html" xml:base="https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm/">&lt;ul id=&quot;markdown-toc&quot;&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="shell" /><category term="kernel" /><category term="linux" /><summary type="html">Oi, tudo bem com você? :) Espero que sim.</summary></entry><entry><title type="html">Instalando Arch Linux com criptografia LUKS e LVM</title><link href="https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm/" rel="alternate" type="text/html" title="Instalando Arch Linux com criptografia LUKS e LVM" /><published>2017-04-27T08:33:43-03:00</published><updated>2017-04-27T08:33:43-03:00</updated><id>https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm</id><content type="html" xml:base="https://williamcanin.me/blog/instalando-archlinux-com-criptografia-luks-e-lvm/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#preparando-o-básico&quot; id=&quot;markdown-toc-preparando-o-básico&quot;&gt;Preparando o básico&lt;/a&gt;&lt;/li&gt;
@@ -1447,7 +1447,7 @@ To listen to the full song, open your Spotify and start these musics.
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#montagem-das-partições&quot; id=&quot;markdown-toc-montagem-das-partições&quot;&gt;Montagem das partições&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#instalando-e-configurando-o-archlinux&quot; id=&quot;markdown-toc-instalando-e-configurando-o-archlinux&quot;&gt;Instalando e configurando o Archlinux&lt;/a&gt;    &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#instalando-e-configurando-o-arch-linux&quot; id=&quot;markdown-toc-instalando-e-configurando-o-arch-linux&quot;&gt;Instalando e configurando o Arch Linux&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#conceitos-3&quot; id=&quot;markdown-toc-conceitos-3&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#instalando-o-sistema-base&quot; id=&quot;markdown-toc-instalando-o-sistema-base&quot;&gt;Instalando o sistema base&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#criando-etcfstab&quot; id=&quot;markdown-toc-criando-etcfstab&quot;&gt;Criando /etc/fstab&lt;/a&gt;&lt;/li&gt;
@@ -1480,7 +1480,7 @@ To listen to the full song, open your Spotify and start these musics.
 &lt;h1 id=&quot;requerimentos&quot;&gt;Requerimentos&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Imagem do &lt;a href=&quot;https://www.archlinux.org/download/&quot; target=&quot;_blank&quot;&gt;Archlinux&lt;/a&gt; queimada em DVD ou Pendrive Bootável.&lt;/li&gt;
+  &lt;li&gt;Imagem do &lt;a href=&quot;https://www.archlinux.org/download/&quot; target=&quot;_blank&quot;&gt;Arch Linux&lt;/a&gt; queimada em DVD ou Pendrive Bootável.&lt;/li&gt;
   &lt;li&gt;Espaço livre no HD(SSD) ou usar &lt;a href=&quot;https://www.virtualbox.org/&quot; target=&quot;_blank&quot;&gt;VirtualBox&lt;/a&gt; para realizar esse tutorial.&lt;/li&gt;
   &lt;li&gt;Conexão com a Internet.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1490,7 +1490,7 @@ To listen to the full song, open your Spotify and start these musics.
 de imagem ou como usar VirtualBox, não é o foco do tutorial.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Se você for instalar o Archlinux em uma máquina mesmo, você vai precisar de um celular, tablet, notebook, ou até mesmo outro desktop para poder acompanhar esse tutorial. Isso porque você vai cair em uma “tela preta” de comandos, e realmente é só você e “ela”. Não tem um ambiente desktop para você acessar o navegador e pesquisar enquando instala igual outras distribuições.&lt;/p&gt;
+&lt;p&gt;Se você for instalar o Arch Linux em uma máquina mesmo, você vai precisar de um celular, tablet, notebook, ou até mesmo outro desktop para poder acompanhar esse tutorial. Isso porque você vai cair em uma “tela preta” de comandos, e realmente é só você e “ela”. Não tem um ambiente desktop para você acessar o navegador e pesquisar enquando instala igual outras distribuições.&lt;/p&gt;
 
 &lt;h1 id=&quot;introdução&quot;&gt;Introdução&lt;/h1&gt;
 
@@ -1514,11 +1514,11 @@ de imagem ou como usar VirtualBox, não é o foco do tutorial.&lt;/p&gt;
 
 &lt;p&gt;Então, neste caso, para podermos utilizar esse conceito de criptografia e de alocamento de disco com o LVM, temos que passar pelo processo de instalação da distribuição. Então, vamos a instalação…&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Archlinux! Eu escolho você!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Arch Linux! Eu escolho você!&lt;/em&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;preparando-o-básico&quot;&gt;Preparando o básico&lt;/h1&gt;
 
-&lt;p&gt;Já com o Archlinux em boot na máquina…&lt;/p&gt;
+&lt;p&gt;Já com o Arch Linux em boot na máquina…&lt;/p&gt;
 
 &lt;div class=&quot;row imager__plugin&quot;&gt;
             &lt;img class=&quot;img-fluid mx-auto d-block&quot; src=&quot;/assets/images/posts/instalando-archlinux-com-criptografia-luks-e-lvm/start_archlinux_boot.jpg&quot; title=&quot;instalando-archlinux-com-criptografia-luks-e-lvm/start_archlinux_boot.jpg&quot; alt=&quot;instalando-archlinux-com-criptografia-luks-e-lvm/start_archlinux_boot.jpg&quot; /&gt;
@@ -1536,7 +1536,7 @@ de imagem ou como usar VirtualBox, não é o foco do tutorial.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Nota: Essa configuração é temporária, isso porque ainda não estamos com
-o sistema Archlinux instalado para deixar permanente.&lt;/p&gt;
+o sistema Arch Linux instalado para deixar permanente.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Agora iremos carregar alguns módulos &lt;strong&gt;crypt&lt;/strong&gt;, que iremos usar para realizar toda criptografia:&lt;/p&gt;
@@ -1547,7 +1547,7 @@ o sistema Archlinux instalado para deixar permanente.&lt;/p&gt;
 
 &lt;h2 id=&quot;conceitos&quot;&gt;Conceitos&lt;/h2&gt;
 
-&lt;p&gt;O &lt;code class=&quot;highlighter-rouge&quot;&gt;fdisk&lt;/code&gt; é uma ferramenta indispensável para quem usa Archlinux. É com ela que criamos todas partições em nosso disco durante a instalação. O &lt;code class=&quot;highlighter-rouge&quot;&gt;fdisk&lt;/code&gt; é baseado através de linhas de comandos, como isso, você pode achar um pouco complexo no começo, mas com tempo se acostuma. :laughing: Caso realmente não queira utilizar o &lt;code class=&quot;highlighter-rouge&quot;&gt;fdisk&lt;/code&gt;, existe o cfdisk.&lt;/p&gt;
+&lt;p&gt;O &lt;code class=&quot;highlighter-rouge&quot;&gt;fdisk&lt;/code&gt; é uma ferramenta indispensável para quem usa Arch Linux. É com ela que criamos todas partições em nosso disco durante a instalação. O &lt;code class=&quot;highlighter-rouge&quot;&gt;fdisk&lt;/code&gt; é baseado através de linhas de comandos, como isso, você pode achar um pouco complexo no começo, mas com tempo se acostuma. :laughing: Caso realmente não queira utilizar o &lt;code class=&quot;highlighter-rouge&quot;&gt;fdisk&lt;/code&gt;, existe o cfdisk.&lt;/p&gt;
 
 &lt;p&gt;O &lt;a href=&quot;https://en.wikipedia.org/wiki/Cfdisk&quot; target=&quot;_blank&quot;&gt;cfdisk&lt;/a&gt;, é como se fosse um “fork” do &lt;code class=&quot;highlighter-rouge&quot;&gt;fdisk&lt;/code&gt;, porem, baseado em uma interface usando as setas direcionais do teclado.&lt;/p&gt;
 
@@ -1721,8 +1721,8 @@ terá que ser independente.&lt;/p&gt;
   &lt;li&gt;Criptografar a partição “Linux LVM” inteira, através de uma senha.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;A primeira&lt;/strong&gt; é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição &lt;strong&gt;Home&lt;/strong&gt; , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma “brecha” de insegurança nessa opção. &lt;br /&gt;
-&lt;strong&gt;A segunda&lt;/strong&gt; opção é a que eu menos recomendo, apensar de também ser interessante usar um pendrive para montar a &lt;strong&gt;home&lt;/strong&gt;. Porem, se você criptografar somente a partição &lt;strong&gt;home&lt;/strong&gt; e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar &lt;em&gt;“dor de cabeça”&lt;/em&gt;. &lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;A primeira&lt;/strong&gt; é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição &lt;strong&gt;Home&lt;/strong&gt; , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma “brecha” de insegurança nessa opção.
+&lt;strong&gt;A segunda&lt;/strong&gt; opção é a que eu menos recomendo, apensar de também ser interessante usar um pendrive para montar a &lt;strong&gt;home&lt;/strong&gt;. Porem, se você criptografar somente a partição &lt;strong&gt;home&lt;/strong&gt; e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar &lt;em&gt;“dor de cabeça”&lt;/em&gt;.
 &lt;strong&gt;A terceira&lt;/strong&gt; opção, é a criptografia de todo o sistema Linux LVM, ela que iremos utilizar nesse tutorial. Talvez em um outro tutorial, eu explique como fazer uma criptografia da &lt;strong&gt;primeira&lt;/strong&gt; e &lt;strong&gt;segunda&lt;/strong&gt; opção.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -1766,7 +1766,7 @@ Então esse será meu o “Physical Volume (PV)”: &lt;strong&gt;/dev/mapper/li
 
 &lt;h2 id=&quot;conceitos-2&quot;&gt;Conceitos&lt;/h2&gt;
 
-&lt;p&gt;Exemplificando o básico e resumidamente o LVM, para que seja o suficiente para trabalharmos nessa instalação do Archlinux, iremos utilizar 3(três) componentes do LVM, esses são:&lt;/p&gt;
+&lt;p&gt;Exemplificando o básico e resumidamente o LVM, para que seja o suficiente para trabalharmos nessa instalação do Arch Linux, iremos utilizar 3(três) componentes do LVM, esses são:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Physical Volume (PV) - (volume físico)&lt;/li&gt;
@@ -1774,8 +1774,8 @@ Então esse será meu o “Physical Volume (PV)”: &lt;strong&gt;/dev/mapper/li
   &lt;li&gt;Logical Volume (LV) - (volume lógico)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;“Physical Volume (PV)”: A unidade do armazenamento Physical Volume (PV) subjacente de um volume lógico LVM. &lt;br /&gt;
-“Volume Group (VG)”: É criado para termos grupos para nossos “Logical Volume (LV)”.  &lt;br /&gt;
+&lt;p&gt;“Physical Volume (PV)”: A unidade do armazenamento Physical Volume (PV) subjacente de um volume lógico LVM.
+“Volume Group (VG)”: É criado para termos grupos para nossos “Logical Volume (LV)”.
 “Logical Volume (LV)”: Serão nosso volume lógico, ou seja, nossas partições Linux que usaremos para o sistema.&lt;/p&gt;
 
 &lt;p&gt;Lembrando que se você quer saber mais afundo sobre LVM, eu te recomendo esse manual &lt;a href=&quot;https://access.redhat.com/documentation/pt-BR/Red_Hat_Enterprise_Linux/6/html-single/Logical_Volume_Manager_Administration/&quot; target=&quot;_blank&quot;&gt;Logical Volume Manager Administration&lt;/a&gt;, que é uma documentação da própria &lt;a href=&quot;https://www.redhat.com/pt-br&quot; target=&quot;_blank&quot;&gt;Red Hat&lt;/a&gt; sobre administradores do LVM.&lt;/p&gt;
@@ -1884,14 +1884,14 @@ swapon /dev/mapper/linux-swap&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;p&gt;Nota: Não há necessidade de formatar a partição de &lt;strong&gt;NTFS&lt;/strong&gt; (do Windows)
 pelo fato que o próprio &lt;strong&gt;Windows&lt;/strong&gt; faz isso ao instalar. Apenas cria-se
 caso queira instalar do sistema do senhor &lt;em&gt;Gates&lt;/em&gt;.  Lembrando que, se você
-instalar o Windows depois de ter instalado o Archlinux (ou qualquer outra
+instalar o Windows depois de ter instalado o Arch Linux (ou qualquer outra
 distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será
 sobrescrito pelo MBR do Windows, e o Grub não será iniciado. Se isso
 acontecer, você precisará reinstalar o Grub do
-Archlinux novamente com o DVD do Archlinux (ou um pendrive bootável do
+Arch Linux novamente com o DVD do Arch Linux (ou um pendrive bootável do
 mesmo).
-Eu criei um &lt;strong&gt;script shell&lt;/strong&gt; para a recuperação do Grub no Archlinux, no
-momento ele serve somente para Archlinux, talvez eu dê um upgrade para
+Eu criei um &lt;strong&gt;script shell&lt;/strong&gt; para a recuperação do Grub no Arch Linux, no
+momento ele serve somente para Arch Linux, talvez eu dê um upgrade para
 servir em outras distribuições também, mas ainda estou com preguiça hahaha.
 Ele é o &lt;a href=&quot;https://github.com/williamcanin/recover-grub&quot;&gt;Recover Grub&lt;/a&gt;. Dê uma
 olhada, é bem fácil de usar.&lt;/p&gt;
@@ -1899,7 +1899,7 @@ olhada, é bem fácil de usar.&lt;/p&gt;
 
 &lt;h1 id=&quot;montagem-das-partições&quot;&gt;Montagem das partições&lt;/h1&gt;
 
-&lt;p&gt;Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Archlinux. Por padrão, montamos o &lt;strong&gt;sistema de arquivos&lt;/strong&gt; no diretório &lt;strong&gt;/mnt&lt;/strong&gt; e a partição &lt;strong&gt;home&lt;/strong&gt; em um diretório que precisa ser criado para sua montagem, o &lt;strong&gt;/mnt/home&lt;/strong&gt; . Então vamos aos comandos para esse feito:&lt;/p&gt;
+&lt;p&gt;Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Arch Linux. Por padrão, montamos o &lt;strong&gt;sistema de arquivos&lt;/strong&gt; no diretório &lt;strong&gt;/mnt&lt;/strong&gt; e a partição &lt;strong&gt;home&lt;/strong&gt; em um diretório que precisa ser criado para sua montagem, o &lt;strong&gt;/mnt/home&lt;/strong&gt; . Então vamos aos comandos para esse feito:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mount /dev/mapper/linux-archlinux /mnt
 &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /mnt/home
@@ -1910,9 +1910,9 @@ mount /dev/mapper/linux-home /mnt/home&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /mnt/boot
 mount /dev/sda1 /mnt/boot&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Finalizamos aqui a criação das partições, as formatações e as montagens. Agora vamos dar inicio a instalação do sistema base do Archlinux.&lt;/p&gt;
+&lt;p&gt;Finalizamos aqui a criação das partições, as formatações e as montagens. Agora vamos dar inicio a instalação do sistema base do Arch Linux.&lt;/p&gt;
 
-&lt;h1 id=&quot;instalando-e-configurando-o-archlinux&quot;&gt;Instalando e configurando o Archlinux&lt;/h1&gt;
+&lt;h1 id=&quot;instalando-e-configurando-o-arch-linux&quot;&gt;Instalando e configurando o Arch Linux&lt;/h1&gt;
 
 &lt;h2 id=&quot;conceitos-3&quot;&gt;Conceitos&lt;/h2&gt;
 
@@ -1932,7 +1932,7 @@ mount /dev/sda1 /mnt/boot&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;criando-etcfstab&quot;&gt;Criando /etc/fstab&lt;/h2&gt;
 
-&lt;p&gt;Após a instalação do sistema base do Archlinux, vamos criar o arquivo &lt;strong&gt;/etc/fstab&lt;/strong&gt;, que é responsável por dar “arranque” ao nosso sistema e partições. Para criar, faça:&lt;/p&gt;
+&lt;p&gt;Após a instalação do sistema base do Arch Linux, vamos criar o arquivo &lt;strong&gt;/etc/fstab&lt;/strong&gt;, que é responsável por dar “arranque” ao nosso sistema e partições. Para criar, faça:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;genfstab &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /mnt &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /mnt/etc/fstab&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1966,7 +1966,7 @@ mount /dev/sda1 /mnt/boot&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;instalado-pacotes-necessários&quot;&gt;Instalado pacotes necessários&lt;/h2&gt;
 
-&lt;p&gt;O gerenciador de pacotes padrão do Archlinux é o &lt;strong&gt;pacman&lt;/strong&gt;. Caso você não saíba como utilizar, te recomendo a leitura no &lt;a href=&quot;https://wiki.archlinux.org/&quot; target=&quot;_blank&quot;&gt;wiki&lt;/a&gt; do Archlinux, é um local muito rico em informações sobre o Archlinux, programas e suas configurações. O wiki do Pacman você pode encontrar lá também, ou clicar &lt;a href=&quot;https://wiki.archlinux.org/index.php/Pacman_(Portugu%C3%AAs)&quot; target=&quot;_blank&quot;&gt;AQUI&lt;/a&gt;. Vamos instalar alguns pacotes necessários com o &lt;strong&gt;pacman&lt;/strong&gt;, com o comando abaixo:&lt;/p&gt;
+&lt;p&gt;O gerenciador de pacotes padrão do Arch Linux é o &lt;strong&gt;pacman&lt;/strong&gt;. Caso você não saíba como utilizar, te recomendo a leitura no &lt;a href=&quot;https://wiki.archlinux.org/&quot; target=&quot;_blank&quot;&gt;wiki&lt;/a&gt; do Arch Linux, é um local muito rico em informações sobre o Arch Linux, programas e suas configurações. O wiki do Pacman você pode encontrar lá também, ou clicar &lt;a href=&quot;https://wiki.archlinux.org/index.php/Pacman_(Portugu%C3%AAs)&quot; target=&quot;_blank&quot;&gt;AQUI&lt;/a&gt;. Vamos instalar alguns pacotes necessários com o &lt;strong&gt;pacman&lt;/strong&gt;, com o comando abaixo:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; bash-completion vim wireless_tools wpa_supplicant wpa_actiond ntfs-3g dialog &lt;span class=&quot;nt&quot;&gt;--noconfirm&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1983,7 +1983,7 @@ mount /dev/sda1 /mnt/boot&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;informando-o-idioma-padrão-para-o-sistema&quot;&gt;Informando o idioma padrão para o sistema&lt;/h2&gt;
 
-&lt;p&gt;Como já temos o idioma de &lt;strong&gt;pt_BR&lt;/strong&gt; habilitado, você já pode setar o mesmo para nosso sistema Archlinux (caso queira pt_BR). Para isso faremos os comando abaixo:&lt;/p&gt;
+&lt;p&gt;Como já temos o idioma de &lt;strong&gt;pt_BR&lt;/strong&gt; habilitado, você já pode setar o mesmo para nosso sistema Arch Linux (caso queira pt_BR). Para isso faremos os comando abaixo:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LANG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pt_BR.UTF-8 &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /etc/locale.conf
 &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;LANG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pt_BR.UTF-8&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -2003,13 +2003,13 @@ hwclock &lt;span class=&quot;nt&quot;&gt;--systohc&lt;/span&gt; &lt;span class=&
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Importante:&lt;/strong&gt; &lt;br /&gt;
+  &lt;p&gt;&lt;strong&gt;Importante:&lt;/strong&gt;
 Caso você use dual boot com Windows, você deve deixar para ambos UTC ou
 LOCALTIME. Haverá conflito de hora se um S.O estiver um com UTC e outro com
 LOCALTIME.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Para deixar o Archlinux configurado como LOCALTIME, execute o comando abaixo:&lt;/p&gt;
+&lt;p&gt;Para deixar o Arch Linux configurado como LOCALTIME, execute o comando abaixo:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;printf&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0.0 0.0 0.0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;LOCAL&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /etc/adjtime&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -2039,7 +2039,7 @@ LOCALTIME.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;dhcpcd&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Leia sobre o &lt;a href=&quot;https://wiki.archlinux.org/index.php/Systemd_(Portugu%C3%AAs)&quot; target=&quot;_blank&quot;&gt;Systemctl&lt;/a&gt;, pois você pode utilizar muito ele em seu Archlinux.&lt;/p&gt;
+&lt;p&gt;Leia sobre o &lt;a href=&quot;https://wiki.archlinux.org/index.php/Systemd_(Portugu%C3%AAs)&quot; target=&quot;_blank&quot;&gt;Systemctl&lt;/a&gt;, pois você pode utilizar muito ele em seu Arch Linux.&lt;/p&gt;
 
 &lt;h2 id=&quot;criando-um-usuário-padrão&quot;&gt;Criando um usuário padrão&lt;/h2&gt;
 
@@ -2057,7 +2057,7 @@ LOCALTIME.&lt;/p&gt;
 
 &lt;h2 id=&quot;configurando-o-etcfstab&quot;&gt;Configurando o /etc/fstab&lt;/h2&gt;
 
-&lt;p&gt;Lembra que criamos o &lt;strong&gt;/etc/fstab&lt;/strong&gt; antes de iniciarmos no sistema base do Archlinux? Pois bem, agora precisamos fazer algumas alterações.&lt;/p&gt;
+&lt;p&gt;Lembra que criamos o &lt;strong&gt;/etc/fstab&lt;/strong&gt; antes de iniciarmos no sistema base do Arch Linux? Pois bem, agora precisamos fazer algumas alterações.&lt;/p&gt;
 
 &lt;p&gt;Por padrão o &lt;strong&gt;/etc/fstab&lt;/strong&gt; já está funcional, mas vamos acrescentar algumas outras configurações. Essas são:&lt;/p&gt;
 
@@ -2081,9 +2081,9 @@ LOCALTIME.&lt;/p&gt;
 &lt;p&gt;Posicione o ponteiro no final do arquivo e adicione essas linhas:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;######## CD/DVD &lt;br /&gt;
-/dev/sr0  /media/cdrom0  udf,iso9660 user,noauto  0  0 &lt;br /&gt;
-######## Windows &lt;br /&gt;
+  &lt;p&gt;######## CD/DVD
+/dev/sr0  /media/cdrom0  udf,iso9660 user,noauto  0  0
+######## Windows
 /dev/sda2 /mnt/windows  ntfs-3g defaults,user,rw,auto  0  0&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -2105,9 +2105,9 @@ LOCALTIME.&lt;/p&gt;
 
 &lt;h2 id=&quot;configurando-o-etcmkinitcpioconf&quot;&gt;Configurando o /etc/mkinitcpio.conf&lt;/h2&gt;
 
-&lt;p&gt;O arquivo &lt;strong&gt;/etc/mkinitcpio.conf&lt;/strong&gt; é responsável por configurar a imagem de boot. Dentro do &lt;strong&gt;/etc/mkinitcpio.conf&lt;/strong&gt; você coloca valores que pode modificar a forma de como o Archlinux irá se comportar e carregar algumas funções.&lt;/p&gt;
+&lt;p&gt;O arquivo &lt;strong&gt;/etc/mkinitcpio.conf&lt;/strong&gt; é responsável por configurar a imagem de boot. Dentro do &lt;strong&gt;/etc/mkinitcpio.conf&lt;/strong&gt; você coloca valores que pode modificar a forma de como o Arch Linux irá se comportar e carregar algumas funções.&lt;/p&gt;
 
-&lt;p&gt;Por padrão, quando instalamos o Archlinux, não precisamos alterar em nada neste arquivo, porem, como utilizamos LVM e criptografia, devemos fazer algumas mudanças.&lt;/p&gt;
+&lt;p&gt;Por padrão, quando instalamos o Arch Linux, não precisamos alterar em nada neste arquivo, porem, como utilizamos LVM e criptografia, devemos fazer algumas mudanças.&lt;/p&gt;
 
 &lt;p&gt;Então, abra o arquivo com seu editor preferencial. Usarei o &lt;strong&gt;vim&lt;/strong&gt; novamente:&lt;/p&gt;
 
@@ -2138,7 +2138,7 @@ LVM.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkinitcpio &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; linux&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;OK! Concluímos toda instalação e configuração do Archlinux. Agora vamos para a etapa do gerenciamento de boot.&lt;/p&gt;
+&lt;p&gt;OK! Concluímos toda instalação e configuração do Arch Linux. Agora vamos para a etapa do gerenciamento de boot.&lt;/p&gt;
 
 &lt;h1 id=&quot;o-grub&quot;&gt;O Grub&lt;/h1&gt;
 
@@ -2166,7 +2166,7 @@ LVM.&lt;/p&gt;
 
 &lt;h2 id=&quot;configurando-o-grub&quot;&gt;Configurando o Grub&lt;/h2&gt;
 
-&lt;p&gt;Por padrão, quando instalamos o Archlinux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porém, como utilizamos, iremos fazer algumas mudanças necessárias.&lt;/p&gt;
+&lt;p&gt;Por padrão, quando instalamos o Arch Linux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porém, como utilizamos, iremos fazer algumas mudanças necessárias.&lt;/p&gt;
 
 &lt;p&gt;Novamente usando o &lt;strong&gt;vim&lt;/strong&gt;, abra o arquivo &lt;strong&gt;/etc/default/grub&lt;/strong&gt;:&lt;/p&gt;
 
@@ -2218,11 +2218,11 @@ systemctl reboot&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Nota: Se estiver instalando com VirtualBox, não esquece de tirar a mídia do
-Archlinux, caso contrário em vez do Archlinux instalado iniciar, será a
+Arch Linux, caso contrário em vez do Arch Linux instalado iniciar, será a
 mídia que fará essa função.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Agora, toda vez que iniciar o sistema (antes mesmo do boot), a senha de criptografia irá ser requerida, com isso, é interessante deixar o login automático para não ter que digitar senha no mesmo também. Para isso, recomendo ler &lt;a href=&quot;https://wiki.archlinux.org/index.php/Getty&quot; target=&quot;_blank&quot;&gt;Getty&lt;/a&gt; no wiki do Archlinux.&lt;/p&gt;
+&lt;p&gt;Agora, toda vez que iniciar o sistema (antes mesmo do boot), a senha de criptografia irá ser requerida, com isso, é interessante deixar o login automático para não ter que digitar senha no mesmo também. Para isso, recomendo ler &lt;a href=&quot;https://wiki.archlinux.org/index.php/Getty&quot; target=&quot;_blank&quot;&gt;Getty&lt;/a&gt; no wiki do Arch Linux.&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h1&gt;
 
