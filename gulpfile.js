@@ -5,25 +5,49 @@ let gulp = require('gulp');
 let uglify = require('gulp-uglify');
 let imagemin = require('gulp-imagemin');
 let htmlmin = require('gulp-htmlmin');
+let del = require('del');
 
-// Html task
-function js() {
+
+// function clean objects caches
+function clean_objects() {
+  var objs = [
+    'node_modules',
+    'vendor',
+    'package-lock.json',
+    'Gemfile.lock'
+  ]
+  return del(objs)
+}
+
+// function postinstall for copy files statics
+function postinstall_statics() {
+  return gulp
+    .src(['node_modules/jquery/dist/jquery.min.js',
+      'node_modules/popper.js/dist/umd/popper.min.js',
+      'node_modules/popper.js/dist/umd/popper.min.js.map',
+      'node_modules/bootstrap/dist/js/bootstrap.min.js',
+      'node_modules/bootstrap/dist/js/bootstrap.min.js.map'])
+    .pipe(gulp.dest('assets/vendor/js'))
+}
+
+// function minify javascripts
+function javascripts() {
   return gulp
     .src('public/assets/js/**/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('public/assets/js'))
 }
 
-// Html task
-function html() {
+// function minify html
+function html_minify() {
   return gulp
     .src('public/**/*.html')
     .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
     .pipe(gulp.dest('public'))
 }
 
-// Optimize Images
-function images() {
+// function optimize images
+function images_minify() {
   return gulp
     .src('public/assets/images/**/*')
     .pipe(
@@ -44,12 +68,16 @@ function images() {
     .pipe(gulp.dest('public/assets/images'));
 }
 
-// define tasks
-const build = gulp.series(gulp.parallel(html, js, images));
+// task build
+const build = gulp.series(gulp.parallel(html_minify,
+                                        javascripts,
+                                        images_minify));
 
 // export tasks
-exports.images = images;
-exports.js = js;
-exports.html = html;
+exports.postinstall = postinstall_statics;
+exports.images = images_minify;
+exports.js = javascripts;
+exports.html = html_minify;
 exports.build = build;
+exports.clean = clean_objects;
 exports.default = build;
