@@ -13,14 +13,14 @@ script: [hello.js]
 
 Hey, guy! Bem-vindo à casa de Internet de William Canin. (Este sou eu!)
 
-Me considero um desenvolvedor assíduo e autodidata. Eu escrevo ocasionalmente no meu [weblog]({{site.url}}{{site.baseurl}}/blog/).
+Me considero um entusiasta autodidata da programação e desenvolvimento. Eu escrevo ocasionalmente no meu [weblog]({{site.url}}{{site.baseurl}}/blog/).
 
 Confira meu último post, {% for last_post in site.posts limit:1 %}
 "<a href="{{site.url}}{{site.baseurl}}{{last_post.url}}">{{last_post.title}}</a>". {% endfor %}
 
 Meu sistema operacional é Linux, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"} / [Ubuntu](https://www.ubuntu.com/){:target="_blank"}.
 
-Tenho uma relação de amor e "ódio" com a maioria das linguagens de programação, mas eu encontrei casas felizes em [Python](https://python.org/){:target="_blank"}, Shell script, [Ruby](https://www.ruby-lang.org){:target="_blank"}, e Frontend.
+Tenho uma relação de amor e "ódio" com a maioria das ferramentas de desenvolvimento/programação, mas eu encontrei casas felizes em [Python](https://python.org/){:target="_blank"}, Shell script, [Ruby](https://www.ruby-lang.org){:target="_blank"}, e Frontend.
 
 Você pode ver uma lista de meus [projetos](https://github.com/williamcanin){:target="_blank"} na minha página do GitHub. É provável que alguns esteja `out-of-date` e eu deveria corrigir isso...algum dia talvez.
 
