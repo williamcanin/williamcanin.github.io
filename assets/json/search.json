@@ -29,7 +29,7 @@
     } ,
   
     {
-      "title"    : "Transações no banco de dados através do ShellScript",
+      "title"    : "Transações no banco de dados através do Shell script",
       "tags"     : "shell, postgresql, mysql",
       "url"     : "/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/",
       "date"     : "28/8/2018"

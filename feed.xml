@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-05-17T19:46:18-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://williamcanin.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.me/" rel="alternate" type="text/html" /><updated>2020-05-17T19:59:22-03:00</updated><id>https://williamcanin.me/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.me/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em &lt;a href=&quot;https://python.org&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/a&gt; deixando as cores do terminal (sistemas baseado em &lt;strong&gt;UNIX&lt;/strong&gt;) coloridas. É claro que você pode implementar mais coisas para este módulo, porém esse é apenas um conceito básico de como o poder de sua criação pode criar coisas bacanas com Python ;)&lt;/p&gt;
 
@@ -274,9 +274,9 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="archlinux" /><category term="keys" /><category term="dicas" /><summary type="html"></summary></entry><entry><title type="html">Transações no banco de dados através do ShellScript</title><link href="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do ShellScript" /><published>2018-08-28T02:23:33-03:00</published><updated>2018-08-28T02:23:33-03:00</updated><id>https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/">&lt;!-- Write from here your post !!! --&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="archlinux" /><category term="keys" /><category term="dicas" /><summary type="html"></summary></entry><entry><title type="html">Transações no banco de dados através do Shell script</title><link href="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do Shell script" /><published>2018-08-28T02:23:33-03:00</published><updated>2018-08-28T02:23:33-03:00</updated><id>https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.me/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/">&lt;!-- Write from here your post !!! --&gt;
 
-&lt;p&gt;Olá pessoas, vamos falar de shellscript, que é algo que gosto muito. :)&lt;/p&gt;
+&lt;p&gt;Olá pessoas, vamos falar de Shell script, que é algo que gosto muito. :)&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt;
@@ -319,7 +319,7 @@ To listen to the full song, open your Spotify and start these musics.
 
 &lt;h1 id=&quot;introdução&quot;&gt;Introdução&lt;/h1&gt;
 
-&lt;p&gt;Bom, se você é usuário Linux sabe muito bem o que é &lt;a href=&quot;https://pt.wikipedia.org/wiki/Shell_script&quot; target=&quot;_blank&quot;&gt;Shellscript&lt;/a&gt;, uma linguagem usuda em vários sistemas operativos, até aqui tudo bem, mas…o que muitos não sabem é dá para fazer transações no banco de dados através da mesma.&lt;/p&gt;
+&lt;p&gt;Bom, se você é usuário Linux sabe muito bem o que é &lt;a href=&quot;https://pt.wikipedia.org/wiki/Shell_script&quot; target=&quot;_blank&quot;&gt;Shell Script&lt;/a&gt;, uma linguagem usuda em vários sistemas operativos, até aqui tudo bem, mas…o que muitos não sabem é dá para fazer transações no banco de dados através da mesma.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Você: Sério?&lt;/li&gt;
@@ -361,7 +361,7 @@ To listen to the full song, open your Spotify and start these musics.
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# CREATE DATABASE my_db;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;NOTA: Mais adiante, criamos nossa DATABASE através de uma função em nosso projeto, porém, vale lembrar que o &lt;strong&gt;CREATE DATABASE&lt;/strong&gt; no PostgreSQL não tem opção &lt;strong&gt;IF NOT EXISTS&lt;/strong&gt; e só podemos executar uma única instrução do &lt;strong&gt;CREATE DATABASE&lt;/strong&gt;, não conseguimos executa-lo dentro de um bloco de transação. Com essas informações, foi usado outras técnicas com shellscript para verificar se DATABASE não existe e assim criar o mesmo.&lt;/p&gt;
+  &lt;p&gt;NOTA: Mais adiante, criamos nossa DATABASE através de uma função em nosso projeto, porém, vale lembrar que o &lt;strong&gt;CREATE DATABASE&lt;/strong&gt; no PostgreSQL não tem opção &lt;strong&gt;IF NOT EXISTS&lt;/strong&gt; e só podemos executar uma única instrução do &lt;strong&gt;CREATE DATABASE&lt;/strong&gt;, não conseguimos executa-lo dentro de um bloco de transação. Com essas informações, foi usado outras técnicas com Shell Script para verificar se DATABASE não existe e assim criar o mesmo.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;iniciando-projeto&quot;&gt;Iniciando projeto&lt;/h2&gt;
@@ -519,7 +519,7 @@ bash setup.bash createtb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;biblioteca-create_databasebash-1&quot;&gt;Biblioteca &lt;strong&gt;create_database.bash&lt;/strong&gt;&lt;/h3&gt;
 
-&lt;p&gt;Diferente do PostgreSQL, o &lt;strong&gt;MySQL&lt;/strong&gt; contem uma opção de &lt;strong&gt;IF NOT EXISTS&lt;/strong&gt; para criação de DATABASES, com isso não precisamos fazer a verificação via shellscript como fizemos com o projeto do PostgreSQL. Com a própria instrução SQL do MySQL, podemos fazer essa checagem.&lt;/p&gt;
+&lt;p&gt;Diferente do PostgreSQL, o &lt;strong&gt;MySQL&lt;/strong&gt; contem uma opção de &lt;strong&gt;IF NOT EXISTS&lt;/strong&gt; para criação de DATABASES, com isso não precisamos fazer a verificação via Shell Script como fizemos com o projeto do PostgreSQL. Com a própria instrução SQL do MySQL, podemos fazer essa checagem.&lt;/p&gt;
 
 &lt;p&gt;Conteúdo do arquivo: &lt;strong&gt;libs/create_database.bash&lt;/strong&gt;&lt;/p&gt;
 
@@ -616,7 +616,7 @@ bash setup.bash createtb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1 id=&quot;conclusão&quot;&gt;Conclusão&lt;/h1&gt;
 
-&lt;p&gt;Como dito, foi um simples post para você tenha uma noção do que podemos fazer com shellscript. Tanto os passos para PostgreSQL e para MySQL, existem trechos de código praticamente idênticos, mudando uma coisinha ou outra. Porém, apesar de realizarmos transações no banco de dados com shellscript, não recomendo você tentar criar um sistema dessa maneira. Existem diversas linguagens de programação onde temos milhares de vantagens para realizar tudo que fizemos aqui.&lt;/p&gt;
+&lt;p&gt;Como dito, foi um simples post para você tenha uma noção do que podemos fazer com Shell Script. Tanto os passos para PostgreSQL e para MySQL, existem trechos de código praticamente idênticos, mudando uma coisinha ou outra. Porém, apesar de realizarmos transações no banco de dados com Shell Script, não recomendo você tentar criar um sistema dessa maneira. Existem diversas linguagens de programação onde temos milhares de vantagens para realizar tudo que fizemos aqui.&lt;/p&gt;
 
 &lt;p&gt;Espero que você tenha aprendido algo com esse post. Eu fico por aqui, até a próxima.&lt;/p&gt;
 
