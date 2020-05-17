@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Transações no banco de dados através do ShellScript"
+title: "Transações no banco de dados através do Shell script"
 date: 2018-08-28 05:23:33
 tags: ['shell','postgresql','mysql']
 published: true
 comments: true
 excerpted: |
-          O shellscript não é só uma linguagem para fazer automatização de tarefas no seu S.O, é muito mais!
+          O Shell Script não é só uma linguagem para fazer automatização de tarefas no seu S.O, é muito mais!
 day_quote:
  title: "A Palavra"
  description: |
@@ -19,14 +19,14 @@ script: [post.js]
 <!-- Write from here your post !!! -->
 
 
-Olá pessoas, vamos falar de shellscript, que é algo que gosto muito. :)
+Olá pessoas, vamos falar de Shell script, que é algo que gosto muito. :)
 
 * indice
 {: toc}
 
 # Introdução
 
-Bom, se você é usuário Linux sabe muito bem o que é [Shellscript](https://pt.wikipedia.org/wiki/Shell_script){:target="_blank"}, uma linguagem usuda em vários sistemas operativos, até aqui tudo bem, mas...o que muitos não sabem é dá para fazer transações no banco de dados através da mesma.
+Bom, se você é usuário Linux sabe muito bem o que é [Shell Script](https://pt.wikipedia.org/wiki/Shell_script){:target="_blank"}, uma linguagem usuda em vários sistemas operativos, até aqui tudo bem, mas...o que muitos não sabem é dá para fazer transações no banco de dados através da mesma.
 
   - Você: Sério? 
   - Eu: Sério cara.
@@ -68,7 +68,7 @@ Uma vez que você já está conectado ao `psql` com usuário **postgres**, vamos
 postgres=# CREATE DATABASE my_db;
 {% endhighlight %}
 
-> NOTA: Mais adiante, criamos nossa DATABASE através de uma função em nosso projeto, porém, vale lembrar que o **CREATE DATABASE** no PostgreSQL não tem opção **IF NOT EXISTS** e só podemos executar uma única instrução do **CREATE DATABASE**, não conseguimos executa-lo dentro de um bloco de transação. Com essas informações, foi usado outras técnicas com shellscript para verificar se DATABASE não existe e assim criar o mesmo.
+> NOTA: Mais adiante, criamos nossa DATABASE através de uma função em nosso projeto, porém, vale lembrar que o **CREATE DATABASE** no PostgreSQL não tem opção **IF NOT EXISTS** e só podemos executar uma única instrução do **CREATE DATABASE**, não conseguimos executa-lo dentro de um bloco de transação. Com essas informações, foi usado outras técnicas com Shell Script para verificar se DATABASE não existe e assim criar o mesmo.
 
 ## Iniciando projeto
 
@@ -249,7 +249,7 @@ Vamos repetir o mesmo conceito que fizemos para o PostgreSQL, criando nossas bib
 
 ### Biblioteca **create_database.bash**
 
-Diferente do PostgreSQL, o **MySQL** contem uma opção de **IF NOT EXISTS** para criação de DATABASES, com isso não precisamos fazer a verificação via shellscript como fizemos com o projeto do PostgreSQL. Com a própria instrução SQL do MySQL, podemos fazer essa checagem.
+Diferente do PostgreSQL, o **MySQL** contem uma opção de **IF NOT EXISTS** para criação de DATABASES, com isso não precisamos fazer a verificação via Shell Script como fizemos com o projeto do PostgreSQL. Com a própria instrução SQL do MySQL, podemos fazer essa checagem.
 
 Conteúdo do arquivo: **libs/create_database.bash** 
 
@@ -360,7 +360,7 @@ MySQL [(none)]> show databases;
 
 # Conclusão
 
-Como dito, foi um simples post para você tenha uma noção do que podemos fazer com shellscript. Tanto os passos para PostgreSQL e para MySQL, existem trechos de código praticamente idênticos, mudando uma coisinha ou outra. Porém, apesar de realizarmos transações no banco de dados com shellscript, não recomendo você tentar criar um sistema dessa maneira. Existem diversas linguagens de programação onde temos milhares de vantagens para realizar tudo que fizemos aqui.
+Como dito, foi um simples post para você tenha uma noção do que podemos fazer com Shell Script. Tanto os passos para PostgreSQL e para MySQL, existem trechos de código praticamente idênticos, mudando uma coisinha ou outra. Porém, apesar de realizarmos transações no banco de dados com Shell Script, não recomendo você tentar criar um sistema dessa maneira. Existem diversas linguagens de programação onde temos milhares de vantagens para realizar tudo que fizemos aqui.
 
 Espero que você tenha aprendido algo com esse post. Eu fico por aqui, até a próxima.
 
