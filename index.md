@@ -40,5 +40,5 @@ Mais alguma coisa...? Oh sim, aqui estão os demais lugares na internet que voc�
  [Spotify](https://open.spotify.com/user/williamcanin){:target="_blank"} |
  <span style="color: red;">Facebook Error 404</span> | <span style="color: red;">Instagram Error 404</span>
 
-"The pain that hurts me is the same as it teaches me."
+<!-- "The pain that hurts me is the same as it teaches me." -->
 <!-- *"O tolo não se interessa em aprender, mas só em dar as suas opiniões." [ Provébios 18:2 ]* -->
