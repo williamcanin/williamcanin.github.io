@@ -22,7 +22,7 @@ permalink: /resume/ # add permilink for page. E.g: /smallparty/
 
 # William da Costa Canin
 
-Desenvolvedor/Programador
+<!-- Desenvolvedor/Programador -->
 
 {:.markdown__mt40}
 
