@@ -20,7 +20,7 @@ Confira meu último post, {% for last_post in site.posts limit:1 %}
 
 Meu sistema operacional é Linux, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"} / [Ubuntu](https://www.ubuntu.com/){:target="_blank"}.
 
-Tenho uma relação de amor e "ódio" com a maioria das ferramentas de desenvolvimento/programação, mas eu encontrei casas felizes em [Python](https://python.org/){:target="_blank"}, Shell script, [Ruby](https://www.ruby-lang.org){:target="_blank"}, e Frontend.
+Tenho uma relação de amor e "ódio" com a maioria das ferramentas de desenvolvimento/programação, mas eu encontrei casas felizes em [Python](https://python.org/){:target="_blank"}, Shell script, e um pouco de Front-end.
 
 Você pode ver uma lista de meus [projetos](https://github.com/williamcanin){:target="_blank"} na minha página do GitHub. É provável que alguns esteja `out-of-date` e eu deveria corrigir isso...algum dia talvez.
 

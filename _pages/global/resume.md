@@ -42,7 +42,7 @@ Olá :v:, me chamo **William**, e sou apaixonado por desafios; tecnologia; desig
 
 Autodidata e proficiente em algumas [**linguagens de programação e tarefas voltadas a computação**](#nuvem-de-conhecimentos).
 
-Regularmente, tenho revezamentos entre **Front-End** e **Back-End**, ou seja, me considerando com aptidão a [**full-stack**](#nuvem-de-conhecimentos).
+Regularmente, tenho revezamentos entre **Back-End** e **Front-End**.
 
 Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [**Archlinux**](https://archlinux.org){:target="_blank"} / [Ubuntu](https://ubuntu.com){:target="_blank"}.
 
