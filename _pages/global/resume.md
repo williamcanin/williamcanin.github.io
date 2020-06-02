@@ -38,17 +38,17 @@ Desenvolvedor/Programador
 ### Bio
 ---
 
-Olá :v:, me chamo **William**, e sou apaixonado por desafios; tecnologia; design; e melhoramento pessoal, onde tenho a convicção de que tudo é possível com dedicação e resiliência.
+Olá :v:, me chamo **William**, e sou um antenado em; tecnologia; design; e melhoramento pessoal, onde tenho a convicção de que tudo é possível com dedicação e resiliência.
 
 Autodidata e proficiente em algumas [**linguagens de programação e tarefas voltadas a computação**](#nuvem-de-conhecimentos).
 
-Regularmente, tenho revezamentos entre **Back-End** e **Front-End**.
+Regularmente, tenho revezamentos entre programação **Back-End** e desenvolvimento Front-End.
 
-Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [**Archlinux**](https://archlinux.org){:target="_blank"} / [Ubuntu](https://ubuntu.com){:target="_blank"}.
+Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [**Archlinux**](https://archlinux.org){:target="_blank"} / [Fedora](https://getfedora.org){:target="_blank"}.
 
-Em meu lazer, gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:target="_blank"}; assistir séries/filmes; leituras; e, estar com boas companhias.
+Em meu lazer, gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:target="_blank"}; codar; assistir séries/filmes; leituras; e, estar com boas companhias.
 
-Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho tudo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.me/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre. :stuck_out_tongue_winking_eye:
+Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho <strike>tudo</strike> algo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.github.io/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre. :stuck_out_tongue_winking_eye:
 
 ### Formação acadêmica
 ---
