@@ -18,7 +18,7 @@ Me considero um praticante autodidata de algumas ferramentas de desenvolvimento/
 Confira meu último post, {% for last_post in site.posts limit:1 %}
 "<a href="{{site.url}}{{site.baseurl}}{{last_post.url}}">{{last_post.title}}</a>". {% endfor %}
 
-Meu sistema operacional é Linux, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"} / [Ubuntu](https://www.ubuntu.com/){:target="_blank"}.
+Meu sistema operacional é Linux, através da distribuição [Archlinux](https://archlinux.org){:target="_blank"} / [Fedora](https://getfedora.org/){:target="_blank"}, porem, já experimentei outras.
 
 Tenho uma relação de amor e "ódio" com a maioria das ferramentas de desenvolvimento/programação, mas eu encontrei casas felizes em [Python](https://python.org/){:target="_blank"}, Shell script, e um pouco de Front-end.
 
