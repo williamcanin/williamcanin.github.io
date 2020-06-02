@@ -103,7 +103,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 ---
 
 {% badge [**Python**](https://www.python.org/){:target="_blank"}|16px %}
-{% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %}
+{% badge [**Django**](https://www.djangoproject.com/){:target="_blank"}|16px %}
 <!-- {% badge [**Delphi**](https://www.embarcadero.com/br/products/delphi){:target="_blank"}|16px %} -->
 {% badge [**HTML5**](https://www.w3schools.com/html/html5_intro.asp){:target="_blank"}|16px %}
 {% badge [**CSS3**](https://www.w3schools.com/css/){:target="_blank"}|16px %}
@@ -113,13 +113,13 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**Gulp**](https://gulpjs.com/){:target="_blank"}|16px %}
 {% badge [**Shell script**](http://linuxcommand.org/lc3_learning_the_shell.php){:target="_blank"}|16px %}
 {% badge [**Bootstrap**](https://getbootstrap.com/){:target="_blank"}|16px %}
-{% badge [**Django**](https://www.djangoproject.com/){:target="_blank"}|16px %}
+{% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %}
+{% badge [**SQL**](https://pt.wikipedia.org/wiki/SQL){:target="_blank"}|16px %}
 {% badge [**Git**](https://git-scm.com/){:target="_blank"}|16px %}
 {% badge [**Jekyll**](https://jekyllrb.com/){:target="_blank"}|16px %}
-{% badge [**MySQL**](https://www.mysql.com/){:target="_blank"}|16px %}
 {% badge [**Linux**](https://pt.wikipedia.org/wiki/Linux){:target="_blank"}|16px %}
 
-Para saber mais sobre meus conhecimentos em desenvolvimento, acesse meu perfil na Sourcerer: [https://sourcerer.io/williamcanin](https://sourcerer.io/williamcanin).
+Para saber mais sobre o que vou desenvolvendo, acesse meu perfil na Sourcerer: [https://sourcerer.io/williamcanin](https://sourcerer.io/williamcanin).
 
 ### Idiomas
 ---
