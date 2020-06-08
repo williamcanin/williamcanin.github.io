@@ -40,7 +40,7 @@ permalink: /resume/ # add permilink for page. E.g: /smallparty/
 
 Olá :v:, me chamo **William**, e sou um antenado em; tecnologia; design; e melhoramento pessoal, onde tenho a convicção de que tudo é possível com dedicação e resiliência.
 
-Autodidata e proficiente em algumas [**linguagens de programação e tarefas voltadas a computação**](#nuvem-de-conhecimentos).
+Autodidata em algumas [**linguagens de programação e tarefas voltadas a computação**](#nuvem-de-conhecimentos).
 
 Regularmente, tenho revezamentos entre programação **Back-End** e desenvolvimento Front-End.
 
