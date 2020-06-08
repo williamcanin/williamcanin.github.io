@@ -132,7 +132,7 @@ Para saber mais sobre o que vou desenvolvendo, acesse meu perfil na Sourcerer: [
 
 [**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"} - Um gerenciador CLI de dotfiles (e muito mais) para sistemas Linux feito em **Python**.
 
-[**ZSHPower**](https://github.com/snakypy/zshpower){:target="_blank"} - Um tema para o [ZSH](http://zsh.org){:target="_blank"} usando a framework [Oh My Zsh](https://ohmyz.sh) feito em **Python**.
+[**ZSHPower**](https://github.com/snakypy/zshpower){:target="_blank"} - Um tema para o [ZSH](http://zsh.org){:target="_blank"} com suporte a framework [Oh My Zsh](https://ohmyz.sh) feito em **Python**.
 
 [**Typing**](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} - Typing, é um template para o Jekyll criado especialmente para quem deseja ter um site estático e páginas com rapidez, leveza e muitas customizações.
 
