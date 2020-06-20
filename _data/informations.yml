@@ -131,7 +131,8 @@ website:
           Aqui você encontra as postagens relacionadas a essa tag especificada.
 # Footer
   footer:
-    message: "In codes and Rock, I Trust."
+    # In codes and Rock, I Trust.
+    message: "In Jesus, I Trust."
 
 # User data
 userdata:
