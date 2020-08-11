@@ -8,9 +8,10 @@
 website:
   under_maintenance:
     title: |
-      Desculpe :(  O domínio do meu site está em manutenção.
+      Website desativado.
     subtitle: |
-      Não terá previsão de volta.
+      Sem certeza de volta.
+    avatar:
 # Theme - Values [ typing | whiteglass | cloudysky | hacking | littlegirl | custom ]
   theme: "custom"
 # Configuration default
