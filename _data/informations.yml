@@ -149,10 +149,10 @@ userdata:
         icon: fa-github
         url: https://github.com/williamcanin
 
-#      - title: Twitter
-#        id: twitter
-#        icon: fa-twitter
-#        url: https://twitter.com/williamcanin
+      - title: Twitter
+        id: twitter
+        icon: fa-twitter
+        url: https://twitter.com/williamcanin
 
       - title: Youtube
         id: youtube
