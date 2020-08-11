@@ -9,6 +9,9 @@
   <!-- Title Site 
   ___________________________________________ -->
   <title>
+    {% if load_options.maintenance.enable == true %}
+        {{ load_data.website.under_maintenance.title }} - {{ load_data.website.under_maintenance.subtitle }}
+    {% else %}
     {% if page.url == "/" %}
         {{ load_data.website.title }} - {{ load_data.website.description }}
       {% else %}
@@ -17,6 +20,7 @@
         {% else %}
           {{ load_data.website.title }} | {{ load_data.website.description }}
         {% endif %}
+    {% endif %}
     {% endif %}
   </title>
 
