@@ -149,19 +149,17 @@ userdata:
         icon: fa-github
         url: https://github.com/williamcanin
 
-      - title: Twitter
-        id: twitter
-        icon: fa-twitter
-        url: https://twitter.com/williamcanin
+#      - title: Twitter
+#        id: twitter
+#        icon: fa-twitter
+#        url: https://twitter.com/williamcanin
 
       - title: Youtube
         id: youtube
         icon: fa-youtube
         url: https://youtube.com/c/williamcanin
 
-      - title: LinkedIn
-        id: linkedin
-        icon: fa-linkedin
-        url: https://www.linkedin.com/in/williamcostacanin/
-
-
+#      - title: LinkedIn
+#        id: linkedin
+#        icon: fa-linkedin
+#        url: https://www.linkedin.com/in/williamcostacanin/
