@@ -34,7 +34,7 @@ Mais alguma coisa...? Oh sim, aqui est√£o os demais lugares na internet que voc√
  [GitHub](https://github.com/williamcanin){:target="_blank"} |
  [YouTube](https://youtube.com/c/williamcanin){:target="_blank"} |
  [GitLab](https://gitlab.com/williamcanin){:target="_blank"} |
- <!-- [Twitter](https://twitter.com/williamcanin/){:target="_blank"} | -->
+ [Twitter](https://twitter.com/williamcanin/){:target="_blank"} |
  <!-- [Spotify](https://open.spotify.com/user/williamcanin){:target="_blank"} | -->
  <span style="color: red;">Facebook Error 404</span> | <span style="color: red;">Instagram Error 404</span>
 
