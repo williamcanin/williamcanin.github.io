@@ -1,7 +1,7 @@
-# In this file you will put information for your website, 
+# In this file you will put information for your website,
 # string modifications, add email and many more.
 # ____________________________________________________
-# Attention! Change only the values of the variables! 
+# Attention! Change only the values of the variables!
 # Do not change the position of the variables.
 # ____________________________________________________
 
@@ -80,7 +80,7 @@ website:
         title: "Compartilhe!"
       comments:
         title: "Deixe seu comentário"
-  
+
   # Postlist
     postlist:
       pagination:
@@ -163,3 +163,24 @@ userdata:
 #        id: linkedin
 #        icon: fa-linkedin
 #        url: https://www.linkedin.com/in/williamcostacanin/
+
+# Affliates / Product advertising
+affiliates:
+  title: Afiliados
+  description: "Adquira produtos de nossos ATUAIS parceiros."
+  button:
+    text: "Adquirir"
+  cards:
+  - id: python-do-zero
+    image: "python-do-zero.jpg"
+    title: "Python do Zero"
+    description:
+      - Produto para iniciantes em programação Python.
+    url: https://go.hotmart.com/D40526550U?dp=1
+
+  - id: servidor-formatacao-pxe
+    image: "servidor-formatacao-pxe.jpg"
+    title: "Servidor de Formatação (PXE)"
+    description:
+      - Curso ideal para quem trabalha como suporte técnico.
+    url: https://go.hotmart.com/W40529523U?dp=1
