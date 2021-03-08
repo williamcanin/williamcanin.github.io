@@ -26,6 +26,7 @@ permalink: /resume/ # add permilink for page. E.g: /smallparty/
 
 {:.markdown__mt40}
 
+<!--
 ### Dados Pessoais
 ---
 
@@ -35,6 +36,7 @@ permalink: /resume/ # add permilink for page. E.g: /smallparty/
 **E-mail:** [contato[at]williamcanin.me](mailto:{{ "contato@williamcanin.me" | encode_email }}) | [william.costa.canin[at]gmail.com](mailto:{{ "william.costa.canin@gmail.com" | encode_email }})  
 **Website:** [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}  
 
+-->
 ### Bio
 ---
 
