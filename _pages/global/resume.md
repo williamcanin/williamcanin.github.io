@@ -53,7 +53,7 @@ Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_
 ### Formação acadêmica
 ---
 
-**2009 - 2013**  
+**Fev/2009 - Nov/2013**  
 [**Centro Universitário de Lins - Unilins**](http://www.unilins.edu.br/){:target="_blank"}  
 Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas
 
@@ -65,20 +65,20 @@ Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas
 Programação em Python - Básico/Avançado  
 Django - Básico/Intermediário  
 
-**2019**  
+**2019 - 16 semanas**  
 [**USP - Universidade de São Paulo**](https://www5.usp.br/){:target="_blank"}  
 Introdução à Ciência da Computação com Python - [Módulo I](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"} e [Módulo II](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"}
 
-**2018**  
+**2018 - 8 horas**  
 [**Solyd - Treinamentos e Cursos Online**](https://solyd.com.br/){:target="_blank"}  
 Python Básico - [Certificado](https://williamcanin.me/docs/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
 
-**2018**  
+**2018 - 6 horas**  
 [**NodeStudio Treinamentos - Cursos de Desenvolvimento Web**](https://www.nodestudio.com.br/){:target="_blank"}  
 HTML5 & CSS3 - [Certificado](https://williamcanin.me/docs/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}  
 Design Responsivo - [Certificado](https://williamcanin.me/docs/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
 
-**2017**  
+**2017 - 11 horas**  
 [**Fundação Bradesco - Escola Virtual**](https://www.ev.org.br/){:target="_blank"}  
 HTML Básico - [Certificado](https://williamcanin.me/docs/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}
 
