@@ -20,7 +20,7 @@ permalink: /resume/ # add permilink for page. E.g: /smallparty/
 
 {% include liquid/data %}
 
-# William da Costa Canin
+<!-- # William da Costa Canin -->
 
 <!-- Desenvolvedor/Programador -->
 
@@ -133,7 +133,7 @@ Para saber mais sobre o que vou desenvolvendo, acesse meu perfil na Sourcerer: [
 **Inglês:** Básico (Técnico)
 -->
 
-### Projetos
+### Top 5 Projetos Open Source
 ---
 
 [**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"} - Um gerenciador CLI de dotfiles (e muito mais) para sistemas Linux feito em **Python**.
