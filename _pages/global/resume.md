@@ -59,6 +59,7 @@ Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_
 [**Centro Universitário de Lins - Unilins**](http://www.unilins.edu.br/){:target="_blank"}  
 Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas
 
+<!--
 ### Cursos
 ---
 
@@ -83,6 +84,7 @@ Design Responsivo - [Certificado](https://williamcanin.me/docs/certificate/front
 **2017 - 11 horas**  
 [**Fundação Bradesco - Escola Virtual**](https://www.ev.org.br/){:target="_blank"}  
 HTML Básico - [Certificado](https://williamcanin.me/docs/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}
+-->
 
 <!-- ### Experiências -->
 ---
@@ -123,11 +125,13 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 
 Para saber mais sobre o que vou desenvolvendo, acesse meu perfil na Sourcerer: [https://sourcerer.io/williamcanin](https://sourcerer.io/williamcanin).
 
+<!--
 ### Idiomas
 ---
 
 **Português:** Fluente (Nativo)  
 **Inglês:** Básico (Técnico)
+-->
 
 ### Projetos
 ---
