@@ -34,7 +34,7 @@ layout: default
             method="POST">
           {% else %}
           <form id="layout_contact__form" class="mb-4 p-0 p-lg-3 layout_contact__form"
-          action="https://formspree.io/f/mvovezaq"
+          action="https://getform.io/f/f2f57401-036c-4f11-84ed-0cf7b785aa76"
           method="POST">
           {% endif %}
             <div class="container-fluid">
@@ -47,24 +47,27 @@ layout: default
 
               <div class="row">
                 <input type="text" class="my-1 form-control layout_contact__input"
-                  name="_subject"
+                  name="subject"
                   placeholder="{{ load_data.website.content.contact.placeholder.subject }}"
                   id="subject" required>
               </div>
 
               <div class="row">
                 <input type="text" class="my-1 form-control layout_contact__input"
-                name="Email"
+                name="email"
                 placeholder="{{ load_data.website.content.contact.placeholder.email }}"
                 id="email" required>
               </div>
 
               <div class="row">
                 <textarea  class="my-1 form-control layout_contact__textarea"
-                name="Message" rows="7" cols="50"
+                name="message" rows="7" cols="50"
                 placeholder="{{ load_data.website.content.contact.placeholder.message }}"
                 id="message" required></textarea>
               </div>
+
+              <!-- <input type="hidden" id="captchaResponse" name="g-recaptcha-response" /> -->
+              <div class="g-recaptcha" data-sitekey="6Lduk3gaAAAAAElhioCdtbkgtQ9VtTu4fzASu_JU"></div>
 
               <div class="row">
                 <button type="submit"
@@ -73,16 +76,9 @@ layout: default
                 </button>
               </div>
 
-              {% if load_data.website.content.contact.formspree.plan == 'free' %}
-              <input type="hidden" name="_next" value="{{ '/contact/#email_successfully_sent' | prepend: site.baseurl | prepend: site.url }}">
-              <input type="hidden" name="_language" value="{{ load_data.website.content.contact.language }}" />
-              <input type="text" name="_gotcha" style="display:none" />
-              {% endif %}
-
             </div>
 
           </form>
-          <div id="status"></div>
         </div>
         {% if load_options.content.contact.note.enable == true %}
         <div class="row d-block">
