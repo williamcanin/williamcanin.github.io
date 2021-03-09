@@ -4,36 +4,36 @@
 # Using Coffeescript
 # {% include liquid/data %}
 
-# {% if load_data.website.content.contact.formspree.plan != 'free' %}
-#     ($) ->
-#         $('form').submit (e) ->
-#             event.preventDefault()
-#             $.ajax
-#                 url: 'https://formspree.io/f/mvovezaq'
-#                 method: 'POST'
-#                 data: {
-#                     name: $('#name').val()
-#                     subject: $('#subject').val()
-#                     email: $('#email').val()
-#                     message: $('#message').val()
-#                 }
-#                 dataType: 'json'
-#             .done ->
-#                 $('#name').val('')
-#                 $('#subject').val('')
-#                 $('#email').val('')
-#                 $('#message').val('')
-#                 $('#email_successfully_sent').modal('show')
-#             .fail ->
-#                 $('#email_failed_sent').modal('show')
-#         false
-# {% else %}
-#     if location.href.indexOf("{{ '/contact/#email_successfully_sent' | prepend: site.baseurl | prepend: site.url }}") == 0
-#         $("#email_successfully_sent").modal "show"
-#         $('#email_successfully_sent').on 'hidden.bs.modal', ->
-#             document.location.href = String(document.location.href).replace '#email_successfully_sent', ''
-#             false
-# {% endif %}
+{% if load_data.website.content.contact.formspree.plan != 'free' %}
+    ($) ->
+        $('form').submit (e) ->
+            event.preventDefault()
+            $.ajax
+                url: 'https://formspree.io/f/mvovezaq'
+                method: 'POST'
+                data: {
+                    name: $('#name').val()
+                    subject: $('#subject').val()
+                    email: $('#email').val()
+                    message: $('#message').val()
+                }
+                dataType: 'json'
+            .done ->
+                $('#name').val('')
+                $('#subject').val('')
+                $('#email').val('')
+                $('#message').val('')
+                $('#email_successfully_sent').modal('show')
+            .fail ->
+                $('#email_failed_sent').modal('show')
+        false
+{% else %}
+    if location.href.indexOf("{{ '/contact/#email_successfully_sent' | prepend: site.baseurl | prepend: site.url }}") == 0
+        $("#email_successfully_sent").modal "show"
+        $('#email_successfully_sent').on 'hidden.bs.modal', ->
+            document.location.href = String(document.location.href).replace '#email_successfully_sent', ''
+            false
+{% endif %}
 
 
 
