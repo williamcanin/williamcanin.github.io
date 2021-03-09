@@ -9,7 +9,7 @@
         $('form').submit (e) ->
             event.preventDefault()
             $.ajax
-                url: 'https://formspree.io/{{ load_data.userdata.email | encode_email }}'
+                url: 'https://formspree.io/f/xpzovqrd'
                 method: 'POST'
                 data: {
                     name: $('#name').val()
@@ -46,7 +46,7 @@
 #  	$("form").submit(function(event) {
 #  		event.preventDefault();
 #  		$.ajax({
-#  	    url: "https://formspree.io/{{ load_data.userdata.email | encode_email }}", 
+#  	    url: "https://formspree.io/{{ load_data.userdata.email | encode_email }}",
 #  	    method: "POST",
 #  	    data: {
 #              name: $("#name").val(),
@@ -77,3 +77,5 @@
 #  }
 
 # {% endif %}
+
+
