@@ -34,7 +34,7 @@ layout: default
             method="POST">
           {% else %}
           <form id="layout_contact__form" class="mb-4 p-0 p-lg-3 layout_contact__form"
-          action="https://formspree.io/f/mvovezaq"
+          action="https://formspree.io/f/{{ load_data.website.content.contact.formspree.endpoint }}"
           method="POST">
           {% endif %}
             <div class="container-fluid">

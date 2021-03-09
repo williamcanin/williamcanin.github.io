@@ -1,15 +1,15 @@
 ---
 ---
 
-# Using Coffeescript
-# {% include liquid/data %}
+# Using Coffeescript - {{ load_data.userdata.email | encode_email }}
+{% include liquid/data %}
 
 {% if load_data.website.content.contact.formspree.plan != 'free' %}
     ($) ->
         $('form').submit (e) ->
             event.preventDefault()
             $.ajax
-                url: 'https://formspree.io/f/mvovezaq'
+                url: 'https://formspree.io/f/{{ load_data.website.content.contact.formspree.endpoint }}'
                 method: 'POST'
                 data: {
                     name: $('#name').val()
@@ -34,8 +34,6 @@
             document.location.href = String(document.location.href).replace '#email_successfully_sent', ''
             false
 {% endif %}
-
-
 
 # Using Javascript
 # {% include liquid/data %}
@@ -77,5 +75,3 @@
 #  }
 
 # {% endif %}
-
-

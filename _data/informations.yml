@@ -92,6 +92,7 @@ website:
     contact:
       formspree:
         plan: "free" # Using: free | paid
+        endpoint: "mvovezaq"
       language: "pt-BR"
       placeholder:
         name: "Seu nome completo"
