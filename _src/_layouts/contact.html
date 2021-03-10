@@ -4,7 +4,7 @@ layout: default
 <!-- Include Data Base  -->
 {% include liquid/data %}
 
-{% if load_data.userdata.email %}
+{% if load_data.userdata.email and load_data.website.content.contact.formspree.endpoint != "" %}
 
   <div class="p-1 p-lg-3 layout_contact {% if load_options.content.contact.animation == true %} animation__content {% endif %}">
 
@@ -91,7 +91,9 @@ layout: default
       </div>
   </div>
 {% else %}
-<p style="color: yellow; background-color: black; padding: 5px;"> Warning! Email not informed "usedata => email" in file '_data/informations.yml'.</p>
+<p style="color: yellow; background-color: black; padding: 5px;">
+  Warning! Either the email or the endpoint is blank in the '_data/informations.yml' file.
+</p>
 {% endif %}
 
 {% if load_data.website.content.contact.formspree.plan == 'paid' %}

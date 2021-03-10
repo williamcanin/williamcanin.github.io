@@ -2,7 +2,7 @@
 
 # Typing
 
-![](https://img.shields.io/github/languages/top/williamcanin/typing-jekyll-template.svg?colorB=blue&style=flat-square) ![](https://img.shields.io/github/commit-activity/y/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/last-commit/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/last-commit/williamcanin/typing-jekyll-template/master.svg?style=flat-square) ![](https://img.shields.io/github/watchers/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/stars/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/forks/williamcanin/typing-jekyll-template.svg?style=flat-square)
+![Jekyll site CI](https://github.com/williamcanin/typing-jekyll-template/workflows/Jekyll%20site%20CI/badge.svg?branch=master) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/williamcanin/typing-jekyll-template?style=flat-square) [![Build Status](https://travis-ci.org/williamcanin/typing-jekyll-template.svg?branch=master)](https://travis-ci.org/williamcanin/typing-jekyll-template) ![GitHub](https://img.shields.io/github/license/williamcanin/typing-jekyll-template?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/williamcanin/typing-jekyll-template?style=flat-square) ![](https://img.shields.io/github/languages/top/williamcanin/typing-jekyll-template.svg?colorB=blue&style=flat-square) ![](https://img.shields.io/github/commit-activity/y/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/last-commit/williamcanin/typing-jekyll-template/master.svg?style=flat-square) ![](https://img.shields.io/github/watchers/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/stars/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/forks/williamcanin/typing-jekyll-template.svg?style=flat-square)
 
 ![Typing Change Themes](https://raw.githubusercontent.com/williamcanin/typing-jekyll-template/master/_src/doc/readme/images/change_themes.gif)
 
@@ -18,12 +18,31 @@ Na página **resume.md**, você pode imprimir usando o atalho Ctrl + P do navega
 
 Você também terá um modelo para postagem no arquivo **"welcome-to-jekyll.md"** e precisará seguir o cabeçalho desse modelo. O arquivo contém algumas informações que você pode pegar para usar em seu website.
 
-A página de contato (**_pages/global/contact.md**) usa o recurso [Formspree](https://formspree.io), você precisa ter uma conta no serviço e adicionar seu **email** ao arquivo `_data/informations.yml`.
+A página de contato (**_pages/global/contact.md**) usa o recurso [Formspree](https://formspree.io), você precisa ter uma conta no serviço e adicionar seu **email** e o **endpoint** ao arquivo `_data/informations.yml`.
 
 ```yml
 userdata:
   email: "youremail@domain.com"
 ```
+
+Depois, você deve alterar o tipo de plano que você tem no [Formspree](https://formspree.io) na opção:
+
+```yml
+website:
+  ...
+  content:
+    ...
+    contact:
+      formspree:
+        plan: "free|paid"
+        endpoint: ""
+```
+
+> NOTA: O plano **paid**, é um plano pago, onde terá opções de redirecionar a pagina após enviar (ou não) os dados do formulário, e outras funcionalidades a mais. O **Typing** tem duas páginas pronto para o redirecionamento se usar a opção paid, uma de sucesso e outra de falha. Elas são:
+ * https://example.com/contact/#email_successfully_sent
+ * https://example.com/contact/#email_failed_sent
+> Entre em sua conta do Formspree e adicione essas páginas para o redirecionamento.
+Você pode saber mais em: [Formspree Plans](https://formspree.io/plans)
 
 Além disso, todo o conteúdo do arquivo `_data/informations.yml` deve ser alterado conforme a gosto e suas necessidades.
 
@@ -65,13 +84,14 @@ Além disso, todo o conteúdo do arquivo `_data/informations.yml` deve ser alter
 
 ## Requerimentos
 
-| Requerido       | Como verificar      | Como instalar  |
-| --------------- | ------------------- | -------------- |
-| Git             | `git --version`     | [Git](http://git-scm.com/) |
-| Ruby            | `ruby -v`           | [Ruby](https://www.ruby-lang.org) |
-| Gem             | `gem -v`            | **Ruby** contains **Gem** |
-| Bundler         | `bundler -v`        | `gem install bundler` |
-| Yarn            | `yarn -v`           | [Yarn](https://yarnpkg.com/en/docs/install) |
+| Requerido       |   Versão   |  Como verificar    | Como instalar  |
+| --------------- | ---------- | ------------------ | -------------- |
+| Git             | >= 2.25    | `git --version`   | [Git](http://git-scm.com/) |
+| Ruby            | >= 2.7     | `ruby -v`          | [Ruby](https://www.ruby-lang.org) |
+| Gem             | >= 3.0     | `gem -v`           | **Ruby** contains **Gem** |
+| Bundler         | >= 2.0     | `bundler -v`       | `gem install bundler` |
+| Yarn            | >= 1.20    | `yarn -v`          | [Yarn](https://yarnpkg.com/en/docs/install) |
+| Npm             | >= 6.12    | `npm -v`           | [Npm](https://www.npmjs.com/get-npm) |
 
 ## Usando
 
@@ -88,6 +108,8 @@ $ cd "my_site"
 $ yarn install
 ```
 
+> Nota: Se você tiver problemas de travamento com o **yarn** durante a instalação das dependências, você pode estar utilizando o **npm** também dessa forma: `npm install`.
+
 3 - Projeto de compilação para deploy:
 
 ```
@@ -98,6 +120,14 @@ $ yarn build
 
 ```
 $ yarn serve
+```
+
+## Clearing the cache/dependencies
+
+Caso queira apagar todo cache do projeto, use o comando a seguir:
+
+```
+$ yarn clean
 ```
 
 ## Arquivo '.hidden'
@@ -144,7 +174,7 @@ sitemap:
   lastmod: 2019-10-07 22:57:30
 # Use icons of: https://fontawesome.com/icons
 # E.g: fa-briefcase
-icon: 
+icon:
 menu:
   enable: true
   local: [default]
@@ -229,7 +259,7 @@ Bom, agora que você já sabe sobre algumas pastas e arquivos, vamos entender co
 
 ### Arquivo 'CNAME'
 
-Para saber sobre esse arquivo, leia sobre registros CNAME [AQUI](https://support.google.com/a/answer/112037?hl=pt-BR) 
+Para saber sobre esse arquivo, leia sobre registros CNAME [AQUI](https://support.google.com/a/answer/112037?hl=pt-BR)
 
 ### Arquivo '_config.yml'
 
@@ -272,6 +302,8 @@ Ativa ou desativa paginação para o blog [padrão: true]:
 pagination:
   enabled: true
 ```
+
+> NOTA: Se quiser desativar o paginador, após fazer as configurações de cima, você terá que ir na página **_pages/blogger/blog.md** e deixar o **pagination -> enable** para **false**.
 
 Altera a porta do servidor [padrão: 4000]:
 
@@ -454,9 +486,16 @@ Você pode baixar as versões sem criar um clone com o Git. Vamos para [Releases
 
 Licença: [MIT License (MIT)](https://opensource.org/licenses/MIT)
 
-Copyright: William C. Canin | Copyright © 2017-2019
+Copyright: William C. Canin | Copyright © 2017-2020
 
 *Você pode alterar a estrutura do Typing Jekyll Template conforme desejar, desde que não manipule ou remova os direitos autorais de William C.Canin no projeto*
+
+## Doação
+
+Se você gostou do meu trabalho, me compre um café <3
+
+[![paypal](https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C4EEL62SFHZS4&source=url)
+
 
 ## Creditos
 

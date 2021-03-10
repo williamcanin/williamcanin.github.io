@@ -102,6 +102,8 @@ website:
       send:
         button: "Vai, mensagem!"
         # ATTENTION! The option to redirect is only for paid plans.
+        # Url successfully redirect: https://example.com/contact/#email_successfully_sent
+        # Url failed redirect: https://example.com/contact/#email_failed_sent
         redirect:
           successfully:
             header:
