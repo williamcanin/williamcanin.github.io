@@ -97,6 +97,8 @@ layout: default
 <p style="color: yellow; background-color: black; padding: 5px;"> Warning! Email not informed "usedata => email" in file '_data/informations.yml'.</p>
 {% endif %}
 
+{% if load_data.website.content.contact.formspree.plan == 'paid' %}
 <!-- Add Modal action message sent -->
 {% include partials/email_successfully_sent.html %}
 {% include partials/email_failed_sent.html %}
+{% endif %}
