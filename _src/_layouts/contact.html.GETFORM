@@ -34,7 +34,7 @@ layout: default
             method="POST">
           {% else %}
           <form id="layout_contact__form" class="mb-4 p-0 p-lg-3 layout_contact__form"
-          action="https://getform.io/f/f2f57401-036c-4f11-84ed-0cf7b785aa76"
+          action="GETFORM ID"
           method="POST">
           {% endif %}
             <div class="container-fluid">
