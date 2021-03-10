@@ -72,12 +72,12 @@ layout: default
                   {{ load_data.website.content.contact.send.button }}
                 </button>
               </div>
-
-              {% if load_data.website.content.contact.formspree.plan == 'free' %}
+<!--
+              { % if load_data.website.content.contact.formspree.plan == 'free' % }
               <input type="hidden" name="_next" value="{{ '/contact/#email_successfully_sent' | prepend: site.baseurl | prepend: site.url }}">
               <input type="hidden" name="_language" value="{{ load_data.website.content.contact.language }}" />
               <input type="text" name="_gotcha" style="display:none" />
-              {% endif %}
+              { % endif % } -->
 
             </div>
 
