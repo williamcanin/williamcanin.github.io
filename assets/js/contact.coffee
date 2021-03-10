@@ -6,10 +6,10 @@
 
 
 $('#submit').click ->
-  $('#name').val ''
-  $('#subject').val ''
-  $('#email').val ''
-  $('#message').val ''
+  $('#name').val('')
+  $('#subject').val('')
+  $('#email').val('')
+  $('#message').val('')
   return
 
 # $('#submit').click(function() {
