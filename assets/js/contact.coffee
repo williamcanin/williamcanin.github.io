@@ -1,10 +1,21 @@
 ---
 ---
 
+#  Load data
+{% include liquid/data %}
+
+
+$('#submit').click(function() {
+     $("#name").val("");
+     $("#subject").val("");
+     $("#email").val("");
+     $("#message").val("");
+});
+
+
 ###### DEPRECATED #########
 
-# Using Coffeescript - {{ load_data.userdata.email | encode_email }}
-# {% include liquid/data %}
+# Using Coffeescript
 
 # {% if load_data.website.content.contact.formspree.plan != 'free' %}
 #     ($) ->
@@ -38,7 +49,6 @@
 # {% endif %}
 
 # Using Javascript
-# {% include liquid/data %}
 
 # {% if load_data.website.content.contact.formspree.plan != 'free' %}
 
@@ -77,3 +87,5 @@
 #  }
 
 # {% endif %}
+
+###### DEPRECATED #########
