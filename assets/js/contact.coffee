@@ -12,41 +12,6 @@ $('#submit').click ->
   $('#message').val('')
   return
 
-# $('#submit').click(function() {
-#      $("#name").val("");
-#      $("#subject").val("");
-#      $("#email").val("");
-#      $("#message").val("");
-# });
-
-# $(function($){
-#  	$("form").submit(function(event) {
-#  		event.preventDefault();
-
-#  	});
-#  }) ;
-
-#  ($) ->
-#     $('form').submit (e) ->
-#         event.preventDefault()
-#         $.ajax
-#             url: 'https://formspree.io/f/{{ load_data.website.content.contact.formspree.endpoint }}'
-#             method: 'POST'
-#             data: {
-#                 name: $('#name').val()
-#                 subject: $('#subject').val()
-#                 email: $('#email').val()
-#                 message: $('#message').val()
-#             }
-#             dataType: 'json'
-#         .done ->
-#             $('#name').val('')
-#             $('#subject').val('')
-#             $('#email').val('')
-#             $('#message').val('')
-#     false
-
-
 ###### DEPRECATED #########
 
 # Using Coffeescript
