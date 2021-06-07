@@ -1,15 +1,649 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Transações com procedures no MySQL e Herança | William Canin - I type code, but people are more important_</title><meta name="description" content="
-    "><meta name="google-site-verification" content="kFisEN5aqITDKsnq2_HXHtxA8ygFVE95XlKapU7Kz_I"><meta http-equiv="cache-control" content="max-age=29030400"><meta http-equiv="pragma" content="public"><meta name="keywords" content="William, Canin, Analista, Desenvolvedor, Programador, WebDesign, Geek"><meta name="author" content="William Canin"><meta http-equiv="Content-Language" content="pt-BR"><meta property="og:locale" content="pt-BR"><meta property="og:site_name" content="William Canin"><meta property="og:type" content="WebSite"><meta property="og:url" content="https://williamcanin.me/blog/transacoes-com-procedures-no-mysql-e-heranca/"><meta property="og:description" content="
-    I type code, but people are more important_"><meta property="og:title" content="Transações com procedures no MySQL e Herança
-  "><link rel="canonical" href="https://williamcanin.me/blog/transacoes-com-procedures-no-mysql-e-heranca/"><link type="application/atom+xml" rel="alternate" title="William Canin" href="https://williamcanin.me/feed.xml"><link rel="icon" type="image/png" sizes="32x32" href="https://williamcanin.me/assets/images/favicon/favicon-32x32.png"><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet"><script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script><link rel="stylesheet" href="https://williamcanin.me/assets/css/vendor.css"><link rel="stylesheet" href="https://williamcanin.me/assets/css/custom.css"><script>if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!-- Include Data Base  -->
 
-  ga('create', 'UA-101186555-1', 'auto');
-  ga('send', 'pageview');
-}</script></head><body class="body underline_links" id="top"><div class="container layout_default"><div class="row"><div class="col-lg-3 px-0 mt-0 sidebar"><div class="py-3 sticky-top flex-grow-1"><div class="pt-3 sidebar__wrapper"><div class="nav flex-lg-column mx-3 mx-lg-0"><div class="d-none d-sm-block sidebar__avatar_flip"><div class="sidebar__avatar_flip-card"><a class="sidebar__avatar_flip-front sidebar__avatar_flip-face" href="https://williamcanin.me/"> <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg class="p-1 img-fluid mx-auto d-block animation__pulse sidebar_avatar_circle sidebar_avatar_background sidebar_avatar_border svg_vvfolded" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="900" height="900" viewBox="0 0 843.75 843.75" version="1.1" id="svg6" sodipodi:docname="avatar.svg" inkscape:version="0.92.4 5da689c313, 2019-01-14"><metadata id="metadata12"><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata><defs id="defs10"/><sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1326" inkscape:window-height="704" id="namedview8" showgrid="false" inkscape:zoom="0.34766083" inkscape:cx="225.43491" inkscape:cy="355.19507" inkscape:window-x="40" inkscape:window-y="27" inkscape:window-maximized="1" inkscape:current-layer="svg6"/><g id="g4539"><rect class="svg_vvfolded__background" ry="0" y="-2.9804077" x="-3.0152702e-05" height="846.73041" width="849.42706" id="rect4516" style="opacity:1;fill:#222222;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1875;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path class="svg_vvfolded__vvfolded1" inkscape:export-ydpi="96" inkscape:export-xdpi="96" style="fill:#ffe609;fill-opacity:1;fill-rule:evenodd;stroke-width:4.16359711" inkscape:connector-curvature="0" id="path2-3" d="M 331.0684,666.83732 C 390.87279,480.08949 545.03993,338.83221 706.09828,200.89819 491.37017,326.08201 286.42471,542.95907 27.568183,254.47634 138.30221,386.98897 254.88865,516.47519 331.0684,666.83732 Z"/><path class="svg_vvfolded__vvfolded2" inkscape:export-ydpi="96" inkscape:export-xdpi="96" sodipodi:nodetypes="cccccc" style="fill:#ffe609;fill-opacity:1;fill-rule:evenodd;stroke-width:4.16359711" inkscape:connector-curvature="0" id="path4-6" d="m 440.06019,494.81503 c 33.09425,33.06671 79.79511,100.74197 135.32976,171.38121 92.8209,-98.58121 196.52871,-260.89999 238.3791,-381.4254 -31.63506,59.1696 -171.19279,220.128 -223.92944,219.30068 -56.95036,2.46828 -60.39653,-56.84676 -83.36077,-88.80475 -26.066,22.9086 -45.86676,47.1145 -66.41865,79.54826 z"/></g></svg> </a><a class="sidebar__avatar_flip-back sidebar__avatar_flip-face" href="https://williamcanin.me/"><img class="p-1 img-fluid mx-auto d-block animation__pulse sidebar_avatar_circle sidebar_avatar_background sidebar_avatar_border image_avatar" src="/assets/images/avatar/avatar_flip_yellow.svg" alt="Avatar"></a></div></div><h1 class="p-2 text-center d-md-flex align-items-center mx-auto animation__sidebar-title sidebar__title"><a href="https://williamcanin.me/" class="nav-link" style="font-size: 2.3rem">Hey,<br>I'm W://iam.</a></h1><div class="p-2 mx-3 d-md-flex flex-md-column align-items-md-start align-items-center align-items-lg-start flex-lg-column mx-auto mr-lg-3 ml-lg-3 sidebar__menu animation__sidebar-menu"><div class="my-1 d-none d-md-block mr-3 sidebar__menu-title">Menu: Blog</div><li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item"><i class="mr-1 fas fa-edit"></i> <a class="sidebar__menu-link" href="https://williamcanin.me/blog/index.html">Blog</a></li><li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item"><i class="mr-1 fas fa-tags"></i> <a class="sidebar__menu-link" href="https://williamcanin.me/blog/tags/">Tags</a></li><li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item"><i class="mr-1 fas fa-search"></i> <a class="sidebar__menu-link" href="https://williamcanin.me/blog/search/">Pesquisar</a></li><li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item"><i class="mr-1 fas fa-rss"></i> <a class="sidebar__menu-link" href="https://williamcanin.me/feed.xml">Feed</a></li></div></div></div></div></div><div class="col-lg-9 p-0 py-4 content" id="main"><div class="px-3 mt-lg-0 layout_post animation__content" itemscope itemtype="http://schema.org/BlogPosting"><div class="p-0 p-lg-3 mb-4 layout_post__header"><h1 class="font-weight-bold layout_post__title">Transações com procedures no MySQL e Herança</h1><div class="layout_post__date"><time class="layout_post__time"><i class="far fa-calendar-alt"></i> Março 03, 2015</time></div><div class="layout_post__tags"><i class="fa fa-tags"></i>&nbsp;Tags:&nbsp; <a class="layout_post__tags-link" href="https://williamcanin.me/blog/tags//database">database</a> | <a class="layout_post__tags-link" href="https://williamcanin.me/blog/tags//mysql">mysql</a> | <a class="layout_post__tags-link" href="https://williamcanin.me/blog/tags//procedure">procedure</a> | <a class="layout_post__tags-link" href="https://williamcanin.me/blog/tags//trigger">trigger</a> |</div><div class="layout_post__reading_time"><i class="far fa-clock"></i> Leia isto "em cerca de 15 minutos".</div></div><div class="p-0 p-lg-3 mb-4 layout_post__content"><div class="d-block"><div class="py-3 row"><div class="offset-6 col-6 offset-sm-9 col-sm-3 offset-lg-10 col-lg-2"><div class="badge badge-light font-weight-normal layout_post__comments"><i class="fas fa-comments"></i> <a id="comments_in_post" class="mr-2 layout_post__comments-count" href="/blog/transacoes-com-procedures-no-mysql-e-heranca/#disqus_thread">0 </a>Comentários</div></div></div><ul id="markdown-toc"><li><a href="#introdução" id="markdown-toc-introdução">Introdução</a><ul><li><a href="#criando--database-e-tables" id="markdown-toc-criando--database-e-tables">Criando: Database e Tables</a></li><li><a href="#criando-view-de-clientes" id="markdown-toc-criando-view-de-clientes">Criando: View de Clientes</a></li><li><a href="#criando-trigger" id="markdown-toc-criando-trigger">Criando: Trigger</a></li><li><a href="#criando-procedure" id="markdown-toc-criando-procedure">Criando: Procedure</a></li><li><a href="#um-exemplo" id="markdown-toc-um-exemplo">Um exemplo:</a></li></ul></li></ul><h1 id="introdução">Introdução</h1><p>Chega de ficar apenas aprendendo ‘create table’ no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.</p><p>Quando se cria uma aplicação que se necessita de uma comunicação com bando de dados, seja ela de qual linguagem de programação for, o acesso entre “Aplicação Banco” sempre é um dos principais fatores para uma boa otimização, ganha tempo e velocidade de processos. A maioria da estrutura e performasse de uma aplicação, está na própria aplicação, mas isso não quer dizer que você não possa melhorar o desempenho realizando boas praticas de código no seu banco de dados. Você consegue fazer várias tarefas que poderiam ser feitas na aplicação, apenas com códigos PL/SQL.</p><p>Neste post, será passado como se deve realizar transações no seu banco de dados utilizando as famosas PROCEDURES do <a href="http://dev.mysql.com/" target="_blank">MySQL</a>, que é um dos mais conceituados banco de dados.</p><p>Para começar, utilize o script SQL abaixo com a opção de criar um <code class="highlighter-rouge">database</code> e uma <code class="highlighter-rouge">tabela</code> de Clientes no MySQL.</p><blockquote><h3 id="criando--database-e-tables">Criando: Database e Tables</h3></blockquote><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="err">$$</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title Site
+  ___________________________________________ -->
+  <title>
+    
+    
+        
+          Transações com procedures no MySQL e Herança | William Canin - I type code, but people are more important_
+        
+    
+    
+  </title>
+
+  <!-- Metatags
+  ___________________________________________ -->
+  <meta name=description
+  content="
+    ">
+
+
+  
+  <meta name="google-site-verification"
+  content="kFisEN5aqITDKsnq2_HXHtxA8ygFVE95XlKapU7Kz_I">
+  
+
+  
+
+  
+  <meta http-equiv="cache-control" content="max-age=29030400"/>
+  
+
+  <meta http-equiv="pragma" content="public">
+
+  <meta name="keywords" content="William, Canin, Analista, Desenvolvedor, Programador, WebDesign, Geek" />
+
+  <meta name="author" content="William Canin" />
+
+  <meta http-equiv="Content-Language" content="pt-BR">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="pt-BR" />
+
+  <meta property="og:site_name" content="William Canin" />
+
+  <meta property="og:type" content="WebSite" />
+
+  <meta property="og:url" content="http://localhost:4000/blog/transacoes-com-procedures-no-mysql-e-heranca/" />
+
+  <meta property="og:description" content="
+    I type code, but people are more important_" />
+
+  <meta property="og:title" content="Transações com procedures no MySQL e Herança
+  " />
+
+  <link rel="canonical" href="http://localhost:4000/blog/transacoes-com-procedures-no-mysql-e-heranca/">
+
+  <link type="application/atom+xml" rel="alternate"
+  title="William Canin"
+  href="http://localhost:4000/feed.xml">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32"
+  href="http://localhost:4000/assets/images/favicon/favicon-32x32.png">
+
+  <!-- Fonts active -->
+  <!-- https://freebies.fluxes.com/blog/best-free-typewriter-fonts/
+  https://www.creativebloq.com/typography/best-typewriter-fonts-10135084 -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  
+
+  <!-- Fonts inactive -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"> -->
+
+  <!-- Vendor -->
+  <link rel="stylesheet" href="http://localhost:4000/assets/css/vendor.css">
+
+  <!-- Themes -->
+  
+  <link rel="stylesheet" href="http://localhost:4000/assets/css/custom.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body class="body  underline_links " id="top">
+    <div class="container layout_default">
+      <div class="row">
+        <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-lg-3 px-0 mt-0 sidebar">
+  <div class="
+     py-3 
+     sticky-top  flex-grow-1">
+    <div class="pt-3 sidebar__wrapper">
+      <div class="nav flex-lg-column mx-3 mx-lg-0">
+        
+        <div class="d-none 
+           d-sm-block 
+          sidebar__avatar_flip">
+          <div class="sidebar__avatar_flip-card">
+            <a class="sidebar__avatar_flip-front sidebar__avatar_flip-face" href="http://localhost:4000/">
+              
+                <!-- Add your SVG - BEGIN -->
+                <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg class="p-1 img-fluid mx-auto d-block 
+                   animation__pulse 
+                   sidebar_avatar_circle 
+                   sidebar_avatar_background 
+                   sidebar_avatar_border 
+                  svg_vvfolded"
+                  xmlns:dc="http://purl.org/dc/elements/1.1/"
+                  xmlns:cc="http://creativecommons.org/ns#"
+                  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                  xmlns:svg="http://www.w3.org/2000/svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                  width="900"
+                  height="900"
+                  viewBox="0 0 843.75 843.75"
+                  version="1.1"
+                  id="svg6"
+                  sodipodi:docname="avatar.svg"
+                  inkscape:version="0.92.4 5da689c313, 2019-01-14">
+                  <metadata
+                    id="metadata12">
+                    <rdf:RDF>
+                      <cc:Work
+                        rdf:about="">
+                        <dc:format>image/svg+xml</dc:format>
+                        <dc:type
+                          rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                        <dc:title />
+                      </cc:Work>
+                    </rdf:RDF>
+                  </metadata>
+                  <defs
+                    id="defs10" />
+                  <sodipodi:namedview
+                    pagecolor="#ffffff"
+                    bordercolor="#666666"
+                    borderopacity="1"
+                    objecttolerance="10"
+                    gridtolerance="10"
+                    guidetolerance="10"
+                    inkscape:pageopacity="0"
+                    inkscape:pageshadow="2"
+                    inkscape:window-width="1326"
+                    inkscape:window-height="704"
+                    id="namedview8"
+                    showgrid="false"
+                    inkscape:zoom="0.34766083"
+                    inkscape:cx="225.43491"
+                    inkscape:cy="355.19507"
+                    inkscape:window-x="40"
+                    inkscape:window-y="27"
+                    inkscape:window-maximized="1"
+                    inkscape:current-layer="svg6" />
+                  <g
+                    id="g4539">
+                    <rect
+                      class="svg_vvfolded__background"
+                      ry="0"
+                      y="-2.9804077"
+                      x="-3.0152702e-05"
+                      height="846.73041"
+                      width="849.42706"
+                      id="rect4516"
+                      style="opacity:1;fill:#222222;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1875;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+                    <path
+                      class="svg_vvfolded__vvfolded1"
+                      inkscape:export-ydpi="96"
+                      inkscape:export-xdpi="96"
+                      style="fill:#ffe609;fill-opacity:1;fill-rule:evenodd;stroke-width:4.16359711"
+                      inkscape:connector-curvature="0"
+                      id="path2-3"
+                      d="M 331.0684,666.83732 C 390.87279,480.08949 545.03993,338.83221 706.09828,200.89819 491.37017,326.08201 286.42471,542.95907 27.568183,254.47634 138.30221,386.98897 254.88865,516.47519 331.0684,666.83732 Z" />
+                    <path
+                      class="svg_vvfolded__vvfolded2"
+                      inkscape:export-ydpi="96"
+                      inkscape:export-xdpi="96"
+                      sodipodi:nodetypes="cccccc"
+                      style="fill:#ffe609;fill-opacity:1;fill-rule:evenodd;stroke-width:4.16359711"
+                      inkscape:connector-curvature="0"
+                      id="path4-6"
+                      d="m 440.06019,494.81503 c 33.09425,33.06671 79.79511,100.74197 135.32976,171.38121 92.8209,-98.58121 196.52871,-260.89999 238.3791,-381.4254 -31.63506,59.1696 -171.19279,220.128 -223.92944,219.30068 -56.95036,2.46828 -60.39653,-56.84676 -83.36077,-88.80475 -26.066,22.9086 -45.86676,47.1145 -66.41865,79.54826 z" />
+                  </g>
+                </svg>
+                <!-- Add your SVG - END -->
+                
+            </a>
+            <a class="sidebar__avatar_flip-back sidebar__avatar_flip-face" href="http://localhost:4000/">
+              
+              <img class="p-1 img-fluid mx-auto d-block
+                 animation__pulse 
+                 sidebar_avatar_circle 
+                 sidebar_avatar_background 
+                 sidebar_avatar_border 
+                image_avatar  
+              "
+              src="/assets/images/avatar/avatar_flip_yellow.svg"
+              alt="Avatar">
+              
+            </a>
+          </div>
+        </div>
+        
+        <h1 class="p-2 text-center d-md-flex align-items-center mx-auto  animation__sidebar-title  sidebar__title">
+          <a href="http://localhost:4000/" class="nav-link" style="font-size: 2.3rem">Hey, <br> I'm W://iam.</a>
+        </h1>
+        <div class="p-2 mx-3
+           d-md-flex flex-md-column align-items-md-start 
+          align-items-center align-items-lg-start flex-lg-column mx-auto mr-lg-3 ml-lg-3
+          sidebar__menu  animation__sidebar-menu ">
+          <div class="my-1 d-none d-md-block mr-3 sidebar__menu-title">Menu: Blog</div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+              <i class="mr-1 fas fa-edit"></i>
+              <a class="sidebar__menu-link" href="http://localhost:4000/blog/index.html">Blog</a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+              <i class="mr-1 fas fa-tags"></i>
+              <a class="sidebar__menu-link" href="http://localhost:4000/blog/tags/">Tags</a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+              <i class="mr-1 fas fa-search"></i>
+              <a class="sidebar__menu-link" href="http://localhost:4000/blog/search/">Pesquisar</a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+              <i class="mr-1 fas fa-rss"></i>
+              <a class="sidebar__menu-link" href="http://localhost:4000/feed.xml">Feed</a>
+          </li>
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-lg-9 p-0 py-4 content" id="main">
+    <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="px-3 mt-lg-0 layout_post  animation__content " itemscope itemtype="http://schema.org/BlogPosting">
+
+  <!-- <div class="container-fluid"> -->
+
+
+    <div class="p-0 p-lg-3 mb-4 layout_post__header">
+      <h1 class="font-weight-bold layout_post__title">Transações com procedures no MySQL e Herança</h1>
+      <div class="layout_post__date">
+        <time class="layout_post__time">
+          <i class="far fa-calendar-alt"></i>
+          
+
+
+
+Março
+  
+03,
+2015
+
+        </time>
+      </div>
+
+      <div class="layout_post__tags">
+        <i class="fa fa-tags"></i>&nbsp;Tags:&nbsp;
+        
+        <a class="layout_post__tags-link" href="http://localhost:4000/blog/tags//database">database</a> |
+        
+        <a class="layout_post__tags-link" href="http://localhost:4000/blog/tags//mysql">mysql</a> |
+        
+        <a class="layout_post__tags-link" href="http://localhost:4000/blog/tags//procedure">procedure</a> |
+        
+        <a class="layout_post__tags-link" href="http://localhost:4000/blog/tags//trigger">trigger</a> |
+        
+      </div>
+
+      
+      <div class="layout_post__reading_time">
+        <i class="far fa-clock"></i>
+        Leia isto "em cerca de  15  minutos".
+      </div>
+      
+
+    </div>
+
+    <div class="p-0 p-lg-3 mb-4 layout_post__content">
+      <div class="d-block">
+          <div class="py-3 row">
+            <div class="offset-6 col-6 offset-sm-9 col-sm-3 offset-lg-10 col-lg-2">
+            <!-- jekyll.environment == 'production' and -->
+            
+              </div>
+            </div>
+        <ul id="markdown-toc">
+  <li><a href="#introdução" id="markdown-toc-introdução">Introdução</a>    <ul>
+      <li><a href="#criando--database-e-tables" id="markdown-toc-criando--database-e-tables">Criando:  Database e Tables</a></li>
+      <li><a href="#criando-view-de-clientes" id="markdown-toc-criando-view-de-clientes">Criando: View de Clientes</a></li>
+      <li><a href="#criando-trigger" id="markdown-toc-criando-trigger">Criando: Trigger</a></li>
+      <li><a href="#criando-procedure" id="markdown-toc-criando-procedure">Criando: Procedure</a></li>
+      <li><a href="#um-exemplo" id="markdown-toc-um-exemplo">Um exemplo:</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="introdução">Introdução</h1>
+
+<p>Chega de ficar apenas aprendendo ‘create table’ no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.</p>
+
+<p>Quando se cria uma aplicação que se necessita de uma comunicação com bando de dados, seja ela de qual linguagem de programação for, o acesso entre “Aplicação Banco” sempre é um dos principais fatores para uma boa otimização, ganha tempo e velocidade de processos. A maioria da estrutura e performasse de uma aplicação, está na própria aplicação, mas isso não quer dizer que você não possa melhorar o desempenho realizando boas praticas de código no seu banco de dados. Você consegue fazer várias tarefas que poderiam ser feitas na aplicação, apenas com códigos PL/SQL.</p>
+
+<p>Neste post, será passado como se deve realizar transações no seu banco de dados utilizando as famosas PROCEDURES do <a href="http://dev.mysql.com/" target="_blank">MySQL</a>, que é um dos mais conceituados banco de dados.</p>
+
+<p>Para começar, utilize o script SQL abaixo com a opção de criar um <code class="language-plaintext highlighter-rouge">database</code> e uma <code class="language-plaintext highlighter-rouge">tabela</code> de Clientes no MySQL.</p>
+
+<blockquote>
+  <h3 id="criando--database-e-tables">Criando:  Database e Tables</h3>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="err">$$</span>
 
 <span class="k">DROP</span> <span class="k">DATABASE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`TRANSACTIONS`</span> <span class="err">$$</span>
 
@@ -46,13 +680,31 @@
   <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`codJuridico`</span><span class="p">),</span>
   <span class="k">KEY</span> <span class="nv">`idClienteJ`</span> <span class="p">(</span><span class="nv">`idClienteJ`</span><span class="p">),</span>
  <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`idClienteJ`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`Clientes`</span> <span class="p">(</span><span class="nv">`codCliente`</span><span class="p">)</span>
-<span class="p">)</span> <span class="err">$$</span></code></pre></figure><p>Como podem perceber a tabela de <code class="highlighter-rouge">Clientes</code> é uma tabela pai das tabelas <code class="highlighter-rouge">Cliente_Fisico</code> e <code class="highlighter-rouge">Cliente_Juridico</code>, ou seja, uma <strong>Herança</strong>.</p><p>Com a herança de tabelas criada, vamos criar uma <strong>VIEW</strong> para realizar o READ do <strong>CRUD</strong>, pois temos uma herança de tabelas e precisa-se fazer um <strong>JOIN</strong> dos registros de Cliente com Cliente Físico e Cliente Jurídico para listar todos os registros de nosso database.</p><blockquote><h3 id="criando-view-de-clientes">Criando: View de Clientes</h3></blockquote><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="err">$$</span>
+<span class="p">)</span> <span class="err">$$</span></code></pre></figure>
+
+<p>Como podem perceber a tabela de <code class="language-plaintext highlighter-rouge">Clientes</code> é uma tabela pai das tabelas <code class="language-plaintext highlighter-rouge">Cliente_Fisico</code> e <code class="language-plaintext highlighter-rouge">Cliente_Juridico</code>, ou seja, uma <strong>Herança</strong>.</p>
+
+<p>Com a herança de tabelas criada, vamos criar uma <strong>VIEW</strong> para realizar o READ do <strong>CRUD</strong>, pois temos uma herança de tabelas e precisa-se fazer um <strong>JOIN</strong> dos registros de Cliente com Cliente Físico e Cliente Jurídico para listar todos os registros de nosso database.</p>
+
+<blockquote>
+  <h3 id="criando-view-de-clientes">Criando: View de Clientes</h3>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="err">$$</span>
 <span class="k">DROP</span> <span class="k">VIEW</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`View_Cliente_Fisico_Juridico`</span> <span class="err">$$</span>
 <span class="k">CREATE</span> <span class="k">VIEW</span> <span class="nv">`View_Cliente_Fisico_Juridico`</span> <span class="k">AS</span>
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`Clientes`</span> <span class="nv">`C`</span>
 <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="nv">`Cliente_Fisico`</span> <span class="nv">`F`</span> <span class="k">ON</span> <span class="p">(</span><span class="nv">`C`</span><span class="p">.</span><span class="nv">`codCliente`</span> <span class="o">=</span> <span class="nv">`F`</span><span class="p">.</span><span class="nv">`idClienteF`</span><span class="p">)</span>
 <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="nv">`Cliente_Juridico`</span> <span class="nv">`J`</span> <span class="k">ON</span> <span class="p">(</span><span class="nv">`C`</span><span class="p">.</span><span class="nv">`codCliente`</span> <span class="o">=</span> <span class="nv">`J`</span><span class="p">.</span><span class="nv">`idClienteJ`</span><span class="p">)</span>
-<span class="err">$$</span></code></pre></figure><p>Também precisa-se criar um <strong>TRIGGER</strong> (gatilho) com a função de deletar a herança de um determinado registro. Por exemplo: A tabela Cliente contem os registros padrão de um cliente, mas que pertence aos clientes físicos e clientes jurídicos também, então para realizar uma exclusão de um cliente, temos que remover os registros da tabela herdada (Cliente Físico e Jurídico) e posteriormente da tabela <code class="highlighter-rouge">Clientes</code>, dependendo de qual registro irá ser excluído.</p><blockquote><h3 id="criando-trigger">Criando: Trigger</h3></blockquote><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="err">$$</span>
+<span class="err">$$</span></code></pre></figure>
+
+<p>Também precisa-se criar um <strong>TRIGGER</strong> (gatilho) com a função de deletar a herança de um determinado registro. Por exemplo: A tabela Cliente contem os registros padrão de um cliente, mas que pertence aos clientes físicos e clientes jurídicos também, então para realizar uma exclusão de um cliente, temos que remover os registros da tabela herdada (Cliente Físico e Jurídico) e posteriormente da tabela <code class="language-plaintext highlighter-rouge">Clientes</code>, dependendo de qual registro irá ser excluído.</p>
+
+<blockquote>
+  <h3 id="criando-trigger">Criando: Trigger</h3>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="err">$$</span>
 <span class="k">DROP</span> <span class="k">TRIGGER</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`TRG_HERANCA_CLIENTE`</span> <span class="err">$$</span>
 <span class="k">CREATE</span>
 <span class="k">TRIGGER</span> <span class="nv">`Trg_Delete_Cliente_Fisico_Juridico`</span>
@@ -61,7 +713,18 @@
 <span class="k">BEGIN</span>
 <span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Cliente_Fisico</span> <span class="k">WHERE</span> <span class="n">idClienteF</span> <span class="o">=</span> <span class="k">OLD</span><span class="p">.</span><span class="n">codCliente</span><span class="p">;</span>
 <span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Cliente_Juridico</span> <span class="k">WHERE</span> <span class="n">idClienteJ</span> <span class="o">=</span> <span class="k">OLD</span><span class="p">.</span><span class="n">codCliente</span><span class="p">;</span>
-<span class="k">END</span><span class="err">$$</span></code></pre></figure><p>Como podem ver, nessa TRIGGER, irá remover os dos da tabela <code class="highlighter-rouge">Clientes</code>, <code class="highlighter-rouge">Cliente Físico</code> e <code class="highlighter-rouge">Cliente Jurídico</code> atraves das chaves estrangeiras. Exclui os “filhos” para depois excluir o “pai” de nossa herança.</p><p>Com a toda estrutura de <code class="highlighter-rouge">TABLES</code>, <code class="highlighter-rouge">VIEW</code> e <code class="highlighter-rouge">TRIGGER</code> criadas, vem a parte mais esperada (tan tan tan taaann), vamos criar a nossa “linda e bonita” procedure de transações, que será responsável por fazer todas as criações, leituras, alterações e remoções de registros, ou seja, uma procedure com capacidade de relizar o CRUD (Create, Read, Update e Delete) no banco de dados.</p><blockquote><h3 id="criando-procedure">Criando: Procedure</h3></blockquote><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DROP</span> <span class="k">PROCEDURE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`TRANSACTION_CLIENTS`</span> <span class="err">$$</span>
+<span class="k">END</span><span class="err">$$</span></code></pre></figure>
+
+<p>Como podem ver, nessa TRIGGER, irá remover os dos da tabela <code class="language-plaintext highlighter-rouge">Clientes</code>, <code class="language-plaintext highlighter-rouge">Cliente Físico</code> e <code class="language-plaintext highlighter-rouge">Cliente Jurídico</code> atraves das chaves estrangeiras.
+Exclui os “filhos” para depois excluir o “pai” de nossa herança.</p>
+
+<p>Com a toda estrutura de <code class="language-plaintext highlighter-rouge">TABLES</code>, <code class="language-plaintext highlighter-rouge">VIEW</code> e <code class="language-plaintext highlighter-rouge">TRIGGER</code> criadas, vem a parte mais esperada (tan tan tan taaann), vamos criar a nossa “linda e bonita” procedure de transações, que será responsável por fazer todas as criações, leituras, alterações e remoções de registros, ou seja, uma procedure com capacidade de relizar o CRUD (Create, Read, Update e Delete) no banco de dados.</p>
+
+<blockquote>
+  <h3 id="criando-procedure">Criando: Procedure</h3>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DROP</span> <span class="k">PROCEDURE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`TRANSACTION_CLIENTS`</span> <span class="err">$$</span>
 
 <span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="nv">`TRANSACTION_CLIENTS`</span><span class="p">(</span>
 
@@ -242,7 +905,17 @@
 
 <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
 
-<span class="k">END</span><span class="err">$$</span></code></pre></figure><p>Na parte de criação (Create) de registros através dessa procedure, foi utilizado a função LAST_INSERT_ID() do MySQL, como temos uma herança de tabelas, essa função nos da uma opção de resgatar o ultimo registro inserido na tabela <code class="highlighter-rouge">Clientes</code>, pegando seu ID (Primary Key) e incluindo na tabela <code class="highlighter-rouge">Cliente Físico</code> ou <code class="highlighter-rouge">Cliente Jurídico</code> no campo de Foreign Key, dependendo de qual cliente você vai inserir, claro. Também pode-se perceber, foi declarado uma variável “exception” , com um valor default igual a 0 (zero), e atribuindo um SQLEXCEPTION com o valor de 1(um) caso de erro na transação, uma mensagem de exceção será disparada. O restante da procedure é basicamente implicado com lógicas de IF e ELSE.</p><blockquote><p>NOTA: Para relizar as transações com o procedure, utiliza-se o CALL no MySQL. Lembrando que todos os parâmetros que estão presente no procedure, devem ser especificados na execução da procedure com o CALL, mesmo esses parâmetros não tendo uma implicância significativa, eles devem ser carregados com **NULL **.</p></blockquote><h3 id="um-exemplo">Um exemplo:</h3><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- Criando um Cliente Físico</span>
+<span class="k">END</span><span class="err">$$</span></code></pre></figure>
+
+<p>Na parte de criação (Create) de registros através dessa procedure, foi utilizado a função LAST_INSERT_ID() do MySQL, como temos uma herança de tabelas, essa função nos da uma opção de resgatar o ultimo registro inserido na tabela <code class="language-plaintext highlighter-rouge">Clientes</code>, pegando seu ID (Primary Key) e incluindo na tabela <code class="language-plaintext highlighter-rouge">Cliente Físico</code> ou <code class="language-plaintext highlighter-rouge">Cliente Jurídico</code> no campo de Foreign Key, dependendo de qual cliente você vai inserir, claro. Também pode-se perceber, foi declarado uma variável “exception” , com um valor default igual a 0 (zero), e atribuindo um SQLEXCEPTION com o valor de 1(um) caso de erro na transação, uma mensagem de exceção será disparada. O restante da procedure é basicamente implicado com lógicas de IF e ELSE.</p>
+
+<blockquote>
+  <p>NOTA: Para relizar as transações com o procedure, utiliza-se o CALL no MySQL. Lembrando que todos os parâmetros que estão presente no procedure, devem ser especificados na execução da procedure com o CALL, mesmo esses parâmetros não tendo uma implicância significativa, eles devem ser carregados com **NULL **.</p>
+</blockquote>
+
+<h3 id="um-exemplo">Um exemplo:</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- Criando um Cliente Físico</span>
 <span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'CREATE'</span><span class="p">,</span><span class="s1">'CLIENTE_FISICO'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'William C. Canin'</span><span class="p">,</span><span class="s1">'Rua XYZ'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'01-234-567-89'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
 <span class="c1">-- Criando um Cliente Jurídico</span>
 <span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'CREATE'</span><span class="p">,</span><span class="s1">'CLIENTE_JURIDICO'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'William C. Canin'</span><span class="p">,</span><span class="s1">'Rua YXZ'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'88-124-3697/15'</span><span class="p">);</span>
@@ -251,13 +924,257 @@
 <span class="c1">-- Deletando um Cliente Físico</span>
 <span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'DELETE'</span><span class="p">,</span><span class="s1">'CLIENTE_FISICO'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
 <span class="c1">-- Selecionado todos os registros</span>
-<span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'READ'</span><span class="p">,</span><span class="s1">'CLIENTES'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">);</span></code></pre></figure><p>Como podem ver, ao criar (CREATE) um registro com CALL, dependendo de ser cliente físico ou jurídicos, os campos preenchidos são distintos. Já na parte de remoção de registros (DELETE), precisa-se apenas especificar a chave primária da tabela <code class="highlighter-rouge">Clientes</code>, que o trigger que criamos, será responsável por remover os dados da tabela “filho”. No CALL de selecionar (READ) os registros, apenas é necessário informar os parâmetros de operação e parâmetros da tabela a ser realizada a transação, já que utilizamos uma <code class="highlighter-rouge">VIEW</code> contendo todos os campos para a listagem completa.</p><p>Bom, vou me despedindo por aqui, espero que você tenha entendido um pouco de transações com procedure através de tabelas com herança no MySQL. Um abraço. Morfei!</p><hr style="border-top: 1px solid #9D9D9D ; color: #9D9D9D;" class="endpost"><dl class="jektify jektify--dark jektify--custom"><dt class="jektify__header jektify__header--dark jektify__header--custom"><a class="jektify__brand jektify__brand--dark jektify__brand--custom" href="https://jektify.github.io" target="_blank">jektify</a> <i class="jektify__year jektify__year--dark jektify__year--custom">&copy;&nbsp;2021&nbsp;</i> <span class="jektify__button jektify__button--dark jektify__button--custom jektify__button--closed">+</span></dt><dd class="jektify__body jektify__body--dark jektify__body--custom" style="display: none"><div class="jektify__user"><a href="https://open.spotify.com/user/williamcanin" target="_blank" class="jektify__user-link jektify__user-link--dark jektify__user-link--custom" title="Siga-me no Spotify"><span class="jektify__user-text jektify__user-text--dark jektify__user-text--custom">Siga-me no Spotify</span></a></div><h1 class="jektify__title jektify__title--dark jektify__user--dark jektify__title--custom" style="display: none;">Music name</h1><p class="jektify__description jektify__description--dark jektify__description--custom" style="display: none;">Jekyll plugin to generate html snippets for embedding Spotify Musics. To listen to the full song, open your Spotify and start these musics.</p><div class="jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom"><iframe id="jektify__track" class="jektify__track jektify__track--dark jektify__track--custom" src="https://embed.spotify.com/?uri=spotify:track:2kPNfupzN6RAk2ehFcmjPG&amp;theme=dark" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div></dd></dl></div></div><div class="p-0 p-lg-3 mb-4 layout_post__footer"><div class="layout_post__share"><div class="row justify-content-center"><h2>Compartilhe!</h2></div><div class="row justify-content-center"><div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div><div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2"><a class="btn btn-link btn-typing layout_post__share-fb" href="#" title="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a></div><div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2"><a class="btn btn-link btn-typing layout_post__share-ln" href="http://www.linkedin.com/cws/share?url=https://williamcanin.me/blog/transacoes-com-procedures-no-mysql-e-heranca/" onclick="window.open(this.href,&quot;popupwindow&quot;,&quot;status=0,height=500,width=700,resizable=0,top=50,left=100&quot;);return false;" target="_blank" title="">Linkedin</a></div><div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2"><a class="btn btn-link btn-typing layout_post__share-tw" href="https://twitter.com/intent/tweet?text=https://williamcanin.me/blog/transacoes-com-procedures-no-mysql-e-heranca/ - Transações com procedures no MySQL e Herança by" target="_blank" title="">Twitter</a></div><div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div></div></div><div class="affiliates"><div class="row justify-content-center"><h2 class="affiliates__title"></h2></div><div class="row justify-content-center"><h4 class="affiliates__description"></h4></div><div class="row row-cols-1 row-cols-md-2 affiliates__wrap"></div></div><div class="row mt-5 layout_post__author"><div class="col-3 col-lg-2"><img class="img-fluid layout_post__author-img" src="/assets/images/author/williamcanin.jpg" width="140" height="auto" alt="William Canin"></div><div class="col-9 col-lg-10"><p class="layout_post__author-title">Autor</p><h2 class="font-weight-bold layout_post__author-name">William Canin</h2><p class="layout_post__author-description">Formado em Analise de Sistemas; fascinado pelo mundo do Linux e programação geral.</p></div></div></div><div id="layout_post__disqus" class="p-3 mb-4 layout_post__disqus"><h2 class="text-center mb-5 layout_post__disqus-title"><i class="fas fa-comments layout_post__disqus-icon"></i> Deixe seu comentário</h2><div class="layout_post__disqus-content"><div id="disqus_thread"></div><script type="text/javascript">var disqus_shortname  = 'williamcanin';
-   var disqus_identifier = '/blog/transacoes-com-procedures-no-mysql-e-heranca/';
-   var disqus_title      = 'Transações com procedures no MySQL e Herança';
-   var disqus_url        = 'https://williamcanin.me/blog/transacoes-com-procedures-no-mysql-e-heranca/';
+<span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'READ'</span><span class="p">,</span><span class="s1">'CLIENTES'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">);</span></code></pre></figure>
 
-   (function() {
-     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-   })();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div></div></div></div></div></div><div class="py-1 position-fixed fixed-bottom w-100 footer"><div class="container-fluid"><div class="row"><div class="text-center col-12 col-md-4"><span class="footer__copyright">William Canin © 2015-2021 • All right reserved.</span></div><div class="text-center col-12 col-md-4 d-none d-md-block"><span class="footer__message">In codes and Rock, I Trust.</span></div><div class="text-center col-12 col-md-4"><span class="footer__madeby">Made with&nbsp;<a href="https://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;using&nbsp;<a href="https://github.com/williamcanin/typing-jekyll-template" target="_blank">Typing</a>&nbsp;Theme.</span></div></div></div></div><div class="d-block d-lg-none position-fixed fixed-bottom w-100 scrolltop"><div class="float-right mr-3 scrolltop__wrapper"><a class="mr-3 scrolltop__button" href="#top"><i class="fas fa-caret-up"></i></a></div></div><script type="text/javascript" src="https://williamcanin.me/assets/vendor/js/jquery.min.js"></script><script type="text/javascript" src="https://williamcanin.me/assets/vendor/js/popper.min.js"></script><script type="text/javascript" src="https://williamcanin.me/assets/vendor/js/bootstrap.min.js"></script><script type="text/javascript" src="https://williamcanin.me/assets/vendor/js/simple-jekyll-search.min.js"></script><script type="text/javascript" src="https://williamcanin.me/assets/js/global.js"></script><script type="text/javascript" src="https://williamcanin.me/assets/js/post.js"></script><script src="https://williamcanin.me/assets/vendor/jektify/js/jektify.min.js"></script></body><script id="dsq-count-scr" src="//williamcanin.disqus.com/count.js" async></script></html>
+<p>Como podem ver, ao criar (CREATE) um registro com CALL, dependendo de ser cliente físico ou jurídicos, os campos preenchidos são distintos. Já na parte de remoção de registros (DELETE), precisa-se apenas especificar a chave primária da tabela <code class="language-plaintext highlighter-rouge">Clientes</code>, que o trigger que criamos, será responsável por remover os dados da tabela “filho”. No CALL de selecionar (READ) os registros, apenas é necessário informar os parâmetros de operação e parâmetros da tabela a ser realizada a transação, já que utilizamos uma <code class="language-plaintext highlighter-rouge">VIEW</code> contendo todos os campos para a listagem completa.</p>
+
+<p>Bom, vou me despedindo por aqui, espero que você tenha entendido um pouco de transações com procedure através de tabelas com herança no MySQL. Um abraço. Morfei!</p>
+
+<hr style="border-top: 1px solid #9D9D9D ; color: #9D9D9D ;" class="endpost" />
+
+<dl class="jektify jektify--dark jektify--custom">
+
+          <dt class="jektify__header jektify__header--dark jektify__header--custom">
+
+            <a class="jektify__brand jektify__brand--dark jektify__brand--custom" href="https://jektify.github.io" target="_blank">jektify</a>
+
+            <i class="jektify__year jektify__year--dark jektify__year--custom">&copy;&nbsp;2021&nbsp;</i>
+              <span class="jektify__button jektify__button--dark jektify__button--custom jektify__button--closed">+</span>
+          </dt>
+
+          <dd class="jektify__body jektify__body--dark jektify__body--custom" style="display: none">
+
+            <div class="jektify__user"><a href="https://open.spotify.com/user/williamcanin" target="_blank" class="jektify__user-link jektify__user-link--dark jektify__user-link--custom" title="Siga-me no Spotify"><span class="jektify__user-text jektify__user-text--dark jektify__user-text--custom">Siga-me no Spotify</span></a></div>
+
+            <h1 class="jektify__title jektify__title--dark jektify__user--dark jektify__title--custom" style="display: none;">Music name</h1>
+
+            <p class="jektify__description jektify__description--dark jektify__description--custom" style="display: none;">Jekyll plugin to generate html snippets for embedding Spotify Musics.
+To listen to the full song, open your Spotify and start these musics.
+</p>
+
+            <div class="jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom">
+              <iframe id="jektify__track" class="jektify__track jektify__track--dark 
+                jektify__track--custom" src="https://embed.spotify.com/?uri=spotify:track:2kPNfupzN6RAk2ehFcmjPG&amp;theme=dark" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
+              </iframe>
+            </div>
+          </dd>
+        </dl>
+
+      </div>
+    </div>
+
+    <div class="p-0 p-lg-3 mb-4 layout_post__footer">
+    
+
+    
+    <div class="layout_post__share">
+      <div class="row justify-content-center">
+        <h2>Compartilhe!</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div>
+
+        
+        <div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2">
+          <a class="btn btn-link btn-typing layout_post__share-fb" href="#" title="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
+        </div>
+        
+
+        
+        <div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2">
+          <a class="btn btn-link btn-typing layout_post__share-ln" href="http://www.linkedin.com/cws/share?url=http://localhost:4000/blog/transacoes-com-procedures-no-mysql-e-heranca/" onclick="window.open(this.href,&quot;popupwindow&quot;,&quot;status=0,height=500,width=700,resizable=0,top=50,left=100&quot;);return false;" target="_blank" title="">Linkedin</a>
+        </div>
+        
+
+        
+        <div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2">
+          <a class="btn btn-link btn-typing layout_post__share-tw" href="https://twitter.com/intent/tweet?text=http://localhost:4000/blog/transacoes-com-procedures-no-mysql-e-heranca/ - Transações com procedures no MySQL e Herança by " target="_blank" title="">Twitter</a>
+        </div>
+        
+
+        <div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div>
+      </div>
+    </div>
+    
+
+    <!-- Affiliates Block -->
+    <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="affiliates">
+    
+    <div class="row justify-content-center">
+      <h2 class="affiliates__title"></h2>
+    </div>
+    
+    
+    <div class="row justify-content-center">
+      <h4 class="affiliates__description"></h4>
+    </div>
+    
+    <div class="row row-cols-1 row-cols-md-2 affiliates__wrap">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+  </div>
+
+<!--
+
+<div class="row row-cols-1 row-cols-md-2">
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+    
+    <div class="row mt-5 layout_post__author">
+      
+      <div class="col-3 col-lg-2">
+        <img class="img-fluid layout_post__author-img" src="/assets/images/author/williamcanin.jpg" width="140" height="auto" alt="William Canin">
+      </div>
+      
+      <div class="col-9 col-lg-10 ">
+        <p class="layout_post__author-title">Autor</p>
+        <h2 class="font-weight-bold layout_post__author-name">William Canin</h2>
+        <p class="layout_post__author-description">Formado em Analise de Sistemas; fascinado pelo mundo do Linux e programação geral.
+</p>
+      </div>
+    </div>
+  
+  </div>
+
+    <!-- jekyll.environment == 'production' and -->
+    
+
+  <!-- </div> -->
+</div>
+
+</div>
+      </div>
+    </div>
+    <div class="py-1 position-fixed fixed-bottom w-100 footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="text-center col-12 col-md-4">
+        <span class="footer__copyright">William Canin © 2015-2021 • All right reserved.</span>
+      </div>
+      <div class="text-center col-12 col-md-4 d-none d-md-block">
+        <span class="footer__message">In codes and Rock, I Trust.</span>
+      </div>
+      <div class="text-center col-12 col-md-4">
+        <span class="footer__madeby">Made with&nbsp;<a href="https://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;using&nbsp;<a href="https://github.com/williamcanin/typing-jekyll-template" target="_blank">Typing</a>&nbsp;Theme.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-block  d-lg-none  position-fixed fixed-bottom w-100 scrolltop">
+  <div class="float-right mr-3 scrolltop__wrapper">
+    <a class="mr-3 scrolltop__button" href="#top"><i class="fas fa-caret-up"></i></a>
+  </div>
+</div>
+
+
+
+    <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="http://localhost:4000/assets/vendor/js/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script type="text/javascript" src="http://localhost:4000/assets/vendor/js/popper.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/assets/vendor/js/bootstrap.min.js"></script>
+
+<!-- Simple Search Jekyll -->
+<script type="text/javascript" src="http://localhost:4000/assets/vendor/js/simple-jekyll-search.min.js"></script>
+
+<!-- Global JS -->
+<script type="text/javascript" src="http://localhost:4000/assets/js/global.js"></script>
+
+<!-- Specific for each pages. -->
+
+   <script type="text/javascript" src="http://localhost:4000/assets/js/post.js"></script>
+
+
+<!-- Plugin Jektify -->
+
+<script src="http://localhost:4000/assets/vendor/jektify/js/jektify.min.js"></script>
+
+
+<!-- Google reCAPTCHA (for Getform.io) -->
+<!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+
+  </body>
+
+  <!-- Disqus counter comments  -->
+  
+  
+</html>
+
