@@ -9,10 +9,10 @@
   },
   "public": {
     "git": {
-      "init": false,
-      "origin": "",
-      "remote": "",
-      "branch": ""
+      "init": true,
+      "origin": "origin",
+      "remote": "git@github.com:williamcanin/williamcanin.github.io.git",
+      "branch": "master"
     }
   }
 }
