@@ -5,6 +5,7 @@ node_modules/
 _site/
 public/
 temp/
+tmp/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata/
