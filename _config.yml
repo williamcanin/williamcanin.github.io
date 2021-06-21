@@ -97,6 +97,7 @@ exclude:
   - yarn-error.log
   - docs/data
   - temp
+  - tmp
   - .hidden
   - public.sh
   - docs/config
