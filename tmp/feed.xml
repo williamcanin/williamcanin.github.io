@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <!-- Include Data Base  -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <title>William Canin</title>
+    <description>I type code_</description>
+    <link>https://williamcanin.github.io/</link>
+    <atom:link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 21 Jun 2021 16:02:53 -0300</pubDate>
+    <lastBuildDate>Mon, 21 Jun 2021 16:02:53 -0300</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Criando módulo para colorir print e input no Python</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em &lt;a href=&quot;https://python.org&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/a&gt; deixando as cores do terminal (sistemas baseado em &lt;strong&gt;UNIX&lt;/strong&gt;) coloridas. É claro que você pode implementar mais coisas para este módulo, porém esse é apenas um conceito básico de como o poder de sua criação pode criar coisas bacanas com Python ;)&lt;/p&gt; &lt;p&gt;Acesse a playlist abaixo. Voilá!&lt;/p&gt; &lt;style&gt;.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed...</description>
+        <pubDate>Tue, 10 Dec 2019 20:32:01 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/criando-modulo-para-colorir-print-e-input-no-python/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/criando-modulo-para-colorir-print-e-input-no-python/</guid>
+        
+        <tag>python</tag>
+        
+      </item>
+    
+      <item>
+        <title>Como encurtar URL Raw do Github e ter uma url personalizada</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Olá, tudo joinha? Meu nome é William, e nesse post vou demonstrar como você pode deixar as urls RAW no &lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Github&lt;/strong&gt;&lt;/a&gt; bem mais encurtadas e eficientes. Vamos lá.&lt;/p&gt; &lt;p&gt;Primeiro você precisa do &lt;a href=&quot;https://curl.haxx.se/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;curl&lt;/strong&gt;&lt;/a&gt; na sua máquina, pois vamos precisar dele para realizar uma façanha. _&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Nota: _O &lt;a href=&quot;https://curl.haxx.se/&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;curl&lt;/strong&gt;&lt;/a&gt; está disponível praticamente em todos sistemas operacionais. Sinta-se a vontade para instalar o mesmo da maneira que mais lhe convém.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;Agora precisamos usar o serviço de encurtamento de url que a própria &lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Github&lt;/strong&gt;&lt;/a&gt; fornece,...</description>
+        <pubDate>Sun, 20 Oct 2019 10:49:01 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/</guid>
+        
+        <tag>github</tag>
+        
+        <tag>git</tag>
+        
+        <tag>url</tag>
+        
+        <tag>shortener</tag>
+        
+      </item>
+    
+      <item>
+        <title>Manipulando arquivo JSON com Python.</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Olá pessoa, meu nome é William e este será um post para compartilhar uma minissérie de vídeo sobre a manipulação de arquivo JSON com Python.&lt;/p&gt; &lt;p&gt;Abaixo você terá acesso a playlist que criei sobre esse feito, dê uma olhada. Eu fico por aqui, abraços. :D&lt;/p&gt; &lt;iframe width=&quot;100%&quot; height=&quot;400&quot; src=&quot;https://www.youtube.com/embed/videoseries?list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt; &lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt; &lt;dl class=&quot;jektify jektify--dark jektify--custom&quot;&gt; &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt; &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt; &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2021&amp;nbsp;&lt;/i&gt; &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt; &lt;/dt&gt; &lt;dd...</description>
+        <pubDate>Mon, 02 Sep 2019 15:31:46 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python/</guid>
+        
+        <tag>python</tag>
+        
+        <tag>json</tag>
+        
+      </item>
+    
+      <item>
+        <title>Corrigindo erro de chaves no Arch Linux</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Se alguma vez você se deparou com erro de chaves públicas ao instalar um pacote no Arch Linux e não soube como resolver,então talvez essa dica abaixo pode te ajudar.&lt;/p&gt; &lt;p&gt;Abaixo você pode perceber que tentei instalar o pacote &lt;a href=&quot;https://aur.archlinux.org/packages/spotify&quot; target=&quot;_blank&quot;&gt;spotify&lt;/a&gt; no meu &lt;a href=&quot;https://archlinux.org&quot; target=&quot;_blank&quot;&gt;Arch Linux&lt;/a&gt; através do repositório AUR com o &lt;a href=&quot;https://aur.archlinux.org/packages/yay/&quot; target=&quot;_blank&quot;&gt;yay&lt;/a&gt;, e me retornou um erro de chave pública.&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; william at archlinux &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;folder ~ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;python-3.7.4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ○ ⇨ yay &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; spotify &lt;span class=&quot;nt&quot;&gt;--nodiffmenu&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--noeditmenu&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--noupgrademenu&lt;/span&gt; ::...</description>
+        <pubDate>Thu, 07 Mar 2019 06:13:17 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/corrigindo-erro-de-chaves-no-archlinux/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/corrigindo-erro-de-chaves-no-archlinux/</guid>
+        
+        <tag>archlinux</tag>
+        
+        <tag>keys</tag>
+        
+        <tag>dicas</tag>
+        
+      </item>
+    
+      <item>
+        <title>Transações no banco de dados através do Shell script</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Olá pessoas, vamos falar de Shell script, que é algo que gosto muito. :)&lt;/p&gt; &lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#postgresql&quot; id=&quot;markdown-toc-postgresql&quot;&gt;PostgreSQL&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#preparando-ambiente&quot; id=&quot;markdown-toc-preparando-ambiente&quot;&gt;Preparando ambiente&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando-um-database-no-postgresql&quot; id=&quot;markdown-toc-criando-um-database-no-postgresql&quot;&gt;Criando um DATABASE no PostgreSQL&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#iniciando-projeto&quot; id=&quot;markdown-toc-iniciando-projeto&quot;&gt;Iniciando projeto&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-pasta-de-ambiente-do-projeto&quot; id=&quot;markdown-toc-criando-pasta-de-ambiente-do-projeto&quot;&gt;Criando pasta de ambiente do projeto&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-arquivo-de-configuração&quot; id=&quot;markdown-toc-criando-arquivo-de-configuração&quot;&gt;Criando arquivo de configuração&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-bibliotecas-para-nosso-projeto&quot; id=&quot;markdown-toc-criando-bibliotecas-para-nosso-projeto&quot;&gt;Criando bibliotecas para nosso projeto&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#biblioteca-create_databasebash&quot; id=&quot;markdown-toc-biblioteca-create_databasebash&quot;&gt;Biblioteca &lt;strong&gt;create_database.bash&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#biblioteca-create_tablebash&quot; id=&quot;markdown-toc-biblioteca-create_tablebash&quot;&gt;Biblioteca &lt;strong&gt;create_table.bash&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-o-programa-principal&quot; id=&quot;markdown-toc-criando-o-programa-principal&quot;&gt;Criando o programa principal&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#estrutura-do-projeto-para-postgresql&quot; id=&quot;markdown-toc-estrutura-do-projeto-para-postgresql&quot;&gt;Estrutura do projeto para PostgreSQL&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#executando-nosso-programa&quot; id=&quot;markdown-toc-executando-nosso-programa&quot;&gt;Executando...</description>
+        <pubDate>Tue, 28 Aug 2018 02:23:33 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/</guid>
+        
+        <tag>shell</tag>
+        
+        <tag>postgresql</tag>
+        
+        <tag>mysql</tag>
+        
+      </item>
+    
+      <item>
+        <title>Instalando Python automaticamente em qualquer sistema Linux.</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Olá :hand:, essa é uma dica rápida para você que deseja instalar o Python :snake: compilado através do código fonte (tarball). Boa leitura.&lt;/p&gt; &lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#instalação&quot; id=&quot;markdown-toc-instalação&quot;&gt;Instalação&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando-script-de-instalação-automática&quot; id=&quot;markdown-toc-criando-script-de-instalação-automática&quot;&gt;Criando script de instalação automática&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#entendendo-o-que-cada-comando-do-script-faz&quot; id=&quot;markdown-toc-entendendo-o-que-cada-comando-do-script-faz&quot;&gt;Entendendo o que cada comando do script faz&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#salvando-o-script-e-executando-o-para-a-instalação-do-python&quot; id=&quot;markdown-toc-salvando-o-script-e-executando-o-para-a-instalação-do-python&quot;&gt;Salvando o script, e executando-o para a instalação do Python&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#desinstalação&quot; id=&quot;markdown-toc-desinstalação&quot;&gt;Desinstalação&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando-script-de-remoção-automática&quot; id=&quot;markdown-toc-criando-script-de-remoção-automática&quot;&gt;Criando script de remoção automática.&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#salvando-o-script-e-executando-o-para-a-remoção-do-python&quot; id=&quot;markdown-toc-salvando-o-script-e-executando-o-para-a-remoção-do-python&quot;&gt;Salvando o script, e executando-o para a remoção do Python&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#conclusão&quot; id=&quot;markdown-toc-conclusão&quot;&gt;Conclusão&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;...</description>
+        <pubDate>Thu, 21 Jun 2018 15:54:14 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/</guid>
+        
+        <tag>python</tag>
+        
+        <tag>tarball</tag>
+        
+        <tag>linux</tag>
+        
+      </item>
+    
+      <item>
+        <title>Criptografando a partição HOME no Linux</title>
+        <description>&lt;!-- Write from here your post !!! --&gt; &lt;p&gt;Olá para você pessoa, como vai? Eu vou bem graças a Deus e obrigado por perguntar mentalmente hehe. Esse é um post de segurança…é o que todos querem, não é?! hehe Então lá vai…&lt;/p&gt; &lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#requisitos&quot; id=&quot;markdown-toc-requisitos&quot;&gt;Requisitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#preparando-a-partição&quot; id=&quot;markdown-toc-preparando-a-partição&quot;&gt;Preparando a partição&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#logar-como-root&quot; id=&quot;markdown-toc-logar-como-root&quot;&gt;Logar como Root&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#fazendo-backup-da-nossa-home-atual&quot; id=&quot;markdown-toc-fazendo-backup-da-nossa-home-atual&quot;&gt;Fazendo backup da nossa /home atual&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#listando-nossas-partições&quot; id=&quot;markdown-toc-listando-nossas-partições&quot;&gt;Listando nossas partições&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criptografando-a-partição&quot; id=&quot;markdown-toc-criptografando-a-partição&quot;&gt;Criptografando a partição&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#abrindo-partição-criptografada&quot; id=&quot;markdown-toc-abrindo-partição-criptografada&quot;&gt;Abrindo partição criptografada&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#formatando-a-partição-criptografada&quot; id=&quot;markdown-toc-formatando-a-partição-criptografada&quot;&gt;Formatando a partição criptografada&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#montando-a-partição-e-restaurando-backup&quot; id=&quot;markdown-toc-montando-a-partição-e-restaurando-backup&quot;&gt;Montando a partição e restaurando backup&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#fechando-nossa-partição-criptografada&quot;...</description>
+        <pubDate>Mon, 16 Oct 2017 01:51:44 -0200</pubDate>
+        <link>https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/</guid>
+        
+        <tag>crypt</tag>
+        
+        <tag>linux</tag>
+        
+        <tag>security</tag>
+        
+      </item>
+    
+      <item>
+        <title>Carregando Javascripts para diferentes posts e pages no Jekyll</title>
+        <description>&lt;p&gt;Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;“E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu berrante tocá”.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;:wink:&lt;/p&gt; &lt;p&gt;Deixando as desculpas de lado, vamos ao que interessa; o Post!&lt;/p&gt; &lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-laço-for-no-layoutdefaulthtml&quot; id=&quot;markdown-toc-o-laço-for-no-layoutdefaulthtml&quot;&gt;O laço ‘For’ no layout/default.html&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#entendendo-o-for&quot; id=&quot;markdown-toc-entendendo-o-for&quot;&gt;Entendendo o ‘For’&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-arquivo-de-postagem&quot; id=&quot;markdown-toc-o-arquivo-de-postagem&quot;&gt;O arquivo de postagem&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#exemplo-para-arquivos-de-posts&quot; id=&quot;markdown-toc-exemplo-para-arquivos-de-posts&quot;&gt;Exemplo para arquivos de posts&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#exemplo-para-arquivos-de-pages&quot; id=&quot;markdown-toc-exemplo-para-arquivos-de-pages&quot;&gt;Exemplo para arquivos de pages&lt;/a&gt;&lt;/li&gt;...</description>
+        <pubDate>Mon, 09 Oct 2017 15:31:36 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/</guid>
+        
+        <tag>jekyll</tag>
+        
+        <tag>javascripts</tag>
+        
+        <tag>liquid</tag>
+        
+      </item>
+    
+      <item>
+        <title>Última versão do kernel linux através de um script</title>
+        <description>&lt;p&gt;Oi, tudo bem com você? :) Espero que sim.&lt;/p&gt; &lt;p&gt;Vou compartilhar com vocês um Shell script simples, mas que pode ser de bastante utilidade dependendo do caso. Esse script fará o download da última versão estável do &lt;a href=&quot;https://www.kernel.org/&quot; target=&quot;_blank&quot;&gt;kernel&lt;/a&gt; Linux.&lt;/p&gt; &lt;p&gt;Ai tu se pergunta:&lt;/p&gt; &lt;p&gt;&lt;em&gt;Mas porque raios eu deveria ter um script para realizar o donwload do kernel, se eu posso ir diretamente no navegador e baixar?&lt;/em&gt;&lt;/p&gt; &lt;p&gt;Simples, talves você esteja usando uma distribuição como servidor (ou não) sem interface gráfica e necessita compilar o kernel. Nesse caso vai ser você e a “telinha preta” de amiguinhos. :smile:&lt;/p&gt; &lt;p&gt;Enfim...</description>
+        <pubDate>Fri, 05 May 2017 20:16:57 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/</guid>
+        
+        <tag>shell</tag>
+        
+        <tag>kernel</tag>
+        
+        <tag>linux</tag>
+        
+      </item>
+    
+      <item>
+        <title>Instalando Arch Linux com criptografia LUKS e LVM</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#preparando-o-básico&quot; id=&quot;markdown-toc-preparando-o-básico&quot;&gt;Preparando o básico&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-fdisk&quot; id=&quot;markdown-toc-o-fdisk&quot;&gt;O fdisk&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#conceitos&quot; id=&quot;markdown-toc-conceitos&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#conhecendo-a-estrutura-de-partições&quot; id=&quot;markdown-toc-conhecendo-a-estrutura-de-partições&quot;&gt;Conhecendo a estrutura de partições&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#usando-o-fdisk&quot; id=&quot;markdown-toc-usando-o-fdisk&quot;&gt;Usando o fdisk&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-a-partição-de-boot-com-fdisk&quot; id=&quot;markdown-toc-criando-a-partição-de-boot-com-fdisk&quot;&gt;Criando a partição de Boot com fdisk&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-partição-do-windows-com-fdisk&quot; id=&quot;markdown-toc-criando-partição-do-windows-com-fdisk&quot;&gt;Criando partição do Windows com fdisk&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-partição-linux-lvm-com-fdisk&quot; id=&quot;markdown-toc-criando-partição-linux-lvm-com-fdisk&quot;&gt;Criando partição “Linux LVM” com fdisk&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-luks&quot; id=&quot;markdown-toc-o-luks&quot;&gt;O LUKS&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#conceitos-1&quot; id=&quot;markdown-toc-conceitos-1&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criptografando-a-partição-linux-lvm&quot; id=&quot;markdown-toc-criptografando-a-partição-linux-lvm&quot;&gt;Criptografando a partição “Linux LVM”&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#o-lvm&quot; id=&quot;markdown-toc-o-lvm&quot;&gt;O LVM&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#conceitos-2&quot; id=&quot;markdown-toc-conceitos-2&quot;&gt;Conceitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#utilizando-os-componentes-do-lvm&quot; id=&quot;markdown-toc-utilizando-os-componentes-do-lvm&quot;&gt;Utilizando os componentes do LVM&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando-physical-volume-pv&quot; id=&quot;markdown-toc-criando-physical-volume-pv&quot;&gt;Criando Physical Volume (PV)&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a...</description>
+        <pubDate>Thu, 27 Apr 2017 08:33:43 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/</guid>
+        
+        <tag>archlinux</tag>
+        
+        <tag>encryption</tag>
+        
+        <tag>luks</tag>
+        
+        <tag>lvm</tag>
+        
+      </item>
+    
+      <item>
+        <title>Configurando PATH do RubyGems e Bundler no Linux</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#limpando-no-ambiente-de-trabalho&quot; id=&quot;markdown-toc-limpando-no-ambiente-de-trabalho&quot;&gt;Limpando no ambiente de trabalho&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#rubygems&quot; id=&quot;markdown-toc-rubygems&quot;&gt;RubyGems&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#diretórios-padrão-do-rubygems&quot; id=&quot;markdown-toc-diretórios-padrão-do-rubygems&quot;&gt;Diretórios padrão do RubyGems&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#variáveis-de-ambiente-para-rubygems&quot; id=&quot;markdown-toc-variáveis-de-ambiente-para-rubygems&quot;&gt;Variáveis de ambiente para RubyGems&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#configuração-do-environment-do-rubygems&quot; id=&quot;markdown-toc-configuração-do-environment-do-rubygems&quot;&gt;Configuração do Environment do RubyGems&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#bundler&quot; id=&quot;markdown-toc-bundler&quot;&gt;Bundler&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#diretórios-padrão-do-bundler&quot; id=&quot;markdown-toc-diretórios-padrão-do-bundler&quot;&gt;Diretórios padrão do Bundler&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#variáveis-de-ambiente-do-bundler&quot; id=&quot;markdown-toc-variáveis-de-ambiente-do-bundler&quot;&gt;Variáveis de ambiente do Bundler&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#configuração-do-environment-do-bundler&quot; id=&quot;markdown-toc-configuração-do-environment-do-bundler&quot;&gt;Configuração do Environment do Bundler&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#conclusão&quot; id=&quot;markdown-toc-conclusão&quot;&gt;Conclusão&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;introdução&quot;&gt;Introdução&lt;/h1&gt; &lt;p&gt;Nesse tutorial será realizado uma série de abstrações das estrutura de pasta do RubyGems e do Bundler no ato de uma instalação de gem. Para isso, é...</description>
+        <pubDate>Fri, 13 Jan 2017 17:02:37 -0200</pubDate>
+        <link>https://williamcanin.github.io/blog/configurando-path-do-rubygems/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/configurando-path-do-rubygems/</guid>
+        
+        <tag>ruby</tag>
+        
+        <tag>gems</tag>
+        
+        <tag>linux</tag>
+        
+        <tag>bundler</tag>
+        
+      </item>
+    
+      <item>
+        <title>Bloqueando módulos durante o boot com o Modbl</title>
+        <description>&lt;p&gt;Essa é uma postagem que irá facilitar e otimizar seus comandos no terminal para bloquear módulos no Linux. Estou falando do &lt;a href=&quot;https://github.com/williamcanin/modbl&quot; target=&quot;_blank&quot;&gt;Modbl&lt;/a&gt;, um script simples mas que lhe propoe um ganha tempo.&lt;/p&gt; &lt;p&gt;Se você habilita ou desabilita módulos de sua máquina durante o boot frequentemente no Linux, você precisa fazer isso de uma forma que lhe dê menos trabalho e mais praticidade. Pensando nisso, desenvolvi um simples script em Shell &lt;strong&gt;(Modbl)&lt;/strong&gt;, que lhe possibilita esses recursos.&lt;/p&gt; &lt;p&gt;O &lt;strong&gt;Modbl&lt;/strong&gt; (uma abreviação de ModBlackList), você faz adição e remoção desses módulos com apenas uma linha de comando no terminal, não...</description>
+        <pubDate>Wed, 30 Sep 2015 13:55:19 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/bloqueando-modulos-no-boot-com-modbl/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/bloqueando-modulos-no-boot-com-modbl/</guid>
+        
+        <tag>modprobe</tag>
+        
+        <tag>boot</tag>
+        
+        <tag>linux</tag>
+        
+        <tag>shell</tag>
+        
+        <tag>script</tag>
+        
+      </item>
+    
+      <item>
+        <title>Linux: Compilando e instalando o kernel em modo tradicional</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#pacotes-necessários&quot; id=&quot;markdown-toc-pacotes-necessários&quot;&gt;Pacotes necessários&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-base-de-trabalho&quot; id=&quot;markdown-toc-criando-base-de-trabalho&quot;&gt;Criando base de trabalho&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#download-do-kernel&quot; id=&quot;markdown-toc-download-do-kernel&quot;&gt;Download do kernel&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#descompactando-o-kernel&quot; id=&quot;markdown-toc-descompactando-o-kernel&quot;&gt;Descompactando o kernel&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#limpando-a-base&quot; id=&quot;markdown-toc-limpando-a-base&quot;&gt;Limpando a base&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#configurando-o-kernel&quot; id=&quot;markdown-toc-configurando-o-kernel&quot;&gt;Configurando o kernel&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#manualmente&quot; id=&quot;markdown-toc-manualmente&quot;&gt;Manualmente&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#reconhecendo-os-módulos-da-máquina&quot; id=&quot;markdown-toc-reconhecendo-os-módulos-da-máquina&quot;&gt;Reconhecendo os módulos da máquina&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#método-1&quot; id=&quot;markdown-toc-método-1&quot;&gt;&lt;strong&gt;Método 1&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#método-2&quot; id=&quot;markdown-toc-método-2&quot;&gt;&lt;strong&gt;Método 2&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#método-3&quot; id=&quot;markdown-toc-método-3&quot;&gt;&lt;strong&gt;Método 3&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#iniciando-a-configuração&quot; id=&quot;markdown-toc-iniciando-a-configuração&quot;&gt;Iniciando a configuração&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#manuseio-para-o-make-menuconfig&quot; id=&quot;markdown-toc-manuseio-para-o-make-menuconfig&quot;&gt;Manuseio para o “make menuconfig”&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#automaticamente&quot; id=&quot;markdown-toc-automaticamente&quot;&gt;Automaticamente&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#carregando-config-genérico&quot; id=&quot;markdown-toc-carregando-config-genérico&quot;&gt;Carregando .config genérico.&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#entrando-no-menu-do-kernel&quot; id=&quot;markdown-toc-entrando-no-menu-do-kernel&quot;&gt;Entrando no menu do kernel&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#carregando-drivers-a-partir-do-lsmod&quot; id=&quot;markdown-toc-carregando-drivers-a-partir-do-lsmod&quot;&gt;Carregando drivers a partir do lsmod&lt;/a&gt;&lt;/li&gt;...</description>
+        <pubDate>Sun, 23 Aug 2015 17:52:44 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/</guid>
+        
+        <tag>kernel</tag>
+        
+        <tag>linux</tag>
+        
+        <tag>compile</tag>
+        
+      </item>
+    
+      <item>
+        <title>Linux Boot: A start job is running for dev-disk-by</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#entendendo-a-mensagem&quot; id=&quot;markdown-toc-entendendo-a-mensagem&quot;&gt;Entendendo a mensagem&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#decifrando-a-numeração&quot; id=&quot;markdown-toc-decifrando-a-numeração&quot;&gt;Decifrando a numeração&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#listando-os-uuid-das-partições&quot; id=&quot;markdown-toc-listando-os-uuid-das-partições&quot;&gt;Listando os UUID das partições&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#verificando-o-etcfstab&quot; id=&quot;markdown-toc-verificando-o-etcfstab&quot;&gt;Verificando o /etc/fstab&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#dica&quot; id=&quot;markdown-toc-dica&quot;&gt;Dica&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#conclusão&quot; id=&quot;markdown-toc-conclusão&quot;&gt;Conclusão&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;introdução&quot;&gt;Introdução&lt;/h2&gt; &lt;p&gt;Esperar hoje em dia não é uma tarefa que agrada as pessoas, ainda mais se tratando de software. Pois bem, essa postagem vai te informar uma configuração errada que pode te deixar de “cabelos em pé” :triumph: e esperando meados 1m30s para o Linux sair do boot.&lt;/p&gt; &lt;p&gt;Muitas pessoas se preocupam muito com boot da máquina, até mesmo a Microsoft, que devo adimitir: “&lt;em&gt;Fizeram...</description>
+        <pubDate>Sun, 26 Jul 2015 10:29:04 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/</guid>
+        
+        <tag>boot</tag>
+        
+        <tag>swap</tag>
+        
+        <tag>linux</tag>
+        
+      </item>
+    
+      <item>
+        <title>Compilando e configurando Squid</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#dependências-de-compilação&quot; id=&quot;markdown-toc-dependências-de-compilação&quot;&gt;Dependências de compilação&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#download-do-source-squid-proxy&quot; id=&quot;markdown-toc-download-do-source-squid-proxy&quot;&gt;Download do source Squid proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#descompactando&quot; id=&quot;markdown-toc-descompactando&quot;&gt;Descompactando&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#entrando-na-pasta-para-configuração-compilação-e-instalação&quot; id=&quot;markdown-toc-entrando-na-pasta-para-configuração-compilação-e-instalação&quot;&gt;Entrando na pasta para configuração, compilação e instalação&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#configurando-a-instalação-do-squid-proxy&quot; id=&quot;markdown-toc-configurando-a-instalação-do-squid-proxy&quot;&gt;Configurando a instalação do Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#compilando-squid-proxy&quot; id=&quot;markdown-toc-compilando-squid-proxy&quot;&gt;Compilando Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#instalando-squid-proxy&quot; id=&quot;markdown-toc-instalando-squid-proxy&quot;&gt;Instalando Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#permissões-para-o-usuário-padrão-do-squid&quot; id=&quot;markdown-toc-permissões-para-o-usuário-padrão-do-squid&quot;&gt;Permissões para o usuário padrão do Squid&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-uma-lista-de-bloqueio&quot; id=&quot;markdown-toc-criando-uma-lista-de-bloqueio&quot;&gt;Criando uma lista de bloqueio&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#configurando-o-squid-proxy-arquivo-squidconf&quot; id=&quot;markdown-toc-configurando-o-squid-proxy-arquivo-squidconf&quot;&gt;Configurando o Squid Proxy (arquivo squid.conf)&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-cache-executando-e-parando-o-squid-proxy&quot; id=&quot;markdown-toc-criando-cache-executando-e-parando-o-squid-proxy&quot;&gt;Criando cache, executando e parando o Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#redirecionado-a-porta-80-para-a-porta-3128-do-squid-proxy&quot; id=&quot;markdown-toc-redirecionado-a-porta-80-para-a-porta-3128-do-squid-proxy&quot;&gt;Redirecionado a porta 80 para a porta 3128 do Squid Proxy&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Quer aprender Proxy Squid? Essa postagem irá...</description>
+        <pubDate>Thu, 14 May 2015 09:13:57 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/compilando-e-configurando-squid-transparent/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/compilando-e-configurando-squid-transparent/</guid>
+        
+        <tag>squid</tag>
+        
+        <tag>proxy</tag>
+        
+        <tag>linux</tag>
+        
+        <tag>server</tag>
+        
+      </item>
+    
+      <item>
+        <title>Arquivos de execução no Linux</title>
+        <description>&lt;h2 id=&quot;introdução&quot;&gt;Introdução&lt;/h2&gt; &lt;p&gt;Essa postagem você irá entender melhor como são os arquivos executáveis no Linux, como se cria um com código aberto ou fechado, como dar permissão no Linux para um executável ter a permissão de execução e outras informações considerável.&lt;/p&gt; &lt;p&gt;Bem, la vem eu novamente a dizer sobre Linux(me amarro!)…porem o tema agora será sobre arquivos de execução. Arquivos de execução no Linux pode ser criado de diversas formas, por exemplo, um arquivo de texto com a extensão &lt;strong&gt;.sh&lt;/strong&gt; e com comandos shell(ou não) em seu conteúdo, já pode ser chamado de um arquivo de execução, que tem como...</description>
+        <pubDate>Wed, 29 Apr 2015 12:29:32 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/arquivos-de-execucao-no-linux/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/arquivos-de-execucao-no-linux/</guid>
+        
+        <tag>linux</tag>
+        
+        <tag>shell</tag>
+        
+        <tag>script</tag>
+        
+      </item>
+    
+      <item>
+        <title>Criando pendrive bootavel no Linux com dd</title>
+        <description>&lt;p&gt;Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou aquele outro sistema operacial no qual necessita de boot. Vamos aprenda a fazer isso no Linux com um comando poderoso. :wink:&lt;/p&gt; &lt;p&gt;Já cansou de comprar CDs e DVDs para gravar aquela imagem ISO de um sistema operacional ou qualquer outro programa que necessite iniciar no boot de sua máquina? Creio que a resposta é Sim, e por isso existe programas para fazer um pendrive bootavel. Mas o que recém usuários Linux não sabe, é de um certo “malandro” que vem por padrão na maioria das...</description>
+        <pubDate>Tue, 21 Apr 2015 18:42:04 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/criando-pendrive-bootavel-no-linux-com-dd/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/criando-pendrive-bootavel-no-linux-com-dd/</guid>
+        
+        <tag>dd</tag>
+        
+        <tag>linux</tag>
+        
+        <tag>iso</tag>
+        
+        <tag>pendrive</tag>
+        
+      </item>
+    
+      <item>
+        <title>Transações com procedures no MySQL e Herança</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#criando--database-e-tables&quot; id=&quot;markdown-toc-criando--database-e-tables&quot;&gt;Criando: Database e Tables&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-view-de-clientes&quot; id=&quot;markdown-toc-criando-view-de-clientes&quot;&gt;Criando: View de Clientes&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-trigger&quot; id=&quot;markdown-toc-criando-trigger&quot;&gt;Criando: Trigger&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#criando-procedure&quot; id=&quot;markdown-toc-criando-procedure&quot;&gt;Criando: Procedure&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#um-exemplo&quot; id=&quot;markdown-toc-um-exemplo&quot;&gt;Um exemplo:&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;introdução&quot;&gt;Introdução&lt;/h1&gt; &lt;p&gt;Chega de ficar apenas aprendendo ‘create table’ no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.&lt;/p&gt; &lt;p&gt;Quando se cria uma aplicação que se necessita de uma comunicação com bando de dados, seja ela de qual linguagem de programação for, o acesso entre “Aplicação Banco” sempre é um dos principais fatores para uma boa otimização,...</description>
+        <pubDate>Tue, 03 Mar 2015 01:02:32 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/transacoes-com-procedures-no-mysql-e-heranca/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/transacoes-com-procedures-no-mysql-e-heranca/</guid>
+        
+        <tag>database</tag>
+        
+        <tag>mysql</tag>
+        
+        <tag>procedure</tag>
+        
+        <tag>trigger</tag>
+        
+      </item>
+    
+      <item>
+        <title>Java - Erro: Unsupported major.minor version 51.0</title>
+        <description>&lt;p&gt;Este é a correção de um Erro no Java, ou melhor, um erro humano, pois esse erro só é dispertado se você realizar a execução de um programa em Java que não suporta a versão no qual o programa foi compilado.&lt;/p&gt; &lt;p&gt;Provavelmente muitos que desenvolvem com Java já passaram por erros, uns sabem como resolver e outros não sabem pelo fato de se depararem pela primeira vez com o tal erro.&lt;/p&gt; &lt;p&gt;Um erro comum, é o &lt;strong&gt;Unsupported major.minor version 51.0&lt;/strong&gt;. Este erro, expecifica que você está tentando executar o seu programa com uma versão de Java que não suporta a...</description>
+        <pubDate>Thu, 26 Feb 2015 18:07:00 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/java-erro-unsupported-major-minor-version-51-0/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/java-erro-unsupported-major-minor-version-51-0/</guid>
+        
+        <tag>java</tag>
+        
+      </item>
+    
+      <item>
+        <title>Eclipse Luna - Erro de inicialização no Linux</title>
+        <description>&lt;p&gt;Apesar do Eclipse ser uma IDE famosa e de ótimos recursos, ele (como qualquer outras aplicação) não está livre de bugs. Esse post é para uma correção de um bug no Eclipse Luna para o Linux.&lt;/p&gt; &lt;p&gt;Recentemente instalei o &lt;a href=&quot;https://eclipse.org&quot; target=&quot;_blank&quot;&gt;Eclipse&lt;/a&gt; Luna (Version: Luna Release (4.4.0)) no meu &lt;a href=&quot;https://debian.org&quot; target=&quot;_blank&quot;&gt;Debian&lt;/a&gt; Wheezy (7.8) e após inicia-lo me deparei que o Eclipse não carregava. Para um entendimento melhor, a tela de splash do Eclipse Luna carregava, só que depois a mesma desaparecia e o Eclipse não iniciava.&lt;/p&gt; &lt;p&gt;Resolvi iniciar o Eclipse Luna pelo terminal e obtive esta saída de informações...</description>
+        <pubDate>Mon, 23 Feb 2015 18:14:01 -0300</pubDate>
+        <link>https://williamcanin.github.io/blog/erro-de-inicializacao-eclipse-no-linux/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/erro-de-inicializacao-eclipse-no-linux/</guid>
+        
+        <tag>eclipse</tag>
+        
+        <tag>linux</tag>
+        
+      </item>
+    
+      <item>
+        <title>Criando um shortcut para o Eclipse no Linux</title>
+        <description>&lt;p&gt;&lt;span class=&quot;fa fa-share&quot; style=&quot;font-size: 80px; float: left; margin-right: 0.2em; border-radius: 100%; width: 80px; height: 80px; background-size: 80px; text-align: center; background-color: #F1F1F1;&quot;&gt;&lt;/span&gt;&lt;/p&gt; &lt;p&gt;Nos dias de hoje, o Eclipse no momento não possui um instalador para Linux assim com tem para Windows, com isso não se cria um shortcut (Lançador) para a aplicação juntamento com outros programas já instalados.&lt;/p&gt; &lt;p&gt;Muitos que usam Eclipse no Linux, já sentiram a ausência e falta de um lançador(shortcut) para o Eclipse, não é verdade? Eu sou um desses “muitos”. Isso acontece porque, o Eclipse não tem um instalador para criação do ícone, ele é uma IDE...</description>
+        <pubDate>Sat, 07 Feb 2015 20:50:20 -0200</pubDate>
+        <link>https://williamcanin.github.io/blog/criando-shortcut-para-eclipse-no-linux-facilmente/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/criando-shortcut-para-eclipse-no-linux-facilmente/</guid>
+        
+        <tag>eclipse</tag>
+        
+        <tag>shortcut</tag>
+        
+        <tag>linux</tag>
+        
+      </item>
+    
+      <item>
+        <title>Instalando o Sublime Text 3 no Debian</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#pre-requisitos&quot; id=&quot;markdown-toc-pre-requisitos&quot;&gt;Pre requisitos&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#download&quot; id=&quot;markdown-toc-download&quot;&gt;Download&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#instalação&quot; id=&quot;markdown-toc-instalação&quot;&gt;Instalação&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#dica-extra&quot; id=&quot;markdown-toc-dica-extra&quot;&gt;Dica extra&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;introdução&quot;&gt;Introdução&lt;/h3&gt; &lt;p&gt;&lt;img src=&quot;https://williamcanin.github.io/assets/images/posts/sublime-text-logo.png&quot; alt=&quot;Sublime Text 3&quot; width=&quot;200&quot; height=&quot;200&quot; style=&quot;float: left;padding: 12px;&quot; /&gt;&lt;/p&gt; &lt;p&gt;O &lt;a href=&quot;http://www.sublimetext.com/&quot; target=&quot;_blank&quot;&gt;Sublime Text&lt;/a&gt; é um editor de textos, ou melhor, um “super editor de textos” que todos que atuam na área de desenvolvimento deveriam ter em suas máquinas. Além de suportar várias sintaxes, o Sublime Text é baseado em plugins, ou seja, você pode customizar seu Sublime Text da maneira que lhe seja adaptável a sua usabilidade, como plugins para snippets, compactadores e muito mais.&lt;/p&gt;...</description>
+        <pubDate>Mon, 26 Jan 2015 18:13:27 -0200</pubDate>
+        <link>https://williamcanin.github.io/blog/instalando-sublime-text-no-debian/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/instalando-sublime-text-no-debian/</guid>
+        
+        <tag>editor</tag>
+        
+        <tag>sublime</tag>
+        
+        <tag>debian</tag>
+        
+      </item>
+    
+      <item>
+        <title>Qual a utilidade do Facebook para você?</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt; &lt;li&gt;&lt;a href=&quot;#facebook-você-sabe-a-utilidade-dele-para-você-nesse-momento-da-sua-vida&quot; id=&quot;markdown-toc-facebook-você-sabe-a-utilidade-dele-para-você-nesse-momento-da-sua-vida&quot;&gt;Facebook: Você sabe a utilidade dele para você nesse momento da sua vida?&lt;/a&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;#as-ideias-por-de-trás-da-exclusão&quot; id=&quot;markdown-toc-as-ideias-por-de-trás-da-exclusão&quot;&gt;As ideias por de trás da exclusão.&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#conclusão&quot; id=&quot;markdown-toc-conclusão&quot;&gt;Conclusão&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;facebook-você-sabe-a-utilidade-dele-para-você-nesse-momento-da-sua-vida&quot;&gt;Facebook: Você sabe a utilidade dele para você nesse momento da sua vida?&lt;/h1&gt; &lt;p&gt;Hoje, o &lt;a href=&quot;https://www.facebook.com&quot; target=&quot;_blank&quot;&gt;Facebook&lt;/a&gt; não é apenas uma rede social para ter um perfil próprio, pode-se ter uma página em divulgação de seu negócio, empreender. Mas se você não é um empreendedor através do Facebook, você já deve ter se perguntado assim como eu:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Será que excluo meu Facebook definitivamente? Será que...</description>
+        <pubDate>Sun, 25 Jan 2015 16:17:19 -0200</pubDate>
+        <link>https://williamcanin.github.io/blog/qual-a-utilidade-do-facebook-para-voce/</link>
+        <guid isPermaLink="true">https://williamcanin.github.io/blog/qual-a-utilidade-do-facebook-para-voce/</guid>
+        
+        <tag>facebook</tag>
+        
+        <tag>social</tag>
+        
+        <tag>misc</tag>
+        
+      </item>
+    
+  </channel>
+</rss>
