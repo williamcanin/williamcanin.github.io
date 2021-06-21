@@ -1,6 +1,6 @@
 vendor
+tmp
 node_modules
-*.bak
 _src
 Rakefile
 gulpfile.babel.js

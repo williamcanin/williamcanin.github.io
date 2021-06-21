@@ -20,7 +20,7 @@ class Manager
       'NODE_MODULES' => File.join(SOURCE, "node_modules"),
       'POST_DIR' => File.join(SOURCE, "_posts"),
       'PAGE_DIR' => File.join(SOURCE, "_pages"),
-      'PUBLIC_DIR' => File.join(SOURCE, "public"),
+      'PUBLIC_DIR' => File.join(SOURCE, "../public"),
       'DEPLOY_JSON' => File.join(SOURCE, "_src/lib/json/deploy.json"),
       'markdown_extension' => "md"
     }

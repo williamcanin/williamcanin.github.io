@@ -7,8 +7,8 @@ git push
 
 # Update build
 yarn build
-cd public || cd .
+cd ../public
 git add .
 git commit -m "Update - $(date +D:%d%m%Y-H:%H%M%S)"
-git push origin master
-cd ..
+git push origin main
+cd ../source
