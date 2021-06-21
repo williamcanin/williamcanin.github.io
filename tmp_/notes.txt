@@ -1,9 +1,0 @@
-> configurar diretorio node_modules para yarn
-> adicionar gulp no build public
-> alterar path do node_modules no manager.rb
-
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/register": "^7.6.2",
-    "gulp-babel": "^8.0.0",
