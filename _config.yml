@@ -3,6 +3,11 @@ url: "https://williamcanin.github.io"
 # the subpath of your site, e.g. /blog
 baseurl: ""
 
+
+# Plugins Gemfile
+plugins:
+  - jekyll-sitemap
+
 # Plugins de player - Jektify
 jektify:
   enable: true
