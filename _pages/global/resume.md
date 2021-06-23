@@ -117,13 +117,19 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**Gulp**](https://gulpjs.com/){:target="_blank"}|16px %}
 {% badge [**Shell script**](http://linuxcommand.org/lc3_learning_the_shell.php){:target="_blank"}|16px %}
 {% badge [**Bootstrap**](https://getbootstrap.com/){:target="_blank"}|16px %}
-{% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %}
+<!-- {% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %} -->
 {% badge [**SQL**](https://pt.wikipedia.org/wiki/SQL){:target="_blank"}|16px %}
 {% badge [**Git**](https://git-scm.com/){:target="_blank"}|16px %}
 {% badge [**Jekyll**](https://jekyllrb.com/){:target="_blank"}|16px %}
 {% badge [**Linux**](https://pt.wikipedia.org/wiki/Linux){:target="_blank"}|16px %}
 
-Para saber mais sobre o que vou desenvolvendo, acesse meu perfil na Sourcerer: [https://sourcerer.io/williamcanin](https://sourcerer.io/williamcanin).
+{:.remove-printer}
+
+Gráfico de desenvolvimento com determinadas linguagens de programação no [Github](https://github.com/williamcanin):
+
+{:.remove-printer}
+
+<img width="440px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=williamcanin&hide=html,ruby,css,coffeescript,makefile,batchfile&hide_border=true&hide_title=true&layout=compact&theme=buefy"/>
 
 <!--
 ### Idiomas
