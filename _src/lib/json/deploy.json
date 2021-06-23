@@ -4,7 +4,7 @@
       "init": true,
       "origin": "origin",
       "remote": "git@github.com:williamcanin/williamcanin.github.io.git",
-      "branch": "src"
+      "branch": "main"
     }
   },
   "public": {
@@ -12,7 +12,7 @@
       "init": true,
       "origin": "origin",
       "remote": "git@github.com:williamcanin/williamcanin.github.io.git",
-      "branch": "main"
+      "branch": "public"
     }
   }
 }
