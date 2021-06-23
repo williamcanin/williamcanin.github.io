@@ -125,7 +125,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 
 {:.remove-printer}
 
-Gráfico de desenvolvimento com determinadas linguagens de programação no [Github](https://github.com/williamcanin):
+Meu workflow de desenvolvimento no [Github](https://github.com/williamcanin):
 
 {:.remove-printer}
 
