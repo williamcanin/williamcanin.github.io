@@ -1,4 +1,6 @@
 # robotstxt.org/
 
+Sitemap: https://williamcanin.github.io/sitemap.xml
+
 User-agent: *
 Disallow: /idisconnect/
