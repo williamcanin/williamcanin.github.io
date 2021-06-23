@@ -13,3 +13,7 @@ package-lock.json
 **/*.bak
 **/*.lock
 **/*.log
+vendor
+Gemfile.lock
+node_modules
+package-lock.json
