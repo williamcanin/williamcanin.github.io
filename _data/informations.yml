@@ -122,9 +122,9 @@ website:
               Infelizmente, por algum motivo, seu e-mail não foi enviado.
               Você pode entrar em contato comigo pelo e-mail "william.costa.canin@gmail.com"
       note:
-        title: # "Nota"
-        description: # |
-          # NÃO PASSO meu número de celular a primeiro momento para desconhecidos na internet.
+        title: "Nota"
+        description: |
+          NÃO PASSO meu número de celular a primeiro momento para desconhecidos na internet.
   # Resume
     resume:
       image: "3x4.jpg"

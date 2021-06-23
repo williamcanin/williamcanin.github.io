@@ -90,7 +90,7 @@ content:
   contact:
     animation: true
     note:
-      enable: true
+      enable: false
   error:
     animation: true
   resume:
