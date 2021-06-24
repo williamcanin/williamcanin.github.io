@@ -13,7 +13,7 @@
       m.parentNode.insertBefore(a, m);
       return false;
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-199908341-2', 'auto');
+    ga('create', 'UA-200341029-1', 'auto');
     ga('send', 'pageview');
   }
 
