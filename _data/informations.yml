@@ -29,7 +29,7 @@ website:
   # Config for Google Analytics.  Note: Must have Google Analytics Tracking ID.
   google:
     analytics:
-      id: "UA-199908341-2" # tracking id, e.g. "UA-000000-01"
+      id: "UA-200341029-1" # tracking id, e.g. "UA-000000-01"
   # Terminal
   terminal:
     text:
