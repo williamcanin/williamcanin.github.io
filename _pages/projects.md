@@ -26,7 +26,7 @@ Se você queria saber sobre minhas tarefas favoritas, esta é a página correta.
 | Um tema para o [ZSH](http://zsh.org){:target="_blank"} com suporte a framework [Oh My Zsh](https://ohmyz.sh) feito em **Python**. |
 
 
-|[**Doctrl**](https://github.com/snakypy/dotctrl){:target="_blank"}|
+|[**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"}|
 --------------------------|----------------------------
 | Um gerenciador CLI de dotfiles (e muito mais) para sistemas Linux feito em **Python**. |
 
