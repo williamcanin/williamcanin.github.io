@@ -1,7 +1,7 @@
 ---
 layout: page
 order: 2
-title: Projects
+title: Projetos
 sitemap:
   priority: 0.7
   changefreq: 'monthly'
@@ -13,18 +13,29 @@ menu:
   enable: true
   local: [default]
 script: []
-published: false
+published: true
 permalink: /projects/ # add permilink for page. E.g: /smallparty/
 ---
  
-If you wanted to know about my favorite chores, this is the correct page. You find my designs of my own, or participation.
+Se você queria saber sobre minhas tarefas favoritas, esta é a página correta. Você encontra meus próprios projetos ou participação.
 
-## Major collaborations
+## Principais projetos autorais
 
-[Typing Theme](https://github.com/williamcanin/typing-jekyll-template) : Creating themes for Jekyll
-
-
-|[Typing Jekyll Template](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"}|
+|[**ZSHPower**](https://github.com/snakypy/zshpower){:target="_blank"}|
 --------------------------|----------------------------
-| **Status**: <label style="color:green;">Active</label> |
-| **Description**: Typing, is a template for Jekyll built especially for those who want to have a blog and pages quickly and lightly. |
+| Um tema para o [ZSH](http://zsh.org){:target="_blank"} com suporte a framework [Oh My Zsh](https://ohmyz.sh) feito em **Python**. |
+
+
+|[**Doctrl**](https://github.com/snakypy/dotctrl){:target="_blank"}|
+--------------------------|----------------------------
+| Um gerenciador CLI de dotfiles (e muito mais) para sistemas Linux feito em **Python**. |
+
+
+|[**Typing**](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"}|
+--------------------------|----------------------------
+| Typing, is a template for Jekyll built especially for those who want to have a blog and pages quickly and lightly. |
+
+
+|[**Jektify**](https://jektify.github.io){:target="_blank"}|
+--------------------------|----------------------------
+| Jektify é uma gem em **Ruby**, que insere uma entrada de faixa, lista de reprodução, álbuns e artistas de Spotify, em templates **Jekyll**. |

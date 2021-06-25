@@ -19,7 +19,6 @@ website:
   description: "I type code_"
   launch: 2015
   metatag:
-    # google_site_verification: "aL5Xr9VBiPa_Udck8QdFsge261DRA4Pn09M51boQHBA"
     google_site_verification: "1iqrHYtbGFMsxbe9B5dTOonrfsNE5y01_OpCYnSio-4"
     type: "WebSite"
     locale: "pt-BR"
@@ -155,22 +154,22 @@ userdata:
         icon: fa-github
         url: https://github.com/williamcanin
 
-      - title: Twitter
-        id: twitter
-        icon: fa-twitter
-        url: https://twitter.com/williamcanin
-
       - title: Youtube
         id: youtube
         icon: fa-youtube
         url: https://youtube.com/c/williamcanin
 
-#      - title: LinkedIn
-#        id: linkedin
-#        icon: fa-linkedin
-#        url: https://www.linkedin.com/in/williamcostacanin/
+      - title: Twitter
+        id: twitter
+        icon: fa-twitter
+        url: https://twitter.com/williamcanin
 
-# Affliates / Product advertising
+      # - title: LinkedIn
+      #   id: linkedin
+      #   icon: fa-linkedin
+      #   url: https://www.linkedin.com/in/williamcostacanin/
+
+## Affliates / Product advertising
 # affiliates:
 #  title: Afiliados
 #  description: "Adquira produtos de nossos ATUAIS parceiros."

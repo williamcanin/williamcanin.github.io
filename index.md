@@ -26,16 +26,8 @@ Você pode ver uma lista de meus [projetos](https://github.com/williamcanin){:ta
 
 Mais alguma coisa...? Oh sim, aqui estão os demais lugares na internet que você pode me encontrar e descobrir alguns enigmas:
 
-<!-- Add class 'markdown__listhome' for float: left -->
-
-<!-- {: .markdown__listhome} -->
- [Sourcerer](https://sourcerer.io/williamcanin) |
- <!-- [LinkedIn](https://www.linkedin.com/in/williamcostacanin/){:target="_blank"} | -->
- [GitHub](https://github.com/williamcanin){:target="_blank"} |
- [YouTube](https://youtube.com/c/williamcanin){:target="_blank"} |
- [GitLab](https://gitlab.com/williamcanin){:target="_blank"} |
- [Twitter](https://twitter.com/williamcanin/){:target="_blank"} |
- <!-- [Spotify](https://open.spotify.com/user/williamcanin){:target="_blank"} | -->
- <span style="color: red;">Facebook Error 404</span> | <span style="color: red;">Instagram Error 404</span>
+[GitHub](https://github.com/williamcanin){:target="_blank"} - 
+[YouTube](https://youtube.com/c/williamcanin){:target="_blank"} - 
+<span style="color: red;">Facebook Error 404</span> - <span style="color: red;">Instagram Error 404</span>
 
 <!-- "The pain that hurts me is the same as it teaches me." -->

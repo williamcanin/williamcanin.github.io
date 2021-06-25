@@ -129,7 +129,7 @@ Meu workflow de desenvolvimento no [Github](https://github.com/williamcanin):
 
 {:.remove-printer}
 
-<img width="440px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=williamcanin&hide=html,ruby,css,coffeescript,makefile,batchfile&hide_border=true&hide_title=true&layout=compact&theme=buefy"/>
+<img class="img-fluid" width="440px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=williamcanin&hide=html,ruby,css,coffeescript,makefile,batchfile&hide_border=true&hide_title=true&layout=compact&theme=buefy"/>
 
 <!--
 ### Idiomas
@@ -138,18 +138,5 @@ Meu workflow de desenvolvimento no [Github](https://github.com/williamcanin):
 **Português:** Fluente (Nativo)  
 **Inglês:** Básico (Técnico)
 -->
-
-### Top 5 Projetos Open Source
----
-
-[**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"} - Um gerenciador CLI de dotfiles (e muito mais) para sistemas Linux feito em **Python**.
-
-[**ZSHPower**](https://github.com/snakypy/zshpower){:target="_blank"} - Um tema para o [ZSH](http://zsh.org){:target="_blank"} com suporte a framework [Oh My Zsh](https://ohmyz.sh) feito em **Python**.
-
-[**Typing**](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} - Typing, é um template para o Jekyll criado especialmente para quem deseja ter um site estático e páginas com rapidez, leveza e muitas customizações.
-
-[**Jektify**](https://jektify.github.io){:target="_blank"} - Jektify é uma gem em **Ruby**, que insere uma entrada de faixa, lista de reprodução, álbuns e artistas de Spotify, em templates **Jekyll**.
-
-[**Recover Grub**](https://github.com/williamcanin/recover-grub){:target="_blank"} - Script em **Python** (3.x) para realizar a recuperação do Grub no Linux.
 
 <!-- *"Leve a vida com responsabilidade mas nunca deixe de ser divertido(a) :smile:".* Obrigado por ler. -->
