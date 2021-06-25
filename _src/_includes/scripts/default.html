@@ -24,11 +24,6 @@ Include Data Base  -->
 <script src="{{ '/assets/vendor/jektify/js/jektify.min.js' | prepend: site.baseurl | prepend: site.url }}"></script>
 {% endif %}
 
-<!-- Diqus counts -->
-{% if jekyll.environment == 'production' and load_data.userdata.disqus.username %}
-<script id="dsq-count-scr" src="//{{ load_data.userdata.disqus.username }}.disqus.com/count.js" async></script>
-{% endif %}
-
 <!-- Google reCAPTCHA (for Getform.io) -->
 <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
 
