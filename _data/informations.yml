@@ -142,7 +142,7 @@ website:
 
 # User data
 userdata:
-  email: william.costa.canin@gmail.com # E.g: youremail@domain.com
+  email: contact@williamcanin.dev # E.g: youremail@domain.com
   twitter: "@williamcanin" # E.g: "@my_twitter"
   disqus:
     username: williamcanin # E.g: myuser
