@@ -1,0 +1,1691 @@
+<!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title Site
+  ___________________________________________ -->
+  <title>
+    
+    
+        
+          Instalando Arch Linux com criptografia LUKS e LVM | William Canin - I type code_
+        
+    
+    
+  </title>
+
+  <!-- Metatags
+  ___________________________________________ -->
+  <meta name=description
+  content="
+    ">
+
+
+  
+  <meta name="google-site-verification"
+  content="1iqrHYtbGFMsxbe9B5dTOonrfsNE5y01_OpCYnSio-4">
+  
+
+  
+
+  
+  <meta http-equiv="cache-control" content="max-age=31536000"/>
+  
+
+  <meta http-equiv="pragma" content="public">
+
+  <meta name="keywords" content="William, Canin, Analista, Desenvolvedor, Programador, WebDesign, Geek" />
+
+  <meta name="author" content="William Canin" />
+
+  <meta http-equiv="Content-Language" content="pt-BR">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="pt-BR" />
+
+  <meta property="og:site_name" content="William Canin" />
+
+  <meta property="og:type" content="WebSite" />
+
+  <meta property="og:url" content="https://williamcanin.dev/blog/instalando-archlinux-com-criptografia-luks-e-lvm/" />
+
+  <meta property="og:description" content="
+    I type code_" />
+
+  <meta property="og:title" content="Instalando Arch Linux com criptografia LUKS e LVM
+  " />
+
+  <link rel="canonical" href="https://williamcanin.dev/blog/instalando-archlinux-com-criptografia-luks-e-lvm/">
+
+  <link type="application/atom+xml" rel="alternate"
+  title="William Canin"
+  href="https://williamcanin.dev/feed.xml">
+
+    <!-- Favicon
+  ___________________________________________ -->
+  <link rel="icon" type="image/png" sizes="32x32"
+  href="https://williamcanin.dev/assets/images/favicon/favicon-32x32.png">
+
+
+  <!-- Fonts
+  ___________________________________________ -->
+  <!-- https://freebies.fluxes.com/blog/best-free-typewriter-fonts/
+  https://www.creativebloq.com/typography/best-typewriter-fonts-10135084 -->
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  
+  
+  <!--   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet"> -->
+
+  <!-- Vendor
+  ___________________________________________ -->
+  <link rel="stylesheet" href="https://williamcanin.dev/assets/css/bootstrap.css">
+  
+
+  <!-- Themes
+  ___________________________________________ -->
+  
+  <link rel="stylesheet" href="https://williamcanin.dev/assets/css/custom.css">
+
+  <!-- Google Analytics -->
+  
+    <script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-200341029-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+
+  
+
+</head>
+
+  <body class="body  underline_links " id="top">
+    <div class="container layout_default">
+      <div class="row">
+        <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-lg-3 px-0 mt-0 sidebar">
+  <div class="
+     py-3 
+     sticky-top  flex-grow-1">
+    <div class="pt-3 sidebar__wrapper">
+      <div class="nav flex-lg-column mx-3 mx-lg-0">
+        
+        <div class="d-none 
+           d-sm-block 
+          sidebar__avatar_flip">
+          <div class="sidebar__avatar_flip-card">
+            <a class="sidebar__avatar_flip-front sidebar__avatar_flip-face" href="https://williamcanin.dev/">
+              
+                <!-- Add your SVG - BEGIN -->
+                <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg class="p-1 img-fluid mx-auto d-block 
+                   animation__pulse 
+                   sidebar_avatar_circle 
+                   sidebar_avatar_background 
+                   sidebar_avatar_border 
+                  svg_vvfolded" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="900" height="900" viewbox="0 0 843.75 843.75" version="1.1" id="svg6" sodipodi:docname="avatar.svg" inkscape:version="0.92.4 5da689c313, 2019-01-14">
+                  <metadata id="metadata12">
+                    <rdf>
+                      <work rdf:about="">
+                        <format>image/svg+xml</format>
+                        <type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></type>
+                        <title></title>
+                      </work>
+                    </rdf>
+                  </metadata>
+                  <defs id="defs10"></defs>
+                  <namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1326" inkscape:window-height="704" id="namedview8" showgrid="false" inkscape:zoom="0.34766083" inkscape:cx="225.43491" inkscape:cy="355.19507" inkscape:window-x="40" inkscape:window-y="27" inkscape:window-maximized="1" inkscape:current-layer="svg6"></namedview>
+                  <g id="g4539">
+                    <rect class="svg_vvfolded__background" ry="0" y="-2.9804077" x="-3.0152702e-05" height="846.73041" width="849.42706" id="rect4516" style="opacity:1;fill:#222222;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1875;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"></rect>
+                    <path class="svg_vvfolded__vvfolded1" inkscape:export-ydpi="96" inkscape:export-xdpi="96" style="fill:#ffe609;fill-opacity:1;fill-rule:evenodd;stroke-width:4.16359711" inkscape:connector-curvature="0" id="path2-3" d="M 331.0684,666.83732 C 390.87279,480.08949 545.03993,338.83221 706.09828,200.89819 491.37017,326.08201 286.42471,542.95907 27.568183,254.47634 138.30221,386.98897 254.88865,516.47519 331.0684,666.83732 Z"></path>
+                    <path class="svg_vvfolded__vvfolded2" inkscape:export-ydpi="96" inkscape:export-xdpi="96" sodipodi:nodetypes="cccccc" style="fill:#ffe609;fill-opacity:1;fill-rule:evenodd;stroke-width:4.16359711" inkscape:connector-curvature="0" id="path4-6" d="m 440.06019,494.81503 c 33.09425,33.06671 79.79511,100.74197 135.32976,171.38121 92.8209,-98.58121 196.52871,-260.89999 238.3791,-381.4254 -31.63506,59.1696 -171.19279,220.128 -223.92944,219.30068 -56.95036,2.46828 -60.39653,-56.84676 -83.36077,-88.80475 -26.066,22.9086 -45.86676,47.1145 -66.41865,79.54826 z"></path>
+                  </g>
+                </svg>
+                <!-- Add your SVG - END -->
+                
+            </a>
+            <a class="sidebar__avatar_flip-back sidebar__avatar_flip-face" href="https://williamcanin.dev/">
+              
+              <img class="p-1 img-fluid mx-auto d-block
+                 animation__pulse 
+                 sidebar_avatar_circle 
+                 sidebar_avatar_background 
+                 sidebar_avatar_border 
+                image_avatar  
+              " src="/assets/images/avatar/avatar_flip_yellow.svg" alt="Avatar">
+              
+            </a>
+          </div>
+        </div>
+        
+        <h1 class="p-2 text-center d-md-flex align-items-center mx-auto  animation__sidebar-title  sidebar__title">
+          <a href="https://williamcanin.dev/" class="nav-link" style="font-size: 2.3rem">Hey, <br> I'm W://iam.</a>
+        </h1>
+        <div class="p-2 mx-3
+           d-md-flex flex-md-column align-items-md-start 
+          align-items-center align-items-lg-start flex-lg-column mx-auto mr-lg-3 ml-lg-3
+          sidebar__menu  animation__sidebar-menu ">
+          <div class="my-1 d-none d-md-block mr-3 sidebar__menu-title">Menu: Blog</div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+              <i class="mr-1 fas fa-edit"></i>
+              <a class="sidebar__menu-link" href="https://williamcanin.dev/blog/index.html">Blog</a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+              <i class="mr-1 fas fa-tags"></i>
+              <a class="sidebar__menu-link" href="https://williamcanin.dev/blog/tags/">Tags</a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+              <i class="mr-1 fas fa-search"></i>
+              <a class="sidebar__menu-link" href="https://williamcanin.dev/blog/search/">Pesquisar</a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          <li class="mr-3 mr-lg-0 float-left float-lg-none sidebar__menu-item">
+              <i class="mr-1 fas fa-rss"></i>
+              <a class="sidebar__menu-link" href="https://williamcanin.dev/blog/feed.xml">Feed</a>
+          </li>
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-lg-9 p-0 py-4 content" id="main">
+    <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="px-3 mt-lg-0 layout_post  animation__content " itemscope itemtype="http://schema.org/BlogPosting">
+
+  <!-- <div class="container-fluid"> -->
+
+
+    <div class="p-0 p-lg-3 mb-4 layout_post__header">
+      <h1 class="font-weight-bold layout_post__title">Instalando Arch Linux com criptografia LUKS e LVM</h1>
+      <div class="layout_post__date">
+        <time class="layout_post__time">
+          <i class="far fa-calendar-alt"></i>
+          
+
+
+
+Abril
+  
+27,
+2017
+
+        </time>
+      </div>
+
+      <div class="layout_post__tags">
+        <i class="fa fa-tags"></i> Tags: 
+        
+        <a class="layout_post__tags-link" href="https://williamcanin.dev/blog/tags//archlinux">archlinux</a> |
+        
+        <a class="layout_post__tags-link" href="https://williamcanin.dev/blog/tags//encryption">encryption</a> |
+        
+        <a class="layout_post__tags-link" href="https://williamcanin.dev/blog/tags//luks">luks</a> |
+        
+        <a class="layout_post__tags-link" href="https://williamcanin.dev/blog/tags//lvm">lvm</a> |
+        
+      </div>
+
+      
+      <div class="layout_post__reading_time">
+        <i class="far fa-clock"></i>
+        Leia isto "em cerca de  32  minutos".
+      </div>
+      
+
+    </div>
+
+    <div class="p-0 p-lg-3 mb-4 layout_post__content">
+      <div class="d-block">
+          <div class="py-3 row">
+            <div class="offset-6 col-6 offset-sm-9 col-sm-3 offset-lg-10 col-lg-2">
+            <!-- jekyll.environment == 'production' and -->
+            
+              </div>
+            </div>
+        <ul id="markdown-toc">
+  <li><a href="#requerimentos" id="markdown-toc-requerimentos">Requerimentos</a></li>
+  <li><a href="#introdu%C3%A7%C3%A3o" id="markdown-toc-introdução">Introdução</a></li>
+  <li><a href="#preparando-o-b%C3%A1sico" id="markdown-toc-preparando-o-básico">Preparando o básico</a></li>
+  <li>
+<a href="#o-fdisk" id="markdown-toc-o-fdisk">O fdisk</a>    <ul>
+      <li><a href="#conceitos" id="markdown-toc-conceitos">Conceitos</a></li>
+      <li><a href="#conhecendo-a-estrutura-de-parti%C3%A7%C3%B5es" id="markdown-toc-conhecendo-a-estrutura-de-partições">Conhecendo a estrutura de partições</a></li>
+      <li><a href="#usando-o-fdisk" id="markdown-toc-usando-o-fdisk">Usando o fdisk</a></li>
+      <li><a href="#criando-a-parti%C3%A7%C3%A3o-de-boot-com-fdisk" id="markdown-toc-criando-a-partição-de-boot-com-fdisk">Criando a partição de Boot com fdisk</a></li>
+      <li><a href="#criando-parti%C3%A7%C3%A3o-do-windows-com-fdisk" id="markdown-toc-criando-partição-do-windows-com-fdisk">Criando partição do Windows com fdisk</a></li>
+      <li><a href="#criando-parti%C3%A7%C3%A3o-linux-lvm-com-fdisk" id="markdown-toc-criando-partição-linux-lvm-com-fdisk">Criando partição “Linux LVM” com fdisk</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#o-luks" id="markdown-toc-o-luks">O LUKS</a>    <ul>
+      <li><a href="#conceitos-1" id="markdown-toc-conceitos-1">Conceitos</a></li>
+      <li><a href="#criptografando-a-parti%C3%A7%C3%A3o-linux-lvm" id="markdown-toc-criptografando-a-partição-linux-lvm">Criptografando a partição “Linux LVM”</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#o-lvm" id="markdown-toc-o-lvm">O LVM</a>    <ul>
+      <li><a href="#conceitos-2" id="markdown-toc-conceitos-2">Conceitos</a></li>
+      <li>
+<a href="#utilizando-os-componentes-do-lvm" id="markdown-toc-utilizando-os-componentes-do-lvm">Utilizando os componentes do LVM</a>        <ul>
+          <li><a href="#criando-physical-volume-pv" id="markdown-toc-criando-physical-volume-pv">Criando Physical Volume (PV)</a></li>
+          <li><a href="#criando-volume-group-vg" id="markdown-toc-criando-volume-group-vg">Criando Volume Group (VG)</a></li>
+          <li><a href="#criando-logical-volume-lv" id="markdown-toc-criando-logical-volume-lv">Criando Logical Volume (LV)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<a href="#formatando-as-parti%C3%A7%C3%B5es" id="markdown-toc-formatando-as-partições">Formatando as partições</a>    <ul>
+      <li><a href="#sistema-de-arquivos-e-home" id="markdown-toc-sistema-de-arquivos-e-home">Sistema de Arquivos e Home</a></li>
+      <li><a href="#boot" id="markdown-toc-boot">Boot</a></li>
+      <li><a href="#swap" id="markdown-toc-swap">Swap</a></li>
+    </ul>
+  </li>
+  <li><a href="#montagem-das-parti%C3%A7%C3%B5es" id="markdown-toc-montagem-das-partições">Montagem das partições</a></li>
+  <li>
+<a href="#instalando-e-configurando-o-arch-linux" id="markdown-toc-instalando-e-configurando-o-arch-linux">Instalando e configurando o Arch Linux</a>    <ul>
+      <li><a href="#conceitos-3" id="markdown-toc-conceitos-3">Conceitos</a></li>
+      <li><a href="#instalando-o-sistema-base" id="markdown-toc-instalando-o-sistema-base">Instalando o sistema base</a></li>
+      <li><a href="#criando-etcfstab" id="markdown-toc-criando-etcfstab">Criando /etc/fstab</a></li>
+      <li><a href="#entrando-no-sistema-instalado" id="markdown-toc-entrando-no-sistema-instalado">Entrando no sistema instalado</a></li>
+      <li><a href="#configurando-layout-do-teclado" id="markdown-toc-configurando-layout-do-teclado">Configurando layout do teclado</a></li>
+      <li><a href="#criando-um-senha-para-usu%C3%A1rio-root" id="markdown-toc-criando-um-senha-para-usuário-root">Criando um senha para usuário <code class="language-plaintext highlighter-rouge">root</code></a></li>
+      <li><a href="#instalado-pacotes-necess%C3%A1rios" id="markdown-toc-instalado-pacotes-necessários">Instalado pacotes necessários</a></li>
+      <li><a href="#habilitando-idiomas" id="markdown-toc-habilitando-idiomas">Habilitando idiomas</a></li>
+      <li><a href="#informando-o-idioma-padr%C3%A3o-para-o-sistema" id="markdown-toc-informando-o-idioma-padrão-para-o-sistema">Informando o idioma padrão para o sistema</a></li>
+      <li><a href="#configurando-localidade" id="markdown-toc-configurando-localidade">Configurando localidade</a></li>
+      <li><a href="#configurando-hostname" id="markdown-toc-configurando-hostname">Configurando hostname</a></li>
+      <li><a href="#habilitando-rede-cabeada-durante-o-boot" id="markdown-toc-habilitando-rede-cabeada-durante-o-boot">Habilitando rede cabeada durante o boot</a></li>
+      <li><a href="#criando-um-usu%C3%A1rio-padr%C3%A3o" id="markdown-toc-criando-um-usuário-padrão">Criando um usuário padrão</a></li>
+      <li><a href="#configurando-o-etcfstab" id="markdown-toc-configurando-o-etcfstab">Configurando o /etc/fstab</a></li>
+      <li><a href="#configurando-o-etcmkinitcpioconf" id="markdown-toc-configurando-o-etcmkinitcpioconf">Configurando o /etc/mkinitcpio.conf</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#o-grub" id="markdown-toc-o-grub">O Grub</a>    <ul>
+      <li><a href="#conceitos-4" id="markdown-toc-conceitos-4">Conceitos</a></li>
+      <li><a href="#instalando-o-grub-no-sistema" id="markdown-toc-instalando-o-grub-no-sistema">Instalando o Grub no sistema</a></li>
+      <li><a href="#configurando-o-grub" id="markdown-toc-configurando-o-grub">Configurando o Grub</a></li>
+      <li><a href="#gerando-as-configura%C3%A7%C3%B5es" id="markdown-toc-gerando-as-configurações">Gerando as configurações</a></li>
+      <li><a href="#instalando-o-grub-na-unidade" id="markdown-toc-instalando-o-grub-na-unidade">Instalando o Grub na unidade</a></li>
+    </ul>
+  </li>
+  <li><a href="#reiniciando-o-sistema" id="markdown-toc-reiniciando-o-sistema">Reiniciando o sistema</a></li>
+  <li><a href="#conclus%C3%A3o" id="markdown-toc-conclusão">Conclusão</a></li>
+</ul>
+
+<h1 id="requerimentos">Requerimentos</h1>
+
+<ul>
+  <li>Imagem do <a href="https://www.archlinux.org/download/" target="_blank">Arch Linux</a> queimada em DVD ou Pendrive Bootável.</li>
+  <li>Espaço livre no HD(SSD) ou usar <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a> para realizar esse tutorial.</li>
+  <li>Conexão com a Internet.</li>
+</ul>
+
+<blockquote>
+  <p>Nota: Não irei entrar em detalhe de como realizar o procedimento de gravação
+de imagem ou como usar VirtualBox, não é o foco do tutorial.</p>
+</blockquote>
+
+<p>Se você for instalar o Arch Linux em uma máquina mesmo, você vai precisar de um celular, tablet, notebook, ou até mesmo outro desktop para poder acompanhar esse tutorial. Isso porque você vai cair em uma “tela preta” de comandos, e realmente é só você e “ela”. Não tem um ambiente desktop para você acessar o navegador e pesquisar enquando instala igual outras distribuições.</p>
+
+<h1 id="introdução">Introdução</h1>
+
+<p>Uma das coisas mais temidas para quem usa um computador, pode se dizer que é os dados contido nele. Dependendo de qual informação você tem em sua máquina, isso pode comprometer (e muito) sua vida pessoal, no trabalho, etc.</p>
+
+<p>Ter uma máquina com uma senha de login “forte”, <strong>N Ã O</strong> irá manter seus dados seguros de alguém que tenha um conhecimento não leigo. Vou enfatizar melhor com o seguinte exemplo qual seria esse conhecimento:</p>
+
+<p><em>Imagine você com sua linda máquina onde seu(s) S.O estão instalados em partições (ou até mesmo em um HD/SSD completo) que não tem criptografia. Simplesmente a pessoa pega um S.O bootável (no pendrive ou DVD), inicia sua máquina com o mesmo, monta as partições e, “tcharamm”! Os dados de sua máquina estão expostos para esse indivíduo ‘esperto’.</em></p>
+
+<p>Com base nesse pequeno exemplo acima, podemos pensar:</p>
+
+<p><strong>E se você impedir que as partições sejam montadas através de um sistema bootável? E se para montar partições tivesse uma senha para isso?</strong></p>
+
+<p>Bom, com o alocador de volumes LVM no Linux e criptografia LUKS, isso é possível! Eba <img class="emoji" title=":smirk:" alt=":smirk:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png" height="20" width="20"></p>
+
+<p><a href="http://web.mit.edu/rhel-doc/3/rhel-sag-pt_br-3/ch-lvm-intro.html" target="_blank">LVM</a> permite a criação de partições com a possibilidade de redimencioná-las. O disco ou seu conjunto é alocado em um ou mais volumes. O LVM trabalha com volumes físcos que são combinados com grupos lógicos.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup" target="_blank">Luks</a> é uma especificação de criptografia de disco originalmente planejada para Linux.</p>
+
+<p>Essa criptografia pode ser aplicada a qualquer distribuição Linux. Porem, os passos são diferentes de acordo com a instalação da distribuição. Mas o conceito é o mesmo.</p>
+
+<p>Então, neste caso, para podermos utilizar esse conceito de criptografia e de alocamento de disco com o LVM, temos que passar pelo processo de instalação da distribuição. Então, vamos a instalação…</p>
+
+<p><em>Arch Linux! Eu escolho você!</em></p>
+
+<h1 id="preparando-o-básico">Preparando o básico</h1>
+
+<p>Já com o Arch Linux em boot na máquina…</p>
+
+<div class="row imager__plugin">
+            <img class="img-fluid mx-auto d-block" src="/assets/images/posts/instalando-archlinux-com-criptografia-luks-e-lvm/start_archlinux_boot.jpg" title="instalando-archlinux-com-criptografia-luks-e-lvm/start_archlinux_boot.jpg" alt="instalando-archlinux-com-criptografia-luks-e-lvm/start_archlinux_boot.jpg">
+          </div>
+
+<p> a primeira coisa a se fazer é carregar o layout do teclado, para isso você precisa saber qual é o seu <a href="https://wiki.archlinux.org/index.php/KEYMAP_(Portugu%C3%AAs)" target="_blank">KEYMAP</a>.</p>
+
+<p>Uma forma de fazer isso via console, é usando o comando abaixo para listar os layouts disponíveis:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">localectl list-keymaps</code></pre></figure>
+
+<p>No meu caso é <code class="language-plaintext highlighter-rouge">br-abnt2</code>:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">loadkeys br-abnt2</code></pre></figure>
+
+<blockquote>
+  <p>Nota: Essa configuração é temporária, isso porque ainda não estamos com
+o sistema Arch Linux instalado para deixar permanente.</p>
+</blockquote>
+
+<p>Agora iremos carregar alguns módulos <strong>crypt</strong>, que iremos usar para realizar toda criptografia:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">modprobe <span class="nt">-a</span> dm-mod dm-crypt</code></pre></figure>
+
+<h1 id="o-fdisk">O fdisk</h1>
+
+<h2 id="conceitos">Conceitos</h2>
+
+<p>O <code class="language-plaintext highlighter-rouge">fdisk</code> é uma ferramenta indispensável para quem usa Arch Linux. É com ela que criamos todas partições em nosso disco durante a instalação. O <code class="language-plaintext highlighter-rouge">fdisk</code> é baseado através de linhas de comandos, como isso, você pode achar um pouco complexo no começo, mas com tempo se acostuma. <img class="emoji" title=":laughing:" alt=":laughing:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png" height="20" width="20"> Caso realmente não queira utilizar o <code class="language-plaintext highlighter-rouge">fdisk</code>, existe o cfdisk.</p>
+
+<p>O <a href="https://en.wikipedia.org/wiki/Cfdisk" target="_blank">cfdisk</a>, é como se fosse um “fork” do <code class="language-plaintext highlighter-rouge">fdisk</code>, porem, baseado em uma interface usando as setas direcionais do teclado.</p>
+
+<h2 id="conhecendo-a-estrutura-de-partições">Conhecendo a estrutura de partições</h2>
+
+<p>Vamos começar a partir de agora, a trabalhar com o <code class="language-plaintext highlighter-rouge">fdisk</code> para a criação de partições. Mas antes de começar, devemos entender a estrutura de partições que devemos ou queremos ter na máquina.</p>
+
+<p>Nessa instalação, vou usar a seguinte estrutura de 3(três) partições:</p>
+
+<ul>
+  <li>Uma para Linux Boot</li>
+  <li>Uma para Windows</li>
+  <li>Uma para Linux LVM</li>
+</ul>
+
+<p>Não sei quanto a você, mas eu uso <a href="https://www.microsoft.com/pt-br/windows/" target="_blank">Windows</a> e outras distribuições Linux em outras partições na minha máquina, então já vou aproveitar e deixar essa intalação com esse tipo de ambiente.</p>
+
+<p>Caso você não utilize Windows e nem outras distribuições Linux, você simplesmente deve realizar a criação da partição de <strong>Linux Boot</strong> e uma para <strong>Linux LVM</strong>.</p>
+
+<p>Como vamos utilizar <strong>LVM</strong> na partição Linux, nessa mesma partição podemos expandir outros volumes lógicos, ou seja, outras distribuições Linux dentro dessa partição do tipo LVM podem ser criadas (desde que exista espaço).</p>
+
+<h2 id="usando-o-fdisk">Usando o fdisk</h2>
+
+<p>Primeira coisa a se fazer antes de usar o o <code class="language-plaintext highlighter-rouge">fdisk</code>, é obter as informações de nosso disco rígido, listando o mesmo para ver se encontra partições ou se o mesmo está sendo reconhecido. Então, para isso, digite o comando abaixo para realizar a listagem:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">fdisk <span class="nt">-l</span></code></pre></figure>
+
+<div class="row imager__plugin">
+            <img class="img-fluid mx-auto d-block" src="/assets/images/posts/instalando-archlinux-com-criptografia-luks-e-lvm/fdisk_list.jpg" title="instalando-archlinux-com-criptografia-luks-e-lvm/fdisk_list.jpg" alt="instalando-archlinux-com-criptografia-luks-e-lvm/fdisk_list.jpg">
+          </div>
+
+<p>Observe: Como estou utilizando o VirtualBox, repare que na listagem dos HD acima, só existe o <code class="language-plaintext highlighter-rouge">/dev/sda</code>, porem você pode ter mais de um HD/SSD, então cabe a você saber qual irá trabalhar. Neste caso iremos usar o <code class="language-plaintext highlighter-rouge">/dev/sda</code>.</p>
+
+<p>Digite o comando abaixo para inicarmos o trabalho no disco <code class="language-plaintext highlighter-rouge">/dev/sda</code>.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">fdisk /dev/sda</code></pre></figure>
+
+<p>Nesse momento o <code class="language-plaintext highlighter-rouge">fdisk</code> já está pronto para trabalhar no disco <code class="language-plaintext highlighter-rouge">/dev/sda</code>. Ele é bem intuitivo. Já diz para você digitar <strong>m</strong> para ver as opções. Faça isso.</p>
+
+<p>Se você viu as opções, observou que a opção <strong>n</strong> é de <strong>new</strong>, ou seja, criar novas partições, e é justamente isso que precisamos nesse momento, criar nossas partições, então mãos a obra.</p>
+
+<h2 id="criando-a-partição-de-boot-com-fdisk">Criando a partição de Boot com fdisk</h2>
+
+<blockquote>
+  <p>Nota: A partição de boot deve ficar fora da partição criptografada com LUKS,
+por isso devemos criar a mesma separada das demais.</p>
+</blockquote>
+
+<p>A primeira partição que iremos criar é a partição de Boot, então…</p>
+
+<blockquote>
+  <p>Digite: <strong>n</strong></p>
+</blockquote>
+
+<p>Depois irá perguntar para você o tipo de partição que você quer, primária ou extendida. Usamos a primeira opção, partição primária.</p>
+
+<blockquote>
+  <p>Digite: <strong>p</strong></p>
+</blockquote>
+
+<p>Agora, o <code class="language-plaintext highlighter-rouge">fdisk</code> irá pedir o numero da partição, por padrão, está com <strong>1</strong>.</p>
+
+<blockquote>
+  <p>Digite: <strong>1</strong> e dê Enter</p>
+</blockquote>
+
+<p>Nesse momento o <code class="language-plaintext highlighter-rouge">fdisk</code> irá imprimir o setor incial para você escolher para essa nova partição, por padrão, ele já seleciona o setor incial, então…</p>
+
+<blockquote>
+  <p>Apenas de <strong>Enter</strong></p>
+</blockquote>
+
+<p>Agora é a hora do <code class="language-plaintext highlighter-rouge">fdisk</code> definir o setor final, ou seja, nesse momento você terá que informar o tamanho que essa nova partição irá ter. Ele lhe dará a opção de definir a criação como Kbytes(K), MegaBytes(M) Gigabytes(G), etc. Vamos criar em MegaBytes (M).</p>
+
+<p>Algo <strong>I M P O R T A N T E</strong> que você precisa saber, é que a partição de <strong>Boot</strong> não usa mais de que <strong>200MB</strong>. Então:</p>
+
+<blockquote>
+  <p>Digite: <strong>+200M</strong> e dê Enter</p>
+</blockquote>
+
+<p>Pronto, a partição foi criada, e o tipo da mesma como ‘Linux’(isso se você observou o print que o <code class="language-plaintext highlighter-rouge">fdisk</code> deixou na tela :D).
+A partição de Boot tem que ser do tipo Linux, mas além de ser Linux, ela terá que ser bootável. Para isso usamos a opção <strong>a</strong> do <code class="language-plaintext highlighter-rouge">fdisk</code>, que deixa uma partição Ĺinux do tipo bootável. Então:</p>
+
+<blockquote>
+  <p>Digite: <strong>a</strong> e dê Enter</p>
+</blockquote>
+
+<p>Certo, a nova partição obtevo o tipo bootável, mas ainda está gravado em memória do <code class="language-plaintext highlighter-rouge">fdisk</code> essas mudanças, precisamos salvar essas mudanças fisicamente. Para isso usa-se a letra <strong>w</strong> de <strong>write</strong>. Então:</p>
+
+<blockquote>
+  <p>Digite: <strong>w</strong> e dê Enter</p>
+</blockquote>
+
+<p>Ao gravar, o <code class="language-plaintext highlighter-rouge">fdisk</code> irá se fechar automaticamente , isso pra que você possa verificar se realmente as mudanças (ou partições) foram concluídas. Para verficar, apenas de o comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">fdisk <span class="nt">-l</span></code></pre></figure>
+
+<p>Veja na imagem que existe uma nova partição do disco <code class="language-plaintext highlighter-rouge">/dev/sda</code>, e essa partição é a <code class="language-plaintext highlighter-rouge">/dev/sda1</code>. Então nossa partição do tipo Boot foi criada com sucesso! Yuupii! <img class="emoji" title=":pray:" alt=":pray:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64f.png" height="20" width="20"></p>
+
+<div class="row imager__plugin">
+            <img class="img-fluid mx-auto d-block" src="/assets/images/posts/instalando-archlinux-com-criptografia-luks-e-lvm/list_boot_partition.jpg" title="instalando-archlinux-com-criptografia-luks-e-lvm/list_boot_partition.jpg" alt="instalando-archlinux-com-criptografia-luks-e-lvm/list_boot_partition.jpg">
+          </div>
+
+<blockquote>
+  <p>Lembrando que se você estiver usando um sistema com EFI, crie uma partição
+do tipo EFI!</p>
+</blockquote>
+
+<h2 id="criando-partição-do-windows-com-fdisk">Criando partição do Windows com fdisk</h2>
+
+<blockquote>
+  <p>Nota: A partição do Windows não suporta criptografia LUKS, isso porque,
+o LUKS só encarrega de gerenciar partições Linux. Então a partição Windows
+terá que ser independente.</p>
+</blockquote>
+
+<p>Agora que você já sabe como criar partições com o <code class="language-plaintext highlighter-rouge">fdisk</code>, os passoas anteriores não precisam ser repetidos para as duas partições que nos resta, a de <strong>Windows</strong> e a do <strong>Linux</strong>.</p>
+
+<p>Porém, algo <strong>I M P O R T A N T E</strong> que você precisa saber, é que toda vez que criamos uma partição nova, ela irá obter o tipo ‘Linux’ de inicio. Neste caso como é uma partição para Windows, e Windows utiliza <strong>NTFS</strong>, devemos editar o tipo dessa partição.</p>
+
+<p>Você pode digitar <strong>m</strong> novamente para ver a letra que se aplica para deixar a partição em modo de edição, mas como sou bonzinho vou dizer, é a letra <strong>t</strong>, de <strong>type</strong>.</p>
+
+<blockquote>
+  <p>Digite: <strong>t</strong> e dê Enter</p>
+</blockquote>
+
+<p>O <code class="language-plaintext highlighter-rouge">fdisk</code> deixará sua partição em modo de edição, agora basta você escolher o tipo que essa partição vai ter, utilizando a própria sugestão do <code class="language-plaintext highlighter-rouge">fdisk</code>, onde pede para digitar <strong>L</strong> (em maíusculo) para listar os tipos de partições disponíveis.</p>
+
+<blockquote>
+  <p>Digite: <strong>L</strong> e dê Enter</p>
+</blockquote>
+
+<p>Nesse momento você verá a lista de tipos de partição, onde cada uma delas está sendo representada por um código, a partição de <strong>NTFS</strong> é o código <strong>86</strong>.</p>
+
+<blockquote>
+  <p>Digite: <strong>86</strong> e dê Enter</p>
+</blockquote>
+
+<p>Agora, simplesmente escreve essas mudaçãs como já aprendemos anteriormente com a opção <strong>w</strong>.</p>
+
+<blockquote>
+  <p>Digite: <strong>w</strong> e dê Enter</p>
+</blockquote>
+
+<h2 id="criando-partição-linux-lvm-com-fdisk">Criando partição “Linux LVM” com fdisk</h2>
+
+<p>Como vamos trabalhar com LVM, o tipo da partição Linux, <strong>O B R I G A T Ó R I A M E N T E</strong>, tem que ser do tipo <em>‘Linux LVM’</em>. Então crie essa nova partição com o código: <strong>8e</strong>.</p>
+
+<p>Chegamos ao final de criação de partições com <code class="language-plaintext highlighter-rouge">fdisk</code>, veja uma imagem de exemplo ficou:</p>
+
+<div class="row imager__plugin">
+            <img class="img-fluid mx-auto d-block" src="/assets/images/posts/instalando-archlinux-com-criptografia-luks-e-lvm/list_all_partitions.jpg" title="instalando-archlinux-com-criptografia-luks-e-lvm/list_all_partitions.jpg" alt="instalando-archlinux-com-criptografia-luks-e-lvm/list_all_partitions.jpg">
+          </div>
+
+<p>Memorize bem as seguintes partições abaixo, pois iremos utilizar elas mais pra frente:</p>
+
+<ul>
+  <li>Boot &gt; /dev/sda1</li>
+  <li>Linux &gt; /dev/sda3</li>
+</ul>
+
+<h1 id="o-luks">O LUKS</h1>
+
+<h2 id="conceitos-1">Conceitos</h2>
+
+<p>Existe várias formadas de criptografar partições com LUKS. Selecionei 3(três) delas que achei interessante para levantar alguns conceitos, veja:</p>
+
+<ul>
+  <li>Criptografar a partição <strong>Home</strong> apenas com senha.</li>
+  <li>Criptografar a partição <strong>Home</strong> com opção de keyfile e usar um pendrive com o mesmo Keyfile dentro para montar a partição <strong>Home</strong> no Linux.</li>
+  <li>Criptografar a partição “Linux LVM” inteira, através de uma senha.</li>
+</ul>
+
+<p><strong>A primeira</strong> é interessante, deixamos todo sistema de arquivos sem criptografia, e quando o sistema for montar nossa partição <strong>Home</strong> , pedirá a senha. Porem, seus arquivos do sistema estarão expostos e existe muitas informações no sistema de arquivos que podem comprometer você. Então existe uma “brecha” de insegurança nessa opção.
+<strong>A segunda</strong> opção é a que eu menos recomendo, apensar de também ser interessante usar um pendrive para montar a <strong>home</strong>. Porem, se você criptografar somente a partição <strong>home</strong> e perder o pendrive com a keyfile (ou o pendrive queimar), por exemplo, você pode não conseguir iniciar o sistema, por depender dessa keyfile que não está disponível. E amiguinho, vai te dar <em>“dor de cabeça”</em>.
+<strong>A terceira</strong> opção, é a criptografia de todo o sistema Linux LVM, ela que iremos utilizar nesse tutorial. Talvez em um outro tutorial, eu explique como fazer uma criptografia da <strong>primeira</strong> e <strong>segunda</strong> opção.</p>
+
+<blockquote>
+  <p>Nota: Não tem como criptografar a partição de sistema de arquivos inteira
+com LUKS através de um keyfile no pendrive, isso porque você está mantendo o
+arquivo <strong>/etc/fstab</strong> criptografado também, e para um pendrive ser
+iniciado, ele necessita do <strong>/etc/fstab</strong>. Isso seria possível se ter uma
+partição apenas para o <strong>/etc</strong> e não criptografar ela. Mas pode te dar
+trabalho ao fazer isso, então vamos usar a primeira opção mesmo.</p>
+</blockquote>
+
+<h2 id="criptografando-a-partição-linux-lvm">Criptografando a partição “Linux LVM”</h2>
+
+<p>Lembra qual é nossa partição de <strong>Linux LVM</strong>? É a <strong>/dev/sda3</strong>. Pois bem, com a nova partição de <strong>Linux LVM</strong> criada, chegou a hora de trabalhar ela. Para iniciarmos a criptografia na nossa partição de <strong>Linux LVM</strong>, usaremos o comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">cryptsetup <span class="nt">-y</span> <span class="nt">-v</span> luksFormat <span class="nt">-c</span> aes-xts-plain64 <span class="nt">-s</span> 512 /dev/sda3</code></pre></figure>
+
+<p>O LUKS irá pedir pra que você confirme com um <strong>yes</strong> (em uppercase), ou seja, assim: <strong>YES</strong>.</p>
+
+<blockquote>
+  <p>Digite: <strong>YES</strong> e dê Enter</p>
+</blockquote>
+
+<p>Após isso, irá pedir para informar a senha de criptografia e logo em seguida para confirmar. Então faça isso.</p>
+
+<p><strong>A T E N Ç Ã O</strong>: Nunca esqueça essa senha, pois é ela que você usará para iniciar no seu sistema futuramente.</p>
+
+<p>Ok! Você já tem sua partição onde será instalada o Linux criptografada.</p>
+
+<p>Precisamos abrir a partição para poder trabalhar nela, isso faremos com o comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">cryptsetup open /dev/sda3 linux</code></pre></figure>
+
+<p><strong>IMPORTANTE</strong>: Observe que no final do comando tem a palavra <strong>linux</strong>.</p>
+
+<p>Ao fazer um <strong>open</strong> na partição criptografada, criará um “Physical Volume (PV)” automaticamente. Então <strong>linux</strong> será de agora em diante o “ponteiro” para meu Physical Volume (PV). Terá um link simbólico em <strong>/dev/mapper</strong>.
+Então esse será meu o “Physical Volume (PV)”: <strong>/dev/mapper/linux</strong>
+(não necessáriamente precisa ser <strong>linux</strong>, você pode colocar outro nome). Se não entendeu o que é um “Physical Volume (PV)”, continue a leitura que é nosso próprio assunto.</p>
+
+<h1 id="o-lvm">O LVM</h1>
+
+<h2 id="conceitos-2">Conceitos</h2>
+
+<p>Exemplificando o básico e resumidamente o LVM, para que seja o suficiente para trabalharmos nessa instalação do Arch Linux, iremos utilizar 3(três) componentes do LVM, esses são:</p>
+
+<ul>
+  <li>Physical Volume (PV) - (volume físico)</li>
+  <li>Volume Group (VG) - (grupo de volume)</li>
+  <li>Logical Volume (LV) - (volume lógico)</li>
+</ul>
+
+<p>“Physical Volume (PV)”: A unidade do armazenamento Physical Volume (PV) subjacente de um volume lógico LVM.
+“Volume Group (VG)”: É criado para termos grupos para nossos “Logical Volume (LV)”.
+“Logical Volume (LV)”: Serão nosso volume lógico, ou seja, nossas partições Linux que usaremos para o sistema.</p>
+
+<p>Lembrando que se você quer saber mais afundo sobre LVM, eu te recomendo esse manual <a href="https://access.redhat.com/documentation/pt-BR/Red_Hat_Enterprise_Linux/6/html-single/Logical_Volume_Manager_Administration/" target="_blank">Logical Volume Manager Administration</a>, que é uma documentação da própria <a href="https://www.redhat.com/pt-br" target="_blank">Red Hat</a> sobre administradores do LVM.</p>
+
+<h2 id="utilizando-os-componentes-do-lvm">Utilizando os componentes do LVM</h2>
+
+<h3 id="criando-physical-volume-pv">Criando Physical Volume (PV)</h3>
+
+<p>Iremos precisar apenas de 1(um) Physical Volume (PV), porem ele já foi criado automaticamente quando realizamos um <strong>open</strong> na partição criptografada(<strong>/dev/sda3</strong>) anteriormente, lembra?!</p>
+
+<p>Dê o comando abaixo para ver informações sobre o “Physical Volume (PV)” criado:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pvs</code></pre></figure>
+
+<p>Caso contrário não esteja criado (o que não deve ser o caso), crie o mesmo com o comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pvcreate /dev/mapper/linux</code></pre></figure>
+
+<h3 id="criando-volume-group-vg">Criando Volume Group (VG)</h3>
+
+<p>Agora temos que criar um “Volume Group (VG)” para manter nossos “Logical Volume (LV)”. A syntax é <code class="language-plaintext highlighter-rouge">vgcreate &lt;name group&gt; &lt;path physical volume&gt;</code>. Então usaremos o comando:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vgcreate linux /dev/mapper/linux</code></pre></figure>
+
+<p>Observe no comando acima, que está sendo criado um “Volume Group (VG)” com nome de <strong>linux</strong> apontando para meu “Physical Volume (PV)” (<strong>/dev/mapper/linux</strong>).
+Pode ficar tranquilo que não vai ter conflito de nome com o “Physical Volume (PV)”, pois são elementos diferentes. Os únicos nomes que não podem ser iguais são nos “Logical Volume (LV)”. Falando nisso, vamos a criação deles.</p>
+
+<h3 id="criando-logical-volume-lv">Criando Logical Volume (LV)</h3>
+
+<p>Vamos criar nosso primeiro “Logical Volume (LV)”, que é de <strong>swap</strong>. A Syntax é <code class="language-plaintext highlighter-rouge">lvcreate -L &lt;size |M|G&gt; &lt;name group&gt; -n &lt;name logical volume&gt;</code>. Então, para isso faremos com o comando:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">lvcreate <span class="nt">-L</span> 1G linux <span class="nt">-n</span> swap</code></pre></figure>
+
+<p>Veja que no comando acima, foi informado o “Volume Group (VG)”, que criamos anteriormente, que no caso é <strong>linux</strong>, e o nome do “Logical Volume (LV)” que nesse caso será <strong>swap</strong>. Com 1 Gigabyte de tamanho.</p>
+
+<p>Dê o comando abaixo para ver como ficou nosso “Logical Volume (LV)”:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">lvs</code></pre></figure>
+
+<p>Repare que ao criamos nosso “Logical Volume (LV)”, ele pertence ao “Volume Group (VG)” <strong>linux</strong>. Tudo ok!</p>
+
+<p>Agora resta criarmos nosso outros 2(dois) “Logical Volume (LV)” restante, um para o <strong>sistema de arquivos</strong> e o outro será a partição <strong>home</strong>. Então faremos:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">lvcreate <span class="nt">-L</span> 8G linux <span class="nt">-n</span> archlinux
+lvcreate <span class="nt">-l</span> +100%FREE linux <span class="nt">-n</span> home</code></pre></figure>
+
+<p>Repare que o comando para criar nosso “Logical Volume (LV)” <strong>home</strong>, foi usado a opção <strong>+100%FREE</strong>, isso faz com que ele pegue todo restante de espaço livre dentro do meu “Volume Group (VG)” para o <strong>home</strong>.</p>
+
+<p>Terminamos a criação de nossa estrutura LVM , agora vamos para o próximo passo que é formatar as mesmas com um determinado tipo de partição para cada uma.</p>
+
+<p>Repare como ficou:</p>
+
+<div class="row imager__plugin">
+            <img class="img-fluid mx-auto d-block" src="/assets/images/posts/instalando-archlinux-com-criptografia-luks-e-lvm/list_lvs.jpg" title="instalando-archlinux-com-criptografia-luks-e-lvm/list_lvs.jpg" alt="instalando-archlinux-com-criptografia-luks-e-lvm/list_lvs.jpg">
+          </div>
+
+<h1 id="formatando-as-partições">Formatando as partições</h1>
+
+<h2 id="sistema-de-arquivos-e-home">Sistema de Arquivos e Home</h2>
+
+<p>A formatação da partição de <strong>Sistema de Arquivos</strong> e <strong>Home</strong> nada mais é que a formatação do nosso “Logical Volume (LV)” criado, os:</p>
+
+<ul>
+  <li>/dev/mapper/linux-archlinux</li>
+  <li>/dev/mapper/linux-home</li>
+</ul>
+
+<blockquote>
+  <p><strong>NOTA:</strong> Observe que tem o nome <strong>linux</strong> antes do nome de nossa partições
+de “Logical Volume (LV)”, esse nome é justamente o “Volume Group (VG)” que
+criamos. Ou seja, quando criamos nossos “Logical Volume (LV)”,
+automaticamente é inserido o nome do  “Volume Group (VG)”.</p>
+</blockquote>
+
+<p>Vamos utilizar o <strong>ext4</strong> para nossa partição de <strong>sistema de arquivos</strong> e nossa partição <strong>home</strong>. Então faremos:</p>
+
+<blockquote>
+  <p>Aviso: Muito CUIDADO ao formatar a partição <strong>home</strong> , você já pode ter ela
+com dados dentro (o que não é nosso, pois criamos uma do zero). Ao executar
+uma formatação, todos os dados (caso tenha) contido na mesma, serão apagados.</p>
+</blockquote>
+
+<p>Formatando:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkfs <span class="nt">-t</span> ext4 /dev/mapper/linux-archlinux
+mkfs <span class="nt">-t</span> ext4 /dev/mapper/linux-home</code></pre></figure>
+
+<p>Você pode rodar o comando abaixo para ver as informações:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">lsblk <span class="nt">-f</span></code></pre></figure>
+
+<h2 id="boot">Boot</h2>
+
+<p>Como dito antes, diferente das demais partições, a partição de <strong>Boot</strong>, é independentes do LVM, porém, precisamos formatar a mesma e dar um tipo de partição. Nossa partição de Boot é a <strong>/dev/sda1</strong>. Também usaremos o <strong>ext4</strong> para o tipo dessa partição. Então faremos assim:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkfs <span class="nt">-t</span> ext4 /dev/sda1</code></pre></figure>
+
+<h2 id="swap">Swap</h2>
+
+<p>A partição “Logical Volume (LV)” <strong>swap</strong>, também necessita de formatação e além disso, necessita ser ativada, para isso, usamos o comando <strong>mkswap</strong> para formatar, e o <strong>swapon</strong> para ativar. Então faça:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkswap /dev/mapper/linux-swap
+swapon /dev/mapper/linux-swap</code></pre></figure>
+
+<blockquote>
+  <p>Nota: Não há necessidade de formatar a partição de <strong>NTFS</strong> (do Windows)
+pelo fato que o próprio <strong>Windows</strong> faz isso ao instalar. Apenas cria-se
+caso queira instalar do sistema do senhor <em>Gates</em>.  Lembrando que, se você
+instalar o Windows depois de ter instalado o Arch Linux (ou qualquer outra
+distribuição), o gerenciado de Boot do Linux (nesse caso é o Grub), será
+sobrescrito pelo MBR do Windows, e o Grub não será iniciado. Se isso
+acontecer, você precisará reinstalar o Grub do
+Arch Linux novamente com o DVD do Arch Linux (ou um pendrive bootável do
+mesmo).
+Eu criei um <strong>script shell</strong> para a recuperação do Grub no Arch Linux, no
+momento ele serve somente para Arch Linux, talvez eu dê um upgrade para
+servir em outras distribuições também, mas ainda estou com preguiça hahaha.
+Ele é o <a href="https://github.com/williamcanin/recover-grub">Recover Grub</a>. Dê uma
+olhada, é bem fácil de usar.</p>
+</blockquote>
+
+<h1 id="montagem-das-partições">Montagem das partições</h1>
+
+<p>Como a formatação terminada, precisamos montar as mesmas para poder iniciar a instalação do Arch Linux. Por padrão, montamos o <strong>sistema de arquivos</strong> no diretório <strong>/mnt</strong> e a partição <strong>home</strong> em um diretório que precisa ser criado para sua montagem, o <strong>/mnt/home</strong> . Então vamos aos comandos para esse feito:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mount /dev/mapper/linux-archlinux /mnt
+<span class="nb">mkdir</span> /mnt/home
+mount /dev/mapper/linux-home /mnt/home</code></pre></figure>
+
+<p>O mesmo devemos fazer para a partição de <strong>Boot</strong>, criando o diretório da mesma e montando. Então faremos assim:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">mkdir</span> /mnt/boot
+mount /dev/sda1 /mnt/boot</code></pre></figure>
+
+<p>Finalizamos aqui a criação das partições, as formatações e as montagens. Agora vamos dar inicio a instalação do sistema base do Arch Linux.</p>
+
+<h1 id="instalando-e-configurando-o-arch-linux">Instalando e configurando o Arch Linux</h1>
+
+<h2 id="conceitos-3">Conceitos</h2>
+
+<p>Até o momento não utilizamos internet para realizar todos esses passos, mas de agora em diante, você irá necessitar.</p>
+
+<p>Se você está fazendo esse tutorial com VirtualBox, então automaticamente já terá internet para você. O mesmo vale se você estiver com internet cabeada na máquina.</p>
+
+<p>Se você está utilizando internet via Wifi, execute o comando <code class="language-plaintext highlighter-rouge">wifi-menu</code> que irá abrir um utilitário bem intuitivo para você fazer sua conexão com a internet.</p>
+
+<h2 id="instalando-o-sistema-base">Instalando o sistema base</h2>
+
+<p>Para instalar o sistema base use o comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pacstrap <span class="nt">-i</span> /mnt base base-devel</code></pre></figure>
+
+<p>Agora vá tomar um <img class="emoji" title=":coffee:" alt=":coffee:" src="https://github.githubassets.com/images/icons/emoji/unicode/2615.png" height="20" width="20"> , são mais de 200MB de download. A menos que tenha uma internet veloz. <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20"></p>
+
+<h2 id="criando-etcfstab">Criando /etc/fstab</h2>
+
+<p>Após a instalação do sistema base do Arch Linux, vamos criar o arquivo <strong>/etc/fstab</strong>, que é responsável por dar “arranque” ao nosso sistema e partições. Para criar, faça:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">genfstab <span class="nt">-p</span> /mnt <span class="o">&gt;&gt;</span> /mnt/etc/fstab</code></pre></figure>
+
+<h2 id="entrando-no-sistema-instalado">Entrando no sistema instalado</h2>
+
+<p>Já podemos entrar dentro do nosso sistema instalado e começar a configurar o mesmo. Para realizar esse feito, execute esse “comandinho”:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">arch-chroot /mnt /bin/bash</code></pre></figure>
+
+<h2 id="configurando-layout-do-teclado">Configurando layout do teclado</h2>
+
+<p>Devemos carregar o layout de teclado, ai se pergunta:</p>
+
+<p><em>Eu ja fiz isso no começo!</em></p>
+
+<p>Mas agora estavamos dentro do sistema base instalado, então, devemos carregar novamente para podermos ter o layout corretamente a máquina. Então, novamente:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">loadkeys br-abnt2</code></pre></figure>
+
+<p>Essa configuração será perdida, então para manter no sistema faremos:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">"KEYMAP=br-abnt2"</span> <span class="o">&gt;</span> /etc/vconsole.conf</code></pre></figure>
+
+<p>Esse comando, certifica-se de manter as configurações do layout de teclado nos consoles.</p>
+
+<h2 id="criando-um-senha-para-usuário-root">Criando um senha para usuário <code class="language-plaintext highlighter-rouge">root</code>
+</h2>
+
+<p>Umas das primeiras coisas ao entrar no sistema base recém instalado, e atribuir a senha para o usuário <strong>root</strong>, pois o mesmo ainda não tem. Isso é simples, baixo executar o comando abaixo, informar e confirmar a senha:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">passwd</code></pre></figure>
+
+<h2 id="instalado-pacotes-necessários">Instalado pacotes necessários</h2>
+
+<p>O gerenciador de pacotes padrão do Arch Linux é o <strong>pacman</strong>. Caso você não saíba como utilizar, te recomendo a leitura no <a href="https://wiki.archlinux.org/" target="_blank">wiki</a> do Arch Linux, é um local muito rico em informações sobre o Arch Linux, programas e suas configurações. O wiki do Pacman você pode encontrar lá também, ou clicar <a href="https://wiki.archlinux.org/index.php/Pacman_(Portugu%C3%AAs)" target="_blank">AQUI</a>. Vamos instalar alguns pacotes necessários com o <strong>pacman</strong>, com o comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pacman <span class="nt">-S</span> bash-completion vim wireless_tools wpa_supplicant wpa_actiond ntfs-3g dialog <span class="nt">--noconfirm</span></code></pre></figure>
+
+<h2 id="habilitando-idiomas">Habilitando idiomas</h2>
+
+<p>Agora vamos habilitar alguns idiomas para nosso sistema e ativá-los. Eu sempre gosto de deixar o Inglês(US) e o Português (BR). Então, faremos assim:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g'</span> /etc/locale.gen
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/#pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/g'</span> /etc/locale.gen</code></pre></figure>
+
+<p>Agora vamos ativar os mesmos com o comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">locale-gen</code></pre></figure>
+
+<h2 id="informando-o-idioma-padrão-para-o-sistema">Informando o idioma padrão para o sistema</h2>
+
+<p>Como já temos o idioma de <strong>pt_BR</strong> habilitado, você já pode setar o mesmo para nosso sistema Arch Linux (caso queira pt_BR). Para isso faremos os comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo </span><span class="nv">LANG</span><span class="o">=</span>pt_BR.UTF-8 <span class="o">&gt;</span> /etc/locale.conf
+<span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>pt_BR.UTF-8</code></pre></figure>
+
+<h2 id="configurando-localidade">Configurando localidade</h2>
+
+<p>Localidade é o fuso horário do sistema, com os comandos abaixo faremos isso:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">rm</span> <span class="nt">-f</span> /etc/localtime
+<span class="nb">ln</span> <span class="nt">-s</span> /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+hwclock <span class="nt">--systohc</span> <span class="nt">--utc</span></code></pre></figure>
+
+<blockquote>
+  <p>NOTA: Como estou em SP, configurei para essa localidade. Coloque de acordo
+ com a sua. Para isso pode listar as que estão disponiveis em com o comando :
+ <code class="language-plaintext highlighter-rouge">ls /usr/share/zoneinfo/</code>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Importante:</strong>
+Caso você use dual boot com Windows, você deve deixar para ambos UTC ou
+LOCALTIME. Haverá conflito de hora se um S.O estiver um com UTC e outro com
+LOCALTIME.</p>
+</blockquote>
+
+<p>Para deixar o Arch Linux configurado como LOCALTIME, execute o comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">printf</span> <span class="s2">"0.0 0.0 0.0</span><span class="se">\n</span><span class="s2">0</span><span class="se">\n</span><span class="s2">LOCAL</span><span class="se">\n</span><span class="s2">"</span> <span class="o">&gt;</span> /etc/adjtime</code></pre></figure>
+
+<p>O aquivo <strong>/etc/adjtime</strong> é responsável por carregar o tipo da nossa hora (UTC ou LOCAL) na máquina. Atribuindo esse comando, irá deixar configurado para LOCALTIME.</p>
+
+<h2 id="configurando-hostname">Configurando hostname</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">"archlinux"</span> <span class="o">&gt;</span> /etc/hostname</code></pre></figure>
+
+<p>Existe o comando <code class="language-plaintext highlighter-rouge">hostnamectl</code>, que você tambem pode alterar seu hostname futuramente. Dê um <code class="language-plaintext highlighter-rouge">hostnamectl --help</code> e veja as opções.</p>
+
+<h2 id="habilitando-rede-cabeada-durante-o-boot">Habilitando rede cabeada durante o boot</h2>
+
+<p>Se você utiliza rede cabeada, será necessário habilitar <a href="https://wiki.archlinux.org/index.php/Network_configuration_(Portugu%C3%AAs)#DHCP_durante_o_boot" target="_blank">DHCP durante o boot</a> da máquina para que você não precise ficar habilitando o mesmo quando já estiver no sistema.</p>
+
+<p>Por padrão, no diretório <strong>/sys/class/net</strong> existe links simbólicos das interfaces de rede. Apenas de o comando <code class="language-plaintext highlighter-rouge">ls /sys/class/net</code> para listar.</p>
+
+<div class="row imager__plugin">
+            <img class="img-fluid mx-auto d-block" src="/assets/images/posts/instalando-archlinux-com-criptografia-luks-e-lvm/list_iface_net.jpg" title="instalando-archlinux-com-criptografia-luks-e-lvm/list_iface_net.jpg" alt="instalando-archlinux-com-criptografia-luks-e-lvm/list_iface_net.jpg">
+          </div>
+
+<p>Toda interface que começa com <code class="language-plaintext highlighter-rouge">enp</code> será a sua rede cabeada. Nesse caso a listada foi <code class="language-plaintext highlighter-rouge">enp0s3</code>. Então será ela que devemos habilitar durante o boot. Para isso executamos o seguinte comando:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable </span>dhcpcd@enp0s3</code></pre></figure>
+
+<p>… ou simplesmente o comando:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable </span>dhcpcd</code></pre></figure>
+
+<p>Leia sobre o <a href="https://wiki.archlinux.org/index.php/Systemd_(Portugu%C3%AAs)" target="_blank">Systemctl</a>, pois você pode utilizar muito ele em seu Arch Linux.</p>
+
+<h2 id="criando-um-usuário-padrão">Criando um usuário padrão</h2>
+
+<p>Nunca é recomendável usar um sistema com o usuário <strong>root</strong>, pois pode comprometer a estrutura do seu <strong>sistema de arquivos</strong> fazendo com que o sistema fique inutilizável. O recomendável é ter um usuário padrão, então vamos criar um com o comando abaixo usando o <a href="https://wiki.archlinux.org/index.php/users_and_groups#User_management" target="_blank">useradd</a>:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">useradd <span class="nt">-m</span> <span class="nt">-g</span> <span class="nb">users</span> <span class="nt">-G</span> wheel,games,power,optical,storage,scanner,lp,audio,video <span class="nt">-s</span> /bin/bash &lt;NAMEUSER&gt;</code></pre></figure>
+
+<p>Vamos informar uma senha para este usuário agora:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">passwd &lt;NAMEUSER&gt;</code></pre></figure>
+
+<blockquote>
+  <p>NOTA: Onde está ‘&lt; NAMEUSER &gt;’ coloque o nome do usuário que você quer.</p>
+</blockquote>
+
+<h2 id="configurando-o-etcfstab">Configurando o /etc/fstab</h2>
+
+<p>Lembra que criamos o <strong>/etc/fstab</strong> antes de iniciarmos no sistema base do Arch Linux? Pois bem, agora precisamos fazer algumas alterações.</p>
+
+<p>Por padrão o <strong>/etc/fstab</strong> já está funcional, mas vamos acrescentar algumas outras configurações. Essas são:</p>
+
+<ul>
+  <li>Adicionar a partição Windows para ser montada no boot (caso tenha Windows).</li>
+  <li>Adiciona o reconhecimento do dispositivo CD/DVD.</li>
+</ul>
+
+<p>Vou utilizar o <strong>vim</strong> para edição, pois instalei ele lá nos <em>pacotes necessários</em>, lembra?! Você pode usar outro, como o <strong>nano</strong>.</p>
+
+<p>Abra o arquivo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim /etc/fstab</code></pre></figure>
+
+<p>Para deixar o arquivo em modo de edição no <strong>vim</strong>…</p>
+
+<blockquote>
+  <p>Digite: <strong>i</strong></p>
+</blockquote>
+
+<p>Posicione o ponteiro no final do arquivo e adicione essas linhas:</p>
+
+<blockquote>
+  <p>######## CD/DVD
+/dev/sr0  /media/cdrom0  udf,iso9660 user,noauto  0  0
+######## Windows
+/dev/sda2 /mnt/windows  ntfs-3g defaults,user,rw,auto  0  0</p>
+</blockquote>
+
+<p>Saia do modo de edição com a tecla <strong>Esc</strong>, e …</p>
+
+<blockquote>
+  <p>Digite: <strong>:wq</strong></p>
+</blockquote>
+
+<p>Isso irá SALVAR e SAIR do <strong>vim</strong>.</p>
+
+<p>Agora temos que criar a pasta e link simbólico onde será montados esses dispositivos. Para isso, execute os comandos:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="nb">mkdir</span> /media/cdrom0
+ <span class="nb">ln</span> <span class="nt">-s</span> /media/cdrom0 /media/cdrom
+ <span class="nb">mkdir</span> /mnt/windows</code></pre></figure>
+
+<p>Pronto! Terminamos toda edição do <strong>/etc/fstab</strong>. Na próxima reinicialização da máquina, esses dispositivos já estarão montados.</p>
+
+<h2 id="configurando-o-etcmkinitcpioconf">Configurando o /etc/mkinitcpio.conf</h2>
+
+<p>O arquivo <strong>/etc/mkinitcpio.conf</strong> é responsável por configurar a imagem de boot. Dentro do <strong>/etc/mkinitcpio.conf</strong> você coloca valores que pode modificar a forma de como o Arch Linux irá se comportar e carregar algumas funções.</p>
+
+<p>Por padrão, quando instalamos o Arch Linux, não precisamos alterar em nada neste arquivo, porem, como utilizamos LVM e criptografia, devemos fazer algumas mudanças.</p>
+
+<p>Então, abra o arquivo com seu editor preferencial. Usarei o <strong>vim</strong> novamente:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim /etc/mkinitcpio.conf</code></pre></figure>
+
+<p>Ok, agora procure a variável <strong>HOOKS=”..”</strong>, vamos acrescentar alguns recursos a mais na mesma.</p>
+
+<blockquote>
+  <p>Nota: Se você observar os comentários logo acima de <strong>HOOKS=”…“</strong>, vai ver
+que já nos dá uma dica de como devemos deixa-lá caso usamos criptografia e
+LVM.</p>
+</blockquote>
+
+<p>Então vamos deixar assim:</p>
+
+<blockquote>
+  <p><strong>HOOKS</strong>=<strong>“</strong>base udev autodetect keymap <strong>encrypt lvm2</strong> modconf block
+ filesystems keyboard fsck<strong>“</strong></p>
+</blockquote>
+
+<p>Se você reparou no arquivo original, viu que foi adicionado somente o <strong>encrypt</strong> e o <strong>lvm2</strong>.</p>
+
+<p><strong>OBRIGATÓRIAMENTE</strong> tem que ser nessa ordem, mais precisamente depois de <strong>autodetect</strong>.</p>
+
+<p><em>Já pode SALVAR e FECHAR o editor</em>.</p>
+
+<p>Com o <strong>/etc/mkinitcpio.conf</strong> configurado, basta “subir” essas novas configurações, para isso, temos que executar o seguinte comando:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkinitcpio <span class="nt">-p</span> linux</code></pre></figure>
+
+<p>OK! Concluímos toda instalação e configuração do Arch Linux. Agora vamos para a etapa do gerenciamento de boot.</p>
+
+<h1 id="o-grub">O Grub</h1>
+
+<h2 id="conceitos-4">Conceitos</h2>
+
+<p>O Grub (<a href="https://wiki.archlinux.org/index.php/GRUB" target="_blank">English</a>/<a href="https://wiki.archlinux.org/index.php/GRUB_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o" target="_blank">Portuguese</a>) é um dos gerenciador de boot do Linux. Vamos utilizar o mesmo para gerenciar nosso boot.</p>
+
+<h2 id="instalando-o-grub-no-sistema">Instalando o Grub no sistema</h2>
+
+<p>Para instalarmos fazemos assim:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pacman <span class="nt">-S</span> grub <span class="nt">--noconfirm</span></code></pre></figure>
+
+<p>Se utilizar um sistema com <a href="https://wiki.archlinux.org/index.php/GRUB#UEFI_systems" target="_blank">UEFI</a>, irá precisar de um pacote extra, o <strong>efibootmgr</strong>. Então instale assim:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pacman <span class="nt">-S</span> grub efibootmgr <span class="nt">--noconfirm</span></code></pre></figure>
+
+<p>Caso não use UEFI, ignore o pacote <strong>efibootmgr</strong>.</p>
+
+<p>Se utilizar o Windows como dual boot, vai precisar usar o pacote <strong>os-prober</strong>, então ficaria assim:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pacman <span class="nt">-S</span> grub os-prober <span class="nt">--noconfirm</span></code></pre></figure>
+
+<p>Caso não utilize o Windows com dual boot, ignore o pacote <strong>os-prober</strong>.</p>
+
+<h2 id="configurando-o-grub">Configurando o Grub</h2>
+
+<p>Por padrão, quando instalamos o Arch Linux sem criptografia e sem LVM, não necessitamos editar o arquivo de configuração Grub, porém, como utilizamos, iremos fazer algumas mudanças necessárias.</p>
+
+<p>Novamente usando o <strong>vim</strong>, abra o arquivo <strong>/etc/default/grub</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">vim /etc/default/grub</code></pre></figure>
+
+<p>Agora deixe a variável <strong>GRUB_CMDLINE_LINUX=”“</strong> da seguinte forma:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">"cryptdevice=/dev/sda3:linux root=/dev/mapper/linux-archlinux"</span></code></pre></figure>
+
+<p>Observe que em <strong>cryptdevice</strong> utilizamos a partição <strong>/dev/sda3</strong> que é a nossa <em>Linux LVM</em>. Logo a frente informamos o “Volume Group (VG)”, o <strong>linux</strong>. Em <strong>root</strong> informamos nosso “Logical Volume (LV)” do nosso <strong>sistema de arquivos</strong>, o <strong>/dev/mapper/linux-archlinux</strong>.</p>
+
+<p>Agora adicione as seguintes linhas (ou configure-as caso já exista), assim:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">GRUB_PRELOAD_MODULES</span><span class="o">=</span><span class="s2">"lvm"</span>
+<span class="nv">GRUB_ENABLE_CRYPTODISK</span><span class="o">=</span>y
+<span class="nv">GRUB_DISABLE_SUBMENU</span><span class="o">=</span>y</code></pre></figure>
+
+<p>A linha <em>GRUB_DISABLE_SUBMENU=y</em>, é para caso você estiver utilizando o VirtualBox, pois é necessário ter para não dar erro de boot no Grub conforme alguns testes que fiz.</p>
+
+<p>Pronto! SALVE as alterações e FECHE o editor de texto.</p>
+
+<h2 id="gerando-as-configurações">Gerando as configurações</h2>
+
+<p>Com toda configuração realizada, vamos levantar as mesmas para nosso sistema. Execute o comando abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg</code></pre></figure>
+
+<p>No momento, o Grub está instalado apenas no sistema operacional, mas não na unidade, o que veremos logo a seguir.</p>
+
+<h2 id="instalando-o-grub-na-unidade">Instalando o Grub na unidade</h2>
+
+<p>Agora precisamos instalar de fato o Grub e toda configuração do mesmo que realizamos na unidade <strong>/dev/sda</strong>. Para isso usamos o comando:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">grub-install /dev/sda</code></pre></figure>
+
+<p>Se possua um sistema <a href="https://wiki.archlinux.org/index.php/GRUB#UEFI_systems" target="_blank">UEFI</a>, faça dessa maneira:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">grub-install <span class="nt">--target</span><span class="o">=</span>x86_64-efi <span class="nt">--efi-directory</span><span class="o">=</span>/boot <span class="nt">--bootloader-id</span><span class="o">=</span>grub</code></pre></figure>
+
+<p>Se não apresentar erros, concluímos toda nossa instalação do Arclinux criptografado com LVM.</p>
+
+<h1 id="reiniciando-o-sistema">Reiniciando o sistema</h1>
+
+<p>Basta executar os comandos abaixo ordenadamente para sair do ambiente de instalação, desmontar as unidades e reiniciar o sistema:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">exit
+</span>umount <span class="nt">-R</span> /mnt
+systemctl reboot</code></pre></figure>
+
+<blockquote>
+  <p>Nota: Se estiver instalando com VirtualBox, não esquece de tirar a mídia do
+Arch Linux, caso contrário em vez do Arch Linux instalado iniciar, será a
+mídia que fará essa função.</p>
+</blockquote>
+
+<p>Agora, toda vez que iniciar o sistema (antes mesmo do boot), a senha de criptografia irá ser requerida, com isso, é interessante deixar o login automático para não ter que digitar senha no mesmo também. Para isso, recomendo ler <a href="https://wiki.archlinux.org/index.php/Getty" target="_blank">Getty</a> no wiki do Arch Linux.</p>
+
+<h1 id="conclusão">Conclusão</h1>
+
+<p>Me esforcei para fazer bem detalhadamente, bem intuitivo, para pessoas que estão començando possam compreender facilmente. Não é complicado a instalação, pois a extensão desde tutorial é válido mais pelos comentários, mas os comandos são poucos.</p>
+
+<p>Sempre é recomendável seguir a documentação de qualquer software ou sistema operacional. A maioria dos comandos também existe documentação, o chamado <strong>man</strong>. Para usar, simplesmente digite no console: <code class="language-plaintext highlighter-rouge">man &lt;comando&gt;</code> , exemplo: <code class="language-plaintext highlighter-rouge">man fdisk</code>.</p>
+
+<p>Explorar e aprender nunca é exagero. Até a próxima! :)</p>
+
+<p><strong>Ao som de:</strong></p>
+
+<dl class="jektify jektify--dark jektify--custom">
+
+          <dt class="jektify__header jektify__header--dark jektify__header--custom">
+
+            <a class="jektify__brand jektify__brand--dark jektify__brand--custom" href="https://jektify.github.io" target="_blank">jektify</a>
+
+            <i class="jektify__year jektify__year--dark jektify__year--custom">© 2021 </i>
+              <span class="jektify__button jektify__button--dark jektify__button--custom jektify__button--closed">+</span>
+          </dt>
+
+          <dd class="jektify__body jektify__body--dark jektify__body--custom" style="display: none">
+
+            <div class="jektify__user"><a href="https://open.spotify.com/user/williamcanin" target="_blank" class="jektify__user-link jektify__user-link--dark jektify__user-link--custom" title="Siga-me no Spotify"><span class="jektify__user-text jektify__user-text--dark jektify__user-text--custom">Siga-me no Spotify</span></a></div>
+
+            <h1 class="jektify__title jektify__title--dark jektify__user--dark jektify__title--custom" style="display: none;">Music name</h1>
+
+            <p class="jektify__description jektify__description--dark jektify__description--custom" style="display: none;">Jekyll plugin to generate html snippets for embedding Spotify Musics.
+To listen to the full song, open your Spotify and start these musics.
+</p>
+
+            <div class="jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom">
+              <iframe id="jektify__track" class="jektify__track jektify__track--dark 
+                jektify__track--custom" src="https://embed.spotify.com/?uri=spotify:track:36FaicbcQqoLXBBqTW76Zk&amp;theme=dark" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
+              </iframe>
+            </div>
+          </dd>
+        </dl>
+
+<hr style="border-top: 1px solid #9D9D9D ; color: #9D9D9D ;" class="endpost">
+
+
+      </div>
+    </div>
+
+    <div class="p-0 p-lg-3 mb-4 layout_post__footer">
+    
+
+    
+    <div class="layout_post__share">
+      <div class="row justify-content-center">
+        <h2>Compartilhe!</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div>
+
+        
+        <div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2">
+          <a class="btn btn-link btn-typing layout_post__share-fb" href="#" title="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
+        </div>
+        
+
+        
+        <div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2">
+          <a class="btn btn-link btn-typing layout_post__share-ln" href="http://www.linkedin.com/cws/share?url=https://williamcanin.dev/blog/instalando-archlinux-com-criptografia-luks-e-lvm/" onclick='window.open(this.href,"popupwindow","status=0,height=500,width=700,resizable=0,top=50,left=100");return false;' target="_blank" title="">Linkedin</a>
+        </div>
+        
+
+        
+        <div class="text-center mb-1 mb-sm-0 col-12 col-sm-3 col-md-3 col-lg-2">
+          <a class="btn btn-link btn-typing layout_post__share-tw" href="https://twitter.com/intent/tweet?text=https://williamcanin.dev/blog/instalando-archlinux-com-criptografia-luks-e-lvm/%20-%20Instalando%20Arch%20Linux%20com%20criptografia%20LUKS%20e%20LVM%20by%20" target="_blank" title="">Twitter</a>
+        </div>
+        
+
+        <div class="offset-0 offset-sm-0 offset-md-0 offset-lg-2"></div>
+      </div>
+    </div>
+    
+
+    <!-- Affiliates Block -->
+    <!-- Include Data Base  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="affiliates">
+    
+    <div class="row justify-content-center">
+      <h2 class="affiliates__title"></h2>
+    </div>
+    
+    
+    <div class="row justify-content-center">
+      <h4 class="affiliates__description"></h4>
+    </div>
+    
+    <div class="row row-cols-1 row-cols-md-2 affiliates__wrap">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+  </div>
+
+<!--
+
+<div class="row row-cols-1 row-cols-md-2">
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+    
+    <div class="row mt-5 layout_post__author">
+      
+      <div class="col-3 col-lg-2">
+        <img class="img-fluid layout_post__author-img" src="/assets/images/author/williamcanin.jpg" width="140" height="auto" alt="William Canin">
+      </div>
+      
+      <div class="col-9 col-lg-10 ">
+        <p class="layout_post__author-title">Autor</p>
+        <h2 class="font-weight-bold layout_post__author-name">William Canin</h2>
+        <p class="layout_post__author-description">Formado em Analise de Sistemas; fascinado pelo mundo do Linux e programação geral.
+</p>
+      </div>
+    </div>
+  
+  </div>
+
+    <!-- jekyll.environment == 'production' and -->
+    
+    <div id="layout_post__disqus" class="p-3 mb-4 layout_post__disqus">
+        <h2 class="text-center mb-5 layout_post__disqus-title">
+            
+              <i class="fas fa-comments layout_post__disqus-icon"></i>
+            
+          Deixe seu comentário
+        </h2>
+      <div class="layout_post__disqus-content">
+          <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    var disqus_shortname  = 'williamcanin';
+    var disqus_identifier = '/blog/instalando-archlinux-com-criptografia-luks-e-lvm/';
+    var disqus_title      = 'Instalando Arch Linux com criptografia LUKS e LVM';
+    var disqus_url        = 'https://williamcanin.dev/blog/instalando-archlinux-com-criptografia-luks-e-lvm/';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+      </div>
+    </div>
+    
+
+  <!-- </div> -->
+</div>
+
+</div>
+      </div>
+    </div>
+    <div class="py-1 position-fixed fixed-bottom w-100 footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="text-center col-12 col-md-4">
+        <span class="footer__copyright">William Canin © 2015-2021 • All right reserved.</span>
+      </div>
+      <div class="text-center col-12 col-md-4 d-none d-md-block">
+        <span class="footer__message">In codes and Rock, I Trust.</span>
+      </div>
+      <div class="text-center col-12 col-md-4">
+        <span class="footer__madeby">Made with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> using <a href="https://github.com/williamcanin/typing-jekyll-template" target="_blank">Typing</a> Theme.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-block  d-lg-none  position-fixed fixed-bottom w-100 scrolltop">
+  <div class="float-right mr-3 scrolltop__wrapper">
+    <a class="mr-3 scrolltop__button" href="#top"><i class="fas fa-caret-up"></i></a>
+  </div>
+</div>
+
+
+
+    <!-- Include Data Base -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://williamcanin.dev/assets/vendor/js/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script type="text/javascript" src="https://williamcanin.dev/assets/vendor/js/popper.min.js"></script>
+<script type="text/javascript" src="https://williamcanin.dev/assets/vendor/js/bootstrap.min.js"></script>
+
+<!-- Simple Search Jekyll -->
+<script type="text/javascript" src="https://williamcanin.dev/assets/vendor/js/simple-jekyll-search.min.js"></script>
+
+<!-- Global JS -->
+<script type="text/javascript" src="https://williamcanin.dev/assets/js/global.js"></script>
+
+<!-- Specific for each pages. -->
+
+   <script type="text/javascript" src="https://williamcanin.dev/assets/js/post.js"></script>
+
+
+<!-- Plugin Jektify -->
+
+<script src="https://williamcanin.dev/assets/vendor/jektify/js/jektify.min.js"></script>
+
+
+<!-- Google reCAPTCHA (for Getform.io) -->
+<!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+
+<!-- Google Adsense -->
+</body>
+
+  <!-- Disqus counter comments  -->
+  
+  <script id="dsq-count-scr" src="https://williamcanin.disqus.com/count.js" async></script>
+  
+  
+</html>
+
