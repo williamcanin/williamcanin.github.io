@@ -49,6 +49,7 @@ content:
     enable: true
   postlist:
     animation: true
+    count_comments: false
     date:
       enable: true
     expected:
@@ -87,6 +88,8 @@ content:
       enable: false
     comments:
       enable: true
+    count_count:
+      enable: false
   contact:
     animation: true
     note:
