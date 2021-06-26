@@ -3,7 +3,7 @@ layout: post
 title: "Como encurtar URL Raw do Github e ter uma url personalizada"
 date: 2019-10-20 13:49:01
 tags: ['github','git','url', 'shortener']
-published: true
+published: false
 comments: true
 excerpted: |
         Cansado de compartilhar URL Raw do Github compridas? Lendo essa postagem você vai contornar isso.
