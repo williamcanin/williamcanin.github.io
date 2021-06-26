@@ -34,7 +34,7 @@ jektify:
 # Attention! Do not change the information below as it is 
 # for development unless you know what you are doing.
 
-include: [_pages]
+include: ['_pages']
 
 markdown: kramdown
 highlighter: rouge

@@ -20,7 +20,7 @@ layout: blog
       </div>
 
       <div class="layout_post__tags">
-        {% if load_options.content.icons.enable == true %}<i class="fa fa-tags"></i>&nbsp;{% endif %}Tags:&nbsp;
+        {% if load_options.content.icons.enable == true %}<i class="fa fa-tags"></i>&nbsp;{% endif %}Tags:&nbsp; |
         {% for tag in page.tags %}
         <a class="layout_post__tags-link" href="{{ '/blog/tags/' | prepend: site.baseurl | prepend: site.url }}/{{ tag }}">{{ tag }}</a> |
         {% endfor %}
