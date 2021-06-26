@@ -68,7 +68,7 @@ layout: blog
           {% if jekyll.environment == 'production' and
             load_options.content.post.comments.enable == true and
             page.comments != false and
-            load_data.userdata.disqus.username and load_options.content.postlist.count_comments == true %}
+            load_data.userdata.disqus.username %}
             <div class="pt-2 font-weight-normal badge badge-light float-right layout_postlist__comments">
                 {% if load_options.content.icons.enable == true %}
                 <i class="fas fa-comments"></i>
