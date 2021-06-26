@@ -8,13 +8,6 @@
     } ,
   
     {
-      "title"    : "Como encurtar URL Raw do Github e ter uma url personalizada",
-      "tags"     : "github, git, url, shortener",
-      "url"     : "/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/",
-      "date"     : "20/10/2019"
-    } ,
-  
-    {
       "title"    : "Manipulando arquivo JSON com Python.",
       "tags"     : "python, json",
       "url"     : "/blog/manipulando-arquivo-json-com-python/",
