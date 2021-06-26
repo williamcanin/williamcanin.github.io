@@ -13,5 +13,5 @@ Ao alterar os valores aqui, terá que alterar no arquivo Javascript: "src/js/glo
 {% assign resume_page = "/cv/" %}
 {% assign blog_page = "/blog/" %}
 {% assign error_page = "/404.html" %}
-{% assign feed_page = "/feed.xml" %}
+{% assign feed_page = "/blog/feed.xml" %}
 {% assign tags_page = "/blog/tags/" %}

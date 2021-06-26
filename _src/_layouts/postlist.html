@@ -113,7 +113,7 @@ layout: blog
         <ul class="pagination justify-content-center layout_postlist__pagination">
           {% if paginator.previous_page %}
           <li class="page-item">
-            <a class="page-link layout_postlist__pagination-newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">
+            <a class="page-link layout_postlist__pagination-newer" href="{{ paginator.previous_page_path | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
               {{ load_data.website.content.postlist.pagination.newer_text }}
             </a>
           </li>
@@ -132,7 +132,7 @@ layout: blog
 
           {% if paginator.next_page %}
           <li class="page-item">
-            <a class="page-link layout_postlist__pagination-older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">
+            <a class="page-link layout_postlist__pagination-older" href="{{ paginator.next_page_path | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
               {{ load_data.website.content.postlist.pagination.older_text }}
             </a>
           </li>
