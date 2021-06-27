@@ -10,7 +10,7 @@ excerpted: |
 day_quote:
  title: "A Palavra"
  description: |
-        "— Felizes as pessoas que têm o coração puro, pois elas verão a Deus." <br> (Mateus 5:8)
+        "- Felizes as pessoas que têm o coração puro, pois elas verão a Deus." <br> (Mateus 5:8)
 
 # Does not change and does not remove 'script' variable.
 script: [post.js]
@@ -22,7 +22,7 @@ Olá, tudo joinha? Meu nome é William, e nesse post vou demonstrar como você p
 
 Primeiro você precisa do [**curl**](https://curl.haxx.se/){:target="_blank"} na sua máquina, pois vamos precisar dele para realizar uma façanha. _
 
->  Nota: _O [**curl**](https://curl.haxx.se/){:target="_blank"} está disponível praticamente em todos sistemas operacionais. Sinta-se a vontade para instalar o mesmo da maneira que mais lhe convém. 
+>  Nota: _O [**curl**](https://curl.haxx.se/){:target="_blank"} está disponível praticamente em todos sistemas operacionais. Sinta-se a vontade para instalar o mesmo da maneira que mais lhe convém.
 
 Agora precisamos usar o serviço de encurtamento de url que a própria [**Github**](https://github.com){:target="_blank"} fornece, que é o [**Git.io**](https://git.io){:target="_blank"}. Se você encurtar suas URL's através do site, a URL encurtada terá um **code** de "*sopa de letrinhas*" automaticamente escolhida pelo serviço. Por exemplo:
 

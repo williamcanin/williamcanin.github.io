@@ -9,11 +9,23 @@
 pre{
   background-color: $highlight__background;
   border-radius: 0px;
-  padding: 2%;
+  // padding: 2%;
   border: 1px solid $highlight__border_color;
   border-radius: 10px;
+  table{
+    margin: 0 !important;
+    tbody{
+      tr{
+        td{
+          background-color: $highlight__background;
+          border: 1px solid $highlight__border_color;
+        }
+      }
+    }
+  }
   code{
     color: $highlight__color;
+    border: none !important;
     white-space: pre;
     word-wrap: normal;
     overflow-x: auto;

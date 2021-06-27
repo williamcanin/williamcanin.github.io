@@ -48,7 +48,7 @@ Os bancos de dados que irei abordar aqui serão o [PostgreSQL](https://www.postg
 
 Por padrão, o PostgreSQL já cria um usuário e uma role com o nome **postgres**, você pode fazer um teste de conexão com o seguinte comando:
 
-{% highlight bash  %}
+{% highlight bash %}
 $ psql -U postgres
 {% endhighlight %}
 
@@ -120,7 +120,7 @@ Outra **lib** (biblioteca) que vamos criar é a **create_table.bash**. Essa bibl
 
 Conteúdo do arquivo: **libs/create_table.bash** 
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 function _create_table () {
     psql -h $HOST -p $PORT -U $USER -d $DB << EOF
 
