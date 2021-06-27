@@ -766,7 +766,22 @@ Agosto
 
 <p>Conteúdo do arquivo: <strong>libs/create_table.bash</strong></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">function </span>_create_table <span class="o">()</span> <span class="o">{</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="k">function </span>_create_table <span class="o">()</span> <span class="o">{</span>
     psql <span class="nt">-h</span> <span class="nv">$HOST</span> <span class="nt">-p</span> <span class="nv">$PORT</span> <span class="nt">-U</span> <span class="nv">$USER</span> <span class="nt">-d</span> <span class="nv">$DB</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
 
        </span><span class="se">\c</span><span class="sh"> DB
@@ -780,7 +795,8 @@ Agosto
     		len         interval hour to minute
 	); 
 </span><span class="no">EOF
-</span><span class="o">}</span></code></pre></figure>
+</span><span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <h2 id="criando-o-programa-principal">Criando o programa principal</h2>
 

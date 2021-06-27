@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://williamcanin.dev/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.dev/" rel="alternate" type="text/html" /><updated>2021-06-26T19:57:42-03:00</updated><id>https://williamcanin.dev/blog/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.dev/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.dev/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.dev/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://williamcanin.dev/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.dev/" rel="alternate" type="text/html" /><updated>2021-06-27T00:19:30-03:00</updated><id>https://williamcanin.dev/blog/feed.xml</id><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.dev/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.dev/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.dev/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em &lt;a href=&quot;https://python.org&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/a&gt; deixando as cores do terminal (sistemas baseado em &lt;strong&gt;UNIX&lt;/strong&gt;) coloridas. É claro que você pode implementar mais coisas para este módulo, porém esse é apenas um conceito básico de como o poder de sua criação pode criar coisas bacanas com Python ;)&lt;/p&gt;
 
@@ -296,7 +296,22 @@ To listen to the full song, open your Spotify and start these musics.
 
 &lt;p&gt;Conteúdo do arquivo: &lt;strong&gt;libs/create_table.bash&lt;/strong&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;_create_table &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;_create_table &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     psql &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$HOST&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PORT&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-U&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$DB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;
 
        &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt; DB
@@ -310,7 +325,8 @@ To listen to the full song, open your Spotify and start these musics.
     		len         interval hour to minute
 	); 
 &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;criando-o-programa-principal&quot;&gt;Criando o programa principal&lt;/h2&gt;
 
