@@ -3,7 +3,7 @@ layout: post
 title: "Implementando uma classe em Python para criar logs"
 date: 2021-06-26 20:37:43
 tags: ['python','logs']
-published: false
+published: true
 comments: true
 excerpted: |
         Como criar logs utilizando Python? Talvez foi isso que você procurou na internet, e se está lendo, talvez você possa ter encontrado o que pesquisou .
@@ -46,11 +46,19 @@ Agora vamos de fato "codar" e sair dos avisos. Voilá!
 
 E o mais importante, toda sua mega master atenção de leitura. Que eu sei que você. :D
 
+# Criando o módulo
+
+Bom, um módulo em Python nada mais é que um arquivo contendo seu código então vamos criar um arquivo chamado **logger.py**:
+
+{% highlight shell %}
+touch logger.py
+{% endhighlight %}
+
 # Implementando o código
 
 ## Imports
 
-Tudo começa com os `imports`, então vamos fazer os imports que são 2 (dois) apenas que iremos trabalhar:
+Com o arquivo **logger.py** criado; tudo começa com os `imports`, então vamos fazer os imports que são 2 (dois) apenas que iremos trabalhar:
 
 {% highlight python linenos %}
 import logging
@@ -226,7 +234,11 @@ Aqui estamos aplicando as configuração básicas para nosso registro de logs at
 
 ### Na linha `25` à `29`
 
+Nessas linhas estamos pegando os levels do meu dicionário e aplicando um *Callable* com os parâmetros necessários. Estamos atribuindo uma condição e, se for do level **exception**, irá carregar um parâmetro a mais, o `exc_info`.
 
+### Na linha `30` à `32`
+
+Caso aconteça de não cair em nenhum retorno (`return`) irá disparar uma **raise** que imprimirá uma mensagem ao usuário de erro de implementação do método.
 
 ## Código completo
 
@@ -310,3 +322,55 @@ class Logs(Colors):
 
 
 {% endhighlight %}
+
+
+## Como usar?
+
+Para fazer o uso é muito fácil, apenas instancie a classe e passe os parâmetros necessários, e chamando a criação de logs através de **try/except**.
+
+Vamos fazer isso em um arquivo externo, criando com o nome de **setup.py** no mesmo diretório do **logger.py**:
+
+{% highlight shell %}
+
+touch setup.py
+
+{% endhighlight %}
+
+Agora vamos popular esse arquivo com o seguinte código:
+
+{% highlight python linenos %}
+
+from logger import Logs
+
+if __name__ == "__main__":
+    logs = Logs(filename="calcs.log")
+    try:
+        n1 = int(input("Digite o dividendo: "))
+        n2 = int(input("Digite o divisor: "))
+        result = f"O quociente é: {n1 / n2}"
+        logs.record(result, type="info", colorize=True)
+        print(result)
+    except ZeroDivisionError as text:
+        logs.record(text, colorize=True)
+        raise
+
+{% endhighlight %}
+
+
+Observe que está sendo atribuindo o registro de logs no **try** e no **except** porem, cada um deles com suas características.
+
+No **try**, está sendo registrado um log apenas de informação, passando o valor **info** para parâmetro `type`, onde a mensagem gravada é o resultado da divisão.
+
+No **exception**, não temos o parâmetro `type` porque será registrado uma exceção de erro, e o valor de `type` por padrão é uma *exception*. Esta sendo gravado o texto de erro por divisão por zero (que não existe). Também usamos a palavrão `raise`, para estourar o erro na tela também. Se tirarmos, apenas registrará o log.
+
+
+## Conclusão
+
+
+Esse foi um simples post com intuito de te dar um base de orientação sobre gravar registros de logs com Python. Lembre-se que isso não é tudo, você pode ver mais detalhes na documentação. Você pode acessar nos links abaixo que vou deixar. Espero que tenha gostado e até a próxima. :)
+
+> Nota: Sempre veja a versão da documentação antes de estudar.
+
+**Documentação:**
+
+* [https://docs.python.org/pt-br/3/library/logging.html](https://docs.python.org/pt-br/3/library/logging.html)
