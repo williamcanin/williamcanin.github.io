@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "Implementando uma classe em Python para criar logs",
+      "tags"     : "python, logs",
+      "url"     : "/blog/implementando-uma-classe-em-python-para-criar-logs/",
+      "date"     : "26/6/2021"
+    } ,
+  
+    {
       "title"    : "Criando módulo para colorir print e input no Python",
       "tags"     : "python",
       "url"     : "/blog/criando-modulo-para-colorir-print-e-input-no-python/",

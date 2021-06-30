@@ -93,6 +93,10 @@
 <lastmod>2019-12-10T20:32:01-03:00</lastmod>
 </url>
 <url>
+<loc>https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs/</loc>
+<lastmod>2021-06-26T17:37:43-03:00</lastmod>
+</url>
+<url>
 <loc>https://williamcanin.dev/contact/</loc>
 </url>
 <url>
@@ -247,6 +251,9 @@
 </url>
 <url>
 <loc>https://williamcanin.dev/blog/tags/json/</loc>
+</url>
+<url>
+<loc>https://williamcanin.dev/blog/tags/logs/</loc>
 </url>
 <url>
 <loc>https://williamcanin.dev/blog/</loc>
