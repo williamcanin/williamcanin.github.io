@@ -17,9 +17,9 @@ published: true
 script: [post.js]
 ---
 
-Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou aquele outro sistema operacial no qual necessita de boot. Vamos aprenda a fazer isso no Linux com um comando poderoso. :wink:
+Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou aquele outro sistema operacioal no qual necessita de boot. Vamos aprenda a fazer isso no Linux com um comando poderoso. :wink:
 
-Já cansou de comprar CDs e DVDs para gravar aquela imagem ISO de um sistema operacional ou qualquer outro programa que necessite iniciar no boot de sua máquina? Creio que a resposta é Sim, e por isso existe programas para fazer um pendrive bootavel. Mas o que recém usuários Linux não sabe, é de um certo "malandro" que vem por padrão na maioria das distros, que pode fazer essa tarefa para você com uma simples linha de comando no terminal sem precisar instalar programas. Estou falando do camarada chamado **dd**. Com este brother aí, você pode fazer enumeras manipulações com imagem ISO e com unidades, porem, irei demonstrar como gravar uma imagem ISO no pendrive e o mesmo funcionar no boot de sua máquina(caso a imagem ISO seja bootavel). Separei 5 etapas importantes para fazer um pendrive bootavel. Siga abaixo:
+Já cansou de comprar CDs e DVDs para gravar aquela imagem ISO de um sistema operacional ou qualquer outro programa que necessite iniciar no boot de sua máquina? Creio que a resposta é Sim, e por isso existe programas para fazer um pendrive bootavel. Mas o que recém usuários Linux não sabem, é de um certo "malandro" que vem por padrão na maioria das distros, que pode fazer essa tarefa para você com uma simples linha de comando no terminal sem precisar instalar programas. Estou falando do camarada chamado **dd**. Com este brother aí, você pode fazer inúmeras manipulações com imagem ISO e com unidades, porém, irei demonstrar como gravar uma imagem ISO no pendrive e o mesmo funcionar no boot de sua máquina(caso a imagem ISO seja bootavel). Separei 5 etapas importantes para fazer um pendrive bootavel. Siga abaixo:
 
 
 * 1 - **Backup**
@@ -64,7 +64,7 @@ umount /run/media/william/sandisk
 
 * 5 - **Formatando pendrive**
 
-Pendrive desmontado, vem a parte da formatação utilizando o **mkfs**. Veja e aprenda:
+Pendrive desmontado, vem a parte da formatação utilizando o **mkfs**. Veja:
 {% highlight bash %}
 mkfs.vfat -I -n nome_para_o_pendrive /dev/sdb
 {% endhighlight %}
@@ -86,7 +86,7 @@ sudo dd if=$HOME/Downloads/imagem.iso of=/dev/sdb
 
 O atributo **if** será a verificação do **dd** para encontrar o arquivo gravável e jogar para o atributo **of**, que vai receber a unidade do pendrive, ou seja, local a ser gravado.
 
-> Nota: Dependendo do tamanho da imagem ISO e da potência de sua máquina, o processo pode ser demorado. Não se assuste, pois o **dd** não mostra o que esta sendo gravado, vai dar impressão que está travado, mas não está. No final do processo, o **dd** informa o que que foi gravado.
+> Nota: Dependendo do tamanho da imagem ISO e da potência de sua máquina, o processo pode ser demorado. Não se assuste, pois o **dd** não mostra (nesta forma de utilizar) o que esta sendo gravado, vai dar impressão que está travado, mas não está. No final do processo, o **dd** informa o que que foi gravado.
 
 Para saber mais sobre a documentação do **dd**, use os comandos no terminal:`man dd` e `dd --help`. Espero que você economize bastante CDs e DVDs agora ;)
 Ate a próxima! Bye :hand:

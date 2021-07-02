@@ -84,7 +84,7 @@ content:
       twitter:
         enable: true
     day_quote:
-      enable: false
+      enable: true
     comments:
       enable: true
       count:
