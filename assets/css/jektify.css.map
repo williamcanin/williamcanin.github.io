@@ -3,7 +3,7 @@
 	"file": "jektify.css",
 	"sources": [
 		"jektify.scss",
-		"../../typing-jekyll-template/vendor/bundle/ruby/3.0.0/gems/jektify-1.0.6/assets/vendor/jektify/sass/_jektify.scss"
+		"../../typing-jekyll-template/vendor/bundle/ruby/3.0.0/gems/jektify-1.0.7/assets/vendor/jektify/sass/_jektify.scss"
 	],
 	"sourcesContent": [
 		"@import \"jektify\";",

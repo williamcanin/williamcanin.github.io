@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://williamcanin.dev/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.dev/" rel="alternate" type="text/html" /><updated>2021-07-01T19:48:06-03:00</updated><id>https://williamcanin.dev/blog/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T17:37:43-03:00</published><updated>2021-06-26T17:37:43-03:00</updated><id>https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs/">&lt;ul id=&quot;markdown-toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://williamcanin.dev/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.dev/" rel="alternate" type="text/html" /><updated>2021-07-01T22:58:51-03:00</updated><id>https://williamcanin.dev/blog/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T17:37:43-03:00</published><updated>2021-06-26T17:37:43-03:00</updated><id>https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#requisitos&quot; id=&quot;markdown-toc-requisitos&quot;&gt;Requisitos&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#criando-o-módulo&quot; id=&quot;markdown-toc-criando-o-módulo&quot;&gt;Criando o módulo&lt;/a&gt;&lt;/li&gt;
@@ -544,7 +544,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:7ECZGiOoEPSxnPBU25Tc3f&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/7ECZGiOoEPSxnPBU25Tc3f?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
@@ -579,7 +579,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:7r73WiEt7wpiD331EEivcp&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/7r73WiEt7wpiD331EEivcp?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
@@ -615,7 +615,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:5x1ChlBgkxWf0i1n2NFwKf&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/5x1ChlBgkxWf0i1n2NFwKf?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
@@ -708,7 +708,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:3iC3Numiy9P3AkF7iioKmx&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/3iC3Numiy9P3AkF7iioKmx?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
@@ -1096,7 +1096,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:4z03oOSuvqMuHlkuwXqbSy&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/4z03oOSuvqMuHlkuwXqbSy?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
@@ -1338,7 +1338,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:1parffUcsk8pfGbyMtGnmW&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/1parffUcsk8pfGbyMtGnmW?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
@@ -1584,7 +1584,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:5YaLFRpqpUzgLLDcukNn0H&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/5YaLFRpqpUzgLLDcukNn0H?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
@@ -1739,7 +1739,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:0QQIc8RRZADy75CjvBLsiZ&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/0QQIc8RRZADy75CjvBLsiZ?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
@@ -1880,7 +1880,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:7kIunRqo3botlYCadX0IRM&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/7kIunRqo3botlYCadX0IRM?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
@@ -2728,7 +2728,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
               &lt;iframe id=&quot;jektify__track&quot; class=&quot;jektify__track jektify__track--dark 
-                jektify__track--custom&quot; src=&quot;https://embed.spotify.com/?uri=spotify:track:36FaicbcQqoLXBBqTW76Zk&amp;amp;theme=dark&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
+                jektify__track--custom&quot; src=&quot;https://open.spotify.com/embed/track/36FaicbcQqoLXBBqTW76Zk?theme=0&quot; width=&quot;100%&quot; height=&quot;80&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
