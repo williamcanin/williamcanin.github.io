@@ -24,7 +24,7 @@ com minha chave GPG pública que pode ser adquirida [**AQUI**](http://williamcan
 
 **2614 932C 0718 DCCF 8CB9  84D2 95C0 EFF4 1E47 97A9**
 
-Não esqueça de me enviar sua chave GPG pública também.
+Não esqueça de me enviar sua chave GPG **pública** também.
 
 > E-mail SEM criptografia:
 
