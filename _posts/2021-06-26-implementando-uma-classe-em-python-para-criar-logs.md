@@ -376,4 +376,8 @@ Esse foi um simples post com intuito de te dar um base de orientação sobre gra
 * [https://docs.python.org/pt-br/3/library/logging.html](https://docs.python.org/pt-br/3/library/logging.html)
 
 
+**Ao som de:**
+
 {% jektify spotify/track/7ECZGiOoEPSxnPBU25Tc3f/dark %}
+
+{% endpost #9D9D9D %}
