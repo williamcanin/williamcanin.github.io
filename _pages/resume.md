@@ -129,7 +129,7 @@ Meu workflow de desenvolvimento no [Github](https://github.com/williamcanin):
 
 {:.remove-printer}
 
-<img class="img-fluid" width="440px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=williamcanin&hide=html,ruby,css,coffeescript,makefile,batchfile&hide_border=true&hide_title=true&layout=compact&theme=buefy"/>
+<img class="img-fluid" width="440px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=williamcanin&hide=html,css,scss,coffeescript,makefile,batchfile,ruby&hide_border=true&layout=compact&theme=buefy"/>
 
 <!--
 ### Idiomas
