@@ -663,18 +663,18 @@ Junho
 
 <h1 id="introdução">Introdução</h1>
 
-<p>Conforme você vai avançando na programação, você vai se desafiando e como isso criando aplicações mais complexas e com necessidade de armazenar logs. Pensando nisso, resolvi criar esse post não só pra quem vai fazer um software mais avançado, mas também serve para todos tipos de níveis de aplicação dependendo o que a mesma irá exigir.</p>
+<p>Conforme você vai avançando na programação, você vai se desafiando, e como isso criando aplicações mais complexas e com necessidade de armazenar logs. Pensando nisso, resolvi criar esse post não só pra quem vai fazer um software mais avançado, mas também serve para todos tipos de níveis de aplicação dependendo o que a mesma irá exigir.</p>
 
-<p>Neste post você vai aprender de forma básica como criar seus logs e ainda vamos implementar de uma forma que você possa usar como módulo para outros recursos, e um extra de colorir<code class="language-plaintext highlighter-rouge">*</code> os logs.</p>
+<p>Neste post você vai aprender de forma básica como criar seus logs e ainda vamos implementar de uma forma que você possa usar como módulo para outros recursos, e um extra de colorir<code class="language-plaintext highlighter-rouge">*</code> as mensagens de logs.</p>
 
-<p>E por quê eu digo aprender de forma simples?</p>
+<p><strong>E por quê eu digo aprender de forma simples?</strong></p>
 
 <p>R:- Porque dependendo do que você tem em mente, criar um registro de log e onde irá armazenar esses logs, pode exigir que você tenha que lhe dar com permissões de usuário no diretório a ser gravado os logs (o que não é no caso que iremos abordar neste post). No Linux por exemplo, muitas aplicações registram seus logs no diretório <code class="language-plaintext highlighter-rouge">/var/logs</code>, porem, isso é uma convenção e não necessariamente você precisa registra-los nesse diretório, ou seja, vai de programador para programador.</p>
 
 <p>Agora vamos de fato “codar” e sair dos avisos. Voilá!</p>
 
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">*</code> O modo de colorir só será possível se você estiver em um sistema Unix, ou seja, não é compatível com sistema Windows.</p>
+  <p><code class="language-plaintext highlighter-rouge">*</code> O modo de colorir os logs deste post, só será possível se você estiver em um sistema Unix, ou seja, não é compatível com sistema Windows.</p>
 </blockquote>
 
 <h1 id="requisitos">Requisitos</h1>
@@ -717,7 +717,7 @@ Junho
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <p>O primeiro <em>import</em> é o de fato o mais importante que é o módulo <strong>logging</strong>, um módulo de logs nativo do Python.
-O segundo, o <a href="https://docs.python.org/pt-br/3.9/library/sys.html?highlight=platform#sys.platform" target="_blank"><strong>platform</strong></a> também é um módulo nativo do Python, mas que tem uma função chamada <strong>startswith</strong> retorna um valor booleano através do parâmetro passado nela, para verificar o tipo de plataforma inicializada no S.O.</p>
+O segundo, o <a href="https://docs.python.org/pt-br/3.9/library/sys.html?highlight=platform#sys.platform" target="_blank"><strong>platform</strong></a> também é um módulo nativo do Python, mas que tem uma função chamada <strong>startswith</strong>, que retorna um valor booleano através do parâmetro passado nela para verificar o tipo de plataforma do S.O.</p>
 
 <h2 id="função-para-verificar-sistema-operacional">Função para verificar Sistema Operacional</h2>
 
@@ -737,10 +737,10 @@ O segundo, o <a href="https://docs.python.org/pt-br/3.9/library/sys.html?highlig
 
 <h2 id="criando-classe-colors-para-armazenar-cores-ansi">Criando classe <code class="language-plaintext highlighter-rouge">Colors</code> para armazenar cores ANSI</h2>
 
-<p>Agora chegou a hora de criarmos uma classe que irá armazenar nossas cores ANSI, essa classe terá apenas vaiáveis de classe:</p>
+<p>Agora chegou a hora de criarmos uma classe que irá armazenar nossas cores ANSI, essa classe terá apenas variáveis de classe:</p>
 
 <blockquote>
-  <p>Criei um vídeo no <strong>YouTube</strong>, explicando como podemos criar um módulo para imprimir mensagens coloridas com Python. Se você não visualizou vale a pena olhar, pois esté código é um pequeno trecho que tirei deste vídeo. Você pode acessa-ló <a href="https://www.youtube.com/watch?v=VW-UphhjJ3E&amp;feature=emb_imp_woyt" target="_blank">clicando aqui</a></p>
+  <p>Criei um vídeo no <strong>YouTube</strong>, explicando como podemos criar um módulo para imprimir mensagens coloridas com Python. Se você não visualizou vale a pena olhar, pois este código é um pequeno trecho que tirei deste vídeo. Você pode acessa-ló <a href="https://www.youtube.com/watch?v=VW-UphhjJ3E&amp;feature=emb_imp_woyt" target="_blank">clicando aqui</a></p>
 </blockquote>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -770,12 +770,12 @@ O segundo, o <a href="https://docs.python.org/pt-br/3.9/library/sys.html?highlig
 <p>Criei apenas alguns opções de cores e estilos ANSI, mas você pode implementar mais acessando este <a href="https://en.wikipedia.org/wiki/ANSI_escape_code" target="_blank">documento</a> que contem explicações mais detalhas sobre cores ANSI.</p>
 
 <blockquote>
-  <p>NOTA: Tem como utilizar cores para Windows, porem, está nomenclatura é reconhecida apenas por sistemas baseado em UNIX (Linux e OS X).</p>
+  <p>NOTA: Tem como utilizar cores para Windows como a biblioteca <strong>coloranma</strong> por exemplo, porem, está forma é reconhecida apenas por sistemas baseado em UNIX (Linux e OS X).</p>
 </blockquote>
 
 <h2 id="criando-classe-de-logs">Criando classe de logs</h2>
 
-<p>Vamos começar de fato a criar nossa classe de <strong>logs</strong>, onde será uma classe que irá herdar da classE <strong>Colors</strong>:</p>
+<p>Vamos começar de fato a criar nossa classe de <strong>logs</strong>, onde será uma classe que irá herdar da classe <strong>Colors</strong>:</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -836,12 +836,6 @@ O segundo, o <a href="https://docs.python.org/pt-br/3.9/library/sys.html?highlig
 <h2 id="método-de-registrar-os-logs">Método de registrar os logs</h2>
 
 <p>Agora começa a nossa brincadeira, esté método que será responsável por armazenar toda nossa lógica para registrar os logs.</p>
-
-<blockquote>
-  <p>Nesse momento minha mãe me chamou para apreciar um delicioso bolo feito por ela. Te ofereço um pedaço por educação, mas sei que não tem como enviar um pedaço por código. Me dê sua licença, irei saborear o bolo.</p>
-</blockquote>
-
-<p>…voltei.</p>
 
 <p>Vou implementar ele, e abaixo dele vou explicar o que cada condição e lógica faz:</p>
 
@@ -918,7 +912,7 @@ O segundo, o <a href="https://docs.python.org/pt-br/3.9/library/sys.html?highlig
 <ul>
   <li>message - Este parâmetro é obrigatório, é nele que iremos colocar nossa mensagem de log.</li>
   <li>type - Este parâmetro nomeado está como padrão o valor de uma string <strong>exception</strong>, isso significa que quando formos criar um log, se não especificarmos o level que queremos de acordo com nosso dicionário <code class="language-plaintext highlighter-rouge">self.levels</code>, irá ser registrado no level <code class="language-plaintext highlighter-rouge">exception</code>.</li>
-  <li>colorize - Parâmetro booleano que se estiver <code class="language-plaintext highlighter-rouge">True</code>, nosso logo será colorido.</li>
+  <li>colorize - Parâmetro booleano que se estiver <code class="language-plaintext highlighter-rouge">True</code>, nossos logs serão coloridos.</li>
 </ul>
 
 <blockquote>
