@@ -11,7 +11,7 @@ day_quote:
     description: |
         "Não se junte com descrentes para trabalhar com eles. Pois como é que o certo pode ter alguma coisa a ver com o errado? Como é que a luz e a escuridão podem viver juntas? Como podem Cristo e o Diabo estar de acordo? O que um cristão e um descrente têm em comum?"<br>
         (2 Coríntios 6:15:15 NTLH)
-published: true
+published: false
 
 # Does not change and does not remove 'script' variables
 script: [post.js]
