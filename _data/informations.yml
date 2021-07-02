@@ -84,9 +84,9 @@ website:
   # Postlist
     postlist:
       pagination:
-        newer_text: "Mais recentes"
-        counter: ['Página', 'de']
-        older_text: "Mais velhos"
+        newer_text: "Recentes"
+        counter: ['Pág.', 'de']
+        older_text: "Velhos"
 
   # Contact
     contact:
