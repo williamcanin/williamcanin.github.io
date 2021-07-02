@@ -25,17 +25,17 @@ Olá <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width
 
 # Introdução
 
-Conforme você vai avançando na programação, você vai se desafiando e como isso criando aplicações mais complexas e com necessidade de armazenar logs. Pensando nisso, resolvi criar esse post não só pra quem vai fazer um software mais avançado, mas também serve para todos tipos de níveis de aplicação dependendo o que a mesma irá exigir.
+Conforme você vai avançando na programação, você vai se desafiando, e como isso criando aplicações mais complexas e com necessidade de armazenar logs. Pensando nisso, resolvi criar esse post não só pra quem vai fazer um software mais avançado, mas também serve para todos tipos de níveis de aplicação dependendo o que a mesma irá exigir.
 
-Neste post você vai aprender de forma básica como criar seus logs e ainda vamos implementar de uma forma que você possa usar como módulo para outros recursos, e um extra de colorir`*` os logs.
+Neste post você vai aprender de forma básica como criar seus logs e ainda vamos implementar de uma forma que você possa usar como módulo para outros recursos, e um extra de colorir`*` as mensagens de logs.
 
-E por quê eu digo aprender de forma simples?
+**E por quê eu digo aprender de forma simples?**
 
 R:- Porque dependendo do que você tem em mente, criar um registro de log e onde irá armazenar esses logs, pode exigir que você tenha que lhe dar com permissões de usuário no diretório a ser gravado os logs (o que não é no caso que iremos abordar neste post). No Linux por exemplo, muitas aplicações registram seus logs no diretório `/var/logs`, porem, isso é uma convenção e não necessariamente você precisa registra-los nesse diretório, ou seja, vai de programador para programador.
 
 Agora vamos de fato "codar" e sair dos avisos. Voilá!
 
-> `*` O modo de colorir só será possível se você estiver em um sistema Unix, ou seja, não é compatível com sistema Windows.
+> `*` O modo de colorir os logs deste post, só será possível se você estiver em um sistema Unix, ou seja, não é compatível com sistema Windows.
 
 # Requisitos
 
@@ -66,7 +66,7 @@ from sys import platform
 {% endhighlight %}
 
 O primeiro *import* é o de fato o mais importante que é o módulo **logging**, um módulo de logs nativo do Python.
-O segundo, o [**platform**](https://docs.python.org/pt-br/3.9/library/sys.html?highlight=platform#sys.platform){:target="_blank"} também é um módulo nativo do Python, mas que tem uma função chamada **startswith** retorna um valor booleano através do parâmetro passado nela, para verificar o tipo de plataforma inicializada no S.O.
+O segundo, o [**platform**](https://docs.python.org/pt-br/3.9/library/sys.html?highlight=platform#sys.platform){:target="_blank"} também é um módulo nativo do Python, mas que tem uma função chamada **startswith**, que retorna um valor booleano através do parâmetro passado nela para verificar o tipo de plataforma do S.O.
 
 
 ## Função para verificar Sistema Operacional
@@ -87,9 +87,9 @@ Uma função simples, que retorna uma string vazia caso o sistema operacional se
 
 ## Criando classe `Colors` para armazenar cores ANSI
 
-Agora chegou a hora de criarmos uma classe que irá armazenar nossas cores ANSI, essa classe terá apenas vaiáveis de classe:
+Agora chegou a hora de criarmos uma classe que irá armazenar nossas cores ANSI, essa classe terá apenas variáveis de classe:
 
-> Criei um vídeo no **YouTube**, explicando como podemos criar um módulo para imprimir mensagens coloridas com Python. Se você não visualizou vale a pena olhar, pois esté código é um pequeno trecho que tirei deste vídeo. Você pode acessa-ló [clicando aqui](https://www.youtube.com/watch?v=VW-UphhjJ3E&feature=emb_imp_woyt){:target="_blank"}
+> Criei um vídeo no **YouTube**, explicando como podemos criar um módulo para imprimir mensagens coloridas com Python. Se você não visualizou vale a pena olhar, pois este código é um pequeno trecho que tirei deste vídeo. Você pode acessa-ló [clicando aqui](https://www.youtube.com/watch?v=VW-UphhjJ3E&feature=emb_imp_woyt){:target="_blank"}
 
 {% highlight python linenos %}
 
@@ -111,11 +111,11 @@ Repare que criei variáveis de classe, e os valores que elas estão recebendo es
 Criei apenas alguns opções de cores e estilos ANSI, mas você pode implementar mais acessando este [documento](https://en.wikipedia.org/wiki/ANSI_escape_code){:target="_blank"} que contem explicações mais detalhas sobre cores ANSI.
 
 
-> NOTA: Tem como utilizar cores para Windows, porem, está nomenclatura é reconhecida apenas por sistemas baseado em UNIX (Linux e OS X).
+> NOTA: Tem como utilizar cores para Windows como a biblioteca **coloranma** por exemplo, porem, está forma é reconhecida apenas por sistemas baseado em UNIX (Linux e OS X).
 
 ## Criando classe de logs
 
-Vamos começar de fato a criar nossa classe de **logs**, onde será uma classe que irá herdar da classE **Colors**:
+Vamos começar de fato a criar nossa classe de **logs**, onde será uma classe que irá herdar da classe **Colors**:
 
 {% highlight python linenos %}
 
@@ -164,10 +164,6 @@ O `self.levels` é um dicionário que está carregando os levels de log do módu
 
 Agora começa a nossa brincadeira, esté método que será responsável por armazenar toda nossa lógica para registrar os logs.
 
-> Nesse momento minha mãe me chamou para apreciar um delicioso bolo feito por ela. Te ofereço um pedaço por educação, mas sei que não tem como enviar um pedaço por código. Me dê sua licença, irei saborear o bolo.
-
-
-...voltei.
 
 Vou implementar ele, e abaixo dele vou explicar o que cada condição e lógica faz:
 
@@ -214,7 +210,7 @@ Podemos observar que temos alguns parâmetros no método `record`, eles são:
 
 * message - Este parâmetro é obrigatório, é nele que iremos colocar nossa mensagem de log.
 * type - Este parâmetro nomeado está como padrão o valor de uma string **exception**, isso significa que quando formos criar um log, se não especificarmos o level que queremos de acordo com nosso dicionário `self.levels`, irá ser registrado no level `exception`.
-* colorize - Parâmetro booleano que se estiver `True`, nosso logo será colorido.
+* colorize - Parâmetro booleano que se estiver `True`, nossos logs serão coloridos.
 
 > NOTA: O log só será mostrado colorido se carregarmos o arquivo de log pelo terminal, então, tenha em mente que se usar cores, será chato ler esse arquivo em um editor de texto, por exemplo.
 
