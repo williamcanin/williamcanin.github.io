@@ -15,7 +15,7 @@ group :jekyll_plugins do
   gem 'jekyll-youtube', '~> 1.0.0'
   gem 'jekyll-tagging', '~> 1.1.0'
   gem 'jemoji', '~> 0.12.0'
-  gem 'jektify', '~> 1.0.6'
+  gem 'jektify', '~> 1.0.7'
   gem 'jekyll-email-protect', '~> 1.1.0'
   gem 'jekyll-paginate-v2', '~> 3.0.0'
 end
