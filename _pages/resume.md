@@ -120,6 +120,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 <!-- {% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %} -->
 {% badge [**SQL**](https://pt.wikipedia.org/wiki/SQL){:target="_blank"}|16px %}
 {% badge [**Git**](https://git-scm.com/){:target="_blank"}|16px %}
+{% badge [**Microsoft Excel**](https://www.microsoft.com/pt-br/microsoft-365/excel){:target="_blank"}|16px %}
 {% badge [**Jekyll**](https://jekyllrb.com/){:target="_blank"}|16px %}
 {% badge [**Linux**](https://pt.wikipedia.org/wiki/Linux){:target="_blank"}|16px %}
 
