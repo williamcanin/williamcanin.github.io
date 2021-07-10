@@ -111,7 +111,7 @@ Repare que criei variáveis de classe, e os valores que elas estão recebendo es
 Criei apenas alguns opções de cores e estilos ANSI, mas você pode implementar mais acessando este [documento](https://en.wikipedia.org/wiki/ANSI_escape_code){:target="_blank"} que contem explicações mais detalhas sobre cores ANSI.
 
 
-> NOTA: Tem como utilizar cores para Windows como a biblioteca **coloranma** por exemplo, porem, está forma é reconhecida apenas por sistemas baseado em UNIX (Linux e OS X).
+> NOTA: Tem como utilizar cores para Windows como a biblioteca [**colorama**](https://pypi.org/project/colorama){:target="_blank"} por exemplo, porem, está forma é reconhecida apenas por sistemas baseado em UNIX (Linux e OS X).
 
 ## Criando classe de logs
 
