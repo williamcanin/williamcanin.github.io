@@ -38,9 +38,9 @@ website:
 # Sidebar
   sidebar:
     avatar:
-      img: "avatar.svg"
+      img: "williamcanin_logo.svg"
       flip:
-        img: "avatar_flip_yellow.svg"
+        img: "williamcanin_behind.jpg"
     title:
       text: "Hey, <br> I'm W://iam."
       size: "2.3rem"
@@ -71,7 +71,7 @@ website:
       count_comments:
         text: "Comentários"
       author:
-        avatar: "williamcanin.jpg"
+        avatar: "williamcanin_logo.svg"
         title: "Autor"
         name: "William Canin"
         description: |
@@ -176,16 +176,16 @@ userdata:
 #  button:
 #    text: "Adquirir"
 #  cards:
-#  - id: python-do-zero
-#    image: "python-do-zero.jpg"
-#    title: "Python do Zero"
+#  - id: 
+#    image: ""
+#    title: ""
 #    description:
-#      - Produto para iniciantes em programação Python.
-#    url: https://go.hotmart.com/D40526550U?dp=1
+#      - 
+#    url:
 #
-#  - id: servidor-formatacao-pxe
-#    image: "servidor-formatacao-pxe.jpg"
-#    title: "Servidor de Formatação (PXE)"
+#  - id: 
+#    image: ""
+#    title: ""
 #    description:
-#      - Curso ideal para quem trabalha como suporte técnico.
-#    url: https://go.hotmart.com/W40529523U?dp=1
+#      - 
+#    url: 
