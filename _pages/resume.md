@@ -30,11 +30,11 @@ permalink: /resume/ # add permilink for page. E.g: /smallparty/
 ### Dados Pessoais
 ---
 
-**Sexo:** Masculino  
-**Nacionalidade:** Brasileiro  
-**País:** Brasil  
-**E-mail:** [contato[at]williamcanin.me](mailto:{{ "contato@williamcanin.me" | encode_email }}) | [william.costa.canin[at]gmail.com](mailto:{{ "william.costa.canin@gmail.com" | encode_email }})  
-**Website:** [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}  
+**Sexo:** Masculino
+**Nacionalidade:** Brasileiro
+**País:** Brasil
+**E-mail:** [contato[at]williamcanin.me](mailto:{{ "contato@williamcanin.me" | encode_email }}) | [william.costa.canin[at]gmail.com](mailto:{{ "william.costa.canin@gmail.com" | encode_email }})
+**Website:** [https://williamcanin.me](http://williamcanin.github.io){:target="_blank"}
 
 -->
 ### Bio
@@ -55,34 +55,34 @@ Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_
 ### Formação acadêmica
 ---
 
-**Fev/2009 - Nov/2013**  
-[**Centro Universitário de Lins - Unilins**](http://www.unilins.edu.br/){:target="_blank"}  
+**Fev/2009 - Nov/2013**
+[**Centro Universitário de Lins - Unilins**](http://www.unilins.edu.br/){:target="_blank"}
 Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas
 
 <!--
 ### Cursos
 ---
 
-**2019**  
-[**Udemy**](https://udemy.com/){:target="_blank"}  
-Programação em Python - Básico/Avançado  
-Django - Básico/Intermediário  
+**2019**
+[**Udemy**](https://udemy.com/){:target="_blank"}
+Programação em Python - Básico/Avançado
+Django - Básico/Intermediário
 
-**2019 - 16 semanas**  
-[**USP - Universidade de São Paulo**](https://www5.usp.br/){:target="_blank"}  
+**2019 - 16 semanas**
+[**USP - Universidade de São Paulo**](https://www5.usp.br/){:target="_blank"}
 Introdução à Ciência da Computação com Python - [Módulo I](https://www.coursera.org/learn/ciencia-computacao-python-conceitos){:target="_blank"} e [Módulo II](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2){:target="_blank"}
 
-**2018 - 8 horas**  
-[**Solyd - Treinamentos e Cursos Online**](https://solyd.com.br/){:target="_blank"}  
+**2018 - 8 horas**
+[**Solyd - Treinamentos e Cursos Online**](https://solyd.com.br/){:target="_blank"}
 Python Básico - [Certificado](https://williamcanin.me/docs/certificate/backend/solyd-curses-python-basic.pdf){:target="_blank"}
 
-**2018 - 6 horas**  
-[**NodeStudio Treinamentos - Cursos de Desenvolvimento Web**](https://www.nodestudio.com.br/){:target="_blank"}  
-HTML5 & CSS3 - [Certificado](https://williamcanin.me/docs/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}  
+**2018 - 6 horas**
+[**NodeStudio Treinamentos - Cursos de Desenvolvimento Web**](https://www.nodestudio.com.br/){:target="_blank"}
+HTML5 & CSS3 - [Certificado](https://williamcanin.me/docs/certificate/frontend/html5-css3-in-practice-nodestudio/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}
 Design Responsivo - [Certificado](https://williamcanin.me/docs/certificate/frontend/responsive-design-certificate-at-nodestudio/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
 
-**2017 - 11 horas**  
-[**Fundação Bradesco - Escola Virtual**](https://www.ev.org.br/){:target="_blank"}  
+**2017 - 11 horas**
+[**Fundação Bradesco - Escola Virtual**](https://www.ev.org.br/){:target="_blank"}
 HTML Básico - [Certificado](https://williamcanin.me/docs/certificate/frontend/cert-curso-html-basico-bradesco/cert-curso-html-basico-bradesco.pdf){:target="_blank"}
 -->
 
@@ -91,7 +91,7 @@ HTML Básico - [Certificado](https://williamcanin.me/docs/certificate/frontend/c
 
 <!-- **Linux**
 
-Conhecimentos em open source e nas diferenças entre as várias distribuições Linux  
+Conhecimentos em open source e nas diferenças entre as várias distribuições Linux
 Execução de tarefas de manutenção com a linha de comando, instalação e configuração de um computador rodando Linux e configuração básica de rede
 
 * Arquitetura do Sistema
@@ -102,6 +102,29 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 * Interfaces e Desktops
 * Tarefas administrativas
 * Serviços Essenciais do sistema -->
+
+### Certificados
+
+* **Desenvolvimento avançado Python com Flask e REST API** ([*Digital Innovation One*](https://digitalinnovation.one/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/dio-development-advanced-python-with-flask-rest-api.pdf){:target="_blank"}
+
+* **Desenvolvimento para Internet e Banco de Dados com Python e Django** ([*Digital Innovation One*](https://digitalinnovation.one/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/dio-desenvolvimento-para-internet-e-banco-de-dados-com-python-e-django.pdf){:target="_blank"}
+
+* **Programação Web com Python e Django Framework: Essencial** ([*Geek University*](https://www.geekuniversity.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/udemy-programacao-web-com-python-e-django-framework-essencial.pdf){:target="_blank"}
+
+* **Participação na Hackathon de Python em desenvolvimento Avançado** ([*Hackathon Brasil*](https://hackathonbrasil.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/imagimaker_advanced_python_challenge_11_04-2020.pdf){:target="_blank"}
+
+* **Introdução a Javascript** ([*Udemy*](https://www.udemy.com/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/certificado_intruducao_a_javascript.pdf){:target="_blank"}
+
+* **Django 2.0 - Aprendendo os conceitos fundamentais** ([*Udemy*](https://www.udemy.com/){:target="_blank"})
+
+* **Aprenda Programação em Python 3 com Facilidade do Zero** ([*Udemy*](https://www.udemy.com/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/udemy-curses-python3-zero.pdf){:target="_blank"}
+
+* **Python Básico** ([*Solyd*](https://solyd.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/solyd-curses-python-basic.pdf){:target="_blank"}
+
+* **HTML & CSS na prática** ([*NodeStudio*](https://www.nodestudio.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}
+
+* **Design Responsivo** ([*NodeStudio*](https://www.nodestudio.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
+
 
 ### Nuvem de Conhecimentos
 ---
@@ -136,7 +159,7 @@ Meu workflow de desenvolvimento no [Github](https://github.com/williamcanin):
 ### Idiomas
 ---
 
-**Português:** Fluente (Nativo)  
+**Português:** Fluente (Nativo)
 **Inglês:** Básico (Técnico)
 -->
 
