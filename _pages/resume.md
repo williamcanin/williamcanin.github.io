@@ -111,7 +111,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 
 * **Programação Web com Python e Django Framework: Essencial** ([*Geek University*](https://www.geekuniversity.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/udemy-programacao-web-com-python-e-django-framework-essencial.pdf){:target="_blank"}
 
-* **Participação na Hackathon de Python em desenvolvimento Avançado** ([*Hackathon Brasil*](https://hackathonbrasil.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/imagimaker_advanced_python_challenge_11_04-2020.pdf){:target="_blank"}
+* **Participação na Hackathon de Python em desenvolvimento Avançado** ([*Hackathon Brasil*](https://hackathonbrasil.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/imagimaker_advanced_python_challenge_11_04-2020.pdf){:target="_blank"} - [resultado](https://williamcanin.github.io/docs/certificates/resultado_hackthon_imagimaker_python.jpg){:target="_blank"}
 
 * **Introdução a Javascript** ([*Udemy*](https://www.udemy.com/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/certificado_intruducao_a_javascript.pdf){:target="_blank"}
 
