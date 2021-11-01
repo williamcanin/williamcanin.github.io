@@ -1,7 +1,8 @@
 vendor/
 *.Indentifier
 !/_src/_sass/vendor/
-!/assets/vendor/simple-jekyll-search.min.js
+assets/vendor/js/
+!assets/vendor/js/simple-jekyll-search.min.js
 node_modules/
 _site/
 public/
