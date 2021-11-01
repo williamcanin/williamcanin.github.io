@@ -31,7 +31,7 @@ jektify:
       To listen to the full song, open your Spotify and start these musics.
 
 
-# Attention! Do not change the information below as it is 
+# Attention! Do not change the information below as it is
 # for development unless you know what you are doing.
 
 include: ['_pages']
@@ -110,6 +110,7 @@ exclude:
   - node_modules
   - _src
   - vendor
+  - cache
   - Gemfile
   - Gemfile.lock
   - screenshot.png
