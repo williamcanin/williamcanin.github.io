@@ -1,9 +1,8 @@
-vendor/
-*.Indentifier
-!/_src/_sass/vendor/
-assets/vendor/js/
-!assets/vendor/js/simple-jekyll-search.min.js
 node_modules/
+cache/
+assets/vendor/js/*.js
+assets/vendor/js/*.map
+!assets/vendor/js/simple-jekyll-search.min.js
 _site/
 public/
 temp/
@@ -12,10 +11,9 @@ tmp/
 .jekyll-cache/
 .jekyll-metadata/
 package-lock.json
+*.Indentifier
 **/*.bak
 **/*.lock
 **/*.log
-vendor
 Gemfile.lock
-node_modules
 package-lock.json
