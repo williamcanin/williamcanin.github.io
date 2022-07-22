@@ -10,7 +10,7 @@ script: [hello.js]
 
 {% assign age = site.time | date: '%Y' | minus: 1988 %}
 
-Hey, guy! Bem-vindo à casa de Internet de William Canin. (Este sou eu!)
+Hey, guy! Bem-vindo à casa de Internet de "William Canin". (Este sou eu!)
 
 Me considero um praticante autodidata de algumas ferramentas de desenvolvimento/programação. Eu escrevo ocasionalmente no meu [weblog]({{site.url}}{{site.baseurl}}/blog/).
 
