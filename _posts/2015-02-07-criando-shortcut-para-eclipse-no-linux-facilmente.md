@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Criando um shortcut para o Eclipse no Linux
+category: blog
 date: 2015-02-07 19:50:20 -0300
 comments: true
 tags: ["eclipse","shortcut","linux"]

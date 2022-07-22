@@ -22,7 +22,7 @@ Nessa área você pode me contatar para trabalho, fazer feedbacks sobre posts, o
 Se desejar entrar em contato com e-mail criptografado, envie o e-mail para **wcanin.contact@gmail.com**,
 com minha chave GPG pública que pode ser adquirida [**AQUI**](http://williamcanin.github.io/docs/key/public.asc), onde a impressão digital da mesma é:
 
-**2614 932C 0718 DCCF 8CB9  84D2 95C0 EFF4 1E47 97A9**
+**3BB2 6A48 BC21 BB5A 8B31 BD5F 2C07 ABF9 BB9A 75EE**
 
 Não esqueça de me enviar sua chave GPG **pública** também.
 

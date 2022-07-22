@@ -8,7 +8,6 @@ published: true
 script: [hello.js]
 ---
 
-
 {% assign age = site.time | date: '%Y' | minus: 1988 %}
 
 Hey, guy! Bem-vindo à casa de Internet de William Canin. (Este sou eu!)
@@ -26,8 +25,8 @@ Você pode ver uma lista de meus [projetos](https://github.com/williamcanin){:ta
 
 Mais alguma coisa...? Oh sim, aqui estão os demais lugares na internet que você pode me encontrar e descobrir alguns enigmas:
 
-[GitHub](https://github.com/williamcanin){:target="_blank"} - 
-[YouTube](https://youtube.com/c/williamcanin){:target="_blank"} - 
+[GitHub](https://github.com/williamcanin){:target="_blank"} -
+[YouTube](https://youtube.com/c/williamcanin){:target="_blank"} -
 <span style="color: red;">Facebook Error 404</span> - <span style="color: red;">Instagram Error 404</span> - <span style="color: red;">Twitter Error 404</span>
 
 <!-- "The pain that hurts me is the same as it teaches me." -->

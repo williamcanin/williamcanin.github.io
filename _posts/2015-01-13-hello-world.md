@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Hello World
+category: blog
 date:   2015-01-13 05:16:01 -0300
 comments: false
 tags: ["misc","hello"]

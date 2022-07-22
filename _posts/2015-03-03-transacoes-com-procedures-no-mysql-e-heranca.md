@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transações com procedures no MySQL e Herança
+category: blog
 date: 2015-03-03 01:02:32 -0300
 comments: true
 tags: ["database","mysql","procedure","trigger"]

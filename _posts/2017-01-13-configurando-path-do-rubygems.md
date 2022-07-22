@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Configurando PATH do RubyGems e Bundler no Linux
+category: blog
 date: 2017-01-13 16:02:37 -0300
 comments: false
 tags: ["ruby","gems","linux", "bundler"]
@@ -184,11 +185,11 @@ william
      │   │   └── 2.4.0
      │   │        ├── bin
      │   │        ├── build_info
-     │   │        ├── cache   
-     │   │        ├── doc   
-     │   │        ├── extensions   
-     │   │        ├── gems                           
-     │   │        └── specifications       
+     │   │        ├── cache
+     │   │        ├── doc
+     │   │        ├── extensions
+     │   │        ├── gems
+     │   │        └── specifications
      │   └── specifications
      └── specs  
 {% endhighlight %} 
@@ -225,8 +226,8 @@ $ bundle config --global BIN $BUNDLE_BIN
 $ bundle config --global DISABLE_SHARED_GEMS true
 {% endhighlight %}
 
-Na `linha 1` atribuimos o PATH o local raiz onde nossas Gems global irá ser instaladas.   
-Na `linha 2` atribuimos o PATH para os executáveis das Gems.   
+Na `linha 1` atribuimos o PATH o local raiz onde nossas Gems global irá ser instaladas.
+Na `linha 2` atribuimos o PATH para os executáveis das Gems.
 Na `linha 3` é opcional, onde desabilitamos o compartilhamento de Gems.
 
 

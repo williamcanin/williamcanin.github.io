@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Arquivos de execução no Linux
+category: blog
 date: 2015-04-29 12:29:32 -0300
 comments: true
 tags: ["linux","shell","script"]

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Eclipse Luna - Erro de inicialização no Linux
+category: blog
 date: 2015-02-23 18:14:01 -0300
 comments: true
 tags: ["eclipse","linux"]

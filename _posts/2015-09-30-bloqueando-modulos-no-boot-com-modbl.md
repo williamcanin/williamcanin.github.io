@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Bloqueando módulos durante o boot com o Modbl
+category: blog
 date: 2015-09-30 13:55:19 -0300
 comments: true
 tags: ["modprobe","boot","linux","shell","script"]

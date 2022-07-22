@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Qual a utilidade do Facebook para você?
+category: blog
 date: 2015-01-25 15:17:19 -0300
 comments: true
 tags: ["facebook","social","misc"]
@@ -85,7 +86,7 @@ Ter um papo pessoalmente, faz com que a pessoa fique mais segura e observa suas 
 
 Outra questão é que as pessoas adicionam outras por segundas intenções, com uma possível esperança que possa se envolver em termos de relacionamento, mas Facebook e outras redes sociais (na minha opinião) não é uma boa forma de começar um relacionamento profundo com alguém.
 
-Hoje em dia a comunicação está muito fácil através das redes sociais e internet, e se tratando de relacionamento, isso nos leva a um limbo bem frustante pela falta de afeto que sentimos. 
+Hoje em dia a comunicação está muito fácil através das redes sociais e internet, e se tratando de relacionamento, isso nos leva a um limbo bem frustante pela falta de afeto que sentimos.
 
 Não só o Facebook, mas como outras rede sociais de relacionamento, como [Tinder](https://www.tinder.com){:target="_blank"}, [Badoo](https://badoo.com){:target="_blank"}, etc, tem o proposito de fazer com que as pessoas se comuniquem e até encontrem o par perfeito, mas vale lembrar que não é só você na "disputa" pela aquela pessoa, o que gera o desconforto e um querer abusivo pela pessoa.
 

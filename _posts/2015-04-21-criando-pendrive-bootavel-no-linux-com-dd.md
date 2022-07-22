@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Criando pendrive bootavel no Linux com dd
+category: blog
 date: 2015-04-21 18:42:04 -0300
 comments: true
 tags: ["dd","linux","iso","pendrive"]

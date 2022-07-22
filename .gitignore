@@ -13,6 +13,7 @@ tmp/
 .jekyll-metadata/
 package-lock.json
 *.Indentifier
+.jekyll-metadata
 **/*.bak
 **/*.lock
 **/*.log

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Linux Boot: A start job is running for dev-disk-by"
+category: blog
 date: 2015-07-26 10:29:04 -0300
 comments: true
 tags: ["boot","swap","linux"]
@@ -116,7 +117,7 @@ Agora coloque o UUID verdadeiro da partição swap no **/etc/fstab**, deixando a
 UUID=035b2802-752a-45b6-a87c-c4d466cdf53d none            swap    sw              0       0
 {% endhighlight %}
 
-No próximo boot, a mensagem **A start job is running for dev-disk-by()**  
+No próximo boot, a mensagem **A start job is running for dev-disk-by()**
 não irá te encomodar mais.
 
 ## Dica
@@ -158,7 +159,7 @@ Na próxima inicialização do Ubuntu ele irá mostrar tudo que esta sendo carre
 
 ## Conclusão
 
-*Por que isso acontece?*   
+*Por que isso acontece?*
 No meu caso, eu tinha instalado outra distribuição Linux e configurado a minha SWAP para essa outra distro, o que resultou na mudança de UUID. Fique esperto em fazer essas configurações também.
 
 Espero que esse tutorial possa te ajudar se tiver esse problema. Até a próxima galera! :)

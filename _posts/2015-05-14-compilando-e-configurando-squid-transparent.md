@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Compilando e configurando Squid
+category: blog
 date: 2015-05-14 09:13:57 -0300
 comments: true
 tags: ["squid","proxy","linux","server"]

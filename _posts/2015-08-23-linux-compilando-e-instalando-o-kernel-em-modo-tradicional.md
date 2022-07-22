@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Linux: Compilando e instalando o kernel em modo tradicional"
+category: blog
 date: 2015-08-23 17:52:44 -0300
 comments: true
 tags: ["kernel","linux","compile"]

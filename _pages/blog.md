@@ -2,6 +2,7 @@
 layout: postlist
 order: 1
 title: Blog
+cattype: blog
 posts_quantity:
   message: ['No total, são','post(s) separados por páginas.']
 # Use icons of: https://fontawesome.com/icons
@@ -13,7 +14,7 @@ menu:
 pagination:
   enabled: true
 script: [postlist.js]
-# NOTE: If you disable blog posting, you'll have to 
+# NOTE: If you disable blog posting, you'll have to
 #       disable tags.md, feed.md and search.md too.
 published: true
 permalink: /blog/ # add permilink for page. E.g: /smallparty/
