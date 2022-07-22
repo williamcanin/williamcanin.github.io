@@ -20,7 +20,7 @@ Nessa área você pode me contatar para trabalho, fazer feedbacks sobre posts, o
 > E-mail COM criptografia:
 
 Se desejar entrar em contato com e-mail criptografado (recomendo usar o [**Thunderbird**](https://www.thunderbird.net/pt-BR/)), envie o e-mail para **wcanin.contact@gmail.com**,
-usando minha chave GPG pública que pode ser adquirida [**AQUI**](https://williamcanin.github.io/docs/key/public.asc), onde a impressão digital da mesma é:
+usando minha chave GPG pública que pode ser adquirida [**AQUI**](https://williamcanin.dev/docs/key/public.asc), onde a impressão digital da mesma é:
 
 **19E0 B6CD C72C 60A6 6421 99CA C00A 8970 B041 8AD5**
 
