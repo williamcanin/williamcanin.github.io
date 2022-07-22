@@ -46,7 +46,7 @@ Autodidata em algumas [**linguagens de programação e tarefas voltadas a comput
 
 Regularmente, tenho revezamentos entre programação **Back-End** e desenvolvimento Front-End.
 
-Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [**Archlinux**](https://archlinux.org){:target="_blank"} / [Fedora](https://getfedora.org){:target="_blank"}.
+Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição [**Archlinux**](https://archlinux.org){:target="_blank"} e derivadas.
 
 Em meu lazer, gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:target="_blank"}; codar; assistir séries/filmes; leituras; e, estar com boas companhias.
 
