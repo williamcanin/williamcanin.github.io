@@ -10,24 +10,23 @@
   ___________________________________________ -->
   <title>
     {% if load_options.maintenance.enable == true %}
-        {{ load_data.website.under_maintenance.title }} - {{ load_data.website.under_maintenance.subtitle }}
+    {{ load_data.website.under_maintenance.title }} - {{ load_data.website.under_maintenance.subtitle }}
     {% else %}
     {% if page.url == "/" %}
-        {{ load_data.website.title }} - {{ load_data.website.description }}
-      {% else %}
-        {% if page.title %}
-          {{ page.title }} | {{ load_data.website.title }} - {{ load_data.website.description }}
-        {% else %}
-          {{ load_data.website.title }} | {{ load_data.website.description }}
-        {% endif %}
+    {{ load_data.website.title }} - {{ load_data.website.description }}
+    {% else %}
+    {% if page.title %}
+    {{ page.title }} | {{ load_data.website.title }} - {{ load_data.website.description }}
+    {% else %}
+    {{ load_data.website.title }} | {{ load_data.website.description }}
+    {% endif %}
     {% endif %}
     {% endif %}
   </title>
 
   <!-- Metatags
   ___________________________________________ -->
-  <meta name=description
-  content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines |
+  <meta name=description content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines |
     truncate: 160 }}
     {% else %}
     {{ load_data.website.description }}
@@ -35,8 +34,7 @@
 
 
   {% if load_data.website.metatag.google_site_verification %}
-  <meta name="google-site-verification"
-  content="{{ load_data.website.metatag.google_site_verification }}">
+  <meta name="google-site-verification" content="{{ load_data.website.metatag.google_site_verification }}">
   {% endif %}
 
   {% if load_data.website.metatag.expires %}
@@ -44,9 +42,9 @@
   {% endif %}
 
   {% if load_data.website.metatag.cache_control %}
-  <meta http-equiv="cache-control" content="{{ load_data.website.metatag.cache_control }}"/>
+  <meta http-equiv="cache-control" content="{{ load_data.website.metatag.cache_control }}" />
   {% else %}
-  <meta http-equiv="cache-control" content="public"/>
+  <meta http-equiv="cache-control" content="public" />
   {% endif %}
 
   <meta http-equiv="pragma" content="public">
@@ -79,14 +77,12 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' |
   prepend: site.baseurl | prepend: site.url }}">
 
-  <link type="application/atom+xml" rel="alternate"
-  title="{{ load_data.website.title }}"
-  href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
+  <link type="application/atom+xml" rel="alternate" title="{{ load_data.website.title }}"
+    href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
 
-    <!-- Favicon
+  <!-- Favicon
   ___________________________________________ -->
-  <link rel="icon" type="image/png" sizes="32x32"
-  href="{{ '/assets/images/favicon/favicon-32x32.png' |
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon/favicon-32x32.png' |
   prepend: site.baseurl | prepend: site.url }}">
 
 
@@ -100,7 +96,8 @@
   <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap" rel="stylesheet">
   {% endif %}
   {% if site.page == "resume" %}
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+    rel="stylesheet">
   {% endif %}
   <!--   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
@@ -114,17 +111,19 @@
   <!-- Themes
   ___________________________________________ -->
   {% if load_data.website.theme == "typing" %}
-    {% assign theme_chosen = "typing" %}
+  {% assign theme_chosen = "typing" %}
   {% elsif load_data.website.theme == "whiteglass" %}
-    {% assign theme_chosen = "whiteglass" %}
+  {% assign theme_chosen = "whiteglass" %}
   {% elsif load_data.website.theme == "cloudysky" %}
-    {% assign theme_chosen = "cloudysky" %}
+  {% assign theme_chosen = "cloudysky" %}
   {% elsif load_data.website.theme == "hacking" %}
-    {% assign theme_chosen = "hacking" %}
+  {% assign theme_chosen = "hacking" %}
   {% elsif load_data.website.theme == "littlegirl" %}
-    {% assign theme_chosen = "littlegirl" %}
+  {% assign theme_chosen = "littlegirl" %}
   {% elsif load_data.website.theme == "custom" %}
-    {% assign theme_chosen = "custom" %}
+  {% assign theme_chosen = "custom" %}
+  {% elsif load_data.website.theme == "darkness" %}
+  {% assign theme_chosen = "darkness" %}
   {% endif %}
   <link rel="stylesheet" href="{{ '/assets/css' | prepend: site.baseurl | prepend: site.url }}/{{ theme_chosen }}.css">
 
@@ -132,7 +131,7 @@
   {% if jekyll.environment == 'production' and
     load_data.website.google.analytics.id and
     load_options.google.analytics.enable == true %}
-    {% include scripts/google_analytics.html %}
+  {% include scripts/google_analytics.html %}
   {% endif %}
 
 </head>
