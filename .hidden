@@ -1,5 +1,6 @@
 vendor
 tmp
+cache
 node_modules
 _src
 Rakefile
@@ -13,3 +14,4 @@ CREDITS
 README.md
 README-ptbr.md
 Gemfile
+gulpfile.js

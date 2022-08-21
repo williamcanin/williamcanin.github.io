@@ -7,6 +7,8 @@ maintenance:
 # and set the menu => enable property to 'false' too.
 blog:
   enable: true
+  feed:
+    enable: true
 google:
   analytics:
     enable: true
