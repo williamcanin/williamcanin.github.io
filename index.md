@@ -18,6 +18,7 @@ Confira meu último post, {% for last_post in site.posts limit:1 %}
 "<a href="{{site.url}}{{site.baseurl}}{{last_post.url}}">{{last_post.title}}</a>". {% endfor %}
 
 Meu sistema operacional é Linux, através da distribuição [Arch Linux](https://archlinux.org){:target="_blank"}, porem, já provei o sabor de outras.
+(Caso queira, você pode dar uma olhada como é meu sistema operacional [AQUI](https://github.com/williamcanin/my_environment){:target="_blank"}).
 
 Tenho uma relação de idas e vindas com a maioria das linguagens de programação, mas eu encontrei casas felizes em [Python](https://python.org/){:target="_blank"}.
 
