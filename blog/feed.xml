@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://williamcanin.dev/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.dev/" rel="alternate" type="text/html" /><updated>2022-10-23T11:12:16-03:00</updated><id>https://williamcanin.dev/blog/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T17:37:43-03:00</published><updated>2021-06-26T17:37:43-03:00</updated><id>https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.dev/blog/implementando-uma-classe-em-python-para-criar-logs/">&lt;ul id=&quot;markdown-toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://williamcanin.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2023-07-22T06:08:11-03:00</updated><id>https://williamcanin.github.io/blog/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T17:37:43-03:00</published><updated>2021-06-26T17:37:43-03:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#requisitos&quot; id=&quot;markdown-toc-requisitos&quot;&gt;Requisitos&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#criando-o-módulo&quot; id=&quot;markdown-toc-criando-o-módulo&quot;&gt;Criando o módulo&lt;/a&gt;&lt;/li&gt;
@@ -524,7 +524,7 @@ O segundo, o &lt;a href=&quot;https://docs.python.org/pt-br/3.9/library/sys.html
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
@@ -546,7 +546,7 @@ To listen to the full song, open your Spotify and start these musics.
           &lt;/dd&gt;
         &lt;/dl&gt;
 
-&lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt;</content><author><name></name></author><category term="python" /><category term="logs" /></entry><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.dev/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.dev/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.dev/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
+&lt;hr style=&quot;border-top: 1px solid #9D9D9D ; color: #9D9D9D ;&quot; class=&quot;endpost&quot; /&gt;</content><author><name></name></author><category term="python" /><category term="logs" /></entry><entry><title type="html">Criando módulo para colorir print e input no Python</title><link href="https://williamcanin.github.io/blog/criando-modulo-para-colorir-print-e-input-no-python/" rel="alternate" type="text/html" title="Criando módulo para colorir print e input no Python" /><published>2019-12-10T20:32:01-03:00</published><updated>2019-12-10T20:32:01-03:00</updated><id>https://williamcanin.github.io/blog/criando-modulo-para-colorir-print-e-input-no-python</id><content type="html" xml:base="https://williamcanin.github.io/blog/criando-modulo-para-colorir-print-e-input-no-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá, este post você irá entender um pouco do conceito de sequências de escape (ANSI Code) e aprender a criar um módulo em &lt;a href=&quot;https://python.org&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;/a&gt; deixando as cores do terminal (sistemas baseado em &lt;strong&gt;UNIX&lt;/strong&gt;) coloridas. É claro que você pode implementar mais coisas para este módulo, porém esse é apenas um conceito básico de como o poder de sua criação pode criar coisas bacanas com Python ;)&lt;/p&gt;
 
@@ -561,7 +561,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
@@ -581,7 +581,7 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.dev/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.dev/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.dev/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Manipulando arquivo JSON com Python." /><published>2019-09-02T15:31:46-03:00</published><updated>2019-09-02T15:31:46-03:00</updated><id>https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá pessoa, meu nome é William e este será um post para compartilhar uma minissérie de vídeo sobre a manipulação de arquivo JSON com Python.&lt;/p&gt;
 
@@ -597,7 +597,7 @@ To listen to the full song, open your Spotify and start these musics.
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
@@ -617,7 +617,7 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="python" /><category term="json" /><summary type="html"></summary></entry><entry><title type="html">Corrigindo erro de chaves no Arch Linux</title><link href="https://williamcanin.dev/blog/corrigindo-erro-de-chaves-no-archlinux/" rel="alternate" type="text/html" title="Corrigindo erro de chaves no Arch Linux" /><published>2019-03-07T06:13:17-03:00</published><updated>2019-03-07T06:13:17-03:00</updated><id>https://williamcanin.dev/blog/corrigindo-erro-de-chaves-no-archlinux</id><content type="html" xml:base="https://williamcanin.dev/blog/corrigindo-erro-de-chaves-no-archlinux/">&lt;!-- Write from here your post !!! --&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="python" /><category term="json" /><summary type="html"></summary></entry><entry><title type="html">Corrigindo erro de chaves no Arch Linux</title><link href="https://williamcanin.github.io/blog/corrigindo-erro-de-chaves-no-archlinux/" rel="alternate" type="text/html" title="Corrigindo erro de chaves no Arch Linux" /><published>2019-03-07T06:13:17-03:00</published><updated>2019-03-07T06:13:17-03:00</updated><id>https://williamcanin.github.io/blog/corrigindo-erro-de-chaves-no-archlinux</id><content type="html" xml:base="https://williamcanin.github.io/blog/corrigindo-erro-de-chaves-no-archlinux/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Se alguma vez você se deparou com erro de chaves públicas ao instalar um pacote no Arch Linux e não soube como resolver,então talvez essa dica abaixo pode te ajudar.&lt;/p&gt;
 
@@ -690,7 +690,7 @@ Error downloading sources: spotify
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
@@ -710,7 +710,7 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="archlinux" /><category term="keys" /><category term="dicas" /><summary type="html"></summary></entry><entry><title type="html">Transações no banco de dados através do Shell script</title><link href="https://williamcanin.dev/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do Shell script" /><published>2018-08-28T02:23:33-03:00</published><updated>2018-08-28T02:23:33-03:00</updated><id>https://williamcanin.dev/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.dev/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/">&lt;!-- Write from here your post !!! --&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="archlinux" /><category term="keys" /><category term="dicas" /><summary type="html"></summary></entry><entry><title type="html">Transações no banco de dados através do Shell script</title><link href="https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do Shell script" /><published>2018-08-28T02:23:33-03:00</published><updated>2018-08-28T02:23:33-03:00</updated><id>https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá pessoas, vamos falar de Shell script, que é algo que gosto muito. :)&lt;/p&gt;
 
@@ -1078,7 +1078,7 @@ bash setup.bash createtb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
@@ -1098,7 +1098,7 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="shell" /><category term="postgresql" /><category term="mysql" /><summary type="html"></summary></entry><entry><title type="html">Instalando Python automaticamente em qualquer sistema Linux.</title><link href="https://williamcanin.dev/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/" rel="alternate" type="text/html" title="Instalando Python automaticamente em qualquer sistema Linux." /><published>2018-06-21T15:54:14-03:00</published><updated>2018-06-21T15:54:14-03:00</updated><id>https://williamcanin.dev/blog/instalando-python-automaticamente-em-qualquer-sistema-linux</id><content type="html" xml:base="https://williamcanin.dev/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/">&lt;!-- Write from here your post !!! --&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="shell" /><category term="postgresql" /><category term="mysql" /><summary type="html"></summary></entry><entry><title type="html">Instalando Python automaticamente em qualquer sistema Linux.</title><link href="https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/" rel="alternate" type="text/html" title="Instalando Python automaticamente em qualquer sistema Linux." /><published>2018-06-21T15:54:14-03:00</published><updated>2018-06-21T15:54:14-03:00</updated><id>https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux</id><content type="html" xml:base="https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá :hand:, essa é uma dica rápida para você que deseja instalar o Python :snake: compilado através do código fonte (tarball). Boa leitura.&lt;/p&gt;
 
@@ -1320,7 +1320,7 @@ Você pode verificar o executável no diretório &lt;strong&gt;/usr/local/bin&lt
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
@@ -1340,7 +1340,7 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="python" /><category term="tarball" /><category term="linux" /><summary type="html"></summary></entry><entry><title type="html">Criptografando a partição HOME no Linux</title><link href="https://williamcanin.dev/blog/criptografando-a-particao-home-no-linux/" rel="alternate" type="text/html" title="Criptografando a partição HOME no Linux" /><published>2017-10-16T01:51:44-02:00</published><updated>2017-10-16T01:51:44-02:00</updated><id>https://williamcanin.dev/blog/criptografando-a-particao-home-no-linux</id><content type="html" xml:base="https://williamcanin.dev/blog/criptografando-a-particao-home-no-linux/">&lt;!-- Write from here your post !!! --&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="python" /><category term="tarball" /><category term="linux" /><summary type="html"></summary></entry><entry><title type="html">Criptografando a partição HOME no Linux</title><link href="https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/" rel="alternate" type="text/html" title="Criptografando a partição HOME no Linux" /><published>2017-10-16T01:51:44-02:00</published><updated>2017-10-16T01:51:44-02:00</updated><id>https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux</id><content type="html" xml:base="https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/">&lt;!-- Write from here your post !!! --&gt;
 
 &lt;p&gt;Olá para você pessoa, como vai? Eu vou bem graças a Deus e obrigado por perguntar mentalmente hehe.
 Esse é um post de segurança…é o que todos querem, não é?! hehe Então lá vai…&lt;/p&gt;
@@ -1566,7 +1566,7 @@ home &lt;span class=&quot;nv&quot;&gt;UUID&lt;/span&gt;&lt;span class=&quot;o&qu
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
@@ -1586,7 +1586,7 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="crypt" /><category term="linux" /><category term="security" /><summary type="html"></summary></entry><entry><title type="html">Carregando Javascripts para diferentes posts e pages no Jekyll</title><link href="https://williamcanin.dev/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/" rel="alternate" type="text/html" title="Carregando Javascripts para diferentes posts e pages no Jekyll" /><published>2017-10-09T15:31:36-03:00</published><updated>2017-10-09T15:31:36-03:00</updated><id>https://williamcanin.dev/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll</id><content type="html" xml:base="https://williamcanin.dev/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/">&lt;p&gt;Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:&lt;/p&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="crypt" /><category term="linux" /><category term="security" /><summary type="html"></summary></entry><entry><title type="html">Carregando Javascripts para diferentes posts e pages no Jekyll</title><link href="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/" rel="alternate" type="text/html" title="Carregando Javascripts para diferentes posts e pages no Jekyll" /><published>2017-10-09T15:31:36-03:00</published><updated>2017-10-09T15:31:36-03:00</updated><id>https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll</id><content type="html" xml:base="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/">&lt;p&gt;Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;“E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu
@@ -1721,7 +1721,7 @@ script: [page1.js]
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
@@ -1741,7 +1741,7 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="jekyll" /><category term="javascripts" /><category term="liquid" /><summary type="html">Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:</summary></entry><entry><title type="html">Última versão do kernel linux através de um script</title><link href="https://williamcanin.dev/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/" rel="alternate" type="text/html" title="Última versão do kernel linux através de um script" /><published>2017-05-05T20:16:57-03:00</published><updated>2017-05-05T20:16:57-03:00</updated><id>https://williamcanin.dev/blog/ultima-versao-do-kernel-linux-atraves-de-um-script</id><content type="html" xml:base="https://williamcanin.dev/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/">&lt;p&gt;Oi, tudo bem com você? :) Espero que sim.&lt;/p&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="jekyll" /><category term="javascripts" /><category term="liquid" /><summary type="html">Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:</summary></entry><entry><title type="html">Última versão do kernel linux através de um script</title><link href="https://williamcanin.github.io/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/" rel="alternate" type="text/html" title="Última versão do kernel linux através de um script" /><published>2017-05-05T20:16:57-03:00</published><updated>2017-05-05T20:16:57-03:00</updated><id>https://williamcanin.github.io/blog/ultima-versao-do-kernel-linux-atraves-de-um-script</id><content type="html" xml:base="https://williamcanin.github.io/blog/ultima-versao-do-kernel-linux-atraves-de-um-script/">&lt;p&gt;Oi, tudo bem com você? :) Espero que sim.&lt;/p&gt;
 
 &lt;p&gt;Vou compartilhar com vocês um Shell script simples, mas que pode ser de bastante utilidade dependendo do caso. Esse script fará o download da última versão estável do &lt;a href=&quot;https://www.kernel.org/&quot; target=&quot;_blank&quot;&gt;kernel&lt;/a&gt; Linux.&lt;/p&gt;
 
@@ -1862,7 +1862,7 @@ _download_lastet_kernel
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 
@@ -1882,7 +1882,7 @@ To listen to the full song, open your Spotify and start these musics.
               &lt;/iframe&gt;
             &lt;/div&gt;
           &lt;/dd&gt;
-        &lt;/dl&gt;</content><author><name></name></author><category term="shell" /><category term="kernel" /><category term="linux" /><summary type="html">Oi, tudo bem com você? :) Espero que sim.</summary></entry><entry><title type="html">Instalando Arch Linux com criptografia LUKS e LVM</title><link href="https://williamcanin.dev/blog/instalando-archlinux-com-criptografia-luks-e-lvm/" rel="alternate" type="text/html" title="Instalando Arch Linux com criptografia LUKS e LVM" /><published>2017-04-27T08:33:43-03:00</published><updated>2017-04-27T08:33:43-03:00</updated><id>https://williamcanin.dev/blog/instalando-archlinux-com-criptografia-luks-e-lvm</id><content type="html" xml:base="https://williamcanin.dev/blog/instalando-archlinux-com-criptografia-luks-e-lvm/">&lt;ul id=&quot;markdown-toc&quot;&gt;
+        &lt;/dl&gt;</content><author><name></name></author><category term="shell" /><category term="kernel" /><category term="linux" /><summary type="html">Oi, tudo bem com você? :) Espero que sim.</summary></entry><entry><title type="html">Instalando Arch Linux com criptografia LUKS e LVM</title><link href="https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/" rel="alternate" type="text/html" title="Instalando Arch Linux com criptografia LUKS e LVM" /><published>2017-04-27T08:33:43-03:00</published><updated>2017-04-27T08:33:43-03:00</updated><id>https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm</id><content type="html" xml:base="https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#requerimentos&quot; id=&quot;markdown-toc-requerimentos&quot;&gt;Requerimentos&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#preparando-o-básico&quot; id=&quot;markdown-toc-preparando-o-básico&quot;&gt;Preparando o básico&lt;/a&gt;&lt;/li&gt;
@@ -2710,7 +2710,7 @@ mídia que fará essa função.&lt;/p&gt;
 
             &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
 
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2022&amp;nbsp;&lt;/i&gt;
+            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2023&amp;nbsp;&lt;/i&gt;
               &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
           &lt;/dt&gt;
 

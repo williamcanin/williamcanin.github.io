@@ -2,8 +2,8 @@
   var disqus_config;
 
   disqus_config = function() {
-    this.page.url = 'https://williamcanin.dev/assets/js/disqus_comments.js';
-    this.page.identifier = 'https://williamcanin.dev/assets/js/disqus_comments.js';
+    this.page.url = 'https://williamcanin.github.io/assets/js/disqus_comments.js';
+    this.page.identifier = 'https://williamcanin.github.io/assets/js/disqus_comments.js';
     return false;
   };
 

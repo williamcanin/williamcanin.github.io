@@ -2,7 +2,7 @@
   SimpleJekyllSearch({
     searchInput: document.getElementById('layout-search__input'),
     resultsContainer: document.getElementById('layout-search__data'),
-    json: 'https://williamcanin.dev/assets/json/search.json',
+    json: 'https://williamcanin.github.io/assets/json/search.json',
     searchResultTemplate: '<li><article>><a href="{url}"> {title} <span class="layout-search__data__entry-date"><time datetime="{date}">{date}</time></span></a></article></li>',
     noResultsText: '<p class="layout-search__data__not-search">Oh céus, nenhum resultado :(</p>',
     limit: 10,
