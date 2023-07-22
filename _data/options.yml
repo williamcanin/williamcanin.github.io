@@ -102,7 +102,7 @@ content:
     reading_time:
       enable: true
     image:
-      enable: false
+      enable: true
   page:
     animation: true
     reading_time:
