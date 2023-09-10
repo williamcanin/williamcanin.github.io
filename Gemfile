@@ -12,6 +12,7 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap', '~> 1.4.0'
   gem 'jekyll-coffeescript', '~> 2.0.0'
   gem 'jekyll-gist', '~> 1.5.0'
+  gem 'faraday-retry', '~> 2.2.0'
   gem 'jekyll-youtube', '~> 1.0.0'
   gem 'jekyll-tagging', '~> 1.1.0'
   gem 'jemoji', '~> 0.12.0'
