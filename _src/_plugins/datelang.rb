@@ -68,7 +68,7 @@ module Jekyll
         @locale = locale
         @reload = reload
 
-          if not File.exists?("#{@path}/#{@fileC}") or @reload == true
+          if not File.exist?("#{@path}/#{@fileC}") or @reload == true
             File.open("#{@path}/#{@fileC}", "w") do |f_create|
                 f_create.puts "
 {% comment %}
