@@ -35,7 +35,7 @@ O OpenPGP é um padrão aberto de criptografia baseado no PGP. Funciona através
 Este tipo de criptografia uso com e-mail.
 
 Se desejar entrar em contato com e-mail criptografado com OpenPGP (recomendo usar o [**Thunderbird**](https://www.thunderbird.net/pt-BR/){:target="_blank"} que tem suporte a OpenPGP), envie o e-mail para: **wcanin.contact@gmail.com**,
-usando minha chave PGP pública que pode ser adquirida [**AQUI**](https://williamcanin.dev/docs/key/public.asc) ou [AQUI](https://raw.githubusercontent.com/williamcanin/williamcanin.github.io/main/docs/key/public.asc), onde a impressão digital da mesma é:
+usando minha chave PGP pública que pode ser adquirida [**AQUI**](https://williamcanin.github.io/docs/key/public.asc) ou [AQUI](https://raw.githubusercontent.com/williamcanin/williamcanin.github.io/main/docs/key/public.asc), onde a impressão digital da mesma é:
 
 **19E0 B6CD C72C 60A6 6421 99CA C00A 8970 B041 8AD5**
 
