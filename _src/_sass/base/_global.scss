@@ -28,4 +28,5 @@ body{
   font-family: $font-family__primary;
   background-color: $background__full;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
