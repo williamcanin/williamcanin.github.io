@@ -40,7 +40,7 @@ permalink: /resume/ # add permilink for page. E.g: /smallparty/
 ### Bio
 ---
 
-Olá :v:, me chamo **William**, e sou um antenado em tecnologia onde tenho a convicção de que tudo é possível com dedicação e resiliência nessa área.
+Olá :v:, me chamo **William**, e sou um antenado em; tecnologia; design; e melhoramento pessoal, onde tenho a convicção de que tudo é possível com dedicação e resiliência.
 
 Autodidata em algumas [**linguagens de programação e tarefas voltadas a computação**](#nuvem-de-conhecimentos).
 
@@ -129,8 +129,8 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 ### Nuvem de Conhecimentos
 ---
 
-{% badge [**Rust**](https://www.rust-lang.org/){:target="_blank"}|16px %}
 {% badge [**Python**](https://www.python.org/){:target="_blank"}|16px %}
+{% badge [**Rust**](https://www.rust-lang.org/){:target="_blank"}|16px %}
 <!-- {% badge [**Django**](https://www.djangoproject.com/){:target="_blank"}|16px %} -->
 <!-- {% badge [**Delphi**](https://www.embarcadero.com/br/products/delphi){:target="_blank"}|16px %}  -->
 {% badge [**HTML5**](https://www.w3schools.com/html/html5_intro.asp){:target="_blank"}|16px %}
