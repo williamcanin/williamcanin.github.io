@@ -34,7 +34,7 @@ website:
     text:
       user: william
       os: linux
-      command: "python brief_description.py"
+      command: "rustc brief_description.rs && ./main"
 # Sidebar
   sidebar:
     avatar:
