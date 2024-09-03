@@ -1,0 +1,4 @@
+Changelog
+===========
+
+* Adicionado o pacote cross-env no --save-dev (package.json)
