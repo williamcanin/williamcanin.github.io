@@ -58,7 +58,7 @@ content:
     tags:
       enable: true
     comments:
-      enable: false
+      enable: true
   tagpost:
     animation: true
     date:
