@@ -20,7 +20,7 @@ Confira meu último post, {% for last_post in site.posts limit:1 %}
 Meu sistema operacional é Linux, através da distribuição [Arch Linux](https://archlinux.org){:target="_blank"}, porem, já provei o sabor de outras.
 (Caso queira, você pode dar uma olhada como é meu sistema operacional [AQUI](https://github.com/williamcanin/my_environment){:target="_blank"}).
 
-Tenho uma relação de idas e vindas com a maioria das linguagens de programação, mas eu encontrei casas felizes em [Python](https://python.org/){:target="_blank"}.
+Tenho uma relação de idas e vindas com a maioria das linguagens de programação, mas eu encontrei casas felizes em [Python](https://python.org/){:target="_blank"} e [Rust](https://www.rust-lang.org/){:target="_blank"}.
 
 Você pode ver uma lista de meus [projetos](https://github.com/williamcanin){:target="_blank"} na minha página do GitHub. É provável que alguns esteja `out-of-date` e eu deveria corrigir isso...algum dia talvez.
 
