@@ -79,19 +79,28 @@ layout: blog
 
         {% if load_options.content.post.share.facebook.enable == true %}
         <div class="text-center mb-1 mb-sm-0 col-2">
-          <a class="layout_post__share-link" href="#" title="{{ dbase.website.strings.share_social.facebook.title }}" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;"><i class="fab fa-facebook-square layout_post__share-icon"></i><span class="layout_post__share-link--text">Facebook</span></a>
+
+          <a class="layout_post__share-link" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | prepend: site.baseurl | prepend: site.url }}" target="_blank" onclick="window.open(this.href, 'facebook-share-dialog', 'width=800,height=600'); return false;">
+            <i class="fab fa-square-facebook layout_post__share-icon"></i><span class="layout_post__share-link--text">Facebook</span>
+          </a>
+
+          <!-- <a class="layout_post__share-link" href="#" title="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;"><i class="fab fa-square-facebook layout_post__share-icon"></i><span class="layout_post__share-link--text">Facebook</span></a> -->
         </div>
         {% endif %}
 
         {% if load_options.content.post.share.linkedin.enable == true %}
         <div class="text-center mb-1 mb-sm-0 col-2">
-          <a class="layout_post__share-link" href="http://www.linkedin.com/cws/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href,&quot;popupwindow&quot;,&quot;status=0,height=500,width=700,resizable=0,top=50,left=100&quot;);return false;" target="_blank" title="{{ dbase.website.strings.share_social.linkedin.title }}"><i class="fab fa-linkedin layout_post__share-icon"></i><span class="layout_post__share-link--text">LinkedIn</span></a>
+          <a class="layout_post__share-link" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | prepend: site.baseurl | prepend: site.url }}&title={{ page.title }}" target="_blank">
+            <i class="fab fa-linkedin layout_post__share-icon"></i><span class="layout_post__share-link--text">LinkedIn</span>
+          </a>
+
+          <!-- <a class="layout_post__share-link" href="http://www.linkedin.com/cws/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href,&quot;popupwindow&quot;,&quot;status=0,height=500,width=700,resizable=0,top=50,left=100&quot;);return false;" target="_blank" title=""><i class="fab fa-linkedin layout_post__share-icon"></i><span class="layout_post__share-link--text">LinkedIn</span></a> -->
         </div>
         {% endif %}
 
-        {% if load_options.content.post.share.twitter.enable == true %}
+        {% if load_options.content.post.share.x.enable == true %}
         <div class="text-center mb-1 mb-sm-0 col-2">
-          <a class="layout_post__share-link" href="https://twitter.com/intent/tweet?text={{ page.url | prepend: site.baseurl | prepend: site.url }} - {{ page.title }} by {{ dbase.userdata.twitter }}" target="_blank" title="{{ dbase.website.strings.share_social.twitter.title }}"><i class="fab fa-twitter-square layout_post__share-icon"></i><span class="layout_post__share-link--text">Twitter</span></a>
+          <a class="layout_post__share-link" href="https://x.com/intent/tweet?text={{ page.url | prepend: site.baseurl | prepend: site.url }} - {{ page.title }} by {{ load_data.userdata.twitter }}" target="_blank" title=""><i class="fab fa-square-x-twitter layout_post__share-icon"></i><span class="layout_post__share-link--text">X</span></a>
         </div>
         {% endif %}
 

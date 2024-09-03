@@ -83,7 +83,7 @@ content:
         enable: true
       linkedin:
         enable: true
-      twitter:
+      x:
         enable: true
     day_quote:
       enable: true

@@ -7,6 +7,9 @@ gem 'colorize', '~> 0.8.1'
 gem 'webrick', '~> 1.7.0'
 gem 'jekyll', '~> 4.2.0'
 
+# Windows-specific dependencies
+gem "wdm", ">= 0.1.0" if Gem.win_platform?
+
 group :jekyll_plugins do
   gem 'jekyll-feed', '~> 0.15.1'
   gem 'jekyll-sitemap', '~> 1.4.0'
