@@ -4,7 +4,7 @@ ruby RUBY_VERSION
 gem 'json', '~> 2.5.1'
 gem 'rake', '~> 13.0.3'
 gem 'colorize', '~> 0.8.1'
-gem 'webrick', '~> 1.7.0'
+gem 'webrick', '~> 1.8.2'
 gem 'jekyll', '~> 4.2.0'
 
 # Windows-specific dependencies

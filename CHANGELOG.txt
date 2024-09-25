@@ -15,3 +15,6 @@ Colchetes vazios é porque não foram adicionados no "Typing Jekyll Template".
 [] Fazendo mudando nos links de compartilhamento em "_layouts/post.html".
 
 [] Adicionando gem "wdm", ">= 0.1.0" if Gem.win_platform? no arquivo Gemfile
+
+[] Update gem "webrick", ">= 1.8.2" Gemfile
+
