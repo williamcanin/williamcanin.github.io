@@ -133,8 +133,8 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 {% badge [**Python**](https://www.python.org/){:target="_blank"}|16px %}
 <!-- {% badge [**Django**](https://www.djangoproject.com/){:target="_blank"}|16px %} -->
 <!-- {% badge [**Delphi**](https://www.embarcadero.com/br/products/delphi){:target="_blank"}|16px %}  -->
-{% badge [**HTML5**](https://www.w3schools.com/html/html5_intro.asp){:target="_blank"}|16px %}
-{% badge [**CSS3**](https://www.w3schools.com/css/){:target="_blank"}|16px %}
+{% badge [**HTML5**](https://html.spec.whatwg.org/multipage/){:target="_blank"}|16px %}
+{% badge [**CSS3**](https://www.w3.org/Style/CSS/){:target="_blank"}|16px %}
 {% badge [**Javascript**](https://www.javascript.com/){:target="_blank"}|16px %}
 <!-- {% badge [**BEM**](http://getbem.com/){:target="_blank"}|16px %} -->
 {% badge [**SASS**](https://sass-lang.com/){:target="_blank"}|16px %}
