@@ -19,6 +19,21 @@ Leia as opções abaixo de como entrar em contato comigo:
 
 ## >>>> Contato COM criptografia (Recomendado)
 
+### * XMPP
+
+**XMPP**, que significa Extensible Messaging and Presence Protocol (Protocolo de Mensagem e Presença Extensível), é um protocolo de comunicação aberto e extensível baseado em XML, usado para mensagens instantâneas e informações de presença em tempo real, pode ser usado tanto com criptografica de ponta a ponta ou não.
+
+Você precisar instalar um cliente com suporte ao XMPP, existem vários, mas recomendo o [Pidgin](https://www.pidgin.im/install/){:target="_blank"} ou [Gajim](https://gajim.org/download/){:target="_blank"}, ambos com suporte para **Windows**, **Linux** e **macOS**. Quando for criar sua conta em um dos clientes, também precisa de um **domínio** de um servidor XMPP, eu recomendo o **creep.im** ou **5222.de**, mas existem vários.
+
+Para me adicionar no XMPP, use minhas credenciais abaixo:
+
+**Username**: williamcanin@creep.im
+**Alias**: William Canin
+
+Se você quiser que nossa conversa seja criptografada, minha chave PGP pública que pode ser adquirida [**AQUI**](https://williamcanin.github.io/docs/key/public.asc) ou [AQUI](https://raw.githubusercontent.com/williamcanin/williamcanin.github.io/main/docs/key/public.asc), onde a impressão digital da mesma é:
+
+[**19E0 B6CD C72C 60A6 6421 99CA C00A 8970 B041 8AD5**](https://keys.openpgp.org/search?q=19E0+B6CD+C72C+60A6+6421+99CA+C00A+8970+B041+8AD5){:target="_blank"}
+
 ### * Tox
 
 [Tox](https://tox.chat/){:target="_blank"} é um mensageiro (P2P) seguro de criptografia ponta a ponta, todas suas informações enviadas e recebidas (e as do contato) são armazenados na sua própria máquina, sem empresas por trás de armazenamento. Tem suporte a "audio e video".
@@ -28,7 +43,7 @@ Para me adicionar basta copiar meu **Tox ID** e me adicionar no seu cliente Tox.
 **Meu Tox ID:** 7340B5F41655D29B8EA76C4A2FBD6B760B303C6220E883F45A97F209871D71204B26336F16F8
 
 
-### * OpenPGP
+### * Email com OpenPGP
 
 O OpenPGP é um padrão aberto de criptografia baseado no PGP. Funciona através de chaves assimétricas, cada usuário gera em seu computador um par de chaves correspondentes: uma pública e uma secreta.
 
