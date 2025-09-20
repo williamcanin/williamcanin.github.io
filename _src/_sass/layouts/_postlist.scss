@@ -1,11 +1,11 @@
 @use "../utils" as *;
 @use "../base/components";
 
-.layout_postlist{
+.layout_postlist {
 
     &__header, &__content{
         @extend .elements_box;
-        @extend .content_text_font_size;
+        @extend %content_text_font_size;
     }
     &__comments{
         background-color: $texts__background;
