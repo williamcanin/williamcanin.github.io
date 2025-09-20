@@ -5,7 +5,7 @@
   "main": "index.md",
   "scripts": {
     "preinstall": "bundle install",
-    "build": "cross-env JEKYLL_ENV=production bundle exec jekyll build && gulp",
+    "build": "cross-env JEKYLL_ENV=production bundle exec jekyll build && npx gulp",
     "serve": "bundle exec jekyll serve --livereload",
     "page": "bundle exec rake page",
     "post": "bundle exec rake post",
@@ -24,15 +24,13 @@
     "url": "https://github.com/williamcanin/typing-jekyll-template/issues"
   },
   "homepage": "https://github.com/williamcanin/typing-jekyll-template#readme",
-  "dependencies": {
-    "yarn": "^1.22.21"
-  },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
+    "cross-env": "^10.0.0",
+    "del": "^8.0.1",
+    "gulp": "^5.0.1",
+    "gulp-cli": "^3.1.0",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^7.1.0",
+    "gulp-imagemin": "^9.1.0",
     "gulp-uglify": "^3.0.2"
   }
 }

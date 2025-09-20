@@ -18,3 +18,7 @@ Colchetes vazios é porque não foram adicionados no "Typing Jekyll Template".
 
 [] Update gem "webrick", ">= 1.8.2" Gemfile
 
+[] Atualização do Sass
+
+[] Remover yarn
+
