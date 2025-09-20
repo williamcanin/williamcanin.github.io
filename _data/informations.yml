@@ -38,7 +38,7 @@ website:
 # Sidebar
   sidebar:
     avatar:
-      img: "williamcanin_logo.svg"
+      img: "williamcanin_logo.png"
       flip:
         img: "williamcanin_behind.jpg"
     title:
