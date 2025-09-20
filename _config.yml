@@ -57,8 +57,6 @@ host: localhost
 sass:
   load_paths:
   - _src/_sass
-  - vendor/node_modules
-  - node_modules
   style: compressed
 
 feed:
@@ -105,10 +103,8 @@ exclude:
   - README-ptbr.md
   - yarn-error.log
   - docs/data
-  - temp
   - tmp
   - .hidden
-  - public.sh
   - docs/config
   - gulpfile.mjs
   - node_modules

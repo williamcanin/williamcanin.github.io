@@ -6,6 +6,7 @@ tmp/
 .jekyll-cache/
 .jekyll-metadata/
 
+~*
 *.Identifier
 .bak
 .log
