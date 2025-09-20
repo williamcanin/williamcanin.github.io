@@ -17,13 +17,13 @@ html,body{
         color: $color__clickable;
         text-decoration: none;
       }
-      @extend %element_opacity;
+      @extend .element_opacity;
     }
     a:focus {outline:0 !important;}
     button:focus {outline:0 !important;}
     input:focus {outline:0 !important;}
   }
-  @extend %scrollbar_modern;
+  @extend .scrollbar_modern;
 }
 
 body{

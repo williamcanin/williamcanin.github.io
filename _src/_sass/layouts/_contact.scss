@@ -1,19 +1,19 @@
 @use "../base/components";
 
 .layout_contact {
-    @extend %content_text_font_size;
+    @extend .content_text_font_size;
 
     &__header, &__form, &__note{
-        @extend %elements_box;
+        @extend .elements_box;
     }
     &__input{
-        @extend %inputs_style;
+        @extend .inputs_style;
         font-size: 1.3rem;
     }
     &__textarea{
-        @extend %textarea_style;
+        @extend .textarea_style;
     }
     &__form-button{
-        @extend %buttons_style;
+        @extend .buttons_style;
     }
 }

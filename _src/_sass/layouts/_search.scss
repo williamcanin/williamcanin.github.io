@@ -4,8 +4,8 @@
 @use "../base/components";
 
 .layout-search {
-    @extend %elements_box;
-    @extend %content_text_font_size;
+    @extend .elements_box;
+    @extend .content_text_font_size;
   &__form{
     border-radius: 0px;
     height: auto;
@@ -25,13 +25,13 @@
     margin-top: 1rem;
   }
   &__input {
-    @extend %inputs_style;
+    @extend .inputs_style;
     @media (min-width: 300px) and (max-width: 992px) {
       font-size: 1.2rem !important;
     }
   }
   &__btn-clear {
-    @extend %buttons_style;
+    @extend .buttons_style;
     &:hover,&:focus,&:active,&:visited{
       text-decoration: none;
     }

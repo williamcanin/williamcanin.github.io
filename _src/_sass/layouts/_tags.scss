@@ -3,8 +3,8 @@
 
 .layout_tag {
     &__header, &__content {
-    	@extend %content_text_font_size;
-        @extend %elements_box;
+    	@extend .content_text_font_size;
+        @extend .elements_box;
     }
     &__time {
         background-color: $texts__background;

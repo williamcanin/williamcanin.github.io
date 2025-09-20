@@ -13,7 +13,7 @@ website:
       Sem certeza de volta.
     avatar:
 # Theme - Values [ typing | whiteglass | cloudysky | hacking | littlegirl | custom ]
-  theme: "littlegirl"
+  theme: "whiteglass"
 # Configuration default
   title: "William Canin"
   description: "I type code_"

@@ -4,8 +4,8 @@
 .layout_postlist {
 
     &__header, &__content{
-        @extend %elements_box;
-        @extend %content_text_font_size;
+        @extend .elements_box;
+        @extend .content_text_font_size;
     }
     &__comments{
         background-color: $texts__background;
@@ -34,7 +34,7 @@
     }
     &__pagination{
         &-newer{
-            @extend %buttons_style;
+            @extend .buttons_style;
             border-radius: 0px;
             border: 1px solid $color__clickable;
             &:hover{
@@ -52,7 +52,7 @@
             }
         }
         &-older{
-            @extend %buttons_style;
+            @extend .buttons_style;
             border-radius: 0px;
             border: 1px solid $color__clickable;
             &:hover{

@@ -1,8 +1,8 @@
 @use "../base/components";
 
 .layout_hello {
-    @extend %elements_box;
-    @extend %content_text_font_size;
+    @extend .elements_box;
+    @extend .content_text_font_size;
     // line-height: 1.8rem;
     // p{font-size: 1.12rem;}
 
