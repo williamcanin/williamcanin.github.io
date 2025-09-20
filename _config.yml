@@ -9,6 +9,7 @@ baseurl: ""
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - jektify
 
 # Plugins de player - Jektify
 jektify:
@@ -114,6 +115,7 @@ exclude:
   - _src
   - vendor
   - cache
+  - .bundle-cache
   - Gemfile
   - Gemfile.lock
   - screenshot.png

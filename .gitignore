@@ -1,5 +1,6 @@
 node_modules/
 cache/
+.bundle-cache/
 assets/vendor/js/*.js
 assets/vendor/js/*.map
 !assets/vendor/js/simple-jekyll-search.min.js

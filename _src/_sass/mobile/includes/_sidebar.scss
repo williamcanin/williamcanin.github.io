@@ -1,6 +1,6 @@
 .sidebar{
     &__avatar_flip{
-        @media (min-width: 575px) and (max-width: 992px){ 
+        @media (min-width: 575px) and (max-width: 992px){
             width: 20%;
             height: auto;
         }
@@ -11,7 +11,7 @@
         }
     }
     &__avatar_noflip{
-        @media (min-width: 575px) and (max-width: 992px){ 
+        @media (min-width: 575px) and (max-width: 992px){
             width: 20%;
             height: auto;
         }
@@ -26,10 +26,10 @@
             text-align: left !important;
         }
     }
-    &__menu{
+    // &__menu{
         // @media (min-width: 768px) and (max-width: 992px) {
         //   width: 190px;
         //   margin: 0 auto;
         // }
-    }
+    // }
 }

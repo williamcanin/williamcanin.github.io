@@ -7,7 +7,7 @@
         background-color: $texts__background;
         color: $color__text;
         font-size: 1rem;
-        &-count{}
+        // &-count{}
     }
     &__share-link {
 
@@ -29,7 +29,7 @@
               visibility: visible;
             }
         }
-        
+
     }
     &__share-icon{
         font-size: 50px;

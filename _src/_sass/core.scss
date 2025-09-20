@@ -1,0 +1,14 @@
+@use "sass:map";
+
+$jektify_theme: () !default;
+
+// helper para obter valor do map com fallback
+@function jkt-get($key, $fallback) {
+  $val: map.get($jektify_theme, $key);
+  @return if($val == null, $fallback, $val);
+}
+
+// definir as variáveis locais a partir do map (com fallback)
+$highlight__background: jkt-get(highlight__background, #000000);
+$highlight__text:       jkt-get(highlight__text, #ffffff);
+$highlight__border:     jkt-get(highlight__border, #333333);
