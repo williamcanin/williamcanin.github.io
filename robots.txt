@@ -4,3 +4,4 @@ Sitemap: https://williamcanin.github.io/sitemap.xml
 
 User-agent: *
 Disallow: /idisconnect/
+Disallow: /assets/images/avatar/williamcanin_behind.jpg
