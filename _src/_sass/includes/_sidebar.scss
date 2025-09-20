@@ -1,13 +1,13 @@
 @use "../utils" as *;
 
-.sidebar{
+.sidebar {
     background-color: $background__full;
     &__avatar_flip {
         // position: relative;
         perspective: 1000;
         margin: 10px auto;
         width: 165px;
-        height: 165px;
+        height: auto;
         &-card{
             transform-style: preserve-3d;
             transition: all 1.0s linear;
@@ -40,7 +40,7 @@
         background-color: $elements__background;
         border-radius: 20px;
         border: 1px solid $elements__box_border_color;
-        &-title{
+        &-title {
           font-size: 1.3rem;
         }
         &-link{
