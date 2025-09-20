@@ -110,7 +110,7 @@ exclude:
   - .hidden
   - public.sh
   - docs/config
-  - gulpfile.js
+  - gulpfile.mjs
   - node_modules
   - _src
   - vendor
