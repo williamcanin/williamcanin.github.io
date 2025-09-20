@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2025-09-20T13:15:33-03:00</updated><id>https://williamcanin.github.io/blog/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T17:37:43-03:00</published><updated>2021-06-26T17:37:43-03:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/">&lt;ul id=&quot;markdown-toc&quot;&gt;
-=======
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://williamcanin.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2025-03-23T04:22:58-03:00</updated><id>https://williamcanin.github.io/blog/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T17:37:43-03:00</published><updated>2021-06-26T17:37:43-03:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/">&lt;ul id=&quot;markdown-toc&quot;&gt;
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2025-09-20T13:17:10-03:00</updated><id>https://williamcanin.github.io/blog/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T17:37:43-03:00</published><updated>2021-06-26T17:37:43-03:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#introdução&quot; id=&quot;markdown-toc-introdução&quot;&gt;Introdução&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#requisitos&quot; id=&quot;markdown-toc-requisitos&quot;&gt;Requisitos&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#criando-o-módulo&quot; id=&quot;markdown-toc-criando-o-módulo&quot;&gt;Criando o módulo&lt;/a&gt;&lt;/li&gt;
@@ -535,26 +531,8 @@ O segundo, o &lt;a href=&quot;https://docs.python.org/pt-br/3.9/library/sys.html
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
@@ -586,26 +564,8 @@ To listen to the full song, open your Spotify and start these musics.
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
@@ -636,26 +596,8 @@ To listen to the full song, open your Spotify and start these musics.
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
@@ -743,26 +685,8 @@ Error downloading sources: spotify
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
@@ -1145,26 +1069,8 @@ bash setup.bash createtb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
@@ -1401,26 +1307,8 @@ Você pode verificar o executável no diretório &lt;strong&gt;/usr/local/bin&lt
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
@@ -1661,26 +1549,8 @@ home &lt;span class=&quot;nv&quot;&gt;UUID&lt;/span&gt;&lt;span class=&quot;o&qu
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
@@ -1830,26 +1700,8 @@ script: [page1.js]
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
@@ -1985,26 +1837,8 @@ _download_lastet_kernel
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
@@ -2847,26 +2681,8 @@ mídia que fará essa função.&lt;/p&gt;
   &lt;/a&gt;
 &lt;/div&gt;
 
-<<<<<<< HEAD
     &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
     &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
-=======
-          &lt;dt class=&quot;jektify__header jektify__header--dark jektify__header--custom&quot;&gt;
-
-            &lt;a class=&quot;jektify__brand jektify__brand--dark jektify__brand--custom&quot; href=&quot;https://jektify.github.io&quot; target=&quot;_blank&quot;&gt;jektify&lt;/a&gt;
-
-            &lt;i class=&quot;jektify__year jektify__year--dark jektify__year--custom&quot;&gt;&amp;copy;&amp;nbsp;2025&amp;nbsp;&lt;/i&gt;
-              &lt;span class=&quot;jektify__button jektify__button--dark jektify__button--custom jektify__button--closed&quot;&gt;+&lt;/span&gt;
-          &lt;/dt&gt;
-
-          &lt;dd class=&quot;jektify__body jektify__body--dark jektify__body--custom&quot; style=&quot;display: none&quot;&gt;
-
-            &lt;div class=&quot;jektify__user&quot;&gt;&lt;a href=&quot;https://open.spotify.com/user/williamcanin&quot; target=&quot;_blank&quot; class=&quot;jektify__user-link jektify__user-link--dark jektify__user-link--custom&quot; title=&quot;Siga-me no Spotify&quot;&gt;&lt;span class=&quot;jektify__user-text jektify__user-text--dark jektify__user-text--custom&quot;&gt;Siga-me no Spotify&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-
-            &lt;h1 class=&quot;jektify__title jektify__title--dark jektify__user--dark jektify__title--custom&quot; style=&quot;display: none;&quot;&gt;Music name&lt;/h1&gt;
-
-            &lt;p class=&quot;jektify__description jektify__description--dark jektify__description--custom&quot; style=&quot;display: none;&quot;&gt;Jekyll plugin to generate html snippets for embedding Spotify Musics.
->>>>>>> b73cd8c3e2c0d7b1c483935b0b6b9665beb3c497
 To listen to the full song, open your Spotify and start these musics.
 &lt;/p&gt;
     &lt;div class=&quot;jektify__tracklist jektify__tracklist--dark jektify__tracklist--custom&quot;&gt;
