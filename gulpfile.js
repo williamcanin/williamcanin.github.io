@@ -12,24 +12,24 @@ let del = require('del');
 function clean_objects() {
   var objs = [
     'node_modules',
-    'vendor',
-    'cache',
+    '.bundle-cache',
+    '.jekyll-cache',
     'package-lock.json',
     'Gemfile.lock'
   ]
   return del(objs)
 }
 
-// function postinstall for copy files statics
-function postinstall_statics() {
-  return gulp
-    .src(['node_modules/jquery/dist/jquery.min.js',
-      'node_modules/popper.js/dist/umd/popper.min.js',
-      'node_modules/popper.js/dist/umd/popper.min.js.map',
-      'node_modules/bootstrap/dist/js/bootstrap.min.js',
-      'node_modules/bootstrap/dist/js/bootstrap.min.js.map'])
-    .pipe(gulp.dest('assets/vendor/js'))
-}
+// // function postinstall for copy files statics
+// function postinstall_statics() {
+//   return gulp
+//     .src(['node_modules/jquery/dist/jquery.min.js',
+//       'node_modules/popper.js/dist/umd/popper.min.js',
+//       'node_modules/popper.js/dist/umd/popper.min.js.map',
+//       'node_modules/bootstrap/dist/js/bootstrap.min.js',
+//       'node_modules/bootstrap/dist/js/bootstrap.min.js.map'])
+//     .pipe(gulp.dest('assets/vendor/js'))
+// }
 
 // function minify javascripts
 function javascripts() {
@@ -75,7 +75,7 @@ const build = gulp.series(gulp.parallel(html_minify,
                                         images_minify));
 
 // export tasks
-exports.postinstall = postinstall_statics;
+// exports.postinstall = postinstall_statics;
 exports.images = images_minify;
 exports.js = javascripts;
 exports.html = html_minify;
