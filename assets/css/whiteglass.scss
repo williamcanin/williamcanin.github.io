@@ -1,6 +1,10 @@
 ---
 ---
 
+// vendors
+@use "vendors/vendors";
+
+
 @use "themes/whiteglass";
 @use "base/base";
 @use "highlighter/highlighter";
@@ -11,5 +15,5 @@
 @use "print/print";
 @use "plugins/plugins";
 
-// // Mobile
+// Mobile
 @use "mobile/mobile";
