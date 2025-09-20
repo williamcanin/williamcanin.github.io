@@ -40,7 +40,7 @@ permalink: /resume/ # add permilink for page. E.g: /smallparty/
 ### Bio
 ---
 
-Olá :v:, me chamo **William**, e sou um antenado em tecnologia onde tenho a convicção de que tudo é possível com dedicação e resiliência nessa área.
+Olá :v:, me chamo **William**, sou formado em Análise e Desenvolvimento de Sistemas; um antenado em tecnologia onde tenho a convicção de que tudo é possível com dedicação e resiliência nessa área.
 
 Autodidata em algumas [**linguagens de programação e tarefas voltadas a computação**](#nuvem-de-conhecimentos).
 
@@ -52,12 +52,12 @@ Em meu lazer, gosto de ouvir [**músicas**](https://open.spotify.com/user/willia
 
 Tenho uma [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, onde mantenho <strike>tudo</strike> algo sobre mim e meus conhecimentos com meu [weblog](https://williamcanin.github.io/blog/){:target="_blank"}. Me considero leigo em tudo, é por isso que me motiva estudar sempre. :stuck_out_tongue_winking_eye:
 
-### Formação acadêmica
+<!-- ### Formação acadêmica
 ---
 
 **Fev/2009 - Nov/2013**
 [**Centro Universitário de Lins - Unilins**](http://www.unilins.edu.br/){:target="_blank"}
-Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas
+Lins, São Paulo - Curso Superior em Análise e Desenvolvimento de Sistemas -->
 
 <!--
 ### Cursos
@@ -103,7 +103,7 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 * Tarefas administrativas
 * Serviços Essenciais do sistema -->
 
-### Certificados
+<!-- ### Certificados
 
 * **Desenvolvimento avançado Python com Flask e REST API** ([*Digital Innovation One*](https://digitalinnovation.one/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/dio-development-advanced-python-with-flask-rest-api.pdf){:target="_blank"}
 
@@ -123,25 +123,23 @@ Execução de tarefas de manutenção com a linha de comando, instalação e con
 
 * **HTML & CSS na prática** ([*NodeStudio*](https://www.nodestudio.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/html5-css3-in-practice-nodestudio.pdf){:target="_blank"}
 
-* **Design Responsivo** ([*NodeStudio*](https://www.nodestudio.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"}
+* **Design Responsivo** ([*NodeStudio*](https://www.nodestudio.com.br/){:target="_blank"}) - [certificado](https://williamcanin.github.io/docs/certificates/responsive-design-certificate-at-nodestudio.pdf){:target="_blank"} -->
 
 
-### Nuvem de Conhecimentos
+<!-- ### Nuvem de Conhecimentos
 ---
 
 {% badge [**Rust**](https://www.rust-lang.org/){:target="_blank"}|16px %}
 {% badge [**Python**](https://www.python.org/){:target="_blank"}|16px %}
-<!-- {% badge [**Django**](https://www.djangoproject.com/){:target="_blank"}|16px %} -->
-<!-- {% badge [**Delphi**](https://www.embarcadero.com/br/products/delphi){:target="_blank"}|16px %}  -->
+{% badge [**Django**](https://www.djangoproject.com/){:target="_blank"}|16px %}
 {% badge [**HTML5**](https://html.spec.whatwg.org/multipage/){:target="_blank"}|16px %}
 {% badge [**CSS3**](https://www.w3.org/Style/CSS/){:target="_blank"}|16px %}
 {% badge [**Javascript**](https://www.javascript.com/){:target="_blank"}|16px %}
-<!-- {% badge [**BEM**](http://getbem.com/){:target="_blank"}|16px %} -->
 {% badge [**SASS**](https://sass-lang.com/){:target="_blank"}|16px %}
 {% badge [**Gulp**](https://gulpjs.com/){:target="_blank"}|16px %}
 {% badge [**Shell script**](http://linuxcommand.org/lc3_learning_the_shell.php){:target="_blank"}|16px %}
 {% badge [**Bootstrap**](https://getbootstrap.com/){:target="_blank"}|16px %}
-<!-- {% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %} -->
+{% badge [**Ruby**](https://www.ruby-lang.org/){:target="_blank"}/[**RubyGems**](https://rubygems.org/){:target="_blank"}|16px %}
 {% badge [**SQL**](https://pt.wikipedia.org/wiki/SQL){:target="_blank"}|16px %}
 {% badge [**Git**](https://git-scm.com/){:target="_blank"}|16px %}
 {% badge [**Microsoft Excel**](https://www.microsoft.com/pt-br/microsoft-365/excel){:target="_blank"}|16px %}
@@ -154,7 +152,7 @@ Meu workflow de desenvolvimento no [Github](https://github.com/williamcanin):
 
 {:.remove-printer}
 
-<img class="img-fluid" width="440px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=williamcanin&hide=html,css,scss,coffeescript,makefile,batchfile,ruby&hide_border=true&layout=compact&theme=buefy"/>
+<img class="img-fluid" width="440px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=williamcanin&hide=html,css,scss,coffeescript,makefile,batchfile,ruby&hide_border=true&layout=compact&theme=buefy"/> -->
 
 <!--
 ### Idiomas
