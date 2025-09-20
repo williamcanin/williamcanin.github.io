@@ -20,6 +20,7 @@ class Manager
       'NODE_MODULES' => File.join(SOURCE, "node_modules"),
       'POST_DIR' => File.join(SOURCE, "_posts"),
       'PAGE_DIR' => File.join(SOURCE, "_pages"),
+      # TODO: Criar deploy github pages
       'PUBLIC_DIR' => File.join(SOURCE, "../public"),
       'DEPLOY_JSON' => File.join(SOURCE, "_src/lib/json/deploy.json"),
       'markdown_extension' => "md"
@@ -53,7 +54,7 @@ class Manager
         # end
       end
     end # postinstall
-    
+
     def slug_generator(parameter)
       parameter.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
     end # slug_generator
@@ -163,21 +164,21 @@ class Manager
           File.write(CONFIG['DEPLOY_JSON'], JSON.pretty_generate(parsed))
         end
 
-        if parsed[head]['git']['origin'] == "" and 
+        if parsed[head]['git']['origin'] == "" and
           parsed[head]['git']['remote'] == ""
           print "Enter the origin:\n> ".blue
           origin = STDIN.gets.chomp
 
           print "Enter the remote address:\n> ".blue
           remote = STDIN.gets.chomp
-          
+
           add_remote = """
             cd #{dir}; git remote add #{origin} #{remote}
           """
 
           # Open3.popen3(add_remote)
           system(add_remote)
-          
+
           parsed[head]['git']['origin'] = origin
           parsed[head]['git']['remote'] = remote
           File.write(CONFIG['DEPLOY_JSON'], JSON.pretty_generate(parsed))
@@ -193,7 +194,7 @@ class Manager
         if parsed[head]['git']['branch'] == ""
           print "Add branch:\n> ".blue
           branch = STDIN.gets.chomp
-            
+
           add_branch = """
             cd #{dir}; git checkout -b #{branch}
           """
@@ -211,7 +212,7 @@ class Manager
         system(push_start)
         # Open3.popen3(push_start)
         puts "Deploy, Done!".green
-      
+
       rescue Interrupt => e
         puts "\nApproached by the user".yellow
         exit -1
