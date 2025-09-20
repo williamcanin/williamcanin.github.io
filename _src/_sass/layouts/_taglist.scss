@@ -1,3 +1,5 @@
+@use "../base/components";
+
 .layout_taglist{
     @extend .elements_box;
     @extend .content_text_font_size;

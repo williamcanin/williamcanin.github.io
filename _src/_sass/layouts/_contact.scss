@@ -1,6 +1,8 @@
+@use "../base/components";
+
 .layout_contact{
     @extend .content_text_font_size;
-    
+
     &__header, &__form, &__note{
         @extend .elements_box;
     }

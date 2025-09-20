@@ -1,6 +1,7 @@
 /* Stylesheets for layout Search
 ––––––––––––––––––––––––––––––––––––––––––––––––––  */
 @use "../utils" as *;
+@use "../base/components";
 
 .layout-search{
     @extend .elements_box;
