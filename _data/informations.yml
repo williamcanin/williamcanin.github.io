@@ -143,7 +143,7 @@ website:
 # User data
 userdata:
   email: contact@williamcanin.dev # E.g: youremail@domain.com
-  twitter: "@williamcanin" # E.g: "@my_twitter"
+  x: "@williamcanin" # [Old Twitter]. E.g: "@x_user"
   disqus:
     username: williamcanin # E.g: myuser
   socials:
@@ -159,10 +159,10 @@ userdata:
         icon: fa-youtube
         url: https://youtube.com/c/williamcanin
 
-      # - title: Twitter
-      #   id: twitter
-      #   icon: fa-twitter
-      #   url: https://twitter.com/williamcanin
+      # - title: X
+      #   id: x
+      #   icon: fa-x-twitter
+      #   url: https://x.com/williamcanin
 
       # - title: LinkedIn
       #   id: linkedin
