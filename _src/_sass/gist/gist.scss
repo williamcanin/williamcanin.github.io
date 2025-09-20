@@ -1,3 +1,4 @@
+@use "../utils" as *;
 
 .gist{
     .gist-data{
@@ -24,22 +25,22 @@
             color: $gist__meta_link_color !important;
         }
     }
-  
+
     /* Comments */
     .pl-c{
     color: $gist__comment_color !important;
     }
-  
+
     /* Function */
     .pl-k, tbody tr:first-child .blob-code, tbody tr:last-child .blob-code{
     color: $gist__function_color !important;
     }
-  
+
     /* Function Name */
     .pl-en{
     color: $gist__fn_color !important;
     }
-  
+
     /* Function Method */
     .pl-c1{
     color: $gist__fn_color !important;
@@ -48,12 +49,12 @@
     .pl-pds{
     color: $gist__string_color !important;
     }
-  
+
     /* Strings */
     .pl-s{
     color: $gist__string_color !important;
     }
-  
+
     .pl-smi{
         color: $gist__var_color !important;
     }

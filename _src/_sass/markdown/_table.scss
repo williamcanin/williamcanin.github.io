@@ -1,11 +1,12 @@
-/* 
+/*
 ––––––––––––––––––––––––––––––––––––––––––––––––––  */
+@use "../utils" as *;
 
 table{
     margin: 2% 0%;
     width: 100%;
     thead{
-      tr{ 
+      tr{
         th{
           padding: 5px;
           border: 1px solid $table__thead_th_border;

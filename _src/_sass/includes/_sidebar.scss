@@ -1,3 +1,5 @@
+@use "../utils" as *;
+
 .sidebar{
     background-color: $background__full;
     &__avatar_flip{
@@ -9,7 +11,7 @@
         &-card{
             transform-style: preserve-3d;
             transition: all 1.0s linear;
-        }        
+        }
         &-face{
             position: absolute;
             backface-visibility: hidden;
@@ -17,7 +19,7 @@
     }
     .sidebar__avatar_flip-back.sidebar__avatar_flip-face{
         display: block;
-        transform: rotateY(180deg);   
+        transform: rotateY(180deg);
     }
     &__avatar_flip, &__avatar_noflip{
         .image_avatar{

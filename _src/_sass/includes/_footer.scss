@@ -1,5 +1,6 @@
 /* Stylesheets for include Footer
 ––––––––––––––––––––––––––––––––––––––––––––––––––  */
+@use "../utils" as *;
 
 .footer{
   background-color: $footer__bg;

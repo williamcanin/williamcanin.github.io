@@ -2,25 +2,11 @@
 ---
 
 @use "themes/whiteglass";
+@use "base/base";
 @use "highlighter/highlighter";
+@use "markdown/markdown";
+@use "layouts/layouts";
 
-
-// @use "themes/whiteglass" as theme;
-
-// // passe o map do tema para cada componente que precisa dele
-// @use "highlighter/highlighter" with (
-//   $jektify_theme: theme.$jektify_theme
-// );
-// // @use "base/base" with ( $jektify_theme: theme.$jektify_theme );
-
-
-
-
-
-
-
-// @use "markdown/markdown";
-// @use "layouts/layouts";
 // @use "includes/includes";
 // @use "gist/gist";
 // @use "print/print";

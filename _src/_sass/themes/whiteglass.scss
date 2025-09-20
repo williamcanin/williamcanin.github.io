@@ -2,7 +2,14 @@
 ––––––––––––––––––––––––––––––––––––––––––––––––––  */
 @use "../utils" with (
   // Default
-  $jektify_theme: (
+  $typing_theme: (
+
+    // Set
+    font-family__primary: ('Special Elite', cursive),
+    font-family__secondary: ('Special Elite', cursive),
+    font-family__third: ('Open Sans', sans-serif),
+    font-family__terminal: ('Inconsolata', monospace),
+
     // Default
     background__full: #fff,
     elements__background: transparent,

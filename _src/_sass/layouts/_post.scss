@@ -1,3 +1,5 @@
+@use "../utils" as *;
+
 .layout_post{
     @extend .content_text_font_size;
     &__header, &__content, &__footer, &__disqus{

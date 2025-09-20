@@ -1,3 +1,5 @@
+@use "../utils" as *;
+
 .layout_tag{
     &__header, &__content{
     	@extend .content_text_font_size;

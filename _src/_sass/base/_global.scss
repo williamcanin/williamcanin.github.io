@@ -1,5 +1,6 @@
 /* Stylesheets for global elements
 ––––––––––––––––––––––––––––––––––––––––––––––––––  */
+@use "../utils" as *;
 
 html,body{
   color: $color__text;

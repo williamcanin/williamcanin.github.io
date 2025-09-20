@@ -1,3 +1,5 @@
+@use "../utils" as *;
+
 // Underline all links.
 .underline_links{
     *{
@@ -117,14 +119,14 @@
       margin-right: 9px;
       background: $background__full;
     }
-  
+
     /* Track - Bg */
     ::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px transparent;
       -webkit-border-radius: $boder;
       border-radius: $boder;
     }
-  
+
     /* Handle */
     ::-webkit-scrollbar-thumb {
       -webkit-border-radius: $boder;
@@ -157,7 +159,7 @@
         animation: move 500ms;
         animation-delay: 250ms;
         animation-fill-mode: backwards;
-    } 
+    }
     &__sidebar-menu{
         animation: move 600ms;
         animation-delay: 290ms;

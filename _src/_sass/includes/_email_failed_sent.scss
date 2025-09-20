@@ -1,3 +1,5 @@
+@use "../utils" as *;
+
 .email_failed_sent{
     &__content{
         background-color: $background__full;
