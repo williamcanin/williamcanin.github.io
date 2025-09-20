@@ -4,7 +4,6 @@
 import { deleteAsync } from "del";
 import gulp from "gulp";
 import htmlmin from "gulp-htmlmin";
-import imagemin, { gifsicle, mozjpeg, optipng, svgo } from "gulp-imagemin";
 import uglify from "gulp-uglify";
 
 // clean
@@ -35,34 +34,34 @@ export function html_minify() {
     .pipe(gulp.dest("../public"));
 }
 
-// optimize images
-export function images_minify() {
-  return gulp
-    .src("../public/assets/images/**/*")
-    .pipe(
-      imagemin([
-        gifsicle({ interlaced: true }),
-        mozjpeg({quality: 75, progressive: true}),
-        optipng({ optimizationLevel: 5 }),
-        svgo({
-          plugins: [
-            {
-              name: "removeViewBox",
-              active: true,
-            },
-            {
-              name: "collapseGroups",
-              active: false,
-            },
-          ],
-        }),
-      ])
-    )
-    .pipe(gulp.dest("../public/assets/images"));
-}
+// // Bug: Minify JPG
+// // optimize images
+// export function images_minify() {
+//   return gulp
+//     .src("../public/assets/images/**/*")
+//     .pipe(
+//       imagemin([
+//         gifsicle({ interlaced: true }),
+//         optipng({ optimizationLevel: 5 }),
+//         svgo({
+//           plugins: [
+//             {
+//               name: "removeViewBox",
+//               active: true,
+//             },
+//             {
+//               name: "collapseGroups",
+//               active: false,
+//             },
+//           ],
+//         }),
+//       ])
+//     )
+//     .pipe(gulp.dest("../public/assets/images"));
+// }
 
 // tasks
 export const build = gulp.series(
-  gulp.parallel(html_minify, javascripts, images_minify)
+  gulp.parallel(html_minify, javascripts)
 );
 export default build;
