@@ -4,7 +4,7 @@
 import { deleteAsync } from "del";
 import gulp from "gulp";
 import htmlmin from "gulp-htmlmin";
-import imagemin, { gifsicle, optipng, svgo } from "gulp-imagemin";
+import imagemin, { gifsicle, mozjpeg, optipng, svgo } from "gulp-imagemin";
 import uglify from "gulp-uglify";
 
 // clean
@@ -42,6 +42,7 @@ export function images_minify() {
     .pipe(
       imagemin([
         gifsicle({ interlaced: true }),
+        mozjpeg({quality: 75, progressive: true}),
         optipng({ optimizationLevel: 5 }),
         svgo({
           plugins: [
