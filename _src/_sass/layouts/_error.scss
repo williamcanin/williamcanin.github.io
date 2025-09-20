@@ -1,8 +1,8 @@
 @use "../base/components";
 
-.layout_error{
+.layout_error {
     &__header, &__content{
-        @extend .elements_box;
+        @extend %elements_box;
     }
     &__icon{
         font-size: 8rem;

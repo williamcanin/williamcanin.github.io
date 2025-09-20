@@ -1,4 +1,6 @@
-.badge__plugin{
+@use "../utils" as *;
+
+.badge__plugin {
     font-weight: 200;
     color: $color__text;
     background-color: $texts__background;

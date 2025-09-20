@@ -1,28 +1,28 @@
 @use "../utils" as *;
 
 // Underline all links.
-.underline_links{
+%underline_links{
     *{
         a{ text-decoration: underline; }
     }
 }
 
 // Sidebar components
-.sidebar_avatar_background{
+%sidebar_avatar_background{
     background-color: $elements__background;
 }
 
-.sidebar_avatar_border{
+%sidebar_avatar_border{
     border: 0.12rem solid $color__clickable;
 }
 
-.sidebar_avatar_circle{
+%sidebar_avatar_circle{
     border-radius: 50%;
 }
 
 // Inputs components
 
-.inputs_style{
+%inputs_style{
     font-size: 1.8rem;
     background-color: $elements__background;
     width: 100%;
@@ -44,7 +44,7 @@
 
 // TextArea style
 
-.textarea_style{
+%textarea_style{
     background-color: $elements__background;
     font-size: 1.17rem;
     width: 100%;
@@ -64,13 +64,13 @@
     }
 }
 
-.elements_box{
+%elements_box{
     background-color: $elements__background;
     border-radius: 20px;
     border: 1px solid $elements__box_border_color;
 }
 
-.element_opacity{
+%element_opacity{
     opacity: 1;
     transition: 0.5s;
     &:hover{
@@ -79,7 +79,7 @@
     }
 }
 
-.buttons_style{
+%buttons_style{
     padding: 8px;
     background-color: $color__clickable;
     border-radius: 5px;
@@ -109,7 +109,7 @@
 }
 
 // Scrollbar modern
-.scrollbar_modern{
+%scrollbar_modern{
     $boder: 10px;
     $size: 7px;
     /* Custom scrollbar */
@@ -139,7 +139,7 @@
     }
   }
 
-.animation {
+%animation {
     animation-name: fade;
     animation-duration: 500ms;
     &__move{

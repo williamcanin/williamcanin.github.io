@@ -3,8 +3,8 @@
 @use "../utils" as *;
 @use "../base/components";
 
-.layout-search{
-    @extend .elements_box;
+.layout-search {
+    @extend %elements_box;
     @extend %content_text_font_size;
   &__form{
     border-radius: 0px;
@@ -24,14 +24,14 @@
     font-size: 1.8rem;
     margin-top: 1rem;
   }
-  &__input{
-    @extend .inputs_style;
+  &__input {
+    @extend %inputs_style;
     @media (min-width: 300px) and (max-width: 992px) {
       font-size: 1.2rem !important;
     }
   }
-  &__btn-clear{
-    @extend .buttons_style;
+  &__btn-clear {
+    @extend %buttons_style;
     &:hover,&:focus,&:active,&:visited{
       text-decoration: none;
     }

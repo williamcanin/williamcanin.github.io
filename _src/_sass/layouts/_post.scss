@@ -4,7 +4,7 @@
 .layout_post {
     @extend %content_text_font_size;
     &__header, &__content, &__footer, &__disqus{
-        @extend .elements_box;
+        @extend %elements_box;
     }
     &__comments{
         background-color: $texts__background;
