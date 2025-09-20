@@ -38,9 +38,9 @@ website:
 # Sidebar
   sidebar:
     avatar:
-      img: "williamcanin_logo.svg"
+      img: "williamcanin_logo.png"
       flip:
-        img: "williamcanin_logo_flip.svg"
+        img: "williamcanin_behind.jpg"
     title:
       text: "Hey, <br> I'm W://iam."
       size: "2.3rem"

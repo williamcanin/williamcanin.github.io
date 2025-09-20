@@ -2,7 +2,7 @@
 
 .sidebar{
     background-color: $background__full;
-    &__avatar_flip{
+    &__avatar_flip {
         // position: relative;
         perspective: 1000;
         margin: 10px auto;
@@ -15,6 +15,7 @@
         &-face{
             position: absolute;
             backface-visibility: hidden;
+            opacity: 1 !important;
         }
     }
     .sidebar__avatar_flip-back.sidebar__avatar_flip-face{
