@@ -34,11 +34,11 @@ website:
     text:
       user: william
       os: linux
-      command: "rustc brief_description.rs && ./main"
+      command: "rustc brief_description.rs && ./brief_description"
 # Sidebar
   sidebar:
     avatar:
-      img: "williamcanin_logo.png"
+      img: "williamcanin_logo.svg"
       flip:
         img: "williamcanin_behind.jpg"
     title:
