@@ -5,7 +5,7 @@
   "main": "index.md",
   "scripts": {
     "preinstall": "bundle install",
-    "build": "cross-env JEKYLL_ENV=production bundle exec jekyll build && npx gulp",
+    "build": "cross-env JEKYLL_ENV=production bundle exec jekyll build && gulp",
     "serve": "bundle exec jekyll serve --livereload",
     "page": "bundle exec rake page",
     "post": "bundle exec rake post",
