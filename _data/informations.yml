@@ -137,7 +137,9 @@ website:
           Aqui você encontra as postagens relacionadas a essa tag especificada.
 # Footer
   footer:
-    # In codes and Rock, I Trust. | In Jesus, I Trust.
+    # In codes and Rock, I Trust.
+    # In Jesus, I Trust.
+    # thoughts on programming, digital wellbeing, linux
     message: "In Jesus, I Trust."
 
 # User data
