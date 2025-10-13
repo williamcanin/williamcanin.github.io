@@ -6,7 +6,7 @@ published: true
 permalink: /contact/
 ---
 
-{%- include details summary="Outras formas de contato comigo" -%}
+{%- include details summary="Contato com segurança máxima - Criptografia" -%}
 
 ## >> Contato com segurança máxima - Criptografia
 
