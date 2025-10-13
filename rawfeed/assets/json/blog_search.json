@@ -1,0 +1,31 @@
+[
+  
+    {
+      "title"    : "Content styles and Codeblocks - Demonstration in the post",
+      "tags"     : "example, codeblocks, style, include, chart, ruby, html, rust, raw",
+      "url"      : "/rawfeed/blog/content-styles-and-codeblocks/",
+      "date"     : "Oct 4,2025"
+    } ,
+  
+    {
+      "title"    : "Codeblocks - Demonstration in the post",
+      "tags"     : "example, codeblocks, ruby, html, rust, raw",
+      "url"      : "/rawfeed/blog/this-post-demonstrates-post-codeblocks/",
+      "date"     : "Sep 25,2025"
+    } ,
+  
+    {
+      "title"    : "Content styles - Demonstration in the post",
+      "tags"     : "example, style, include, chart",
+      "url"      : "/rawfeed/blog/this-post-demonstrates-post-content-styles/",
+      "date"     : "Sep 22,2025"
+    } ,
+  
+    {
+      "title"    : "Welcome to Jekyll!",
+      "tags"     : "welcome, jekyll, example",
+      "url"      : "/rawfeed/blog/welcome-to-jekyll/",
+      "date"     : "Sep 20,2025"
+    } 
+  
+]

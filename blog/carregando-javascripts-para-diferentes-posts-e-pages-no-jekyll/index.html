@@ -1,0 +1,168 @@
+<!DOCTYPE html><html id="top" lang="pt_BR" data-theme="light"><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>Carregando Javascripts para diferentes posts e pages no Jekyll | william canin</title><link rel="icon" type="image/png" href="/assets/images/favicon.png"><link rel="apple-touch-icon" href="/assets/images/favicon.png"><title>Carregando Javascripts para diferentes posts e pages no Jekyll | william canin</title><meta name="generator" content="Jekyll v4.4.1"><meta property="og:title" content="Carregando Javascripts para diferentes posts e pages no Jekyll"><meta name="author" content="William C. Canin"><meta property="og:locale" content="pt_BR"><meta name="description" content="Será que seu projeto em Jekyll está carregados códigos desnecessário? Esse post te ensinará como otimizar o carregamento de javascripts no projeto."><meta property="og:description" content="Será que seu projeto em Jekyll está carregados códigos desnecessário? Esse post te ensinará como otimizar o carregamento de javascripts no projeto."><link rel="canonical" href="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/"><meta property="og:url" content="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/"><meta property="og:site_name" content="william canin"><meta property="og:type" content="article"><meta property="article:published_time" content="2017-10-09T21:31:36+00:00"><meta name="twitter:card" content="summary"><meta property="twitter:title" content="Carregando Javascripts para diferentes posts e pages no Jekyll"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"William C. Canin"},"dateModified":"2017-10-09T21:31:36+00:00","datePublished":"2017-10-09T21:31:36+00:00","description":"Será que seu projeto em Jekyll está carregados códigos desnecessário? Esse post te ensinará como otimizar o carregamento de javascripts no projeto.","headline":"Carregando Javascripts para diferentes posts e pages no Jekyll","mainEntityOfPage":{"@type":"WebPage","@id":"https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/"},"url":"https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/"}</script><meta property="og:locale:alternate" content="en_US"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;display=swap"><link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"><script>(function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();</script><link rel="stylesheet" href="/assets/css/style.css"><link rel="alternate" type="application/atom+xml" title="william canin" href="/feed.xml"></head><body data-layout="post" data-terminal-enabled="true"><div class="default" style="max-width: 780px !important;"><div class="modal fade" id="avatarModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content bg-transparent border-0 shadow-none"><div class="modal-body d-flex justify-content-center"><img id="modalAvatar" class="avatar-img" src="" alt=""></div></div></div></div><header class="container header"><div class="header-wrapper"><div class="row"><div class="col-sm-2 d-flex flex-column justify-content-end"><div class="container"><div class="row"><span>[ <a class="" href="/">home</a> ]</span></div></div></div><div class="col-sm-8 d-flex flex-column justify-content-end"><div class="container"><div class="row"><span class="title">william canin</span></div><div class="row"><small class="description">thoughts on programming, digital wellbeing, linux</small></div></div></div><div class="col-sm-2 d-flex justify-content-end avatar"><div class="avatar-wrapper"><div class="avatar-flipper light-theme avatar-flipper__open-true can-flip"><div class="avatar-card"><div class="avatar-front"><img id="avatarImgLight" class="avatar-img" src="/assets/images/wcanin_light.png" alt="william canin" width="70"></div><div class="avatar-back"><img class="avatar-img" src="/assets/images/wcanin_back.png" alt="william canin - Verso" width="70"></div></div></div><div class="avatar-flipper dark-theme avatar-flipper__open-true can-flip"><div class="avatar-card"><div class="avatar-front"><img id="avatarImgDark" class="avatar-img" src="/assets/images/wcanin_dark.png" alt="william canin" width="70"></div><div class="avatar-back"><img class="avatar-img" src="/assets/images/wcanin_back.png" alt="william canin - Verso" width="70"></div></div></div></div></div></div><div class="menu-separator"></div><div class="row"><div class="col-sm d-flex justify-content-center column-bottom"><span class="blog-menu">weblog » <a class="blog-menu__link" href="/blog/">posts</a><strong> . </strong><a id="blog-search__btn" class="blog-menu__link" href="/blog/?search=open">pesquisar</a><strong> . </strong><a class="blog-menu__link" href="/blog/tags/">tags</a><strong> . </strong><a class="blog-menu__link" href="/feed.xml">feed</a><strong> . </strong></span></div></div><div class="row justify-content-end"><div class="col-sm-2 d-flex justify-content-end"><span id="toggle-theme"><i class="fa-solid fa-moon"></i></span></div></div></div></header><main class="content"><article class="container post" itemscope itemtype="http://schema.org/BlogPosting"><div class="row"><header class="post-header"><h1 class="post-title p-name" itemprop="name headline">» Carregando Javascripts para diferentes posts e pages no Jekyll</h1><div class="row post-meta"><div class="col-sm d-flex justify-content-start"><time class="dt-published" datetime="2017-10-09T21:31:36+00:00" itemprop="datePublished">Oct 9, 2017</time></div><div class="col-sm d-flex justify-content-end"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">autor: William C. Canin</span></span></div></div></header><div class="post-content e-content" itemprop="articleBody"><nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20"><div class="toc-head"><h2>Índice</h2><button class="toc-toggle" aria-expanded="true" type="button">Fechar</button></div><div class="toc-list-wrapper"><ul class="toc-list" role="list"></ul><p class="toc-empty" style="display:none">No titles found.</p></div></nav><script>(function () {
+  function slugify(text) {
+    if (!text) return '';
+    return text.toString().toLowerCase().trim()
+      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
+  }
+
+  function buildTOC(tocEl) {
+    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
+    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
+    const root = document.querySelector(selector);
+
+    if (!root) {
+      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
+      tocEl.querySelector('.toc-empty').style.display = 'block';
+      return;
+    }
+
+    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
+      .filter(h => !tocEl.contains(h))
+      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
+
+    if (headings.length === 0) {
+      tocEl.querySelector('.toc-empty').style.display = 'block';
+      return;
+    }
+
+    const tocRoot = tocEl.querySelector('.toc-list');
+    tocRoot.innerHTML = '';
+
+    const idCounts = {};
+    headings.forEach(h => {
+      if (!h.id) {
+        let id = slugify(h.textContent);
+        if (!id) id = 'section';
+        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
+        else idCounts[id] = 1;
+        h.id = id;
+      }
+    });
+
+    // Build hierarchical tree
+    const stack = [{ level: 0, ul: tocRoot }];
+    headings.forEach((h, i) => {
+      const level = parseInt(h.tagName.substring(1));
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent.trim();
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+        history.replaceState(null, '', '#' + h.id);
+
+        // // Clicking on the TOC menu closes the TOC
+        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
+        // const toggle = tocEl.querySelector('.toc-toggle');
+        // wrapper.style.display = 'none';
+        // toggle.setAttribute('aria-expanded', 'false');
+        // toggle.textContent = '{ { include.btn_show } }';
+      });
+      li.appendChild(a);
+
+      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
+      const parent = stack[stack.length - 1].ul;
+      parent.appendChild(li);
+
+      const next = headings[i + 1];
+      if (next) {
+        const nextLevel = parseInt(next.tagName.substring(1));
+        if (nextLevel > level) {
+          const newUl = document.createElement('ul');
+          li.appendChild(newUl);
+          stack.push({ level, ul: newUl });
+        }
+      }
+    });
+
+    // Active Highlight
+    const links = tocRoot.querySelectorAll('a');
+    function onScroll() {
+      const fromTop = window.scrollY + offset + 1;
+      let current = headings[0];
+      for (let i = 0; i < headings.length; i++) {
+        if (headings[i].offsetTop <= fromTop) current = headings[i];
+      }
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.toc').forEach(toc => {
+      buildTOC(toc);
+      const toggle = toc.querySelector('.toc-toggle');
+      const wrapper = toc.querySelector('.toc-list-wrapper');
+
+      wrapper.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Abrir';
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        wrapper.style.display = expanded ? 'none' : 'block';
+        toggle.setAttribute('aria-expanded', (!expanded).toString());
+        toggle.textContent = expanded ? 'Abrir' : 'Fechar';
+      });
+
+      const tocTop = toc.offsetTop;
+
+      function handleScrollFix() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        // Fixes pinning behavior in Chrome
+        if (scrollTop >= tocTop) {
+          toc.classList.add('fixed');
+          toc.style.position = 'fixed';
+          toc.style.top = '0';
+          toc.style.zIndex = '9999';
+          // toc.style.width = toc.offsetWidth + 'px';
+        } else {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.width = '';
+        }
+
+        // // Automatically closes the TOC if it is open and scrolled to it.
+        // const rect = toc.getBoundingClientRect();
+        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
+        //   wrapper.style.display = 'none';
+        //   toggle.setAttribute('aria-expanded', 'false');
+        //   toggle.textContent = '{ { include.btn_show } }';
+        // }
+      }
+
+      window.addEventListener('scroll', handleScrollFix, { passive: true });
+      window.addEventListener('resize', handleScrollFix);
+      handleScrollFix();
+    });
+  });
+})();</script><p>Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:</p><blockquote><p>“E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu berrante tocá”.</p></blockquote><p>😃</p><p>Deixando as desculpas de lado, vamos ao que interessa; o Post!</p><h2 id="introdução">Introdução</h2><p>Essa é uma dica rápida pra você que utiliza <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> como gerador de sites estáticos.</p><p>Colocar seus códigos Javascript tudo em apenas um arquivo .js, não é tão recomendável assim, independente de utilizar geradores de sites estáticos ou não. Isso porque ao ser carregado pelo navegador, pode existir um trecho de código de uma determinada página, que não deveria ser carregado, assim irá carregar códigos extras sem necessidade.</p><p>A melhor forma de fazer isso, é cada página carregar seu próprio Javascript, isso irá otimizar muito a velocidade de carregamento seu website, caso possua uma gama de códigos javascript em seu carregamento.</p><h2 id="requerimentos">Requerimentos</h2><p>O que você irá precisar para continuar com essa leitura:</p><table><thead><tr><th>Requerido</th><th>Como verificar</th><th>Como instalar</th></tr></thead><tbody><tr><td>Ruby</td><td><code class="language-plaintext highlighter-rouge">ruby -v</code></td><td><a href="https://www.ruby-lang.org" target="_blank">Ruby</a></td></tr><tr><td>Gem</td><td><code class="language-plaintext highlighter-rouge">gem -v</code></td><td><strong>Ruby</strong> contém <strong>Gem</strong></td></tr><tr><td>Jekyll</td><td><code class="language-plaintext highlighter-rouge">jekyll -v</code></td><td><code class="language-plaintext highlighter-rouge">gem install jekyll</code></td></tr></tbody></table><p>Instale conforme o seu sistema operacional.</p><h2 id="o-laço-for-no-layoutdefaulthtml">O laço ‘For’ no layout/default.html</h2><p>Você pode fazer essa otimização de carregamento de javascripts com <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> de uma forma simples, usando um laço <strong>for</strong> no final do arquivo <em>layout/default.html</em>. Veja:</p><figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Specific for each pages. --&gt;</span>
+{ % for script_page in page.script % }
+   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"{ { '/assets/javascripts/' | prepend: site.baseurl | prepend: site.url  | append: script_page } }"</span><span class="nt">&gt;&lt;/script&gt;</span>
+{ % endfor % }</code></pre></figure><blockquote><p>NOTA: Sem espaços entre as chaves.</p></blockquote><h3 id="entendendo-o-for">Entendendo o ‘For’</h3><p>Observe que o diretório de meus javascripts está com PATH para <em>/assets/javascripts/</em>, ou seja, você deve modificar esse PATH para o local onde esteja seus javascripts.</p><p>Na linha <em>{ % for script_page in page.script % }</em>, a variável <strong>script_page</strong> é responsável por amarzenar os valores do laço. A variável <strong>page</strong> é uma variável padrão do Jekyll, que carrega os arquivos de posts e pages, e a variável <strong>script</strong> temos que criar nos arquivos de post e page.</p><h2 id="o-arquivo-de-postagem">O arquivo de postagem</h2><p>Como dito antes, temos que criar a variável de <strong>script</strong> dentro do cabeçalho de nossos arquivos de post e page. Dentro de um arquivo no diretório <strong>_posts/mypost.md</strong> por exemplo, adicionaremos:</p><figure class="highlight"><pre><code class="language-html" data-lang="html"># Does not change and does not remove 'script' variable.
+script: [post.js]</code></pre></figure><p>Nesse casso, você deve colocar essa linha para todos arquivos dentro de <strong>_posts</strong> . Para os arquivos de páginas, você deve colocar também, porém deves mudar o nome do valor da variável <strong>script</strong> para <strong>pages.js</strong>, assim:</p><figure class="highlight"><pre><code class="language-html" data-lang="html"># Does not change and does not remove 'script' variable.
+script: [pages.js]</code></pre></figure><h3 id="exemplo-para-arquivos-de-posts">Exemplo para arquivos de posts</h3><figure class="highlight"><pre><code class="language-text" data-lang="text">---
+layout: post
+title: My Post 1
+date: 2017-05-09 18:31:36
+# Does not change and does not remove 'script' variable.
+script: [post.js]
+---</code></pre></figure><h3 id="exemplo-para-arquivos-de-pages">Exemplo para arquivos de pages</h3><figure class="highlight"><pre><code class="language-text" data-lang="text">---
+layout: page
+title: My Page 1
+date: 2017-05-09 18:31:36
+# Does not change and does not remove 'script' variable.
+script: [page1.js]
+---</code></pre></figure><p>Nesse caso todos os posts irá carregar o código javascript contido no arquivo <strong>/assets/javascripts/post.js</strong>, ou seja, será um arquivo global para todos os posts, mas você pode especificar um para cada post se quiser também. Os arquivos de páginas, segue o mesmo raciocínio. Nesse exemplo está carregando o <strong>/assets/javascripts/page1.js</strong>, mas também pode ter um glogal para todas as páginas.</p><h2 id="conclusão">Conclusão</h2><p>Fazendo dessa forma, você tem maior controle de qual página ou qual post deve carregar um determinado javascript para si próprio. Otimização de código é um marco importante para um bom desenvolvedor. Eu fico por aqui, espero que você possa ter entendido como otimizar o carregamento de javascripts no <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Abraço pessoa, <img class="emoji" title=":punch:" alt=":punch:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44a.png" height="20" width="20">.</p></div><div class="row post-tags"><ul class="tag-list"><strong>[ tags ]:</strong>  <li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/javascripts">javascripts</a></li><strong>  .  </strong><li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/jekyll">jekyll</a></li><strong>  .  </strong><li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/liquid">liquid</a></li><strong>  .  </strong></ul></div></div><div class="post-end text-center">/ / / /  end of post  / / / /</div><div class="row comments"><h1 class="comments-title">[ comentários ]</h1><div class="row comments-content"><script src="https://giscus.app/client.js" data-repo="williamcanin/williamcanin.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnk0MDMyOTUzOQ==" data-category-id="DIC_kwDOAmdhQ84CwLFu" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="noborder_light" data-lang="pt" crossorigin="anonymous" async></script></div></div></article><script src="/assets/js/toc.js"></script></main><footer class="container-fluid fixed-bottom footer"><div class="row top"><div class="col-sm d-flex justify-content-end"><a id="top-link" class="top-link" href="#top">^</a></div></div><div class="row footer-wrapper"><div class="col-sm"><div class="footer-copyright">william canin © 2025 - Todos os direitos reservados.</div></div><div class="col-sm"><div class="footer-message">thoughts on programming, digital wellbeing, linux</div></div><div class="col-sm"><div class="footer-made-by">Using the <a href="https://github.com/williamcanin/rawfeed" target="_blank" rel="noopener noreferrer">rawfeed</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener noreferrer">Jekyll</a>.</div></div></div></footer></div></body><script src="/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script><script>window.giscusThemes = {
+      light: "noborder_light",
+      dark: "noborder_gray"
+    };</script><script src="/assets/js/default.js"></script><script src="/assets/js/avatar.js"></script></html>

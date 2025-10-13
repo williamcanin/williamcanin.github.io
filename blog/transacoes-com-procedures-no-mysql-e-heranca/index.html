@@ -1,0 +1,393 @@
+<!DOCTYPE html><html id="top" lang="pt_BR" data-theme="light"><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>Transações com procedures no MySQL e Herança | william canin</title><link rel="icon" type="image/png" href="/assets/images/favicon.png"><link rel="apple-touch-icon" href="/assets/images/favicon.png"><title>Transações com procedures no MySQL e Herança | william canin</title><meta name="generator" content="Jekyll v4.4.1"><meta property="og:title" content="Transações com procedures no MySQL e Herança"><meta name="author" content="William C. Canin"><meta property="og:locale" content="pt_BR"><meta name="description" content="Chega de ficar apenas aprendendo ‘create table’ no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem."><meta property="og:description" content="Chega de ficar apenas aprendendo ‘create table’ no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem."><link rel="canonical" href="https://williamcanin.github.io/blog/transacoes-com-procedures-no-mysql-e-heranca/"><meta property="og:url" content="https://williamcanin.github.io/blog/transacoes-com-procedures-no-mysql-e-heranca/"><meta property="og:site_name" content="william canin"><meta property="og:type" content="article"><meta property="article:published_time" content="2015-03-03T04:02:32+00:00"><meta name="twitter:card" content="summary"><meta property="twitter:title" content="Transações com procedures no MySQL e Herança"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"William C. Canin"},"dateModified":"2015-03-03T04:02:32+00:00","datePublished":"2015-03-03T04:02:32+00:00","description":"Chega de ficar apenas aprendendo ‘create table’ no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.","headline":"Transações com procedures no MySQL e Herança","mainEntityOfPage":{"@type":"WebPage","@id":"https://williamcanin.github.io/blog/transacoes-com-procedures-no-mysql-e-heranca/"},"url":"https://williamcanin.github.io/blog/transacoes-com-procedures-no-mysql-e-heranca/"}</script><meta property="og:locale:alternate" content="en_US"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;display=swap"><link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"><script>(function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();</script><link rel="stylesheet" href="/assets/css/style.css"><link rel="alternate" type="application/atom+xml" title="william canin" href="/feed.xml"></head><body data-layout="post" data-terminal-enabled="true"><div class="default" style="max-width: 780px !important;"><div class="modal fade" id="avatarModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content bg-transparent border-0 shadow-none"><div class="modal-body d-flex justify-content-center"><img id="modalAvatar" class="avatar-img" src="" alt=""></div></div></div></div><header class="container header"><div class="header-wrapper"><div class="row"><div class="col-sm-2 d-flex flex-column justify-content-end"><div class="container"><div class="row"><span>[&nbsp;<a class="" href="/">home</a>&nbsp;]</span></div></div></div><div class="col-sm-8 d-flex flex-column justify-content-end"><div class="container"><div class="row"><span class="title">william canin</span></div><div class="row"><small class="description">thoughts on programming, digital wellbeing, linux</small></div></div></div><div class="col-sm-2 d-flex justify-content-end avatar"><div class="avatar-wrapper"><div class="avatar-flipper light-theme avatar-flipper__open-true can-flip"><div class="avatar-card"><div class="avatar-front"><img id="avatarImgLight" class="avatar-img" src="/assets/images/wcanin_light.png" alt="william canin" width="70"></div><div class="avatar-back"><img class="avatar-img" src="/assets/images/wcanin_back.png" alt="william canin - Verso" width="70"></div></div></div><div class="avatar-flipper dark-theme avatar-flipper__open-true can-flip"><div class="avatar-card"><div class="avatar-front"><img id="avatarImgDark" class="avatar-img" src="/assets/images/wcanin_dark.png" alt="william canin" width="70"></div><div class="avatar-back"><img class="avatar-img" src="/assets/images/wcanin_back.png" alt="william canin - Verso" width="70"></div></div></div></div></div></div><div class="menu-separator"></div><div class="row"><div class="col-sm d-flex justify-content-center column-bottom"><span class="blog-menu">weblog&nbsp;» <a class="blog-menu__link" href="/blog/">posts</a><strong>&nbsp;.&nbsp;</strong><a id="blog-search__btn" class="blog-menu__link" href="/blog/?search=open">pesquisar</a><strong>&nbsp;.&nbsp;</strong><a class="blog-menu__link" href="/blog/tags/">tags</a><strong>&nbsp;.&nbsp;</strong><a class="blog-menu__link" href="/feed.xml">feed</a><strong>&nbsp;.&nbsp;</strong></span></div></div><div class="row justify-content-end"><div class="col-sm-2 d-flex justify-content-end"><span id="toggle-theme"><i class="fa-solid fa-moon"></i></span></div></div></div></header><main class="content"><article class="container post" itemscope itemtype="http://schema.org/BlogPosting"><div class="row"><header class="post-header"><h1 class="post-title p-name" itemprop="name headline">»&nbsp;Transações com procedures no MySQL e Herança</h1><div class="row post-meta"><div class="col-sm d-flex justify-content-start"><time class="dt-published" datetime="2015-03-03T04:02:32+00:00" itemprop="datePublished">Mar 3, 2015</time></div><div class="col-sm d-flex justify-content-end"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">autor:&nbsp;William C. Canin</span></span></div></div></header><div class="post-content e-content" itemprop="articleBody"><nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20"><div class="toc-head"><h2>Índice</h2><button class="toc-toggle" aria-expanded="true" type="button">Fechar</button></div><div class="toc-list-wrapper"><ul class="toc-list" role="list"></ul><p class="toc-empty" style="display:none">No titles found.</p></div></nav><script>(function () {
+  function slugify(text) {
+    if (!text) return '';
+    return text.toString().toLowerCase().trim()
+      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
+  }
+
+  function buildTOC(tocEl) {
+    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
+    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
+    const root = document.querySelector(selector);
+
+    if (!root) {
+      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
+      tocEl.querySelector('.toc-empty').style.display = 'block';
+      return;
+    }
+
+    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
+      .filter(h => !tocEl.contains(h))
+      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
+
+    if (headings.length === 0) {
+      tocEl.querySelector('.toc-empty').style.display = 'block';
+      return;
+    }
+
+    const tocRoot = tocEl.querySelector('.toc-list');
+    tocRoot.innerHTML = '';
+
+    const idCounts = {};
+    headings.forEach(h => {
+      if (!h.id) {
+        let id = slugify(h.textContent);
+        if (!id) id = 'section';
+        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
+        else idCounts[id] = 1;
+        h.id = id;
+      }
+    });
+
+    // Build hierarchical tree
+    const stack = [{ level: 0, ul: tocRoot }];
+    headings.forEach((h, i) => {
+      const level = parseInt(h.tagName.substring(1));
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent.trim();
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+        history.replaceState(null, '', '#' + h.id);
+
+        // // Clicking on the TOC menu closes the TOC
+        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
+        // const toggle = tocEl.querySelector('.toc-toggle');
+        // wrapper.style.display = 'none';
+        // toggle.setAttribute('aria-expanded', 'false');
+        // toggle.textContent = '{ { include.btn_show } }';
+      });
+      li.appendChild(a);
+
+      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
+      const parent = stack[stack.length - 1].ul;
+      parent.appendChild(li);
+
+      const next = headings[i + 1];
+      if (next) {
+        const nextLevel = parseInt(next.tagName.substring(1));
+        if (nextLevel > level) {
+          const newUl = document.createElement('ul');
+          li.appendChild(newUl);
+          stack.push({ level, ul: newUl });
+        }
+      }
+    });
+
+    // Active Highlight
+    const links = tocRoot.querySelectorAll('a');
+    function onScroll() {
+      const fromTop = window.scrollY + offset + 1;
+      let current = headings[0];
+      for (let i = 0; i < headings.length; i++) {
+        if (headings[i].offsetTop <= fromTop) current = headings[i];
+      }
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.toc').forEach(toc => {
+      buildTOC(toc);
+      const toggle = toc.querySelector('.toc-toggle');
+      const wrapper = toc.querySelector('.toc-list-wrapper');
+
+      wrapper.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Abrir';
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        wrapper.style.display = expanded ? 'none' : 'block';
+        toggle.setAttribute('aria-expanded', (!expanded).toString());
+        toggle.textContent = expanded ? 'Abrir' : 'Fechar';
+      });
+
+      const tocTop = toc.offsetTop;
+
+      function handleScrollFix() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        // Fixes pinning behavior in Chrome
+        if (scrollTop >= tocTop) {
+          toc.classList.add('fixed');
+          toc.style.position = 'fixed';
+          toc.style.top = '0';
+          toc.style.zIndex = '9999';
+          // toc.style.width = toc.offsetWidth + 'px';
+        } else {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.width = '';
+        }
+
+        // // Automatically closes the TOC if it is open and scrolled to it.
+        // const rect = toc.getBoundingClientRect();
+        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
+        //   wrapper.style.display = 'none';
+        //   toggle.setAttribute('aria-expanded', 'false');
+        //   toggle.textContent = '{ { include.btn_show } }';
+        // }
+      }
+
+      window.addEventListener('scroll', handleScrollFix, { passive: true });
+      window.addEventListener('resize', handleScrollFix);
+      handleScrollFix();
+    });
+  });
+})();</script><h1 id="introdução">Introdução</h1><p>Chega de ficar apenas aprendendo ‘create table’ no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.</p><p>Quando se cria uma aplicação que se necessita de uma comunicação com bando de dados, seja ela de qual linguagem de programação for, o acesso entre “Aplicação Banco” sempre é um dos principais fatores para uma boa otimização, ganha tempo e velocidade de processos. A maioria da estrutura e performasse de uma aplicação, está na própria aplicação, mas isso não quer dizer que você não possa melhorar o desempenho realizando boas praticas de código no seu banco de dados. Você consegue fazer várias tarefas que poderiam ser feitas na aplicação, apenas com códigos PL/SQL.</p><p>Neste post, será passado como se deve realizar transações no seu banco de dados utilizando as famosas PROCEDURES do <a href="http://dev.mysql.com/" target="_blank">MySQL</a>, que é um dos mais conceituados banco de dados.</p><p>Para começar, utilize o script SQL abaixo com a opção de criar um <code class="language-plaintext highlighter-rouge">database</code> e uma <code class="language-plaintext highlighter-rouge">tabela</code> de Clientes no MySQL.</p><blockquote><h3 id="criando--database-e-tables">Criando: Database e Tables</h3></blockquote><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="err">$$</span>
+
+<span class="k">DROP</span> <span class="k">DATABASE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`TRANSACTIONS`</span> <span class="err">$$</span>
+
+<span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="nv">`TRANSACTIONS`</span> <span class="err">$$</span>
+
+<span class="n">USE</span> <span class="nv">`TRANSACTIONS`</span> <span class="err">$$</span>
+
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`Clientes`</span><span class="err">$$</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`Clientes`</span> <span class="p">(</span>
+  <span class="nv">`codCliente`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="nv">`Nome`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`Endereco`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`codCliente`</span><span class="p">)</span>
+<span class="p">)</span><span class="err">$$</span>
+
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`Cliente_Fisico`</span> <span class="err">$$</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`Cliente_Fisico`</span> <span class="p">(</span>
+  <span class="nv">`codFisico`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="nv">`idClienteF`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`CPF`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`codFisico`</span><span class="p">),</span>
+  <span class="k">KEY</span> <span class="nv">`idClienteF`</span> <span class="p">(</span><span class="nv">`idClienteF`</span><span class="p">),</span>
+  <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`idClienteF`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`Clientes`</span> <span class="p">(</span><span class="nv">`codCliente`</span><span class="p">)</span>
+<span class="p">)</span><span class="err">$$</span>
+
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`Cliente_Juridico`</span> <span class="err">$$</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`Cliente_Juridico`</span> <span class="p">(</span>
+  <span class="nv">`codJuridico`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="nv">`idClienteJ`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`CNPJ`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`codJuridico`</span><span class="p">),</span>
+  <span class="k">KEY</span> <span class="nv">`idClienteJ`</span> <span class="p">(</span><span class="nv">`idClienteJ`</span><span class="p">),</span>
+ <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`idClienteJ`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`Clientes`</span> <span class="p">(</span><span class="nv">`codCliente`</span><span class="p">)</span>
+<span class="p">)</span> <span class="err">$$</span></code></pre></figure><p>Como podem perceber a tabela de <code class="language-plaintext highlighter-rouge">Clientes</code> é uma tabela pai das tabelas <code class="language-plaintext highlighter-rouge">Cliente_Fisico</code> e <code class="language-plaintext highlighter-rouge">Cliente_Juridico</code>, ou seja, uma <strong>Herança</strong>.</p><p>Com a herança de tabelas criada, vamos criar uma <strong>VIEW</strong> para realizar o READ do <strong>CRUD</strong>, pois temos uma herança de tabelas e precisa-se fazer um <strong>JOIN</strong> dos registros de Cliente com Cliente Físico e Cliente Jurídico para listar todos os registros de nosso database.</p><blockquote><h3 id="criando-view-de-clientes">Criando: View de Clientes</h3></blockquote><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="err">$$</span>
+<span class="k">DROP</span> <span class="k">VIEW</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`View_Cliente_Fisico_Juridico`</span> <span class="err">$$</span>
+<span class="k">CREATE</span> <span class="k">VIEW</span> <span class="nv">`View_Cliente_Fisico_Juridico`</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="nv">`Clientes`</span> <span class="nv">`C`</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="nv">`Cliente_Fisico`</span> <span class="nv">`F`</span> <span class="k">ON</span> <span class="p">(</span><span class="nv">`C`</span><span class="p">.</span><span class="nv">`codCliente`</span> <span class="o">=</span> <span class="nv">`F`</span><span class="p">.</span><span class="nv">`idClienteF`</span><span class="p">)</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="nv">`Cliente_Juridico`</span> <span class="nv">`J`</span> <span class="k">ON</span> <span class="p">(</span><span class="nv">`C`</span><span class="p">.</span><span class="nv">`codCliente`</span> <span class="o">=</span> <span class="nv">`J`</span><span class="p">.</span><span class="nv">`idClienteJ`</span><span class="p">)</span>
+<span class="err">$$</span></code></pre></figure><p>Também precisa-se criar um <strong>TRIGGER</strong> (gatilho) com a função de deletar a herança de um determinado registro. Por exemplo: A tabela Cliente contem os registros padrão de um cliente, mas que pertence aos clientes físicos e clientes jurídicos também, então para realizar uma exclusão de um cliente, temos que remover os registros da tabela herdada (Cliente Físico e Jurídico) e posteriormente da tabela <code class="language-plaintext highlighter-rouge">Clientes</code>, dependendo de qual registro irá ser excluído.</p><blockquote><h3 id="criando-trigger">Criando: Trigger</h3></blockquote><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="err">$$</span>
+<span class="k">DROP</span> <span class="k">TRIGGER</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`TRG_HERANCA_CLIENTE`</span> <span class="err">$$</span>
+<span class="k">CREATE</span>
+<span class="k">TRIGGER</span> <span class="nv">`Trg_Delete_Cliente_Fisico_Juridico`</span>
+<span class="k">BEFORE</span> <span class="k">DELETE</span> <span class="k">ON</span> <span class="nv">`Clientes`</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span>
+<span class="k">BEGIN</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Cliente_Fisico</span> <span class="k">WHERE</span> <span class="n">idClienteF</span> <span class="o">=</span> <span class="k">OLD</span><span class="p">.</span><span class="n">codCliente</span><span class="p">;</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Cliente_Juridico</span> <span class="k">WHERE</span> <span class="n">idClienteJ</span> <span class="o">=</span> <span class="k">OLD</span><span class="p">.</span><span class="n">codCliente</span><span class="p">;</span>
+<span class="k">END</span><span class="err">$$</span></code></pre></figure><p>Como podem ver, nessa TRIGGER, irá remover os dos da tabela <code class="language-plaintext highlighter-rouge">Clientes</code>, <code class="language-plaintext highlighter-rouge">Cliente Físico</code> e <code class="language-plaintext highlighter-rouge">Cliente Jurídico</code> atraves das chaves estrangeiras. Exclui os “filhos” para depois excluir o “pai” de nossa herança.</p><p>Com a toda estrutura de <code class="language-plaintext highlighter-rouge">TABLES</code>, <code class="language-plaintext highlighter-rouge">VIEW</code> e <code class="language-plaintext highlighter-rouge">TRIGGER</code> criadas, vem a parte mais esperada (tan tan tan taaann), vamos criar a nossa “linda e bonita” procedure de transações, que será responsável por fazer todas as criações, leituras, alterações e remoções de registros, ou seja, uma procedure com capacidade de relizar o CRUD (Create, Read, Update e Delete) no banco de dados.</p><blockquote><h3 id="criando-procedure">Criando: Procedure</h3></blockquote><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DROP</span> <span class="k">PROCEDURE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`TRANSACTION_CLIENTS`</span> <span class="err">$$</span>
+
+<span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="nv">`TRANSACTION_CLIENTS`</span><span class="p">(</span>
+
+<span class="nv">`@OPERACAO`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="nv">`@TABELA`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+
+<span class="k">IN</span> <span class="nv">`@codCliente`</span> <span class="nb">INT</span> <span class="p">,</span>
+<span class="k">IN</span> <span class="nv">`@Nome`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<span class="k">IN</span> <span class="nv">`@Endereco`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+
+<span class="k">IN</span> <span class="nv">`@codFisico`</span> <span class="nb">INT</span><span class="p">,</span>
+<span class="k">IN</span> <span class="nv">`@idCliF`</span> <span class="nb">INT</span><span class="p">,</span>
+<span class="k">IN</span> <span class="nv">`@CPF`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+
+<span class="k">IN</span> <span class="nv">`@codJuridico`</span> <span class="nb">INT</span><span class="p">,</span>
+<span class="k">IN</span> <span class="nv">`@idCliJ`</span> <span class="nb">INT</span><span class="p">,</span>
+<span class="k">IN</span> <span class="nv">`@CNPJ`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+
+<span class="p">)</span>
+ <span class="k">BEGIN</span>
+
+<span class="c1">-- OPERAÇÕES DECLARADAS</span>
+<span class="k">DECLARE</span> <span class="nv">`OP1`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">'CREATE'</span><span class="p">;</span>
+<span class="k">DECLARE</span> <span class="nv">`OP2`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">'DELETE'</span><span class="p">;</span>
+<span class="k">DECLARE</span> <span class="nv">`OP3`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">'UPDATE'</span><span class="p">;</span>
+<span class="k">DECLARE</span> <span class="nv">`OP4`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">'READ'</span><span class="p">;</span>
+<span class="c1">-- TABELAS DECLARADAS A SERÃO OPERADAS</span>
+<span class="k">DECLARE</span> <span class="nv">`TAB1`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">'CLIENTE_FISICO'</span><span class="p">;</span>
+<span class="k">DECLARE</span> <span class="nv">`TAB2`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">'CLIENTE_JURIDICO'</span><span class="p">;</span>
+<span class="k">DECLARE</span> <span class="nv">`TAB3`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">'CLIENTES'</span><span class="p">;</span>
+
+
+
+<span class="k">DECLARE</span> <span class="n">exception</span> <span class="nb">SMALLINT</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">DECLARE</span> <span class="k">CONTINUE</span> <span class="k">HANDLER</span> <span class="k">FOR</span> <span class="k">SQLEXCEPTION</span> <span class="k">SET</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">-- INSERT DA TABELA FISICO</span>
+<span class="n">IF</span> <span class="p">(</span><span class="nv">`@TABELA`</span> <span class="o">=</span> <span class="nv">`TAB1`</span>  <span class="k">AND</span> <span class="nv">`@OPERACAO`</span> <span class="o">=</span> <span class="nv">`OP1`</span> <span class="k">AND</span> <span class="nv">`@codCliente`</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">)</span> <span class="k">THEN</span>
+   <span class="k">BEGIN</span> <span class="c1">-- B01</span>
+      <span class="n">IF</span> <span class="p">((</span><span class="nv">`@Nome`</span> <span class="o">&lt;&gt;</span> <span class="nv">""</span><span class="p">)</span> <span class="k">AND</span> <span class="p">(</span><span class="nv">`@Endereco`</span> <span class="o">&lt;&gt;</span> <span class="nv">""</span><span class="p">)</span> <span class="k">AND</span><span class="p">(</span><span class="nv">`@CPF`</span> <span class="o">&lt;&gt;</span> <span class="nv">""</span><span class="p">))</span><span class="k">THEN</span>
+          <span class="k">BEGIN</span>
+             <span class="k">START</span> <span class="n">TRANSACTION</span><span class="p">;</span>
+             <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Clientes</span> <span class="k">VALUES</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="nv">`@Nome`</span><span class="p">,</span> <span class="nv">`@Endereco`</span><span class="p">);</span>
+                <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+                   <span class="k">SELECT</span> <span class="s1">'Erro ao inserir na tabela Cliente'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+                   <span class="k">ROLLBACK</span><span class="p">;</span>
+                <span class="k">ELSE</span>
+                   <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">LAST_INSERT_ID</span><span class="p">()</span> <span class="k">INTO</span> <span class="o">@</span><span class="n">idClienteF</span> <span class="k">FROM</span> <span class="n">Clientes</span><span class="p">;</span>
+                <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+                     <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+                        <span class="k">SELECT</span> <span class="s1">'Erro ao selecionar o ultimo ID inserido'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+                        <span class="k">ROLLBACK</span><span class="p">;</span>
+                     <span class="k">ELSE</span>
+                        <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Cliente_Fisico</span> <span class="k">VALUES</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="o">@</span><span class="n">idClienteF</span><span class="p">,</span><span class="nv">`@CPF`</span><span class="p">);</span>
+                        <span class="k">SELECT</span> <span class="s1">'Cadastro efetuado com sucesso'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+                        <span class="k">COMMIT</span><span class="p">;</span>
+                     <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+           <span class="k">END</span><span class="p">;</span>
+        <span class="k">ELSE</span>
+           <span class="k">SELECT</span> <span class="s1">'Parametros necessários para realizar a operação'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+
+ <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+   <span class="k">END</span><span class="p">;</span> <span class="c1">-- LIMITE FISICO</span>
+<span class="k">ELSE</span>
+<span class="c1">-- INSERT DA TABELA JURIDICO</span>
+<span class="n">IF</span> <span class="p">(</span><span class="nv">`@TABELA`</span> <span class="o">=</span> <span class="nv">`TAB2`</span>  <span class="k">AND</span> <span class="nv">`@OPERACAO`</span> <span class="o">=</span> <span class="nv">`OP1`</span> <span class="k">AND</span> <span class="nv">`@codCliente`</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">)</span> <span class="k">THEN</span>
+   <span class="k">BEGIN</span> <span class="c1">-- B01</span>
+      <span class="n">IF</span> <span class="p">((</span><span class="nv">`@Nome`</span> <span class="o">&lt;&gt;</span> <span class="nv">""</span><span class="p">)</span> <span class="k">AND</span> <span class="p">(</span><span class="nv">`@Endereco`</span> <span class="o">&lt;&gt;</span> <span class="nv">""</span><span class="p">)</span> <span class="k">AND</span><span class="p">(</span><span class="nv">`@CNPJ`</span> <span class="o">&lt;&gt;</span> <span class="nv">""</span><span class="p">))</span><span class="k">THEN</span>
+          <span class="k">BEGIN</span>
+             <span class="k">START</span> <span class="n">TRANSACTION</span><span class="p">;</span>
+             <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Clientes</span> <span class="k">VALUES</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="nv">`@Nome`</span><span class="p">,</span> <span class="nv">`@Endereco`</span><span class="p">);</span>
+                <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+                   <span class="k">SELECT</span> <span class="s1">'Erro ao inserir na tabela Cliente'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+                   <span class="k">ROLLBACK</span><span class="p">;</span>
+                <span class="k">ELSE</span>
+                   <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">LAST_INSERT_ID</span><span class="p">()</span> <span class="k">INTO</span> <span class="o">@</span><span class="n">idClienteJ</span> <span class="k">FROM</span> <span class="n">Clientes</span><span class="p">;</span>
+                <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+                     <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+                        <span class="k">SELECT</span> <span class="s1">'Erro ao selecionar o ultimo ID inserido'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+                        <span class="k">ROLLBACK</span><span class="p">;</span>
+                     <span class="k">ELSE</span>
+                        <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Cliente_Juridico</span> <span class="k">VALUES</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="o">@</span><span class="n">idClienteJ</span><span class="p">,</span><span class="nv">`@CNPJ`</span><span class="p">);</span>
+                        <span class="k">SELECT</span> <span class="s1">'Cadastro efetuado com sucesso'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+                        <span class="k">COMMIT</span><span class="p">;</span>
+                     <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+           <span class="k">END</span><span class="p">;</span>
+        <span class="k">ELSE</span>
+           <span class="k">SELECT</span> <span class="s1">'Parametros necessários para realizar a operação'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+
+ <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+   <span class="k">END</span><span class="p">;</span>
+<span class="k">ELSE</span>
+<span class="c1">-- UPDATE TABELA DE FISICO</span>
+<span class="n">IF</span> <span class="p">(</span><span class="nv">`@TABELA`</span> <span class="o">=</span> <span class="nv">`TAB1`</span>  <span class="k">AND</span> <span class="nv">`@OPERACAO`</span> <span class="o">=</span> <span class="nv">`OP3`</span><span class="p">)</span> <span class="k">THEN</span>
+   <span class="k">BEGIN</span>
+<span class="k">UPDATE</span> <span class="n">Clientes</span> <span class="k">SET</span> <span class="nv">`Nome`</span> <span class="o">=</span> <span class="nv">`@Nome`</span><span class="p">,</span> <span class="nv">`Endereco`</span> <span class="o">=</span> <span class="nv">`@Endereco`</span> <span class="k">WHERE</span> <span class="nv">`codCliente`</span> <span class="o">=</span> <span class="nv">`@codCliente`</span><span class="p">;</span>
+        <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+            <span class="k">SELECT</span> <span class="s1">'Erro ao atualizar tabela de Cliente'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+            <span class="k">ROLLBACK</span><span class="p">;</span>
+        <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="n">Cliente_Fisico</span> <span class="k">SET</span> <span class="nv">`CPF`</span> <span class="o">=</span> <span class="nv">`@CPF`</span> <span class="k">WHERE</span> <span class="nv">`codFisico`</span> <span class="o">=</span> <span class="nv">`@codFisico`</span><span class="p">;</span>
+        <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+            <span class="k">SELECT</span> <span class="s1">'Erro ao atualizar tabela de Cliente Físico'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+            <span class="k">ROLLBACK</span><span class="p">;</span>
+        <span class="k">ELSE</span>
+            <span class="k">SELECT</span> <span class="s1">'Atualização realizada com sucesso'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+
+       <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+<span class="k">ELSE</span>
+<span class="c1">-- UPDATE TABELA DE JURIDICO</span>
+<span class="n">IF</span> <span class="p">(</span><span class="nv">`@TABELA`</span> <span class="o">=</span> <span class="nv">`TAB2`</span>  <span class="k">AND</span> <span class="nv">`@OPERACAO`</span> <span class="o">=</span> <span class="nv">`OP3`</span><span class="p">)</span> <span class="k">THEN</span>
+   <span class="k">BEGIN</span>
+<span class="k">UPDATE</span> <span class="n">Clientes</span> <span class="k">SET</span> <span class="nv">`Nome`</span> <span class="o">=</span> <span class="nv">`@Nome`</span><span class="p">,</span> <span class="nv">`Endereco`</span> <span class="o">=</span> <span class="nv">`@Endereco`</span> <span class="k">WHERE</span> <span class="nv">`codCliente`</span> <span class="o">=</span> <span class="nv">`@codCliente`</span><span class="p">;</span>
+        <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+            <span class="k">SELECT</span> <span class="s1">'Erro ao atualizar tabela de Cliente'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+            <span class="k">ROLLBACK</span><span class="p">;</span>
+        <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="n">Cliente_Juridico</span> <span class="k">SET</span> <span class="nv">`CNPJ`</span> <span class="o">=</span> <span class="nv">`@CNPJ`</span> <span class="k">WHERE</span> <span class="nv">`codJuridico`</span> <span class="o">=</span> <span class="nv">`@codJuridico`</span><span class="p">;</span>
+        <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+            <span class="k">SELECT</span> <span class="s1">'Erro ao atualizar tabela de Cliente Físico'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+            <span class="k">ROLLBACK</span><span class="p">;</span>
+        <span class="k">ELSE</span>
+            <span class="k">SELECT</span> <span class="s1">'Atualização realizada com sucesso'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+
+       <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+<span class="k">END</span><span class="p">;</span>
+<span class="k">ELSE</span>
+<span class="c1">-- DELETE TABELA DE FISICO</span>
+<span class="n">IF</span> <span class="p">(</span><span class="nv">`@TABELA`</span> <span class="o">=</span> <span class="nv">`TAB1`</span>  <span class="k">AND</span> <span class="nv">`@OPERACAO`</span> <span class="o">=</span> <span class="nv">`OP2`</span><span class="p">)</span> <span class="k">THEN</span>
+   <span class="k">BEGIN</span>
+        <span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Clientes</span> <span class="k">WHERE</span> <span class="nv">`codCliente`</span> <span class="o">=</span> <span class="nv">`@codCliente`</span><span class="p">;</span>
+        <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+            <span class="k">SELECT</span> <span class="s1">'Erro ao excluir o registro da tabela de Cliente'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+            <span class="k">ROLLBACK</span><span class="p">;</span>
+        <span class="k">ELSE</span>
+            <span class="k">SELECT</span> <span class="s1">'Registro excluído da tabela de Cliente com sucesso'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+        <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+   <span class="k">END</span><span class="p">;</span>
+<span class="k">ELSE</span>
+<span class="c1">-- DELETE TABELA DE JURIDICO</span>
+<span class="n">IF</span> <span class="p">(</span><span class="nv">`@TABELA`</span> <span class="o">=</span> <span class="nv">`TAB2`</span>  <span class="k">AND</span> <span class="nv">`@OPERACAO`</span> <span class="o">=</span> <span class="nv">`OP2`</span><span class="p">)</span> <span class="k">THEN</span>
+   <span class="k">BEGIN</span>
+        <span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Clientes</span> <span class="k">WHERE</span> <span class="nv">`codCliente`</span> <span class="o">=</span> <span class="nv">`@codCliente`</span><span class="p">;</span>
+        <span class="n">IF</span> <span class="n">exception</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span>
+            <span class="k">SELECT</span> <span class="s1">'Erro ao excluir o registro da tabela de Cliente'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+            <span class="k">ROLLBACK</span><span class="p">;</span>
+        <span class="k">ELSE</span>
+            <span class="k">SELECT</span> <span class="s1">'Registro excluído da tabela de Cliente com sucesso'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+        <span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+   <span class="k">END</span><span class="p">;</span>
+   <span class="k">ELSE</span>
+   <span class="c1">-- SELECIONAR TODOS CLIENTES</span>
+<span class="n">IF</span> <span class="p">(</span><span class="nv">`@TABELA`</span> <span class="o">=</span> <span class="nv">`TAB3`</span>  <span class="k">AND</span> <span class="nv">`@OPERACAO`</span> <span class="o">=</span> <span class="nv">`OP4`</span><span class="p">)</span> <span class="k">THEN</span>
+   <span class="k">BEGIN</span>
+        <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">TRANSACTIONS</span><span class="p">.</span><span class="n">View_Cliente_Fisico_Juridico</span><span class="p">;</span>
+   <span class="k">END</span><span class="p">;</span>
+<span class="k">ELSE</span>
+<span class="k">SELECT</span> <span class="s1">'Parametros necessários para realizar a operação'</span> <span class="k">AS</span> <span class="n">Msg</span><span class="p">;</span>
+
+<span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+<span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+<span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+<span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+<span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+<span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+
+<span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+
+<span class="k">END</span><span class="err">$$</span></code></pre></figure><p>Na parte de criação (Create) de registros através dessa procedure, foi utilizado a função LAST_INSERT_ID() do MySQL, como temos uma herança de tabelas, essa função nos da uma opção de resgatar o ultimo registro inserido na tabela <code class="language-plaintext highlighter-rouge">Clientes</code>, pegando seu ID (Primary Key) e incluindo na tabela <code class="language-plaintext highlighter-rouge">Cliente Físico</code> ou <code class="language-plaintext highlighter-rouge">Cliente Jurídico</code> no campo de Foreign Key, dependendo de qual cliente você vai inserir, claro. Também pode-se perceber, foi declarado uma variável “exception” , com um valor default igual a 0 (zero), e atribuindo um SQLEXCEPTION com o valor de 1(um) caso de erro na transação, uma mensagem de exceção será disparada. O restante da procedure é basicamente implicado com lógicas de IF e ELSE.</p><blockquote><p>NOTA: Para relizar as transações com o procedure, utiliza-se o CALL no MySQL. Lembrando que todos os parâmetros que estão presente no procedure, devem ser especificados na execução da procedure com o CALL, mesmo esses parâmetros não tendo uma implicância significativa, eles devem ser carregados com **NULL **.</p></blockquote><h3 id="um-exemplo">Um exemplo:</h3><figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- Criando um Cliente Físico</span>
+<span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'CREATE'</span><span class="p">,</span><span class="s1">'CLIENTE_FISICO'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'William C. Canin'</span><span class="p">,</span><span class="s1">'Rua XYZ'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'01-234-567-89'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
+<span class="c1">-- Criando um Cliente Jurídico</span>
+<span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'CREATE'</span><span class="p">,</span><span class="s1">'CLIENTE_JURIDICO'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'William C. Canin'</span><span class="p">,</span><span class="s1">'Rua YXZ'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'88-124-3697/15'</span><span class="p">);</span>
+<span class="c1">-- Alterando um Cliente Físico</span>
+<span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'UPDATE'</span><span class="p">,</span><span class="s1">'CLIENTE_FISICO'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'William C. Canin'</span><span class="p">,</span><span class="s1">'Rua ABC'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">'01-234-567-89'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
+<span class="c1">-- Deletando um Cliente Físico</span>
+<span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'DELETE'</span><span class="p">,</span><span class="s1">'CLIENTE_FISICO'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">);</span>
+<span class="c1">-- Selecionado todos os registros</span>
+<span class="k">CALL</span> <span class="n">TRANSACTION_CLIENT</span> <span class="p">(</span><span class="s1">'READ'</span><span class="p">,</span><span class="s1">'CLIENTES'</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="k">null</span><span class="p">);</span></code></pre></figure><p>Como podem ver, ao criar (CREATE) um registro com CALL, dependendo de ser cliente físico ou jurídicos, os campos preenchidos são distintos. Já na parte de remoção de registros (DELETE), precisa-se apenas especificar a chave primária da tabela <code class="language-plaintext highlighter-rouge">Clientes</code>, que o trigger que criamos, será responsável por remover os dados da tabela “filho”. No CALL de selecionar (READ) os registros, apenas é necessário informar os parâmetros de operação e parâmetros da tabela a ser realizada a transação, já que utilizamos uma <code class="language-plaintext highlighter-rouge">VIEW</code> contendo todos os campos para a listagem completa.</p><p>Bom, vou me despedindo por aqui, espero que você tenha entendido um pouco de transações com procedure através de tabelas com herança no MySQL. Um abraço. Morfei!</p></div><div class="row post-tags"><ul class="tag-list"><strong>[ tags ]:</strong>&nbsp;&nbsp;<li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/database">database</a></li><strong>&nbsp;&nbsp;.&nbsp;&nbsp;</strong><li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/mysql">mysql</a></li><strong>&nbsp;&nbsp;.&nbsp;&nbsp;</strong><li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/procedure">procedure</a></li><strong>&nbsp;&nbsp;.&nbsp;&nbsp;</strong><li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/trigger">trigger</a></li><strong>&nbsp;&nbsp;.&nbsp;&nbsp;</strong></ul></div></div><div class="post-end text-center">/&nbsp;/&nbsp;/&nbsp;/&nbsp;&nbsp;end of post&nbsp;&nbsp;/&nbsp;/&nbsp;/&nbsp;/</div><div class="row comments"><h1 class="comments-title">[&nbsp;comentários&nbsp;]</h1><div class="row comments-content"><script src="https://giscus.app/client.js" data-repo="williamcanin/williamcanin.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnk0MDMyOTUzOQ==" data-category-id="DIC_kwDOAmdhQ84CwLFu" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="noborder_light" data-lang="pt" crossorigin="anonymous" async></script></div></div><div class="row related-posts"><h3 class="related-posts-title">[&nbsp;postagens relacionadas&nbsp;]</h3><ul class="related-posts-list"><li class="related-posts-list__item"><span class="related-posts-list__meta">Aug 28,2018</span>&nbsp;»&nbsp; <a class="related-posts-list__link" href="/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/">Transações no banco de dados através do Shell script</a></li></ul></div></article><script src="/assets/js/toc.js"></script></main><footer class="container-fluid fixed-bottom footer"><div class="row top"><div class="col-sm d-flex justify-content-end"><a id="top-link" class="top-link" href="#top">^</a></div></div><div class="row footer-wrapper"><div class="col-sm"><div class="footer-copyright">william canin&nbsp;© 2025 - Todos os direitos reservados.</div></div><div class="col-sm"><div class="footer-message">thoughts on programming, digital wellbeing, linux</div></div><div class="col-sm"><div class="footer-made-by">Using the <a href="https://github.com/williamcanin/rawfeed" target="_blank" rel="noopener noreferrer">rawfeed</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener noreferrer">Jekyll</a>.</div></div></div></footer></div></body><script src="/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script><script>window.giscusThemes = {
+      light: "noborder_light",
+      dark: "noborder_gray"
+    };</script><script src="/assets/js/default.js"></script><script src="/assets/js/avatar.js"></script></html>
