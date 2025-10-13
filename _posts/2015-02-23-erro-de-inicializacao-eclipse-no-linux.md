@@ -1,21 +1,12 @@
 ---
 layout: post
-title: Eclipse Luna - Erro de inicialização no Linux
-category: blog
+title: "Erro de inicialização no Eclipse"
+description: "Eclipse Luna - Erro de inicialização no Linux"
+author: "William Canin"
 date: 2015-02-23 18:14:01 -0300
+update_date:
 comments: true
-tags: ["eclipse","linux"]
-excerpted: |
-    Apesar do Eclipse ser uma IDE famosa e de ótimos recursos, ele (como qualquer outras aplicação) não está livre de bugs. Esse post é para uma correção de um bug no Eclipse Luna para o Linux.
-day_quote:
-    title: "A Palavra:"
-    description: |
-        "Preocupações roubam a felicidade da gente, mas as palavras amáveis nos alegram."<br>
-        (Provérbios 12:25 NTLH)
-published: true
-
-# Does not change and does not remove 'script' variables
-script: [post.js]
+tags: [eclipse,linux]
 ---
 
 Apesar do Eclipse ser uma IDE famosa e de ótimos recursos, ele (como qualquer outras aplicação) não está livre de bugs. Esse post é para uma correção de um bug no Eclipse Luna para o Linux.
@@ -24,7 +15,7 @@ Recentemente instalei o [Eclipse](https://eclipse.org){:target="_blank"} Luna (V
 
 Resolvi iniciar o Eclipse Luna pelo terminal e obtive esta saída de informações e erro:
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 org.eclipse.m2e.logback.configuration: The org.eclipse.m2e.logback.configuration bundle was activated before the state location was initialized.  Will retry after the state location is initialized.
 
 (java:4348): GLib-GObject-WARNING **: cannot register existing type `GdkDisplayManager'
@@ -82,7 +73,7 @@ As configurações que fiz foram as seguintes:
 
 **Arquivo:** eclipse.ini
 
-{% highlight ini  %}
+{% highlight ini linenos %}
 -startup
 plugins/org.eclipse.equinox.launcher_1.3.0.v20140415-2008.jar
 --launcher.library
@@ -136,6 +127,3 @@ export SWT_GTK3=0
 > Nota: Lembrando que tive esse problema com o Eclipse Luna foi no ambiente gráfico XFCE, não testei o Eclipse com outros ambientes gráficos como o KDE ou Gnome por exemplo.
 
 Com essas configurações, executei o Eclipse Luna novamente e o mesmo iniciou sem problema algum. :wink: É isso aí, bons códigos.
-
-
-{% jektify spotify/track/7ltu1Lz4mSKHsOjPK3bvNK/dark %}

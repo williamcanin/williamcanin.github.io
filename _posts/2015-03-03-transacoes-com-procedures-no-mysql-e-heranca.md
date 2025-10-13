@@ -1,26 +1,17 @@
 ---
 layout: post
-title: Transações com procedures no MySQL e Herança
-category: blog
+title: "Transações com procedures no MySQL e Herança"
+description: |
+   Chega de ficar apenas aprendendo 'create table' no banco de dados MySQL, aprenda como se criar
+   Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.
+author: "William C. Canin"
 date: 2015-03-03 01:02:32 -0300
+update_date:
 comments: true
-tags: ["database","mysql","procedure","trigger"]
-excerpted: |
-    Chega de ficar apenas aprendendo 'create table' no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.
-day_quote:
-    title: "A Palavra:"
-    description: |
-        "E nenhum de vocês pode encompridar a sua vida, por mais que se preocupe com isso." <br>
-        (Mateus 6:27 NTLH)
-published: true
-
-# Does not change and does not remove 'script' variables
-script: [post.js]
+tags: [database,mysql,procedure,trigger]
 ---
 
-* Do not remove this line (it will not be displayed)
-{: toc}
-
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 # Introdução
 
@@ -324,6 +315,3 @@ Como podem ver, ao criar (CREATE) um registro com CALL, dependendo de ser client
 
 Bom, vou me despedindo por aqui, espero que você tenha entendido um pouco de transações com procedure através de tabelas com herança no MySQL. Um abraço. Morfei!
 
-{% endpost #9D9D9D %}
-
-{% jektify spotify/track/2kPNfupzN6RAk2ehFcmjPG/dark %}

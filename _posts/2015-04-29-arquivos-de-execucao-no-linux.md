@@ -1,23 +1,18 @@
 ---
 layout: post
-title: Arquivos de execução no Linux
-category: blog
+title: "Arquivos de execução no Linux"
+description: |
+    Essa postagem você irá entender melhor como são os arquivos executáveis no Linux, como se cria
+    um com código aberto ou fechado, como dar permissão no Linux para um executável ter a permissão
+    de execução e outras informações considerável.
+author: "William C. Canin"
 date: 2015-04-29 12:29:32 -0300
+update_date:
 comments: true
-tags: ["linux","shell","script"]
-excerpted: |
-    Essa postagem você irá entender melhor como são os arquivos executáveis no Linux, como se cria um com código aberto ou fechado, como dar permissão no Linux para um executável ter a permissão de execução e outras informações considerável.
-day_quote:
-    title: "A Palavra:"
-    description: |
-        "E a paz de Deus, que ninguém consegue entender, guardará o coração e a mente de vocês, pois vocês estão unidos com Cristo Jesus." <br>
-        (Filipenses 4:6-7 NTLH)
-published: true
-
-# Does not change and does not remove 'script' variables
-script: [post.js]
+tags: [linux,shell,script]
 ---
 
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 ## Introdução
 
@@ -34,24 +29,24 @@ Agora que já fiz um resumo básico sobre esses dois tipos arquivos de execuçã
 Para criar um `script executável`(**application/x-shellscript**), não precisa necessariamente colocar a extensão **.sh** no final do arquivo.
 Acrescentando a linha...
 
-{% highlight bash  %}
+```bash
 #!/bin/bash
-{% endhighlight %}
+```
 
 ... na primeira linha no arquivo, ele já se tornará um **application/x-shellscript**, lhe poupando de colocar a extensão **.sh** no final do arquivo.Isso porque, o Linux faz uma leitura dessa linha, e interpreta que o arquivo irá ser executado pelo **bash** do Linux, porem existe uma pequena barreira para o **application/x-shellscript** realmente executar, vamos entender essa "barreira":
 
 Toda vez que é criado um arquivo do tipo **application/x-shellscript** no Linux, nenhum usuário tem a permissão de executa-lo após sua criação, isso é uma segurança do sistema GNU/Linux, ou seja, nada no Linux é auto-executável, diferentemente do Windows que o auto-executável é bem comum, e consequência disso pode ser um vírus, já que os vírus adoram dar um de auto-executável no sistema do titio *Gates*.
 Voltando ao foco...para executar um **application/x-shellscript**, terá que atribuir a permissão de execução manualmente via comando terminal, fazendo isso, o Linux reconhecerá o **application/x-shellscript**, como um arquivo de execução de "confiança". Para atribuir essa permissão após a sua criação, faça:
 
-{% highlight bash  %}
+```bash
 $ chmod -x seu_script
-{% endhighlight %}
+```
 
 O comando **chmod** no Linux, tem um responsabilidade de configurar, atribuir, remover..etc, permissões de arquivos e pastas no sistema.
 
 Um exemplo de **application/x-shellscript**, é:
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 #!/bin/bash
 
 if [ ! -e "./file.txt" ]; then(
@@ -63,9 +58,9 @@ if [ ! -e "./file.txt" ]; then(
 
 Repare que a primeira linha está configurada para ser um **application/x-shellscript**. Com isso, pode salvar o arquivo sem nenhuma extensão, dar a permissão de execução, e executá-lo com o comando abaixo no terminal para ver sua ação:
 
-{% highlight bash  %}
+```bash
 $ sh seu_script
-{% endhighlight %}
+```
 
 > O script irá criar um arquivo chamado **file.txt**, caso tente rodar o script novamente e o arquivo já existe, irá retornar uma mensagem.
 
@@ -85,7 +80,7 @@ Primeiramente, se você deseja criar arquivos do tipo **application/x-executable
 
 Adicione as seguinte linhas:
 
-{% highlight c  %}
+{% highlight c linenos %}
 #include <stdio.h>
 
 int main(){
@@ -96,16 +91,16 @@ int main(){
 
 * 2 - Salve o arquivo com um nome qualquer mais com a extensão **.c**. Abra o terminal no diretório onde o script esteja, e execute o seguinte comando:
 
-{% highlight bash  %}
+```bash
 $ gcc -o myprog nome_script.c
-{% endhighlight %}
+```
 
 O **gcc** é um compilador de scripts para a linguagem C, e com essa linha de comando, o compilador está criando um arquivo do tipo **application/x-executable** através do script em C.
 Para executar o arquivo do tipo **application/x-executable**, faça assim no terminal:
 
-{% highlight bash  %}
+```bash
 $ ./myprog
-{% endhighlight %}
+```
 
 Este arquivo do tipo **application/x-executable**, vai retornar a seguinte mensagem no terminal: `Meu primeiro script em C`.
 
@@ -116,6 +111,3 @@ Se você chegou até aqui, então é hora de eu me despedir :(
 Espero que você tenha entendido um pouco sobre arquivos **application/x-shellscript** e **application/x-executable** no Linux.
 Até a próxima!
 
-{% endpost #9D9D9D %}
-
-{% jektify spotify/track/5vS7DxElLuVKeZxfXf4lfZ/dark %}

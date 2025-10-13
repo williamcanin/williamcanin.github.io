@@ -1,24 +1,17 @@
 ---
 layout: post
 title: "Implementando uma classe em Python para criar logs"
-date: 2021-06-26 20:37:43
-tags: ['python','logs']
-published: true
+description: |
+  Como criar logs utilizando Python? Talvez foi isso que você procurou na internet, e se está lendo, talvez você possa ter encontrado o que pesquisou
+author: "William C. Canin"
+date: 2021-06-26 20:37:43 -0300
+update_date:
 comments: true
-excerpted: |
-        Como criar logs utilizando Python? Talvez foi isso que você procurou na internet, e se está lendo, talvez você possa ter encontrado o que pesquisou .
-day_quote:
- title: "A Palavra do Dia"
- description: |
-        "- Quando somos corrigidos isso nos momento nos parece motivo de tristeza e não de alegria. Porém, mas tarde os que foram corridos recebem como recompensa uma vida correta e de paz. <br> (Hebreus 12:11 NTLH)"
-
-# Does not change and does not remove 'script' variable.
-script: [post.js]
+tags: [python,logs]
 ---
 
 
-* indice
-{: toc}
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 Olá <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">, bem vindo a mais um post no meu weblog. Vamos começar a leitura?!
 
@@ -370,10 +363,3 @@ Esse foi um simples post com intuito de te dar um base de orientação sobre gra
 **Documentação:**
 
 * [https://docs.python.org/pt-br/3/library/logging.html](https://docs.python.org/pt-br/3/library/logging.html)
-
-
-**Ao som de:**
-
-{% jektify spotify/track/5WEqHNtlbM2mv4k7u9DB4Y/dark %}
-
-{% endpost #9D9D9D %}

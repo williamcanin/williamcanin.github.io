@@ -1,24 +1,17 @@
 ---
 layout: post
 title: "Como encurtar URL Raw do Github e ter uma url personalizada"
-date: 2019-10-20 13:49:01
-tags: ['github','git','url', 'shortener']
-published: false
+description: |
+  Cansado de compartilhar URL Raw do Github compridas? Lendo essa postagem você vai contornar isso.
+author: "William C. Canin"
+date: 2019-10-20 13:49:01 -0300
+update_date:
 comments: true
-excerpted: |
-        Cansado de compartilhar URL Raw do Github compridas? Lendo essa postagem você vai contornar isso.
-day_quote:
- title: "A Palavra"
- description: |
-        "- Felizes as pessoas que têm o coração puro, pois elas verão a Deus." <br> (Mateus 5:8)
-
-# Does not change and does not remove 'script' variable.
-script: [post.js]
+tags: [github,git,url,shortener]
 ---
 
-<!-- Write from here your post !!! -->
 
-Olá, tudo joinha? Meu nome é William, e nesse post vou demonstrar como você pode deixar as urls RAW no [**Github**](https://github.com){:target="_blank"} bem mais encurtadas e eficientes. Vamos lá.
+Olá, tudo joinha? nesse post vou demonstrar como você pode deixar as urls RAW no [**Github**](https://github.com){:target="_blank"} bem mais encurtadas e eficientes. Vamos lá.
 
 Primeiro você precisa do [**curl**](https://curl.haxx.se/){:target="_blank"} na sua máquina, pois vamos precisar dele para realizar uma façanha. _
 
@@ -58,7 +51,7 @@ $ curl -i https://git.io -F "url=https://raw.githubusercontent.com/my_user/my_pr
 
 **Exemplo de saída do encurtamento:**
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 HTTP/1.1 201 Created
 Server: Cowboy
 Connection: keep-alive
@@ -102,6 +95,4 @@ Location: https://git.io/dfsds4r
 ...
 ```
 
-Eu fico por aqui, espero que eu tenha te ajudado. Abraços :D
-
-{% jektify spotify/track/6be1c0AWyPxxSS0qiYzoUC/dark %}
+Eu fico por aqui, espero que eu tenha te ajudado. Abraços

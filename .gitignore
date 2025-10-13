@@ -1,12 +1,13 @@
-node_modules/
+# by rawfeed theme
+
+_site/
 .bundle-cache/
-public/
-tmp/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata/
+node_modules/
+tmp/
 
 ~*
 *.Identifier
 .bak
-.log

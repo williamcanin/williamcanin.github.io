@@ -1,21 +1,15 @@
 ---
 layout: post
-title: Criando pendrive bootavel no Linux com dd
-category: blog
+title: "Criando pendrive bootavel no Linux com dd"
+description: |
+    Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou
+    aquele outro sistema operacial no qual necessita de boot. Vamos aprenda a fazer isso no Linux
+    com um comando poderoso.
+author: "William C. Canin"
 date: 2015-04-21 18:42:04 -0300
+update_date:
 comments: true
-tags: ["dd","linux","iso","pendrive"]
-excerpted: |
-   Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou aquele outro sistema operacial no qual necessita de boot. Vamos aprenda a fazer isso no Linux com um comando poderoso.
-day_quote:
-    title: "A Palavra:"
-    description: |
-        "E nenhum de vocês pode encompridar a sua vida, por mais que se preocupe com isso." <br>
-        (Mateus 6:27 NTLH)
-published: true
-
-# Does not change and does not remove 'script' variables
-script: [post.js]
+tags: [dd,linux,iso,pendrive]
 ---
 
 Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou aquele outro sistema operacioal no qual necessita de boot. Vamos aprenda a fazer isso no Linux com um comando poderoso. :wink:
@@ -28,13 +22,16 @@ Primeiramente você tem que realizar um backup de seu pendrive caso tenha algo i
 
 * 2 - **Requisitos**
 Após realizar o backup de suas coisas, temos que verificar os programas que iremos utilizar, e esses são o **mkfs**(para a formatação do pendrive) e o **dd**(para a gravação da imagem ISO). Para verificar se os mesmo estão instalados na sua distro, use os seguintes comandos:
-{% highlight bash  %}
+
+```bash
 mkfs --version
-{% endhighlight %}
+```
+
 e
-{% highlight bash  %}
+
+```bash
 dd --version
-{% endhighlight %}
+```
 
 > Obs: Por padrão os dos programinhas já vem na maioria das distros.
 
@@ -42,16 +39,28 @@ dd --version
 
 Se for realizar a formatação de qualquer dispositivo remóvel e partição no linux, o mesmo tem que estar desmontado. Se o pendrive montou e você quer saber onde ele foi montado, utilize o comando abaixo no terminal...
 
-{% highlight bash  %}
+```bash
 mount
-{% endhighlight %}
+```
 
 ... irá retornar as todas unidade montadas em sua máquina e seus respectivos pontos de montagem. Veja como retornou em minha máquina:
 
-{% gist a3672f19f0f2ac35810b %}
+{% highlight bash linenos %}
+ william @archlinux $
+└‣  mount
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+sys on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+dev on /dev type devtmpfs (rw,nosuid,relatime,size=1996208k,nr_inodes=499052,mode=755)
+run on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)
+/dev/sda8 on / type ext4 (rw,relatime,data=ordered)
+.
+.
+/dev/sdb on /run/media/william/sandisk type vfat (rw,nosuid,nodev,relatime,uid=1000,gid=1002,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,showexec,utf8,flush,errors=remount-ro,uhelper=udisks2)
+ william @archlinux $
+└‣
+{% endhighlight %}
 
-> NOTA: O comando "mount" pode retornar mais linhas, porem retirei boa parte
-> para e deixei as principais.
+> NOTA: O comando "mount" pode retornar mais linhas, porem retirei boa parte para e deixei as principais.
 
 Observe que meu pendrive está montado no diretório **/run/media/william/sandisk** e que sua partição/unidade para montagem é o **/dev/sdb**. Tendo essas informações você já pode desmontar e realizar a formatação da vítima hehehe.
 
@@ -59,16 +68,17 @@ Observe que meu pendrive está montado no diretório **/run/media/william/sandis
 
 Para desmontar o querido pendrive, utilize o amigo **umount** e o ponto de montagem do pendrive que foi retornado no comando `mount`. Veja abaixo:
 
-{% highlight bash  %}
+```bash
 umount /run/media/william/sandisk
-{% endhighlight %}
+```
 
 * 5 - **Formatando pendrive**
 
 Pendrive desmontado, vem a parte da formatação utilizando o **mkfs**. Veja:
-{% highlight bash %}
+
+```bash
 mkfs.vfat -I -n nome_para_o_pendrive /dev/sdb
-{% endhighlight %}
+```
 
 Explicando:
 
@@ -81,9 +91,9 @@ Explicando:
 Pendrive formatado, iremos gravar a imagem ISO nele com o **dd**. Para gravar algo com o **dd**, o pendrive tem que estar **DESMONTADO** e estar utilizando o usuário **root** no terminal ou usar o **sudo**.
 Suponhamos que a imagem ISO, está no diretório **Downloads**. Você pode entrar no diretório Downloads pelo terminal ou digitar o **Path** completo até chegar na imagem ISO, como eu fiz:
 
-{% highlight bash  %}
+```bash
 sudo dd if=$HOME/Downloads/imagem.iso of=/dev/sdb
-{% endhighlight %}
+```
 
 O atributo **if** será a verificação do **dd** para encontrar o arquivo gravável e jogar para o atributo **of**, que vai receber a unidade do pendrive, ou seja, local a ser gravado.
 
@@ -92,6 +102,3 @@ O atributo **if** será a verificação do **dd** para encontrar o arquivo grav�
 Para saber mais sobre a documentação do **dd**, use os comandos no terminal:`man dd` e `dd --help`. Espero que você economize bastante CDs e DVDs agora ;)
 Ate a próxima! Bye :hand:
 
-{% endpost #9D9D9D %}
-
-{% jektify spotify/track/0yhPEz5KxlDwckGJaMlZqM/dark %}

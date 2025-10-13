@@ -1,28 +1,19 @@
 ---
 layout: post
 title: "Criptografando a partição HOME no Linux"
-date: 2017-10-16 03:51:44
-tags: ['crypt','linux','security']
-published: true
+description: |
+  Que tal esconder suas coisinhas da /home de possíveis pessoas "espertas"? Siga em frente neste post e descubra.
+author: "William C. Canin"
+date: 2017-10-16 03:51:44 -0300
+update_date:
 comments: true
-excerpted: |
-          Que tal esconder suas coisinhas da /home de possíveis pessoas "espertas"? Siga em frente neste post e descubra.
-day_quote:
- title: "A Palavra"
- description: |
-          "Não nos cansemos de fazer o bem. Pois, se não desanimarmos, chegará o tempo certo em que faremos a colheita." </br> (Gálatas 6:9 NTLH)
-
-# Does not change and does not remove 'script' variable.
-script: [post.js]
+tags: [crypt,linux,security]
 ---
 
-<!-- Write from here your post !!! -->
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 Olá para você pessoa, como vai? Eu vou bem graças a Deus e obrigado por perguntar mentalmente hehe.
 Esse é um post de segurança...é o que todos querem, não é?! hehe Então lá vai...
-
-* indice
-{: toc}
 
 # Introdução
 
@@ -236,4 +227,3 @@ grub-mkconfig -o /boot/grub/grub.cfg && grub-install /dev/sda
 
 Esse foi um tutorial bem básico de como deixar nossa **/home** criptografada no Linux. É de certo que alguma distribuição Linux pode ter suas particularidades e você tem que configurar algo a mais na mesma, porem o principio parte dessa lógica desse tutorial. Espero que você goste e principalmente que suas dúvidas foram eliminadas, mas caso não foi, deixe aqui um comentário informando suas dúvidas. Abraço.
 
-{% jektify spotify/track/5YaLFRpqpUzgLLDcukNn0H/dark %}

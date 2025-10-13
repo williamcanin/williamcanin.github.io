@@ -1,31 +1,22 @@
 ---
 layout: post
 title: "Corrigindo erro de chaves no Arch Linux"
-date: 2019-03-07 09:13:17
-tags: ['archlinux','keys','dicas']
-published: true
+description: |
+  Você já deve ter se deparado com problemas de chaves públicas ao instalar um pacote
+  no Arch Linux, certo? Pois esse post de dica rápida pode ajudar a você a
+  resolver isso.
+author: "William C. Canin"
+date: 2019-03-07 09:13:17 -0300
+update_date:
 comments: true
-excerpted: |
-          Você já deve ter se deparado com problemas de chaves públicas ao instalar um pacote
-          no Arch Linux, certo? Pois esse post de dica rápida pode ajudar a você a
-          resolver isso.
-day_quote:
- title: "A Palavra"
- description: |
-          "Todos neste mundo devem ser sábios. Ter sabedoria é tão bom como receber uma herança. A sabedoria é melhor do que o dinheiro. A vantagem da sabedoria é que ela conserva a vida da gente." </br>
-          (Eclesiastes 7:11-12 NTLH)
-
-# Does not change and does not remove 'script' variable.
-script: [post.js]
+tags: [archlinux,keys]
 ---
-
-<!-- Write from here your post !!! -->
 
 Se alguma vez você se deparou com erro de chaves públicas ao instalar um pacote no Arch Linux e não soube como resolver,então talvez essa dica abaixo pode te ajudar.
 
 Abaixo você pode perceber que tentei instalar o pacote [spotify](https://aur.archlinux.org/packages/spotify){:target="_blank"} no meu [Arch Linux](https://archlinux.org){:target="_blank"} através do repositório AUR com o [yay](https://aur.archlinux.org/packages/yay/){:target="_blank"}, e me retornou um erro de chave pública.
 
-{% highlight bash  %}
+{% highlight bash linenos %}
   william at archlinux in folder ~ (python-3.7.4) ○
  ⇨ yay -S spotify --nodiffmenu --noeditmenu --noupgrademenu
 :: There are 5 providers available for spotify:
@@ -93,6 +84,3 @@ yay -S --mflags --skipinteg spotify
 
 Até a próxima ;)
 
-{% endpost #9D9D9D %}
-
-{% jektify spotify/track/3iC3Numiy9P3AkF7iioKmx/dark %}

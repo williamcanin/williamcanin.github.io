@@ -1,17 +1,14 @@
 ---
 layout: post
-title: "Instalando Arch Linux com criptografia LUKS e LVM"
-description: |
-    Este post, irá lhe informar como ter uma segurança forte para proteção do seu S.O Arch Linux.
-    Iae, quer estar protegido?!
+title: "Minha instalação do Arch Linux"
+description: "Description of your post"
 author: "William C. Canin"
-date: 2017-04-27 11:33:43 -0300
-update_date: 2025-10-12 23:27:23 -0300
-comments: true
-tags: [archlinux,encryption,criptografia,luks,lvm]
+date: 2025-10-12 23:27:23 -0300
+update_date:
+published: false
+comments: false
+tags: [archlinux,instalação,criptografia,lvm,luks]
 ---
-
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 
 Ei, beleza? 👍
@@ -68,7 +65,7 @@ iwctl
 
 Quando entrar dentro do `[iwd]#`, os passos de comandos que uso serão esses basicamente:
 
-{% highlight shell linenos %}
+```shell
 device list
 device <NAME> set-property Powered on
 adapter set-property Powered on
@@ -78,9 +75,10 @@ station <IFACE_NAME> get-networks
 station <IFACE_NAME> connect '<NETWORK_NAME>'
 Passphrase:
 quit
-{% endhighlight %}
+```
 
 {% include enddetails %}
+
 
 > NOTA: Após configurar a internet, faço um `ping 8.8.8.8` para verificar.
 
@@ -125,7 +123,8 @@ em minha máquina.
 | /dev/sda2   | 120G    | Linux LVM           |         |
 | /dev/sdb1   | 1T      | Linux filesystems   | /home   |
 
-{% include details summary=">>> Informações interessantes 🤔" %}
+<details>
+  <summary><strong>>>> Informações interessantes 🤔</strong></summary>
 
 ## Boot
 
@@ -168,7 +167,7 @@ Tabela com a partição de boot separada em duas deve ficar assim:
 | /dev/sda3   | 120G    | Linux LVM           |           |
 | /dev/sdb1   | 1T      | Linux filesystems   | /home     |
 
-{% include enddetails %}
+</details></br></br>
 
 Para realizar o particionamento, geralmente eu uso o `cfdisk`:
 
@@ -223,7 +222,8 @@ mkfs -t ext4 /dev/mapper/linux-arch;
 mkfs -t ext4 /dev/mapper/home;
 ```
 
-{% include details summary="Com partição de boot separada" %}
+<details>
+  <summary><strong>Com partição de boot separada</strong></summary>
 
 ```shell
 mkfs -t ext4 /dev/sda1;
@@ -231,14 +231,14 @@ mkfs.fat -F 32 /dev/sda2;
 mkfs -t ext4 /dev/mapper/linux-arch;
 mkfs -t ext4 /dev/mapper/home;
 ```
-{% include enddetails %}
+</details></br>
 
 > IMPORTANTE!!! Se tenho a partição `/dev/mapper/home` com arquivos, não formato senão irei perder
 TODOS meus dados/arquivos.
 
 Depois de todas unidades estarem criadas e formatadas, gosto de verificar com o comando: `lsblk -f`:
 
-{% highlight bash linenos %}
+```
 NAME        FSTYPE      FSVER     LABEL     UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
 sda
 ├─sda1      vfat        FAT32               BA60-4D21                                 1,5G    12% /boot
@@ -248,11 +248,12 @@ sda
 sdb
 └─sdb1      crypto_LUKS 2                   a4fd06b1-a253-4661-b5a2-47ae92e68efe
   └─home    ext4        1.0                 65660251-8451-4722-adbd-ff5850c5df6d    999,7G    37% /home
-{% endhighlight %}
+```
 
-{% include details summary="Com partição de boot separada" %}
+<details>
+  <summary><strong>Com partição de boot separada</strong></summary>
 
-{% highlight bash linenos %}
+```
 NAME        FSTYPE      FSVER     LABEL     UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
 sda
 ├─sda1      ext4        1.0                 69660251-8451-4322-cdbd-ff5850c5df6d      1,5G    12% /boot
@@ -263,9 +264,8 @@ sda
 sdb
 └─sdb1      crypto_LUKS 2                   a4fd06b1-a253-4661-b5a2-47ae92e68efe
   └─home    ext4        1.0                 65660251-8451-4722-adbd-ff5850c5df6d    999,7G    37% /home
-{% endhighlight %}
-
-{% include enddetails %}
+```
+</details></br>
 
 
 # Montagem das unidades
@@ -278,7 +278,8 @@ mount --mkdir /dev/sda1 /mnt/boot;
 mount --mkdir /dev/mapper/home /mnt/home;
 ```
 
-{% include details summary="Com partição de boot separada" %}
+<details>
+  <summary><strong>Com partição de boot separada</strong></summary>
 
 ```shell
 mount /dev/mapper/linux-arch /mnt;
@@ -286,7 +287,7 @@ mount --mkdir /dev/sda1 /mnt/boot;
 mount --mkdir /dev/sda2 /mnt/boot/efi;
 mount --mkdir /dev/mapper/home /mnt/home;
 ```
-{% include enddetails %}
+</details></br>
 
 # Instalando o sistema base do Arch Linux
 
@@ -294,13 +295,13 @@ Aqui eu atualizo os `mirrorlist` para o `Brazil` e `US` usando `reflector` já d
 **Arch Linux**, e logo em seguida atualizo as chaves e o cache, para depois fazer instalação do
 sistema base com o kernel LTS, e alguns pacotes que acho essenciais durante a instalação.
 
-{% highlight bash linenos %}
+```shell
 reflector --verbose --country Brazil,US --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist;
 pacman -Syy;
 pacman -Sy archlinux-keyring;
 pacman-key --populate archlinux;
 pacstrap -K /mnt base base-devel linux-lts linux-lts-headers linux-firmware systemd systemd-ukify sudo vim dhcpcd wireless_tools wpa_supplicant;
-{% endhighlight %}
+```
 
 # Gerando o /etc/fstab
 
@@ -351,7 +352,7 @@ systemctl enable --now systemd-networkd.service systemd-resolved.service
 
 **(3)** - Abro o arquivo de configuração do `systemd-networkd` e coloco o seguinte:
 
-{% highlight conf linenos %}
+```conf
 [Match]
 Name=eno1 # Nome da minha interface de rede
 
@@ -364,7 +365,7 @@ DNS=8.8.8.8
 ## Conexão via DHCP
 # [Network]
 # DHCP=yes
-{% endhighlight %}
+```
 
 **(4)** - Depois crio um link simbólico para o `DNS`:
 
@@ -406,11 +407,11 @@ nvidia-utils nvidia-settings nvidia lib32-nvidia cuda
 
 **(4)** - Adiciono meu próprio repo de algumas configurações que fiz para minha máquina 😎:
 
-{% highlight conf linenos %}
+```conf
 [canin]
 SigLevel = Optional TrustAll
 Server = https://williamcanin.gitlab.io/archlinux/stable/x86_64
-{% endhighlight %}
+```
 
 **(5)** - Atualizo o cache do pacman:
 
@@ -426,12 +427,12 @@ atribuindo o `UUID` do dispositivo criptografado LUKS, que no caso é o `/dev/sd
 
 **(1)** - Crio o arquivo `/etc/crypttab.initramfs` inserindo o `UUID` com a ajuda do `blkid`:
 
-{% highlight bash linenos %}
+```shell
 cat << EOF >> /etc/crypttab.initramfs
 # /dev/sdb1
 home UUID=$(blkid -s UUID -o value /dev/sdb1) none luks,tries=0,timeout=0
 EOF
-{% endhighlight %}
+```
 
 > ATENÇÃO!!! Não confundir `/dev/sdb1` (dispositivo LUKS) com `/dev/mapper/home`
 (partição com sistema de arquivos).
@@ -440,12 +441,12 @@ EOF
 `/etc/fstab`. Sigo basicamente a mesma ideia do comando de acima, copiando o `UUID` com o `blkid`
 mas dessa vez no `/etc/fstab`:
 
-{% highlight bash linenos %}
+```shell
 cat << EOF >> /etc/fstab
 # /dev/mapper/home
 UUID=$(blkid -s UUID -o value /dev/mapper/home) /home ext4 rw,relatime,data=ordered 0 2
 EOF
-{% endhighlight %}
+```
 
 > ATENÇÃO!!! Observe que para inserir a configuração no `/etc/fstab`, estou usando **tee -a**, este
 parâmetro **-a** significa **append**, adicionar, se emitir ele, irá sobrescrever o `/etc/fstab`.
@@ -503,7 +504,8 @@ segurança para CPU Intel. Na AMD como CPU, instalo o `amd-code`.
 bootctl --path=/boot install
 ```
 
-{% include details summary="Com partição de boot separada" %}
+<details>
+  <summary><strong>Com partição de boot separada</strong></summary>
 
 Se eu instalei o sistema com a partição de boot separada, então minha instalação do bootloader
 fica assim:
@@ -511,11 +513,11 @@ fica assim:
 ```shell
 bootctl --path=/boot/efi install
 ```
-{% include enddetails %}
+</details></br>
 
 **(3)** - Crio o loader do `systemd-boot`:
 
-{% highlight bash linenos %}
+```shell
 ESP_DIR="";
 cat << EOF > /boot/${ESP_DIR}loader/loader.conf
 default arch-linux-lts.efi
@@ -523,7 +525,7 @@ timeout 3
 console-mode max
 editor no
 EOF
-{% endhighlight %}
+```
 
 > IMPORTANTE: Está variável de ambiente `ESP_DIR` é temporária, é apenas para o momento de instalação.
 Se instalou o sistema com a partição de boot separada, um em `/boot` e outra `/boot/efi`, então a
@@ -546,7 +548,7 @@ cp /etc/mkinitcpio.d/linux-lts.preset /etc/mkinitcpio.d/linux-lts.preset.backup
 
 **(2)** - Depois crio um novo `/etc/mkinitcpio.d/linux-lts.preset` com as configurações abaixo:
 
-{% highlight bash linenos %}
+```shell
 cat << EOF > /etc/mkinitcpio.d/linux-lts.preset
 ESP_DIR="${ESP_DIR}"
 
@@ -565,7 +567,7 @@ fallback_image="/boot/\${ESP_DIR}initramfs-linux-lts-fallback.img"
 fallback_uki="/boot/\${ESP_DIR}EFI/Linux/arch-linux-lts-fallback.efi"
 fallback_options="-S autodetect"
 EOF
-{% endhighlight %}
+```
 
 > Dica: Caso eu queira um boot menos verboso e com splash, eu adiciono na opção `ALL_cmdline` os
 parâmentros: `quiet splash loglevel=3 systemd.show_status=auto rd.udev.log_level=3`. E depois
@@ -597,7 +599,8 @@ EOF
 pacman -S --noconfirm linux-lts
 ```
 
-{% include details summary="Usando modo tradicional (Opcional)" %}
+<details>
+  <summary><strong>Usando modo tradicional (Opcional)</strong></summary>
 
 Aqui a configuração do **systemd-boot** muda, em vez de usar UKI, uso os arquivos
 **vmlinuz-linux-lts**, **initramfs-linux-lts.img** e **intel-ucode.img** para iniciar o boot.
@@ -610,7 +613,7 @@ rm -f /boot/${ESP_DIR}EFI/Linux/arch-linux-lts*.efi
 
 **(2)** - Depois eu crio a entrada padrão assim:
 
-{% highlight bash linenos %}
+```shell
 cat << EOF > /boot/${ESP_DIR}loader/entries/arch.conf
 title Arch Linux (Default)
 linux /vmlinuz-linux-lts
@@ -618,7 +621,7 @@ initrd  /intel-ucode.img
 initrd /initramfs-linux-lts.img
 options root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw nvidia_drm.modeset=1 video=1920x1080@75
 EOF
-{% endhighlight %}
+```
 
 **(2)** - E a entrada de fallback assim:
 
@@ -634,9 +637,10 @@ EOF
 
 > Nota: Nas entradas de boot, em `options`, vale a mesma configuração do `ALL_cmdline` do **UKI**.
 
-{% include enddetails %}
+</details></br>
 
-{% include details summary="Adicionando EFI do Windows (Opcional)" %}
+<details>
+  <summary><strong>Adicionando EFI do Windows (Opcional)</strong></summary>
 
 Quando quero fazer um dual-boot com **Windows** ou até mesmo usar o Windows instalado em outra
 SSD/HDD, e adicionar o mesmo no **systemd-boot**, eu faço os passos abaixo:
@@ -662,14 +666,15 @@ efi     /EFI/Microsoft/Boot/bootmgfw.efi
 EOF
 ```
 
-{% include enddetails %}
+</details></br>
 
-{% include details summary="Reinstalando o bootloader (Manutenção)" %}
+<details>
+  <summary><strong>Reinstalando o bootloader (Manutenção)</strong></summary>
 
 Caso eu precise reinstalar o **systemd-boot** após um update ou reinstalação de outro
 sistema operacional, sigo as etapas abaixo após entrar na ISO do **Arch Linux**:
 
-{% highlight bash linenos %}
+```shell
 mount /dev/mapper/linux-arch /mnt;
 mount --mkdir /dev/sda1 /mnt/boot;
 mount --mkdir /dev/mapper/home /mnt/home;
@@ -678,12 +683,12 @@ arch-chroot /mnt;
 pacman -S --noconfirm linux-lts linux-lts-headers;
 mkinitcpio -P;
 bootctl --path=/boot install;
-{% endhighlight %}
+```
 
 > Nota 1: Então Repito os passos de: **Instalando o bootloader**.
 > Nota 2: Lembrando que, se usar `/boot` e `/boot/efi`, montar ambos e usar o `bootctl` em `/boot/efi`.
 
-{% include enddetails %}
+</details></br>
 
 # Instalação de drivers gráficos
 
@@ -704,14 +709,15 @@ então também instalo esses drivers para GPU integrada:
 pacman -S --needed --noconfirm mesa-vulkan-intel vulkan-intel linux-firmware-intel
 ```
 
-{% include details summary="AMD" %}
+<details>
+  <summary><strong>AMD</strong></summary>
 
 Não estou usando **AMD** no momento, mas vou deixar os drivers necessários caso eu use futuramente:
 
 ```shell
 pacman -S --needed --noconfirm mesa-vulkan-radeon vulkan-radeon linux-firmware-radeon
 ```
-{% include enddetails %}
+</details></br>
 
 **NVIDIA (Nouveau)**
 
@@ -721,7 +727,8 @@ Sempe bom ter os drivers da NVIDIA open-source caso a NVIDIA faça alguma "nhaca
 pacman -S --noconfirm  xf86-video-nouveau vulkan-nouveau
 ```
 
-{% include details summary="NVIDIA (proprietary) 🙄" %}
+<details>
+  <summary><strong>NVIDIA (proprietary) 🙄</strong></summary>
 
 Como já relatei acima, não uso o driver proprietário da **NVIDIA** do repo do **Arch Linux** por
 algumas incompatibilidades que tive na última versão 😡, mas mesmo assim vou deixar os pacotes
@@ -731,7 +738,7 @@ essenciais que se deve instalar:
 pacman -S --needed --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia;
 systemctl set-default multi-user.target
 ```
-{% include enddetails %}
+</details></br>
 
 # Instalação de fontes
 
@@ -756,16 +763,18 @@ pacman -S --needed --noconfirm i3 i3lock i3status polybar pcmanfm picom rofi nit
 btop jq conky gsimplecal numlockx qt5ct qt6ct scrot dunst yazi xautolock imagemagick ranger lynx
 ```
 
-{% include details summary="Ambiente de trabalho (XFCE)" %}
+<details>
+  <summary><strong>Ambiente de trabalho (XFCE)</strong></summary>
 
 ```shell
 pacman -S --needed --noconfirm xfce4 xfce4-goodies appmenu-gtk-module libdbusmenu-glib lightdm \
 lightdm-gtk-greeter
 ```
 
-{% include enddetails %}
+</details></br>
 
-{% include details summary="Instalação do ambiente de trabalho (GNOME)" %}
+<details>
+  <summary><strong>Instalação do ambiente de trabalho (GNOME)</strong></summary>
 
 Minha relação com **GNOME** é entre amor e ódio. Instalo mas deixo com um ambiente de fallback:
 
@@ -782,7 +791,7 @@ gnome-browser-connector gnome-shell-extensions gnome-tweaks
 pacman -S --needed --noconfirm gnome gnome-extra gnome-desktop gnome-shell-extensions \
 gnome-browser-connector gnome-tweaks gdm
 ```
-{% include enddetails %}
+</details></br>
 
 # Instalação de aplicações
 
@@ -811,7 +820,7 @@ Meu computador não tem leitor de disquete e CD/DVD (e quem tem?), mas mesmo asi
 configuração no `/etc/fstab`, e também já deixo comentado para uma partição **Windows**, caso eu
 tenha um dia. Para essas configurações, eu faço os comandos:
 
-{% highlight bash linenos %}
+```shell
 mkdir -p /media/cdrom0; mkdir /mnt/floppy; mkdir /mnt/windows;
 ln -s /media/cdrom0 /media/cdrom;
 cat << EOF >> /etc/fstab
@@ -824,7 +833,7 @@ cat << EOF >> /etc/fstab
 ### Windows (optional)
 #UUID=XXXXX-XXXXX-XXXXX /mnt/windows  ntfs-3g defaults,user,rw,auto  0 0
 EOF
-{% endhighlight %}
+```
 
 # ZRAM
 
@@ -838,7 +847,7 @@ pacman -S --needed --noconfirm zram-generator
 
 **2** - Configurando um perfil equilibrado para **zram**:
 
-{% highlight bash linenos %}
+```shell
 cat << "EOF" > /etc/systemd/zram-generator.conf
 [zram0]
 zram-size = ram / 4
@@ -846,14 +855,15 @@ compression-algorithm = zstd
 swap-priority = 50
 fs-type = swap
 EOF
-{% endhighlight %}
+```
 
 > Nota: Caso eu queira um perfil mais agressivo, para jogar por exemplo, que necessite de **zram**,
 então eu uso este perfil abaixo:
 
-{% include details summary="ZRAM: Perfil Agressivo" %}
+<details>
+  <summary><strong>ZRAM: Perfil Agressivo </strong></summary>
 
-{% highlight bash linenos %}
+```shell
 cat << "EOF" > /etc/systemd/zram-generator.conf
 [zram0]
 zram-size = ram * 3/4
@@ -861,9 +871,8 @@ compression-algorithm = lz4
 swap-priority = 100
 fs-type = swap
 EOF
-{% endhighlight %}
-
-{% include enddetails %}
+```
+</details></br>
 
 **3** - Depois de configurar, eu faço um *reset* no daemon e habilito o serviço de **ZRAM**:
 
@@ -872,7 +881,8 @@ systemctl daemon-reload;
 systemctl enable --now systemd-zram-setup@zram0.service
 ```
 
-{% include details summary="Swap (opcional)" %}
+<details>
+  <summary><strong>Swap (opcional) </strong></summary>
 
 Caso eu prefiro usar **Swap** em arquivo em vez de **zram**, esses são os passos:
 
@@ -913,8 +923,7 @@ echo 'vm.swappiness=10' | tee -a /etc/sysctl.d/99-swap.conf
 ```
 
 > Nota: O swappiness recomendado é: 10 para SSD, 60 para HDD.
-
-{% include enddetails %}
+</details></br>
 
 # Adicionando um usuário
 
@@ -927,20 +936,20 @@ sed -i "s|# %sudo ALL=(ALL:ALL) ALL|%sudo ALL=(ALL:ALL) ALL|g" /etc/sudoers
 
 **2** - Agora começo a criação do grupo do meu usuário e a criação do meu usuário em si:
 
-{% highlight bash linenos %}
+```shell
 USERNAME_TEMP="will";
 groupadd $USERNAME_TEMP;
 useradd -m -g $USERNAME_TEMP -G users,tty,wheel,games,power,optical,storage,scanner,lp,audio,video,input,mail,root -s /bin/zsh $USERNAME_TEMP;
 groupadd sudo -U $USERNAME_TEMP;
 passwd $USERNAME_TEMP;
-{% endhighlight %}
+```
 
 # Idioma e região
 
 Esses comandos são necessário para configurar o teclado e idioma do sistema, onde cada linha é um
 comando:
 
-{% highlight bash linenos %}
+```shell
 timedatectl set-timezone America/Sao_Paulo;
 echo "KEYMAP=br-abnt2" > /etc/vconsole.conf;
 sed -i "s|#en_US.UTF-8 UTF-8|en_US.UTF-8 UTF-8|g" /etc/locale.gen;
@@ -952,7 +961,7 @@ hwclock --systohc;
 echo "archlinux" | tee /etc/hostname;
 printf "127.0.0.1        archlinux\n" >> /etc/hosts;
 echo KEYMAP=br-abnt2 | tee /etc/vconsole.conf;
-{% endhighlight %}
+```
 
 # Security Boot (Opcional)
 
@@ -964,16 +973,17 @@ pacman -S --noconfirm sbctl
 
 **(2)** - Criar as chaves e aplicar as assinaturas:
 
-{% highlight bash linenos %}
+```shell
 sbctl create-keys
 sbctl sign -s -o /usr/lib/systemd/boot/efi/systemd-bootx64.efi.signed /usr/lib/systemd/boot/efi/systemd-bootx64.efi
 sbctl sign -s /boot/EFI/BOOT/BOOTX64.EFI
 sbctl sign -s /boot/EFI/Linux/arch-linux-lts.efi
 sbctl sign -s /boot/EFI/Linux/arch-linux-lts-fallback.efi
 sbctl verify
-{% endhighlight %}
+```
 
-{% include details summary="Assinando EFI Windows" %}
+<details>
+  <summary><strong>Assinando EFI Windows</strong></summary>
 
 A EFI do Windows existem muitos arquivos que devem ser assinados, por isso, faço da seguinte maneira
 retirado da própria [Wiki do Arch Linux](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl):
@@ -987,7 +997,7 @@ sbctl verify | sed 's/✗ /sbctl sign -s /e'
 > Nota: Para este passo ser realizado, primeiro tem que ter realizado o passo
 **Adicionando EFI do Windows (Opcional)**.
 
-{% include enddetails %}
+</details></br>
 
 **(4)** - Reinicio a máquina com o comando abaixo para entrar automaticamente na **BIOS**:
 
@@ -1037,7 +1047,7 @@ smem
 Uso o **ZSH** com [Oh-My-ZSH](https://ohmyz.sh/), plugins e [Starship](https://startship.rs), e faço
 assim:
 
-{% highlight bash linenos %}
+```shell
 sudo pacman -S --noconfirm starship;
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
@@ -1048,7 +1058,7 @@ new_plugins_line="plugins=(${current_plugins}${new_plugins})";
 sed -i "s|^plugins=.*|${new_plugins_line}|" "$HOME/.zshrc";
 echo "eval \"\$(starship init zsh)\"" > "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/starship.zsh-theme";
 sed -i 's/^ZSH_THEME=".*"/ZSH_THEME="starship"/' "$HOME/.zshrc";
-{% endhighlight %}
+```
 
 > Nota: Geralmente eu apenas instalo o [Oh-My-ZSH](https://ohmyz.sh/), plugins e [Starship](https://startship.rs),
 e as configurações do `~/.zshrc` e resgato do meu **dotfiles**, usando o
@@ -1066,41 +1076,42 @@ Sabendo disso, os passos são:
 
 **(1)** - Crio um serviço no **systemd** para pular o prompt:
 
-{% highlight bash linenos %}
+```shell
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d;
 sudo cat << EOF > /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
 [Service]
 ExecStart=
 ExecStart=-/usr/bin/agetty --skip-login --nonewline --noissue --autologin <USER> --noclear %I \$TERM
 EOF
-{% endhighlight %}
+```
 
 > IMPORTANTE: Onde esta `<USER>` coloco o nome do meu usuário.
 
 **(2)** - Crio um novo arquivo `~/.xinitrc` (fazendo backup do mesmo caso exista) adicionando o `i3`
 para ser executado:
 
-{% highlight bash linenos %}
+```shell
 [ -f "$HOME/.xinitrc" ] && mv $HOME/.xinitrc $HOME/.xinitrc.bak;
 cat << EOF > $HOME/.xinitrc
 exec i3
 EOF
-{% endhighlight %}
+```
 
 **(3)** - Crio um novo arquivo `~/.zprofile` (fazendo backup do mesmo caso exista) e uma condição
 apenas para logar automaticamente quando estiver no **tty1**:
 
-{% highlight bash linenos %}
+```shell
 [ -f "$HOME/.zprofile" ] && mv $HOME/.zprofile $HOME/.zprofile.bak;
 cat << EOF > $HOME/.zprofile
 if [ -z "\$DISPLAY" ] && [ "\$XDG_VTNR" = 1 ]; then
   exec startx &>/dev/null
 fi
 EOF
-{% endhighlight %}
+```
 
 # Conclusão
 
 Óbvio que faço muito mais otimizações e configurações no meu **Arch Linux**, mas esses são os passos
 e configurações BÁSICAS que uso. Espero que esse guia tenha te ajudado, e se ajudou, curta com uma
 estrelinha ⭐ aqui. Flw.
+

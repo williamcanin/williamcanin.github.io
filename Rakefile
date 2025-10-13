@@ -1,65 +1,58 @@
-# File name: Rakefile
-# Stript type: Rake
-# Country/State: Brazil/SP
-# Author : William C. Canin
-# Page author: http://williamcanin.me
-# Description: Task creation file for the 'manager.rb' file.
+require "rawfeed"
 
-require "./_src/lib/rb/manager.rb"
+# create
+namespace :create do
+  desc "Create new draft"
+  task :draft do
+    Rawfeed::Draft.draft_create
+  end
 
-# Instance class
-manager = Manager.new
+  desc "Create new page"
+  task :page do
+    Rawfeed::Page.page_create
+  end
 
-# Task create header post
-# Example: rake post
-desc "Create new post"
-task :post do
-  manager.post_create
-end
-
-# Task create header page
-# Example: rake page
-desc "Create new page"
-task :page do
-  manager.page_create
-end
-
-# Task to set up after installation
-# Example: rake postinstall
-desc "Setup after installation"
-task :postinstall do
-  manager.postinstall
-end
-
-# Task to deploy the compiled project
-# Example: rake deploy:public
-desc "Deploy the compiled project"
-namespace :deploy do
-  task :public do
-    manager.deploy('public', 'public')
+  desc "Create resume"
+  task :resume do
+    Rawfeed::Resume.resume_create
   end
 end
 
-# Task to deploy the project source.
-# Example: rake deploy:source
-desc "Deploy the project source"
-namespace :deploy do
-  task :source do
-    manager.deploy('.', 'src')
+# home
+namespace :home do
+  desc "Home page changed to 'about'"
+  task :about do
+    Rawfeed::Layout.home_about(true)
+  end
+  desc "Home page changed to 'blog'"
+  task :blog do
+    Rawfeed::Layout.home_blog
   end
 end
 
-# Other outputs
-def get_stdin(message)
-  print message
-  STDIN.gets.chomp
+# move
+namespace :move do
+  desc "Move posts"
+  task :posts do
+    Rawfeed::Post.post_move
+  end
 end
 
-def ask(message, valid_options)
-  if valid_options
-    answer = get_stdin("#{message} #{valid_options.to_s.gsub(/"/, '').gsub(/, /,'/')} ") while !valid_options.include?(answer)
-  else
-    answer = get_stdin(message)
+# blog
+namespace :blog do
+  desc "Enable/Disable blog"
+  task :disable do
+    Rawfeed::Layout.change_yml("defaults", "published", false, "_posts")
+    Rawfeed::Layout.change_yml("pagination", "enabled", false)
+    Rawfeed::Layout.home_about(false)
+    Rawfeed::Layout.blog_index(false)
+    Rawfeed::Layout.tags_index(false)
   end
-  answer
+  task :enable do
+    Rawfeed::Layout.change_yml("defaults", "published", true, "_posts")
+    Rawfeed::Layout.change_yml("pagination", "enabled", true)
+    Rawfeed::Layout.home_about(false)
+    Rawfeed::Layout.blog_index(true)
+    Rawfeed::Layout.tags_index(true)
+  end
 end

@@ -1,0 +1,180 @@
+# --------------------------------------------------------------------------------------------------
+# Note: Two pages is acceptable for experienced professionals. Stick to the one-page rule if you
+# have less than 10 years of experience, or two pages if you're senior/academic.
+# Do not put exaggerated information.
+# --------------------------------------------------------------------------------------------------
+
+# section: [Full name]
+full_name: William da Costa Canin
+
+# section: [Photo]
+photo:
+  space: false
+
+# section: [Buttons]
+buttons:
+  print:
+    enable: true
+    text: print
+
+# ---------------------------------------- SIDEBAR -------------------------------------------------
+sidebar:
+  # section: [Contact]
+  contact:
+    enable: true
+    caption: Contato
+    items:
+      - key: Email
+        value: william.costa.canin@gmail.com
+        link: #
+      - key: Site
+        value: williamcanin.github.io
+        link: https://williamcanin.github.io
+      - key: GitHub
+        value: "@williamcanin"
+        link: https://github.com/williamcanin
+
+  # section: [Personal Details]
+  # IMPORTANT!!!: "Personal details" are sensitive data. For security reasons, enable it ONLY if
+  #                you're printing it; never leave it exposed online.
+  personal_details:
+    enable: true
+    caption: Dados pessoais
+    items:
+      - title: Data Nasc.
+        value: 25/04/1988
+      - title: Cidade
+        value: Lins
+      - title: Estado
+        value: São Paulo
+      - title: Nacionalidade
+        value: Brasileiro
+      - title: CNH
+        value: AB
+
+  # section: [Languages]
+  languages:
+    enable: true
+    caption: Idiomas
+    names:
+      - value: Portuguese
+
+  # section: [Education]
+  education:
+    enable: true
+    caption: Educação
+    section:
+      - degree: Análise e Desenv. de Sistemas
+        time: 2009-2014
+        university: Unilins
+        link: https://unilins.edu.br
+
+  # section: [Skills]
+  skills:
+    enable: true
+    caption: Habilidades
+    section:
+      - group: Sistema Operacional
+        tools: [Linux, Windows]
+      - group: Backend
+        tools: [Rust, Python, ShellScript]
+      - group: Banco de Dados
+        tools: [PS/QL, PostGreSQL]
+      - group: Frameworks
+        tools: [Django, Node.js]
+      - group: DevOps
+        tools: [Docker]
+      - group: Outros
+        tools: [Git, Jekyll, Gulp]
+
+# ---------------------------------------- BODY ----------------------------------------------------
+body:
+  # section: [Sumary]
+  # Note: The "Sumary" should be a concise paragraph (3-4 lines) that presents your profile,
+  # your main expertise, and your greatest impact. It is your initial "advertisement."
+  sumary:
+    enable: true
+    caption: Resumo
+    content: |
+
+      Formado em Análise e Desenvolvimento de Sistemas; mas de 10 anos programando, e um praticante
+      autodidata de algumas ferramentas de desenvolvimento/programação. Tenho a convicção de que
+      tudo é possível com dedicação e resiliência nessa área.
+
+      Regularmente, tenho revezamentos entre programação **Back-End** e desenvolvimento Front-End.
+
+      Sou um defensor do código `open source` desde 2008 quando conheci o Linux, e atualmente faz
+      parte de minha máquina como Sistema Operacional principal.
+
+  # section: [Experience]
+  # Always start the bullet point with a past tense verb.
+  experience:
+    enable: false
+    caption: Experience
+    section:
+      - role: Software Engineer
+        description: Backend Optimization & Infrastructure
+        company: Google
+        link: https://about.google
+        time: 2020-Present
+        details: |
+          - I developed and launched **Module X**, reducing **latency by 20%** on the backend and
+          increasing **user satisfaction (KPIs)**.
+          - I improved the **CI/CD pipeline** for **Go** and **C++** by integrating **Kubernetes**
+          and **Docker**, speeding up deployments by **15%**.
+          - I led the migration of **legacy microservices** to **TypeScript** and **Angular**,
+          resulting in a more scalable and maintainable architecture.
+
+      - role: Researcher
+        description:
+        company: Microsoft
+        link: https://microsoft.com
+        time: 2016-2020
+        details: |
+          - I conducted research and development of **algorithm Y** (using **Python** and **TensorFlow**),
+          reducing the error **rate by 10%** compared to the previous solution.
+          - I have published two conference papers on **Machine Learning** models, contributing to the
+          advancement of the field of Natural Language Processing (NLP).
+          - I collaborated with engineering teams to deploy **Keras** and **Matlab** models in production
+          environments, impacting **millions of platform** users.
+
+  # section: [Publications]
+  # Full links will only appear in print mode. Online and PDF modes are clickable.
+  publications:
+    enable: false
+    caption: Publications
+    section:
+      - title: Presentation of the functionality of F47X1 chip
+        link: https://github.com/williamcanin/rawfeed
+        authors: John A. Doe, Jane Doe
+        conference: Conference Tech Central Park, 2016
+
+  # section: [Projects]
+  # Full links will only appear in print mode. Online and PDF modes are clickable.
+  projects:
+    enable: true
+    caption: Projetos
+    section:
+      - title: rawfeed
+        link: https://github.com/williamcanin/rawfeed
+        details: |
+          - Um tema para **Jekyll** bruto com várias funcionalidades para minimalistas
+
+      - title: dotctrl
+        link: https://github.com/snakypy/dotctrl
+        details: |
+          - Um gerenciador CLI de dotfiles (e muito mais) para sistemas Linux feito em **Python**
+
+  # section: [Volunteering]
+  # Full links will only appear in print mode. Online and PDF modes are clickable.
+  volunteering:
+    enable: false
+    caption: Volunteering
+    section:
+      - role: AI Professor
+        company: Seeds of Tomorrow Engineering School
+        link: https://github.com/williamcanin/rawfeed
+        time: 2020-2022
+        details: |
+          - I led a class of **Computer Engineering** students in the modern **AI course**.
+          It was over **170 hours** of classes.

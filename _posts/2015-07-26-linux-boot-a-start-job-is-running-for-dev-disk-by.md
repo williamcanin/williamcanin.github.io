@@ -1,26 +1,16 @@
 ---
 layout: post
 title: "Linux Boot: A start job is running for dev-disk-by"
-category: blog
+description: |
+    Esperar hoje em dia não uma tarefa que agrada as pessoas, ainda mais se tratando de software.
+author: "William C. Canin"
 date: 2015-07-26 10:29:04 -0300
+update_date:
 comments: true
-tags: ["boot","swap","linux"]
-excerpted: |
-   Esperar hoje em dia não uma tarefa que agrada as pessoas, ainda mais se tratando de software.
-day_quote:
-    title: "A Palavra:"
-    description: |
-        "De tudo que foi dito, a conclusão é esta: tema a Deus e obedeça aos seus mandamentos porque foi para isso que fomos criados. Nós teremos de prestar contas a Deus de tudo o que fizemos e até daquilo que fizermos em segredo, seja bem ou o mal." <br>
-        (Eclesiastes 12:13-14 NTLH)
-published: true
-
-# Does not change and does not remove 'script' variables
-script: [post.js]
+tags: [boot,swap,linux]
 ---
 
-
-* Do not remove this line (it will not be displayed)
-{: toc}
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 ## Introdução
 
@@ -85,7 +75,18 @@ A primeira coisa a se fazer é listar os UUID das partição que você tem em su
 $ lsblk -f
 {% endhighlight %}
 
-{% gist 24d4d0247fd1530a5db8 %}
+{% highlight bash linenos %}
+NAME   FSTYPE LABEL      UUID                                 MOUNTPOINT
+sda
+├─sda1 ntfs   Dados-Ntfs 66E421B71C85E362
+├─sda2
+├─sda3 ext4   fedora     ef0da60e-1bf5-4a7c-92d4-25999c784ad5
+├─sda5 ext4              87daa4d7-ec56-460f-ab11-b2788aa373ec /mnt/home
+├─sda6 ext4              db5b49b3-200a-4172-b036-1b5f42dbe73e
+├─sda7 swap              035b2802-752a-45b6-a87c-c4d466cdf53d [SWAP]
+└─sda8 ext4   archlinux  2253f584-8ff4-46c2-9cf6-386415684be8 /
+sr0
+{% endhighlight %}
 
 Repare na saída, não tem nenhum UUID igual ao decifrado
 (**4aed3ea2-5d85-4bc2-96e2-abc6ad877640**).
@@ -105,7 +106,19 @@ Para ter essa resposta, dê uma olhada no arquivo **/etc/fstab**.
 $ cat /etc/fstab
 {% endhighlight %}
 
-{% gist 05f78da4153625ad9d12 %}
+{% highlight bash linenos %}
+#
+# /etc/fstab: static file system information
+#
+# <file system>	                        <dir>	<type>	<options>	<dump>	<pass>
+UUID=2253f584-8ff4-46c2-9cf6-386415684be8  /    ext4 	rw,relatime,data=ordered 0   1
+
+UUID=4aed3ea2-5d85-4bc2-96e2-abc6ad877640  none  swap 	defaults  	  0   0
+
+UUID=87daa4d7-ec56-460f-ab11-b2788aa373ec /mnt/home  ext4 defaults,auto,rw     0   1
+
+# End
+{% endhighlight %}
 
 Xeque-Mate! Repare que o **4aed3ea2-5d85-4bc2-96e2-abc6ad877640**, está configurado para a partição SWAP, porém na saída do comando **lsblk -f**, o UUID do SWAP não é este que está no arquivo **/etc/fstab**.
 
@@ -165,6 +178,3 @@ No meu caso, eu tinha instalado outra distribuição Linux e configurado a minha
 Espero que esse tutorial possa te ajudar se tiver esse problema. Até a próxima galera! :)
 
 
-{% endpost #9D9D9D %}
-
-{% jektify spotify/track/00bHVjPL7arXz9W59VKo5m/dark %}

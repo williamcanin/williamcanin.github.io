@@ -1,25 +1,18 @@
 ---
 layout: post
 title: "Linux: Compilando e instalando o kernel em modo tradicional"
-category: blog
+description: |
+    Quando um usuário Linux já está em um nível de usabilidade Linux a tempos, algo que ele procura
+    saber, é como compilar um kernel, e esse post falará exatamente sobre isso, mas uma compilação
+    sem usar kernel-package, a tradicional.
+author: "William C. Canin"
 date: 2015-08-23 17:52:44 -0300
+update_date:
 comments: true
-tags: ["kernel","linux","compile"]
-excerpted: |
-   Quando um usuário Linux já está em um nível de usabilidade Linux a tempos, algo que ele procura saber, é como compilar um kernel, e esse post falará exatamente sobre isso, mas uma compilação sem usar kernel-package, a tradicional.
-day_quote:
-    title: "A Palavra:"
-    description: |
-        "Eu afirmo a vocês que isto é verdade: quem ouve as minhas palavras e crê naquele que me enviou tem a vida eterna e não será julgado, mas já passou da morte para a vida." <br>
-        (João 5:24 NTLH)
-published: true
-
-# Does not change and does not remove 'script' variables
-script: [post.js]
+tags: [kernel,linux,compile]
 ---
 
-* Do not remove this line (it will not be displayed)
-{: toc}
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 # Introdução
 
@@ -144,7 +137,26 @@ $ lspci -k
 
 O que irá retornar os drivers **PCI** de sua máquina no título "Kernel modules". Exemplo do meu retorno:
 
-{% gist d3a83921422cb4a861c8 %}
+{% highlight bash linenos %}
+00:00.0 Host bridge: Intel Corporation 2nd Generation Core Processor Family DRAM Controller (rev 09)
+	Subsystem: Sony Corporation Device 908b
+	Flags: bus master, fast devsel, latency 0
+	Capabilities: <access denied>
+.
+. # Resto do counteúdo retirado por ser extenso
+.
+
+13:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 06)
+	Subsystem: Sony Corporation Device 908b
+	Flags: bus master, fast devsel, latency 0, IRQ 28
+	I/O ports at 2000 [size=256]
+	Memory at d1404000 (64-bit, prefetchable) [size=4K]
+	Memory at d1400000 (64-bit, prefetchable) [size=16K]
+	Capabilities: <access denied>
+	Kernel driver in use: r8169
+	Kernel modules: r8169
+{% endhighlight %}
+
 
 Com isso, você já saberá alguns principais módulos que sua máquina necessita.
 
@@ -158,7 +170,16 @@ $ lsusb -t
 
 Irá retornar os drivers e possíveis módulos de entrada **USB** na variável "Driver". Um exemplo:
 
-{% gist 8016fb7cedf5377a67d3 %}
+{% highlight bash linenos %}
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ehci-pci/2p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/6p, 480M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-pci/2p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/6p, 480M
+        |__ Port 2: Dev 3, If 0, Class=Video, Driver=uvcvideo, 480M
+        |__ Port 2: Dev 3, If 1, Class=Video, Driver=uvcvideo, 480M
+        |__ Port 5: Dev 5, If 0, Class=Wireless, Driver=btusb, 12M
+        |__ Port 5: Dev 5, If 1, Class=Wireless, Driver=btusb, 12M
+{% endhighlight %}
 
 #### **Método 3**
 
@@ -239,11 +260,27 @@ No menu de configuração kernel você irá se deparar com configurações desse
 Outro recurso importante é a pesquisa de módulos/driver no menu (menuconfig) de configuração do kernel, a qualquer lugar que esteje, você apertando a tecla de barra do seu teclado (/), irá abrir uma janela dialog de pesquisa.
 Por exemplo:
 
-{% imager search-kernel-linux.png|center %}
+{% include image
+src= "/assets/images/posts/search-kernel-linux.png"
+title="search-kernel-linux"
+caption="kernel search"
+width="auto"
+height="auto"
+border-radius="2"
+align="center"
+border-color="#000" %}
 
 Nessa dialog, você coloca um módulo/driver que foi listado com os comandos dos Métodos 1, 2 ou 3, e assim vai pesquisando os drivers para sua máquina no kernel. No exemplo abaixo, pesquisei o driver *"r8169*" que listou no comando *$ lspci -k*. Veja:
 
-{% imager search-kernel-linux-return.png|center %}
+{% include image
+src= "/assets/images/posts/search-kernel-linux-return.png"
+title="search-kernel-linux-return"
+caption="kernel search return"
+width="auto"
+height="auto"
+border-radius="2"
+align="center"
+border-color="#000" %}
 
 A primeira observação, é a instrução *"Symbol"*, que irá dizer o nome do módulo e no final irá dizer se o mesmo está como "M, y ou n" (sendo que "y", é o mesmo que asterisco[ \* ] no menu de configuração do kernel).
 A segunda observação é *"Prompt"*, que será o nome do módulo que estará imprimido no terminal.
@@ -561,6 +598,3 @@ grub-mkconfig -o /boot/grub/grub.cfg && grub-install /dev/sda
 
 Ufa! Terminou, e eu fico por aqui! :satisfied:. Espero que sua compilação do kernel tenha sido um sucesso,  mas caso não tenha, não desista, refaça os processos e procure saber sobre o problema e sobre o hardware da máquina se possível, pois o mundo Linux é muito prazeroso de se aprender. Até próxima leitor!
 
-{% endpost #9D9D9D %}
-
-{% jektify spotify/track/73ULm2FVFnjICEBjZAmC3L/dark %}

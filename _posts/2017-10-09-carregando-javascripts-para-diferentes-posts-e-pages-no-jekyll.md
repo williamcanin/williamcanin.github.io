@@ -1,34 +1,27 @@
 ---
 layout: post
-title: Carregando Javascripts para diferentes posts e pages no Jekyll
-date: 2017-10-09 18:31:36
-tags: ['jekyll','javascripts','liquid']
-published: true
-comments: true
-excerpted: |
+title: "Carregando Javascripts para diferentes posts e pages no Jekyll"
+description: |
         Será que seu projeto em Jekyll está carregados códigos desnecessário?
         Esse post te ensinará como otimizar o carregamento de javascripts no projeto.
-day_quote:
- title: "A Palavra:"
- description: |
-          "Quem bebe demais fica barulhento e caçoa dos outros; o escravo da bebida nunca será sábio." <br> Provérbios 20:1 NTLH
-
-# Does not change and does not remove 'script' variable.
-script: [post.js]
+author: "William C. Canin"
+date: 2017-10-09 18:31:36 -0300
+update_date:
+comments: true
+tags: [jekyll,javascripts,liquid]
 ---
 
+
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:
 
 > "E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu
 > berrante tocá".
 
-:wink:
+😃
 
 Deixando as desculpas de lado, vamos ao que interessa; o Post!
-
-* Do not remove this line (it will not be displayed)
-{: toc}
 
 ## Introdução
 
@@ -122,6 +115,3 @@ Nesse caso todos os posts irá carregar o código javascript contido no arquivo
 
 Fazendo dessa forma, você tem maior controle de qual página ou qual post deve carregar um determinado javascript para si próprio. Otimização de código é um marco importante para um bom desenvolvedor. Eu fico por aqui, espero que você possa ter entendido como otimizar o carregamento de javascripts no [Jekyll](https://jekyllrb.com/){:target="_blank"}. Abraço pessoa, :punch:.
 
-{% endpost #9D9D9D %}
-
-{% jektify spotify/track/0QQIc8RRZADy75CjvBLsiZ/dark %}

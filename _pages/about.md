@@ -1,33 +1,31 @@
 ---
 layout: page
-order: 5
-title: "About"
-date: 2019-10-03 04:03:41 -300
-sitemap:
-  priority: 0.7
-  changefreq: 'monthly'
-  lastmod: 2019-10-03 04:03:41
-# Use icons of: https://fontawesome.com/icons
-# E.g: fa-briefcase
-icon: fa-user
-menu:
-  enable: true
-  local: [default]
-script: []
-published: false
-permalink: /about/ # add permilink for page. E.g: /smallparty/
+order: 6
+title: "sobre"
+author: "William C. Canin"
+date: 2025-10-12 23:06:09
+update_date:
+published: true
+permalink: /about/
 ---
- 
-<!-- Write from here your page !!! -->
 
-Hey, I'am [Typing](https://github.com/williamcanin/typing-jekyll-template){: target="_blank"}. I'm a theme [Jekyll](https://jekyllrb.com){: target="_blank"} Inspired by the habit of typing. Using an appearance that resembles the typewriter. A simple, fast and efficient way of reading, just like the old days.
+Olá :v:!
 
-'Typing' is intended for users with more technical content than for users who wish to have a stylish page. Keep it simple!
+Me chamo **William**, sou formado em [**Análise e Desenvolvimento de Sistemas**](https://unilins.edu.br){:target="_blank"};
+mas de 10 anos programando, e um praticante autodidata de algumas ferramentas de
+desenvolvimento/programação. Tenho a convicção de que tudo é possível com dedicação e resiliência
+nessa área.
 
-**Let's see some details about this page:**
+Regularmente, tenho revezamentos entre programação **Backend** e desenvolvimento Frontend.
 
-This page exists to put everything about you, as if it were a simplified 'About'. The file for editing this page is in the directory root: `index.md`.
+Sou um defensor de código **open source** desde 2008 quando conheci o [Linux](https://kernel.org){:target="_blank"},
+e atualmente faz parte de minha máquina como Sistema Operacional principal, através da distribuição
+[**Arch Linux**](https://archlinux.org){:target="_blank"}.
 
-Hey Nerd! How is it? You're analyzing me, but are not you using me? Use me now! I'm not into embellishment. 
+Em meu lazer, gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:target="_blank"};
+codar; assistir séries/filmes; leituras; e, estar com boas companhias.
 
-[Download](https://github.com/williamcanin/typing-jekyll-template){: target="_blank"}
+Tenho está [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, que você já
+deve ter explorado um pouco onde mantenho <strike>tudo</strike> algo sobre mim e meus conhecimentos
+com meu [weblog](https://williamcanin.github.io/blog/){:target="_blank"}. Me considero leigo em tudo,
+é por isso que me motiva estudar sempre. :stuck_out_tongue_winking_eye:

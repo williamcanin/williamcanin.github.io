@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Configurando PATH do RubyGems e Bundler no Linux
+category: blog
 date: 2017-01-13 16:02:37 -0300
 comments: false
 tags: ["ruby","gems","linux", "bundler"]
@@ -29,7 +30,7 @@ Nesse tutorial será realizado uma série de abstrações das estrutura de pasta
 
 Vamos limpar tudo que está realacionado no diretório onde as gems são instaladas e suas configurações com o comando abaixo:
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 $ rm -rf ~/.gem ~/.bundle ~/.gemrc
 {% endhighlight %}
 
@@ -55,14 +56,14 @@ Vamos entender a arquitetura de pastas das gems instalados com o gerenciador do 
 
 > NOTA: Dependendo da versão do ruby que você estiver usando, esses comportamento de pastas não serão igual a desse tutorial. Aqui está sendo utilizado a versão 2.4.3 do Ruby, porém, mesmo assim pode usar esse tutorial para ter uma noção de configuração.
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 $ gem install bundler
 {% endhighlight %}
 
 
 A estrutura de pastas padrão criada foi a seguinte:
 
-{% highlight text linenos %}
+{% highlight text  %}
 william
 ├── bin
 │   ├── bundle
@@ -78,17 +79,18 @@ william
      └── specs  
 {% endhighlight %}  
 
-Repare que a gem **bundler** é instalado no diretório **~/.gem**, o que é conformidável, porém, algo que fica um pouco incomodo, é a criação da pasta **bin** na raiz do usuário para armazenar os executaveis das gems. Isso é realmente incomodativo, pois o diretório **~/bin** por ser usado para outros eventuais executáveis, como por exemplo, executáveis **shell**.
+Repare que a gem **bundler** é instalado no diretório **~/.gem**, o que é conformidável, porém, algo que fica um pouco incomodo, é a criação da pasta **bin** na raiz do usuário para armazenar os executaveis das gems. Isso aconteceu algumas vezes comigo, não sei dizer se é comum esse ocorrido, porém, sei que é realmente incomodativo, pois o diretório **~/bin** por ser usado para outros eventuais executáveis, como por exemplo, executáveis **shell**.
 
-Não queremos essa estrutura! Então vamos desinstalar a gem **bundler** e remover a estrutura de pastas onde foi instalado a *gem*:
+Não queremos que isso aconteça! Então vamos desinstalar a gem **bundler** e remover a estrutura de pastas onde foi instalado a *gem*:
 
 > Note: Digite "Y" quando pedir para desinstalar o **bundler**.
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 $ gem uninstall bundler
 $ rm -rf ~/.gem ~/bin
 {% endhighlight %}
 
+> NOTA: Se for remover o diretório **~/bin**, verifique se não tem outros scripts que você criou no mesmo.
 
 ## Variáveis de ambiente para RubyGems
 
@@ -96,7 +98,7 @@ Após ter a noção de estrutura de pastas padrão do "Gem Environment", vamos c
 
 Abra **~/.bashrc** com um editor de sua preferência, coloca as seguintes variáveis de ambiente abaixo e salve-o:
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 # RubyGems environment variables
 GEM_PATH="$(ruby -rubygems -e 'puts Gem.user_dir')"
 GEM_HOME="$GEM_PATH"
@@ -111,7 +113,7 @@ Na `linha 4`, é responsável por exportar essas configurações para o bash rec
 
 Feito isso, execute o comando abaixo para as altereções entrarem em vigor.
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 source ~/.bashrc
 {% endhighlight %}
 
@@ -122,15 +124,9 @@ Pronto, foi criado as variáveis de ambiente necessárias para o ambiente do Rub
 
 Para forçar os executáveis das gems, a serem instalados na nova configuração das variáveis de ambientes, necessita criar o arquivo "**~/.gemrc**" na raiz do usuário que modificará o "Gem Environment" do RubyGems. Para isso faça no terminal:
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 cat << EOF > ~/.gemrc
----
-gem:
-  --bindir $GEM_BIN
-  --no-ri --no-rdoc
-gemhome: $GEM_HOME
-gempath:
-- $GEM_PATH
+gem: --user-install --no-document
 :benchmark: false
 :update_sources: true
 :verbose: true
@@ -142,17 +138,15 @@ gempath:
 EOF
 {% endhighlight %}
 
-O **--bindir** será o cara responsável por mudar o diretório dos executáveis das gems de "**~/bin**" para o valor que está na variáveis de ambiente `$GEM_BIN`, ou seja, o diretório será: "/home/USER/.gem/ruby/bin". O `$GEM_PATH` e `$GEM_HOME` vão ter o mesmo valor da configuração padrão "Gem Environment" do RubyGems.
-
 Com o novo ambiente RubyGems configurado, vamos instalar novamente o **bundler**:
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 $ gem install bundler
 {% endhighlight %}
 
 Agora, dê o seguinte comando abaixo, e verás que os executáveis do **bundler** estão no diretório que foi configurado na variável de ambiente $GEM_BIN, e não mais no diretório **~/bin**:
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 $ ls $GEM_BIN
 {% endhighlight %}
 
@@ -173,7 +167,7 @@ R:- Assim como o RubyGems, também é necessário configurar o PATH para o Bundl
 
 Vamos entender melhor a estrutura de pastas criadas pelo **Bundler** quando instalamos GEMS com o arquivo **Gemfile**:
 
-{% highlight text linenos %}
+{% highlight text  %}
 william
 ├── bin
 │   ├── sass
@@ -191,11 +185,11 @@ william
      │   │   └── 2.4.0
      │   │        ├── bin
      │   │        ├── build_info
-     │   │        ├── cache   
-     │   │        ├── doc   
-     │   │        ├── extensions   
-     │   │        ├── gems                           
-     │   │        └── specifications       
+     │   │        ├── cache
+     │   │        ├── doc
+     │   │        ├── extensions
+     │   │        ├── gems
+     │   │        └── specifications
      │   └── specifications
      └── specs  
 {% endhighlight %} 
@@ -207,7 +201,7 @@ Nesse caso, foi instalado o **Sass** com um arquivo **Gemfile**, e repare o Bund
 
 Vamos configurar as variáveis de ambiente para **Bundler**. No arquivo **~/.bashrc** adicione as seguintes variáveis e salve-o:
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 # Bundler environment variables
 BUNDLE_PATH="$HOME/.gem/bundle"
 BUNDLE_HOME="$BUNDLE_PATH"
@@ -218,7 +212,7 @@ export PATH="$BUNDLE_PATH:$BUNDLE_HOME:$BUNDLE_BIN:$PATH"
 
 Feito isso, execute o comando abaixo para as altereções entrarem em vigor.
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 source ~/.bashrc
 {% endhighlight %}
 
@@ -226,20 +220,20 @@ source ~/.bashrc
 
 Dê os comandos abaixo, para criar o arquivo **~/.bundle/config**. Esse arquivo é as configurações global do Bundler.
 
-{% highlight shell linenos %}
+{% highlight shell  %}
 $ bundle config --global PATH $BUNDLE_PATH
 $ bundle config --global BIN $BUNDLE_BIN
 $ bundle config --global DISABLE_SHARED_GEMS true
 {% endhighlight %}
 
-Na `linha 1` atribuimos o PATH o local raiz onde nossas Gems global irá ser instaladas.   
-Na `linha 2` atribuimos o PATH para os executáveis das Gems.   
+Na `linha 1` atribuimos o PATH o local raiz onde nossas Gems global irá ser instaladas.
+Na `linha 2` atribuimos o PATH para os executáveis das Gems.
 Na `linha 3` é opcional, onde desabilitamos o compartilhamento de Gems.
 
 
 Para ver mais detalhes sobre como está as configurações do `Gem Environment` na sua máquina, você pode executar o comando abaixo:
 
-{% highlight bash linenos %}
+{% highlight bash  %}
 $ gem env
 {% endhighlight %}
 
@@ -252,5 +246,3 @@ Apenas compartilhei algo básico de como configurar o RubyGems e Bundler. Existe
 
 Finalizo por aqui, espero que estas linhas de alguma forma lhe sirva de ajuda. Obrigado por ler. Fica com um sonzinho abaixo. :)
 
-
-{% jektify spotify/track/6VRghJeP6I0w1KxkdWFfIh/dark %}

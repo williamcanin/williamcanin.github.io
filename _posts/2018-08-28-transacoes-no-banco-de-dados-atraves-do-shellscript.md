@@ -1,34 +1,24 @@
 ---
 layout: post
 title: "Transações no banco de dados através do Shell script"
-date: 2018-08-28 05:23:33
-tags: ['shell','postgresql','mysql']
-published: true
+description: |
+    O Shell Script não é só uma linguagem para fazer automatização de tarefas no seu S.O, é muito mais!
+author: "William C. Canin"
+date: 2018-08-28 05:23:33 -0300
+update_date:
 comments: true
-excerpted: |
-          O Shell Script não é só uma linguagem para fazer automatização de tarefas no seu S.O, é muito mais!
-day_quote:
- title: "A Palavra"
- description: |
-          "Quem é fiel nas coisas pequenas também será nas grandes; e quem é desonesto nas coisas pequenas também será nas grandes." </br> (Lucas 16:10 NTLH)
-
-# Does not change and does not remove 'script' variable.
-script: [post.js]
+tags: [shell,postgresql,mysql]
 ---
 
-<!-- Write from here your post !!! -->
-
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 Olá pessoas, vamos falar de Shell script, que é algo que gosto muito. :)
-
-* indice
-{: toc}
 
 # Introdução
 
 Bom, se você é usuário Linux sabe muito bem o que é [Shell Script](https://pt.wikipedia.org/wiki/Shell_script){:target="_blank"}, uma linguagem usuda em vários sistemas operativos, até aqui tudo bem, mas...o que muitos não sabem é dá para fazer transações no banco de dados através da mesma.
 
-  - Você: Sério? 
+  - Você: Sério?
   - Eu: Sério cara.
 
 O que vamos ver neste post é exatamente isso, uma conexão com um banco de dados; criação de um database; e a criação de uma tabela. Não irei abordar um CRUD completo, pois com base na conexão e criação de uma tabela, você já será apto para navegar em sua mente e realizar as demais transações no banco de dados, tendo como requerimento apenas conhecimento de PL/SQL.
@@ -104,11 +94,11 @@ Sempre que criamos um projeto, é interessante dividir partes do nosso código e
 
 A primeira **lib** (biblioteca) que vamos criar é a **create_database.bash**. Essa biblioteca irá conter uma função para criar nossa DATABASE caso ela não exista.
 
-Conteúdo do arquivo: **libs/create_database.bash** 
+Conteúdo do arquivo: **libs/create_database.bash**
 
 {% highlight bash  %}
-function _create_database () {
-	psql -h $HOST -p $PORT -U $USER -tc "SELECT 1 FROM pg_database WHERE datname = '$DB'" | grep -q 1 || psql -h $HOST -p $PORT -U $USER -c "CREATE DATABASE $DB"
+function _create_database() {
+  psql -h $HOST -p $PORT -U $USER -tc "SELECT 1 FROM pg_database WHERE datname = '$DB'" | grep -q 1 || psql -h $HOST -p $PORT -U $USER -c "CREATE DATABASE $DB"
 }
 {% endhighlight %}
 
@@ -118,22 +108,22 @@ Em [Criando um DATABASE no PostgreSQL](#criando-um-database-no-postgresql), cria
 
 Outra **lib** (biblioteca) que vamos criar é a **create_table.bash**. Essa bibliotea irá conter uma função para criar nossa TABLE. Você pode ser bem mais dinâmico ao criar suas "*libs*", como esse é um post para apenas lhe dar uma ideia, vou ser bem direto nessa biblioteca de criação de TABLE.
 
-Conteúdo do arquivo: **libs/create_table.bash** 
+Conteúdo do arquivo: **libs/create_table.bash**
 
 {% highlight bash linenos %}
-function _create_table () {
-    psql -h $HOST -p $PORT -U $USER -d $DB << EOF
+function _create_table() {
+  psql -h $HOST -p $PORT -U $USER -d $DB << EOF
 
-       \c DB
-        
-       CREATE TABLE IF NOT EXISTS $TABLE (
-    		id          char(5) CONSTRAINT firstkey PRIMARY KEY,
-    		title       varchar(40) NOT NULL,
-    		did         integer NOT NULL,
-    		date_prod   date,
-    		kind        varchar(10),
-    		len         interval hour to minute
-	); 
+  \c DB
+
+  CREATE TABLE IF NOT EXISTS $TABLE (
+    id          char(5) CONSTRAINT firstkey PRIMARY KEY,
+    title       varchar(40) NOT NULL,
+    did         integer NOT NULL,
+    date_prod   date,
+    kind        varchar(10),
+    len         interval hour to minute
+  );
 EOF
 }
 {% endhighlight %}
@@ -144,24 +134,24 @@ Vamos agora criar um arquivo chamando **setup.bash**, nesse arquivo iremos carre
 
 Conteúdo do arquivo: **setup.bash**
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 #!/usr/bin/env bash
 
 source config.conf
 
 libs="$(ls ./libs/*.bash)"
 for lib in $libs; do
-    source $lib
+  source $lib
 done
 
 case $1 in
-    createtb)
-        _create_database
-        _create_table
-    ;;
-    *)
-       printf "Using: $0 { createtb }"
-    ;;
+  createtb)
+    _create_database
+    _create_table
+  ;;
+  *)
+    printf "Using: $0 { createtb }"
+  ;;
 esac
 exit 0
 }
@@ -200,7 +190,7 @@ Dentro do psql, execute o comando **\dt** para listar as TABLES desse DATABASE:
 {% highlight bash  %}
 my_db=# \dt
             Lista de relações
- Esquema | Nome  |  Tipo  |   Dono   
+ Esquema | Nome  |  Tipo  |   Dono
 ---------+-------+--------+----------
  public  | films | tabela | postgres
 (1 registro)
@@ -251,39 +241,39 @@ Vamos repetir o mesmo conceito que fizemos para o PostgreSQL, criando nossas bib
 
 Diferente do PostgreSQL, o **MySQL** contem uma opção de **IF NOT EXISTS** para criação de DATABASES, com isso não precisamos fazer a verificação via Shell Script como fizemos com o projeto do PostgreSQL. Com a própria instrução SQL do MySQL, podemos fazer essa checagem.
 
-Conteúdo do arquivo: **libs/create_database.bash** 
+Conteúdo do arquivo: **libs/create_database.bash**
 
 {% highlight bash  %}
-function _create_database () {
-    mysql --host=$HOST --port=$PORT --user=$USER --password=$PASSWORD << EOF
-        CREATE DATABASE IF NOT EXISTS \`$DB\`;
+function _create_database() {
+  mysql --host=$HOST --port=$PORT --user=$USER --password=$PASSWORD << EOF
+  CREATE DATABASE IF NOT EXISTS \`$DB\`;
 EOF
 }
 {% endhighlight %}
 
 ### Biblioteca **create_table.bash**
 
-Diferentemente do PostgreSQL também, com o MySQL você deve criar delimitadores para executar várias instruções SQL. Você define um delimitador com a palavra reservada **DELIMITER** e logo em seguida o delimitador que você quer. Aqui estou usando o **$$**. 
+Diferentemente do PostgreSQL também, com o MySQL você deve criar delimitadores para executar várias instruções SQL. Você define um delimitador com a palavra reservada **DELIMITER** e logo em seguida o delimitador que você quer. Aqui estou usando o **$$**.
 
-Conteúdo do arquivo: **libs/create_table.bash** 
+Conteúdo do arquivo: **libs/create_table.bash**
 
 {% highlight bash  %}
-function _create_table () {
-    mysql --host=$HOST --port=$PORT --user=$USER --password=$PASSWORD << EOF
-       
-        DELIMITER $$
+function _create_table() {
+  mysql --host=$HOST --port=$PORT --user=$USER --password=$PASSWORD << EOF
 
-        USE \`$DB\` $$
+  DELIMITER $$
 
-        CREATE TABLE IF NOT EXISTS \`$TABLE\`  (
-            id        INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            title     VARCHAR(40) NOT NULL,
-            did       INTEGER NOT NULL,
-            date      TIMESTAMP,
-            kind      VARCHAR(10),
-            designer  VARCHAR(30),
-            
-        )$$ 
+  USE \`$DB\` $$
+
+  CREATE TABLE IF NOT EXISTS \`$TABLE\`  (
+    id        INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    title     VARCHAR(40) NOT NULL,
+    did       INTEGER NOT NULL,
+    date      TIMESTAMP,
+    kind      VARCHAR(10),
+    designer  VARCHAR(30),
+
+  )$$
 EOF
 }
 {% endhighlight %}
@@ -294,24 +284,24 @@ Vamos carregar todas nossas bibliotecas no **setup.bash** e o arquivo de configu
 
 Conteúdo do arquivo: **setup.bash**
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 #!/usr/bin/env bash
 
 source config.conf
 
 libs="$(ls ./libs/*.bash)"
 for lib in $libs; do
-    source $lib
+  source $lib
 done
 
 case $1 in
-    createtb)
-        _create_database
-        _create_table
-    ;;
-    *)
-       printf "Using: $0 { createtb }"
-    ;;
+  createtb)
+    _create_database
+    _create_table
+  ;;
+  *)
+    printf "Using: $0 { createtb }"
+  ;;
 esac
 exit 0
 }
@@ -364,5 +354,3 @@ Como dito, foi um simples post para você tenha uma noção do que podemos fazer
 
 Espero que você tenha aprendido algo com esse post. Eu fico por aqui, até a próxima.
 
-
-{% jektify spotify/track/4z03oOSuvqMuHlkuwXqbSy/dark %}

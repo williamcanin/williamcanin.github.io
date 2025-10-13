@@ -1,24 +1,15 @@
 ---
 layout: post
-title: "Configurando Arch Linux para jogar Counter-Strike:Global Offensive com nVIDIA"
-date: 2022-07-17 22:58:53
-tags: ['nvidia','intel','csgo', 'game', 'archlinux', 'steam']
-published: false
+title: "Counter-Strike:Global Offensive no Arch Linux"
+description: "Configurando Arch Linux para jogar Counter-Strike:Global Offensive com nVIDIA"
+author: "William Canin"
+date: 2022-07-17 22:58:53 -0300
+update_date: 2025-09-28 07:16:01 -0300
 comments: true
-share: true
-excerpted: |
-        Put here your excerpt
-day_quote:
- title: "A Palavra: "
- description: |
-        "Put here your quote of the day"
-
-# Does not change and does not remove 'script' variable.
-script: [post.js]
+tags: [nvidia,intel,csgo,game,archlinux,steam]
 ---
 
-* Do not remove this line (it will not be displayed)
-{: toc}
+{% include toc selector=".post-content" max_level=3 title="TOC" btn_hidden="Esconder" btn_show="Mostrar" %}
 
 # Introdução
 
@@ -39,4 +30,4 @@ Antes de você achar que todos os problema de "**CS:GO**" e **Arch Linux** serã
 
 # Kernel
 
-Vamos começar pelo núcleo, o kernel. Testei os 3 principais tipo de kernel disponível no repositório do **Arch Linux**, o **linux**, **linux-lts**, e **linux-zen**, e pra ser sincero não notei diferença entre eles, porem o **linux-zen** é um kernel mas 
+Vamos começar pelo núcleo, o kernel. Testei os 3 principais tipo de kernel disponível no repositório do **Arch Linux**, o **linux**, **linux-lts**, e **linux-zen**, e pra ser sincero não notei diferença entre eles, porem o **linux-zen** é um kernel mas

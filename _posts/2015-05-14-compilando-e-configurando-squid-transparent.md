@@ -1,25 +1,18 @@
 ---
 layout: post
-title: Compilando e configurando Squid
-category: blog
+title: "Compilando e configurando Squid"
+description: |
+    Quer aprender Proxy Squid? Essa postagem irá te dar uma noção de como configurar o Squid em
+    modo Intercept e bloquear palavras e urls através do mesmo em uma navegação web.
+author: "William C. Canin"
 date: 2015-05-14 09:13:57 -0300
+update_date:
 comments: true
 tags: ["squid","proxy","linux","server"]
-excerpted: |
-    Quer aprender Proxy Squid? Essa postagem irá te dar uma noção de como configurar o Squid em modo Intercept e bloquear palavras e urls através do mesmo em uma navegação web.
-day_quote:
-    title: "A Palavra:"
-    description: |
-        "Mas eu lhes digo: quem olhar para uma mulher e desejar possuí-la já cometeu adultério no seu coração." <br>
-        (Mateus 5:28 NTLH)
-published: true
-
-# Does not change and does not remove 'script' variables
-script: [post.js]
 ---
 
-* Do not remove this line (it will not be displayed)
-{: toc}
+
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 Quer aprender Proxy Squid? Essa postagem irá te dar uma noção de como configurar o Squid em modo Intercept e bloquear palavras e urls através do mesmo em uma navegação web.
 
@@ -81,7 +74,7 @@ cd squid-3.3.8
 
 `Executar comando como root (superusuário)`
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 ./configure --prefix=/usr --includedir=/usr/include --mandir=/usr/share/man --infodir=/usr/share/info --sysconfdir=/etc --localstatedir=/var --libexecdir=/usr/lib/squid --srcdir=. --datadir=/usr/share/squid --sysconfdir=/etc/squid --mandir=/usr/share/man --with-logdir=/var/log/squid --with-pidfile=/var/run/squid.pid --with-filedescriptors=65536 --with-large-files --with-default-user=proxy --enable-ssl
 {% endhighlight %}
 
@@ -158,7 +151,7 @@ Depois da instalação e demais, tem que realizar algumas configurações no arq
 
 **Arquivo:** `/etc/squid/squid.conf`
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 #
 # Recommended minimum configuration:
 #
@@ -325,6 +318,3 @@ Com essas configurações, todo acesso a internet através do navegador será mo
 
 Vou me despedindo aqui pessoal, espero que essa leitura foi útil para seu conhecimento. Até a próxima.
 
-{% endpost #9D9D9D %}
-
-{% jektify spotify/track/7ETav4026rcnTbTgwCmGNq/dark %}

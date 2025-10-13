@@ -1,28 +1,19 @@
 ---
 layout: post
-title: "Instalando Python automaticamente em qualquer sistema Linux."
-date: 2018-06-21 18:54:14
-tags: ['python','tarball','linux']
-published: true
+title: "Instalando Python tarball em qualquer sistema Linux."
+description: |
+    Instale a ultima versão estável do Python tarball automaticamente em qualquer Linux com um
+    simples script shell.
+author: "William C. Canin"
+date: 2018-06-21 18:54:14 -0300
+update_date:
 comments: true
-excerpted: |
-          Instale a ultima versão estável do Python em qualquer Linux com um simples script shell.
-day_quote:
- title: "A Palavra"
- description: |
-          "Eu, o Senhor , examino os pensamentos e ponho à prova os corações. Eu trato cada pessoa conforme a sua maneira de viver, de acordo com o que ela faz." </br>
-          (Jeremias 17:10 NTLH)
-
-# Does not change and does not remove 'script' variable.
-script: [post.js]
+tags: [python,tarball,linux]
 ---
 
-<!-- Write from here your post !!! -->
+{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
 
 Olá :hand:, essa é uma dica rápida para você que deseja instalar o Python :snake: compilado através do código fonte (tarball). Boa leitura.
-
-* indice
-{: toc}
 
 # Introdução
 
@@ -30,7 +21,7 @@ Muitas vezes precisamos instalar um determinado programa para sistemas Linux e n
 
 Existe dois tipos de instalação genérica para Linux, programas com com a extensão .run, onde apenas executamos o mesmo para que a instalação comece e programas de código fonte para compilarmos e instalarmos. A última opção é a que vamos trabalhar nesse post.
 
-Geralmente, o padrão para a instalação de pacotes genéricos (tarball), são apenas 3 comandos: 
+Geralmente, o padrão para a instalação de pacotes genéricos (tarball), são apenas 3 comandos:
 
 * O de configurar;
 * O de compilar;
@@ -44,7 +35,7 @@ Veremos abaixo, como instalar a ultima versão estável do [Python](https://www.
 
 A - Abra seu editor de texto preferido e acrescente esses comando abaixo:
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 #!/usr/bin/env bash
 # Description: Install latest version Python (auto)
 # Author: William Canin
@@ -77,29 +68,29 @@ printf "\nInstallation complete!\n"
 
 ## Entendendo o que cada comando do script faz
 
-> Linha **3**: Responsável por capturar a ultima versão estável do Python no site oficial através de expressões regulares e armazenar em uma variável.
+> Linha **6**: Responsável por capturar a ultima versão estável do Python no site oficial através de expressões regulares e armazenar em uma variável.
 
-> Linha **5**: Uma variável que armazena a url completa do download do pacote tarball.
+> Linha **8**: Uma variável que armazena a url completa do download do pacote tarball.
 
-> Linha **7**: Entra no diretório HOME do usuário atual do terminal e realizar o download do pacote *tarball* no mesmo diretório.
+> Linha **10**: Entra no diretório HOME do usuário atual do terminal e realizar o download do pacote *tarball* no mesmo diretório.
 
-> Linha **9**: Remove qualquer pasta que foi utilizada para instalação o Python da mesma versão atual do download.
+> Linha **12**: Remove qualquer pasta que foi utilizada para instalação o Python da mesma versão atual do download.
 
-> Linha **11**: Descompacta o pacote *tar.xz* para o diretório **/opt**.
+> Linha **14**: Descompacta o pacote *tar.xz* para o diretório **/opt**.
 
-> Linha **13**: Dá permissão 775 para pasta **Python-[VERSION]** e suas subpastas e arquivos.
+> Linha **16**: Dá permissão 775 para pasta **Python-[VERSION]** e suas subpastas e arquivos.
 
-> Linha **15**: Entrando no diretório **/opt/Python-[VERSION]** para realizar a *configuração*, *compilação* e *instalação* do Python.
+> Linha **18**: Entrando no diretório **/opt/Python-[VERSION]** para realizar a *configuração*, *compilação* e *instalação* do Python.
 
-> Linha **17**: Configurando o Python para compilação.
+> Linha **20**: Configurando o Python para compilação.
 
-> Linha **19**: Compilando o Python
+> Linha **22**: Compilando o Python
 
-> Linha **21**: Instalando o Python em si.
+> Linha **24**: Instalando o Python em si.
 
-> Linha **23**: Essa linha é opcional, por padrão está comentada, porém, esse comando serve para mostrar quais passos foram feitos e onde foi colocado cada arquivo/pasta da instalação.
+> Linha **26**: Essa linha é opcional, por padrão está comentada, porém, esse comando serve para mostrar quais passos foram feitos e onde foi colocado cada arquivo/pasta da instalação.
 
-> Linha **25**: Essa linha é um mistério, dou um pirulito a quem descobrir para que serve. :D"
+> Linha **28**: Essa linha é um mistério, dou um pirulito a quem descobrir para que serve. :D"
 
 ## Salvando o script, e executando-o para a instalação do Python
 
@@ -136,7 +127,7 @@ Para facilitar, criei um script que pode lhe poupar tempo de achar esses arquivo
 
 A - Abra um editor de sua preferência e coloque as linhas seguintes:
 
-{% highlight bash  %}
+{% highlight bash linenos %}
 #!/usr/bin/env bash
 # Description: Uninstall determined version Python (auto)
 # Author: William Canin
@@ -200,4 +191,3 @@ Esse tutorial pode ficar obsoleto com o tempo, então, lembre-se de ler o arquiv
 
 Eu fico por aqui, abraço pra você. :smile:
 
-{% jektify spotify/track/1parffUcsk8pfGbyMtGnmW/dark %}

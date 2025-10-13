@@ -1,11 +1,15 @@
-Website maintained by [William Canin](https://williamcanin.github.io/) through [Typing](https://github.com/williamcanin/typing-jekyll-template) template.
+# https://williamcanin.github.io
 
-## Usage
+# Usage
 
-Build for production:
+**(1)** - Install dependencies:
 
-```npm run build```
+```shell
+npm install
+```
 
-Build for development:
+**(2)** - For manipulation commands, use:
 
-```npm run serve```
+```shell
+npm run help
+```
