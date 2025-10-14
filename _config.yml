@@ -166,7 +166,7 @@ text:
       fail: "Falha na verificação. Recarregue a página e tente novamente."
       error: "Ocorreu um erro ao enviar a mensagem. Tente novamente."
   footer:
-    copyright: "© 2025 - Todos os direitos reservados."
+    copyright: "© 2015 - 2025 - Todos os direitos reservados."
     message: "thoughts on programming, digital wellbeing, linux"
   error:
     image: https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXlxYzc5eXp1Nm01cmtldzM5bHhwdzJ2Njk2c2E4b2RkdTBkeGs5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c20UV66B7zCWA/giphy.gif
