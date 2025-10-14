@@ -82,7 +82,7 @@ blog:
 # section: [datelang]
 # Here you change the language of the months of the date
 datelang:
-  format: "%b %d, %Y"
+  format: "%d %b, %Y"
   lang: "pt_PT" # en_US | pt_PT | jp_JP | ch_CH | es_ES | fr_FR | it_IT | de_DE | ru_RU
 
 # section: [Reading time]
