@@ -4,126 +4,126 @@
       "title"    : "Implementando uma classe em Python para criar logs",
       "tags"     : "python, logs",
       "url"      : "/blog/implementando-uma-classe-em-python-para-criar-logs/",
-      "date"     : "Jun 26, 2021"
+      "date"     : "26 Jun, 2021"
     } ,
   
     {
       "title"    : "Video - Criando módulo para colorir print e input no Python",
       "tags"     : "python, video",
       "url"      : "/blog/criando-modulo-para-colorir-print-e-input-no-python/",
-      "date"     : "Dez 11, 2019"
+      "date"     : "11 Dez, 2019"
     } ,
   
     {
       "title"    : "Como encurtar URL Raw do Github e ter uma url personalizada",
       "tags"     : "github, git, url, shortener",
       "url"      : "/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/",
-      "date"     : "Out 20, 2019"
+      "date"     : "20 Out, 2019"
     } ,
   
     {
       "title"    : "Video - Manipulando arquivo JSON com Python.",
       "tags"     : "python, json, video",
       "url"      : "/blog/manipulando-arquivo-json-com-python/",
-      "date"     : "Set 02, 2019"
+      "date"     : "02 Set, 2019"
     } ,
   
     {
       "title"    : "Corrigindo erro de chaves no Arch Linux",
       "tags"     : "archlinux, keys",
       "url"      : "/blog/corrigindo-erro-de-chaves-no-archlinux/",
-      "date"     : "Mar 07, 2019"
+      "date"     : "07 Mar, 2019"
     } ,
   
     {
       "title"    : "Transações no banco de dados através do Shell script",
       "tags"     : "shell, postgresql, mysql",
       "url"      : "/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/",
-      "date"     : "Ago 28, 2018"
+      "date"     : "28 Ago, 2018"
     } ,
   
     {
       "title"    : "Instalando Python tarball em qualquer sistema Linux.",
       "tags"     : "python, tarball, linux",
       "url"      : "/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/",
-      "date"     : "Jun 21, 2018"
+      "date"     : "21 Jun, 2018"
     } ,
   
     {
       "title"    : "Criptografando a partição HOME no Linux",
       "tags"     : "crypt, linux, security",
       "url"      : "/blog/criptografando-a-particao-home-no-linux/",
-      "date"     : "Out 16, 2017"
+      "date"     : "16 Out, 2017"
     } ,
   
     {
       "title"    : "Carregando Javascripts para diferentes posts e pages no Jekyll",
       "tags"     : "jekyll, javascripts, liquid",
       "url"      : "/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/",
-      "date"     : "Out 09, 2017"
+      "date"     : "09 Out, 2017"
     } ,
   
     {
       "title"    : "Instalando Arch Linux com criptografia LUKS e LVM",
       "tags"     : "archlinux, encryption, criptografia, luks, lvm",
       "url"      : "/blog/instalando-archlinux-com-criptografia-luks-e-lvm/",
-      "date"     : "Abr 27, 2017"
+      "date"     : "27 Abr, 2017"
     } ,
   
     {
       "title"    : "Linux: Compilando e instalando o kernel em modo tradicional",
       "tags"     : "kernel, linux, compile",
       "url"      : "/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/",
-      "date"     : "Ago 23, 2015"
+      "date"     : "23 Ago, 2015"
     } ,
   
     {
       "title"    : "Linux Boot: A start job is running for dev-disk-by",
       "tags"     : "boot, swap, linux",
       "url"      : "/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/",
-      "date"     : "Jul 26, 2015"
+      "date"     : "26 Jul, 2015"
     } ,
   
     {
       "title"    : "Compilando e configurando Squid",
       "tags"     : "squid, proxy, linux, server",
       "url"      : "/blog/compilando-e-configurando-squid-transparent/",
-      "date"     : "Mai 14, 2015"
+      "date"     : "14 Mai, 2015"
     } ,
   
     {
       "title"    : "Arquivos de execução no Linux",
       "tags"     : "linux, shell, script",
       "url"      : "/blog/arquivos-de-execucao-no-linux/",
-      "date"     : "Abr 29, 2015"
+      "date"     : "29 Abr, 2015"
     } ,
   
     {
       "title"    : "Criando pendrive bootavel no Linux com dd",
       "tags"     : "dd, linux, iso, pendrive",
       "url"      : "/blog/criando-pendrive-bootavel-no-linux-com-dd/",
-      "date"     : "Abr 21, 2015"
+      "date"     : "21 Abr, 2015"
     } ,
   
     {
       "title"    : "Transações com procedures no MySQL e Herança",
       "tags"     : "database, mysql, procedure, trigger",
       "url"      : "/blog/transacoes-com-procedures-no-mysql-e-heranca/",
-      "date"     : "Mar 03, 2015"
+      "date"     : "03 Mar, 2015"
     } ,
   
     {
       "title"    : "Erro de inicialização no Eclipse",
       "tags"     : "eclipse, linux",
       "url"      : "/blog/erro-de-inicializacao-eclipse-no-linux/",
-      "date"     : "Fev 23, 2015"
+      "date"     : "23 Fev, 2015"
     } ,
   
     {
       "title"    : "Hello World",
       "tags"     : "misc, hello",
       "url"      : "/blog/hello-world/",
-      "date"     : "Jan 13, 2015"
+      "date"     : "13 Jan, 2015"
     } 
   
 ]
