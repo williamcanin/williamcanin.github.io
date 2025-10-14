@@ -40,6 +40,7 @@
 
           const openSearch = () => {
             box.classList.add('is-open');
+            box.removeAttribute('aria-hidden');
             box.style.maxHeight = box.scrollHeight + 'px';
             box.style.opacity = '1';
             box.addEventListener('transitionend', function onOpened(e) {
@@ -58,6 +59,7 @@
               box.style.maxHeight = '0';
               box.style.opacity = '0';
             });
+            box.setAttribute('aria-hidden', 'true');
             box.classList.remove('is-open');
           };
 
