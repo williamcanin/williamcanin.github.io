@@ -89,7 +89,7 @@ datelang:
 reading_time:
   enable: true
   words_per_minute: 180
-  message: ["Leia o post em", "Leia o post em menos de"]
+  message: ["Leia o post em cerca de", "Leia o post em menos de"]
   minutes_label: ["minuto", "minutos"]
 
 # section: [text]
