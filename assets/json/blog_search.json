@@ -25,14 +25,14 @@
       "title"    : "Video - Manipulando arquivo JSON com Python.",
       "tags"     : "python, json, video",
       "url"      : "/blog/manipulando-arquivo-json-com-python/",
-      "date"     : "Set 2, 2019"
+      "date"     : "Set 02, 2019"
     } ,
   
     {
       "title"    : "Corrigindo erro de chaves no Arch Linux",
       "tags"     : "archlinux, keys",
       "url"      : "/blog/corrigindo-erro-de-chaves-no-archlinux/",
-      "date"     : "Mar 7, 2019"
+      "date"     : "Mar 07, 2019"
     } ,
   
     {
@@ -60,7 +60,7 @@
       "title"    : "Carregando Javascripts para diferentes posts e pages no Jekyll",
       "tags"     : "jekyll, javascripts, liquid",
       "url"      : "/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/",
-      "date"     : "Out 9, 2017"
+      "date"     : "Out 09, 2017"
     } ,
   
     {
@@ -88,7 +88,7 @@
       "title"    : "Compilando e configurando Squid",
       "tags"     : "squid, proxy, linux, server",
       "url"      : "/blog/compilando-e-configurando-squid-transparent/",
-      "date"     : "Maio 14, 2015"
+      "date"     : "Mai 14, 2015"
     } ,
   
     {
@@ -109,7 +109,7 @@
       "title"    : "Transações com procedures no MySQL e Herança",
       "tags"     : "database, mysql, procedure, trigger",
       "url"      : "/blog/transacoes-com-procedures-no-mysql-e-heranca/",
-      "date"     : "Mar 3, 2015"
+      "date"     : "Mar 03, 2015"
     } ,
   
     {
