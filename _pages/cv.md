@@ -2,7 +2,7 @@
 layout: resume
 order: 4
 title: CV
-published: false
+published: true
 permalink: /cv/
 ---
 

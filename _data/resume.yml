@@ -138,6 +138,103 @@ body:
           - I collaborated with engineering teams to deploy **Keras** and **Matlab** models in production
           environments, impacting **millions of platform** users.
 
+  # section: [Certificates]
+  certificates:
+    enable: true
+    caption: Certificados
+    section:
+      - course: Desenvolvimento avançado Python com Flask e REST API
+        certificate: https://williamcanin.github.io/docs/certificates/dio-development-advanced-python-with-flask-rest-api.pdf
+        period:
+          year: 2021
+          hours: 5 horas
+        company:
+          name: Digital Innovation One
+          site: https://www.dio.me
+
+      - course: Desenvolvimento para Internet e Banco de Dados com Python e Django
+        certificate: https://williamcanin.github.io/docs/certificates/dio-desenvolvimento-para-internet-e-banco-de-dados-com-python-e-django.pdf
+        period:
+          year: 2021
+          hours: 4 horas
+        company:
+          name: Digital Innovation One
+          site: https://www.dio.me
+
+      - course: "Programação Web com Python e Django Framework: Essencial"
+        certificate: https://williamcanin.github.io/docs/certificates/udemy-programacao-web-com-python-e-django-framework-essencial.pdf
+        period:
+          year: 2021
+          hours: 36 horas
+        company:
+          name: Geek University
+          site: https://www.geekuniversity.com.br
+
+      - course: Participação na Hackathon de Python em desenvolvimento Avançado
+        certificate: https://williamcanin.github.io/docs/certificates/imagimaker_advanced_python_challenge_11_04-2020.pdf
+        period:
+          year: 2019
+          hours: 24 horas
+        company:
+          name: Hackathon Brasil
+          site: https://hackathonbrasil.com.br
+        details: |
+          [Resultado](https://williamcanin.github.io/docs/certificates/resultado_hackthon_imagimaker_python.jpg)
+
+      - course: Introdução a Javascript
+        certificate: https://williamcanin.github.io/docs/certificates/certificado_intruducao_a_javascript.pdf
+        period:
+          year: 2019
+          hours: 1 hora
+        company:
+          name: Udemy
+          site: https://www.udemy.com/
+
+      - course: Django 2.0 - Aprendendo os conceitos fundamentais
+        certificate: https://williamcanin.github.io/docs/certificates/django2.pdf
+        period:
+          year: 2018
+          hours: 6 horas
+        company:
+          name: Udemy
+          site: https://www.udemy.com/
+
+      - course: Aprenda Programação em Python 3 com Facilidade do Zero
+        certificate: https://williamcanin.github.io/docs/certificates/udemy-curses-python3-zero.pdf
+        period:
+          year: 2018
+          hours: 7 horas
+        company:
+          name: Udemy
+          site: https://www.udemy.com/
+
+      - course: Python Básico
+        certificate: https://williamcanin.github.io/docs/certificates/solyd-curses-python-basic.pdf
+        period:
+          year: 2018
+          hours: 8 horas
+        company:
+          name: Solyd
+          site: https://solyd.com.br
+
+      - course: HTML & CSS na prática
+        certificate: https://williamcanin.github.io/docs/certificates/html5-css3-in-practice-nodestudio.pdf
+        period:
+          year: 2017
+          hours: 6 horas
+        company:
+          name: NodeStudio
+          site: https://www.nodestudio.com.br
+
+      - course: Design Responsivo
+        certificate: https://williamcanin.github.io/docs/certificates/responsive-design-certificate-at-nodestudio.pdf
+        period:
+          year: 2017
+          hours: 12 horas
+        company:
+          name: NodeStudio
+          site: https://www.nodestudio.com.br
+
   # section: [Publications]
   # Full links will only appear in print mode. Online and PDF modes are clickable.
   publications:
@@ -152,7 +249,7 @@ body:
   # section: [Projects]
   # Full links will only appear in print mode. Online and PDF modes are clickable.
   projects:
-    enable: true
+    enable: false
     caption: Projetos
     section:
       - title: rawfeed
@@ -178,3 +275,11 @@ body:
         details: |
           - I led a class of **Computer Engineering** students in the modern **AI course**.
           It was over **170 hours** of classes.
+
+  # section: [Markdown]
+  markdown:
+    enable: false
+    caption: Notes
+    content: |
+      - I led a class of **Computer Engineering** students in the modern **AI course**.
+      It was over **170 hours** of classes.
