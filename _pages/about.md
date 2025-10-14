@@ -5,6 +5,7 @@ title: "sobre"
 author: "William C. Canin"
 date: 2025-10-12 23:06:09
 update_date:
+reading_time: true
 published: true
 permalink: /about/
 ---
