@@ -79,6 +79,19 @@ blog:
       disqus:
         shortname: "williamcanin" # your shortname disqus
 
+# section: [datelang]
+# Here you change the language of the months of the date
+datelang:
+  format: "%b %-d, %Y"
+  lang: "pt_PT" # en_US | pt_PT | jp_JP | ch_CH | es_ES | fr_FR | it_IT | de_DE | ru_RU
+
+# section: [Reading time]
+reading_time:
+  enable: true
+  words_per_minute: 180
+  message: ["Leia o post em", "Leia o post em menos de"]
+  minutes_label: ["minuto", "minutos"]
+
 # section: [text]
 # define names for static text on your website
 text:
@@ -109,7 +122,11 @@ text:
         text: "limpar"
       results: "resultados"
       no_results: "Sem resultados"
+  page:
+    updated_on: "Página atualizada em"
   post:
+    date:
+      lang: "pt_PT"
     author: "autor"
     related_posts: "postagens relacionadas"
     updated_on: "Postagem atualizada em"
@@ -202,6 +219,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-archives
   - jekyll-paginate-v2
+  - rawfeed
 feed:
   path: /feed.xml
 defaults:
