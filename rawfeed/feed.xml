@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/rawfeed/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/rawfeed/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-10-12T17:01:54-03:00</updated><id>https://williamcanin.github.io/rawfeed/feed.xml</id><title type="html">rawfeed</title><subtitle>A raw Jekyll theme for minimalists</subtitle><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="https://williamcanin.github.io/rawfeed/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T14:09:18-03:00</published><updated>2025-10-04T14:09:18-03:00</updated><id>https://williamcanin.github.io/rawfeed/blog/content-styles-and-codeblocks</id><content type="html" xml:base="https://williamcanin.github.io/rawfeed/blog/content-styles-and-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-14T12:08:06-03:00</updated><id>/feed.xml</id><title type="html">rawfeed</title><subtitle>A raw Jekyll theme for minimalists</subtitle><entry><title type="html">Content styles and Codeblocks - Demonstration in the post</title><link href="/blog/content-styles-and-codeblocks/" rel="alternate" type="text/html" title="Content styles and Codeblocks - Demonstration in the post" /><published>2025-10-04T17:09:18-03:00</published><updated>2025-10-04T17:09:18-03:00</updated><id>/blog/content-styles-and-codeblocks</id><content type="html" xml:base="/blog/content-styles-and-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
   <div class="toc-head">
     <h2>TOC</h2>
     <button class="toc-toggle" aria-expanded="true" type="button">Hidden</button>
@@ -19,7 +19,7 @@
   }
 
   function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
     const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
     const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
     const root = document.querySelector(selector);
@@ -232,6 +232,28 @@
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Chee-ee-eeee-zzze!!!!</li>
 </ul>
 
+<h1 id="quotes">Quotes</h1>
+
+<blockquote>
+  <p>normal citation</p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>double quote</p>
+  </blockquote>
+</blockquote>
+
+<h1 id="line-separators">Line separators</h1>
+
+<hr />
+<hr />
+<hr />
+
+<h1 id="escaping-special-characters">Escaping special characters</h1>
+
+<p>*not in italics*</p>
+
 <h1 id="table">Table</h1>
 
 <table>
@@ -292,11 +314,15 @@
 
 <h1 id="video-youtube">Video YouTube</h1>
 
+<blockquote>
+  <p>Note: You must copy the embed link</p>
+</blockquote>
+
 <div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/IcICF_YF_tI" title="Video" frameborder="0" allowfullscreen="">
+  <iframe src="https://www.youtube.com/embed/IcICF_YF_tI?si=2n30rpxhzdEpZH4Y" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
   </iframe>
   <noscript>
-    <p>The video is not available for embedding. Watch it on <a href="https://www.youtube.com/watch?v=IcICF_YF_tI" target="_blank">YouTube</a>.
+    <p>The video is not available for embedding. Watch it on <a href="https://www.youtube.com/embed/IcICF_YF_tI?si=2n30rpxhzdEpZH4Y" target="_blank">YouTube</a>.
     </p>
   </noscript>
 </div>
@@ -713,7 +739,7 @@
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="https://williamcanin.github.io/rawfeed/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>https://williamcanin.github.io/rawfeed/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="https://williamcanin.github.io/rawfeed/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William C. Canin</name></author><category term="example" /><category term="codeblocks" /><category term="style" /><category term="include" /><category term="chart" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[An example post for: Code Block and Styles]]></summary></entry><entry><title type="html">Codeblocks - Demonstration in the post</title><link href="/blog/this-post-demonstrates-post-codeblocks/" rel="alternate" type="text/html" title="Codeblocks - Demonstration in the post" /><published>2025-09-25T10:36:34-03:00</published><updated>2025-09-25T10:36:34-03:00</updated><id>/blog/this-post-demonstrates-post-codeblocks</id><content type="html" xml:base="/blog/this-post-demonstrates-post-codeblocks/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
   <div class="toc-head">
     <h2>TOC</h2>
     <button class="toc-toggle" aria-expanded="true" type="button">Hidden</button>
@@ -734,7 +760,7 @@
   }
 
   function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
     const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
     const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
     const root = document.querySelector(selector);
@@ -1028,7 +1054,7 @@
 </span>
 <span class="p">}</span>
 
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="https://williamcanin.github.io/rawfeed/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>https://williamcanin.github.io/rawfeed/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="https://williamcanin.github.io/rawfeed/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name>William Canin</name></author><category term="example" /><category term="codeblocks" /><category term="ruby" /><category term="html" /><category term="rust" /><category term="raw" /><summary type="html"><![CDATA[This post demonstrates post codeblock]]></summary></entry><entry><title type="html">Content styles - Demonstration in the post</title><link href="/blog/this-post-demonstrates-post-content-styles/" rel="alternate" type="text/html" title="Content styles - Demonstration in the post" /><published>2025-09-22T17:24:04-03:00</published><updated>2025-09-22T17:24:04-03:00</updated><id>/blog/this-post-demonstrates-post-content-styles</id><content type="html" xml:base="/blog/this-post-demonstrates-post-content-styles/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
   <div class="toc-head">
     <h2>TOC</h2>
     <button class="toc-toggle" aria-expanded="true" type="button">Hidden</button>
@@ -1049,7 +1075,7 @@
   }
 
   function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
     const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
     const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
     const root = document.querySelector(selector);
@@ -1490,7 +1516,7 @@
     </div>
 
   </div>
-</div>]]></content><author><name>William Canin</name></author><category term="example" /><category term="style" /><category term="include" /><category term="chart" /><summary type="html"><![CDATA[This post demonstrates post content styles]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://williamcanin.github.io/rawfeed/blog/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-09-20T16:36:34-03:00</published><updated>2025-09-20T16:36:34-03:00</updated><id>https://williamcanin.github.io/rawfeed/blog/welcome-to-jekyll</id><content type="html" xml:base="https://williamcanin.github.io/rawfeed/blog/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+</div>]]></content><author><name>William Canin</name></author><category term="example" /><category term="style" /><category term="include" /><category term="chart" /><summary type="html"><![CDATA[This post demonstrates post content styles]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="/blog/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-09-20T16:36:34-03:00</published><updated>2025-09-20T16:36:34-03:00</updated><id>/blog/welcome-to-jekyll</id><content type="html" xml:base="/blog/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
