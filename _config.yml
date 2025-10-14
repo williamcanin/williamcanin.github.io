@@ -175,8 +175,8 @@ text:
       Parece que este conteúdo não existe ou foi removido pelo autor.
 
 # section: [lang]
-# locality, e.g: en_US, pt_BR
-lang: pt_BR
+# locality, e.g: en, pt, fr, etc...
+lang: pt
 
 # section: [layout]
 layout:
