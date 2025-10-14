@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt_BR"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" hreflang="pt_BR" /><updated>2025-10-13T13:10:41+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><title type="html">william canin</title><subtitle>thoughts on programming, digital wellbeing, linux</subtitle><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt_BR"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" hreflang="pt_BR" /><updated>2025-10-14T04:09:39+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><title type="html">william canin</title><subtitle>thoughts on programming, digital wellbeing, linux</subtitle><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
   <div class="toc-head">
     <h2>Índice</h2>
     <button class="toc-toggle" aria-expanded="true" type="button">Fechar</button>
@@ -19,7 +19,7 @@
   }
 
   function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
     const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
     const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
     const root = document.querySelector(selector);
@@ -652,7 +652,7 @@ O segundo, o <a href="https://docs.python.org/pt-br/3.9/library/sys.html?highlig
 <p>Acesse a playlist abaixo. Voilá!</p>
 
 <div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/https://www.youtube.com/embed/VW-UphhjJ3E?si=PPdXSrMvJHmu00S_" title="Criando módulo para colorir" frameborder="0" allowfullscreen="">
+  <iframe src="https://www.youtube.com/embed/VW-UphhjJ3E?si=PPdXSrMvJHmu00S_" title="Criando módulo para colorir" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
   </iframe>
   <noscript>
     <p>The video is not available for embedding. Watch it on <a href="https://www.youtube.com/embed/VW-UphhjJ3E?si=PPdXSrMvJHmu00S_" target="_blank">YouTube</a>.
@@ -765,7 +765,7 @@ arquivo JSON com Python.</p>
 <p>Abaixo você terá acesso a playlist que criei sobre esse feito, dê uma olhada. Abraços.</p>
 
 <div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/https://www.youtube.com/embed/videoseries?list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" title="Manipulando arquivo JSON com Python" frameborder="0" allowfullscreen="">
+  <iframe src="https://www.youtube.com/embed/videoseries?list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" title="Manipulando arquivo JSON com Python" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
   </iframe>
   <noscript>
     <p>The video is not available for embedding. Watch it on <a href="https://www.youtube.com/embed/videoseries?list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" target="_blank">YouTube</a>.
@@ -894,7 +894,7 @@ Error downloading sources: spotify
   }
 
   function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
     const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
     const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
     const root = document.querySelector(selector);
@@ -1414,7 +1414,7 @@ bash setup.bash createtb</code></pre></figure>
   }
 
   function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
     const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
     const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
     const root = document.querySelector(selector);
@@ -1836,7 +1836,7 @@ Você pode verificar o executável no diretório <strong>/usr/local/bin</strong>
   }
 
   function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
     const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
     const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
     const root = document.querySelector(selector);
@@ -2183,7 +2183,7 @@ home <span class="nv">UUID</span><span class="o">=</span>824049e5-d6a1-4e91-a1fd
   }
 
   function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
     const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
     const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
     const root = document.querySelector(selector);
@@ -2452,7 +2452,7 @@ script: [page1.js]
   }
 
   function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content';
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
     const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
     const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
     const root = document.querySelector(selector);
