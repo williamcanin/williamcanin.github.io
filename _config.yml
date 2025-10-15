@@ -28,6 +28,7 @@ csp:
   img-src:
     - https://media0.giphy.com
     - https://media4.giphy.com
+    - https://github.githubassets.com
 
 # section: [google]
 google:
@@ -104,7 +105,7 @@ datelang:
 reading_time:
   enable: true
   words_per_minute: 180
-  message: ["Leia o post em cerca de", "Leia o post em menos de"]
+  message: ["Leia em cerca de", "Leia em menos de"]
   minutes_label: ["minuto", "minutos"]
 
 # section: [strings]
