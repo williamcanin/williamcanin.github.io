@@ -81,7 +81,10 @@ socials:
       url: https://rubygems.org/profiles/williamcanin
 
     - title: pypi
-      url: https://pypi.org/user/williamcanin/
+      url: https://pypi.org/user/williamcanin
+
+    - title: spotify
+      url: https://open.spotify.com/user/williamcanin
 
 # section: [blog]
 blog:
