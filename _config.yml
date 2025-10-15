@@ -23,15 +23,17 @@ csp:
     - https://www.youtube.com
     - https://giscus.app
     - https://disqus.com
+    - https://www.google.com
   connect-src:
     - https://api.github.com
+    - https://www.google.com
   img-src:
+    - https://www.google.com
     - https://media0.giphy.com
     - https://media4.giphy.com
     - https://github.githubassets.com
   script-src:
     - https://www.google.com/recaptcha
-    - https://www.google.com
 
 # section: [google]
 google:
