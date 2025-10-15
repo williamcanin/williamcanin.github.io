@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",()=>{let t=document.getElementById("toc");var e;t&&(e=document.createElement("div"),t.parentNode.insertBefore(e,t),new IntersectionObserver(([e])=>{e.isIntersecting?t.classList.remove("toc-fixed"):t.classList.add("toc-fixed")},{threshold:0}).observe(e))});
