@@ -1,16 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" hreflang="pt" /><updated>2025-10-15T01:16:38+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><title type="html">william canin</title><subtitle>thoughts on programming, digital wellbeing, linux</subtitle><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" hreflang="pt" /><updated>2025-10-15T04:15:35+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><title type="html">william canin</title><subtitle>thoughts on programming, digital wellbeing, linux</subtitle><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
   <div class="toc-head">
     <h2>Índice</h2>
     <button class="toc-toggle" aria-expanded="true" type="button">Fechar</button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found.</p>
+    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
 
 <script>
 (function () {
+  const minLayoutWidth = 1830;
+
+  const toc = document.getElementById('toc');
+  if (toc) {
+    const sentinel = document.createElement('div');
+    toc.parentNode.insertBefore(sentinel, toc);
+
+    function shouldApplyFixed() {
+      return window.innerWidth > minLayoutWidth;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (shouldApplyFixed()) {
+          if (!entry.isIntersecting) {
+            toc.classList.add('toc-fixed');
+          } else {
+            toc.classList.remove('toc-fixed');
+          }
+        } else {
+          toc.classList.remove('toc-fixed');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+
+    window.addEventListener('resize', () => {
+        if (!shouldApplyFixed()) {
+            toc.classList.remove('toc-fixed');
+        }
+    });
+  }
+
   function slugify(text) {
     if (!text) return '';
     return text.toString().toLowerCase().trim()
@@ -124,6 +158,15 @@
       const tocTop = toc.offsetTop;
 
       function handleScrollFix() {
+        if (window.innerWidth <= minLayoutWidth) {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.zIndex = '';
+          toc.style.width = '';
+          return;
+        }
+
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         // Fixes pinning behavior in Chrome
@@ -880,12 +923,46 @@ Error downloading sources: spotify
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found.</p>
+    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
 
 <script>
 (function () {
+  const minLayoutWidth = 1830;
+
+  const toc = document.getElementById('toc');
+  if (toc) {
+    const sentinel = document.createElement('div');
+    toc.parentNode.insertBefore(sentinel, toc);
+
+    function shouldApplyFixed() {
+      return window.innerWidth > minLayoutWidth;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (shouldApplyFixed()) {
+          if (!entry.isIntersecting) {
+            toc.classList.add('toc-fixed');
+          } else {
+            toc.classList.remove('toc-fixed');
+          }
+        } else {
+          toc.classList.remove('toc-fixed');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+
+    window.addEventListener('resize', () => {
+        if (!shouldApplyFixed()) {
+            toc.classList.remove('toc-fixed');
+        }
+    });
+  }
+
   function slugify(text) {
     if (!text) return '';
     return text.toString().toLowerCase().trim()
@@ -999,6 +1076,15 @@ Error downloading sources: spotify
       const tocTop = toc.offsetTop;
 
       function handleScrollFix() {
+        if (window.innerWidth <= minLayoutWidth) {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.zIndex = '';
+          toc.style.width = '';
+          return;
+        }
+
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         // Fixes pinning behavior in Chrome
@@ -1400,12 +1486,46 @@ bash setup.bash createtb</code></pre></figure>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found.</p>
+    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
 
 <script>
 (function () {
+  const minLayoutWidth = 1830;
+
+  const toc = document.getElementById('toc');
+  if (toc) {
+    const sentinel = document.createElement('div');
+    toc.parentNode.insertBefore(sentinel, toc);
+
+    function shouldApplyFixed() {
+      return window.innerWidth > minLayoutWidth;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (shouldApplyFixed()) {
+          if (!entry.isIntersecting) {
+            toc.classList.add('toc-fixed');
+          } else {
+            toc.classList.remove('toc-fixed');
+          }
+        } else {
+          toc.classList.remove('toc-fixed');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+
+    window.addEventListener('resize', () => {
+        if (!shouldApplyFixed()) {
+            toc.classList.remove('toc-fixed');
+        }
+    });
+  }
+
   function slugify(text) {
     if (!text) return '';
     return text.toString().toLowerCase().trim()
@@ -1519,6 +1639,15 @@ bash setup.bash createtb</code></pre></figure>
       const tocTop = toc.offsetTop;
 
       function handleScrollFix() {
+        if (window.innerWidth <= minLayoutWidth) {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.zIndex = '';
+          toc.style.width = '';
+          return;
+        }
+
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         // Fixes pinning behavior in Chrome
@@ -1822,12 +1951,46 @@ Você pode verificar o executável no diretório <strong>/usr/local/bin</strong>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found.</p>
+    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
 
 <script>
 (function () {
+  const minLayoutWidth = 1830;
+
+  const toc = document.getElementById('toc');
+  if (toc) {
+    const sentinel = document.createElement('div');
+    toc.parentNode.insertBefore(sentinel, toc);
+
+    function shouldApplyFixed() {
+      return window.innerWidth > minLayoutWidth;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (shouldApplyFixed()) {
+          if (!entry.isIntersecting) {
+            toc.classList.add('toc-fixed');
+          } else {
+            toc.classList.remove('toc-fixed');
+          }
+        } else {
+          toc.classList.remove('toc-fixed');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+
+    window.addEventListener('resize', () => {
+        if (!shouldApplyFixed()) {
+            toc.classList.remove('toc-fixed');
+        }
+    });
+  }
+
   function slugify(text) {
     if (!text) return '';
     return text.toString().toLowerCase().trim()
@@ -1941,6 +2104,15 @@ Você pode verificar o executável no diretório <strong>/usr/local/bin</strong>
       const tocTop = toc.offsetTop;
 
       function handleScrollFix() {
+        if (window.innerWidth <= minLayoutWidth) {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.zIndex = '';
+          toc.style.width = '';
+          return;
+        }
+
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         // Fixes pinning behavior in Chrome
@@ -2169,12 +2341,46 @@ home <span class="nv">UUID</span><span class="o">=</span>824049e5-d6a1-4e91-a1fd
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found.</p>
+    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
 
 <script>
 (function () {
+  const minLayoutWidth = 1830;
+
+  const toc = document.getElementById('toc');
+  if (toc) {
+    const sentinel = document.createElement('div');
+    toc.parentNode.insertBefore(sentinel, toc);
+
+    function shouldApplyFixed() {
+      return window.innerWidth > minLayoutWidth;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (shouldApplyFixed()) {
+          if (!entry.isIntersecting) {
+            toc.classList.add('toc-fixed');
+          } else {
+            toc.classList.remove('toc-fixed');
+          }
+        } else {
+          toc.classList.remove('toc-fixed');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+
+    window.addEventListener('resize', () => {
+        if (!shouldApplyFixed()) {
+            toc.classList.remove('toc-fixed');
+        }
+    });
+  }
+
   function slugify(text) {
     if (!text) return '';
     return text.toString().toLowerCase().trim()
@@ -2288,6 +2494,15 @@ home <span class="nv">UUID</span><span class="o">=</span>824049e5-d6a1-4e91-a1fd
       const tocTop = toc.offsetTop;
 
       function handleScrollFix() {
+        if (window.innerWidth <= minLayoutWidth) {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.zIndex = '';
+          toc.style.width = '';
+          return;
+        }
+
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         // Fixes pinning behavior in Chrome
@@ -2438,12 +2653,46 @@ script: [page1.js]
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found.</p>
+    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
 
 <script>
 (function () {
+  const minLayoutWidth = 1830;
+
+  const toc = document.getElementById('toc');
+  if (toc) {
+    const sentinel = document.createElement('div');
+    toc.parentNode.insertBefore(sentinel, toc);
+
+    function shouldApplyFixed() {
+      return window.innerWidth > minLayoutWidth;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (shouldApplyFixed()) {
+          if (!entry.isIntersecting) {
+            toc.classList.add('toc-fixed');
+          } else {
+            toc.classList.remove('toc-fixed');
+          }
+        } else {
+          toc.classList.remove('toc-fixed');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+
+    window.addEventListener('resize', () => {
+        if (!shouldApplyFixed()) {
+            toc.classList.remove('toc-fixed');
+        }
+    });
+  }
+
   function slugify(text) {
     if (!text) return '';
     return text.toString().toLowerCase().trim()
@@ -2557,6 +2806,15 @@ script: [page1.js]
       const tocTop = toc.offsetTop;
 
       function handleScrollFix() {
+        if (window.innerWidth <= minLayoutWidth) {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.zIndex = '';
+          toc.style.width = '';
+          return;
+        }
+
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         // Fixes pinning behavior in Chrome
