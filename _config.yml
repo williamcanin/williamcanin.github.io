@@ -68,14 +68,20 @@ home:
 socials:
   enable: true
   links:
+    - title: youtube
+      url: https://www.youtube.com/@WilliamCanin
+
     - title: github
       url: https://github.com/williamcanin
 
     - title: gitlab
       url: https://gitlab.com/williamcanin
 
-    - title: youtube
-      url: https://www.youtube.com/@WilliamCanin
+    - title: rubygems
+      url: https://rubygems.org/profiles/williamcanin
+
+    - title: pypi
+      url: https://pypi.org/user/williamcanin/
 
 # section: [blog]
 blog:
