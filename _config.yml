@@ -29,6 +29,9 @@ csp:
     - https://media0.giphy.com
     - https://media4.giphy.com
     - https://github.githubassets.com
+  script-src:
+    - https://www.google.com/recaptcha
+    - https://www.google.com
 
 # section: [google]
 google:
