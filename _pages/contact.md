@@ -2,6 +2,8 @@
 layout: contact
 order: 5
 title: "Contato"
+emoji: ✉️&nbsp;
+in_menu: true
 published: true
 permalink: /contact/
 ---

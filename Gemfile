@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 gem "rake", "~> 13.0"
-gem "rawfeed", "~> 0.1.3"
+gem "rawfeed", "~> 0.1.4"
 
 group :jekyll_plugins do
   # gem "jektify", "~> 1.0.8"

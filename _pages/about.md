@@ -2,9 +2,11 @@
 layout: page
 order: 6
 title: "sobre"
+emoji: 👨&nbsp;
 author: "William C. Canin"
 date: 2025-10-12 23:06:09
 update_date:
+in_menu: true
 reading_time: true
 published: true
 permalink: /about/

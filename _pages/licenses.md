@@ -2,13 +2,22 @@
 layout: page
 order: 99
 title: "licenses"
+emoji:
 author: "William C. Canin"
-date: 2025-10-14 20:39:20 -0300
+date:
 update_date:
 in_menu: false
-reading_time: true
-published: false
+reading_time: false
+published: true
 permalink: /licenses/
 ---
 
-<!-- Write from here your page !!! -->
+{::options parse_block_html="true" /}
+
+# Licenças
+
+<div class="license-wrap">
+Todas as postagens do meu blog estão licenciadas sob [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+<!-- Minhas fotos estão licenciadas sob [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/) -->
+</div>
