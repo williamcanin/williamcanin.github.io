@@ -22,4 +22,8 @@ Tenho uma relação de idas e vindas com a maioria das linguagens de programaç�
 
 Você pode ver uma lista de meus [projetos](https://github.com/williamcanin){:target="_blank"} na minha página do GitHub. É provável que alguns esteja `out-of-date` e eu deveria corrigir isso...algum dia talvez.
 
-<!-- Mais alguma coisa...? Oh sim, se você quer saber minhas redes sociais ATIVAS, apenas digite o comando "**socials**" aqui. Até breve. -->
+{:.socials_terminal}
+Mais alguma coisa...? Oh sim, se você quer saber minhas redes sociais ATIVAS, apenas digite o comando "**socials**" aqui. Até breve.
+
+{:.socials_no_terminal}
+Mais alguma coisa...? Oh sim, se você quer saber minhas redes sociais ATIVAS, elas são essas:

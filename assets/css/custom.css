@@ -4,3 +4,21 @@
   border-radius: 7px;
   box-shadow: 0 10px 30px rgba(0,0,0,.7);
 }
+
+
+.socials_terminal {
+  display: block;
+}
+
+.socials_no_terminal {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .socials_terminal {
+  display: none !important;
+}
+.socials_no_terminal {
+  display: block !important;
+}
+}
