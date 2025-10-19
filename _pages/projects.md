@@ -18,7 +18,7 @@ em desenvolvimento e manutenção.
 
 ---
 
-»&nbsp; [**rawfeed**](https://github.com/williamcanin/rawfeed){:target="_blank"} — Um tema para [Jekyll](http://jekyllrb.com){:target="_blank"} bruto com várias funcionalidades para minimalistas
+»&nbsp; [**rawfeed**](https://github.com/rawfeed){:target="_blank"} — Um tema para [Jekyll](http://jekyllrb.com){:target="_blank"} bruto com várias funcionalidades para minimalistas **(em construção)**
 
 »&nbsp; [**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"} — Um gerenciador CLI de dotfiles (e muito mais) para sistemas Linux feito em [**Python**](https://python.org){:target="_blank"}
 

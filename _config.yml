@@ -1,6 +1,7 @@
 # section: [title]
 # title of your website, your name, be creative
-title: "william canin"
+title: |
+  Hey, I'm William Canin
 
 # section: [description]
 # description of your website, helps a lot in SEO
@@ -223,7 +224,7 @@ lang: pt
 # section: [layout]
 layout:
   # widh layout. default: 780px
-  width: 780px
+  width: 800px
 
 # section: [footer]
 footer:
