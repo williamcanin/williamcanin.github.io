@@ -146,7 +146,7 @@ strings:
       title: "feed"
   home:
     terminal:
-      user: "william"
+      user: "root"
       hostname: "linux"
       welcome: " digite 'help' para começar or Esc para limpar"
       error: ": comando não encontrado."

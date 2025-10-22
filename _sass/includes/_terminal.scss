@@ -43,11 +43,11 @@ $font-size: 12px;
       font-size: 12px !important;
       font-family: monospace !important;
       color: var(--text-color);
+      margin: 10px 0px !important;
 
       #mcmd,
       #mdesc {
         font-weight: bold;
-        // border-bottom: 1px solid #fff;
         margin-bottom: 10px;
       }
 
@@ -69,18 +69,16 @@ $font-size: 12px;
     }
 
     .prompt {
-      // margin-top: .2em;
       color: var(--terminal-prompt-text-color);
       font-size: $font-size;
       margin-right: 5px;
-      margin-top: 4px;
     }
 
     .input-wrapper {
       position: relative;
       display: inline-block;
       flex: 1;
-      // min-width: 50px;
+      min-width: 50px;
 
       span {
         font-size: $font-size;
@@ -99,10 +97,19 @@ $font-size: 12px;
       padding: 0;
       margin: 0;
       white-space: nowrap;
-      letter-spacing: 2px;
       text-transform: var(--terminal-screen-text-transform);
       text-shadow: var(--terminal-screen-text-shadow);
-      margin-top: 7px !important;
+    }
+
+    .input-wrapper, .prompt , .input {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .input-wrapper {
+      span {
+        font-size: 15px;
+        font-weight: bold;
+      }
     }
 
     .measure {
@@ -117,7 +124,7 @@ $font-size: 12px;
 
     .cursor {
       position: absolute;
-      top: 3px;
+      top: 2px;
       left: 0;
       width: 9px;
       height: 18px;
