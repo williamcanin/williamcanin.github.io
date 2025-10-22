@@ -5,6 +5,8 @@ published: true
 permalink: / # do not change
 ---
 
+{%- assign year = site.time | date: "%Y" -%}
+
 # NAME
 
 > William Canin
@@ -40,8 +42,6 @@ permalink: / # do not change
 > **william.costa.canin@gmail.com**
 
 ## COPYRIGHT
-
-{%- assign year = site.time | date: "%Y" -%}
 
 > Copyright &copy; {{year}} - Todos os direitos reservados.
 
