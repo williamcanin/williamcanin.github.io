@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+{%- include layout/data.liquid -%}
+
+{%- if page.pagination.enabled == true and site.pagination.enabled == true -%}
+  {%- assign count_posts = paginator.total_posts -%}
+{%- else -%}
+  {%- for _ in site.posts -%}
+    {%- capture count_posts -%} {{ count_posts | plus: 1 }} {%- endcapture -%}
+  {%- endfor -%}
+{%- endif -%}
+
+<div class="container blog">
+  {%- include layout/blog_search.html -%}
+
+  <div id="posts" class="row">
+    {%- if page.title -%}
+      <h2 class="blog-subtitle">[&nbsp;{{ site.strings.blog.subtitle | default: "posts" }}:&nbsp;&nbsp;{{ count_posts }}&nbsp;]</h2>
+    {%- endif -%}
+
+    {%- if site.posts.size > 0 -%}
+      <ul class="row blog-list">
+        {%- if page.pagination.enabled == true and site.pagination.enabled == true -%}
+          {%- assign posts = paginator.posts -%}
+        {%- else -%}
+          {% assign posts = site.posts %}
+        {%- endif -%}
+
+        {%- for post in posts -%}
+        <li class="blog-list__item">
+          {%- if site.datelang -%}
+            <span class="blog-list__meta">{% datelang post.date format:date_format %}</span>&nbsp;»&nbsp;
+          {%- else -%}
+            <span class="blog-list__meta">{{ post.date | date: "%b %-d, %Y" }}</span>&nbsp;»&nbsp;
+          {%- endif -%}
+          <a class="blog-list__link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+          {%- if post.draft -%}
+            <span class="draft-badge">[&nbsp;this is a draft&nbsp;]</span>
+          {%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- include layout/paginator.html -%}
+  </div>
+</div>
