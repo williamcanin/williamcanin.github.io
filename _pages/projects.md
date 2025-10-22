@@ -7,7 +7,7 @@ author: "Your Name"
 date: 2025-10-12 19:05:00
 update_date:
 in_menu: true
-published: true
+published: false
 permalink: /projects/
 ---
 

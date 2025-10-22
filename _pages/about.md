@@ -8,7 +8,7 @@ date: 2025-10-12 23:06:09
 update_date:
 in_menu: true
 reading_time: true
-published: true
+published: false
 permalink: /about/
 ---
 
