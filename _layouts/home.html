@@ -22,6 +22,13 @@ layout: null
     <meta property="twitter:title" content="William Canin">
     <meta name="robots" content="index, follow">
 
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      })();
+    </script>
+
     <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
     <link rel="apple-touch-icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style_terminal.css' | relative_url }}">
@@ -193,10 +200,46 @@ layout: null
         }
       }
 
+      // Function for change theme
+      const root = document.documentElement;
+      function setTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+      }
+
       // processes commands
       function processCommand(cmd) {
         switch(true){
           case cmd === 'help': commandsPrint(commands.help, mode='html'); break;
+          case cmd === 'color --white': {
+            const current = root.getAttribute('data-theme');
+
+            if (current === "light") {
+              commandsPrint("Modo light já está aplicado, nada a fazer.", mode='text');
+            } else {
+              setTheme("white");
+            }
+
+            break;
+          };
+          case cmd === 'color --dark': {
+            const current = root.getAttribute('data-theme');
+
+            if (current === "dark") {
+              commandsPrint("Modo dark já está aplicado, nada a fazer.", mode='text');
+            } else {
+              setTheme("dark");
+            }
+            break;
+          }
+          case cmd === 'color': commandsPrint(`
+          Use: color <Opções>
+
+          <u>Opções</u>
+
+          --white -------------- Mudar terminal para modo claro
+          --dark --------------- Mudar terminal para modo escuro
+          `, mode='html'); break;
           case cmd === 'date': commandsPrint(dateShow(), mode='text'); break;
           // case cmd.startsWith('echo '): commandsPrint(cmd.split(' ').slice(1).join(' ')); break;
           case cmd === 'man william': writeLineHTML(commands.about); break;

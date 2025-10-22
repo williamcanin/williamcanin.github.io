@@ -1,6 +1,5 @@
 @use "sass:map";
 
-
 $light-terminal: (
   bg-color: #ffffff,
   text-color: #000000,
@@ -192,7 +191,7 @@ body {
       left: 0;
       width: 9px;
       height: 18px;
-      background-color: var(--text-color);
+      background-color: var(--text-color) !important;
       border-radius: 2px;
       animation: blink 1s steps(2, end) infinite;
       pointer-events: none;
