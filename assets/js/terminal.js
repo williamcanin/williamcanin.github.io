@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const btnMax = terminal.querySelector(".terminal-header__max");
 
+  if (!btnMax) return;
+
   let isFullscreen = false;
 
   // maximize/restore

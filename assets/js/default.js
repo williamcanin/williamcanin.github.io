@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   --------------------------------------------------------------------------------------------------
   */
   let topButton = document.getElementById("top-link");
+  if (!topButton) return;
+
+
   const scrollThreshold = 700;
   window.onscroll = function () { scrollFunction() };
 

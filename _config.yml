@@ -255,7 +255,7 @@ pagination:
 
 # -------------- there is no need to edit anything from here on down --------------
 
-theme: rawfeed
+# theme: rawfeed
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

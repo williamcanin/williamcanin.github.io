@@ -21,9 +21,9 @@ WILLIAM(1)
 
 > Ele cria e apaga código de computador **desde 2010**. Geralmente nas linguagens Rust, Python e Javascript. Mas já usou outras.
 
-> Tem um perfil no GitHub, acessando através desde link [https://github.com/williamcanin](https://github.com/williamcanin){:target="_blank"}.
+> Tem um perfil no GitHub, acessando através desde link [github@williamcanin](https://github.com/williamcanin){:target="_blank"}.
 
-> Também tem no GitLab como *fallback*, [https://gitlab.com/williamcanin](https://gitlab.com/williamcanin){:target="_blank"}, mas com menos usabilidade.
+> Também tem no GitLab como *fallback*, [gitlab@williamcanin](https://gitlab.com/williamcanin){:target="_blank"}, mas com menos usabilidade.
 
 <!-- > O currículo você pode obter [aqui](#){:target="_blank"}. -->
 

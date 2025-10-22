@@ -167,11 +167,37 @@ layout: null
         updateCursor();
       }
 
+      function dateShow() {
+        const langBrowser = navigator.language || navigator.userLanguage;
+
+        const options = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        };
+
+        let brMessage = "";
+
+        if (langBrowser === "pt-BR" ) {
+          brMessage = " (Horário de Brasília)";
+        }
+
+        try {
+          return new Date().toLocaleString(langBrowser, options) + brMessage;
+        } catch (e) {
+          // Fallback for en-US
+          return new Date().toLocaleString('en-US', options) + brMessage;
+        }
+      }
+
       // processes commands
       function processCommand(cmd) {
         switch(true){
           case cmd === 'help': commandsPrint(commands.help, mode='html'); break;
-          case cmd === 'date': commandsPrint(new Date().toString(), mode='text'); break;
+          case cmd === 'date': commandsPrint(dateShow(), mode='text'); break;
           // case cmd.startsWith('echo '): commandsPrint(cmd.split(' ').slice(1).join(' ')); break;
           case cmd === 'man william': writeLineHTML(commands.about); break;
           case cmd === 'clear': screen.innerHTML=''; break;
