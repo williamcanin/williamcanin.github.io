@@ -1,8 +1,8 @@
 ---
 layout: home
 text_center: true
-published: true
-permalink: / # do not change
+published: false
+permalink: /index-old/ # do not change
 ---
 
 {% assign age = site.time | date: '%Y' | minus: 1988 %}
