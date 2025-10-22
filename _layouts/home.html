@@ -211,13 +211,13 @@ layout: null
       function processCommand(cmd) {
         switch(true){
           case cmd === 'help': commandsPrint(commands.help, mode='html'); break;
-          case cmd === 'color --white': {
+          case cmd === 'color --light': {
             const current = root.getAttribute('data-theme');
 
             if (current === "light") {
               commandsPrint("Modo light já está aplicado, nada a fazer.", mode='text');
             } else {
-              setTheme("white");
+              setTheme("light");
             }
 
             break;
@@ -237,7 +237,7 @@ layout: null
 
           <u>Opções</u>
 
-          --white -------------- Mudar terminal para modo claro
+          --light -------------- Mudar terminal para modo claro
           --dark --------------- Mudar terminal para modo escuro
           `, mode='html'); break;
           case cmd === 'date': commandsPrint(dateShow(), mode='text'); break;
