@@ -1,34 +1,6 @@
 [
   
     {
-      "title"    : "Content styles and Codeblocks - Demonstration in the post",
-      "tags"     : "example, codeblocks, style, include, chart, ruby, html, rust, raw",
-      "url"      : "/blog/content-styles-and-codeblocks/",
-      "date"     : "04 Out, 2025"
-    } ,
-  
-    {
-      "title"    : "Codeblocks - Demonstration in the post",
-      "tags"     : "example, codeblocks, ruby, html, rust, raw",
-      "url"      : "/blog/this-post-demonstrates-post-codeblocks/",
-      "date"     : "25 Set, 2025"
-    } ,
-  
-    {
-      "title"    : "Content styles - Demonstration in the post",
-      "tags"     : "example, style, include, chart",
-      "url"      : "/blog/this-post-demonstrates-post-content-styles/",
-      "date"     : "22 Set, 2025"
-    } ,
-  
-    {
-      "title"    : "Welcome to Jekyll!",
-      "tags"     : "welcome, jekyll, example",
-      "url"      : "/blog/welcome-to-jekyll/",
-      "date"     : "20 Set, 2025"
-    } ,
-  
-    {
       "title"    : "Implementando uma classe em Python para criar logs",
       "tags"     : "python, logs",
       "url"      : "/blog/implementando-uma-classe-em-python-para-criar-logs/",
