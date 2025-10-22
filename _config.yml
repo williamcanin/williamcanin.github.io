@@ -148,7 +148,7 @@ strings:
     terminal:
       user: "root"
       hostname: "linux"
-      welcome: " digite 'help' para começar"
+      welcome: " digite 'help'"
       error: ": comando não encontrado."
       no_socials: "Rede socials não encontrada"
       commands: | # Do not remove the <span>, just change the content

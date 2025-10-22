@@ -99,7 +99,9 @@ body {
     }
 
     .line {
-      white-space: pre;
+      // white-space: pre;
+      // white-space: normal;
+      word-wrap: break-word;
       display: flex;
       align-items: center;
       line-height: 1.4;
