@@ -29,7 +29,7 @@ WILLIAM(1)
 
 ## WEBLOG
 
-> Escreve algumas coisas no weblog dele, que você acessa clicando [aqui](https://williamcanin.github.io/blog).
+> Escreve algumas coisas no weblog dele, que você acessa clicando [aqui](/blog/).
 
 ## SOCIAL NETWORKS
 
@@ -49,7 +49,7 @@ WILLIAM(1)
 
 <!-- ## SEE ALSO
 
-> Momentos de lazer em [pixels](https://williamcanin.github.io/pixels){:target="_blank"}. -->
+> Momentos de lazer em [pixels](/pixels/){:target="_blank"}. -->
 
 <p style="margin-top: 20px"><i>"Simplicity is a feature, not a bug."</i></p>
 

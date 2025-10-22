@@ -22,9 +22,9 @@ $font-size: 12px;
 
   &-fullscreen {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    // top: 0;
+    // left: 0;
+    // right: 0;
     width: 100% !important;
     height: auto !important;
     max-height: none !important;
@@ -36,7 +36,7 @@ $font-size: 12px;
   }
 
   &-screen {
-    overflow-y: auto;
+    overflow-y: scroll !important;
     font-size: 12px !important;
     font-family: monospace !important;
     .line-wrapper {
@@ -49,10 +49,11 @@ $font-size: 12px;
       #mdesc {
         font-weight: bold;
         margin-bottom: 10px;
+        text-decoration: underline;
       }
 
       #mcmd {
-        margin-right: 130px;
+        margin-right: 100px;
       }
 
       a {

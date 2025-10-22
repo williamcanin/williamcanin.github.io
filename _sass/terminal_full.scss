@@ -1,21 +1,205 @@
-/* by: William C. Canin */
-
 @use "theme" as theme;
-@use "base";
-@use "components";
-@use "layouts";
-@use "includes";
 
-/* TODO: version 0.2.0:
-1 - create other dark and light themes for compilation, and have the option in
-"_config.yml" for example:
-layout:
-     # Available dark themes: default | hacking | grovbox
-     # Available light themes: default | cloud | grovbox
-     theme:
-       light: "cloud"
-       dark: "hacking"
-*/
+%font_style {
+  font-size: 12px !important;
+  font-family: monospace !important;
+}
+
+%terminal_font_style {
+  @extend %font_style;
+  a {
+    color: #00e;
+    @extend %font_style;
+    font-weight: normal !important;
+  }
+  h1,h2,h3 {
+    @extend %font_style;
+  }
+  blockquote {
+    @extend %font_style;
+  }
+  p {
+    @extend %font_style;
+  }
+}
+
+.home-terminal {
+  max-width: 400px !important;
+}
+
+body {
+  background-color: white !important;
+  @extend %terminal_font_style;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.terminal {
+  width: min(960px, 96%);
+  color: var(--terminal-color);
+  max-width: 1100px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  max-height: 500px;
+  background-color: var(--terminal-bg-color); // default: #040902
+  overflow-y: hidden;
+  @extend %terminal_font_style;
+
+  &-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    max-width: none !important;
+    border-radius: 0;
+    z-index: 100;
+     @extend %terminal_font_style;
+  }
+
+  &-screen {
+    overflow-y: auto;
+
+    &::after {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-size: 100% 4px;
+      opacity: 0.7;
+    }
+
+    .line-wrapper {
+      color: var(--text-color);
+      margin: 10px 0px !important;
+      @extend %terminal_font_style;
+
+      #mcmd,
+      #mdesc {
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-decoration: underline;
+         @extend %terminal_font_style;
+      }
+
+      #mcmd {
+        margin-right: 100px;
+         @extend %terminal_font_style;
+      }
+
+    }
+
+    .line {
+      white-space: pre;
+      display: flex;
+      align-items: center;
+      line-height: 1.4;
+      @extend %terminal_font_style;
+    }
+
+    .prompt {
+      color: var(--terminal-prompt-text-color);
+      margin-right: 5px;
+      @extend %terminal_font_style;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: inline-block;
+      flex: 1;
+      min-width: 50px;
+       @extend %terminal_font_style;
+
+      span {
+        @extend %terminal_font_style;
+      }
+    }
+
+    .input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--terminal-prompt-text-color);
+      caret-color: transparent;
+      /* esconder caret real */
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+      text-transform: var(--terminal-screen-text-transform);
+      text-shadow: var(--terminal-screen-text-shadow);
+       @extend %terminal_font_style;
+    }
+
+    .input-wrapper, .prompt , .input {
+      font-size: 15px !important;
+      font-weight: bold;
+    }
+    .input-wrapper {
+      span {
+        font-size: 15px !important;
+        font-weight: bold;
+      }
+    }
+
+    .measure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      white-space: pre;
+      pointer-events: none;
+      @extend %terminal_font_style;
+    }
+
+    .cursor {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 9px;
+      height: 18px;
+      background-color: var(--terminal-cursor-color);
+      border-radius: 2px;
+      animation: blink 1s steps(2, end) infinite;
+      pointer-events: none;
+      transform: translateY(0.2px);
+      z-index: 2;
+       @extend %terminal_font_style;
+    }
+
+    .scanlines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(180deg, rgba(0, 255, 0, 0.01) 0 1px, transparent 1px 3px);
+      mix-blend-mode: overlay;
+      opacity: 0.45;
+      z-index: 5;
+       @extend %terminal_font_style;
+    }
+  }
+
+
+  .wrap-term {
+    max-width: 400px !important;
+    margin-left: 7px !important;
+    margin-top: -1px !important;
+  }
+}
+
 :root[data-theme="light"] {
   --bg-color: #{theme.theme-color(bg, light)};
   --text-color: #{theme.theme-color(text, light)};
