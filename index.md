@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: main
 text_center: true
 published: true
 permalink: / # do not change
