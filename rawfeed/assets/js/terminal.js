@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",()=>{let t=document.getElementById("terminal");if(t){var n=t.querySelector(".terminal-header__max");let e=!1;n.addEventListener("click",()=>{e=!e,t.classList.toggle("terminal-fullscreen",e)})}});
