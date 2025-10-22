@@ -40,7 +40,9 @@ permalink: / # do not change
 
 ## COPYRIGHT
 
-> Copyright &copy; 2025 - Todos os direitos reservados.
+{%- assign year = site.time | date: "%Y" -%}
+
+> Copyright &copy; {{year}} - Todos os direitos reservados.
 
 <!-- ## SEE ALSO
 
