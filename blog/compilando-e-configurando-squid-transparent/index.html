@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="pt"><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>Compilando e configurando Squid | Hey, I'm William Canin</title><script>if (window.top !== window.self) {
+<!DOCTYPE html><html id="top" lang="pt" data-theme="light"><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>Compilando e configurando Squid | Hey, I'm William Canin</title><script>if (window.top !== window.self) {
         // Prevents the site from being displayed inside an <iframe>
         window.top.location = window.self.location;
       }</script><meta http-equiv="Content-Security-Policy" content="
@@ -25,4 +25,363 @@
       const savedTheme = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
     })();</script><link rel="stylesheet" href="/assets/css/style.css"><link rel="alternate" type="application/atom+xml" title="Hey, I'm William Canin
-" href="/feed.xml"></head><body><div class="mt-4 maintenance"><div class="container"><div class="row"><div class="col-sm text-center"><img class="maintenance-gif" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExczV3aGMxcnAzdnJ1eWp3cjk5OXdhdTYzdzB0dWVlMGFkbTd2ZDR0ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jwKC0qlOoXmcLDB4vC/giphy.gif" alt="under maintenance"></div></div><div class="row mt-5 text-center"><h1 class="maintenance-title">[&nbsp;Em manutenção&nbsp;]</h1></div><div class="row text-center"><h3 class="maintenance-subtitle">Estamos em manutenção e ainda não temos previsão de retorno. Desculpe o transtorno :/</h3></div></div></div><footer class="container-fluid fixed-bottom footer"><div class="row top"><div class="col-md d-flex justify-content-end"><a id="top-link" class="top-link" href="#top">^</a></div></div><div class="row footer-wrapper"><div class="col-md footer-copyright-wrap"><div class="footer-copyright">©&nbsp;Hey, I'm William Canin &nbsp;2015-2025&nbsp;-&nbsp;Todos os direitos reservados</div></div><div class="col-md footer-message-wrap"><div class="footer-message">Doing stuff on the web since 2007</div></div><div class="col-md footer-made-by-wrap"><div class="footer-made-by">Using the <a href="https://github.com/williamcanin/rawfeed" target="_blank" rel="noopener noreferrer">rawfeed</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener noreferrer">Jekyll</a>.</div></div></div></footer></body></html>
+" href="/feed.xml"></head><body data-layout="post" data-terminal-enabled="true"><div class="default" style="max-width: 800px !important;"><div class="modal fade" id="avatarModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content bg-transparent border-0 shadow-none"><div class="modal-body d-flex justify-content-center"><img id="modalAvatar" class="avatar-img" src="" alt=""></div></div></div></div><header class="container header"><div class="header-wrapper"><div class="row"><div class="col-sm-2 d-flex flex-column justify-content-end"><div class="container"><div class="row"><span>[&nbsp;🏠&nbsp;<a class="" href="/">home</a>&nbsp;]</span></div></div></div><div class="col-sm-8 d-flex flex-column justify-content-end"><div class="container"><div class="row"><span class="title">Hey, I'm William Canin</span></div><div class="row"><small class="description">thoughts on programming, digital wellbeing, linux</small></div></div></div><div class="col-sm-2 d-flex justify-content-end avatar"><div class="avatar-wrapper"><div class="avatar-flipper light-theme can-flip"><div class="avatar-card"><div class="avatar-front"><img id="avatarImgLight" class="avatar-img" src="/assets/images/wcanin_light.png" alt="Hey, I'm William Canin
+"></div><div class="avatar-back"><img class="avatar-img" src="/assets/images/wcanin_back.png" alt="Hey, I'm William Canin
+"></div></div></div><div class="avatar-flipper dark-theme can-flip"><div class="avatar-card"><div class="avatar-front"><img id="avatarImgDark" class="avatar-img" src="/assets/images/wcanin_dark.png" alt="Hey, I'm William Canin
+"></div><div class="avatar-back"><img class="avatar-img" src="/assets/images/wcanin_back.png" alt="Hey, I'm William Canin
+"></div></div></div></div></div></div><div class="menu-separator"></div><div class="row"><div class="col-sm d-flex justify-content-center column-bottom"><span class="blog-menu">weblog&nbsp;» <a class="blog-menu__link" href="/blog/">📝&nbsp;posts</a><strong>&nbsp;.&nbsp;</strong>🔍&nbsp;<a id="blog-search__btn" class="blog-menu__link" href="/blog/?search=open">search</a><strong>&nbsp;.&nbsp;</strong>🏷️&nbsp;<a class="blog-menu__link" href="/blog/tags/">tags</a><strong>&nbsp;.&nbsp;</strong>📰&nbsp;<a class="blog-menu__link" href="/feed.xml">feed</a><strong>&nbsp;.&nbsp;</strong></span></div></div><div class="row justify-content-end"><div class="col-sm-2 d-flex justify-content-end"><span id="toggle-theme"><i class="fa-solid fa-moon"></i></span></div></div></div></header><main class="content"><article class="container post" itemscope itemtype="http://schema.org/BlogPosting"><div class="row"><header class="post-header"><h1 class="post-title p-name" itemprop="name headline">»&nbsp;Compilando e configurando Squid</h1><div class="row post-meta"><div class="col-sm d-flex justify-content-start"><time class="dt-published" datetime="2015-05-14T12:13:57+00:00" itemprop="datePublished">14 Mai, 2015</time></div><div class="col-sm d-flex justify-content-end"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">autor:&nbsp;William C. Canin</span></span></div><div class="post-reading_time">[&nbsp;Leia em cerca de 15 minutos&nbsp;]</div></div></header><div class="post-content e-content" itemprop="articleBody"><nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20"><div class="toc-head"><h2>Índice</h2><button class="toc-toggle" aria-expanded="true" type="button">Fechar</button></div><div class="toc-list-wrapper"><ul class="toc-list" role="list"></ul><p class="toc-empty" style="display:none">No titles found. Remove TOC!</p></div></nav><script>(function () {
+  const minLayoutWidth = 1830;
+
+  const toc = document.getElementById('toc');
+  if (toc) {
+    const sentinel = document.createElement('div');
+    toc.parentNode.insertBefore(sentinel, toc);
+
+    function shouldApplyFixed() {
+      return window.innerWidth > minLayoutWidth;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (shouldApplyFixed()) {
+          if (!entry.isIntersecting) {
+            toc.classList.add('toc-fixed');
+          } else {
+            toc.classList.remove('toc-fixed');
+          }
+        } else {
+          toc.classList.remove('toc-fixed');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+
+    window.addEventListener('resize', () => {
+        if (!shouldApplyFixed()) {
+            toc.classList.remove('toc-fixed');
+        }
+    });
+  }
+
+  function slugify(text) {
+    if (!text) return '';
+    return text.toString().toLowerCase().trim()
+      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
+  }
+
+  function buildTOC(tocEl) {
+    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
+    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
+    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
+    const root = document.querySelector(selector);
+
+    if (!root) {
+      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
+      tocEl.querySelector('.toc-empty').style.display = 'block';
+      return;
+    }
+
+    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
+      .filter(h => !tocEl.contains(h))
+      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
+
+    if (headings.length === 0) {
+      tocEl.querySelector('.toc-empty').style.display = 'block';
+      return;
+    }
+
+    const tocRoot = tocEl.querySelector('.toc-list');
+    tocRoot.innerHTML = '';
+
+    const idCounts = {};
+    headings.forEach(h => {
+      if (!h.id) {
+        let id = slugify(h.textContent);
+        if (!id) id = 'section';
+        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
+        else idCounts[id] = 1;
+        h.id = id;
+      }
+    });
+
+    // Build hierarchical tree
+    const stack = [{ level: 0, ul: tocRoot }];
+    headings.forEach((h, i) => {
+      const level = parseInt(h.tagName.substring(1));
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent.trim();
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+        history.replaceState(null, '', '#' + h.id);
+
+        // // Clicking on the TOC menu closes the TOC
+        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
+        // const toggle = tocEl.querySelector('.toc-toggle');
+        // wrapper.style.display = 'none';
+        // toggle.setAttribute('aria-expanded', 'false');
+        // toggle.textContent = '{ { include.btn_show } }';
+      });
+      li.appendChild(a);
+
+      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
+      const parent = stack[stack.length - 1].ul;
+      parent.appendChild(li);
+
+      const next = headings[i + 1];
+      if (next) {
+        const nextLevel = parseInt(next.tagName.substring(1));
+        if (nextLevel > level) {
+          const newUl = document.createElement('ul');
+          li.appendChild(newUl);
+          stack.push({ level, ul: newUl });
+        }
+      }
+    });
+
+    // Active Highlight
+    const links = tocRoot.querySelectorAll('a');
+    function onScroll() {
+      const fromTop = window.scrollY + offset + 1;
+      let current = headings[0];
+      for (let i = 0; i < headings.length; i++) {
+        if (headings[i].offsetTop <= fromTop) current = headings[i];
+      }
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.toc').forEach(toc => {
+      buildTOC(toc);
+      const toggle = toc.querySelector('.toc-toggle');
+      const wrapper = toc.querySelector('.toc-list-wrapper');
+
+      wrapper.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Abrir';
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        wrapper.style.display = expanded ? 'none' : 'block';
+        toggle.setAttribute('aria-expanded', (!expanded).toString());
+        toggle.textContent = expanded ? 'Abrir' : 'Fechar';
+      });
+
+      const tocTop = toc.offsetTop;
+
+      function handleScrollFix() {
+        if (window.innerWidth <= minLayoutWidth) {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.zIndex = '';
+          toc.style.width = '';
+          return;
+        }
+
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        // Fixes pinning behavior in Chrome
+        if (scrollTop >= tocTop) {
+          toc.classList.add('fixed');
+          toc.style.position = 'fixed';
+          toc.style.top = '0';
+          toc.style.zIndex = '9999';
+          // toc.style.width = toc.offsetWidth + 'px';
+        } else {
+          toc.classList.remove('fixed');
+          toc.style.position = '';
+          toc.style.top = '';
+          toc.style.width = '';
+        }
+
+        // // Automatically closes the TOC if it is open and scrolled to it.
+        // const rect = toc.getBoundingClientRect();
+        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
+        //   wrapper.style.display = 'none';
+        //   toggle.setAttribute('aria-expanded', 'false');
+        //   toggle.textContent = '{ { include.btn_show } }';
+        // }
+      }
+
+      window.addEventListener('scroll', handleScrollFix, { passive: true });
+      window.addEventListener('resize', handleScrollFix);
+      handleScrollFix();
+    });
+  });
+})();</script><p>Quer aprender Proxy Squid? Essa postagem irá te dar uma noção de como configurar o Squid em modo Intercept e bloquear palavras e urls através do mesmo em uma navegação web.</p><hr><blockquote><p>Nota: A partir da versão 3.1 do Squid Proxy, a palavra <code class="language-plaintext highlighter-rouge">transparent</code> onde é adotada para redirecionar todas requisições da porta 80 para a porta (3128) do Squid, e assim forçando os usuários a utilizarem o proxy, ficou obsoleto, deve-se substituir por <strong>intercept</strong>.</p></blockquote><hr><p><em>Sistema Operacional usado nesse artigo: <a href="http://releases.ubuntu.com/14.04/">Ubuntu 14.04 LTS</a></em></p><p>Se você tem uma rede de computadores ou até mesmo apenas uma maquina onde gostaria de gerenciar o acesso de conteúdo acessado pelo navegador, esta no artigo certo.</p><p>Existem programas que lhe permite fazer esse gerenciamento, mais a grande maioria são versões pagas, é nesse momento que você pensa em fazer pesquisas repetidas na web a procura de uma solução gratuita, prática e profissional. E nesse meio de pesquisas se você não encontrar o Squid Proxy, lhe aconselho a mudar para Marte (hehehe).</p><p><a href="http://www.squid-cache.org/">Squid Proxy</a> é um servidor proxy bastante conhecido especialmente para sistema GNU/Linux, e será esse camarada que vamos (se me acompanhar até o final desse artigo) instalar e configurar de uma maneira onde realize o gerenciamento via HTTP com <strike>Transparent</strike> <strong>Intercept</strong>, onde o usuário não conseguirá <em>“driblar”</em> o proxy.</p><p>Vamos la, primeiramente temos que instalar os pacotes que o Squid Proxy necessita para sua compilação.</p><ul><li><h3 id="dependências-de-compilação">Dependências de compilação</h3></li></ul><p><code class="language-plaintext highlighter-rouge">Executar comando como root (superusuário)</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">apt-get <span class="nb">install </span>gcc gcc cmake make g++ libssl-dev libcap-dev gawk c++ g++ gcc-multilib libc6 libc6-dev libpam-modules libpam-chroot libpam0g libpam0g-dev <span class="o">&amp;&amp;</span> apt-get <span class="nb">install </span>openssl<span class="k">*</span></code></pre></figure><p>Após a instalação, realizaremos o download do source do Squid proxy, no site oficial do mesmo, porem a versão que você terá que baixar tem que ser suportada pela versão de sua distribuição Linux, ou seja, não pode ser versão muita antiga (se sua distro for atual) e nem um muito nova (se sua distro for antiga). Comparando com a versão do meu <strong>Ubuntu</strong>, vou utilizar a versão <a href="http://www.squid-cache.org/Versions/v3/3.3/squid-3.3.8.tar.gz">3.3.8</a>, então fazemos o seguinte procedimento:</p><ul><li><h3 id="download-do-source-squid-proxy">Download do source Squid proxy</h3></li></ul><p><code class="language-plaintext highlighter-rouge">Executar comando como root (superusuário)</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /opt
+wget http://www.squid-cache.org/Versions/v3/3.3/squid-3.3.8.tar.gz</code></pre></figure><ul><li><h3 id="descompactando">Descompactando</h3></li></ul><p><code class="language-plaintext highlighter-rouge">Executar comando como root (superusuário)</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">tar </span>zxvf squid-3.3.8.tar.gz</code></pre></figure><ul><li><h3 id="entrando-na-pasta-para-configuração-compilação-e-instalação">Entrando na pasta para configuração, compilação e instalação</h3></li></ul><p><code class="language-plaintext highlighter-rouge">Executar comando como root (superusuário)</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>squid-3.3.8</code></pre></figure><ul><li><h3 id="configurando-a-instalação-do-squid-proxy">Configurando a instalação do Squid Proxy</h3></li></ul><p><code class="language-plaintext highlighter-rouge">Executar comando como root (superusuário)</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>./configure <span class="nt">--prefix</span><span class="o">=</span>/usr <span class="nt">--includedir</span><span class="o">=</span>/usr/include <span class="nt">--mandir</span><span class="o">=</span>/usr/share/man <span class="nt">--infodir</span><span class="o">=</span>/usr/share/info <span class="nt">--sysconfdir</span><span class="o">=</span>/etc <span class="nt">--localstatedir</span><span class="o">=</span>/var <span class="nt">--libexecdir</span><span class="o">=</span>/usr/lib/squid <span class="nt">--srcdir</span><span class="o">=</span><span class="nb">.</span> <span class="nt">--datadir</span><span class="o">=</span>/usr/share/squid <span class="nt">--sysconfdir</span><span class="o">=</span>/etc/squid <span class="nt">--mandir</span><span class="o">=</span>/usr/share/man <span class="nt">--with-logdir</span><span class="o">=</span>/var/log/squid <span class="nt">--with-pidfile</span><span class="o">=</span>/var/run/squid.pid <span class="nt">--with-filedescriptors</span><span class="o">=</span>65536 <span class="nt">--with-large-files</span> <span class="nt">--with-default-user</span><span class="o">=</span>proxy <span class="nt">--enable-ssl</span>
+</pre></td></tr></tbody></table></code></pre></figure><blockquote><p>Nota: Você simplesmente pode configurar o Squid Proxy com o comando <strong>./configure</strong>, porem a instalação sera realizada no diretório padrão do Squid. Com essas configurações acima, estamos mantendo uma estrutura de organização de instalação melhor para o Squid Proxy. Também estou usando o <strong>–enable-ssl</strong> e o <strong>–enable-ssl-crtd</strong>, onde dará suporte para SSL (HTTPS), caso queira utilizar o Squid com SSL futuramente. O que <strong>não</strong> vou fazer nesse artigo. Lembre-se: Em alguma distro, a variável <strong>–with-default-user</strong> pode ser squid ou proxy, ai depende de sua distro Linux.</p></blockquote><p>Se não tiver nenhuma mensagem relatando erro no final da configuração, pode realizar a compilação do Squid Proxy. A compilação demora em torno de 7 a 10 minutos, porem isso é relevante, dependerá da potência de sua máquina. A minha demorou em torno de 7 minutos com um processador Intel Core i3 segunda geração :)</p><ul><li><h3 id="compilando-squid-proxy">Compilando Squid Proxy</h3></li></ul><p><code class="language-plaintext highlighter-rouge">Executar comando como root (superusuário)</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">make</code></pre></figure><ul><li><h3 id="instalando-squid-proxy">Instalando Squid Proxy</h3></li></ul><p><code class="language-plaintext highlighter-rouge">Executar comando como root (superusuário)</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">make <span class="nb">install</span></code></pre></figure><ul><li><h3 id="permissões-para-o-usuário-padrão-do-squid">Permissões para o usuário padrão do Squid</h3></li></ul><p>Por padrão, nessa instalação, usamos o usuário <strong>proxy</strong>, que é o usuário responsável pelos diretórios de instalação de cache, log e execução do Squid, porem ainda NÃO foi realizado essa permissão para esse usuário, para isso faça:</p><p><code class="language-plaintext highlighter-rouge">Executar comando como root (superusuário)</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">chown </span>proxy. <span class="nt">-R</span> /var/log/squid
+<span class="nb">chown </span>proxy. <span class="nt">-R</span> /var/cache/squid</code></pre></figure><blockquote><p>Lembrete: Que o usuário padrão do Squid somente é <strong>proxy</strong> por que nas configurações de instalação do Squid, na variável <strong>–with-default-user</strong>, à coloquei como proxy, porem isso é relevante, em algumas distribuições, o usuário de execução do Squid pode ser outro, como o usuário <strong>squid</strong>.</p></blockquote><ul><li><h3 id="criando-uma-lista-de-bloqueio">Criando uma lista de bloqueio</h3></li></ul><p>Uma lista de bloqueio será especificamente para o Squid fazer a leitura da mesma e bloquear (ou liberar, dependendo das configurações) os respectivos sites ou palavras que se encontra na lista. Vamos cria-la no diretório <code class="language-plaintext highlighter-rouge">/etc/squid</code> com o nome de <strong>blacklist</strong> e coloque no seu conteúdo as palavras ou sites (sem o http), que queira bloquear, por exemplo assim:</p><p><strong>Arquivo:</strong> <code class="language-plaintext highlighter-rouge">/etc/squid/blacklist</code></p><figure class="highlight"><pre><code class="language-text" data-lang="text">papajogos.com.br
+clickjogos</code></pre></figure><blockquote><p>IMPORTANTE! Você não conseguirá bloquear sites que usam <strong>https</strong>, como por exemplo o <strong><a href="https://facebook.com">Facebook</a></strong>, pois essas configurações não suporta SSL. Se você quiser bloquear sites com HTTPS, terá que se submeter a configurações diferentes a essas no Squid, gerando chaves SSL e importando para o navegador.</p></blockquote><ul><li><h3 id="configurando-o-squid-proxy-arquivo-squidconf">Configurando o Squid Proxy (arquivo squid.conf)</h3></li></ul><p>Depois da instalação e demais, tem que realizar algumas configurações no arquivo responsável pela execução e monitoramento do Squid, que será no arquivo <strong>squid.conf</strong>. Utilizaremos uma configuração no arquivo <strong>squid.conf</strong> para rodar nosso Squid com opção de <strike>`transparent`</strike><code class="language-plaintext highlighter-rouge">intercept</code>.</p><blockquote><p>Com as configurações de instalação que foi feito no Squid, o arquivo <strong>squid. conf</strong> se encontra no diretório: <code class="language-plaintext highlighter-rouge">/etc/squid/squid.conf</code>, abra-o com um editor de sua preferência (usei o vim).</p></blockquote><p><strong>Arquivo:</strong> <code class="language-plaintext highlighter-rouge">/etc/squid/squid.conf</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+</pre></td><td class="code"><pre><span class="c">#</span>
+<span class="c"># Recommended minimum configuration:</span>
+<span class="c">#</span>
+
+<span class="c"># Example rule allowing access from your local networks.</span>
+<span class="c"># Adapt to list your (internal) IP networks from where browsing</span>
+<span class="c"># should be allowed</span>
+acl localnet src 10.0.0.0/8 <span class="c"># RFC1918 possible internal network</span>
+acl localnet src 172.16.0.0/12  <span class="c"># RFC1918 possible internal network</span>
+acl localnet src 192.168.0.0/16 <span class="c"># RFC1918 possible internal network</span>
+acl localnet src fc00::/7       <span class="c"># RFC 4193 local private network range</span>
+acl localnet src fe80::/10      <span class="c"># RFC 4291 link-local (directly plugged) machines</span>
+
+acl SSL_ports port 443
+acl Safe_ports port 80      <span class="c"># http</span>
+acl Safe_ports port 21      <span class="c"># ftp</span>
+acl Safe_ports port 443     <span class="c"># https</span>
+acl Safe_ports port 70      <span class="c"># gopher</span>
+acl Safe_ports port 210     <span class="c"># wais</span>
+acl Safe_ports port 1025-65535  <span class="c"># unregistered ports</span>
+acl Safe_ports port 280     <span class="c"># http-mgmt</span>
+acl Safe_ports port 488     <span class="c"># gss-http</span>
+acl Safe_ports port 591     <span class="c"># filemaker</span>
+acl Safe_ports port 777     <span class="c"># multiling http</span>
+acl CONNECT method CONNECT
+
+<span class="c"># Minha lista de bloqueios</span>
+acl acl_blacklist url_regex <span class="nt">-i</span> <span class="s2">"/etc/squid/blacklist"</span>
+http_access deny acl_blacklist
+
+<span class="c">#</span>
+<span class="c"># Recommended minimum Access Permission configuration:</span>
+<span class="c">#</span>
+<span class="c"># Deny requests to certain unsafe ports</span>
+http_access deny <span class="o">!</span>Safe_ports
+
+<span class="c"># Deny CONNECT to other than secure SSL ports</span>
+http_access deny CONNECT <span class="o">!</span>SSL_ports
+
+<span class="c"># Only allow cachemgr access from localhost</span>
+http_access allow localhost manager
+http_access deny manager
+
+<span class="c"># We strongly recommend the following be uncommented to protect innocent</span>
+<span class="c"># web applications running on the proxy server who think the only</span>
+<span class="c"># one who can access services on "localhost" is a local user</span>
+<span class="c">#http_access deny to_localhost</span>
+
+<span class="c">#</span>
+<span class="c"># INSERT YOUR OWN RULE(S) HERE TO ALLOW ACCESS FROM YOUR CLIENTS</span>
+<span class="c">#</span>
+
+<span class="c"># Example rule allowing access from your local networks.</span>
+<span class="c"># Adapt localnet in the ACL section to list your (internal) IP networks</span>
+<span class="c"># from where browsing should be allowed</span>
+http_access allow localnet
+http_access allow localhost
+
+<span class="c"># And finally deny all other access to this proxy</span>
+http_access deny all
+
+<span class="c"># Squid normally listens to port 3128</span>
+http_port 3128 intercept
+
+cache_effective_user proxy
+
+<span class="c"># Uncomment and adjust the following to add a disk cache directory.</span>
+cache_dir ufs var/cache/squid 100 16 256
+
+<span class="c"># Leave coredumps in the first cache dir</span>
+coredump_dir var/cache/squid
+
+<span class="c">#</span>
+<span class="c"># Add any of your own refresh_pattern entries above these.</span>
+<span class="c">#</span>
+refresh_pattern ^ftp:       1440    20% 10080
+refresh_pattern ^gopher:    1440    0%  1440
+refresh_pattern <span class="nt">-i</span> <span class="o">(</span>/cgi-bin/|<span class="se">\?</span><span class="o">)</span> 0 0%  0
+refresh_pattern <span class="nb">.</span>       0   20% 4320
+</pre></td></tr></tbody></table></code></pre></figure><p><strong>Algumas observações no arquivo <code class="language-plaintext highlighter-rouge">squid.conf</code>:</strong></p><blockquote><ul><li>1 - Observe as acls <strong>localnet</strong>. Essas ACLs são de sua rede local, se você usa DHCP em sua rede, provavelmente um desses IP será da sua rede local, agora se você usa um IP Estático, você deve obter a rede local dele. A rede local sempre termina com o <strong>0(zero)</strong> no final.</li><li>2 - As linhas:</li><li><strong>acl acl_blacklist url_regex -i “/etc/squid/blacklist”</strong></li><li><strong>http_access deny acl_blacklist</strong> ..devem existir caso você já criou sua lista de bloqueio. Saiba que a palavra <strong>deny</strong>, é responsável por bloqueio e a palava <strong>allow</strong>, responsável por permissão.</li><li>3 - Na linha <strong>http_port 3128 intercept</strong> terá que ter a palavra <strong>intercept</strong> (dependendo da versão do seu Squid).</li></ul></blockquote><ul><li><h3 id="criando-cache-executando-e-parando-o-squid-proxy">Criando cache, executando e parando o Squid Proxy</h3></li></ul><p>Precisamos criar o cache do Squid Proxy, faça no terminal:</p><p><code class="language-plaintext highlighter-rouge">Executar o comando como root (superusuário)</code></p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">squid <span class="nt">-z</span></code></pre></figure><blockquote><p>Caso não ocorreu nenhuma mensagem de erro(ERROR) ou alerta (WARNING), o cache do Squid já está criado.</p></blockquote><p>Nosso Squid praticamente está funcional, pois, basta ativa-lo. Para isso, façamos o seguinte no terminal:</p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">squid</code></pre></figure><blockquote><p>Nota: Toda vez que alterar o arquivo <strong>squid.conf</strong> ou suas listas de bloqueio e permissão, rode o comando …</p></blockquote><figure class="highlight"><pre><code class="language-bash" data-lang="bash">squid <span class="nt">-k</span> reconfigure</code></pre></figure><p>… para reativas as novas configurações feitas. Caso queira parar o Squid, use o comando:</p><figure class="highlight"><pre><code class="language-text" data-lang="text">squid -k kill</code></pre></figure><ul><li><h3 id="redirecionado-a-porta-80-para-a-porta-3128-do-squid-proxy">Redirecionado a porta 80 para a porta 3128 do Squid Proxy</h3></li></ul><p>Para o Squid funcionar com a opção <strike>`transparent`</strike><code class="language-plaintext highlighter-rouge">intercept</code>, precisamos redirecionar a porta de acesso a internet, que é porta <strong>80</strong>, para a porta padrão do Squid, que é a porta <strong>3128</strong>. Isso pode ser feito com o <strong>IPTables</strong>, que por padrão vem na maioria das distro Linux.</p><p>O <strong>IPTables</strong> fornece ao sistema operacional Linux as funções de firewall, pois o mesmo é uma ferramenta para criar e administrar regras e assim filtrar pacotes de redes.</p><blockquote><p>Sugiro que leia a documentação do <strong>IPaTbles</strong> ( pode-se encontrar <a href="http://www.guiafoca.org/cgs/guia/avancado/ch-fw-iptables.html">aqui</a> ) para ter uma noção de seu funcionamento.</p></blockquote><p>Vamos fazer o redirecionamento das portas com as duas linhas abaixo:</p><figure class="highlight"><pre><code class="language-text" data-lang="text">iptables -t nat -A PREROUTING  -p tcp  -i eth0 --dport 80 -j REDIRECT --to-port 3128</code></pre></figure><p>Sendo que <strong>eth0</strong> deve ser a interface da placa de rede no qual irá redirecionar a porta. Caso sua placa de rede que tem o acesso a internet seja diferente dessa, troque-a. Para saber, digite no terminal: <code class="language-plaintext highlighter-rouge">ifconfig</code>.</p><p>Caso queira que o Squid entre em vigor na maquina servidor, execute as seguintes linhas no terminal para o IPTables:</p><blockquote><p>Nessa ordem, pois o IPTables lê de cima para baixo</p></blockquote><figure class="highlight"><pre><code class="language-text" data-lang="text">iptables -t nat -A OUTPUT -m multiport -p tcp --dports 80,3128 -m owner --uid-owner 13 -j ACCEPT
+
+iptables -t nat -A OUTPUT -p tcp --dport 80 -j REDIRECT --to-port 3128</code></pre></figure><blockquote><p>OBS: Na primeira linha, no parâmetro <strong>–uid-owner</strong>, 13 é o UID do usuário <strong>proxy</strong> que é o usuário de execução do Squid.</p></blockquote><p>Com essas configurações, todo acesso a internet através do navegador será monitoriado pelo Squid. Lembre-se que esse artigo é apenas uma base de que você pode fazer com o servidor de proxy Squid.</p><p>Vou me despedindo aqui pessoal, espero que essa leitura foi útil para seu conhecimento. Até a próxima.</p></div><div class="row post-tags"><ul class="tag-list"><strong>[ tags ]:</strong>&nbsp;&nbsp;<li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/linux">linux</a></li><strong>&nbsp;&nbsp;.&nbsp;&nbsp;</strong><li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/proxy">proxy</a></li><strong>&nbsp;&nbsp;.&nbsp;&nbsp;</strong><li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/server">server</a></li><strong>&nbsp;&nbsp;.&nbsp;&nbsp;</strong><li class="tag-list__item"><a class="tag-list__link" href="/blog/tags/squid">squid</a></li><strong>&nbsp;&nbsp;.&nbsp;&nbsp;</strong></ul></div></div><div class="post-end text-center">/&nbsp;/&nbsp;/&nbsp;/&nbsp;&nbsp;end of post&nbsp;&nbsp;/&nbsp;/&nbsp;/&nbsp;/</div><div class="row comments"><h1 class="comments-title">[&nbsp;comentários&nbsp;]</h1><div class="row comments-content"><script src="https://giscus.app/client.js" data-repo="williamcanin/williamcanin.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnk0MDMyOTUzOQ==" data-category-id="DIC_kwDOAmdhQ84CwLFu" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="noborder_light" data-lang="pt" crossorigin="anonymous" async></script></div></div><div class="row related-posts"><h3 class="related-posts-title">[&nbsp;postagens relacionadas&nbsp;]</h3><ul class="related-posts-list"><li class="related-posts-list__item"><span class="related-posts-list__meta">21 Jun, 2018</span>&nbsp;»&nbsp;<a class="related-posts-list__link" href="/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/">Instalando Python tarball em qualquer sistema Linux.</a></li><li class="related-posts-list__item"><span class="related-posts-list__meta">16 Out, 2017</span>&nbsp;»&nbsp;<a class="related-posts-list__link" href="/blog/criptografando-a-particao-home-no-linux/">Criptografando a partição HOME no Linux</a></li><li class="related-posts-list__item"><span class="related-posts-list__meta">23 Ago, 2015</span>&nbsp;»&nbsp;<a class="related-posts-list__link" href="/blog/linux-compilando-e-instalando-o-kernel-em-modo-tradicional/">Linux: Compilando e instalando o kernel em modo tradicional</a></li><li class="related-posts-list__item"><span class="related-posts-list__meta">26 Jul, 2015</span>&nbsp;»&nbsp;<a class="related-posts-list__link" href="/blog/linux-boot-a-start-job-is-running-for-dev-disk-by/">Linux Boot: A start job is running for dev-disk-by</a></li><li class="related-posts-list__item"><span class="related-posts-list__meta">29 Abr, 2015</span>&nbsp;»&nbsp;<a class="related-posts-list__link" href="/blog/arquivos-de-execucao-no-linux/">Arquivos de execução no Linux</a></li></ul></div></article></main><footer class="container-fluid fixed-bottom footer"><div class="row top"><div class="col-md d-flex justify-content-end"><a id="top-link" class="top-link" href="#top">^</a></div></div><div class="row footer-wrapper"><div class="col-md footer-copyright-wrap"><div class="footer-copyright">©&nbsp;Hey, I'm William Canin &nbsp;2015-2025&nbsp;-&nbsp;Todos os direitos reservados</div></div><div class="col-md footer-message-wrap"><div class="footer-message">Doing stuff on the web since 2007</div></div><div class="col-md footer-made-by-wrap"><div class="footer-made-by">Using the <a href="https://github.com/williamcanin/rawfeed" target="_blank" rel="noopener noreferrer">rawfeed</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener noreferrer">Jekyll</a>.</div></div></div></footer></div></body><script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script>window.giscusThemes = {
+      light: "noborder_light",
+      dark: "noborder_gray"
+    };</script><script src="/assets/js/default.js"></script></html>
