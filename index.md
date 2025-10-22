@@ -1,11 +1,9 @@
 ---
-layout: main
+layout: man
 text_center: true
 published: true
 permalink: / # do not change
 ---
-
-{%- assign year = site.time | date: "%Y" -%}
 
 # NAME
 
@@ -40,10 +38,6 @@ permalink: / # do not change
 > Prefere contato usando e-mail, através de
 
 > **william.costa.canin@gmail.com**
-
-## COPYRIGHT
-
-> Copyright &copy; {{year}} - Todos os direitos reservados.
 
 <!-- ## SEE ALSO
 

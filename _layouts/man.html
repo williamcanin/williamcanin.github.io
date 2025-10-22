@@ -24,11 +24,19 @@
   <style type="text/css">* { font-size: 12px; font-family: monospace; } a { color: #00e;} .container { max-width: 400px; }</style>
 </head>
 <body>
+  {%- assign year = site.time | date: "%Y" -%}
+
   <div class="container">
     $ man william
 
     <p>WILLIAM(1)</p>
     {{ content }}
+
+  <h2>COPYRIGHT</h2>
+  <blockquote>
+    &copy; William Canin 2015-{{ year }} - Todos os direitos reservados.
+  </blockquote>
+
     <p style="margin-top: 80px"><i>"Simplicity is a feature, not a bug."</i></p>
   </div>
 </body>
