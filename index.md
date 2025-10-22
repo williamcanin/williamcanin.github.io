@@ -1,9 +1,13 @@
 ---
-layout: man
+layout: home
 text_center: true
 published: true
 permalink: / # do not change
 ---
+
+{%- assign year = site.time | date: "%Y" -%}
+
+WILLIAM(1)
 
 # NAME
 
@@ -39,9 +43,15 @@ permalink: / # do not change
 
 > **william.costa.canin@gmail.com**
 
+## COPYRIGHT
+
+> &copy; William Canin 2015-{{ year }} - Todos os direitos reservados.
+
 <!-- ## SEE ALSO
 
 > Momentos de lazer em [pixels](https://williamcanin.github.io/pixels){:target="_blank"}. -->
+
+<p style="margin-top: 20px"><i>"Simplicity is a feature, not a bug."</i></p>
 
 
 

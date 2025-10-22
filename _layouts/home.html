@@ -1,58 +1,228 @@
 ---
-layout: default
+layout: null
 ---
 
-{%- if site.home.terminal.enable and page.url == "/" -%}
-<div class="d-flex justify-content-center align-items-center mb-5 home home-terminal">
-  <div id="terminal" class="terminal">
-    <div class="terminal-header">
-      <div class="terminal-header__btn terminal-header__close" title="close"></div>
-      <div class="terminal-header__btn terminal-header__min" title="minimize"></div>
-      <div class="terminal-header__btn terminal-header__max" title="maximize"></div>
-      <div class="terminal-header__title">{{ site.strings.home.terminal.user }}@{{ site.strings.home.terminal.hostname }}</div>
-    </div>
+<!DOCTYPE html>
+<html id="top" lang="{{ site.lang | default: 'en' }}" data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Canin</title>
+    <meta name="description" content="thoughts on programming, digital wellbeing, linux">
+    <meta name="author" content="William Canin">
+    <meta property="og:title" content="William Canin">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:description" content="thoughts on programming, digital wellbeing, linux">
+    <link rel="canonical" href="https://williamcanin.github.io">
+    <meta property="og:url" content="https://williamcanin.github.io">
+    <meta property="og:site_name" content="William Canin">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta property="twitter:title" content="William Canin">
+    <meta name="robots" content="index, follow">
 
-    <div id="screen" class="terminal-screen">
-      <div id="home-content" style="display:none !important;">
-        {{ content }}
+    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
+     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+     <!-- <link rel="stylesheet" href="{{ '/assets/css/only-terminal.css' | relative_url }}"> -->
+
+    <style type="text/css">* { font-size: 12px; font-family: monospace; } a { color: #00e;} .home-terminal { max-width: 400px !important; }</style>
+  </head>
+  <body>
+
+  <div class="d-flex justify-content-center align-items-center mb-5 home home-terminal">
+    <div id="terminal" class="terminal terminal-fullscreen">
+      <div id="screen" class="terminal-screen">
+        <div id="home-content" style="display: none !important;">
+          <div class="wrap-term">{{ content }}</div>
+        </div>
       </div>
-
-      <div id="terminal-screen--socials" style="display:none">
-        {% assign links = site.socials.links %}<strong>.&nbsp;</strong>
-        {% for item in links %}
-          <a class="socials-link" title="{{ item.title }}" href="{{ item.url }}" target="_blank">
-            {{ item.title }}
-          </a><strong>&nbsp;.&nbsp;</strong>
-        {% endfor %}
-      </div>
-
     </div>
   </div>
-</div>
 
-<div class="home-text">
-  <div class="container home">
-    <div class="row">
-      <div class="content" style="{%- if page.text_center -%} text-align: center; {%- endif -%}">
-        {{ content }}
-      </div>
-    </div>
-  </div>
-  {%- include socials pos="center" -%}
-</div>
+  <!-- Scripts -->
+  <script src="{{ '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/default.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/terminal.js' | relative_url }}"></script>
 
-{%- else -%}
-<div class="container home">
-  <div class="row">
-    <div class="content" style="{%- if page.text_center -%} text-align: center; {%- endif -%}">
-      {{ content }}
-    </div>
-  </div>
-</div>
-{%- endif -%}
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const screen = document.getElementById('screen');
+      const terminal = document.getElementById("terminal");
+      const socialsEl = document.getElementById("terminal-screen--socials");
 
-{%- if site.home.terminal.enable == false -%}
-  {%- if page.url == "/" and site.socials.enable -%}
-    {%- include socials pos="center" -%}
-  {%- endif -%}
-{%- endif -%}
+      const commands = {
+        help: `{{ site.strings.home.terminal.commands }}`,
+        about: document.getElementById("home-content").innerHTML,
+        socials: socialsEl ? socialsEl.innerHTML : `{{ site.strings.home.terminal.no_socials }}`,
+      };
+
+      function createInputLine() {
+        const line = document.createElement('div');
+        line.className = 'line';
+
+        const prompt = document.createElement('span');
+        prompt.className = 'prompt';
+        prompt.textContent = `$`;
+
+        // wrapper para conter input, cursor e measure
+        const wrapper = document.createElement('span');
+        wrapper.className = 'input-wrapper';
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'input';
+        input.placeholder = `{{ site.strings.home.terminal.welcome }}`;
+        input.spellcheck = false;
+        input.autocomplete = 'off';
+        input.autocorrect = 'off';
+        input.autocapitalize = 'off';
+
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor';
+
+        const measure = document.createElement('span');
+        measure.className = 'measure';
+
+        wrapper.appendChild(input);
+        wrapper.appendChild(cursor);
+        wrapper.appendChild(measure);
+
+        line.appendChild(prompt);
+        line.appendChild(wrapper);
+        screen.appendChild(line);
+
+        input.focus();
+        screen.scrollTop = screen.scrollHeight;
+
+        // Updates the fake cursor position based on the input's selectionStart
+        function updateCursor() {
+          const sel = input.selectionStart || 0;
+          // measure the text to the position of the caret
+          measure.textContent = input.value.slice(0, sel);
+          const textWidth = measure.offsetWidth; // largura do texto sem scroll
+          const visibleLeft = textWidth - input.scrollLeft;
+          cursor.style.left = visibleLeft + 'px';
+
+          // ensure the caret is visible (for long texts): adjust input's scrollLeft
+          const paddingRight = 10;
+          if (textWidth - input.scrollLeft > input.clientWidth - paddingRight) {
+            input.scrollLeft = textWidth - input.clientWidth + paddingRight;
+            cursor.style.left = (textWidth - input.scrollLeft) + 'px';
+          } else if (textWidth < input.scrollLeft) {
+            input.scrollLeft = textWidth;
+            cursor.style.left = (textWidth - input.scrollLeft) + 'px';
+          }
+        }
+
+        // show/hide cursor animation as focus changes
+        function onFocus() { cursor.style.opacity = '1'; updateCursor(); }
+        function onBlur()  { cursor.style.opacity = '0'; }
+
+        input.addEventListener('input', updateCursor);
+        input.addEventListener('keydown', (e) => {
+          // Update position on keys that do not trigger input immediately (arrows, delete, etc.)
+          setTimeout(updateCursor, 0);
+
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            const cmd = input.value.trim().toLowerCase();
+            if (cmd) {
+              // remove input/cursor/measure and place fixed text
+              wrapper.removeChild(input);
+              wrapper.removeChild(cursor);
+              wrapper.removeChild(measure);
+              const cmdText = document.createElement('span');
+              cmdText.textContent = cmd;
+              wrapper.appendChild(cmdText);
+              processCommand(cmd);
+            } else {
+              // if you enter without command, it just creates a new empty line (with prompt)
+              wrapper.removeChild(input);
+              wrapper.removeChild(cursor);
+              wrapper.removeChild(measure);
+              const blank = document.createElement('span');
+              blank.textContent = '';
+              wrapper.appendChild(blank);
+            }
+            // New linr input
+            createInputLine();
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            screen.innerHTML = '';
+            createInputLine();
+          }
+        });
+
+        // arrows, mouse click, mouseup (position caret), etc.
+        input.addEventListener('keyup', updateCursor);
+        input.addEventListener('click', () => {
+          // updates after click (selectionStart already set)
+          setTimeout(updateCursor, 0);
+        });
+        input.addEventListener('mouseup', () => setTimeout(updateCursor, 0));
+        input.addEventListener('focus', onFocus);
+        input.addEventListener('blur', onBlur);
+
+        updateCursor();
+      }
+
+      // processes commands
+      function processCommand(cmd) {
+        switch(true){
+          case cmd === 'help': commandsPrint(commands.help, mode='html'); break;
+          case cmd === 'date': commandsPrint(new Date().toString(), mode='text'); break;
+          // case cmd.startsWith('echo '): commandsPrint(cmd.split(' ').slice(1).join(' ')); break;
+          case cmd === 'man william': writeLineHTML(commands.about); break;
+          case cmd === 'clear': screen.innerHTML=''; break;
+          default: if(cmd) commandsPrint(cmd + `{{ site.strings.home.terminal.error }}`, mode='text');
+        }
+      }
+
+      function writeLineHTML(content, mode = 'html') {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'line-wrapper';
+
+        if (mode === 'html') {
+          wrapper.innerHTML = content;
+        } else {
+          wrapper.textContent = content;
+        }
+        screen.appendChild(wrapper);
+        screen.scrollTop = screen.scrollHeight;
+      }
+
+      function commandsPrint(text, mode = 'html') {
+        // creates the wrapper to group all the lined
+        const wrapper = document.createElement('div');
+        wrapper.className = 'line-wrapper';
+
+        text.split('\n').forEach((t) => {
+          const line = document.createElement('div');
+          line.className = 'line';
+          if (mode === 'html') {
+            line.innerHTML = t;
+          } else {
+            line.textContent = t;
+          }
+          wrapper.appendChild(line);
+        });
+
+        screen.appendChild(wrapper);
+        screen.scrollTop = screen.scrollHeight;
+      }
+
+      // start terminal
+      createInputLine();
+
+      // when clicking on the terminal, it always focuses on the last existing input
+      terminal.addEventListener("click", (e) => {
+        // avoids focusing when clicking a header button, etc.
+        const lastInput = screen.querySelector('.input:last-of-type');
+        if (lastInput) lastInput.focus();
+      });
+    });
+  </script>
+</body>
+</html>

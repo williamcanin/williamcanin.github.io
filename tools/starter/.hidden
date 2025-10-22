@@ -1,0 +1,10 @@
+node_modules
+tools
+blog
+Gemfile
+Gemfile.lock
+gulpfile.mjs
+404.html
+package.json
+package-lock.json
+Rakefile
