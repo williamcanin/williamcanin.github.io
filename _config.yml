@@ -233,7 +233,7 @@ footer:
 
 # section: [maintenance]
 maintenance:
-  enable: false
+  enable: true
   gif: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExczV3aGMxcnAzdnJ1eWp3cjk5OXdhdTYzdzB0dWVlMGFkbTd2ZDR0ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jwKC0qlOoXmcLDB4vC/giphy.gif"
   title: "Em manutenção"
   subtitle: |
