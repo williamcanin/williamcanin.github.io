@@ -50,7 +50,7 @@ google:
 # section: [avatar]
 # your website image or logo
 avatar:
-  open: true
+  open: false
   flip: true
   # note: the image (.jpg|.png) will be searched in the directory: assets/images/
   image:
