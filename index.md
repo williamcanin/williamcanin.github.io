@@ -24,7 +24,7 @@ permalink: / # do not change
 
 ## WEBLOG
 
-> Escreve algumas coisas em um weblog, que você acessa clicando [aqui](https://williamcanin.github.io/blog){:target="_blank"}.
+> Escreve algumas coisas no weblog dele, que você acessa clicando [aqui](https://williamcanin.github.io/blog){:target="_blank"}.
 
 ## SOCIAL NETWORKS
 
