@@ -4,15 +4,15 @@ published: true
 permalink: / # do not change
 ---
 
-# NOME
+# NAME
 
 > William Canin
 
-## SINOPSE
+## SYNOPSIS
 
 > thoughts on programming, digital wellbeing, linux
 
-## DESCRIÇÃO
+## DESCRIPTION
 
 > Ele cria e apaga código de computador **desde 2010**. Geralmente nas linguagens Rust, Python e Javascript. Mas já usou outras.
 
@@ -26,13 +26,13 @@ permalink: / # do not change
 
 > Escreve algumas coisas em um weblog, que você acessa clicando [aqui](https://williamcanin.github.io/blog){:target="_blank"}.
 
-## REDE SOCIAIS
+## SOCIAL NETWORKS
 
 > ~~Facebook~~
 
 > ~~Instagram~~
 
-## CONTATO
+## CONTACT
 
 > Prefere contato usando e-mail, através de
 
