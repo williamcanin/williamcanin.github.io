@@ -153,12 +153,12 @@ strings:
       no_socials: "Rede socials não encontrada"
       commands: | # Do not remove the <span>, just change the content
         <span id="mcmd">Comandos</span><span id="mdesc">Descrição</span>
-        man william --------- Manual de 'william'
+        man william --------- Mostrar manual de 'william'
         color --light ------- Mudar terminal para modo claro
         color --dark -------- Mudar terminal para modo escuro
         date ---------------- Imprimir a data e hora do sistema
         help ---------------- Imprimir este menu
-        clear --------------- Limpar a tela do terminal (ou Precione Esc)
+        clear --------------- Limpar a tela do terminal (ou Precionar Esc)
   blog:
     subtitle: "postagens"
     search:
