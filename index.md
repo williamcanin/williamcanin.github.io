@@ -26,7 +26,7 @@ permalink: / # do not change
 
 > Escreve algumas coisas em um weblog, que você acessa clicando [aqui](https://williamcanin.github.io/blog){:target="_blank"}.
 
-## REDE SOCIALS
+## REDE SOCIAIS
 
 > ~~Facebook~~
 
