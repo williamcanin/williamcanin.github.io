@@ -29,7 +29,7 @@ WILLIAM(1)
 
 ## WEBLOG
 
-> Escreve algumas coisas no weblog, clicando [aqui](/blog/) você acessa.
+> Escreve algumas coisas no weblog dele, clicando [aqui](/blog/) você acessa.
 
 ## SOCIAL NETWORKS
 
