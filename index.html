@@ -196,6 +196,7 @@ clear --------------- Limpar a tela do terminal (ou Precionar Esc)
           --dark --------------- Mudar terminal para modo escuro
           `, mode='html'); break;
           case cmd === 'date': commandsPrint(dateShow(), mode='text'); break;
+          case cmd === 'man': commandsPrint("Use: man william", mode='html'); break;
           // case cmd.startsWith('echo '): commandsPrint(cmd.split(' ').slice(1).join(' ')); break;
           case cmd === 'man william': writeLineHTML(commands.about); break;
           case cmd === 'clear': screen.innerHTML=''; break;
