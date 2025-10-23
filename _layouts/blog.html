@@ -35,9 +35,7 @@ layout: default
           {%- else -%}
             <span class="blog-list__meta">{{ post.date | date: "%b %-d, %Y" }}</span>&nbsp;»&nbsp;
           {%- endif -%}
-          <a class="blog-list__link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
+          <a class="blog-list__link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
           {%- if post.draft -%}
             <span class="draft-badge">[&nbsp;this is a draft&nbsp;]</span>
           {%- endif -%}
