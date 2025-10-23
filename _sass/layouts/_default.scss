@@ -4,6 +4,9 @@
 
   .content {
     margin-bottom: 30px !important;
+    border: 2px dotted;
+    padding: 20px 0px;
+    background-color: var(--content-bg);
   }
 
   .content code,

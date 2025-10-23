@@ -6,7 +6,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 
-  font: 15.34px helvetica, arial, clean, sans-serif !important;
+  font: 15.34px monospace !important;
   user-select: none;
 
   /* impede selecionar texto no site */
@@ -24,7 +24,7 @@ body {
 
   a {
     color: var(--primary-color);
-    font-weight: bold;
+    font-weight: normal !important;
 
     &:hover {
       color: var(--text-color);

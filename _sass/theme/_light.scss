@@ -3,7 +3,8 @@ $theme-colors: (
   // bg default: #f3f3f3
   text: #020202,
   text-muted: #3e3e3e,
-  primary: #a00,
+  // primary default: #a00
+  primary: blue,
   shadow-color: rgba(0, 0, 0, 0.1),
   code-color: #db3688,
   code-block-header-color: #f5f5f5,
@@ -53,4 +54,5 @@ $theme-colors: (
   resume-title-text-color: black,
   resume-content-text-color: #222,
   resume-text-muted-color: #555,
+  content-bg: #ffffff,
 );

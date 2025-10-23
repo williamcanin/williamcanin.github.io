@@ -70,6 +70,7 @@ layout:
   --resume-content-text-color: #{theme.theme-color(resume-content-text-color, light)};
   --resume-text-muted-color: #{theme.theme-color(resume-text-muted-color, light)};
   --resume-border-color: #{theme.theme-color(resume-border-color, light)};
+  --content-bg: #{theme.theme-color(content-bg, light)};
 }
 
 :root[data-theme="dark"] {
@@ -125,4 +126,5 @@ layout:
   --resume-content-text-color: #{theme.theme-color(resume-content-text-color, dark)};
   --resume-text-muted-color: #{theme.theme-color(resume-text-muted-color, dark)};
   --resume-border-color: #{theme.theme-color(resume-border-color, dark)};
+  --content-bg: #{theme.theme-color(content-bg, dark)};
 }
