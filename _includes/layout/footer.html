@@ -16,7 +16,7 @@
     <div class="col-md footer-copyright-wrap">
       {%- assign year = site.time | date: "%Y" -%}
       {%- assign since = site.strings.footer.copyright.since -%}
-    <div class="footer-copyright">©&nbsp;{{ site.title | default: theme_name }}&nbsp;{{ since }}{%- if since -%}-{%- endif -%}{{year}}&nbsp;-&nbsp;{{ site.strings.footer.copyright.message }}</div>
+    <div class="footer-copyright">©&nbsp;{{ "William Canin" | default: theme_name }}&nbsp;{{ since }}{%- if since -%}-{%- endif -%}{{year}}&nbsp;-&nbsp;{{ site.strings.footer.copyright.message }}</div>
     </div>
     {%- endif -%}
 
