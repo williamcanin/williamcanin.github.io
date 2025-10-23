@@ -27,7 +27,7 @@
             {%- if index.layout == "blog" -%}
               <span>[&nbsp;<a class="{% if page.url == "/" or page.url == "/index.html" %}menu-active{% endif %}" href="{{home_url}}">{{ site.strings.menu.blog.title | default: "blog" | downcase }}</a>&nbsp;]</span>
             {%- else -%}
-              <span>[&nbsp;{{site.strings.menu.home.emoji}}<a class="{% if page.url == "/" or page.url == "/index.html" %}menu-active{% endif %}" href="{{home_url}}">{{ site.strings.menu.home.title | default: "home" | downcase }}</a>&nbsp;]</span>
+              <span>[&nbsp;<a class="{% if page.url == "/" or page.url == "/index.html" %}menu-active{% endif %}" href="{{home_url}}"><i class="fa-solid fa-terminal"></i></a>&nbsp;]</span>
             {%- endif -%}
           </div>
         </div>

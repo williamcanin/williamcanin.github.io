@@ -154,6 +154,7 @@ strings:
       commands: | # Do not remove the <span>, just change the content
         <span id="mcmd">Comandos</span><span id="mdesc">Descrição</span>
         man william --------- Mostrar manual de 'william'
+        weblog -------------- Acessar o Weblog
         color --light ------- Mudar terminal para modo claro
         color --dark -------- Mudar terminal para modo escuro
         date ---------------- Imprimir a data e hora do sistema
