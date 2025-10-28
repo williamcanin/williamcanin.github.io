@@ -6,7 +6,7 @@ description: |
   Currículo de William Canin
 emoji: 📜
 in_menu: true
-published: true
+published: false
 permalink: /cv/
 ---
 
