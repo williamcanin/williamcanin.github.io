@@ -68,6 +68,7 @@ head:
       - https://www.google.com
       - https://media0.giphy.com
       - https://media4.giphy.com
+      - https://media.giphy.com
       - https://github.githubassets.com
     script-src:
       - https://www.google.com
