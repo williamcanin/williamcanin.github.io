@@ -1,204 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" hreflang="pt" /><updated>2025-10-23T02:10:02+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><title type="html">Hey, I’m William Canin</title><subtitle>thoughts on programming, digital wellbeing, linux</subtitle><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2025-10-28T00:51:19+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
+
   <div class="toc-head">
     <h2>Índice</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button">Fechar</button>
+    <button class="toc-toggle" aria-expanded="true" type="button"></button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
     <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
-
-<script>
-(function () {
-  const minLayoutWidth = 1830;
-
-  const toc = document.getElementById('toc');
-  if (toc) {
-    const sentinel = document.createElement('div');
-    toc.parentNode.insertBefore(sentinel, toc);
-
-    function shouldApplyFixed() {
-      return window.innerWidth > minLayoutWidth;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (shouldApplyFixed()) {
-          if (!entry.isIntersecting) {
-            toc.classList.add('toc-fixed');
-          } else {
-            toc.classList.remove('toc-fixed');
-          }
-        } else {
-          toc.classList.remove('toc-fixed');
-        }
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-
-    window.addEventListener('resize', () => {
-        if (!shouldApplyFixed()) {
-            toc.classList.remove('toc-fixed');
-        }
-    });
-  }
-
-  function slugify(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase().trim()
-      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
-  }
-
-  function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
-    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
-    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
-    const root = document.querySelector(selector);
-
-    if (!root) {
-      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
-      .filter(h => !tocEl.contains(h))
-      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
-
-    if (headings.length === 0) {
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const tocRoot = tocEl.querySelector('.toc-list');
-    tocRoot.innerHTML = '';
-
-    const idCounts = {};
-    headings.forEach(h => {
-      if (!h.id) {
-        let id = slugify(h.textContent);
-        if (!id) id = 'section';
-        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
-        else idCounts[id] = 1;
-        h.id = id;
-      }
-    });
-
-    // Build hierarchical tree
-    const stack = [{ level: 0, ul: tocRoot }];
-    headings.forEach((h, i) => {
-      const level = parseInt(h.tagName.substring(1));
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + h.id);
-
-        // // Clicking on the TOC menu closes the TOC
-        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
-        // const toggle = tocEl.querySelector('.toc-toggle');
-        // wrapper.style.display = 'none';
-        // toggle.setAttribute('aria-expanded', 'false');
-        // toggle.textContent = '{ { include.btn_show } }';
-      });
-      li.appendChild(a);
-
-      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
-      const parent = stack[stack.length - 1].ul;
-      parent.appendChild(li);
-
-      const next = headings[i + 1];
-      if (next) {
-        const nextLevel = parseInt(next.tagName.substring(1));
-        if (nextLevel > level) {
-          const newUl = document.createElement('ul');
-          li.appendChild(newUl);
-          stack.push({ level, ul: newUl });
-        }
-      }
-    });
-
-    // Active Highlight
-    const links = tocRoot.querySelectorAll('a');
-    function onScroll() {
-      const fromTop = window.scrollY + offset + 1;
-      let current = headings[0];
-      for (let i = 0; i < headings.length; i++) {
-        if (headings[i].offsetTop <= fromTop) current = headings[i];
-      }
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toc').forEach(toc => {
-      buildTOC(toc);
-      const toggle = toc.querySelector('.toc-toggle');
-      const wrapper = toc.querySelector('.toc-list-wrapper');
-
-      wrapper.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Abrir';
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        wrapper.style.display = expanded ? 'none' : 'block';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        toggle.textContent = expanded ? 'Abrir' : 'Fechar';
-      });
-
-      const tocTop = toc.offsetTop;
-
-      function handleScrollFix() {
-        if (window.innerWidth <= minLayoutWidth) {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.zIndex = '';
-          toc.style.width = '';
-          return;
-        }
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Fixes pinning behavior in Chrome
-        if (scrollTop >= tocTop) {
-          toc.classList.add('fixed');
-          toc.style.position = 'fixed';
-          toc.style.top = '0';
-          toc.style.zIndex = '9999';
-          // toc.style.width = toc.offsetWidth + 'px';
-        } else {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.width = '';
-        }
-
-        // // Automatically closes the TOC if it is open and scrolled to it.
-        // const rect = toc.getBoundingClientRect();
-        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
-        //   wrapper.style.display = 'none';
-        //   toggle.setAttribute('aria-expanded', 'false');
-        //   toggle.textContent = '{ { include.btn_show } }';
-        // }
-      }
-
-      window.addEventListener('scroll', handleScrollFix, { passive: true });
-      window.addEventListener('resize', handleScrollFix);
-      handleScrollFix();
-    });
-  });
-})();
-</script>
 
 <p>Olá <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px" />, bem vindo a mais um post no meu weblog. Vamos começar a leitura?!</p>
 
@@ -916,207 +726,17 @@ Error downloading sources: spotify
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">yay <span class="nt">-S</span> <span class="nt">--mflags</span> <span class="nt">--skipinteg</span> spotify</code></pre></figure>
 
-<p>Até a próxima ;)</p>]]></content><author><name>William C. Canin</name></author><category term="archlinux" /><category term="keys" /><summary type="html"><![CDATA[Você já deve ter se deparado com problemas de chaves públicas ao instalar um pacote no Arch Linux, certo? Pois esse post de dica rápida pode ajudar a você a resolver isso.]]></summary></entry><entry><title type="html">Transações no banco de dados através do Shell script</title><link href="https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do Shell script" /><published>2018-08-28T08:23:33+00:00</published><updated>2018-08-28T08:23:33+00:00</updated><id>https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<p>Até a próxima ;)</p>]]></content><author><name>William C. Canin</name></author><category term="archlinux" /><category term="keys" /><summary type="html"><![CDATA[Você já deve ter se deparado com problemas de chaves públicas ao instalar um pacote no Arch Linux, certo? Pois esse post de dica rápida pode ajudar a você a resolver isso.]]></summary></entry><entry><title type="html">Transações no banco de dados através do Shell script</title><link href="https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do Shell script" /><published>2018-08-28T08:23:33+00:00</published><updated>2018-08-28T08:23:33+00:00</updated><id>https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
+
   <div class="toc-head">
     <h2>Índice</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button">Fechar</button>
+    <button class="toc-toggle" aria-expanded="true" type="button"></button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
     <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
-
-<script>
-(function () {
-  const minLayoutWidth = 1830;
-
-  const toc = document.getElementById('toc');
-  if (toc) {
-    const sentinel = document.createElement('div');
-    toc.parentNode.insertBefore(sentinel, toc);
-
-    function shouldApplyFixed() {
-      return window.innerWidth > minLayoutWidth;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (shouldApplyFixed()) {
-          if (!entry.isIntersecting) {
-            toc.classList.add('toc-fixed');
-          } else {
-            toc.classList.remove('toc-fixed');
-          }
-        } else {
-          toc.classList.remove('toc-fixed');
-        }
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-
-    window.addEventListener('resize', () => {
-        if (!shouldApplyFixed()) {
-            toc.classList.remove('toc-fixed');
-        }
-    });
-  }
-
-  function slugify(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase().trim()
-      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
-  }
-
-  function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
-    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
-    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
-    const root = document.querySelector(selector);
-
-    if (!root) {
-      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
-      .filter(h => !tocEl.contains(h))
-      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
-
-    if (headings.length === 0) {
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const tocRoot = tocEl.querySelector('.toc-list');
-    tocRoot.innerHTML = '';
-
-    const idCounts = {};
-    headings.forEach(h => {
-      if (!h.id) {
-        let id = slugify(h.textContent);
-        if (!id) id = 'section';
-        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
-        else idCounts[id] = 1;
-        h.id = id;
-      }
-    });
-
-    // Build hierarchical tree
-    const stack = [{ level: 0, ul: tocRoot }];
-    headings.forEach((h, i) => {
-      const level = parseInt(h.tagName.substring(1));
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + h.id);
-
-        // // Clicking on the TOC menu closes the TOC
-        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
-        // const toggle = tocEl.querySelector('.toc-toggle');
-        // wrapper.style.display = 'none';
-        // toggle.setAttribute('aria-expanded', 'false');
-        // toggle.textContent = '{ { include.btn_show } }';
-      });
-      li.appendChild(a);
-
-      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
-      const parent = stack[stack.length - 1].ul;
-      parent.appendChild(li);
-
-      const next = headings[i + 1];
-      if (next) {
-        const nextLevel = parseInt(next.tagName.substring(1));
-        if (nextLevel > level) {
-          const newUl = document.createElement('ul');
-          li.appendChild(newUl);
-          stack.push({ level, ul: newUl });
-        }
-      }
-    });
-
-    // Active Highlight
-    const links = tocRoot.querySelectorAll('a');
-    function onScroll() {
-      const fromTop = window.scrollY + offset + 1;
-      let current = headings[0];
-      for (let i = 0; i < headings.length; i++) {
-        if (headings[i].offsetTop <= fromTop) current = headings[i];
-      }
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toc').forEach(toc => {
-      buildTOC(toc);
-      const toggle = toc.querySelector('.toc-toggle');
-      const wrapper = toc.querySelector('.toc-list-wrapper');
-
-      wrapper.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Abrir';
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        wrapper.style.display = expanded ? 'none' : 'block';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        toggle.textContent = expanded ? 'Abrir' : 'Fechar';
-      });
-
-      const tocTop = toc.offsetTop;
-
-      function handleScrollFix() {
-        if (window.innerWidth <= minLayoutWidth) {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.zIndex = '';
-          toc.style.width = '';
-          return;
-        }
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Fixes pinning behavior in Chrome
-        if (scrollTop >= tocTop) {
-          toc.classList.add('fixed');
-          toc.style.position = 'fixed';
-          toc.style.top = '0';
-          toc.style.zIndex = '9999';
-          // toc.style.width = toc.offsetWidth + 'px';
-        } else {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.width = '';
-        }
-
-        // // Automatically closes the TOC if it is open and scrolled to it.
-        // const rect = toc.getBoundingClientRect();
-        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
-        //   wrapper.style.display = 'none';
-        //   toggle.setAttribute('aria-expanded', 'false');
-        //   toggle.textContent = '{ { include.btn_show } }';
-        // }
-      }
-
-      window.addEventListener('scroll', handleScrollFix, { passive: true });
-      window.addEventListener('resize', handleScrollFix);
-      handleScrollFix();
-    });
-  });
-})();
-</script>
 
 <p>Olá pessoas, vamos falar de Shell script, que é algo que gosto muito. :)</p>
 
@@ -1479,207 +1099,17 @@ bash setup.bash createtb</code></pre></figure>
 
 <p>Como dito, foi um simples post para você tenha uma noção do que podemos fazer com Shell Script. Tanto os passos para PostgreSQL e para MySQL, existem trechos de código praticamente idênticos, mudando uma coisinha ou outra. Porém, apesar de realizarmos transações no banco de dados com Shell Script, não recomendo você tentar criar um sistema dessa maneira. Existem diversas linguagens de programação onde temos milhares de vantagens para realizar tudo que fizemos aqui.</p>
 
-<p>Espero que você tenha aprendido algo com esse post. Eu fico por aqui, até a próxima.</p>]]></content><author><name>William C. Canin</name></author><category term="shell" /><category term="postgresql" /><category term="mysql" /><summary type="html"><![CDATA[O Shell Script não é só uma linguagem para fazer automatização de tarefas no seu S.O, é muito mais!]]></summary></entry><entry><title type="html">Instalando Python tarball em qualquer sistema Linux.</title><link href="https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/" rel="alternate" type="text/html" title="Instalando Python tarball em qualquer sistema Linux." /><published>2018-06-21T21:54:14+00:00</published><updated>2018-06-21T21:54:14+00:00</updated><id>https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux</id><content type="html" xml:base="https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<p>Espero que você tenha aprendido algo com esse post. Eu fico por aqui, até a próxima.</p>]]></content><author><name>William C. Canin</name></author><category term="shell" /><category term="postgresql" /><category term="mysql" /><summary type="html"><![CDATA[O Shell Script não é só uma linguagem para fazer automatização de tarefas no seu S.O, é muito mais!]]></summary></entry><entry><title type="html">Instalando Python tarball em qualquer sistema Linux.</title><link href="https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/" rel="alternate" type="text/html" title="Instalando Python tarball em qualquer sistema Linux." /><published>2018-06-21T21:54:14+00:00</published><updated>2018-06-21T21:54:14+00:00</updated><id>https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux</id><content type="html" xml:base="https://williamcanin.github.io/blog/instalando-python-automaticamente-em-qualquer-sistema-linux/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
+
   <div class="toc-head">
     <h2>Índice</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button">Fechar</button>
+    <button class="toc-toggle" aria-expanded="true" type="button"></button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
     <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
-
-<script>
-(function () {
-  const minLayoutWidth = 1830;
-
-  const toc = document.getElementById('toc');
-  if (toc) {
-    const sentinel = document.createElement('div');
-    toc.parentNode.insertBefore(sentinel, toc);
-
-    function shouldApplyFixed() {
-      return window.innerWidth > minLayoutWidth;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (shouldApplyFixed()) {
-          if (!entry.isIntersecting) {
-            toc.classList.add('toc-fixed');
-          } else {
-            toc.classList.remove('toc-fixed');
-          }
-        } else {
-          toc.classList.remove('toc-fixed');
-        }
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-
-    window.addEventListener('resize', () => {
-        if (!shouldApplyFixed()) {
-            toc.classList.remove('toc-fixed');
-        }
-    });
-  }
-
-  function slugify(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase().trim()
-      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
-  }
-
-  function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
-    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
-    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
-    const root = document.querySelector(selector);
-
-    if (!root) {
-      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
-      .filter(h => !tocEl.contains(h))
-      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
-
-    if (headings.length === 0) {
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const tocRoot = tocEl.querySelector('.toc-list');
-    tocRoot.innerHTML = '';
-
-    const idCounts = {};
-    headings.forEach(h => {
-      if (!h.id) {
-        let id = slugify(h.textContent);
-        if (!id) id = 'section';
-        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
-        else idCounts[id] = 1;
-        h.id = id;
-      }
-    });
-
-    // Build hierarchical tree
-    const stack = [{ level: 0, ul: tocRoot }];
-    headings.forEach((h, i) => {
-      const level = parseInt(h.tagName.substring(1));
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + h.id);
-
-        // // Clicking on the TOC menu closes the TOC
-        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
-        // const toggle = tocEl.querySelector('.toc-toggle');
-        // wrapper.style.display = 'none';
-        // toggle.setAttribute('aria-expanded', 'false');
-        // toggle.textContent = '{ { include.btn_show } }';
-      });
-      li.appendChild(a);
-
-      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
-      const parent = stack[stack.length - 1].ul;
-      parent.appendChild(li);
-
-      const next = headings[i + 1];
-      if (next) {
-        const nextLevel = parseInt(next.tagName.substring(1));
-        if (nextLevel > level) {
-          const newUl = document.createElement('ul');
-          li.appendChild(newUl);
-          stack.push({ level, ul: newUl });
-        }
-      }
-    });
-
-    // Active Highlight
-    const links = tocRoot.querySelectorAll('a');
-    function onScroll() {
-      const fromTop = window.scrollY + offset + 1;
-      let current = headings[0];
-      for (let i = 0; i < headings.length; i++) {
-        if (headings[i].offsetTop <= fromTop) current = headings[i];
-      }
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toc').forEach(toc => {
-      buildTOC(toc);
-      const toggle = toc.querySelector('.toc-toggle');
-      const wrapper = toc.querySelector('.toc-list-wrapper');
-
-      wrapper.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Abrir';
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        wrapper.style.display = expanded ? 'none' : 'block';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        toggle.textContent = expanded ? 'Abrir' : 'Fechar';
-      });
-
-      const tocTop = toc.offsetTop;
-
-      function handleScrollFix() {
-        if (window.innerWidth <= minLayoutWidth) {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.zIndex = '';
-          toc.style.width = '';
-          return;
-        }
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Fixes pinning behavior in Chrome
-        if (scrollTop >= tocTop) {
-          toc.classList.add('fixed');
-          toc.style.position = 'fixed';
-          toc.style.top = '0';
-          toc.style.zIndex = '9999';
-          // toc.style.width = toc.offsetWidth + 'px';
-        } else {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.width = '';
-        }
-
-        // // Automatically closes the TOC if it is open and scrolled to it.
-        // const rect = toc.getBoundingClientRect();
-        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
-        //   wrapper.style.display = 'none';
-        //   toggle.setAttribute('aria-expanded', 'false');
-        //   toggle.textContent = '{ { include.btn_show } }';
-        // }
-      }
-
-      window.addEventListener('scroll', handleScrollFix, { passive: true });
-      window.addEventListener('resize', handleScrollFix);
-      handleScrollFix();
-    });
-  });
-})();
-</script>
 
 <p>Olá :hand:, essa é uma dica rápida para você que deseja instalar o Python :snake: compilado através do código fonte (tarball). Boa leitura.</p>
 
@@ -1944,207 +1374,17 @@ Você pode verificar o executável no diretório <strong>/usr/local/bin</strong>
 
 <p>Esse tutorial pode ficar obsoleto com o tempo, então, lembre-se de ler o arquivo de <strong>README.rst</strong> que vem junto no pacote <strong>tar.xz</strong> no Python, nele contém informações mais detalhadas de como instalar (ou até mesmo remover) o <em>Python</em> de uma maneira bem completa.</p>
 
-<p>Eu fico por aqui, abraço pra você. :smile:</p>]]></content><author><name>William C. Canin</name></author><category term="python" /><category term="tarball" /><category term="linux" /><summary type="html"><![CDATA[Instale a ultima versão estável do Python tarball automaticamente em qualquer Linux com um simples script shell.]]></summary></entry><entry><title type="html">Criptografando a partição HOME no Linux</title><link href="https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/" rel="alternate" type="text/html" title="Criptografando a partição HOME no Linux" /><published>2017-10-16T06:51:44+00:00</published><updated>2017-10-16T06:51:44+00:00</updated><id>https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux</id><content type="html" xml:base="https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<p>Eu fico por aqui, abraço pra você. :smile:</p>]]></content><author><name>William C. Canin</name></author><category term="python" /><category term="tarball" /><category term="linux" /><summary type="html"><![CDATA[Instale a ultima versão estável do Python tarball automaticamente em qualquer Linux com um simples script shell.]]></summary></entry><entry><title type="html">Criptografando a partição HOME no Linux</title><link href="https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/" rel="alternate" type="text/html" title="Criptografando a partição HOME no Linux" /><published>2017-10-16T06:51:44+00:00</published><updated>2017-10-16T06:51:44+00:00</updated><id>https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux</id><content type="html" xml:base="https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
+
   <div class="toc-head">
     <h2>Índice</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button">Fechar</button>
+    <button class="toc-toggle" aria-expanded="true" type="button"></button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
     <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
-
-<script>
-(function () {
-  const minLayoutWidth = 1830;
-
-  const toc = document.getElementById('toc');
-  if (toc) {
-    const sentinel = document.createElement('div');
-    toc.parentNode.insertBefore(sentinel, toc);
-
-    function shouldApplyFixed() {
-      return window.innerWidth > minLayoutWidth;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (shouldApplyFixed()) {
-          if (!entry.isIntersecting) {
-            toc.classList.add('toc-fixed');
-          } else {
-            toc.classList.remove('toc-fixed');
-          }
-        } else {
-          toc.classList.remove('toc-fixed');
-        }
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-
-    window.addEventListener('resize', () => {
-        if (!shouldApplyFixed()) {
-            toc.classList.remove('toc-fixed');
-        }
-    });
-  }
-
-  function slugify(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase().trim()
-      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
-  }
-
-  function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
-    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
-    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
-    const root = document.querySelector(selector);
-
-    if (!root) {
-      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
-      .filter(h => !tocEl.contains(h))
-      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
-
-    if (headings.length === 0) {
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const tocRoot = tocEl.querySelector('.toc-list');
-    tocRoot.innerHTML = '';
-
-    const idCounts = {};
-    headings.forEach(h => {
-      if (!h.id) {
-        let id = slugify(h.textContent);
-        if (!id) id = 'section';
-        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
-        else idCounts[id] = 1;
-        h.id = id;
-      }
-    });
-
-    // Build hierarchical tree
-    const stack = [{ level: 0, ul: tocRoot }];
-    headings.forEach((h, i) => {
-      const level = parseInt(h.tagName.substring(1));
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + h.id);
-
-        // // Clicking on the TOC menu closes the TOC
-        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
-        // const toggle = tocEl.querySelector('.toc-toggle');
-        // wrapper.style.display = 'none';
-        // toggle.setAttribute('aria-expanded', 'false');
-        // toggle.textContent = '{ { include.btn_show } }';
-      });
-      li.appendChild(a);
-
-      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
-      const parent = stack[stack.length - 1].ul;
-      parent.appendChild(li);
-
-      const next = headings[i + 1];
-      if (next) {
-        const nextLevel = parseInt(next.tagName.substring(1));
-        if (nextLevel > level) {
-          const newUl = document.createElement('ul');
-          li.appendChild(newUl);
-          stack.push({ level, ul: newUl });
-        }
-      }
-    });
-
-    // Active Highlight
-    const links = tocRoot.querySelectorAll('a');
-    function onScroll() {
-      const fromTop = window.scrollY + offset + 1;
-      let current = headings[0];
-      for (let i = 0; i < headings.length; i++) {
-        if (headings[i].offsetTop <= fromTop) current = headings[i];
-      }
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toc').forEach(toc => {
-      buildTOC(toc);
-      const toggle = toc.querySelector('.toc-toggle');
-      const wrapper = toc.querySelector('.toc-list-wrapper');
-
-      wrapper.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Abrir';
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        wrapper.style.display = expanded ? 'none' : 'block';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        toggle.textContent = expanded ? 'Abrir' : 'Fechar';
-      });
-
-      const tocTop = toc.offsetTop;
-
-      function handleScrollFix() {
-        if (window.innerWidth <= minLayoutWidth) {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.zIndex = '';
-          toc.style.width = '';
-          return;
-        }
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Fixes pinning behavior in Chrome
-        if (scrollTop >= tocTop) {
-          toc.classList.add('fixed');
-          toc.style.position = 'fixed';
-          toc.style.top = '0';
-          toc.style.zIndex = '9999';
-          // toc.style.width = toc.offsetWidth + 'px';
-        } else {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.width = '';
-        }
-
-        // // Automatically closes the TOC if it is open and scrolled to it.
-        // const rect = toc.getBoundingClientRect();
-        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
-        //   wrapper.style.display = 'none';
-        //   toggle.setAttribute('aria-expanded', 'false');
-        //   toggle.textContent = '{ { include.btn_show } }';
-        // }
-      }
-
-      window.addEventListener('scroll', handleScrollFix, { passive: true });
-      window.addEventListener('resize', handleScrollFix);
-      handleScrollFix();
-    });
-  });
-})();
-</script>
 
 <p>Olá para você pessoa, como vai? Eu vou bem graças a Deus e obrigado por perguntar mentalmente hehe.
 Esse é um post de segurança…é o que todos querem, não é?! hehe Então lá vai…</p>
@@ -2334,207 +1574,17 @@ home <span class="nv">UUID</span><span class="o">=</span>824049e5-d6a1-4e91-a1fd
 
 <h1 id="conclusão">Conclusão</h1>
 
-<p>Esse foi um tutorial bem básico de como deixar nossa <strong>/home</strong> criptografada no Linux. É de certo que alguma distribuição Linux pode ter suas particularidades e você tem que configurar algo a mais na mesma, porem o principio parte dessa lógica desse tutorial. Espero que você goste e principalmente que suas dúvidas foram eliminadas, mas caso não foi, deixe aqui um comentário informando suas dúvidas. Abraço.</p>]]></content><author><name>William C. Canin</name></author><category term="crypt" /><category term="linux" /><category term="security" /><summary type="html"><![CDATA[Que tal esconder suas coisinhas da /home de possíveis pessoas "espertas"? Siga em frente neste post e descubra.]]></summary></entry><entry><title type="html">Carregando Javascripts para diferentes posts e pages no Jekyll</title><link href="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/" rel="alternate" type="text/html" title="Carregando Javascripts para diferentes posts e pages no Jekyll" /><published>2017-10-09T21:31:36+00:00</published><updated>2017-10-09T21:31:36+00:00</updated><id>https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll</id><content type="html" xml:base="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<p>Esse foi um tutorial bem básico de como deixar nossa <strong>/home</strong> criptografada no Linux. É de certo que alguma distribuição Linux pode ter suas particularidades e você tem que configurar algo a mais na mesma, porem o principio parte dessa lógica desse tutorial. Espero que você goste e principalmente que suas dúvidas foram eliminadas, mas caso não foi, deixe aqui um comentário informando suas dúvidas. Abraço.</p>]]></content><author><name>William C. Canin</name></author><category term="crypt" /><category term="linux" /><category term="security" /><summary type="html"><![CDATA[Que tal esconder suas coisinhas da /home de possíveis pessoas "espertas"? Siga em frente neste post e descubra.]]></summary></entry><entry><title type="html">Carregando Javascripts para diferentes posts e pages no Jekyll</title><link href="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/" rel="alternate" type="text/html" title="Carregando Javascripts para diferentes posts e pages no Jekyll" /><published>2017-10-09T21:31:36+00:00</published><updated>2017-10-09T21:31:36+00:00</updated><id>https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll</id><content type="html" xml:base="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
+
   <div class="toc-head">
     <h2>Índice</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button">Fechar</button>
+    <button class="toc-toggle" aria-expanded="true" type="button"></button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
     <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
-
-<script>
-(function () {
-  const minLayoutWidth = 1830;
-
-  const toc = document.getElementById('toc');
-  if (toc) {
-    const sentinel = document.createElement('div');
-    toc.parentNode.insertBefore(sentinel, toc);
-
-    function shouldApplyFixed() {
-      return window.innerWidth > minLayoutWidth;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (shouldApplyFixed()) {
-          if (!entry.isIntersecting) {
-            toc.classList.add('toc-fixed');
-          } else {
-            toc.classList.remove('toc-fixed');
-          }
-        } else {
-          toc.classList.remove('toc-fixed');
-        }
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-
-    window.addEventListener('resize', () => {
-        if (!shouldApplyFixed()) {
-            toc.classList.remove('toc-fixed');
-        }
-    });
-  }
-
-  function slugify(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase().trim()
-      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
-  }
-
-  function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
-    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
-    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
-    const root = document.querySelector(selector);
-
-    if (!root) {
-      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
-      .filter(h => !tocEl.contains(h))
-      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
-
-    if (headings.length === 0) {
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const tocRoot = tocEl.querySelector('.toc-list');
-    tocRoot.innerHTML = '';
-
-    const idCounts = {};
-    headings.forEach(h => {
-      if (!h.id) {
-        let id = slugify(h.textContent);
-        if (!id) id = 'section';
-        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
-        else idCounts[id] = 1;
-        h.id = id;
-      }
-    });
-
-    // Build hierarchical tree
-    const stack = [{ level: 0, ul: tocRoot }];
-    headings.forEach((h, i) => {
-      const level = parseInt(h.tagName.substring(1));
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + h.id);
-
-        // // Clicking on the TOC menu closes the TOC
-        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
-        // const toggle = tocEl.querySelector('.toc-toggle');
-        // wrapper.style.display = 'none';
-        // toggle.setAttribute('aria-expanded', 'false');
-        // toggle.textContent = '{ { include.btn_show } }';
-      });
-      li.appendChild(a);
-
-      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
-      const parent = stack[stack.length - 1].ul;
-      parent.appendChild(li);
-
-      const next = headings[i + 1];
-      if (next) {
-        const nextLevel = parseInt(next.tagName.substring(1));
-        if (nextLevel > level) {
-          const newUl = document.createElement('ul');
-          li.appendChild(newUl);
-          stack.push({ level, ul: newUl });
-        }
-      }
-    });
-
-    // Active Highlight
-    const links = tocRoot.querySelectorAll('a');
-    function onScroll() {
-      const fromTop = window.scrollY + offset + 1;
-      let current = headings[0];
-      for (let i = 0; i < headings.length; i++) {
-        if (headings[i].offsetTop <= fromTop) current = headings[i];
-      }
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toc').forEach(toc => {
-      buildTOC(toc);
-      const toggle = toc.querySelector('.toc-toggle');
-      const wrapper = toc.querySelector('.toc-list-wrapper');
-
-      wrapper.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Abrir';
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        wrapper.style.display = expanded ? 'none' : 'block';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        toggle.textContent = expanded ? 'Abrir' : 'Fechar';
-      });
-
-      const tocTop = toc.offsetTop;
-
-      function handleScrollFix() {
-        if (window.innerWidth <= minLayoutWidth) {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.zIndex = '';
-          toc.style.width = '';
-          return;
-        }
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Fixes pinning behavior in Chrome
-        if (scrollTop >= tocTop) {
-          toc.classList.add('fixed');
-          toc.style.position = 'fixed';
-          toc.style.top = '0';
-          toc.style.zIndex = '9999';
-          // toc.style.width = toc.offsetWidth + 'px';
-        } else {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.width = '';
-        }
-
-        // // Automatically closes the TOC if it is open and scrolled to it.
-        // const rect = toc.getBoundingClientRect();
-        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
-        //   wrapper.style.display = 'none';
-        //   toggle.setAttribute('aria-expanded', 'false');
-        //   toggle.textContent = '{ { include.btn_show } }';
-        // }
-      }
-
-      window.addEventListener('scroll', handleScrollFix, { passive: true });
-      window.addEventListener('resize', handleScrollFix);
-      handleScrollFix();
-    });
-  });
-})();
-</script>
 
 <p>Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:</p>
 
@@ -2646,207 +1696,17 @@ script: [page1.js]
 
 <h2 id="conclusão">Conclusão</h2>
 
-<p>Fazendo dessa forma, você tem maior controle de qual página ou qual post deve carregar um determinado javascript para si próprio. Otimização de código é um marco importante para um bom desenvolvedor. Eu fico por aqui, espero que você possa ter entendido como otimizar o carregamento de javascripts no <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Abraço pessoa, :punch:.</p>]]></content><author><name>William C. Canin</name></author><category term="jekyll" /><category term="javascripts" /><category term="liquid" /><summary type="html"><![CDATA[Será que seu projeto em Jekyll está carregados códigos desnecessário? Esse post te ensinará como otimizar o carregamento de javascripts no projeto.]]></summary></entry><entry><title type="html">Instalando Arch Linux com criptografia LUKS e LVM</title><link href="https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/" rel="alternate" type="text/html" title="Instalando Arch Linux com criptografia LUKS e LVM" /><published>2017-04-27T14:33:43+00:00</published><updated>2017-04-27T14:33:43+00:00</updated><id>https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm</id><content type="html" xml:base="https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/"><![CDATA[<nav class="toc" id="toc" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20">
+<p>Fazendo dessa forma, você tem maior controle de qual página ou qual post deve carregar um determinado javascript para si próprio. Otimização de código é um marco importante para um bom desenvolvedor. Eu fico por aqui, espero que você possa ter entendido como otimizar o carregamento de javascripts no <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Abraço pessoa, :punch:.</p>]]></content><author><name>William C. Canin</name></author><category term="jekyll" /><category term="javascripts" /><category term="liquid" /><summary type="html"><![CDATA[Será que seu projeto em Jekyll está carregados códigos desnecessário? Esse post te ensinará como otimizar o carregamento de javascripts no projeto.]]></summary></entry><entry><title type="html">Instalando Arch Linux com criptografia LUKS e LVM</title><link href="https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/" rel="alternate" type="text/html" title="Instalando Arch Linux com criptografia LUKS e LVM" /><published>2017-04-27T14:33:43+00:00</published><updated>2017-04-27T14:33:43+00:00</updated><id>https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm</id><content type="html" xml:base="https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
+
   <div class="toc-head">
     <h2>Índice</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button">Fechar</button>
+    <button class="toc-toggle" aria-expanded="true" type="button"></button>
   </div>
   <div class="toc-list-wrapper">
     <ul class="toc-list" role="list"></ul>
     <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
   </div>
 </nav>
-
-<script>
-(function () {
-  const minLayoutWidth = 1830;
-
-  const toc = document.getElementById('toc');
-  if (toc) {
-    const sentinel = document.createElement('div');
-    toc.parentNode.insertBefore(sentinel, toc);
-
-    function shouldApplyFixed() {
-      return window.innerWidth > minLayoutWidth;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (shouldApplyFixed()) {
-          if (!entry.isIntersecting) {
-            toc.classList.add('toc-fixed');
-          } else {
-            toc.classList.remove('toc-fixed');
-          }
-        } else {
-          toc.classList.remove('toc-fixed');
-        }
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-
-    window.addEventListener('resize', () => {
-        if (!shouldApplyFixed()) {
-            toc.classList.remove('toc-fixed');
-        }
-    });
-  }
-
-  function slugify(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase().trim()
-      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/--+/g, '-');
-  }
-
-  function buildTOC(tocEl) {
-    const selector = tocEl.dataset.tocSelector || '.post-content' || '.page-content';
-    const maxLevel = parseInt(tocEl.dataset.tocMaxLevel || '3', 10);
-    const offset = parseInt(tocEl.dataset.tocScrollOffset || '20', 10);
-    const root = document.querySelector(selector);
-
-    if (!root) {
-      tocEl.querySelector('.toc-empty').textContent = `Content not found (${selector})`;
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const headings = Array.from(root.querySelectorAll(Array(maxLevel).fill(0).map((_, i) => `h${i + 1}`).join(',')))
-      .filter(h => !tocEl.contains(h))
-      .filter(h => parseInt(h.tagName.substring(1)) <= maxLevel);
-
-    if (headings.length === 0) {
-      tocEl.querySelector('.toc-empty').style.display = 'block';
-      return;
-    }
-
-    const tocRoot = tocEl.querySelector('.toc-list');
-    tocRoot.innerHTML = '';
-
-    const idCounts = {};
-    headings.forEach(h => {
-      if (!h.id) {
-        let id = slugify(h.textContent);
-        if (!id) id = 'section';
-        if (idCounts[id]) { idCounts[id] += 1; id = id + '-' + idCounts[id]; }
-        else idCounts[id] = 1;
-        h.id = id;
-      }
-    });
-
-    // Build hierarchical tree
-    const stack = [{ level: 0, ul: tocRoot }];
-    headings.forEach((h, i) => {
-      const level = parseInt(h.tagName.substring(1));
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h.id;
-      a.textContent = h.textContent.trim();
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-        history.replaceState(null, '', '#' + h.id);
-
-        // // Clicking on the TOC menu closes the TOC
-        // const wrapper = tocEl.querySelector('.toc-list-wrapper');
-        // const toggle = tocEl.querySelector('.toc-toggle');
-        // wrapper.style.display = 'none';
-        // toggle.setAttribute('aria-expanded', 'false');
-        // toggle.textContent = '{ { include.btn_show } }';
-      });
-      li.appendChild(a);
-
-      while (stack.length > 1 && level <= stack[stack.length - 1].level) stack.pop();
-      const parent = stack[stack.length - 1].ul;
-      parent.appendChild(li);
-
-      const next = headings[i + 1];
-      if (next) {
-        const nextLevel = parseInt(next.tagName.substring(1));
-        if (nextLevel > level) {
-          const newUl = document.createElement('ul');
-          li.appendChild(newUl);
-          stack.push({ level, ul: newUl });
-        }
-      }
-    });
-
-    // Active Highlight
-    const links = tocRoot.querySelectorAll('a');
-    function onScroll() {
-      const fromTop = window.scrollY + offset + 1;
-      let current = headings[0];
-      for (let i = 0; i < headings.length; i++) {
-        if (headings[i].offsetTop <= fromTop) current = headings[i];
-      }
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.toc').forEach(toc => {
-      buildTOC(toc);
-      const toggle = toc.querySelector('.toc-toggle');
-      const wrapper = toc.querySelector('.toc-list-wrapper');
-
-      wrapper.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Abrir';
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        wrapper.style.display = expanded ? 'none' : 'block';
-        toggle.setAttribute('aria-expanded', (!expanded).toString());
-        toggle.textContent = expanded ? 'Abrir' : 'Fechar';
-      });
-
-      const tocTop = toc.offsetTop;
-
-      function handleScrollFix() {
-        if (window.innerWidth <= minLayoutWidth) {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.zIndex = '';
-          toc.style.width = '';
-          return;
-        }
-
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Fixes pinning behavior in Chrome
-        if (scrollTop >= tocTop) {
-          toc.classList.add('fixed');
-          toc.style.position = 'fixed';
-          toc.style.top = '0';
-          toc.style.zIndex = '9999';
-          // toc.style.width = toc.offsetWidth + 'px';
-        } else {
-          toc.classList.remove('fixed');
-          toc.style.position = '';
-          toc.style.top = '';
-          toc.style.width = '';
-        }
-
-        // // Automatically closes the TOC if it is open and scrolled to it.
-        // const rect = toc.getBoundingClientRect();
-        // if (rect.top <= 0 && toggle.getAttribute('aria-expanded') === 'true') {
-        //   wrapper.style.display = 'none';
-        //   toggle.setAttribute('aria-expanded', 'false');
-        //   toggle.textContent = '{ { include.btn_show } }';
-        // }
-      }
-
-      window.addEventListener('scroll', handleScrollFix, { passive: true });
-      window.addEventListener('resize', handleScrollFix);
-      handleScrollFix();
-    });
-  });
-})();
-</script>
 
 <p>Ei, beleza? 👍</p>
 
@@ -2893,63 +1753,7 @@ eu estiver no Linux, uso <code class="language-plaintext highlighter-rouge">dd</
 
 <p>Apenas conecto o cabo de rede e já tenho internet na ISO do <strong>Arch Linux</strong>.</p>
 
-<div class="details-start" data-summary="Via Wi-Fi"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Via Wi-Fi"></div>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start iwd<span class="p">;</span>
 iwctl
@@ -3047,63 +1851,7 @@ em minha máquina.</p>
   </tbody>
 </table>
 
-<div class="details-start" data-summary="&gt;&gt;&gt; Informações interessantes 🤔"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="&gt;&gt;&gt; Informações interessantes 🤔"></div>
 
 <h2 id="boot">Boot</h2>
 
@@ -3234,63 +1982,7 @@ mkfs <span class="nt">-t</span> ext4 /dev/mapper/linux-arch<span class="p">;</sp
 mkfs <span class="nt">-t</span> ext4 /dev/mapper/home<span class="p">;</span>
 </code></pre></div></div>
 
-<div class="details-start" data-summary="Com partição de boot separada"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Com partição de boot separada"></div>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkfs <span class="nt">-t</span> ext4 /dev/sda1<span class="p">;</span>
 mkfs.fat <span class="nt">-F</span> 32 /dev/sda2<span class="p">;</span>
@@ -3327,63 +2019,7 @@ sdb
   └─home    ext4        1.0                 65660251-8451-4722-adbd-ff5850c5df6d    999,7G    37% /home
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<div class="details-start" data-summary="Com partição de boot separada"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Com partição de boot separada"></div>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -3419,63 +2055,7 @@ mount <span class="nt">--mkdir</span> /dev/sda1 /mnt/boot<span class="p">;</span
 mount <span class="nt">--mkdir</span> /dev/mapper/home /mnt/home<span class="p">;</span>
 </code></pre></div></div>
 
-<div class="details-start" data-summary="Com partição de boot separada"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Com partição de boot separada"></div>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mount /dev/mapper/linux-arch /mnt<span class="p">;</span>
 mount <span class="nt">--mkdir</span> /dev/sda1 /mnt/boot<span class="p">;</span>
@@ -3718,63 +2298,7 @@ segurança para CPU Intel. Na AMD como CPU, instalo o <code class="language-plai
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bootctl <span class="nt">--path</span><span class="o">=</span>/boot <span class="nb">install</span>
 </code></pre></div></div>
 
-<div class="details-start" data-summary="Com partição de boot separada"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Com partição de boot separada"></div>
 
 <p>Se eu instalei o sistema com a partição de boot separada, então minha instalação do bootloader
 fica assim:</p>
@@ -3895,63 +2419,7 @@ EOF
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--noconfirm</span> linux-lts
 </code></pre></div></div>
 
-<div class="details-start" data-summary="Usando modo tradicional (Opcional)"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Usando modo tradicional (Opcional)"></div>
 
 <p>Aqui a configuração do <strong>systemd-boot</strong> muda, em vez de usar UKI, uso os arquivos
 <strong>vmlinuz-linux-lts</strong>, <strong>initramfs-linux-lts.img</strong> e <strong>intel-ucode.img</strong> para iniciar o boot.</p>
@@ -3997,63 +2465,7 @@ options root=UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</sp
 <!-- enddetails -->
 <div class="details-end"></div>
 
-<div class="details-start" data-summary="Adicionando EFI do Windows (Opcional)"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Adicionando EFI do Windows (Opcional)"></div>
 
 <p>Quando quero fazer um dual-boot com <strong>Windows</strong> ou até mesmo usar o Windows instalado em outra
 SSD/HDD, e adicionar o mesmo no <strong>systemd-boot</strong>, eu faço os passos abaixo:</p>
@@ -4079,63 +2491,7 @@ efi     /EFI/Microsoft/Boot/bootmgfw.efi
 <!-- enddetails -->
 <div class="details-end"></div>
 
-<div class="details-start" data-summary="Reinstalando o bootloader (Manutenção)"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Reinstalando o bootloader (Manutenção)"></div>
 
 <p>Caso eu precise reinstalar o <strong>systemd-boot</strong> após um update ou reinstalação de outro
 sistema operacional, sigo as etapas abaixo após entrar na ISO do <strong>Arch Linux</strong>:</p>
@@ -4183,63 +2539,7 @@ então também instalo esses drivers para GPU integrada:</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> mesa-vulkan-intel vulkan-intel linux-firmware-intel
 </code></pre></div></div>
 
-<div class="details-start" data-summary="AMD"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="AMD"></div>
 
 <p>Não estou usando <strong>AMD</strong> no momento, mas vou deixar os drivers necessários caso eu use futuramente:</p>
 
@@ -4255,63 +2555,7 @@ então também instalo esses drivers para GPU integrada:</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--noconfirm</span>  xf86-video-nouveau vulkan-nouveau
 </code></pre></div></div>
 
-<div class="details-start" data-summary="NVIDIA (proprietary) 🙄"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="NVIDIA (proprietary) 🙄"></div>
 
 <p>Como já relatei acima, não uso o driver proprietário da <strong>NVIDIA</strong> do repo do <strong>Arch Linux</strong> por
 algumas incompatibilidades que tive na última versão 😡, mas mesmo assim vou deixar os pacotes
@@ -4343,63 +2587,7 @@ pipewire-jack lib32-pipewire lsp-plugins-lv2 mda.lv2 zam-plugins-lv2 zam-plugins
 btop jq conky gsimplecal numlockx qt5ct qt6ct scrot dunst yazi xautolock imagemagick ranger lynx
 </code></pre></div></div>
 
-<div class="details-start" data-summary="Ambiente de trabalho (XFCE)"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Ambiente de trabalho (XFCE)"></div>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> xfce4 xfce4-goodies appmenu-gtk-module libdbusmenu-glib lightdm <span class="se">\</span>
 lightdm-gtk-greeter
@@ -4408,63 +2596,7 @@ lightdm-gtk-greeter
 <!-- enddetails -->
 <div class="details-end"></div>
 
-<div class="details-start" data-summary="Instalação do ambiente de trabalho (GNOME)"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Instalação do ambiente de trabalho (GNOME)"></div>
 
 <p>Minha relação com <strong>GNOME</strong> é entre amor e ódio. Instalo mas deixo com um ambiente de fallback:</p>
 
@@ -4565,63 +2697,7 @@ EOF</span>
 então eu uso este perfil abaixo:</p>
 </blockquote>
 
-<div class="details-start" data-summary="ZRAM: Perfil Agressivo"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="ZRAM: Perfil Agressivo"></div>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -4648,63 +2724,7 @@ EOF</span>
 systemctl <span class="nb">enable</span> <span class="nt">--now</span> systemd-zram-setup@zram0.service
 </code></pre></div></div>
 
-<div class="details-start" data-summary="Swap (opcional)"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Swap (opcional)"></div>
 
 <p>Caso eu prefiro usar <strong>Swap</strong> em arquivo em vez de <strong>zram</strong>, esses são os passos:</p>
 
@@ -4820,63 +2840,7 @@ sbctl sign <span class="nt">-s</span> /boot/EFI/Linux/arch-linux-lts-fallback.ef
 sbctl verify
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<div class="details-start" data-summary="Assinando EFI Windows"></div>
-
-<script>
-(function(){
-  if (window.__jekyll_details_setup) return;
-  window.__jekyll_details_setup = true;
-
-  function initDetails(){
-    const starts = document.querySelectorAll('.details-start');
-    starts.forEach(start => {
-      const summary = start.getAttribute('data-summary') || 'Detalhes';
-
-      let end = start.nextSibling;
-      while(end && !(end.nodeType === 1 && end.classList.contains('details-end'))){
-        end = end.nextSibling;
-      }
-      if(!end) return;
-
-      let node = start.nextSibling;
-      const content = [];
-      while(node && node !== end){
-        const next = node.nextSibling;
-        if(node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim())){
-          content.push(node.cloneNode(true));
-        }
-        node = next;
-      }
-
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = summary;
-      details.appendChild(sum);
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'details-content-wrapper';
-
-      content.forEach(el => wrapper.appendChild(el));
-
-      details.appendChild(wrapper);
-
-      start.parentNode.insertBefore(details, start);
-      let cur = start;
-      while(cur){
-        const next = cur.nextSibling;
-        cur.remove();
-        if(cur === end) break;
-        cur = next;
-      }
-    });
-  }
-
-  if(document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', initDetails);
-  else
-    initDetails();
-})();
-</script>
+<div id="details-start" class="details-start" data-summary="Assinando EFI Windows"></div>
 
 <p>A EFI do Windows existem muitos arquivos que devem ser assinados, por isso, faço da seguinte maneira
 retirado da própria <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl">Wiki do Arch Linux</a>:</p>
