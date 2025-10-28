@@ -63,6 +63,7 @@ head:
       - https://www.google.com
       - https://api.github.com
       - https://script.google.com
+      - https://script.googleusercontent.com
     img-src:
       - https://www.google.com
       - https://media0.giphy.com
