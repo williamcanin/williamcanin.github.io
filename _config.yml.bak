@@ -1,5 +1,5 @@
 # [ important!!! ] the base hostname & protocol for your site, e.g. http://example.com
-url: "https://williamcanin.github.io"
+url: ""
 
 # the subpath of your site, e.g. /blog
 baseurl: ""
@@ -19,7 +19,7 @@ collections:
     output: true
     permalink: /pixels/:title/
 pagination:
-  enabled: false
+  enabled: true
   debug: false
   collection: "posts"
   sort_field: "date"

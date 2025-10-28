@@ -2,7 +2,9 @@
 layout: resume
 order: 4
 title: CV
-emoji: 📜&nbsp;
+description: |
+  Currículo de William Canin
+emoji: 📜
 in_menu: true
 published: false
 permalink: /cv/

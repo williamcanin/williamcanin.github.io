@@ -2,9 +2,15 @@
 layout: contact
 order: 5
 title: "Contato"
-emoji: ✉️&nbsp;
+description: |
+  Contato com William Canin
+emoji: ✉️
+author: "William C. Canin"
+date:
+update_date:
 in_menu: true
-published: false
+reading_time: false
+published: true
 permalink: /contact/
 ---
 

@@ -1,0 +1,273 @@
+title: "William Canin"
+author: "William C. Canin"
+
+# section: [maintenance]
+maintenance:
+  enable: false
+  gif: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExczV3aGMxcnAzdnJ1eWp3cjk5OXdhdTYzdzB0dWVlMGFkbTd2ZDR0ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jwKC0qlOoXmcLDB4vC/giphy.gif"
+  title: "Under maintenance"
+  subtitle: |
+    Estamos em manutenção, sem previsão de retorno.
+    Desculpe o transtorno :/
+
+# section: [social network]
+# note: if you want more, just add more "title" and "url".
+socials:
+  enable: true
+  description:
+    text: |
+      Estas são as minhas redes sociais:
+    terminal:
+      about:
+        description: |
+          Mais alguma coisa...? Oh sim, se você quer saber minhas redes sociais ATIVAS, apenas digite o comando "**socials**" aqui. Até breve.
+      command:
+        description: |
+          Aqui estão minhas redes sociais ativas:
+  links:
+    - title: github
+      url: https://github.com/williamcanin
+
+    - title: gitlab
+      url: https://gitlab.com/williamcanin
+
+    - title: youtube
+      url: https://youtube.com/@WilliamCanin
+
+# section: [Reading time]
+reading_time:
+  enable: true
+  words_per_minute: 180
+  message: ["Leia aproximadamente em", "Leia em menos de"]
+  minutes_label: ["minuto", "minutos"]
+
+# section: [datelang]
+# Here you change the language of the months of the date
+datelang:
+  format: "%d %b, %Y"
+  lang: "pt_PT" # en_US | pt_PT | jp_JP | ch_CH | es_ES | fr_FR | it_IT | de_DE | ru_RU
+
+# section: [head]
+head:
+  # (CSP - Content-Security-Policy)
+  # IMPORTANT!!! If you use any external script from any website in your posts that is not on this
+  #              list, you must put it here.
+  #              --- If you don't use it, don't remove what's already there. ---
+  csp:
+    frame-src:
+      - https://www.google.com
+      - https://www.youtube.com
+      - https://giscus.app
+      - https://disqus.com
+    connect-src:
+      - https://www.google.com
+      - https://api.github.com
+    img-src:
+      - https://www.google.com
+      - https://media0.giphy.com
+      - https://media4.giphy.com
+      - https://github.githubassets.com
+    script-src:
+      - https://www.google.com
+      - https://www.gstatic.com
+      - https://cdn.jsdelivr.net
+      - https://cdnjs.cloudflare.com
+      - https://giscus.app
+      - https://disqus.com
+    style-src:
+      - https://cdnjs.cloudflare.com
+      - https://fonts.googleapis.com
+      - https://cdn.jsdelivr.net
+      - https://giscus.app
+      - https://disqus.com
+    font-src:
+      - https://fonts.gstatic.com
+      - https://cdnjs.cloudflare.com
+  google:
+    site_verification: ""
+    analytics:
+      enable: false
+      id: "" # tracking id, e.g. "UA-200341029-1"
+    apps_script:
+      url: "https://script.google.com/macros/s/AKfycbySoGUfJlruD_X27cfOKuQ-BUTtfo9I2gDdsjkpRJikXhrJAiNFrd9Okwnc4w6zOXjuhQ/exec"
+    recaptcha:
+      pubkey: "6Lci194rAAAAAIeSbPaHjMbtf_ShFc44cPAKskY4"
+
+# section: [default]
+default:
+  lang: pt-BR
+  # Some compatible separators: ⨟∫⦁;⬨⬖︙︰𐄛🢝
+  separator: ⨟
+  width: 860 # default: 860
+  background_focus: true
+  rounding: false
+  font:
+    # Fonts Style Options: [default: monospace]
+    # "'Ubuntu', sans-serif"
+    # "'Inconsolata', monospace"
+    # "'JetBrains Mono', monospace"
+    # "'Roboto Mono', monospace"
+    # "'Open Sans', sans-serif"
+    style: monospace
+    size: 15.45px
+    spacing: -0.05em
+
+# section: [header]
+header:
+  title: Hey, I'm William!
+  description: "thoughts on programming, digital wellbeing, linux"
+  width: 860 # default: 860
+  # your website image or logo
+  avatar:
+    open: false
+    flip: true
+    # note: the image (.jpg|.png) will be searched in the directory: assets/images/
+    image:
+      front:
+        light: wcanin_light.png
+        dark: wcanin_dark.png
+      back: wcanin_back.png
+  # menu: use emoji unicode 6.0, to have greater compatibility
+  menu:
+    title: "menu"
+    # default: 🏠📝🔍🔖📰 legacy: ⌂✐⌕▮▤
+    home:
+      emoji: "🏠"
+      title: "/home"
+    blog:
+      emoji: "📝"
+      title: "weblog"
+      subtitle: "posts"
+      search:
+        emoji: "🔍"
+        title: "pesquisar"
+      tags:
+        emoji: "🔖"
+        title: "tags"
+      feed:
+        emoji: "📰"
+        title: "feed"
+    pixels:
+      emoji: "📷"
+      title: "momentos"
+
+# section: [home]
+home:
+  terminal:
+    enable: true
+    user: "root"
+    hostname: "linux"
+    welcome: " digite 'help'"
+    error: ": comando não encontrado."
+    no_socials: "Rede sociais não encontrada"
+    help:
+      description: |
+        Use os comandos abaixo:
+      commands:
+        title: "Comandos:"
+        description: "Descrição:"
+      menu: |
+        about ------------- Um breve resumo sobre 'william'
+        socials ----------- Links para minhas redes sociais ativas.
+        clear ------------- Limpar a tela do terminal (ou pressionar Esc)
+        date -------------- Imprimir a data e a hora do sistema.
+        help -------------- Imprimir este menu
+
+# section: [blog]
+blog:
+  subtitle: "posts"
+  search:
+    enable: true
+    placeholder: "Pesquise aqui ou pressione Esc para sair."
+    button_clean:
+      text: "limpar"
+    results: "resultados"
+    no_results: "Nenhum resultado encontrado"
+  pagination:
+    newer_text: "recentes"
+    counter: ["página", "de"]
+    older_text: "velhos"
+  post:
+    author: "Postado por"
+    related_posts:
+      enable: true
+      title: "postagens relacionadas"
+    updated_on: "Página atualizada em"
+    comments:
+      title: "comentários"
+      provider: "giscus" # choose between. options: giscus | disqus.
+      giscus:
+        repo: "williamcanin/williamcanin.github.io" # your repository, e.g: username/repo-name
+        repo_id: "MDEwOlJlcG9zaXRvcnk0MDMyOTUzOQ==" # copied from giscus.app, e.g: R_kgD...
+        repo_category: "Comments" # copied category name GitHub
+        category_id: "DIC_kwDOAmdhQ84CwLFu" # copied from giscus.app, e.g: DIC_kwD...
+        mapping: "pathname"
+        reactions_enabled: 1
+        theme: "light" # initial theme. default: light
+        theme_light: "noborder_light" # light theme. default: noborder_light
+        theme_dark: "noborder_gray" # dark theme. default: noborder_gray
+        lang: "pt" # en,pt,..
+      disqus:
+        shortname: "" # your shortname disqus
+    tags_posts:
+      title: "postagem pela tag"
+
+# section: [pixels]
+pixels:
+  title: "pixels"
+  layout:
+    width: 860 # default: 860
+# section: [page]
+page:
+  updated_on: "Página atualizada em"
+  error:
+    image: https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXlxYzc5eXp1Nm01cmtldzM5bHhwdzJ2Njk2c2E4b2RkdTBkeGs5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c20UV66B7zCWA/giphy.gif
+    title: Error 404
+    message: |
+      Parece que este conteúdo não existe ou foi removido pelo autor.
+
+# section: [contact]
+contact:
+  name:
+    placeholder: "Seu primeiro e último nome"
+  email:
+    placeholder: "Seu melhor endereço de e-mail"
+    help: "Nunca compartilharei seu e-mail com mais ninguém."
+  message:
+    placeholder: "Escreva sua mensagem aqui"
+    status: "Enviando..."
+    caracters:
+      min: 50
+      warning:
+        title: "Aviso"
+        content: "A mensagem deve ter pelo menos 50 caracteres."
+    success:
+      title: "Mensagem enviada"
+      content: "Sua mensagem foi enviada com sucesso!"
+    error:
+      title: "Erro"
+      content: "Ocorreu um erro ao enviar sua mensagem."
+  button:
+    text: "Enviar!"
+  recaptcha:
+    warning:
+      title: Aviso
+      content: "Por favor, marque a caixa 'Não sou um robô'."
+    fail: "A verificação falhou. Recarregue a página e tente novamente."
+    error: "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente."
+
+# section: [footer]
+footer:
+  top_button:
+    # Some compatible icons: ↑ ⇡ ▴ 🢙
+    icon: ⇡
+    enable: true
+  copyright:
+    title: "William Canin"
+    since: 2015
+    message:
+  licenses:
+    title: "Licenças"
+    page_url: "/licenses/"
+  message: | # Doing stuff on the web since 2007.
+    Simplicity is a feature, not a bug.

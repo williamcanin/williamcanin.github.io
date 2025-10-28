@@ -1,5 +1,6 @@
 ---
 layout: home
+author: "William C. Canin"
 text_center: true
 published: true
 permalink: / # do not change
@@ -7,58 +8,14 @@ permalink: / # do not change
 
 {%- assign year = site.time | date: "%Y" -%}
 
-WILLIAM(1)
+**Hey, guy!**
 
-# NAME
+Bem-vindo à casa de Internet de "William Canin". (Este sou eu!)
 
-> William Canin
+Crio e apago códigos de computador **desde 2010**. Geralmente nas linguagens Rust, Python e Javascript. Mas já usei outras.
 
-## SYNOPSIS
-
-> thoughts on programming, digital wellbeing, linux
-
-## DESCRIPTION
-
-> Ele cria e apaga códigos de computador **desde 2010**. Geralmente nas linguagens Rust, Python e Javascript. Mas já usou outras.
-
-> Tem um perfil no GitHub, acessível através deste link [github@williamcanin](https://github.com/williamcanin){:target="_blank"}.
-
-> Também tem no GitLab como *fallback*, este [gitlab@williamcanin](https://gitlab.com/williamcanin){:target="_blank"}, mas com menos usabilidade.
-
-<!-- > O currículo você pode obter [aqui](#){:target="_blank"}. -->
-
-## WEBLOG
-
-> Escreve algumas coisas no weblog dele, clicando [aqui](/blog/) você acessa.
-
-## SOCIAL NETWORKS
-
-> ~~Facebook~~
-
-> ~~Instagram~~
-
-## CONTACT
-
-> Prefere contato usando e-mail, através de
-
-> **william.costa.canin@gmail.com**
-
-## COPYRIGHT
-
-> &copy; William Canin 2015-{{ year }} - Todos os direitos reservados.
-
-<!-- ## SEE ALSO
-
-> Momentos de lazer em [pixels](/pixels/){:target="_blank"}. -->
-
-<p style="margin-top: 20px"><i>"Simplicity is a feature, not a bug."</i></p>
-
-
-
-
-
-
-
+Escrevo ocasionalmente no meu [weblog](/blog/). Confira meu último post, {% for last_post in site.posts limit:1 %}
+"<a href="{{last_post.url}}">{{last_post.title}}</a>". {% endfor %}
 
 <!--  OLD {% assign age = site.time | date: '%Y' | minus: 1988 %}
 

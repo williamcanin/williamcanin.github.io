@@ -1,13 +1,10 @@
 .default {
-  margin: 0 auto;
-  transition: transform 0.3s ease;
+  margin: 0 auto !important;
+  // transition: transform 0.3s ease;
 
-  .content {
-    margin-bottom: 30px !important;
-    border: 2px dotted;
-    padding: 20px 0px;
-    background-color: var(--content-bg);
-  }
+  // .content {
+  //   margin-bottom: 30px !important;
+  // }
 
   .content code,
   .content pre {

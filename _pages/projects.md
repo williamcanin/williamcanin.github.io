@@ -2,12 +2,14 @@
 layout: page
 order: 3
 title: "projetos"
-emoji: 💼&nbsp;
-author: "Your Name"
-date: 2025-10-12 19:05:00
+description: |
+  Principais projetos autorais
+emoji: 💼
+author: "William Canin"
+date:
 update_date:
 in_menu: true
-published: false
+published: true
 permalink: /projects/
 ---
 
@@ -18,12 +20,8 @@ em desenvolvimento e manutenção.
 
 ---
 
-»&nbsp; [**rawfeed**](https://github.com/rawfeed){:target="_blank"} — Um tema para [Jekyll](http://jekyllrb.com){:target="_blank"} bruto com várias funcionalidades para minimalistas **(em construção)**
+»&nbsp; [**rawfeed**](https://github.com/rawfeed){:target="_blank"} — Uma organização GitHub para temas e modelos de SSG (Static Site Generators).
 
-»&nbsp; [**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"} — Um gerenciador CLI de dotfiles (e muito mais) para sistemas Linux feito em [**Python**](https://python.org){:target="_blank"}
+»&nbsp; [**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"} — Um gerenciador CLI de dotfiles para sistemas Unix.
 
-»&nbsp; [**Typing**](https://github.com/williamcanin/typing-jekyll-template){:target="_blank"} — Um template para Jekyll com vários temas
-
-»&nbsp; [**Jektify**](https://jektify.github.io){:target="_blank"} — Um plugin para [Jekyll](http://jekyllrb.com){:target="_blank"} que insere entrada de faixa de músicas em páginas e posts.
-
-
+»&nbsp; [**Jektify**](https://jektify.github.io){:target="_blank"} — Um plugin música do Spotify para [Jekyll](http://jekyllrb.com){:target="_blank"}.

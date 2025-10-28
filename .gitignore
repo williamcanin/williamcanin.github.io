@@ -2,12 +2,13 @@
 
 _site/
 .bundle-cache/
+.ruby-lsp/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata/
 node_modules/
-tmp/
 
 ~*
 *.Identifier
 .bak
+*.gem

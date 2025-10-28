@@ -16,8 +16,7 @@ permalink: /licenses/
 
 # Licenças
 
-<div class="license-wrap">
 Todas as postagens do meu blog estão licenciadas sob [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/){:target="_blank"}.
 
-<!-- Minhas fotos estão licenciadas sob [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/){:target="_blank"} -->
-</div>
+<!-- As fotografias contidas nas publicações da página [momentos](/pixels/) são protegidas por direitos autorais e estão sob a proteção de
+**Todos os direitos reservados**. Qualquer uso, cópia ou distribuição não autorizada é estritamente proibido.-->
