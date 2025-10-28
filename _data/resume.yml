@@ -38,7 +38,7 @@ sidebar:
   # IMPORTANT!!!: "Personal details" are sensitive data. For security reasons, enable it ONLY if
   #                you're printing it; never leave it exposed online.
   personal_details:
-    enable: true
+    enable: false
     caption: Dados pessoais
     items:
       - title: Data Nasc.
@@ -57,7 +57,8 @@ sidebar:
     enable: true
     caption: Idiomas
     names:
-      - value: Portuguese
+      - value: Português
+      - value: Inglês (técnico)
 
   # section: [Education]
   education:
@@ -77,15 +78,15 @@ sidebar:
       - group: Sistema Operacional
         tools: [Linux, Windows]
       - group: Backend
-        tools: [Rust, Python, ShellScript]
-      - group: Banco de Dados
-        tools: [PS/QL, PostGreSQL]
+        tools: [Rust, Python, Node.js, ShellScript]
+      - group: PS/QL
+        tools: [PostGreSQL, MySQL]
       - group: Frameworks
-        tools: [Django, Node.js]
+        tools: [Django]
       - group: DevOps
         tools: [Docker]
       - group: Outros
-        tools: [Git, Jekyll, Gulp]
+        tools: [Git, SSG, JetBrains, VsCode]
 
 # ---------------------------------------- BODY ----------------------------------------------------
 body:
