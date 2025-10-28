@@ -100,7 +100,7 @@ head:
 default:
   lang: pt-BR
   # Some compatible separators: ⨟∫⦁;⬨⬖︙︰𐄛🢝
-  separator: ⨟
+  separator: ;
   width: 860 # default: 860
   background_focus: true
   rounding: false
