@@ -63,13 +63,15 @@ document.addEventListener "DOMContentLoaded", ->
       formData = new FormData form
       data = Object.fromEntries formData.entries()
 
-      fetch(endpoint,
+      fetch(endpoint, {
         method: "POST"
         redirect: "follow"
-        headers:
+        headers: {
           "Content-Type": "application/json"
+        }
         body: JSON.stringify data
-      ).then (response) ->
+      })
+      .then (response) ->
         response.json()
       .then (result) ->
         if result.result is 'success'
