@@ -1,0 +1,7 @@
+:root[data-theme="light"] {
+  --primary-color: blue !important;
+}
+
+:root[data-theme="dark"] {
+  --primary-color: #2cdaa0 !important;
+}
