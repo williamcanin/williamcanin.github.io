@@ -62,6 +62,7 @@ head:
     connect-src:
       - https://www.google.com
       - https://api.github.com
+      - https://script.google.com
     img-src:
       - https://www.google.com
       - https://media0.giphy.com
@@ -74,6 +75,7 @@ head:
       - https://cdnjs.cloudflare.com
       - https://giscus.app
       - https://disqus.com
+      - https://script.google.com
     style-src:
       - https://cdnjs.cloudflare.com
       - https://fonts.googleapis.com
