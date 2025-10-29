@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "**.bundle-cache": true,
+    "**.vscode": true,
+    "**Gemfile": true,
+    "**LICENSE.txt": true,
+    "**package.json": true,
+    "**Rakefile": true,
+    "**404.html": true,
+  }
+}
