@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2025-10-29T01:49:12+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2025-10-29T01:52:49+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
 
   <div class="toc-head">
     <h2>Índice</h2>
@@ -1710,12 +1710,12 @@ script: [page1.js]
 
 <p>Ei, beleza? 👍</p>
 
-<p>Este é o guia que fiz, e uso atualmente para instalar o <a href="https://archlinux.org/">Arch Linux</a> em
+<p>Este é o guia que fiz, e uso atualmente para instalar o <a href="https://archlinux.org/" target="_blank">Arch Linux</a> em
 minha máquina.</p>
 
 <p>Este guia irá ter detalhes e comentários RESUMIDO de cada comando, caso queira um guia com apenas os
 comandos, sem muita “verbosidade” de comentários, use este outro guia que fiz em modo <code class="language-plaintext highlighter-rouge">.txt</code>:
-<a href="/docs/raw/archlinux_installation.txt">archlinux_installation.txt</a>.</p>
+<a href="/docs/raw/archlinux_installation.txt" target="_blank">archlinux_installation.txt</a>.</p>
 
 <blockquote>
   <p>NOTA: Nesses guias, talvez nem tudo sirva para seu gosto e/ou suporte de sua máquina, então se
@@ -1725,7 +1725,7 @@ dano que sua máquina venha sofrer.</p>
 
 <h1 id="preparação-de-flash-drive">Preparação de Flash Drive</h1>
 
-<p>Baixo a imagem do Arch Linux em <a href="https://archlinux.org/download/">Arch Linux Download</a>.
+<p>Baixo a imagem do Arch Linux em <a href="https://archlinux.org/download/" target="_blank">Arch Linux Download</a>.
 Eu uso o BitTorrent para evitar corromper a imagem durante o download, e para gravar a imagem, se
 eu estiver no Linux, uso <code class="language-plaintext highlighter-rouge">dd</code> com o comando abaixo:</p>
 
@@ -2166,7 +2166,7 @@ systemctl mask NetworkManager.service<span class="p">;</span>
 não uso os driver da minha GPU (<strong>NVIDIA</strong>) diretamente do repo do <strong>Arch Linux</strong>. Como o
 <strong>Arch Linux</strong> é rolling-release e sempre disponibiliza a “última” versão dos pacotes, tive alguns
 problemas com a útilma versão da <strong>NVIDIA</strong> em relação a minha GPU 😠, então instalo o driver (<code class="language-plaintext highlighter-rouge">.run</code>)
-baixado do próprio <a href="https://www.nvidia.com/en-us/drivers/unix/">site da NVIDIA</a> com uma versão
+baixado do próprio <a href="https://www.nvidia.com/en-us/drivers/unix/" target="_blank">site da NVIDIA</a> com uma versão
 anterior, mas especificamente a <em>Latest New Feature Branch Version</em>.</p>
 </blockquote>
 
@@ -2533,7 +2533,7 @@ lib32-vulkan-icd-loader vulkan-tools
 
 <p><strong>Intel:</strong></p>
 
-<p>Como uso <a href="https://www.intel.com.br/content/www/br/pt/products/details/processors/core.html">Intel</a>,
+<p>Como uso <a href="https://www.intel.com.br/content/www/br/pt/products/details/processors/core.html" target="_blank">Intel</a>,
 então também instalo esses drivers para GPU integrada:</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> mesa-vulkan-intel vulkan-intel linux-firmware-intel
@@ -2843,7 +2843,7 @@ sbctl verify
 <div id="details-start" class="details-start" data-summary="Assinando EFI Windows"></div>
 
 <p>A EFI do Windows existem muitos arquivos que devem ser assinados, por isso, faço da seguinte maneira
-retirado da própria <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl">Wiki do Arch Linux</a>:</p>
+retirado da própria <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl" target="_blank">Wiki do Arch Linux</a>:</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /boot/EFI/Microsoft
 sbctl verify | <span class="nb">sed</span> <span class="s1">'s/✗ /sbctl sign -s /e'</span>
@@ -2900,7 +2900,7 @@ smem
 
 <h2 id="configurando-meu-shell">Configurando meu shell</h2>
 
-<p>Uso o <strong>ZSH</strong> com <a href="https://ohmyz.sh/">Oh-My-ZSH</a>, plugins e <a href="https://startship.rs">Starship</a>, e faço
+<p>Uso o <strong>ZSH</strong> com <a href="https://ohmyz.sh/" target="_blank">Oh-My-ZSH</a>, plugins e <a href="https://startship.rs" target="_blank">Starship</a>, e faço
 assim:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
@@ -2926,9 +2926,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="
 </pre></td></tr></tbody></table></code></pre></figure>
 
 <blockquote>
-  <p>Nota: Geralmente eu apenas instalo o <a href="https://ohmyz.sh/">Oh-My-ZSH</a>, plugins e <a href="https://startship.rs">Starship</a>,
+  <p>Nota: Geralmente eu apenas instalo o <a href="https://ohmyz.sh/" target="_blank">Oh-My-ZSH</a>, plugins e <a href="https://startship.rs" target="_blank">Starship</a>,
 e as configurações do <code class="language-plaintext highlighter-rouge">~/.zshrc</code> e resgato do meu <strong>dotfiles</strong>, usando o
-<a href="https://github.com/snakypy/dotctrl">DotCtrl</a>, um gerenciador de dotfiles criado por mim mesmo 😆.</p>
+<a href="https://github.com/snakypy/dotctrl" target="_blank">DotCtrl</a>, um gerenciador de dotfiles criado por mim mesmo 😆.</p>
 </blockquote>
 
 <h2 id="login-automático">Login automático</h2>
