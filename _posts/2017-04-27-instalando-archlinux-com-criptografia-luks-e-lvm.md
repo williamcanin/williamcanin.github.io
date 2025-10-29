@@ -16,12 +16,12 @@ tags: [archlinux,encryption,criptografia,luks,lvm]
 
 Ei, beleza? 👍
 
-Este é o guia que fiz, e uso atualmente para instalar o [Arch Linux](https://archlinux.org/) em
+Este é o guia que fiz, e uso atualmente para instalar o [Arch Linux](https://archlinux.org/){:target="_blank"} em
 minha máquina.
 
 Este guia irá ter detalhes e comentários RESUMIDO de cada comando, caso queira um guia com apenas os
 comandos, sem muita "verbosidade" de comentários, use este outro guia que fiz em modo `.txt`:
-[archlinux_installation.txt](/docs/raw/archlinux_installation.txt).
+[archlinux_installation.txt](/docs/raw/archlinux_installation.txt){:target="_blank"}.
 
 > NOTA: Nesses guias, talvez nem tudo sirva para seu gosto e/ou suporte de sua máquina, então se
 for usar algo, tenha consciência se é compatível com seu setup. Não me responsabilizo por qualquer
@@ -30,7 +30,7 @@ dano que sua máquina venha sofrer.
 
 # Preparação de Flash Drive
 
-Baixo a imagem do Arch Linux em [Arch Linux Download](https://archlinux.org/download/).
+Baixo a imagem do Arch Linux em [Arch Linux Download](https://archlinux.org/download/){:target="_blank"}.
 Eu uso o BitTorrent para evitar corromper a imagem durante o download, e para gravar a imagem, se
 eu estiver no Linux, uso `dd` com o comando abaixo:
 
@@ -380,7 +380,7 @@ Aqui habilito o repositório `[multilib]` e ignoro alguns pacotes de serem insta
 não uso os driver da minha GPU (**NVIDIA**) diretamente do repo do **Arch Linux**. Como o
 **Arch Linux** é rolling-release e sempre disponibiliza a "última" versão dos pacotes, tive alguns
 problemas com a útilma versão da **NVIDIA** em relação a minha GPU 😠, então instalo o driver (`.run`)
-baixado do próprio [site da NVIDIA](https://www.nvidia.com/en-us/drivers/unix/) com uma versão
+baixado do próprio [site da NVIDIA](https://www.nvidia.com/en-us/drivers/unix/){:target="_blank"} com uma versão
 anterior, mas especificamente a *Latest New Feature Branch Version*.
 
 **(1)** - Abro o **/etc/pacman.conf**:
@@ -697,7 +697,7 @@ lib32-vulkan-icd-loader vulkan-tools
 
 **Intel:**
 
-Como uso [Intel](https://www.intel.com.br/content/www/br/pt/products/details/processors/core.html),
+Como uso [Intel](https://www.intel.com.br/content/www/br/pt/products/details/processors/core.html){:target="_blank"},
 então também instalo esses drivers para GPU integrada:
 
 ```shell
@@ -976,7 +976,7 @@ sbctl verify
 {% include details summary="Assinando EFI Windows" %}
 
 A EFI do Windows existem muitos arquivos que devem ser assinados, por isso, faço da seguinte maneira
-retirado da própria [Wiki do Arch Linux](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl):
+retirado da própria [Wiki do Arch Linux](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl){:target="_blank"}:
 
 
 ```shell
@@ -1034,7 +1034,7 @@ smem
 
 ## Configurando meu shell
 
-Uso o **ZSH** com [Oh-My-ZSH](https://ohmyz.sh/), plugins e [Starship](https://startship.rs), e faço
+Uso o **ZSH** com [Oh-My-ZSH](https://ohmyz.sh/){:target="_blank"}, plugins e [Starship](https://startship.rs){:target="_blank"}, e faço
 assim:
 
 {% highlight bash linenos %}
@@ -1050,9 +1050,9 @@ echo "eval \"\$(starship init zsh)\"" > "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/them
 sed -i 's/^ZSH_THEME=".*"/ZSH_THEME="starship"/' "$HOME/.zshrc";
 {% endhighlight %}
 
-> Nota: Geralmente eu apenas instalo o [Oh-My-ZSH](https://ohmyz.sh/), plugins e [Starship](https://startship.rs),
+> Nota: Geralmente eu apenas instalo o [Oh-My-ZSH](https://ohmyz.sh/){:target="_blank"}, plugins e [Starship](https://startship.rs){:target="_blank"},
 e as configurações do `~/.zshrc` e resgato do meu **dotfiles**, usando o
-[DotCtrl](https://github.com/snakypy/dotctrl), um gerenciador de dotfiles criado por mim mesmo 😆.
+[DotCtrl](https://github.com/snakypy/dotctrl){:target="_blank"}, um gerenciador de dotfiles criado por mim mesmo 😆.
 
 
 ## Login automático
