@@ -67,3 +67,4 @@ exclude:
   - package.json
   - README.md
   - Rakefile
+  - tools

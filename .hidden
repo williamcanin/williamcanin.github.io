@@ -1,8 +1,9 @@
 node_modules
 tools
 blog
-_sass
 pixels
+CNAME
+LICENSE.txt
 Gemfile
 Gemfile.lock
 404.html
