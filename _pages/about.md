@@ -17,7 +17,7 @@ permalink: /about/
 
 Olá ️✌️!
 
-Me chamo **William**, sou formado em [**Análise e Desenvolvimento de Sistemas**](https://unilins.edu.br){:target="_blank"};
+Me chamo **William**, sou formado em [**Análise e Desenvolvimento de Sistemas**](https://unilins.edu.br){:target="_blank"} em 2014;
 mas de 10 anos programando, e um praticante autodidata de algumas ferramentas de
 desenvolvimento/programação. Tenho a convicção de que tudo é possível com dedicação e resiliência
 nessa área.
