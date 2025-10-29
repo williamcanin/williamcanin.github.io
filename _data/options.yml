@@ -20,7 +20,7 @@ socials:
     terminal:
       about:
         description: |
-          Mais alguma coisa...? Oh sim, se você quer saber minhas redes sociais ATIVAS, apenas digite o comando "**socials**" aqui. Até breve.
+          Mais alguma coisa...? Oh sim, se você quer saber minhas redes sociais ATIVAS, apenas digite o comando "**socials**" aqui.
       command:
         description: |
           Aqui estão minhas redes sociais ativas:
