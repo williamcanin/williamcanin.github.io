@@ -1,11 +1,19 @@
 {
   "files.exclude": {
-    "**.bundle-cache": true,
-    "**.vscode": true,
-    "**Gemfile": true,
-    "**LICENSE.txt": true,
-    "**package.json": true,
-    "**Rakefile": true,
-    "**404.html": true,
+    ".bundle-cache": true,
+    ".vscode": true,
+    "Gemfile": true,
+    "LICENSE.txt": true,
+    "package.json": true,
+    "Rakefile": true,
+    "404.html": true,
+    "tools": true,
+    "pixels": true,
+    "blog": true,
+    ".github": true,
+    ".gitlab-ci.yml": true,
+    ".hidden": true,
+    ".gitignore": true,
+    "CNAME": true,
   }
 }
