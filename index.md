@@ -12,7 +12,7 @@ Bem-vindo à casa de Internet de "William Canin". (Este sou eu!)
 
 Crio e apago códigos de computador **desde 2010**. Atualmente nas linguagens Rust, Python e Javascript. Mas já usei outras.
 
-Meu sistema operacional é Linux, através da distribuição [Arch Linux](https://github.com/williamcanin/my-archlinux/blob/main/README.md){:target="_blank"}, porém, já provei o sabor de outras.
+Meu sistema operacional é Linux, através da distribuição [Arch Linux](/blog/instalando-archlinux-com-criptografia-luks-e-lvm/){:target="_blank"}, porém, já provei o sabor de outras.
 
 Escrevo ocasionalmente no meu [weblog](/blog/). Confira meu último post, {% for last_post in site.posts limit:1 %}
 "[{{last_post.title}}]({{last_post.url}})". {% endfor %}
