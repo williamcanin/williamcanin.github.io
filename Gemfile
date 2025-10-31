@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 gem "rake", "~> 13.0"
-gem "rawfeed", "~> 0.2.5"
+gem "rawfeed", "~> 0.2.6"
 
 # TODO: jemoji está criando espaço no menu
 group :jekyll_plugins do
