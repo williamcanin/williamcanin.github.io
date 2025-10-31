@@ -21,7 +21,7 @@ minha máquina.
 
 Este guia irá ter detalhes e comentários RESUMIDO de cada comando, caso queira um guia com apenas os
 comandos, sem muita "verbosidade" de comentários, use este outro guia que fiz em modo `.txt`:
-[archlinux_installation.txt](/pub/raw/archlinux_installation.txt){:target="_blank"}.
+[archlinux_installation.txt](/pub/docs/raw/archlinux_installation.txt){:target="_blank"}.
 
 > NOTA: Nesses guias, talvez nem tudo sirva para seu gosto e/ou suporte de sua máquina, então se
 for usar algo, tenha consciência se é compatível com seu setup. Não me responsabilizo por qualquer

@@ -30,7 +30,7 @@ Para me adicionar no XMPP, use minhas credenciais abaixo:
 
 **Alias**: William Canin
 
-Se você quiser que nossa conversa seja criptografada, minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/key/public.asc), onde a impressão digital da mesma é:
+Se você quiser que nossa conversa seja criptografada, minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/docs/key/public.asc), onde a impressão digital da mesma é:
 
 **19E0 B6CD C72C 60A6 6421 99CA C00A 8970 B041 8AD5**
 
@@ -53,7 +53,7 @@ Se desejar entrar em contato com e-mail criptografado com OpenPGP (recomendo usa
 
 **wcanin.contact@gmail.com**
 
-...usando minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/key/public.asc), onde a impressão digital da mesma é:
+...usando minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/docs/key/public.asc), onde a impressão digital da mesma é:
 
 **19E0 B6CD C72C 60A6 6421 99CA C00A 8970 B041 8AD5**
 <!-- https://keys.openpgp.org -->
