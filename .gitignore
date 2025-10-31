@@ -1,5 +1,6 @@
 # by rawfeed theme
 
+tmp/
 _site/
 .bundle-cache/
 .ruby-lsp/

@@ -221,6 +221,7 @@ pixels:
   title: "pixels"
   layout:
     width: 860 # default: 860
+
 # section: [page]
 page:
   updated_on: "Página atualizada em"
@@ -259,6 +260,11 @@ contact:
       content: "Por favor, marque a caixa 'Não sou um robô'."
     fail: "A verificação falhou. Recarregue a página e tente novamente."
     error: "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente."
+
+# section: [pub]
+pub:
+  path:
+    title: "Index of"
 
 # section: [footer]
 footer:
