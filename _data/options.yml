@@ -16,7 +16,7 @@ socials:
   enable: true
   description:
     text: |
-      Estas são as minhas redes sociais:
+      Estas são as minhas redes sociais ativas:
     terminal:
       about:
         description: |
@@ -119,7 +119,7 @@ default:
 # section: [header]
 header:
   title: Hey, I'm William!
-  description: "thoughts on programming, digital wellbeing, linux"
+  description: "Thinker on hacking, digital well-being, Linux."
   width: 860 # default: 860
   # your website image or logo
   avatar:
