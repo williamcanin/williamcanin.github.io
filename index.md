@@ -10,7 +10,7 @@ permalink: / # do not change
 
 Bem-vindo à casa de Internet de "William Canin". (Este sou eu!)
 
-Crio e apago códigos de computador **desde 2010**. Atualmente nas linguagens Rust, Python e Javascript. Mas já usei outras.
+Crio e apago códigos de computador **desde 2010**. Atualmente estou nas linguagens Rust, Python e Javascript. Mas já usei outras.
 
 Meu sistema operacional é Linux, através da distribuição [Arch Linux](/blog/instalando-archlinux-com-criptografia-luks-e-lvm/){:target="_blank"}, porém, já provei o sabor de outras.
 
