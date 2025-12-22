@@ -4,7 +4,7 @@ author: "William C. Canin"
 order: -1
 title: "blog"
 description: |
-  Alguns de meus conhecimentos em publicação de conteúdo.
+  Alguns de meus conhecimentos BÁSICOS que acho pertinente compartilhar.
 published: true
 pagination:
   enabled: true
