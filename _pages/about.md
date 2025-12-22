@@ -29,7 +29,7 @@ e atualmente faz parte de minha máquina como Sistema Operacional principal, atr
 [**Arch Linux**](https://archlinux.org){:target="_blank"}.
 
 Em meu lazer, gosto de ouvir [**músicas**](https://open.spotify.com/user/williamcanin){:target="_blank"};
-codificar; assistir séries/filmes; leituras; e, estar com boas companhias CONFIÁVEIS.
+codificar; ler sobre hacking; assistir séries/filmes; leituras; e, estar com boas companhias CONFIÁVEIS.
 
 Tenho está [**página na internet**]({{ site.url }}{{ site.baseurl }}){:target="_blank"}, que você já
 deve ter "stalkeado" um pouco onde mantenho ~~tudo~~ algo sobre meus conhecimentos BÁSICOS
