@@ -25,6 +25,9 @@ socials:
         description: |
           Aqui estão minhas redes sociais ativas:
   links:
+    - title: bluesky
+      url: https://williamcanin.bsky.social
+      
     - title: github
       url: https://github.com/williamcanin
 
