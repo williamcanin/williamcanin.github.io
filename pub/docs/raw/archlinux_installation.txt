@@ -415,3 +415,20 @@ if [ -z "\$DISPLAY" ] && [ "\$XDG_VTNR" = 1 ]; then
   exec startx &>/dev/null
 fi
 EOF
+
+
+----------------------------------------
+:: Recover systemd-boot (optional)
+----------------------------------------
+
+>>> mount /dev/mapper/linux-arch /mnt;
+>>> mount --mkdir /dev/sda1 /mnt/boot;
+>>> mount --mkdir /dev/mapper/home /mnt/home;
+>>> for dir in proc sys dev run; do mount --rbind /$dir /mnt/$dir; done;
+>>> arch-chroot /mnt;
+>>> pacman -S --noconfirm linux-lts linux-lts-headers;
+>>> mkinitcpio -P;
+>>> bootctl --path=/boot install;
+>>> efibootmgr -v
+>>> efibootmgr -b XXXX -B (remove specific entry)
+>>> efibootmgr --create --disk /dev/sda --part 1 --label "Linux Boot Manager" --loader '\EFI\systemd\systemd-bootx64.efi'
