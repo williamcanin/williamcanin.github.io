@@ -180,24 +180,28 @@ console-mode max
 editor no
 EOF
 
+>>> cat << EOF > /etc/kernel/cmdline
+root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw loglevel=3 nvidia_drm.modeset=1 video=1920x1080@75
+EOF
+
 >>> cp /etc/mkinitcpio.d/linux-lts.preset /etc/mkinitcpio.d/linux-lts.preset.backup
 
->>> cat << EOF > /etc/mkinitcpio.d/linux-lts.preset
+>>> cat << EOF >  /etc/mkinitcpio.d/linux-lts.preset
 ESP_DIR="${ESP_DIR}"
 
 ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="/boot/\${ESP_DIR}vmlinuz-linux-lts"
-ALL_cmdline="root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw loglevel=3 nvidia_drm.modeset=1 video=1920x1080@75"
+ALL_cmdline="/etc/kernel/cmdline"
 PRESETS=('default' 'fallback')
 
 default_config="/etc/mkinitcpio.conf"
-default_image="/boot/\${ESP_DIR}initramfs-linux-lts.img"
+default_image="/boot/\${ESP_DIR}initramfs-linux.img"
 default_uki="/boot/\${ESP_DIR}EFI/Linux/arch-linux-lts.efi"
 default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
 
 fallback_config="/etc/mkinitcpio.conf"
-fallback_image="/boot/\${ESP_DIR}initramfs-linux-lts-fallback.img"
-fallback_uki="/boot/\${ESP_DIR}EFI/Linux/arch-linux-lts-fallback.efi"
+fallback_image="/boot/\${ESP_DIR}initramfs-linux-fallback.img"
+fallback_uki="/boot/\${ESP_DIR}EFI/Linux/arch-linux-fallback.efi"
 fallback_options="-S autodetect"
 EOF
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-01-01T09:38:39+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-01-01T10:01:15+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
 
   <div class="toc-head">
     <h2>Índice</h2>
@@ -2343,12 +2343,26 @@ variável <code class="language-plaintext highlighter-rouge">ESP_DIR</code> DEVE
 <p>Atualmente estou usando <code class="language-plaintext highlighter-rouge">systemd-boot</code> + <code class="language-plaintext highlighter-rouge">UKI</code> (Unified Kernel Image), e esses são os passos que
 faço para instalar.</p>
 
-<p><strong>(1)</strong> - Crio um backup do “<em>preset</em>” primeiro:</p>
+<p><strong>(1)</strong> - Crio o arquivo “<em>/etc/kernel/cmdline</em>”:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; /etc/kernel/cmdline
+root=UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</span> UUID <span class="nt">-o</span> value /dev/mapper/linux-arch<span class="si">)</span><span class="sh"> rw loglevel=3 nvidia_drm.modeset=1 video=1920x1080@75
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>Dica: Caso eu queira um boot menos verboso e com splash, eu adiciono na opção <code class="language-plaintext highlighter-rouge">ALL_cmdline</code> os
+parâmentros: <code class="language-plaintext highlighter-rouge">quiet splash loglevel=3 systemd.show_status=auto rd.udev.log_level=3</code>. E depois
+instalo o pacote <code class="language-plaintext highlighter-rouge">plymouth</code>, e adiciono a flag <code class="language-plaintext highlighter-rouge">plymouth</code> nos HOOKS do <code class="language-plaintext highlighter-rouge">/etc/mkinitcpio.conf</code> depois
+de <code class="language-plaintext highlighter-rouge">keymap</code>.</p>
+</blockquote>
+
+<p><strong>(2)</strong> - Crio um backup do “<em>preset</em>” primeiro:</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> /etc/mkinitcpio.d/linux-lts.preset /etc/mkinitcpio.d/linux-lts.preset.backup
 </code></pre></div></div>
 
-<p><strong>(2)</strong> - Depois crio um novo <code class="language-plaintext highlighter-rouge">/etc/mkinitcpio.d/linux-lts.preset</code> com as configurações abaixo:</p>
+<p><strong>(3)</strong> - Depois crio um novo <code class="language-plaintext highlighter-rouge">/etc/mkinitcpio.d/linux-lts.preset</code> com as configurações abaixo:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -2373,30 +2387,23 @@ ESP_DIR="</span><span class="k">${</span><span class="nv">ESP_DIR</span><span cl
 
 ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}vmlinuz-linux-lts"
-ALL_cmdline="root=UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</span> UUID <span class="nt">-o</span> value /dev/mapper/linux-arch<span class="si">)</span><span class="sh"> rw loglevel=3 nvidia_drm.modeset=1 video=1920x1080@75"
+ALL_cmdline="/etc/kernel/cmdline"
 PRESETS=('default' 'fallback')
 
 default_config="/etc/mkinitcpio.conf"
-default_image="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}initramfs-linux-lts.img"
+default_image="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}initramfs-linux.img"
 default_uki="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}EFI/Linux/arch-linux-lts.efi"
 default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
 
 fallback_config="/etc/mkinitcpio.conf"
-fallback_image="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}initramfs-linux-lts-fallback.img"
-fallback_uki="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}EFI/Linux/arch-linux-lts-fallback.efi"
+fallback_image="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}initramfs-linux-fallback.img"
+fallback_uki="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}EFI/Linux/arch-linux-fallback.efi"
 fallback_options="-S autodetect"
 EOF</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<blockquote>
-  <p>Dica: Caso eu queira um boot menos verboso e com splash, eu adiciono na opção <code class="language-plaintext highlighter-rouge">ALL_cmdline</code> os
-parâmentros: <code class="language-plaintext highlighter-rouge">quiet splash loglevel=3 systemd.show_status=auto rd.udev.log_level=3</code>. E depois
-instalo o pacote <code class="language-plaintext highlighter-rouge">plymouth</code>, e adiciono a flag <code class="language-plaintext highlighter-rouge">plymouth</code> nos HOOKS do <code class="language-plaintext highlighter-rouge">/etc/mkinitcpio.conf</code> depois
-de <code class="language-plaintext highlighter-rouge">keymap</code>.</p>
-</blockquote>
-
 <!--
-**(3)** - Agora crio as entradas do `systemd-boot` padrão:
+**(4)** - Agora crio as entradas do `systemd-boot` padrão:
 
 ```shell
 cat << EOF > /boot/${ESP_DIR}loader/entries/arch.conf
@@ -2410,11 +2417,11 @@ EOF
 ```shell
 cat << EOF > /boot/${ESP_DIR}loader/entries/arch-fallback.conf
 title   Arch Linux LTS (Fallback)
-efi     /EFI/Linux/arch-linux-lts-fallback.efi
+efi     /EFI/Linux/arch-linux-fallback.efi
 EOF
 ``` -->
 
-<p><strong>(3)</strong> - Reinstalo o kernel:</p>
+<p><strong>(4)</strong> - Reinstalo o kernel:</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--noconfirm</span> linux-lts
 </code></pre></div></div>
@@ -2442,7 +2449,7 @@ EOF
 title Arch Linux (Default)
 linux /vmlinuz-linux-lts
 initrd  /intel-ucode.img
-initrd /initramfs-linux-lts.img
+initrd /initramfs-linux.img
 options root=UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</span> UUID <span class="nt">-o</span> value /dev/mapper/linux-arch<span class="si">)</span><span class="sh"> rw nvidia_drm.modeset=1 video=1920x1080@75
 EOF</span>
 </pre></td></tr></tbody></table></code></pre></figure>
@@ -2453,7 +2460,7 @@ EOF</span>
 title Arch Linux (Fallback)
 linux /vmlinuz-linux-lts-fallback
 initrd  /intel-ucode.img
-initrd /initramfs-linux-ltsfallback.img
+initrd /initramfs-linux-fallback.img
 options root=UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</span> UUID <span class="nt">-o</span> value /dev/mapper/linux-arch<span class="si">)</span><span class="sh"> rw nvidia_drm.modeset=1 video=1920x1080@75
 </span><span class="no">EOF
 </span></code></pre></div></div>
