@@ -171,8 +171,6 @@ EOF
 
 >>> bootctl --path=/boot install
 
->>> ESP_DIR=""
-
 >>> cat << EOF > /boot/loader/loader.conf
 default arch-linux-lts.efi
 timeout 3
@@ -185,6 +183,8 @@ root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw loglevel=3 nvidia_
 EOF
 
 >>> cp /etc/mkinitcpio.d/linux-lts.preset /etc/mkinitcpio.d/linux-lts.preset.backup
+
+>>> ESP_DIR=""
 
 >>> cat << EOF >  /etc/mkinitcpio.d/linux-lts.preset
 ESP_DIR="${ESP_DIR}"
