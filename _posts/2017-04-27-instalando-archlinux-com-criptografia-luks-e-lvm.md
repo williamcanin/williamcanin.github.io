@@ -538,13 +538,27 @@ variável `ESP_DIR` DEVE ser assim: `ESP_DIR="efi/"`. Caso contrário deixe vazi
 Atualmente estou usando `systemd-boot` + `UKI` (Unified Kernel Image), e esses são os passos que
 faço para instalar.
 
-**(1)** - Crio um backup do "*preset*" primeiro:
+**(1)** - Crio o arquivo "*/etc/kernel/cmdline*":
+
+```shell
+cat << EOF > /etc/kernel/cmdline
+root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw loglevel=3 nvidia_drm.modeset=1 video=1920x1080@75
+EOF
+```
+
+> Dica: Caso eu queira um boot menos verboso e com splash, eu adiciono na opção `ALL_cmdline` os
+parâmentros: `quiet splash loglevel=3 systemd.show_status=auto rd.udev.log_level=3`. E depois
+instalo o pacote `plymouth`, e adiciono a flag `plymouth` nos HOOKS do `/etc/mkinitcpio.conf` depois
+de `keymap`.
+
+
+**(2)** - Crio um backup do "*preset*" primeiro:
 
 ```shell
 cp /etc/mkinitcpio.d/linux-lts.preset /etc/mkinitcpio.d/linux-lts.preset.backup
 ```
 
-**(2)** - Depois crio um novo `/etc/mkinitcpio.d/linux-lts.preset` com as configurações abaixo:
+**(3)** - Depois crio um novo `/etc/mkinitcpio.d/linux-lts.preset` com as configurações abaixo:
 
 {% highlight bash linenos %}
 cat << EOF > /etc/mkinitcpio.d/linux-lts.preset
@@ -552,28 +566,24 @@ ESP_DIR="${ESP_DIR}"
 
 ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="/boot/\${ESP_DIR}vmlinuz-linux-lts"
-ALL_cmdline="root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw loglevel=3 nvidia_drm.modeset=1 video=1920x1080@75"
+ALL_cmdline="/etc/kernel/cmdline"
 PRESETS=('default' 'fallback')
 
 default_config="/etc/mkinitcpio.conf"
-default_image="/boot/\${ESP_DIR}initramfs-linux-lts.img"
+default_image="/boot/\${ESP_DIR}initramfs-linux.img"
 default_uki="/boot/\${ESP_DIR}EFI/Linux/arch-linux-lts.efi"
 default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
 
 fallback_config="/etc/mkinitcpio.conf"
-fallback_image="/boot/\${ESP_DIR}initramfs-linux-lts-fallback.img"
-fallback_uki="/boot/\${ESP_DIR}EFI/Linux/arch-linux-lts-fallback.efi"
+fallback_image="/boot/\${ESP_DIR}initramfs-linux-fallback.img"
+fallback_uki="/boot/\${ESP_DIR}EFI/Linux/arch-linux-fallback.efi"
 fallback_options="-S autodetect"
 EOF
 {% endhighlight %}
 
-> Dica: Caso eu queira um boot menos verboso e com splash, eu adiciono na opção `ALL_cmdline` os
-parâmentros: `quiet splash loglevel=3 systemd.show_status=auto rd.udev.log_level=3`. E depois
-instalo o pacote `plymouth`, e adiciono a flag `plymouth` nos HOOKS do `/etc/mkinitcpio.conf` depois
-de `keymap`.
 
 <!--
-**(3)** - Agora crio as entradas do `systemd-boot` padrão:
+**(4)** - Agora crio as entradas do `systemd-boot` padrão:
 
 ```shell
 cat << EOF > /boot/${ESP_DIR}loader/entries/arch.conf
@@ -587,11 +597,11 @@ EOF
 ```shell
 cat << EOF > /boot/${ESP_DIR}loader/entries/arch-fallback.conf
 title   Arch Linux LTS (Fallback)
-efi     /EFI/Linux/arch-linux-lts-fallback.efi
+efi     /EFI/Linux/arch-linux-fallback.efi
 EOF
 ``` -->
 
-**(3)** - Reinstalo o kernel:
+**(4)** - Reinstalo o kernel:
 
 ```shell
 pacman -S --noconfirm linux-lts
@@ -615,7 +625,7 @@ cat << EOF > /boot/${ESP_DIR}loader/entries/arch.conf
 title Arch Linux (Default)
 linux /vmlinuz-linux-lts
 initrd  /intel-ucode.img
-initrd /initramfs-linux-lts.img
+initrd /initramfs-linux.img
 options root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw nvidia_drm.modeset=1 video=1920x1080@75
 EOF
 {% endhighlight %}
@@ -627,7 +637,7 @@ cat << EOF > /boot/${ESP_DIR}loader/entries/arch-fallback.conf
 title Arch Linux (Fallback)
 linux /vmlinuz-linux-lts-fallback
 initrd  /intel-ucode.img
-initrd /initramfs-linux-ltsfallback.img
+initrd /initramfs-linux-fallback.img
 options root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw nvidia_drm.modeset=1 video=1920x1080@75
 EOF
 ```
