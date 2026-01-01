@@ -432,3 +432,7 @@ EOF
 >>> efibootmgr -v
 >>> efibootmgr -b XXXX -B (remove specific entry)
 >>> efibootmgr --create --disk /dev/sda --part 1 --label "Linux Boot Manager" --loader '\EFI\systemd\systemd-bootx64.efi'
+
+
+
+# ===================================================================================
