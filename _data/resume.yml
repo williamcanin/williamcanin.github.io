@@ -77,16 +77,18 @@ sidebar:
     section:
       - group: Sistema Operacional
         tools: [Linux, Windows]
+      - group: Frontend
+        tools: [CSS, Sass, Javascript]
       - group: Backend
         tools: [Rust, Python, Node.js, ShellScript]
       - group: PS/QL
-        tools: [PostGreSQL, MySQL]
+        tools: [PostGreSQL]
       - group: Frameworks
-        tools: [Django]
+        tools: [Bootstrap, Django]
       - group: DevOps
         tools: [Docker]
-      - group: Outros
-        tools: [Git, SSG, JetBrains, VsCode]
+      - group: Tools
+        tools: [Git, Gulp, SSG, JetBrains, VsCode]
 
 # ---------------------------------------- BODY ----------------------------------------------------
 body:
