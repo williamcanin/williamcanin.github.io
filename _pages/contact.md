@@ -21,7 +21,7 @@ permalink: /contact/
 
 ### Email criptografado com OpenPGP (`recomendado`)
 
-O OpenPGP é um padrão aberto de criptografia baseado no PGP. Funciona através de chaves assimétricas, cada usuário gera em seu computador um par de chaves correspondentes: uma pública e uma secreta.
+O OpenPGP é um padrão aberto de criptografia baseado no PGP. Funciona através de chaves assimétricas, cada usuário gera em seu dispositivo um par de chaves correspondentes: uma pública e uma secreta.
 
 Este tipo de criptografia uso com e-mail.
 
