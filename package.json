@@ -1,6 +1,6 @@
 {
   "name": "rawfeed",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "A raw Jekyll theme for minimalists",
   "type": "module",
   "scripts": {
