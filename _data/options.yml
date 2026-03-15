@@ -93,8 +93,8 @@ head:
   google:
     site_verification: ""
     analytics:
-      enable: false
-      id: "" # tracking id, e.g. "UA-200341029-1"
+      enable: true
+      id: "G-0LB08EBV3L" # tracking id, e.g. "UA-200341029-1"
     apps_script:
       url: "https://script.google.com/macros/s/AKfycbySoGUfJlruD_X27cfOKuQ-BUTtfo9I2gDdsjkpRJikXhrJAiNFrd9Okwnc4w6zOXjuhQ/exec"
     recaptcha:
