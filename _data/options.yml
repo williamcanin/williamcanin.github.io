@@ -91,7 +91,7 @@ head:
       - https://fonts.gstatic.com
       - https://cdnjs.cloudflare.com
   google:
-    site_verification: ""
+    site_verification: "aL5Xr9VBiPa_Udck8QdFsge261DRA4Pn09M51boQHBA"
     analytics:
       enable: true
       id: "G-0LB08EBV3L" # tracking id, e.g. "UA-200341029-1"
