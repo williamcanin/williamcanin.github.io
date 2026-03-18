@@ -68,6 +68,7 @@ head:
       - https://script.google.com
       - https://script.googleusercontent.com
       - https://www.googletagmanager.com
+      - https://www.google-analytics.com
     img-src:
       - https://www.google.com
       - https://media0.giphy.com
@@ -83,6 +84,7 @@ head:
       - https://giscus.app
       - https://disqus.com
       - https://script.google.com
+      - https://www.google-analytics.com
     style-src:
       - https://cdnjs.cloudflare.com
       - https://fonts.googleapis.com
