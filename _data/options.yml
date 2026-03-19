@@ -100,7 +100,7 @@ head:
       enable: true
       id: "G-0LB08EBV3L" # tracking id, e.g. "UA-200341029-1"
     apps_script:
-      url: "https://script.google.com/macros/s/AKfycbzQYosZdA2lbYDkEBr3GCRaY2jhffHhLy9vFqsNpPPcsjzwYf2I0zWLAPJv6BMp6scDCg/exec"
+      url: "https://script.google.com/macros/s/AKfycbxVbl8BbmQ4CS-WdNByKKq51nDqfffqkDUIjZi9B8PpKyNRtatEZJu67QJLCcRhIqulFw/exec"
     recaptcha:
       pubkey: "6Lci194rAAAAAIeSbPaHjMbtf_ShFc44cPAKskY4"
 
