@@ -6,7 +6,7 @@ description: "Gerar sua seed universal para suas criptomoedas"
 date: 2026-03-30 23:47:53 -0300
 update_date: 
 comments: false
-tags: [seedctl, bitcoin, btc, solana, ethereum, crypto, bip-39]
+tags: [seedctl, bitcoin, solana, ethereum, crypto, bip-39]
 ---
 
 Gerar uma wallet de criptomoedas em um ambiente comprometido é um dos erros mais comuns e perigosos que um usuário pode cometer. Keyloggers, malwares e gravações de tela podem capturar sua seed phrase antes mesmo de você perceber. Neste post, vou mostrar como criar suas wallets com o máximo de segurança usando duas ferramentas: o **Tails OS** e o **SeedCTL**.
