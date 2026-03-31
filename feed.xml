@@ -1,4 +1,593 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-03-19T23:56:54+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-03-31T02:16:18+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Nvidia auto-rebuild no Arch Linux com Wayland</title><link href="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/" rel="alternate" type="text/html" title="Nvidia auto-rebuild no Arch Linux com Wayland" /><published>2026-03-31T01:59:10+00:00</published><updated>2026-03-31T01:59:10+00:00</updated><id>https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland</id><content type="html" xml:base="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/"><![CDATA[<h1 id="nvidia-run-auto-rebuild-no-boot--arch-linux--wayland-instalação-manual">NVIDIA <code class="language-plaintext highlighter-rouge">.run</code> auto-rebuild no boot — Arch Linux + Wayland (instalação manual)</h1>
+
+<p>Se você usa Arch Linux com Wayland e instala o driver da NVIDIA via <code class="language-plaintext highlighter-rouge">.run</code> oficial, já deve ter sofrido com a tela preta depois de uma atualização de kernel. O motivo é simples: o instalador <code class="language-plaintext highlighter-rouge">.run</code> da NVIDIA <strong>não pode rodar com Wayland ou Xorg ativos</strong>, e os hooks do pacman executam justamente nesse momento.</p>
+
+<p>A solução é recompilar o driver <strong>antes</strong> do ambiente gráfico subir — ou seja, no boot, dentro do <code class="language-plaintext highlighter-rouge">sysinit.target</code> do systemd. Neste post vou mostrar como montar isso do zero, manualmente.</p>
+
+<hr />
+
+<h2 id="como-funciona">Como funciona</h2>
+
+<p>O fluxo completo após a configuração:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman atualiza kernel
+        ↓
+hook marca /var/lib/nvidia-reinstall-required
+        ↓
+reboot
+        ↓
+systemd (sysinit.target)
+        ↓
+nvidia-rebuild.service
+        ↓
+nvidia-rebuild.sh
+        ↓
+.run --dkms recompila o módulo
+        ↓
+mkinitcpio -P
+        ↓
+Wayland inicia já com o driver correto
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="requisitos">Requisitos</h2>
+
+<ul>
+  <li>Arch Linux</li>
+  <li>Kernel <code class="language-plaintext highlighter-rouge">linux-lts</code> e <code class="language-plaintext highlighter-rouge">linux-lts-headers</code> instalados</li>
+  <li>Driver NVIDIA instalado via <code class="language-plaintext highlighter-rouge">.run</code> com suporte a <code class="language-plaintext highlighter-rouge">--dkms</code></li>
+</ul>
+
+<p>Nota: Eu uso o “<code class="language-plaintext highlighter-rouge">linux-lts</code>”, se você usa outro kernel, faça baseado no que você usa.</p>
+
+<hr />
+
+<h2 id="passo-1--baixar-o-driver-run-oficial">Passo 1 — Baixar o driver <code class="language-plaintext highlighter-rouge">.run</code> oficial</h2>
+
+<p>Crie um diretório organizado para o instalador:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo mkdir</span> <span class="nt">-p</span> /opt/NVIDIA-Linux-x86_64-580.126.18
+</code></pre></div></div>
+
+<p>Baixe o driver oficial:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>curl <span class="nt">-L</span> <span class="s2">"https://download.nvidia.com/XFree86/Linux-x86_64/NVIDIA-Linux-x86_64-580.126.18.run"</span> <span class="se">\</span>
+  <span class="nt">-o</span> <span class="s2">"/opt/NVIDIA-Linux-x86_64-580.126.18/NVIDIA-Linux-x86_64-580.126.18.run"</span>
+</code></pre></div></div>
+
+<p>Torne-o executável:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> +x /opt/NVIDIA-Linux-x86_64-580.126.18/NVIDIA-Linux-x86_64-580.126.18.run
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Nota:</strong> Para usar outra versão do driver, substitua <code class="language-plaintext highlighter-rouge">580.126.18</code> pela versão desejada em todos os passos a seguir.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="passo-2--criar-o-hook-do-pacman">Passo 2 — Criar o hook do pacman</h2>
+
+<p>O hook é responsável por “marcar” que o driver precisa ser recompilado sempre que o kernel ou os headers forem atualizados.</p>
+
+<p>Certifique-se de que o diretório existe:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo mkdir</span> <span class="nt">-p</span> /etc/pacman.d/hooks
+</code></pre></div></div>
+
+<p>Crie o arquivo <code class="language-plaintext highlighter-rouge">/etc/pacman.d/hooks/nvidia-rebuild.hook</code>:</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[Trigger]</span><span class="w">
+</span><span class="py">Operation</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">Install</span>
+<span class="py">Operation</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">Upgrade</span>
+<span class="py">Type</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">Package</span>
+<span class="py">Target</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">linux-lts</span>
+<span class="py">Target</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">linux-lts-headers</span>
+<span class="w">
+</span><span class="nn">[Action]</span><span class="w">
+</span><span class="py">Description</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">Marcando reinstalação do driver NVIDIA (.run) após update do kernel</span>
+<span class="py">When</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">PostTransaction</span>
+<span class="py">Exec</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">/usr/bin/touch /var/lib/nvidia-reinstall-required</span>
+</code></pre></div></div>
+
+<p>Ele apenas cria o arquivo de flag <code class="language-plaintext highlighter-rouge">/var/lib/nvidia-reinstall-required</code>. Nenhuma compilação acontece aqui.</p>
+
+<hr />
+
+<h2 id="passo-3--criar-o-script-de-rebuild">Passo 3 — Criar o script de rebuild</h2>
+
+<p>Este é o script que faz o trabalho pesado: descarrega os módulos da NVIDIA, roda o instalador <code class="language-plaintext highlighter-rouge">.run</code> com DKMS e recria o initramfs.</p>
+
+<p>Crie o arquivo <code class="language-plaintext highlighter-rouge">/usr/local/bin/nvidia-rebuild.sh</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nb">set</span> <span class="nt">-e</span>
+
+<span class="nv">FLAG</span><span class="o">=</span><span class="s2">"/var/lib/nvidia-reinstall-required"</span>
+<span class="nv">LOG</span><span class="o">=</span><span class="s2">"/var/log/nvidia-rebuild.log"</span>
+<span class="nv">DRIVER</span><span class="o">=</span><span class="s2">"/opt/NVIDIA-Linux-x86_64-580.126.18/NVIDIA-Linux-x86_64-580.126.18.run"</span>
+
+<span class="c"># Só roda se o hook marcou</span>
+<span class="o">[</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$FLAG</span><span class="s2">"</span> <span class="o">]</span> <span class="o">||</span> <span class="nb">exit </span>0
+
+<span class="nb">echo</span> <span class="s2">"==== NVIDIA REBUILD </span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2"> ===="</span> <span class="o">&gt;&gt;</span> <span class="s2">"</span><span class="nv">$LOG</span><span class="s2">"</span>
+
+<span class="c"># Garante que nada da nvidia está carregado (segurança)</span>
+modprobe <span class="nt">-r</span> nvidia_drm nvidia_modeset nvidia <span class="o">||</span> <span class="nb">true
+
+echo</span> <span class="s2">"-&gt; Instalando driver..."</span> <span class="o">&gt;&gt;</span> <span class="s2">"</span><span class="nv">$LOG</span><span class="s2">"</span>
+<span class="nv">$DRIVER</span> <span class="nt">-s</span> <span class="nt">--dkms</span> <span class="nt">--no-questions</span> <span class="o">&gt;&gt;</span> <span class="s2">"</span><span class="nv">$LOG</span><span class="s2">"</span> 2&gt;&amp;1
+
+<span class="nb">echo</span> <span class="s2">"-&gt; Recriando initramfs..."</span> <span class="o">&gt;&gt;</span> <span class="s2">"</span><span class="nv">$LOG</span><span class="s2">"</span>
+mkinitcpio <span class="nt">-P</span> <span class="o">&gt;&gt;</span> <span class="s2">"</span><span class="nv">$LOG</span><span class="s2">"</span> 2&gt;&amp;1
+
+<span class="nb">rm</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$FLAG</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"==== NVIDIA OK ===="</span> <span class="o">&gt;&gt;</span> <span class="s2">"</span><span class="nv">$LOG</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>Torne-o executável:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chmod</span> +x /usr/local/bin/nvidia-rebuild.sh
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="passo-4--criar-o-serviço-systemd">Passo 4 — Criar o serviço systemd</h2>
+
+<p>O serviço garante que o script rode <strong>antes</strong> do <code class="language-plaintext highlighter-rouge">sysinit.target</code> — ou seja, antes de qualquer coisa de vídeo ser inicializada.</p>
+
+<p>Crie o arquivo <code class="language-plaintext highlighter-rouge">/etc/systemd/system/nvidia-rebuild.service</code>:</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[Unit]</span><span class="w">
+</span><span class="py">Description</span><span class="p">=</span><span class="s">Reinstalar NVIDIA driver se necessário</span>
+<span class="py">DefaultDependencies</span><span class="p">=</span><span class="s">no</span>
+<span class="py">After</span><span class="p">=</span><span class="s">local-fs.target</span>
+<span class="py">Before</span><span class="p">=</span><span class="s">sysinit.target</span>
+<span class="w">
+</span><span class="nn">[Service]</span><span class="w">
+</span><span class="py">Type</span><span class="p">=</span><span class="s">oneshot</span>
+<span class="py">ExecStart</span><span class="p">=</span><span class="s">/usr/local/bin/nvidia-rebuild.sh</span>
+<span class="py">TimeoutSec</span><span class="p">=</span><span class="s">900</span>
+<span class="w">
+</span><span class="nn">[Install]</span><span class="w">
+</span><span class="py">WantedBy</span><span class="p">=</span><span class="s">sysinit.target</span>
+</code></pre></div></div>
+
+<p>Os pontos importantes aqui:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DefaultDependencies=no</code> — remove dependências padrão que poderiam atrasar a execução</li>
+  <li><code class="language-plaintext highlighter-rouge">After=local-fs.target</code> — garante que o sistema de arquivos local já está montado (o script precisa acessar <code class="language-plaintext highlighter-rouge">/opt</code> e <code class="language-plaintext highlighter-rouge">/var</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Before=sysinit.target</code> — roda antes do Wayland/gráfico ter qualquer chance de subir</li>
+  <li><code class="language-plaintext highlighter-rouge">TimeoutSec=900</code> — 15 minutos de timeout, suficiente para compilações lentas</li>
+</ul>
+
+<hr />
+
+<h2 id="passo-5--habilitar-o-serviço">Passo 5 — Habilitar o serviço</h2>
+
+<p>Recarregue o systemd e habilite o serviço:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl daemon-reload
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>nvidia-rebuild.service
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="verificando-a-instalação">Verificando a instalação</h2>
+
+<p>Confirme que os três arquivos estão no lugar:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-la</span> /etc/pacman.d/hooks/nvidia-rebuild.hook
+<span class="nb">ls</span> <span class="nt">-la</span> /etc/systemd/system/nvidia-rebuild.service
+<span class="nb">ls</span> <span class="nt">-lx</span> /usr/local/bin/nvidia-rebuild.sh
+</code></pre></div></div>
+
+<p>Verifique se o serviço está habilitado:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl is-enabled nvidia-rebuild.service
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="testando-sem-atualizar-o-kernel">Testando sem atualizar o kernel</h2>
+
+<p>Para simular o que o hook faria, basta criar o arquivo de flag manualmente e reiniciar:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo touch</span> /var/lib/nvidia-reinstall-required
+<span class="nb">sudo </span>reboot
+</code></pre></div></div>
+
+<p>Após o boot, verifique o log:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /var/log/nvidia-rebuild.log
+</code></pre></div></div>
+
+<p>Se tudo correu bem, você verá algo como:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>==== NVIDIA REBUILD Sex Abr 12 08:23:41 BRT 2025 ====
+-&gt; Instalando driver...
+-&gt; Recriando initramfs...
+==== NVIDIA OK ====
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p><strong>O serviço não executou no boot</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl status nvidia-rebuild.service
+journalctl <span class="nt">-u</span> nvidia-rebuild.service <span class="nt">-b</span>
+</code></pre></div></div>
+
+<p><strong>Erro de compilação DKMS</strong></p>
+
+<p>Confirme que os headers estão instalados:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-Qs</span> linux-lts-headers
+</code></pre></div></div>
+
+<p><strong>O <code class="language-plaintext highlighter-rouge">.run</code> não foi encontrado</strong></p>
+
+<p>Verifique se o caminho no script bate com onde o arquivo está:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-lh</span> /opt/NVIDIA-Linux-x86_64-580.126.18/NVIDIA-Linux-x86_64-580.126.18.run
+</code></pre></div></div>
+
+<p>Edite a variável <code class="language-plaintext highlighter-rouge">DRIVER</code> em <code class="language-plaintext highlighter-rouge">/usr/local/bin/nvidia-rebuild.sh</code> se necessário.</p>
+
+<p><strong>Wayland não sobe após atualização</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /var/log/nvidia-rebuild.log
+</code></pre></div></div>
+
+<p>Na grande maioria dos casos o problema é caminho incorreto do <code class="language-plaintext highlighter-rouge">.run</code> ou headers ausentes.</p>
+
+<hr />
+
+<h2 id="atualizando-a-versão-do-driver-no-futuro">Atualizando a versão do driver no futuro</h2>
+
+<p>Quando uma nova versão do driver sair, o processo é simples:</p>
+
+<ol>
+  <li>Baixe o novo <code class="language-plaintext highlighter-rouge">.run</code> para <code class="language-plaintext highlighter-rouge">/opt/NVIDIA-Linux-x86_64-&lt;nova-versão&gt;/</code></li>
+  <li>Edite a variável <code class="language-plaintext highlighter-rouge">DRIVER</code> em <code class="language-plaintext highlighter-rouge">/usr/local/bin/nvidia-rebuild.sh</code></li>
+  <li>Crie o flag e reinicie para testar:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo touch</span> /var/lib/nvidia-reinstall-required
+<span class="nb">sudo </span>reboot
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="removendo-tudo">Removendo tudo</h2>
+
+<p>Caso queira desfazer a configuração:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl disable nvidia-rebuild.service
+<span class="nb">sudo rm</span> <span class="nt">-f</span> /etc/pacman.d/hooks/nvidia-rebuild.hook
+<span class="nb">sudo rm</span> <span class="nt">-f</span> /etc/systemd/system/nvidia-rebuild.service
+<span class="nb">sudo rm</span> <span class="nt">-f</span> /usr/local/bin/nvidia-rebuild.sh
+<span class="nb">sudo rm</span> <span class="nt">-rf</span> /opt/NVIDIA-Linux-x86_64-580.126.18
+<span class="nb">sudo </span>systemctl daemon-reload
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="conclusão">Conclusão</h2>
+
+<p>Depois de configurado, o processo é totalmente transparente: o pacman atualiza o kernel, você reinicia, e o GNOME sobe com o driver correto — sem TTY, sem tela preta, sem intervenção manual.</p>
+
+<p>Caso queira o processo automático, você pode ver no repositório <a href="https://github.com/williamcanin/archlinux-nvidia-auto-rebuild" target="_blank">archlinux-nvidia-auto-rebuild</a>. Você terá um script (<code class="language-plaintext highlighter-rouge">init.sh</code>) que faz a instalação automática, sem precisar seguir esses passos manuais.</p>]]></content><author><name>William C. Vanin</name></author><category term="nvidia" /><category term="archlinux" /><summary type="html"><![CDATA[Description of your post]]></summary></entry><entry><title type="html">Fazendo zero fill em HDD/SSD com Linux</title><link href="https://williamcanin.github.io/blog/fazendo-zero-fill-em-hdd-ssd-com-linux/" rel="alternate" type="text/html" title="Fazendo zero fill em HDD/SSD com Linux" /><published>2025-10-29T20:20:44+00:00</published><updated>2025-10-29T20:20:44+00:00</updated><id>https://williamcanin.github.io/blog/fazendo-zero-fill-em-hdd-ssd-com-linux</id><content type="html" xml:base="https://williamcanin.github.io/blog/fazendo-zero-fill-em-hdd-ssd-com-linux/"><![CDATA[<p>Antes de vender, descartar ou reutilizar um disco, apagar os arquivos não é suficiente — os dados continuam lá e podem ser recuperados. O zero fill resolve isso: ele sobrescreve todo o disco com zeros (ou padrões de bits), tornando a recuperação inviável sem equipamento especializado. Neste post vou mostrar os principais métodos para fazer isso no Linux, do mais seguro ao mais rápido, cobrindo HDD, SSD e NVMe.</p>
+
+<hr />
+
+<h2 id="antes-de-começar--identificando-o-disco-certo">Antes de começar — identificando o disco certo</h2>
+
+<p>Nunca rode zero fill no disco errado. Use esses comandos para identificar o alvo:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsblk
+</code></pre></div></div>
+
+<p>ou com mais detalhes:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>fdisk <span class="nt">-l</span>
+</code></pre></div></div>
+
+<p>Procure pelo tamanho e modelo. O disco alvo vai aparecer como <code class="language-plaintext highlighter-rouge">/dev/sdb</code>, <code class="language-plaintext highlighter-rouge">/dev/sdc</code>, <code class="language-plaintext highlighter-rouge">/dev/nvme0n1</code>, etc. <strong>Nunca use o disco onde o sistema está rodando.</strong></p>
+
+<hr />
+
+<h2 id="método-1--badblocks-recomendado-seguro--verificação-automática">Método 1 — <code class="language-plaintext highlighter-rouge">badblocks</code> (recomendado: seguro + verificação automática)</h2>
+
+<p>O <code class="language-plaintext highlighter-rouge">badblocks</code> é a opção mais completa para HDDs. Além de zerar, ele verifica se o disco consegue ler e gravar corretamente em cada setor.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>badblocks <span class="nt">-wsv</span> /dev/sdX
+</code></pre></div></div>
+
+<p>Substitua <code class="language-plaintext highlighter-rouge">sdX</code> pelo seu disco (ex: <code class="language-plaintext highlighter-rouge">sdb</code>).</p>
+
+<p><strong>Explicando os parâmetros:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th>Função</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-w</code></td>
+      <td>Modo de escrita — faz o zero fill (e outros padrões de teste)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-s</code></td>
+      <td>Mostra o progresso em tempo real</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-v</code></td>
+      <td>Modo detalhado (verbose)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/dev/sdX</code></td>
+      <td>Disco alvo, <strong>sem</strong> número de partição (ex: <code class="language-plaintext highlighter-rouge">/dev/sdb</code>, não <code class="language-plaintext highlighter-rouge">/dev/sdb1</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>O que esse comando faz na prática:</strong></p>
+
+<ol>
+  <li>Escreve padrões de teste no disco (zeros, uns, padrões alternados)</li>
+  <li>Lê cada setor de volta e verifica se gravou corretamente</li>
+  <li>Reporta setores defeituosos encontrados</li>
+</ol>
+
+<p>É mais lento que o <code class="language-plaintext highlighter-rouge">dd</code>, mas é o método mais confiável para saber a saúde real do disco antes de reutilizá-lo.</p>
+
+<p><strong>Tempo estimado:</strong></p>
+
+<p>Para um HDD de 500 GB via USB 3.0, espere entre 2 e 4 horas. Discos com setores problemáticos podem demorar mais, pois o <code class="language-plaintext highlighter-rouge">badblocks</code> tenta cada setor com falha várias vezes antes de desistir.</p>
+
+<hr />
+
+<h2 id="método-2--dd-rápido-sem-verificação">Método 2 — <code class="language-plaintext highlighter-rouge">dd</code> (rápido, sem verificação)</h2>
+
+<p>Se o objetivo é só zerar o disco com velocidade, sem checar setores:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo dd </span><span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">bs</span><span class="o">=</span>8M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">oflag</span><span class="o">=</span>direct
+</code></pre></div></div>
+
+<p><strong>Explicando os parâmetros:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th>Função</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">if=/dev/zero</code></td>
+      <td>Fonte de zeros infinitos</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">of=/dev/sdX</code></td>
+      <td>Disco de destino</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bs=8M</code></td>
+      <td>Blocos de 8 MB — mais velocidade que o padrão de 512 bytes</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">status=progress</code></td>
+      <td>Mostra velocidade e progresso em tempo real</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oflag=direct</code></td>
+      <td>Grava direto no disco, ignorando o cache do sistema — mais rápido e confiável</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Esse método não detecta problemas de leitura/gravação. Use quando precisar de velocidade e já souber que o disco está saudável.</p>
+
+<hr />
+
+<h2 id="método-3--shred-múltiplas-passagens-ideal-para-descarte-seguro">Método 3 — <code class="language-plaintext highlighter-rouge">shred</code> (múltiplas passagens, ideal para descarte seguro)</h2>
+
+<p>O <code class="language-plaintext highlighter-rouge">shred</code> é a melhor escolha quando o disco vai ser descartado ou vendido e você quer garantir que os dados não sejam recuperáveis. Ele sobrescreve o disco com múltiplas passagens de dados aleatórios.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo shred</span> <span class="nt">-vfz</span> <span class="nt">-n</span> 3 /dev/sdX
+</code></pre></div></div>
+
+<p><strong>Explicando os parâmetros:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th>Função</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-v</code></td>
+      <td>Mostra o progresso</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-f</code></td>
+      <td>Força a permissão de escrita se necessário</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-z</code></td>
+      <td>Adiciona uma passagem final de zeros (oculta que o shred foi usado)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-n 3</code></td>
+      <td>Número de passagens com dados aleatórios (padrão: 3)</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>Atenção para SSDs:</strong> O <code class="language-plaintext highlighter-rouge">shred</code> e o <code class="language-plaintext highlighter-rouge">badblocks</code> <strong>não são eficazes em SSDs e NVMe</strong> da mesma forma que em HDDs. Por causa do wear leveling (nivelamento de desgaste), o controlador do SSD pode redirecionar gravações para outros blocos, deixando dados antigos intactos em setores não mapeados. Veja o método específico para SSDs abaixo.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="método-4--ssds-e-nvme-nvme-sanitize-ou-blkdiscard">Método 4 — SSDs e NVMe: <code class="language-plaintext highlighter-rouge">nvme sanitize</code> ou <code class="language-plaintext highlighter-rouge">blkdiscard</code></h2>
+
+<p>Para SSDs SATA e NVMe, o método correto é usar comandos que falam diretamente com o controlador do disco.</p>
+
+<h3 id="nvme--nvme-sanitize-recomendado">NVMe — <code class="language-plaintext highlighter-rouge">nvme sanitize</code> (recomendado)</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nvme sanitize /dev/nvme0n1 <span class="nt">-a</span> 2
+</code></pre></div></div>
+
+<p>O <code class="language-plaintext highlighter-rouge">-a 2</code> indica “Block Erase” — apagamento a nível de bloco de flash, o mais seguro para NVMe. Verifique o progresso com:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nvme sanitize-log /dev/nvme0n1
+</code></pre></div></div>
+
+<h3 id="ssd-sata--hdparm-com-secure-erase">SSD SATA — <code class="language-plaintext highlighter-rouge">hdparm</code> com Secure Erase</h3>
+
+<p>Primeiro verifique se o disco suporta o recurso:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>hdparm <span class="nt">-I</span> /dev/sdX | <span class="nb">grep</span> <span class="nt">-i</span> erase
+</code></pre></div></div>
+
+<p>Se aparecer “supported”, defina uma senha temporária e execute o apagamento seguro:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>hdparm <span class="nt">--user-master</span> u <span class="nt">--security-set-pass</span> senha123 /dev/sdX
+<span class="nb">sudo </span>hdparm <span class="nt">--user-master</span> u <span class="nt">--security-erase</span> senha123 /dev/sdX
+</code></pre></div></div>
+
+<p>Isso envia um comando direto ao firmware do SSD para apagar todos os blocos, incluindo os realocados pelo wear leveling.</p>
+
+<h3 id="alternativa-rápida--blkdiscard">Alternativa rápida — <code class="language-plaintext highlighter-rouge">blkdiscard</code></h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>blkdiscard /dev/sdX
+</code></pre></div></div>
+
+<p>Envia um comando TRIM para todo o disco, marcando todos os blocos como livres. É instantâneo, mas o nível de segurança depende da implementação do firmware de cada fabricante.</p>
+
+<hr />
+
+<h2 id="método-5--ferramenta-oficial-da-seagate-seatools-bootable">Método 5 — Ferramenta oficial da Seagate (SeaTools Bootable)</h2>
+
+<p>Para quem prefere usar a ferramenta do fabricante:</p>
+
+<ol>
+  <li>Baixe o SeaTools Bootable (imagem ISO) em: <a href="https://www.seagate.com/support/downloads/seatools/">seagate.com/support/downloads/seatools</a></li>
+  <li>Grave num pendrive com balenaEtcher ou Rufus</li>
+  <li>Inicialize o PC pelo pendrive</li>
+  <li>Use a opção <strong>“Erase Disk (Full Erase)”</strong></li>
+</ol>
+
+<p>Essa opção faz o zero fill diretamente via firmware, sem depender do sistema operacional. É 100% segura e aprovada pelo fabricante. Útil quando você quer um laudo visual do processo ou não tem confiança em linha de comando.</p>
+
+<hr />
+
+<h2 id="após-o-zero-fill--recriando-a-tabela-de-partições">Após o zero fill — recriando a tabela de partições</h2>
+
+<p>Depois que o processo terminar, o disco estará completamente zerado, sem partições ou sistema de arquivos. Para reutilizá-lo, crie uma nova tabela de partições.</p>
+
+<p><strong>Via terminal com <code class="language-plaintext highlighter-rouge">fdisk</code>:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>fdisk /dev/sdX
+</code></pre></div></div>
+
+<p>Dentro do <code class="language-plaintext highlighter-rouge">fdisk</code>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">g</code> → cria tabela GPT (recomendado para discos modernos e &gt; 2 TB)</li>
+  <li><code class="language-plaintext highlighter-rouge">o</code> → cria tabela MBR (para compatibilidade com sistemas mais antigos)</li>
+  <li><code class="language-plaintext highlighter-rouge">n</code> → cria nova partição</li>
+  <li><code class="language-plaintext highlighter-rouge">w</code> → grava as alterações</li>
+</ul>
+
+<p><strong>Via interface gráfica com <code class="language-plaintext highlighter-rouge">gnome-disks</code>:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gnome-disks
+</code></pre></div></div>
+
+<p>Selecione o disco → <strong>“Formatar Disco…”</strong> → <strong>“Apagar”</strong> → <strong>“Zerar (lento, seguro)”</strong> ou apenas criar nova tabela de partições diretamente.</p>
+
+<hr />
+
+<h2 id="comparativo-rápido-dos-métodos">Comparativo rápido dos métodos</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Método</th>
+      <th>Velocidade</th>
+      <th>Verifica setores</th>
+      <th>Eficaz em SSD/NVMe</th>
+      <th>Ideal para</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">badblocks -wsv</code></td>
+      <td>Lento</td>
+      <td>✅ Sim</td>
+      <td>❌ Não</td>
+      <td>HDDs com suspeita de defeitos</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">dd</code></td>
+      <td>Rápido</td>
+      <td>❌ Não</td>
+      <td>❌ Parcial</td>
+      <td>Zeragem rápida de HDDs</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">shred</code></td>
+      <td>Lento</td>
+      <td>❌ Não</td>
+      <td>❌ Não</td>
+      <td>Descarte seguro de HDDs</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">nvme sanitize</code></td>
+      <td>Rápido</td>
+      <td>✅ Firmware</td>
+      <td>✅ Sim</td>
+      <td>NVMe</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hdparm secure-erase</code></td>
+      <td>Rápido</td>
+      <td>✅ Firmware</td>
+      <td>✅ Sim</td>
+      <td>SSDs SATA</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">blkdiscard</code></td>
+      <td>Instantâneo</td>
+      <td>❌ Não</td>
+      <td>✅ Sim</td>
+      <td>Reutilização rápida de SSDs</td>
+    </tr>
+    <tr>
+      <td>SeaTools</td>
+      <td>Variável</td>
+      <td>✅ Sim</td>
+      <td>⚠️ Depende</td>
+      <td>Discos Seagate, uso visual</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>Escolha o método de acordo com o destino do disco: para reutilização interna, <code class="language-plaintext highlighter-rouge">dd</code> ou <code class="language-plaintext highlighter-rouge">blkdiscard</code> resolvem rápido; para venda ou descarte, prefira <code class="language-plaintext highlighter-rouge">shred</code>, <code class="language-plaintext highlighter-rouge">nvme sanitize</code> ou <code class="language-plaintext highlighter-rouge">hdparm secure-erase</code>; para diagnóstico de saúde do disco, o <code class="language-plaintext highlighter-rouge">badblocks</code> ainda é o mais completo.</p>]]></content><author><name>William C. Canin</name></author><category term="zerofill" /><category term="linux" /><category term="dd" /><category term="badblocks" /><summary type="html"><![CDATA[Aprenda a fazer zero fill em seus HDD ou SSD usando Linux]]></summary></entry><entry><title type="html">Implementando uma classe em Python para criar logs</title><link href="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/" rel="alternate" type="text/html" title="Implementando uma classe em Python para criar logs" /><published>2021-06-26T23:37:43+00:00</published><updated>2021-06-26T23:37:43+00:00</updated><id>https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs</id><content type="html" xml:base="https://williamcanin.github.io/blog/implementando-uma-classe-em-python-para-criar-logs/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
 
   <div class="toc-head">
     <h2>Índice</h2>
@@ -1574,1431 +2163,4 @@ home <span class="nv">UUID</span><span class="o">=</span>824049e5-d6a1-4e91-a1fd
 
 <h1 id="conclusão">Conclusão</h1>
 
-<p>Esse foi um tutorial bem básico de como deixar nossa <strong>/home</strong> criptografada no Linux. É de certo que alguma distribuição Linux pode ter suas particularidades e você tem que configurar algo a mais na mesma, porem o principio parte dessa lógica desse tutorial. Espero que você goste e principalmente que suas dúvidas foram eliminadas, mas caso não foi, deixe aqui um comentário informando suas dúvidas. Abraço.</p>]]></content><author><name>William C. Canin</name></author><category term="crypt" /><category term="linux" /><category term="security" /><summary type="html"><![CDATA[Que tal esconder suas coisinhas da /home de possíveis pessoas "espertas"? Siga em frente neste post e descubra.]]></summary></entry><entry><title type="html">Carregando Javascripts para diferentes posts e pages no Jekyll</title><link href="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/" rel="alternate" type="text/html" title="Carregando Javascripts para diferentes posts e pages no Jekyll" /><published>2017-10-09T21:31:36+00:00</published><updated>2017-10-09T21:31:36+00:00</updated><id>https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll</id><content type="html" xml:base="https://williamcanin.github.io/blog/carregando-javascripts-para-diferentes-posts-e-pages-no-jekyll/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
-
-  <div class="toc-head">
-    <h2>Índice</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button"></button>
-  </div>
-  <div class="toc-list-wrapper">
-    <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
-  </div>
-</nav>
-
-<p>Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:</p>
-
-<blockquote>
-  <p>“E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu
-berrante tocá”.</p>
-</blockquote>
-
-<p>😃</p>
-
-<p>Deixando as desculpas de lado, vamos ao que interessa; o Post!</p>
-
-<h2 id="introdução">Introdução</h2>
-
-<p>Essa é uma dica rápida pra você que utiliza <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> como gerador de sites estáticos.</p>
-
-<p>Colocar seus códigos Javascript tudo em apenas um arquivo .js, não é tão recomendável assim, independente de utilizar geradores de sites estáticos ou não. Isso porque ao ser carregado pelo navegador, pode existir um trecho de código de uma determinada página, que não deveria ser carregado, assim irá carregar códigos extras sem necessidade.</p>
-
-<p>A melhor forma de fazer isso, é cada página carregar seu próprio Javascript, isso irá otimizar muito a velocidade de carregamento seu website, caso possua uma gama de códigos javascript em seu carregamento.</p>
-
-<h2 id="requerimentos">Requerimentos</h2>
-
-<p>O que você irá precisar para continuar com essa leitura:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Requerido</th>
-      <th>Como verificar</th>
-      <th>Como instalar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Ruby</td>
-      <td><code class="language-plaintext highlighter-rouge">ruby -v</code></td>
-      <td><a href="https://www.ruby-lang.org" target="_blank">Ruby</a></td>
-    </tr>
-    <tr>
-      <td>Gem</td>
-      <td><code class="language-plaintext highlighter-rouge">gem -v</code></td>
-      <td><strong>Ruby</strong> contém <strong>Gem</strong></td>
-    </tr>
-    <tr>
-      <td>Jekyll</td>
-      <td><code class="language-plaintext highlighter-rouge">jekyll -v</code></td>
-      <td><code class="language-plaintext highlighter-rouge">gem install jekyll</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Instale conforme o seu sistema operacional.</p>
-
-<h2 id="o-laço-for-no-layoutdefaulthtml">O laço ‘For’ no layout/default.html</h2>
-
-<p>Você pode fazer essa otimização de carregamento de javascripts com <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> de uma forma simples, usando um laço <strong>for</strong> no final do arquivo <em>layout/default.html</em>. Veja:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Specific for each pages. --&gt;</span>
-{ % for script_page in page.script % }
-   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"{ { '/assets/javascripts/' | prepend: site.baseurl | prepend: site.url  | append: script_page } }"</span><span class="nt">&gt;&lt;/script&gt;</span>
-{ % endfor % }</code></pre></figure>
-
-<blockquote>
-  <p>NOTA: Sem espaços entre as chaves.</p>
-</blockquote>
-
-<h3 id="entendendo-o-for">Entendendo o ‘For’</h3>
-
-<p>Observe que o diretório de meus javascripts está com PATH para <em>/assets/javascripts/</em>, ou seja, você deve modificar esse PATH para o local onde esteja seus javascripts.</p>
-
-<p>Na linha <em>{ % for script_page in page.script % }</em>, a variável <strong>script_page</strong> é responsável por amarzenar os valores do laço.
-A variável <strong>page</strong> é uma variável padrão do Jekyll, que carrega os arquivos de posts e pages, e a variável <strong>script</strong> temos que criar nos arquivos de post e page.</p>
-
-<h2 id="o-arquivo-de-postagem">O arquivo de postagem</h2>
-
-<p>Como dito antes, temos que criar a variável de <strong>script</strong> dentro do cabeçalho de nossos arquivos de post e page. Dentro de um arquivo no diretório <strong>_posts/mypost.md</strong> por exemplo, adicionaremos:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"># Does not change and does not remove 'script' variable.
-script: [post.js]</code></pre></figure>
-
-<p>Nesse casso, você deve colocar essa linha para todos arquivos dentro de <strong>_posts</strong> . Para os arquivos de páginas, você deve colocar também, porém deves mudar o nome do valor da variável <strong>script</strong> para <strong>pages.js</strong>, assim:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"># Does not change and does not remove 'script' variable.
-script: [pages.js]</code></pre></figure>
-
-<h3 id="exemplo-para-arquivos-de-posts">Exemplo para arquivos de posts</h3>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">---
-layout: post
-title: My Post 1
-date: 2017-05-09 18:31:36
-# Does not change and does not remove 'script' variable.
-script: [post.js]
----</code></pre></figure>
-
-<h3 id="exemplo-para-arquivos-de-pages">Exemplo para arquivos de pages</h3>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">---
-layout: page
-title: My Page 1
-date: 2017-05-09 18:31:36
-# Does not change and does not remove 'script' variable.
-script: [page1.js]
----</code></pre></figure>
-
-<p>Nesse caso todos os posts irá carregar o código javascript contido no arquivo
-<strong>/assets/javascripts/post.js</strong>, ou seja, será um arquivo global para todos os posts, mas você pode especificar um para cada post se quiser também. Os arquivos de páginas, segue o mesmo raciocínio. Nesse exemplo está carregando o
-<strong>/assets/javascripts/page1.js</strong>, mas também pode ter um glogal para todas as páginas.</p>
-
-<h2 id="conclusão">Conclusão</h2>
-
-<p>Fazendo dessa forma, você tem maior controle de qual página ou qual post deve carregar um determinado javascript para si próprio. Otimização de código é um marco importante para um bom desenvolvedor. Eu fico por aqui, espero que você possa ter entendido como otimizar o carregamento de javascripts no <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Abraço pessoa, :punch:.</p>]]></content><author><name>William C. Canin</name></author><category term="jekyll" /><category term="javascripts" /><category term="liquid" /><summary type="html"><![CDATA[Será que seu projeto em Jekyll está carregados códigos desnecessário? Esse post te ensinará como otimizar o carregamento de javascripts no projeto.]]></summary></entry><entry><title type="html">Instalando Arch Linux com criptografia LUKS e LVM</title><link href="https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/" rel="alternate" type="text/html" title="Instalando Arch Linux com criptografia LUKS e LVM" /><published>2017-04-27T14:33:43+00:00</published><updated>2017-04-27T14:33:43+00:00</updated><id>https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm</id><content type="html" xml:base="https://williamcanin.github.io/blog/instalando-archlinux-com-criptografia-luks-e-lvm/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
-
-  <div class="toc-head">
-    <h2>Índice</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button"></button>
-  </div>
-  <div class="toc-list-wrapper">
-    <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
-  </div>
-</nav>
-
-<p>Ei, beleza? 👍</p>
-
-<p>Este é o guia que fiz, e uso atualmente para instalar o <a href="https://archlinux.org/" target="_blank">Arch Linux</a> em
-minha máquina.</p>
-
-<p>Este guia irá ter detalhes e comentários RESUMIDO de cada comando, caso queira um guia com apenas os
-comandos, sem muita “verbosidade” de comentários, use este outro guia que fiz em modo <code class="language-plaintext highlighter-rouge">.txt</code>:
-<a href="/pub/docs/raw/archlinux_installation.txt" target="_blank">archlinux_installation.txt</a>.</p>
-
-<blockquote>
-  <p>NOTA: Nesses guias, talvez nem tudo sirva para seu gosto e/ou suporte de sua máquina, então se
-for usar algo, tenha consciência se é compatível com seu setup. Não me responsabilizo por qualquer
-dano que sua máquina venha sofrer.</p>
-</blockquote>
-
-<h1 id="preparação-de-flash-drive">Preparação de Flash Drive</h1>
-
-<p>Baixo a imagem do Arch Linux em <a href="https://archlinux.org/download/" target="_blank">Arch Linux Download</a>.
-Eu uso o BitTorrent para evitar corromper a imagem durante o download, e para gravar a imagem, se
-eu estiver no Linux, uso <code class="language-plaintext highlighter-rouge">dd</code> com o comando abaixo:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">dd </span><span class="nv">bs</span><span class="o">=</span>4M <span class="k">if</span><span class="o">=</span>archlinux-&lt;VERSION&gt;-x86_64.iso <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">conv</span><span class="o">=</span>fsync <span class="nv">oflag</span><span class="o">=</span>direct <span class="nv">status</span><span class="o">=</span>progress
-</code></pre></div></div>
-
-<blockquote>
-  <p>Nota: Substitua o sdX pelo flash drive real.</p>
-</blockquote>
-
-<h1 id="iniciando-a-instalação">Iniciando a instalação</h1>
-
-<p>Quando já estou dentro da ISO do <strong>Arch Linux</strong>, sigo esses passos:</p>
-
-<h1 id="layout">Layout</h1>
-
-<p>Atribuo layout do teclado para <code class="language-plaintext highlighter-rouge">br-abnt2</code>, que é o que eu uso:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>loadkeys br-abnt2
-</code></pre></div></div>
-
-<h1 id="conexão-com-a-internet">Conexão com a internet</h1>
-
-<p><strong>Via Cabo:</strong></p>
-
-<p>Apenas conecto o cabo de rede e já tenho internet na ISO do <strong>Arch Linux</strong>.</p>
-
-<div id="details-start" class="details-start" data-summary="Via Wi-Fi"></div>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl start iwd<span class="p">;</span>
-iwctl
-</code></pre></div></div>
-
-<p>Quando entrar dentro do <code class="language-plaintext highlighter-rouge">[iwd]#</code>, os passos de comandos que uso serão esses basicamente:</p>
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre>device list
-device &lt;NAME&gt; set-property Powered on
-adapter set-property Powered on
-station list
-station &lt;IFACE_NAME&gt; scan
-station &lt;IFACE_NAME&gt; get-networks
-station &lt;IFACE_NAME&gt; connect <span class="s1">'&lt;NETWORK_NAME&gt;'</span>
-Passphrase:
-quit
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<blockquote>
-  <p>NOTA: Após configurar a internet, faço um <code class="language-plaintext highlighter-rouge">ping 8.8.8.8</code> para verificar.</p>
-</blockquote>
-
-<h1 id="conexão-ssh">Conexão SSH</h1>
-
-<p>Geralmente faço a instalação do <strong>Arch Linux</strong> na minha máquina via SSH, ou seja, de outra máquina,
-assim eu consigo abrir este guia e apenas copiar e colar os comandos do que ficar digitando cada
-comando.</p>
-
-<p><strong>(1)</strong> - Para habilitar o SSH na ISO do <strong>Arch Linux</strong> é simples, a ISO já vem com o SSH instalado,
- então basta ativar:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemct start sshd
-</code></pre></div></div>
-
-<p><strong>(2)</strong> - Após isso crio a senha do root da imagem ISO para poder fazer a conexão SSH:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>passwd
-</code></pre></div></div>
-
-<p><strong>(3)</strong> - Agora na outra máquina apenas me conecto:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh root@192.168.X.XX
-</code></pre></div></div>
-
-<h1 id="particionamento">Particionamento</h1>
-
-<p>Aqui é a parte MAIS DELICADA, tenho o MÁXIMO de atenção para não escolher a unidade errada. hehe 😁</p>
-
-<p>Não vou colocar comandos de como realizar o particionamento, apenas relatar algumas informações
-IMPORTANTES e o esboço (tabela) de como o particionamento para a instalação do <strong>Arch Linux</strong> fica
-em minha máquina.</p>
-
-<h2 id="tabela">Tabela</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Dispositivo</th>
-      <th>Tamanho</th>
-      <th>Tipo</th>
-      <th>Local</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>/dev/sda1</td>
-      <td>1,5G</td>
-      <td>Sistema EFI</td>
-      <td>/boot</td>
-    </tr>
-    <tr>
-      <td>/dev/sda2</td>
-      <td>120G</td>
-      <td>Linux LVM</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>/dev/sdb1</td>
-      <td>1T</td>
-      <td>Linux filesystems</td>
-      <td>/home</td>
-    </tr>
-  </tbody>
-</table>
-
-<div id="details-start" class="details-start" data-summary="&gt;&gt;&gt; Informações interessantes 🤔"></div>
-
-<h2 id="boot">Boot</h2>
-
-<p>O <strong>Arch Linux</strong> precisa apenas de uma partição de boot, a <code class="language-plaintext highlighter-rouge">/boot</code> do tipo <strong>EFI System</strong>,
-MAS, quando quero fazer um dual-boot com outras distros, que necessita de duas
-partições de boot separadas, uma <code class="language-plaintext highlighter-rouge">/boot</code> do tipo <strong>Linux filesystems</strong> e outra <code class="language-plaintext highlighter-rouge">/boot/efi</code> do tipo
-<strong>EFI System</strong>, por exemplo, <strong>Fedora 42</strong>, e eu queira COMPARTILHAR o bootloader, no caso o
-<strong>systemd-boot</strong> (que eu uso) entre ambas, então instalo o <strong>Arch Linux</strong> com a partição de
-boot separada em duas também.</p>
-
-<p>Toda vez que o <strong>Arch Linux</strong> gera o “<strong>vmlinuz-linux-lts</strong>” e “<strong>initramfs-linux-lts.img</strong>” por exemplo, ele
-gera no diretório <code class="language-plaintext highlighter-rouge">/boot</code>, isso porque a configuração padrão é para este diretório, mas com a EFI
-apontando para <code class="language-plaintext highlighter-rouge">/boot/efi</code>, tive que modificar essa configuração no arquivo
-<code class="language-plaintext highlighter-rouge">/etc/mkinitcpio.d/linux-lts.preset</code> (kernel LTS) e reinstalar o kernel. Na seção de
-<strong>Instalando o bootloader systemd-boot</strong>, terá mais informações sobre essa modificação.</p>
-
-<ul>
-  <li>Sabendo disso, nesses guias NÃO VOU USAR duas partição de boot separadas porque não uso mais
-dual-boot e nem compartilhamento do <strong>systemd-boot</strong> com outros sistemas, porém, eu vou relatar
-cada passo que precisa fazer em uma instalação com <code class="language-plaintext highlighter-rouge">/boot</code> e <code class="language-plaintext highlighter-rouge">/boot/efi</code> caso eu precise futuramente.</li>
-</ul>
-
-<h2 id="sistema">Sistema</h2>
-
-<p>Instalo o <strong>Arch Linux</strong> em um SSD de <strong>250 Gigabytes</strong> (<em>250Gb</em>), mas eu apenas deixo <strong>120Gb</strong>,
-não uso mais que isso para o sistema <strong>Arch Linux</strong>. Atualmente estou usando o sistema de
-arquivo <code class="language-plaintext highlighter-rouge">ext4</code>.</p>
-
-<h2 id="home">Home</h2>
-
-<p>Tenho um SSD de <strong>1 Terabyte</strong> (<em>1Tb</em>) para minha <code class="language-plaintext highlighter-rouge">/home</code>, e criptografo a mesma usando o
-LUKS (<em>dm-crypt</em>), com o sistema de arquivos <code class="language-plaintext highlighter-rouge">ext4</code>.</p>
-
-<h2 id="tabela-1">Tabela</h2>
-
-<p>Tabela com a partição de boot separada em duas deve ficar assim:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Dispositivo</th>
-      <th>Tamanho</th>
-      <th>Tipo</th>
-      <th>Local</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>/dev/sda1</td>
-      <td>2G</td>
-      <td>Linux filesystems</td>
-      <td>/boot</td>
-    </tr>
-    <tr>
-      <td>/dev/sda2</td>
-      <td>2G</td>
-      <td>EFI System</td>
-      <td>/boot/efi</td>
-    </tr>
-    <tr>
-      <td>/dev/sda3</td>
-      <td>120G</td>
-      <td>Linux LVM</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>/dev/sdb1</td>
-      <td>1T</td>
-      <td>Linux filesystems</td>
-      <td>/home</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<p>Para realizar o particionamento, geralmente eu uso o <code class="language-plaintext highlighter-rouge">cfdisk</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cfdisk /dev/sdX
-</code></pre></div></div>
-
-<blockquote>
-  <p>Nota: Substituo o sdX pelo dispositivo real, <code class="language-plaintext highlighter-rouge">/dev/sda</code> e <code class="language-plaintext highlighter-rouge">/dev/sdb</code>.</p>
-</blockquote>
-
-<h1 id="criando-estrutura-lvm-para-o-sistema">Criando estrutura LVM para o sistema</h1>
-
-<p>No <strong>LVM</strong>, precisa criar um <strong>Volume Físico</strong> (PV), <strong>Grupo</strong> (VG), e um <strong>Volume Lógico</strong> (LV),
-onde o grupo vai fazer parte de um volume físico, e o volume lógico vai estar dentro de um grupo.</p>
-
-<p>Gosto de usar <strong>LVM</strong> para ter controle sobre minhas partições, caso eu queira aumentar ou diminuir
-sem ter problema de corromper dados. Para isso, os comando que uso são simples:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pvcreate /dev/sda3<span class="p">;</span>
-vgcreate linux /dev/sda3<span class="p">;</span>
-lvcreate <span class="nt">-L</span> 120G linux <span class="nt">-n</span> <span class="nb">arch</span><span class="p">;</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p>NOTA: No segundo comando, o nome <code class="language-plaintext highlighter-rouge">linux</code> é o nome do grupo que defino (pode ser qualquer nome), no
-terceiro comando, crio um volume lógico especificando o grupo (<code class="language-plaintext highlighter-rouge">linux</code>).</p>
-</blockquote>
-
-<h1 id="criando-e-criptografando-a-unidade-home">Criando e criptografando a unidade /home</h1>
-
-<p><strong>(1)</strong> - Criptografando a unidade <code class="language-plaintext highlighter-rouge">/dev/sdb1</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cryptsetup <span class="nt">-y</span> <span class="nt">-v</span> luksFormat /dev/sdb1
-</code></pre></div></div>
-
-<blockquote>
-  <p>IMPORTANTE!!! Se tenho uma unidade <code class="language-plaintext highlighter-rouge">/dev/mapper/home</code> criptografada com meus arquivos, então não
-faço o passo <strong>1</strong>, senão irei perder meus dados/arquivos. PULO para o passo <strong>2</strong>.</p>
-</blockquote>
-
-<p><strong>(2)</strong> - Criando/abrindo a unidade criptografada:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cryptsetup open /dev/sdb1 home
-</code></pre></div></div>
-
-<h1 id="formatação">Formatação</h1>
-
-<p>Agora formato cada unidade que foi criada:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkfs.fat <span class="nt">-F</span> 32 /dev/sda1<span class="p">;</span>
-mkfs <span class="nt">-t</span> ext4 /dev/mapper/linux-arch<span class="p">;</span>
-mkfs <span class="nt">-t</span> ext4 /dev/mapper/home<span class="p">;</span>
-</code></pre></div></div>
-
-<div id="details-start" class="details-start" data-summary="Com partição de boot separada"></div>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkfs <span class="nt">-t</span> ext4 /dev/sda1<span class="p">;</span>
-mkfs.fat <span class="nt">-F</span> 32 /dev/sda2<span class="p">;</span>
-mkfs <span class="nt">-t</span> ext4 /dev/mapper/linux-arch<span class="p">;</span>
-mkfs <span class="nt">-t</span> ext4 /dev/mapper/home<span class="p">;</span>
-</code></pre></div></div>
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<blockquote>
-  <p>IMPORTANTE!!! Se tenho a partição <code class="language-plaintext highlighter-rouge">/dev/mapper/home</code> com arquivos, não formato senão irei perder
-TODOS meus dados/arquivos.</p>
-</blockquote>
-
-<p>Depois de todas unidades estarem criadas e formatadas, gosto de verificar com o comando: <code class="language-plaintext highlighter-rouge">lsblk -f</code>:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre>NAME        FSTYPE      FSVER     LABEL     UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
-sda
-├─sda1      vfat        FAT32               BA60-4D21                                 1,5G    12% /boot
-└─sda2      LVM2_member LVM2 001            8YUXnI-FwmY-Vc8V-fUHy-cVdF-zi9X-MDAK0s
-  └──linux-arch
-           ext4        1.0                  0a73a608-5260-45c8-9bdd-8285c4a4a84b     89,8G    44% /
-sdb
-└─sdb1      crypto_LUKS 2                   a4fd06b1-a253-4661-b5a2-47ae92e68efe
-  └─home    ext4        1.0                 65660251-8451-4722-adbd-ff5850c5df6d    999,7G    37% /home
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<div id="details-start" class="details-start" data-summary="Com partição de boot separada"></div>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="code"><pre>NAME        FSTYPE      FSVER     LABEL     UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
-sda
-├─sda1      ext4        1.0                 69660251-8451-4322-cdbd-ff5850c5df6d      1,5G    12% /boot
-├─sda2      vfat        FAT32               BA60-4D21                                 1,5G    12% /boot
-└─sda3      LVM2_member LVM2 001            8YUXnI-FwmY-Vc8V-fUHy-cVdF-zi9X-MDAK0s
-  └──linux-arch
-           ext4        1.0                  0a73a608-5260-45c8-9bdd-8285c4a4a84b     89,8G    44% /
-sdb
-└─sdb1      crypto_LUKS 2                   a4fd06b1-a253-4661-b5a2-47ae92e68efe
-  └─home    ext4        1.0                 65660251-8451-4722-adbd-ff5850c5df6d    999,7G    37% /home
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<h1 id="montagem-das-unidades">Montagem das unidades</h1>
-
-<p>Tudo em ordem, agora faço o <code class="language-plaintext highlighter-rouge">mount</code> das unidades:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mount /dev/mapper/linux-arch /mnt<span class="p">;</span>
-mount <span class="nt">--mkdir</span> /dev/sda1 /mnt/boot<span class="p">;</span>
-mount <span class="nt">--mkdir</span> /dev/mapper/home /mnt/home<span class="p">;</span>
-</code></pre></div></div>
-
-<div id="details-start" class="details-start" data-summary="Com partição de boot separada"></div>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mount /dev/mapper/linux-arch /mnt<span class="p">;</span>
-mount <span class="nt">--mkdir</span> /dev/sda1 /mnt/boot<span class="p">;</span>
-mount <span class="nt">--mkdir</span> /dev/sda2 /mnt/boot/efi<span class="p">;</span>
-mount <span class="nt">--mkdir</span> /dev/mapper/home /mnt/home<span class="p">;</span>
-</code></pre></div></div>
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<h1 id="instalando-o-sistema-base-do-arch-linux">Instalando o sistema base do Arch Linux</h1>
-
-<p>Aqui eu atualizo os <code class="language-plaintext highlighter-rouge">mirrorlist</code> para o <code class="language-plaintext highlighter-rouge">Brazil</code> e <code class="language-plaintext highlighter-rouge">US</code> usando <code class="language-plaintext highlighter-rouge">reflector</code> já disponível na ISO do
-<strong>Arch Linux</strong>, e logo em seguida atualizo as chaves e o cache, para depois fazer instalação do
-sistema base com o kernel LTS, e alguns pacotes que acho essenciais durante a instalação.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre>reflector <span class="nt">--verbose</span> <span class="nt">--country</span> Brazil,US <span class="nt">--age</span> 12 <span class="nt">--protocol</span> https <span class="nt">--sort</span> rate <span class="nt">--save</span> /etc/pacman.d/mirrorlist<span class="p">;</span>
-pacman <span class="nt">-Syy</span><span class="p">;</span>
-pacman <span class="nt">-Sy</span> archlinux-keyring<span class="p">;</span>
-pacman-key <span class="nt">--populate</span> archlinux<span class="p">;</span>
-pacstrap <span class="nt">-K</span> /mnt base base-devel linux-lts linux-lts-headers linux-firmware systemd systemd-ukify <span class="nb">sudo </span>vim dhcpcd wireless_tools wpa_supplicant<span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<h1 id="gerando-o-etcfstab">Gerando o /etc/fstab</h1>
-
-<p>Aqui não tenho muito o que dizer, apenas gero o <code class="language-plaintext highlighter-rouge">/etc/fstab</code> para que todas minhas partições montadas
-sejam configuradas durando o boot da máquina.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>genfstab <span class="nt">-U</span> <span class="nt">-p</span> /mnt <span class="o">&gt;&gt;</span> /mnt/etc/fstab
-</code></pre></div></div>
-
-<h1 id="entrando-no-sistema-pré-instalado">Entrando no sistema pré-instalado</h1>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arch-chroot /mnt /bin/bash
-</code></pre></div></div>
-
-<h1 id="atribuindo-senha-de-root">Atribuindo senha de <code class="language-plaintext highlighter-rouge">root</code></h1>
-
-<p>A primeira coisa que gosto de fazer é atribuir uma senha para o usuário <code class="language-plaintext highlighter-rouge">root</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>passwd
-</code></pre></div></div>
-
-<h1 id="configurando-internet">Configurando internet</h1>
-
-<p>Como atualmente uso uma conexão via cabo, não tenho necessidade de usar o <code class="language-plaintext highlighter-rouge">NetworkManager</code> como
-gerenciador de conexão com internet para ficar me dando várias configurações que não uso.</p>
-
-<p>Eu apenas quero me conectar e pronto. Acho ele um pouco desnecessário em consumo de memória pra uma
-finalidade muito específica.</p>
-
-<p>Então, eu uso o <code class="language-plaintext highlighter-rouge">systemd-networkd</code> que é mais leve e objetivo.</p>
-
-<p><strong>(1)</strong> - Caso eu já tenho o <code class="language-plaintext highlighter-rouge">NetworkManager</code> instalado, eu apenas desabilito e faço o <code class="language-plaintext highlighter-rouge">mask</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl disable <span class="nt">--now</span> NetworkManager.service<span class="p">;</span>
-systemctl mask NetworkManager.service<span class="p">;</span>
-</code></pre></div></div>
-
-<p><strong>(2)</strong> - Depois habilito o <code class="language-plaintext highlighter-rouge">systemd-networkd</code> e <code class="language-plaintext highlighter-rouge">systemd-resolved</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl <span class="nb">enable</span> <span class="nt">--now</span> systemd-networkd.service systemd-resolved.service
-</code></pre></div></div>
-
-<p><strong>(3)</strong> - Abro o arquivo de configuração do <code class="language-plaintext highlighter-rouge">systemd-networkd</code> e coloco o seguinte:</p>
-
-<figure class="highlight"><pre><code class="language-conf" data-lang="conf"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="code"><pre>[<span class="n">Match</span>]
-<span class="n">Name</span>=<span class="n">eno1</span> <span class="c"># Nome da minha interface de rede
-</span>
-<span class="c">## Conexão com IP Estático
-</span>[<span class="n">Network</span>]
-<span class="n">Address</span>=<span class="m">192</span>.<span class="m">168</span>.<span class="m">0</span>.<span class="m">2</span>/<span class="m">24</span>
-<span class="n">Gateway</span>=<span class="m">192</span>.<span class="m">168</span>.<span class="m">0</span>.<span class="m">1</span>
-<span class="n">DNS</span>=<span class="m">8</span>.<span class="m">8</span>.<span class="m">8</span>.<span class="m">8</span>
-
-<span class="c">## Conexão via DHCP
-# [Network]
-</span><span class="err">#</span> <span class="n">DHCP</span>=<span class="n">yes</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<p><strong>(4)</strong> - Depois crio um link simbólico para o <code class="language-plaintext highlighter-rouge">DNS</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ln</span> <span class="nt">-sf</span> /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-</code></pre></div></div>
-
-<h1 id="configurando-o-pacman">Configurando o Pacman</h1>
-
-<p>Aqui habilito o repositório <code class="language-plaintext highlighter-rouge">[multilib]</code> e ignoro alguns pacotes de serem instalados e atualizados.</p>
-
-<blockquote>
-  <p>NOTA: Como eu uso kernel <em>LTS</em>, não tenho mania de ficar atualizando kernel sempre, e também
-não uso os driver da minha GPU (<strong>NVIDIA</strong>) diretamente do repo do <strong>Arch Linux</strong>. Como o
-<strong>Arch Linux</strong> é rolling-release e sempre disponibiliza a “última” versão dos pacotes, tive alguns
-problemas com a útilma versão da <strong>NVIDIA</strong> em relação a minha GPU 😠, então instalo o driver (<code class="language-plaintext highlighter-rouge">.run</code>)
-baixado do próprio <a href="https://www.nvidia.com/en-us/drivers/unix/" target="_blank">site da NVIDIA</a> com uma versão
-anterior, mas especificamente a <em>Latest New Feature Branch Version</em>.</p>
-</blockquote>
-
-<p><strong>(1)</strong> - Abro o <strong>/etc/pacman.conf</strong>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim /etc/pacman.conf
-</code></pre></div></div>
-
-<p><strong>(2)</strong> - Descomento as seguintes linhas do <code class="language-plaintext highlighter-rouge">[multilib]</code> deixando assim:</p>
-
-<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[<span class="n">multilib</span>]
-<span class="n">Include</span> = /<span class="n">etc</span>/<span class="n">pacman</span>.<span class="n">d</span>/<span class="n">mirrorlist</span>
-</code></pre></div></div>
-
-<p><strong>(3)</strong> - Ignoro atualização/instalação de alguns pacotes do repo do <strong>Arch Linux</strong> que não uso,
-adicionando o seguintes:</p>
-
-<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">IgnorePkg</span>  = <span class="n">linux</span>-<span class="n">lts</span> <span class="n">linux</span> <span class="n">linux</span>-<span class="n">zen</span> <span class="n">linux</span>-<span class="n">headers</span> <span class="n">linux</span>-<span class="n">zen</span>-<span class="n">headers</span> <span class="n">linux</span>-<span class="n">lts</span>-<span class="n">headers</span>
-<span class="n">nvidia</span>-<span class="n">utils</span> <span class="n">nvidia</span>-<span class="n">settings</span> <span class="n">nvidia</span> <span class="n">lib32</span>-<span class="n">nvidia</span> <span class="n">cuda</span>
-</code></pre></div></div>
-
-<p><strong>(4)</strong> - Adiciono meu próprio repo de algumas configurações que fiz para minha máquina 😎:</p>
-
-<figure class="highlight"><pre><code class="language-conf" data-lang="conf"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre>[<span class="n">canin</span>]
-<span class="n">SigLevel</span> = <span class="n">Optional</span> <span class="n">TrustAll</span>
-<span class="n">Server</span> = <span class="n">https</span>://<span class="n">williamcanin</span>.<span class="n">gitlab</span>.<span class="n">io</span>/<span class="n">archlinux</span>/<span class="n">stable</span>/<span class="n">x86_64</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<p><strong>(5)</strong> - Atualizo o cache do pacman:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-Syy</span>
-</code></pre></div></div>
-
-<h1 id="configurando-home">Configurando /home</h1>
-
-<p>O arquivo de configuração para dispositivos criptografados lançados “durante o boot” no
-<strong>Arch Linux</strong>, é o <code class="language-plaintext highlighter-rouge">/etc/crypttab.initramfs</code>. Por padrão ele não existe, então eu crio o mesmo
-atribuindo o <code class="language-plaintext highlighter-rouge">UUID</code> do dispositivo criptografado LUKS, que no caso é o <code class="language-plaintext highlighter-rouge">/dev/sdb1</code>.</p>
-
-<p><strong>(1)</strong> - Crio o arquivo <code class="language-plaintext highlighter-rouge">/etc/crypttab.initramfs</code> inserindo o <code class="language-plaintext highlighter-rouge">UUID</code> com a ajuda do <code class="language-plaintext highlighter-rouge">blkid</code>:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt;&gt; /etc/crypttab.initramfs
-# /dev/sdb1
-home UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</span> UUID <span class="nt">-o</span> value /dev/sdb1<span class="si">)</span><span class="sh"> none luks,tries=0,timeout=0
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<blockquote>
-  <p>ATENÇÃO!!! Não confundir <code class="language-plaintext highlighter-rouge">/dev/sdb1</code> (dispositivo LUKS) com <code class="language-plaintext highlighter-rouge">/dev/mapper/home</code>
-(partição com sistema de arquivos).</p>
-</blockquote>
-
-<p><strong>(2)</strong> - Agora para a partição <code class="language-plaintext highlighter-rouge">/dev/mapper/home</code> iniciar com o sistema, insiro a mesma no arquivo
-<code class="language-plaintext highlighter-rouge">/etc/fstab</code>. Sigo basicamente a mesma ideia do comando de acima, copiando o <code class="language-plaintext highlighter-rouge">UUID</code> com o <code class="language-plaintext highlighter-rouge">blkid</code>
-mas dessa vez no <code class="language-plaintext highlighter-rouge">/etc/fstab</code>:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt;&gt; /etc/fstab
-# /dev/mapper/home
-UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</span> UUID <span class="nt">-o</span> value /dev/mapper/home<span class="si">)</span><span class="sh"> /home ext4 rw,relatime,data=ordered 0 2
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<blockquote>
-  <p>ATENÇÃO!!! Observe que para inserir a configuração no <code class="language-plaintext highlighter-rouge">/etc/fstab</code>, estou usando <strong>tee -a</strong>, este
-parâmetro <strong>-a</strong> significa <strong>append</strong>, adicionar, se emitir ele, irá sobrescrever o <code class="language-plaintext highlighter-rouge">/etc/fstab</code>.</p>
-</blockquote>
-
-<h1 id="configurando-o-etcmkinitcpioconf">Configurando o /etc/mkinitcpio.conf</h1>
-
-<p><strong>(1)</strong> - Aqui adiciono os módulos que preciso que carreguem durante o boot:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s|^MODULES=.*|MODULES=(xhci_hcd ehci_hcd uhci_hcd usbhid)|g"</span> /etc/mkinitcpio.conf
-</code></pre></div></div>
-
-<p>O driver <code class="language-plaintext highlighter-rouge">usbhid</code> é essencial para reconhecer dispositivos como teclados e mouses que se conectam
-via USB. Já o <code class="language-plaintext highlighter-rouge">xhci_hcd</code> e <code class="language-plaintext highlighter-rouge">ehci_hcd</code> são responsáveis por fazer a ponte entre o hardware e os
-dispositivos USB.</p>
-
-<blockquote>
-  <p>Bug: Como eu tenho a partição <code class="language-plaintext highlighter-rouge">/home</code> criptografada que necessita colocar a senha durante o boot,
-eu não acrescento os módulos da minha GPU (NVIDIA) para não dar “<em>flicker</em>” na tela durante o boot,
-ocasionando quebra de linha do cursor no passphrase da <code class="language-plaintext highlighter-rouge">/home</code>.</p>
-</blockquote>
-
-<p><strong>(2)</strong> - Nos HOOKS adiciono a opção de criptografia e <strong>LVM</strong>. Então faço assim:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s|^HOOKS=.*|HOOKS=(base systemd autodetect keymap modconf kms keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)|g"</span> /etc/mkinitcpio.conf
-</code></pre></div></div>
-
-<blockquote>
-  <p>Nota: Antigamente eu usava o <code class="language-plaintext highlighter-rouge">plymouth</code> depois de <code class="language-plaintext highlighter-rouge">keymap</code> para ter um boot com splash, mas hoje
-prefiro o boot verboso para averiguar alguma mensagem de erro, ou demora caso ocorra.</p>
-</blockquote>
-
-<p><strong>(3)</strong> - Agora instalo o pacote <code class="language-plaintext highlighter-rouge">lvm2</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> lvm2
-</code></pre></div></div>
-
-<h1 id="instalando-o-bootloader">Instalando o bootloader</h1>
-
-<p>Já faz um bom tempo que uso <code class="language-plaintext highlighter-rouge">systemd-boot</code> por achar o <code class="language-plaintext highlighter-rouge">GRUB</code> pesado e com recursos que nem preciso.</p>
-
-<p>Minha máquina é <strong>EFI</strong>, por que eu teria que ter um bootloader pra gerenciar <em>Legacy</em> também?! 🤔</p>
-
-<p><strong>(1)</strong> - Primeiro instalo o <code class="language-plaintext highlighter-rouge">efibootmgr</code> e <code class="language-plaintext highlighter-rouge">intel-ucode</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--noconfirm</span> efibootmgr intel-ucode
-</code></pre></div></div>
-
-<blockquote>
-  <p>Nota: O <code class="language-plaintext highlighter-rouge">efibootmgr</code> é um “gerenciador” de bootloader EFI, e o <code class="language-plaintext highlighter-rouge">intel-ucode</code> é um microcódigo de
-segurança para CPU Intel. Na AMD como CPU, instalo o <code class="language-plaintext highlighter-rouge">amd-code</code>.</p>
-</blockquote>
-
-<p><strong>(2)</strong> - Depois faço de fato a instalação o <code class="language-plaintext highlighter-rouge">systemd-boot</code> como bootloader:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bootctl <span class="nt">--path</span><span class="o">=</span>/boot <span class="nb">install</span>
-</code></pre></div></div>
-
-<div id="details-start" class="details-start" data-summary="Com partição de boot separada"></div>
-
-<p>Se eu instalei o sistema com a partição de boot separada, então minha instalação do bootloader
-fica assim:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bootctl <span class="nt">--path</span><span class="o">=</span>/boot/efi <span class="nb">install</span>
-</code></pre></div></div>
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<p><strong>(3)</strong> - Crio o loader do <code class="language-plaintext highlighter-rouge">systemd-boot</code>:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="nv">ESP_DIR</span><span class="o">=</span><span class="s2">""</span><span class="p">;</span>
-<span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; /boot/</span><span class="k">${</span><span class="nv">ESP_DIR</span><span class="k">}</span><span class="sh">loader/loader.conf
-default arch-linux-lts.efi
-timeout 3
-console-mode max
-editor no
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<blockquote>
-  <p>IMPORTANTE: Está variável de ambiente <code class="language-plaintext highlighter-rouge">ESP_DIR</code> é temporária, é apenas para o momento de instalação.
-Se instalou o sistema com a partição de boot separada, um em <code class="language-plaintext highlighter-rouge">/boot</code> e outra <code class="language-plaintext highlighter-rouge">/boot/efi</code>, então a
-variável <code class="language-plaintext highlighter-rouge">ESP_DIR</code> DEVE ser assim: <code class="language-plaintext highlighter-rouge">ESP_DIR="efi/"</code>. Caso contrário deixe vazio.</p>
-</blockquote>
-
-<blockquote>
-  <p>Nota: Na opção <code class="language-plaintext highlighter-rouge">default</code>, se usar UKI, colocar o nome do UKI completo, por exemplo:
-<code class="language-plaintext highlighter-rouge">arch-linux-lts.efi</code>. Se usar modo tradicional, usar o nome do arquivo presente no diretório
-<code class="language-plaintext highlighter-rouge">entries</code> , por exemplo: <code class="language-plaintext highlighter-rouge">arch.conf</code>.</p>
-</blockquote>
-
-<h2 id="usando-uki-unified-kernel-image">Usando UKI (Unified Kernel Image)</h2>
-
-<p>Atualmente estou usando <code class="language-plaintext highlighter-rouge">systemd-boot</code> + <code class="language-plaintext highlighter-rouge">UKI</code> (Unified Kernel Image), e esses são os passos que
-faço para instalar.</p>
-
-<p><strong>(1)</strong> - Crio o arquivo “<em>/etc/kernel/cmdline</em>”:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; /etc/kernel/cmdline
-root=UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</span> UUID <span class="nt">-o</span> value /dev/mapper/linux-arch<span class="si">)</span><span class="sh"> rw loglevel=3 nvidia_drm.modeset=1 video=1920x1080@75
-</span><span class="no">EOF
-</span></code></pre></div></div>
-
-<blockquote>
-  <p>Dica: Caso eu queira um boot menos verboso e com splash, eu adiciono na opção <code class="language-plaintext highlighter-rouge">ALL_cmdline</code> os
-parâmentros: <code class="language-plaintext highlighter-rouge">quiet splash loglevel=3 systemd.show_status=auto rd.udev.log_level=3</code>. E depois
-instalo o pacote <code class="language-plaintext highlighter-rouge">plymouth</code>, e adiciono a flag <code class="language-plaintext highlighter-rouge">plymouth</code> nos HOOKS do <code class="language-plaintext highlighter-rouge">/etc/mkinitcpio.conf</code> depois
-de <code class="language-plaintext highlighter-rouge">keymap</code>.</p>
-</blockquote>
-
-<p><strong>(2)</strong> - Crio um backup do “<em>preset</em>” primeiro:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> /etc/mkinitcpio.d/linux-lts.preset /etc/mkinitcpio.d/linux-lts.preset.backup
-</code></pre></div></div>
-
-<p><strong>(3)</strong> - Depois crio um novo <code class="language-plaintext highlighter-rouge">/etc/mkinitcpio.d/linux-lts.preset</code> com as configurações abaixo:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-</pre></td><td class="code"><pre><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; /etc/mkinitcpio.d/linux-lts.preset
-ESP_DIR="</span><span class="k">${</span><span class="nv">ESP_DIR</span><span class="k">}</span><span class="sh">"
-
-ALL_config="/etc/mkinitcpio.conf"
-ALL_kver="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}vmlinuz-linux-lts"
-ALL_cmdline="/etc/kernel/cmdline"
-PRESETS=('default' 'fallback')
-
-default_config="/etc/mkinitcpio.conf"
-default_image="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}initramfs-linux.img"
-default_uki="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}EFI/Linux/arch-linux-lts.efi"
-default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
-
-fallback_config="/etc/mkinitcpio.conf"
-fallback_image="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}initramfs-linux-fallback.img"
-fallback_uki="/boot/</span><span class="se">\$</span><span class="sh">{ESP_DIR}EFI/Linux/arch-linux-fallback.efi"
-fallback_options="-S autodetect"
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<!--
-**(4)** - Agora crio as entradas do `systemd-boot` padrão:
-
-```shell
-cat << EOF > /boot/${ESP_DIR}loader/entries/arch.conf
-title   Arch Linux LTS
-efi     /EFI/Linux/arch-linux-lts.efi
-EOF
-```
-
-**(4)** - E por final, crio as entradas do `systemd-boot` de fallback:
-
-```shell
-cat << EOF > /boot/${ESP_DIR}loader/entries/arch-fallback.conf
-title   Arch Linux LTS (Fallback)
-efi     /EFI/Linux/arch-linux-fallback.efi
-EOF
-``` -->
-
-<p><strong>(4)</strong> - Reinstalo o kernel:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--noconfirm</span> linux-lts
-</code></pre></div></div>
-
-<div id="details-start" class="details-start" data-summary="Usando modo tradicional (Opcional)"></div>
-
-<p>Aqui a configuração do <strong>systemd-boot</strong> muda, em vez de usar UKI, uso os arquivos
-<strong>vmlinuz-linux-lts</strong>, <strong>initramfs-linux-lts.img</strong> e <strong>intel-ucode.img</strong> para iniciar o boot.</p>
-
-<p><strong>(1)</strong> - Primeiro removo qualquer imagem <code class="language-plaintext highlighter-rouge">.efi</code> gerada:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-f</span> /boot/<span class="k">${</span><span class="nv">ESP_DIR</span><span class="k">}</span>EFI/Linux/arch-linux-lts<span class="k">*</span>.efi
-</code></pre></div></div>
-
-<p><strong>(2)</strong> - Depois eu crio a entrada padrão assim:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; /boot/</span><span class="k">${</span><span class="nv">ESP_DIR</span><span class="k">}</span><span class="sh">loader/entries/arch.conf
-title Arch Linux (Default)
-linux /vmlinuz-linux-lts
-initrd  /intel-ucode.img
-initrd /initramfs-linux.img
-options root=UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</span> UUID <span class="nt">-o</span> value /dev/mapper/linux-arch<span class="si">)</span><span class="sh"> rw nvidia_drm.modeset=1 video=1920x1080@75
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<p><strong>(2)</strong> - E a entrada de fallback assim:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; /boot/</span><span class="k">${</span><span class="nv">ESP_DIR</span><span class="k">}</span><span class="sh">loader/entries/arch-fallback.conf
-title Arch Linux (Fallback)
-linux /vmlinuz-linux-lts-fallback
-initrd  /intel-ucode.img
-initrd /initramfs-linux-fallback.img
-options root=UUID=</span><span class="si">$(</span>blkid <span class="nt">-s</span> UUID <span class="nt">-o</span> value /dev/mapper/linux-arch<span class="si">)</span><span class="sh"> rw nvidia_drm.modeset=1 video=1920x1080@75
-</span><span class="no">EOF
-</span></code></pre></div></div>
-
-<blockquote>
-  <p>Nota: Nas entradas de boot, em <code class="language-plaintext highlighter-rouge">options</code>, vale a mesma configuração do <code class="language-plaintext highlighter-rouge">ALL_cmdline</code> do <strong>UKI</strong>.</p>
-</blockquote>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<div id="details-start" class="details-start" data-summary="Adicionando EFI do Windows (Opcional)"></div>
-
-<p>Quando quero fazer um dual-boot com <strong>Windows</strong> ou até mesmo usar o Windows instalado em outra
-SSD/HDD, e adicionar o mesmo no <strong>systemd-boot</strong>, eu faço os passos abaixo:</p>
-
-<p><strong>(1)</strong> - Acho a partição de bootloader do Windows, por exemplo, <strong>sdc1</strong> e monto a mesma:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mount <span class="nt">--mkdir</span> /dev/sdc1 /mnt/winboot
-</code></pre></div></div>
-
-<p><strong>(2)</strong> - Depois eu copio a pasta <strong>Microsoft</strong> para meu <code class="language-plaintext highlighter-rouge">/boot/EFI</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> <span class="nt">-r</span> /mnt/winboot/EFI/Microsoft /boot/<span class="k">${</span><span class="nv">ESP_DIR</span><span class="k">}</span>EFI
-</code></pre></div></div>
-
-<p><strong>(3)</strong> - Crio o arquivo de entrada para o <strong>Windows</strong>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; /boot/</span><span class="k">${</span><span class="nv">ESP_DIR</span><span class="k">}</span><span class="sh">loader/entries/windows.conf
-title   Windows 11
-efi     /EFI/Microsoft/Boot/bootmgfw.efi
-</span><span class="no">EOF
-</span></code></pre></div></div>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<div id="details-start" class="details-start" data-summary="Reinstalando o bootloader (Manutenção)"></div>
-
-<p>Caso eu precise reinstalar o <strong>systemd-boot</strong> após um update ou reinstalação de outro
-sistema operacional, sigo as etapas abaixo após entrar na ISO do <strong>Arch Linux</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre>mount /dev/mapper/linux-arch /mnt<span class="p">;</span>
-mount <span class="nt">--mkdir</span> /dev/sda1 /mnt/boot<span class="p">;</span>
-mount <span class="nt">--mkdir</span> /dev/mapper/home /mnt/home<span class="p">;</span>
-<span class="k">for </span><span class="nb">dir </span><span class="k">in </span>proc sys dev run<span class="p">;</span> <span class="k">do </span>mount <span class="nt">--rbind</span> /<span class="nv">$dir</span> /mnt/<span class="nv">$dir</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
-arch-chroot /mnt<span class="p">;</span>
-pacman <span class="nt">-S</span> <span class="nt">--noconfirm</span> linux-lts linux-lts-headers<span class="p">;</span>
-mkinitcpio <span class="nt">-P</span><span class="p">;</span>
-bootctl <span class="nt">--path</span><span class="o">=</span>/boot <span class="nb">install</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<blockquote>
-  <p>Nota 1: Então Repito os passos de: <strong>Instalando o bootloader</strong>.
-Nota 2: Lembrando que, se usar <code class="language-plaintext highlighter-rouge">/boot</code> e <code class="language-plaintext highlighter-rouge">/boot/efi</code>, montar ambos e usar o <code class="language-plaintext highlighter-rouge">bootctl</code> em <code class="language-plaintext highlighter-rouge">/boot/efi</code>.</p>
-</blockquote>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<h1 id="instalação-de-drivers-gráficos">Instalação de drivers gráficos</h1>
-
-<p>Agora vou de fato para o ambiente gráfico. Então começo a instalar alguns drivers essenciais e
-API, como <strong>Vulkan</strong>, <strong>OpenGL</strong>, etc:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> xorg wayland dialog mesa lib32-mesa xf86-video-vesa vulkan-icd-loader <span class="se">\</span>
-lib32-vulkan-icd-loader vulkan-tools
-</code></pre></div></div>
-
-<p><strong>Intel:</strong></p>
-
-<p>Como uso <a href="https://www.intel.com.br/content/www/br/pt/products/details/processors/core.html" target="_blank">Intel</a>,
-então também instalo esses drivers para GPU integrada:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> mesa-vulkan-intel vulkan-intel linux-firmware-intel
-</code></pre></div></div>
-
-<div id="details-start" class="details-start" data-summary="AMD"></div>
-
-<p>Não estou usando <strong>AMD</strong> no momento, mas vou deixar os drivers necessários caso eu use futuramente:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> mesa-vulkan-radeon vulkan-radeon linux-firmware-radeon
-</code></pre></div></div>
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<p><strong>NVIDIA (Nouveau)</strong></p>
-
-<p>Sempe bom ter os drivers da NVIDIA open-source caso a NVIDIA faça alguma “nhaca” de incompatibilidade:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--noconfirm</span>  xf86-video-nouveau vulkan-nouveau
-</code></pre></div></div>
-
-<div id="details-start" class="details-start" data-summary="NVIDIA (proprietary) 🙄"></div>
-
-<p>Como já relatei acima, não uso o driver proprietário da <strong>NVIDIA</strong> do repo do <strong>Arch Linux</strong> por
-algumas incompatibilidades que tive na última versão 😡, mas mesmo assim vou deixar os pacotes
-essenciais que se deve instalar:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> nvidia nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia<span class="p">;</span>
-systemctl set-default multi-user.target
-</code></pre></div></div>
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<h1 id="instalação-de-fontes">Instalação de fontes</h1>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> noto-fonts noto-fonts-emoji noto-fonts-cjk ttf-liberation <span class="se">\</span>
-otf-font-awesome ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-dejavu-nerd
-</code></pre></div></div>
-
-<h1 id="instalação-de-drivers-de-áudio-e-mixer">Instalação de drivers de áudio e mixer</h1>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> pipewire wireplumer pipewire-audio pipewire-pulse pipewire-alsa <span class="se">\</span>
-pipewire-jack lib32-pipewire lsp-plugins-lv2 mda.lv2 zam-plugins-lv2 zam-plugins-lv2 pavucontrol
-</code></pre></div></div>
-
-<h1 id="ambiente-de-trabalho-i3">Ambiente de trabalho (i3)</h1>
-
-<p>Atualmente uso <strong>i3</strong> + <strong>Polybar</strong>, e esses são os pacotes que uso para um ambiente agradável:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> i3 i3lock i3status polybar pcmanfm picom rofi nitrogen gtk-chtheme <span class="se">\</span>
-btop jq conky gsimplecal numlockx qt5ct qt6ct scrot dunst yazi xautolock imagemagick ranger lynx
-</code></pre></div></div>
-
-<div id="details-start" class="details-start" data-summary="Ambiente de trabalho (XFCE)"></div>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> xfce4 xfce4-goodies appmenu-gtk-module libdbusmenu-glib lightdm <span class="se">\</span>
-lightdm-gtk-greeter
-</code></pre></div></div>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<div id="details-start" class="details-start" data-summary="Instalação do ambiente de trabalho (GNOME)"></div>
-
-<p>Minha relação com <strong>GNOME</strong> é entre amor e ódio. Instalo mas deixo com um ambiente de fallback:</p>
-
-<p><strong>Mínimo:</strong></p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> gnome-shell gnome-control-center gnome-terminal nautilus gdm <span class="se">\</span>
-gnome-browser-connector gnome-shell-extensions gnome-tweaks
-</code></pre></div></div>
-
-<p><strong>Completo:</strong></p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> gnome gnome-extra gnome-desktop gnome-shell-extensions <span class="se">\</span>
-gnome-browser-connector gnome-tweaks gdm
-</code></pre></div></div>
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<h1 id="instalação-de-aplicações">Instalação de aplicações</h1>
-
-<p>Algumas aplicações básicas que uso:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> pacman-contrib util-linux dkms xdg-user-dirs ntfs-3g udisks2 <span class="se">\</span>
-dosfstools mtools cpupower reflector samba git openssh tor virtualbox-guest-utils vlc <span class="se">\</span>
-transmission-gtk gvfs gvfs-smb ttf-dejavu ttf-dejavu-nerd terminator veracrypt zip unzip xarchiver <span class="se">\</span>
-gimp inkscape make gcc go ruby perl tk python nodejs npm arch-wiki-docs arch-wiki-lite zeal <span class="se">\</span>
-qemu-full virt-manager piper steam-native-runtime firefox libreoffice-fresh libreoffice-fresh-pt-br <span class="se">\</span>
-terminator galculator leafpad calf smplayer gparted rofimoji easyeffects gnome-keyring seahorse mpv
-</code></pre></div></div>
-
-<h1 id="habilitando-serviços">Habilitando serviços</h1>
-
-<p>Neste momento habilito alguns serviços para iniciar durante o boot:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl <span class="nb">enable </span>iptables.service smb.service nmb.service tor.service
-</code></pre></div></div>
-
-<h1 id="complementando-o-etcfstab">Complementando o /etc/fstab</h1>
-
-<p>Meu computador não tem leitor de disquete e CD/DVD (e quem tem?), mas mesmo asim eu mantenho a
-configuração no <code class="language-plaintext highlighter-rouge">/etc/fstab</code>, e também já deixo comentado para uma partição <strong>Windows</strong>, caso eu
-tenha um dia. Para essas configurações, eu faço os comandos:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="code"><pre><span class="nb">mkdir</span> <span class="nt">-p</span> /media/cdrom0<span class="p">;</span> <span class="nb">mkdir</span> /mnt/floppy<span class="p">;</span> <span class="nb">mkdir</span> /mnt/windows<span class="p">;</span>
-<span class="nb">ln</span> <span class="nt">-s</span> /media/cdrom0 /media/cdrom<span class="p">;</span>
-<span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt;&gt; /etc/fstab
-### CDROM
-/dev/sr0  /media/cdrom0  udf,iso9660 user,noauto  0 0
-
-### Floppy
-/dev/fd0  /mnt/floppy  auto  defaults,user,noauto  0 0
-
-### Windows (optional)
-#UUID=XXXXX-XXXXX-XXXXX /mnt/windows  ntfs-3g defaults,user,rw,auto  0 0
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<h1 id="zram">ZRAM</h1>
-
-<p>Geralmente não forço tanto meu computador a ponto de usar <strong>zram</strong>, mas mesmo assim eu configuro:</p>
-
-<p><strong>1</strong> - Instalando o gerenciador de zram:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--needed</span> <span class="nt">--noconfirm</span> zram-generator
-</code></pre></div></div>
-
-<p><strong>2</strong> - Configurando um perfil equilibrado para <strong>zram</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="sh">"</span><span class="no">EOF</span><span class="sh">" &gt; /etc/systemd/zram-generator.conf
-[zram0]
-zram-size = ram / 4
-compression-algorithm = zstd
-swap-priority = 50
-fs-type = swap
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<blockquote>
-  <p>Nota: Caso eu queira um perfil mais agressivo, para jogar por exemplo, que necessite de <strong>zram</strong>,
-então eu uso este perfil abaixo:</p>
-</blockquote>
-
-<div id="details-start" class="details-start" data-summary="ZRAM: Perfil Agressivo"></div>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="sh">"</span><span class="no">EOF</span><span class="sh">" &gt; /etc/systemd/zram-generator.conf
-[zram0]
-zram-size = ram * 3/4
-compression-algorithm = lz4
-swap-priority = 100
-fs-type = swap
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<p><strong>3</strong> - Depois de configurar, eu faço um <em>reset</em> no daemon e habilito o serviço de <strong>ZRAM</strong>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl daemon-reload<span class="p">;</span>
-systemctl <span class="nb">enable</span> <span class="nt">--now</span> systemd-zram-setup@zram0.service
-</code></pre></div></div>
-
-<div id="details-start" class="details-start" data-summary="Swap (opcional)"></div>
-
-<p>Caso eu prefiro usar <strong>Swap</strong> em arquivo em vez de <strong>zram</strong>, esses são os passos:</p>
-
-<p><strong>(1)</strong> - Criando arquivo para swap:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fallocate <span class="nt">-l</span> 8G /swapfile
-<span class="c"># ou: dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress</span>
-</code></pre></div></div>
-
-<p><strong>(2)</strong> - Dando permissões:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>600 /swapfile
-<span class="nb">chown </span>root:root /swapfile
-</code></pre></div></div>
-
-<p><strong>(3)</strong> - Ativando:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkswap /swapfile
-swapon /swapfile
-</code></pre></div></div>
-
-<p><strong>(4)</strong> - Ativando swap no boot:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt;&gt; /etc/fstab
-### Swap
-/swapfile none swap defaults 0 0
-</span><span class="no">EOF
-</span></code></pre></div></div>
-
-<p><strong>(5)</strong> - Configurando <em>swappiness</em>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'vm.swappiness=10'</span> | <span class="nb">tee</span> <span class="nt">-a</span> /etc/sysctl.d/99-swap.conf
-</code></pre></div></div>
-
-<blockquote>
-  <p>Nota: O swappiness recomendado é: 10 para SSD, 60 para HDD.</p>
-</blockquote>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<h1 id="adicionando-um-usuário">Adicionando um usuário</h1>
-
-<p><strong>1</strong> - Antes, vou liberar o grupo <code class="language-plaintext highlighter-rouge">sudo</code> no arquivo <code class="language-plaintext highlighter-rouge">/etc/sudoers</code> para meu usuário pertencer a
-esse grupo e eu ter privilégios de <em>sudo</em>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s|# %sudo ALL=(ALL:ALL) ALL|%sudo ALL=(ALL:ALL) ALL|g"</span> /etc/sudoers
-</code></pre></div></div>
-
-<p><strong>2</strong> - Agora começo a criação do grupo do meu usuário e a criação do meu usuário em si:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="nv">USERNAME_TEMP</span><span class="o">=</span><span class="s2">"will"</span><span class="p">;</span>
-groupadd <span class="nv">$USERNAME_TEMP</span><span class="p">;</span>
-useradd <span class="nt">-m</span> <span class="nt">-g</span> <span class="nv">$USERNAME_TEMP</span> <span class="nt">-G</span> <span class="nb">users</span>,tty,wheel,games,power,optical,storage,scanner,lp,audio,video,input,mail,root <span class="nt">-s</span> /bin/zsh <span class="nv">$USERNAME_TEMP</span><span class="p">;</span>
-groupadd <span class="nb">sudo</span> <span class="nt">-U</span> <span class="nv">$USERNAME_TEMP</span><span class="p">;</span>
-passwd <span class="nv">$USERNAME_TEMP</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<h1 id="idioma-e-região">Idioma e região</h1>
-
-<p>Esses comandos são necessário para configurar o teclado e idioma do sistema, onde cada linha é um
-comando:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="code"><pre>timedatectl set-timezone America/Sao_Paulo<span class="p">;</span>
-<span class="nb">echo</span> <span class="s2">"KEYMAP=br-abnt2"</span> <span class="o">&gt;</span> /etc/vconsole.conf<span class="p">;</span>
-<span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s|#en_US.UTF-8 UTF-8|en_US.UTF-8 UTF-8|g"</span> /etc/locale.gen<span class="p">;</span>
-<span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s|#pt_BR.UTF-8 UTF-8|pt_BR.UTF-8 UTF-8|g"</span> /etc/locale.gen<span class="p">;</span>
-locale-gen<span class="p">;</span>
-<span class="nb">echo </span><span class="nv">LANG</span><span class="o">=</span>pt_BR.UTF-8 | <span class="nb">tee</span> /etc/locale.conf<span class="p">;</span>
-<span class="nb">rm</span> <span class="nt">-f</span> /etc/localtime <span class="o">&amp;&amp;</span> <span class="nb">ln</span> <span class="nt">-s</span> /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime<span class="p">;</span>
-hwclock <span class="nt">--systohc</span><span class="p">;</span>
-<span class="nb">echo</span> <span class="s2">"archlinux"</span> | <span class="nb">tee</span> /etc/hostname<span class="p">;</span>
-<span class="nb">printf</span> <span class="s2">"127.0.0.1        archlinux</span><span class="se">\n</span><span class="s2">"</span> <span class="o">&gt;&gt;</span> /etc/hosts<span class="p">;</span>
-<span class="nb">echo </span><span class="nv">KEYMAP</span><span class="o">=</span>br-abnt2 | <span class="nb">tee</span> /etc/vconsole.conf<span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<h1 id="security-boot-opcional">Security Boot (Opcional)</h1>
-
-<p><strong>(1)</strong> - Instalar o pacote <code class="language-plaintext highlighter-rouge">sbctl</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pacman <span class="nt">-S</span> <span class="nt">--noconfirm</span> sbctl
-</code></pre></div></div>
-
-<p><strong>(2)</strong> - Criar as chaves e aplicar as assinaturas:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre>sbctl create-keys
-sbctl sign <span class="nt">-s</span> <span class="nt">-o</span> /usr/lib/systemd/boot/efi/systemd-bootx64.efi.signed /usr/lib/systemd/boot/efi/systemd-bootx64.efi
-sbctl sign <span class="nt">-s</span> /boot/EFI/BOOT/BOOTX64.EFI
-sbctl sign <span class="nt">-s</span> /boot/EFI/Linux/arch-linux-lts.efi
-sbctl sign <span class="nt">-s</span> /boot/EFI/Linux/arch-linux-lts-fallback.efi
-sbctl verify
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<div id="details-start" class="details-start" data-summary="Assinando EFI Windows"></div>
-
-<p>A EFI do Windows existem muitos arquivos que devem ser assinados, por isso, faço da seguinte maneira
-retirado da própria <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl" target="_blank">Wiki do Arch Linux</a>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /boot/EFI/Microsoft
-sbctl verify | <span class="nb">sed</span> <span class="s1">'s/✗ /sbctl sign -s /e'</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p>Nota: Para este passo ser realizado, primeiro tem que ter realizado o passo
-<strong>Adicionando EFI do Windows (Opcional)</strong>.</p>
-</blockquote>
-
-<!-- enddetails -->
-<div class="details-end"></div>
-
-<p><strong>(4)</strong> - Reinicio a máquina com o comando abaixo para entrar automaticamente na <strong>BIOS</strong>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl reboot <span class="nt">--firmware-setup</span>
-</code></pre></div></div>
-
-<p><strong>(5)</strong> - Quando estou dentro da <strong>BIOS</strong>, vou na aba <strong>Boot</strong> &gt; <strong>Security Boot</strong> deixando
-desabilitado, e no modo <strong>Custom</strong>. Em <strong>Key Management</strong>, apago TODAS as chaves e RESTAURO para o
-<strong>Setup Mode</strong>, feito isso, salvo e inicio o <strong>Arch Linux</strong> novamente.</p>
-
-<p><strong>(6)</strong> - Após estar dentro do <strong>Arch Linux</strong> novamente, executo o comando abaixo:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sbctl enroll-keys <span class="nt">--microsoft</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p>Nota: Isso faz com que crie as chaves de assinatura na <strong>EFI</strong>, e a opção <code class="language-plaintext highlighter-rouge">--microsoft</code> é para
-habilitar assinatura no <strong>Windows</strong> também (caso eu tenha dual-boot com Windows).</p>
-</blockquote>
-
-<p><strong>(7)</strong> - Reinicio a máquina novamente para entrar na <strong>BIOS</strong> igual o passo <strong>(4)</strong>. Agora, dentro
-da <strong>BIOS</strong>,  habilito o <strong>Security Boot</strong> e salvo. Quando reinicio o <strong>Arch Linux</strong>, minha máquina
-já estará em modo <strong>Security Boot</strong>.</p>
-
-<h1 id="pós-instalação">Pós Instalação</h1>
-
-<p>Após estar dentro do <strong>Arch Linux</strong> com meu usuário, outras configurações que faço são:</p>
-
-<h2 id="instalando-yay">Instalando yay</h2>
-
-<p><strong>(1)</strong> - Instalar um gerenciador de pacotes para o <strong>AUR</strong>, no caso, o <code class="language-plaintext highlighter-rouge">yay</code>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://aur.archlinux.org/yay.git<span class="p">;</span>
-<span class="nb">cd </span>yay <span class="o">&amp;&amp;</span> makepkg <span class="nt">-si</span> PKGBUILD
-</code></pre></div></div>
-
-<p><strong>(2)</strong> - Depois do <code class="language-plaintext highlighter-rouge">yay</code> instalado, instalo outros pacotes/programas essenciais do <strong>AUR</strong>:</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> <span class="nt">--noconfirm</span> i3-volume spotify visual-studio-code-bin brave-bin google-chrome secure-delete <span class="se">\</span>
-smem
-</code></pre></div></div>
-
-<h2 id="configurando-meu-shell">Configurando meu shell</h2>
-
-<p>Uso o <strong>ZSH</strong> com <a href="https://ohmyz.sh/" target="_blank">Oh-My-ZSH</a>, plugins e <a href="https://startship.rs" target="_blank">Starship</a>, e faço
-assim:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="code"><pre><span class="nb">sudo </span>pacman <span class="nt">-S</span> <span class="nt">--noconfirm</span> starship<span class="p">;</span>
-sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="si">)</span><span class="s2">"</span><span class="p">;</span>
-git clone https://github.com/zsh-users/zsh-autosuggestions <span class="k">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="k">}</span>/plugins/zsh-autosuggestions<span class="p">;</span>
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="k">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="k">}</span>/plugins/zsh-syntax-highlighting<span class="p">;</span>
-<span class="nv">new_plugins</span><span class="o">=</span><span class="s2">" zsh-autosuggestions zsh-syntax-highlighting"</span><span class="p">;</span>
-<span class="nv">current_plugins</span><span class="o">=</span><span class="si">$(</span><span class="nb">grep</span> <span class="s1">'^plugins='</span> <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.zshrc"</span> | <span class="nb">sed</span> <span class="s1">'s/^plugins=(//; s/)//'</span><span class="si">)</span><span class="p">;</span>
-<span class="nv">new_plugins_line</span><span class="o">=</span><span class="s2">"plugins=(</span><span class="k">${</span><span class="nv">current_plugins</span><span class="k">}${</span><span class="nv">new_plugins</span><span class="k">}</span><span class="s2">)"</span><span class="p">;</span>
-<span class="nb">sed</span> <span class="nt">-i</span> <span class="s2">"s|^plugins=.*|</span><span class="k">${</span><span class="nv">new_plugins_line</span><span class="k">}</span><span class="s2">|"</span> <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.zshrc"</span><span class="p">;</span>
-<span class="nb">echo</span> <span class="s2">"eval </span><span class="se">\"\$</span><span class="s2">(starship init zsh)</span><span class="se">\"</span><span class="s2">"</span> <span class="o">&gt;</span> <span class="s2">"</span><span class="k">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="k">}</span><span class="s2">/themes/starship.zsh-theme"</span><span class="p">;</span>
-<span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/^ZSH_THEME=".*"/ZSH_THEME="starship"/'</span> <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.zshrc"</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<blockquote>
-  <p>Nota: Geralmente eu apenas instalo o <a href="https://ohmyz.sh/" target="_blank">Oh-My-ZSH</a>, plugins e <a href="https://startship.rs" target="_blank">Starship</a>,
-e as configurações do <code class="language-plaintext highlighter-rouge">~/.zshrc</code> e resgato do meu <strong>dotfiles</strong>, usando o
-<a href="https://github.com/snakypy/dotctrl" target="_blank">DotCtrl</a>, um gerenciador de dotfiles criado por mim mesmo 😆.</p>
-</blockquote>
-
-<h2 id="login-automático">Login automático</h2>
-
-<p>Como eu uso criptografia dos meus dados, não acho interessante ter que ficar colocando senha para
-entrar no <strong>ambiente gráfico</strong> após descriptografar minha máquina em boot, então uso
-<strong>login automático</strong> através do <strong>TTY</strong>. Não uso gerenciador de login, como o <strong>GDM</strong>, <strong>LightDM</strong>,
-etc.</p>
-
-<p>Sabendo disso, os passos são:</p>
-
-<p><strong>(1)</strong> - Crio um serviço no <strong>systemd</strong> para pular o prompt:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="nb">sudo mkdir</span> <span class="nt">-p</span> /etc/systemd/system/getty@tty1.service.d<span class="p">;</span>
-<span class="nb">sudo cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
-[Service]
-ExecStart=
-ExecStart=-/usr/bin/agetty --skip-login --nonewline --noissue --autologin &lt;USER&gt; --noclear %I </span><span class="se">\$</span><span class="sh">TERM
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<blockquote>
-  <p>IMPORTANTE: Onde esta <code class="language-plaintext highlighter-rouge">&lt;USER&gt;</code> coloco o nome do meu usuário.</p>
-</blockquote>
-
-<p><strong>(2)</strong> - Crio um novo arquivo <code class="language-plaintext highlighter-rouge">~/.xinitrc</code> (fazendo backup do mesmo caso exista) adicionando o <code class="language-plaintext highlighter-rouge">i3</code>
-para ser executado:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="o">[</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.xinitrc"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">mv</span> <span class="nv">$HOME</span>/.xinitrc <span class="nv">$HOME</span>/.xinitrc.bak<span class="p">;</span>
-<span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; </span><span class="nv">$HOME</span><span class="sh">/.xinitrc
-exec i3
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<p><strong>(3)</strong> - Crio um novo arquivo <code class="language-plaintext highlighter-rouge">~/.zprofile</code> (fazendo backup do mesmo caso exista) e uma condição
-apenas para logar automaticamente quando estiver no <strong>tty1</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="o">[</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.zprofile"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">mv</span> <span class="nv">$HOME</span>/.zprofile <span class="nv">$HOME</span>/.zprofile.bak<span class="p">;</span>
-<span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> &gt; </span><span class="nv">$HOME</span><span class="sh">/.zprofile
-if [ -z "</span><span class="se">\$</span><span class="sh">DISPLAY" ] &amp;&amp; [ "</span><span class="se">\$</span><span class="sh">XDG_VTNR" = 1 ]; then
-  exec startx &amp;&gt;/dev/null
-fi
-EOF</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<h1 id="conclusão">Conclusão</h1>
-
-<p>Óbvio que faço muito mais otimizações e configurações no meu <strong>Arch Linux</strong>, mas esses são os passos
-e configurações BÁSICAS que uso. Espero que esse guia tenha te ajudado, e se ajudou, curta com uma
-estrelinha ⭐ aqui. Flw.</p>]]></content><author><name>William C. Canin</name></author><category term="archlinux" /><category term="encryption" /><category term="criptografia" /><category term="luks" /><category term="lvm" /><summary type="html"><![CDATA[Este post, irá lhe informar como ter uma segurança forte para proteção do seu S.O Arch Linux. Iae, quer estar protegido?!]]></summary></entry></feed>
+<p>Esse foi um tutorial bem básico de como deixar nossa <strong>/home</strong> criptografada no Linux. É de certo que alguma distribuição Linux pode ter suas particularidades e você tem que configurar algo a mais na mesma, porem o principio parte dessa lógica desse tutorial. Espero que você goste e principalmente que suas dúvidas foram eliminadas, mas caso não foi, deixe aqui um comentário informando suas dúvidas. Abraço.</p>]]></content><author><name>William C. Canin</name></author><category term="crypt" /><category term="linux" /><category term="security" /><summary type="html"><![CDATA[Que tal esconder suas coisinhas da /home de possíveis pessoas "espertas"? Siga em frente neste post e descubra.]]></summary></entry></feed>
