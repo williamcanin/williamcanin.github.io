@@ -1,6 +1,6 @@
 ---
 layout: post
-author: "William C. Vanin"
+author: "William C. Canin"
 title: "Nvidia auto-rebuild no Arch Linux com Wayland"
 description: "Description of your post"
 date: 2026-03-30 22:59:10 -0300
