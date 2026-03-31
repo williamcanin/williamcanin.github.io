@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-03-31T02:16:18+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Nvidia auto-rebuild no Arch Linux com Wayland</title><link href="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/" rel="alternate" type="text/html" title="Nvidia auto-rebuild no Arch Linux com Wayland" /><published>2026-03-31T01:59:10+00:00</published><updated>2026-03-31T01:59:10+00:00</updated><id>https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland</id><content type="html" xml:base="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/"><![CDATA[<h1 id="nvidia-run-auto-rebuild-no-boot--arch-linux--wayland-instalação-manual">NVIDIA <code class="language-plaintext highlighter-rouge">.run</code> auto-rebuild no boot — Arch Linux + Wayland (instalação manual)</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-03-31T02:30:27+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Nvidia auto-rebuild no Arch Linux com Wayland</title><link href="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/" rel="alternate" type="text/html" title="Nvidia auto-rebuild no Arch Linux com Wayland" /><published>2026-03-31T01:59:10+00:00</published><updated>2026-03-31T01:59:10+00:00</updated><id>https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland</id><content type="html" xml:base="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/"><![CDATA[<h1 id="nvidia-run-auto-rebuild-no-boot--arch-linux--wayland-instalação-manual">NVIDIA <code class="language-plaintext highlighter-rouge">.run</code> auto-rebuild no boot — Arch Linux + Wayland (instalação manual)</h1>
 
 <p>Se você usa Arch Linux com Wayland e instala o driver da NVIDIA via <code class="language-plaintext highlighter-rouge">.run</code> oficial, já deve ter sofrido com a tela preta depois de uma atualização de kernel. O motivo é simples: o instalador <code class="language-plaintext highlighter-rouge">.run</code> da NVIDIA <strong>não pode rodar com Wayland ou Xorg ativos</strong>, e os hooks do pacman executam justamente nesse momento.</p>
 
@@ -1100,51 +1100,71 @@ O segundo, o <a href="https://docs.python.org/pt-br/3.9/library/sys.html?highlig
     <p>The video is not available for embedding. Watch it on <a href="https://www.youtube.com/embed/VW-UphhjJ3E?si=PPdXSrMvJHmu00S_" target="_blank">YouTube</a>.
     </p>
   </noscript>
-</div>]]></content><author><name>William C. Canin</name></author><category term="python" /><category term="video" /><summary type="html"><![CDATA[Aprenda a criar um módulo para color as funções print e input no Python de forma nativa utilizando Ansi Code.]]></summary></entry><entry><title type="html">Como encurtar URL Raw do Github e ter uma url personalizada</title><link href="https://williamcanin.github.io/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/" rel="alternate" type="text/html" title="Como encurtar URL Raw do Github e ter uma url personalizada" /><published>2019-10-20T16:49:01+00:00</published><updated>2019-10-20T16:49:01+00:00</updated><id>https://williamcanin.github.io/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada</id><content type="html" xml:base="https://williamcanin.github.io/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/"><![CDATA[<p>Olá, tudo joinha? nesse post vou demonstrar como você pode deixar as urls RAW no <a href="https://github.com" target="_blank"><strong>Github</strong></a> bem mais encurtadas e eficientes. Vamos lá.</p>
-
-<p>Primeiro você precisa do <a href="https://curl.haxx.se/" target="_blank"><strong>curl</strong></a> na sua máquina, pois vamos precisar dele para realizar uma façanha. _</p>
+</div>]]></content><author><name>William C. Canin</name></author><category term="python" /><category term="video" /><summary type="html"><![CDATA[Aprenda a criar um módulo para color as funções print e input no Python de forma nativa utilizando Ansi Code.]]></summary></entry><entry><title type="html">Como encurtar URL Raw do Github e ter uma url personalizada</title><link href="https://williamcanin.github.io/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/" rel="alternate" type="text/html" title="Como encurtar URL Raw do Github e ter uma url personalizada" /><published>2019-10-20T16:49:01+00:00</published><updated>2019-10-20T16:49:01+00:00</updated><id>https://williamcanin.github.io/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada</id><content type="html" xml:base="https://williamcanin.github.io/blog/como-encurtar-url-raw-do-github-e-ter-uma-url-personalizada/"><![CDATA[<p>Olá, tudo joinha? Nesse post vou demonstrar como você pode deixar as URLs RAW do <a href="https://github.com" target="_blank"><strong>Github</strong></a> bem mais encurtadas e com um nome personalizado. Vamos lá.</p>
 
 <blockquote>
-  <p>Nota: _O <a href="https://curl.haxx.se/" target="_blank"><strong>curl</strong></a> está disponível praticamente em todos sistemas operacionais. Sinta-se a vontade para instalar o mesmo da maneira que mais lhe convém.</p>
+  <p><strong>Nota:</strong> Este post foi atualizado. O serviço <strong>git.io</strong>, que era usado originalmente aqui, foi descontinuado pelo GitHub em 2022. O substituto recomendado é o <a href="https://kutt.to" target="_blank"><strong>kutt.to</strong></a> — open source, gratuito e com suporte a slugs personalizados via API.</p>
 </blockquote>
 
-<p>Agora precisamos usar o serviço de encurtamento de url que a própria <a href="https://github.com" target="_blank"><strong>Github</strong></a> fornece, que é o <a href="https://git.io" target="_blank"><strong>Git.io</strong></a>. Se você encurtar suas URL’s através do site, a URL encurtada terá um <strong>code</strong> de “<em>sopa de letrinhas</em>” automaticamente escolhida pelo serviço. Por exemplo:</p>
+<hr />
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git.io/abcdef123456
-</code></pre></div></div>
-
-<p><strong>Como faço para ter uma url personalizada com o git.io?</strong></p>
-
-<p><em>Essa é uma pergunta muito fácil, mande outra mais difícil</em>.</p>
-
-<p>Ta bem, eu respondo… a resposta é: <strong>curl</strong>! No qual foi requisitado acima. Ele quem faz esse trabalho.</p>
-
-<p>A sintaxe para o encurtamento de URL com nome personalizável é:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>curl <span class="nt">-i</span> https://git.io <span class="nt">-F</span> <span class="s2">"url=**URL_ORIGINAL_RAW**"</span> <span class="nt">-F</span> <span class="s2">"code=**NOME_DESEJADO**"</span></code></pre></figure>
+<h2 id="o-que-você-vai-precisar">O que você vai precisar</h2>
 
 <ul>
-  <li>
-    <p>Onde em <strong>URL_ORIGINAL_RAW</strong> você deve colocar a URL original Raw completa, incluindo o http ou https.</p>
-  </li>
-  <li>
-    <p>Onde em <strong>NOME_DESEJADO</strong> você deve escolher um nome/código para sua URL.</p>
-  </li>
+  <li><a href="https://curl.se/" target="_blank"><strong>curl</strong></a> instalado na sua máquina</li>
+  <li>Uma conta gratuita no <a href="https://kutt.to" target="_blank"><strong>kutt.to</strong></a> para obter a API key</li>
 </ul>
 
 <blockquote>
-  <p>Nota: Em <strong>NOME_DESEJADO</strong>, o mesmo deve ser único, ou seja, você tem que escolher um nome/código que ninguem escolheu ainda. Para saber disso, simplesmente execute o comando, e veja se na saída obteve sucesso, ou não.</p>
+  <p>O curl está disponível em praticamente todos os sistemas operacionais. Sinta-se à vontade para instalá-lo da maneira que mais lhe convém.</p>
 </blockquote>
 
-<p>Vamos a um exemplo:</p>
+<hr />
 
-<p><strong>Exemplo de encurtamento:</strong></p>
+<h2 id="obtendo-sua-api-key-no-kuttto">Obtendo sua API key no kutt.to</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>curl <span class="nt">-i</span> https://git.io <span class="nt">-F</span> <span class="s2">"url=https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py"</span> <span class="nt">-F</span> <span class="s2">"code=**scriptizinho**"</span></code></pre></figure>
+<ol>
+  <li>Acesse <a href="https://kutt.to" target="_blank">kutt.to</a> e crie uma conta gratuita</li>
+  <li>Após o login, vá em <strong>Settings</strong> (configurações)</li>
+  <li>Na seção <strong>API Keys</strong>, gere uma nova chave</li>
+  <li>Copie e guarde sua chave — ela será usada em todos os comandos abaixo</li>
+</ol>
 
-<p><strong>Exemplo de saída do encurtamento:</strong></p>
+<hr />
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+<h2 id="encurtando-com-url-personalizada">Encurtando com URL personalizada</h2>
+
+<p>A sintaxe para criar uma URL encurtada com nome personalizável é:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>curl <span class="nt">-X</span> POST <span class="s2">"https://kutt.to/api/v2/links"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"X-API-Key: SUA_API_KEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"target": "URL_ORIGINAL_RAW", "customurl": "NOME_DESEJADO"}'</span></code></pre></figure>
+
+<ul>
+  <li>Em <strong>SUA_API_KEY</strong> coloque a chave gerada no painel do kutt.to</li>
+  <li>Em <strong>URL_ORIGINAL_RAW</strong> coloque a URL original completa, incluindo o <code class="language-plaintext highlighter-rouge">https://</code></li>
+  <li>Em <strong>NOME_DESEJADO</strong> escolha um slug único para sua URL</li>
+</ul>
+
+<blockquote>
+  <p><strong>Nota:</strong> O slug deve ser único no serviço. Se já estiver em uso, a API retorna um erro informando isso.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="exemplo-prático">Exemplo prático</h2>
+
+<p><strong>Comando:</strong></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>curl <span class="nt">-X</span> POST <span class="s2">"https://kutt.to/api/v2/links"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"X-API-Key: abc123minha_chave"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"target": "https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py", "customurl": "scriptizinho"}'</span></code></pre></figure>
+
+<p><strong>Saída do comando:</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1155,53 +1175,84 @@ O segundo, o <a href="https://docs.python.org/pt-br/3.9/library/sys.html?highlig
 9
 10
 11
-12
-13
-14
-15
-16
-17
-18
-</pre></td><td class="code"><pre>HTTP/1.1 201 Created
-Server: Cowboy
-Connection: keep-alive
-Date: Sun, 20 Oct 2019 14:20:01 GMT
-Status: 201 Created
-Content-Type: text/html<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>utf-8
-Location: https://git.io/scriptizinho
-Content-Length: 94
-X-Xss-Protection: 1<span class="p">;</span> <span class="nv">mode</span><span class="o">=</span>block
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-Runtime: 0.009777
-X-Node: 836916c6-b665-4105-9926-2f6f6c1d3cc4
-X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
-Strict-Transport-Security: max-age<span class="o">=</span>31536000<span class="p">;</span> includeSubDomains
-Via: 1.1 vegur
-
-https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d8f3a1b2c4"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"shortUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kutt.to/scriptizinho"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customurl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scriptizinho"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reuse"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visit_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-10-29T17:20:44.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-10-29T17:20:44.000Z"</span><span class="w">
+</span><span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Caso de tudo certo, você terá uma saída parecida com essa acima, onde já na primeira linha o resultado é <strong>Created</strong>. Em <strong>Location</strong>, você pode ver sua <strong>nova</strong> URL personalizada.</p>
+<p>Se tudo correu bem, a resposta virá com o campo <code class="language-plaintext highlighter-rouge">shortUrl</code> contendo sua nova URL personalizada:</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://git.io/scriptizinho
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://kutt.to/scriptizinho
 </code></pre></div></div>
 
-<p>Você também pode ignorar a url personalizada e deixar que o serviço escolha um <strong>code</strong> automaticamente para você, para isso remova a opção <strong>-F “code=”</strong> do comando.</p>
+<hr />
 
-<p>Exemplo:</p>
+<h2 id="encurtando-sem-slug-personalizado">Encurtando sem slug personalizado</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>curl <span class="nt">-i</span> https://git.io <span class="nt">-F</span> <span class="s2">"url=https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py"</span></code></pre></figure>
+<p>Se quiser deixar o serviço escolher o código automaticamente, basta remover o campo <code class="language-plaintext highlighter-rouge">customurl</code> do JSON:</p>
 
-<p>Saida do comando:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>curl <span class="nt">-X</span> POST <span class="s2">"https://kutt.to/api/v2/links"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"X-API-Key: SUA_API_KEY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"target": "https://raw.githubusercontent.com/my_user/my_project/master/scriptizinho.py"}'</span></code></pre></figure>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
-...
-Location: https://git.io/dfsds4r
-...
+<p>A saída será semelhante, mas com um <code class="language-plaintext highlighter-rouge">shortUrl</code> gerado automaticamente:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://kutt.to/dfsds4r
 </code></pre></div></div>
 
-<p>Eu fico por aqui, espero que eu tenha te ajudado. Abraços</p>]]></content><author><name>William C. Canin</name></author><category term="github" /><category term="git" /><category term="url" /><category term="shortener" /><summary type="html"><![CDATA[Cansado de compartilhar URL Raw do Github compridas? Lendo essa postagem você vai contornar isso.]]></summary></entry><entry><title type="html">Video - Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Video - Manipulando arquivo JSON com Python." /><published>2019-09-02T21:31:46+00:00</published><updated>2019-09-02T21:31:46+00:00</updated><id>https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python/"><![CDATA[<p>Olá pessoa, este será um post para compartilhar uma minissérie de vídeo sobre a manipulação de
+<hr />
+
+<h2 id="diferenças-para-o-gitio-para-quem-usava-antes">Diferenças para o git.io (para quem usava antes)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>git.io (descontinuado)</th>
+      <th>kutt.to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Autenticação</td>
+      <td>Nenhuma</td>
+      <td>API key obrigatória</td>
+    </tr>
+    <tr>
+      <td>Formato da requisição</td>
+      <td><code class="language-plaintext highlighter-rouge">multipart/form-data</code></td>
+      <td>JSON</td>
+    </tr>
+    <tr>
+      <td>Slug personalizado</td>
+      <td><code class="language-plaintext highlighter-rouge">-F "code=NOME"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">"customurl": "NOME"</code></td>
+    </tr>
+    <tr>
+      <td>Resposta</td>
+      <td>Headers HTTP</td>
+      <td>JSON estruturado</td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>Desativado em 2022</td>
+      <td>Ativo e open source</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>Eu fico por aqui, espero que tenha te ajudado. Abraços!</p>]]></content><author><name>William C. Canin</name></author><category term="kutt" /><category term="url" /><category term="shortener" /><category term="shorter" /><summary type="html"><![CDATA[Cansado de compartilhar URL Raw do Github compridas? Lendo essa postagem você vai contornar isso.]]></summary></entry><entry><title type="html">Video - Manipulando arquivo JSON com Python.</title><link href="https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python/" rel="alternate" type="text/html" title="Video - Manipulando arquivo JSON com Python." /><published>2019-09-02T21:31:46+00:00</published><updated>2019-09-02T21:31:46+00:00</updated><id>https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python</id><content type="html" xml:base="https://williamcanin.github.io/blog/manipulando-arquivo-json-com-python/"><![CDATA[<p>Olá pessoa, este será um post para compartilhar uma minissérie de vídeo sobre a manipulação de
 arquivo JSON com Python.</p>
 
 <p>Abaixo você terá acesso a playlist que criei sobre esse feito, dê uma olhada. Abraços.</p>
