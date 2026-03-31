@@ -1,4 +1,309 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-03-31T02:52:41+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Nvidia auto-rebuild no Arch Linux com Wayland</title><link href="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/" rel="alternate" type="text/html" title="Nvidia auto-rebuild no Arch Linux com Wayland" /><published>2026-03-31T01:59:10+00:00</published><updated>2026-03-31T01:59:10+00:00</updated><id>https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland</id><content type="html" xml:base="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/"><![CDATA[<h1 id="nvidia-run-auto-rebuild-no-boot--arch-linux--wayland-instalação-manual">NVIDIA <code class="language-plaintext highlighter-rouge">.run</code> auto-rebuild no boot — Arch Linux + Wayland (instalação manual)</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-03-31T02:53:36+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Gerando de forma segura uma wallet para suas criptomoedas</title><link href="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/" rel="alternate" type="text/html" title="Gerando de forma segura uma wallet para suas criptomoedas" /><published>2026-03-31T02:47:53+00:00</published><updated>2026-03-31T02:47:53+00:00</updated><id>https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas</id><content type="html" xml:base="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/"><![CDATA[<p>Gerar uma wallet de criptomoedas em um ambiente comprometido é um dos erros mais comuns e perigosos que um usuário pode cometer. Keyloggers, malwares e gravações de tela podem capturar sua seed phrase antes mesmo de você perceber. Neste post, vou mostrar como criar suas wallets com o máximo de segurança usando duas ferramentas: o <strong>Tails OS</strong> e o <strong>SeedCTL</strong>.</p>
+
+<hr />
+
+<h2 id="o-que-é-o-tails">O que é o Tails?</h2>
+
+<p><a href="https://tails.boum.org/">Tails</a> é um sistema operacional live focado em privacidade e segurança. Ele é executado diretamente de um pendrive, <strong>sem deixar rastros no computador usado</strong>, e não depende do sistema operacional instalado na máquina. Isso significa que mesmo em um computador potencialmente comprometido, você terá um ambiente limpo para operar.</p>
+
+<p>Para o nosso objetivo, o Tails serve como o ambiente isolado e confiável exigido pelo SeedCTL.</p>
+
+<h3 id="por-que-o-tails-é-ideal-para-gerar-wallets">Por que o Tails é ideal para gerar wallets?</h3>
+
+<ul>
+  <li>Não usa o HD do computador, portanto não deixa arquivos temporários</li>
+  <li>Toda sessão começa do zero (amnésica por padrão)</li>
+  <li>Permite trabalhar completamente offline (air-gapped)</li>
+  <li>Reduz drasticamente o risco de keyloggers e malwares presentes no computador host</li>
+</ul>
+
+<hr />
+
+<h2 id="passo-1--baixar-e-gravar-o-tails-em-um-pendrive">Passo 1 — Baixar e gravar o Tails em um pendrive</h2>
+
+<h3 id="requisitos">Requisitos</h3>
+
+<ul>
+  <li>Um pendrive de <strong>pelo menos 8 GB</strong> (os dados serão apagados)</li>
+  <li>Um computador com acesso à internet para o download inicial</li>
+  <li>O aplicativo <strong>Balena Etcher</strong> (ou similar) para gravar a imagem</li>
+</ul>
+
+<h3 id="download">Download</h3>
+
+<p>Acesse o site oficial: <a href="https://tails.boum.org/install/">https://tails.boum.org/install/</a></p>
+
+<p>Siga o guia de instalação correspondente ao seu sistema operacional atual (Windows, macOS ou Linux). O próprio site do Tails oferece um passo a passo detalhado e interativo para cada plataforma.</p>
+
+<blockquote>
+  <p>⚠️ <strong>Importante:</strong> sempre baixe o Tails somente pelo site oficial e verifique a assinatura do arquivo para garantir sua autenticidade.</p>
+</blockquote>
+
+<h3 id="gravando-no-pendrive">Gravando no pendrive</h3>
+
+<ol>
+  <li>Instale o <a href="https://etcher.balena.io/">Balena Etcher</a></li>
+  <li>Abra o Etcher e selecione a imagem <code class="language-plaintext highlighter-rouge">.img</code> do Tails baixada</li>
+  <li>Selecione o pendrive como destino</li>
+  <li>Clique em <strong>Flash</strong> e aguarde a conclusão</li>
+</ol>
+
+<hr />
+
+<h2 id="passo-2--inicializar-o-tails">Passo 2 — Inicializar o Tails</h2>
+
+<ol>
+  <li>Insira o pendrive no computador</li>
+  <li>Reinicie a máquina e acesse o menu de boot (geralmente <strong>F12</strong>, <strong>F2</strong>, <strong>ESC</strong> ou <strong>DEL</strong> durante a inicialização — varia conforme o fabricante)</li>
+  <li>Selecione o pendrive como dispositivo de boot</li>
+  <li>O Tails irá carregar. Na tela de boas-vindas, você pode deixar as configurações padrão e clicar em <strong>Start Tails</strong></li>
+</ol>
+
+<blockquote>
+  <p>💡 Após iniciar, <strong>desconecte o cabo de rede ou desative o Wi-Fi</strong>. Para gerar wallets, não precisamos de internet — e manter a máquina offline é parte fundamental da segurança.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="o-que-é-o-seedctl">O que é o SeedCTL?</h2>
+
+<p><a href="https://evolvbits.github.io/seedctl/">SeedCTL</a> é um gerador de wallets multichain, determinístico e focado em operação offline. Ele roda via linha de comando (CLI) e permite gerar e recuperar wallets para <strong>10 criptomoedas</strong> de forma auditável e transparente.</p>
+
+<h3 id="criptomoedas-suportadas">Criptomoedas suportadas</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rede</th>
+      <th>Formato de endereço</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bitcoin (BTC)</td>
+      <td><code class="language-plaintext highlighter-rouge">bc1...</code> / <code class="language-plaintext highlighter-rouge">tb1...</code></td>
+    </tr>
+    <tr>
+      <td>Ethereum (ETH)</td>
+      <td><code class="language-plaintext highlighter-rouge">0x...</code></td>
+    </tr>
+    <tr>
+      <td>BNB Smart Chain (BNB)</td>
+      <td><code class="language-plaintext highlighter-rouge">0x...</code></td>
+    </tr>
+    <tr>
+      <td>XRP Ledger (XRP)</td>
+      <td><code class="language-plaintext highlighter-rouge">r...</code></td>
+    </tr>
+    <tr>
+      <td>Tron (TRX)</td>
+      <td><code class="language-plaintext highlighter-rouge">T...</code></td>
+    </tr>
+    <tr>
+      <td>Solana (SOL)</td>
+      <td>base58</td>
+    </tr>
+    <tr>
+      <td>Litecoin (LTC)</td>
+      <td><code class="language-plaintext highlighter-rouge">ltc...</code></td>
+    </tr>
+    <tr>
+      <td>Polygon (POL/MATIC)</td>
+      <td><code class="language-plaintext highlighter-rouge">0x...</code></td>
+    </tr>
+    <tr>
+      <td>Cardano (ADA)</td>
+      <td><code class="language-plaintext highlighter-rouge">addr...</code></td>
+    </tr>
+    <tr>
+      <td>Monero (XMR)</td>
+      <td>base58</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="principais-características">Principais características</h3>
+
+<ul>
+  <li><strong>Offline por design</strong> — sem dependência de rede, sem transmissão de dados</li>
+  <li><strong>Determinístico</strong> — os mesmos inputs sempre geram os mesmos outputs (BIP-39)</li>
+  <li><strong>Auditável</strong> — derivation paths explícitos e visíveis</li>
+  <li><strong>Sem persistência em disco</strong> por intenção de design</li>
+</ul>
+
+<hr />
+
+<h2 id="passo-3--baixar-o-seedctl-no-tails">Passo 3 — Baixar o SeedCTL no Tails</h2>
+
+<blockquote>
+  <p>Neste passo, você precisará conectar brevemente à internet para baixar o binário. Após o download, desconecte novamente.</p>
+</blockquote>
+
+<ol>
+  <li>No Tails, abra o navegador Tor Browser</li>
+  <li>Acesse a página de releases do SeedCTL:<br />
+👉 <a href="https://github.com/evolvbits/seedctl/releases">https://github.com/evolvbits/seedctl/releases</a></li>
+  <li>Baixe o binário correspondente ao Linux x86_64 (ex: <code class="language-plaintext highlighter-rouge">seedctl-[VERSION]-linux-x86_64</code>)</li>
+  <li>Salve o arquivo na sua pasta pessoal do Tails</li>
+</ol>
+
+<blockquote>
+  <p>💡 Alternativamente, você pode baixar o SeedCTL <strong>antes</strong> de iniciar o Tails, salvar o binário em um segundo pendrive, e transferi-lo para o ambiente Tails sem precisar de conexão à internet.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="passo-4--preparar-e-executar-o-seedctl">Passo 4 — Preparar e executar o SeedCTL</h2>
+
+<p>Abra o <strong>Terminal</strong> no Tails e navegue até onde o arquivo foi salvo. Em seguida, dê permissão de execução e rode o programa:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x seedctl-[VERSION]-linux-x86_64
+./seedctl-[VERSION]-linux-x86_64
+</code></pre></div></div>
+
+<p>Substitua <code class="language-plaintext highlighter-rouge">[VERSION]</code> pelo número da versão que você baixou.</p>
+
+<blockquote>
+  <p>⚠️ Leia <strong>todas</strong> as recomendações iniciais apresentadas pelo SeedCTL antes de prosseguir.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="passo-5--gerando-sua-wallet">Passo 5 — Gerando sua wallet</h2>
+
+<p>Ao iniciar, o SeedCTL apresentará as opções:</p>
+
+<ul>
+  <li><strong>Create new wallet</strong> — para gerar uma nova wallet</li>
+  <li><strong>Import existing wallet</strong> — para importar uma seed que você já possui</li>
+</ul>
+
+<h3 id="escolhendo-o-modo-de-entropia">Escolhendo o modo de entropia</h3>
+
+<p>O SeedCTL oferece dois modos de entropia para geração da mnemônica:</p>
+
+<p><strong>Modo Determinístico (Dice Manual)</strong><br />
+Você insere uma sequência de dados manualmente. Nenhuma aleatoriedade do sistema é adicionada. Ideal para cerimônias auditáveis e reprodução exata futura.</p>
+
+<p><strong>Modo Híbrido</strong><br />
+Combina sua sequência de dados com a entropia do sistema (RNG). Recomendado para criar wallets novas com defesa em profundidade. Não permite replay exato.</p>
+
+<blockquote>
+  <p>Para a maioria dos usuários que estão criando uma wallet nova, o <strong>modo híbrido</strong> oferece uma boa combinação de segurança e praticidade.</p>
+</blockquote>
+
+<h3 id="mnemônica-bip-39">Mnemônica BIP-39</h3>
+
+<p>Escolha entre <strong>12 ou 24 palavras</strong>. Wallets com 24 palavras oferecem entropia maior e são recomendadas para guardar valores mais altos.</p>
+
+<p>Você também pode definir uma <strong>passphrase</strong> adicional (às vezes chamada de “25ª palavra”). Essa passphrase é separada da seed e adiciona uma camada extra de segurança — mas deve ser guardada com o mesmo cuidado da seed.</p>
+
+<h3 id="selecionando-a-rede-e-o-derivation-path">Selecionando a rede e o derivation path</h3>
+
+<p>Após gerar a mnemônica, selecione a criptomoeda e o estilo de derivação desejado. O SeedCTL exibirá os paths explicitamente — anote-os junto com sua seed para garantir recuperação futura.</p>
+
+<p>Para detalhes sobre os paths de cada rede, consulte a <a href="https://evolvbits.github.io/seedctl/documentation/#networks">documentação oficial</a>.</p>
+
+<hr />
+
+<h2 id="passo-6--outputs-gerados">Passo 6 — Outputs gerados</h2>
+
+<p>O SeedCTL exibirá:</p>
+
+<ul>
+  <li>As palavras da mnemônica BIP-39 e seus índices</li>
+  <li>O material de chave no nível de conta (onde aplicável)</li>
+  <li>Os derivation paths utilizados</li>
+  <li>As listas de endereços para o range de índices selecionado</li>
+  <li>Opcionalmente, arquivos de exportação para watch-only wallets</li>
+</ul>
+
+<blockquote>
+  <p>⚠️ <strong>Anote tudo em papel</strong> neste momento. Nunca fotografe a tela, não salve em arquivos digitais não criptografados e jamais envie para a nuvem.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="compatibilidade-com-carteiras-populares">Compatibilidade com carteiras populares</h2>
+
+<p>Após gerar sua seed, você pode importá-la nas seguintes carteiras:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rede</th>
+      <th>Carteiras compatíveis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bitcoin</td>
+      <td>Sparrow Wallet, Electrum, BlueWallet</td>
+    </tr>
+    <tr>
+      <td>Ethereum / BNB / Polygon</td>
+      <td>MetaMask, Ledger Live, Rabby</td>
+    </tr>
+    <tr>
+      <td>XRP</td>
+      <td>Xaman (XUMM), Ledger Live</td>
+    </tr>
+    <tr>
+      <td>Solana</td>
+      <td>Phantom, Solana CLI</td>
+    </tr>
+    <tr>
+      <td>Cardano</td>
+      <td>Eternl, Yoroi, Lace</td>
+    </tr>
+    <tr>
+      <td>Monero</td>
+      <td>Monero GUI, Feather Wallet</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="recuperando-sua-wallet-no-futuro">Recuperando sua wallet no futuro</h2>
+
+<p>O SeedCTL é determinístico: <strong>os mesmos inputs sempre geram os mesmos outputs</strong>. Para recuperar sua wallet, você precisará dos seguintes dados — guarde-os com segurança:</p>
+
+<ol>
+  <li>As palavras da mnemônica (12 ou 24)</li>
+  <li>A passphrase (ou explicitamente “vazia”)</li>
+  <li>O modo de entropia e sequência de dados utilizados (se aplicável)</li>
+  <li>A criptomoeda / rede selecionada</li>
+  <li>O estilo e path de derivação</li>
+  <li>O range de índices gerado</li>
+</ol>
+
+<p>Para detalhes completos sobre recuperação, veja o <a href="https://evolvbits.github.io/seedctl/documentation/#recovery">Guia de Recuperação</a> e a seção de <a href="https://evolvbits.github.io/seedctl/documentation/#reproducibility">Reprodutibilidade</a> na documentação.</p>
+
+<hr />
+
+<h2 id="boas-práticas-de-segurança">Boas práticas de segurança</h2>
+
+<ul>
+  <li>🔒 Gere suas wallets <strong>sempre offline</strong></li>
+  <li>✍️ Guarde sua seed em <strong>papel físico</strong> — considere gravar em metal para maior durabilidade</li>
+  <li>📵 Nunca digite sua seed em um dispositivo conectado à internet</li>
+  <li>🧪 <strong>Teste a recuperação</strong> com uma pequena quantia antes de mover valores altos</li>
+  <li>🗂️ Mantenha <strong>backups em locais separados</strong> (cofre, caixa de segurança, etc.)</li>
+  <li>👁️ Evite câmeras e outras pessoas no ambiente durante a geração</li>
+</ul>
+
+<hr />
+
+<h2 id="conclusão">Conclusão</h2>
+
+<p>Combinar o <strong>Tails OS</strong> com o <strong>SeedCTL</strong> é uma das abordagens mais sólidas disponíveis hoje para quem deseja gerar wallets de criptomoedas com segurança real. O Tails garante um ambiente limpo e sem rastros, enquanto o SeedCTL oferece derivação determinística, auditável e completamente offline.</p>
+
+<p>Para explorar todos os recursos e detalhes técnicos do SeedCTL, acesse a <a href="https://evolvbits.github.io/seedctl/documentation/">documentação completa</a>.</p>
+
+<hr />
+
+<p><em>Use por sua conta e risco. Este post é apenas educacional. Sempre valide seus endereços antes de mover fundos.</em></p>]]></content><author><name>William C. Canin</name></author><category term="seedctl" /><category term="bitcoin" /><category term="btc" /><category term="solana" /><category term="ethereum" /><category term="crypto" /><category term="bip-39" /><summary type="html"><![CDATA[Gerar sua seed universal para suas criptomoedas]]></summary></entry><entry><title type="html">Nvidia auto-rebuild no Arch Linux com Wayland</title><link href="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/" rel="alternate" type="text/html" title="Nvidia auto-rebuild no Arch Linux com Wayland" /><published>2026-03-31T01:59:10+00:00</published><updated>2026-03-31T01:59:10+00:00</updated><id>https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland</id><content type="html" xml:base="https://williamcanin.github.io/blog/nvidia-auto-rebuild-arch-wayland/"><![CDATA[<h1 id="nvidia-run-auto-rebuild-no-boot--arch-linux--wayland-instalação-manual">NVIDIA <code class="language-plaintext highlighter-rouge">.run</code> auto-rebuild no boot — Arch Linux + Wayland (instalação manual)</h1>
 
 <p>Se você usa Arch Linux com Wayland e instala o driver da NVIDIA via <code class="language-plaintext highlighter-rouge">.run</code> oficial, já deve ter sofrido com a tela preta depois de uma atualização de kernel. O motivo é simples: o instalador <code class="language-plaintext highlighter-rouge">.run</code> da NVIDIA <strong>não pode rodar com Wayland ou Xorg ativos</strong>, e os hooks do pacman executam justamente nesse momento.</p>
 
@@ -2014,204 +2319,4 @@ Você pode verificar o executável no diretório <strong>/usr/local/bin</strong>
 
 <p>Esse tutorial pode ficar obsoleto com o tempo, então, lembre-se de ler o arquivo de <strong>README.rst</strong> que vem junto no pacote <strong>tar.xz</strong> no Python, nele contém informações mais detalhadas de como instalar (ou até mesmo remover) o <em>Python</em> de uma maneira bem completa.</p>
 
-<p>Eu fico por aqui, abraço pra você. :smile:</p>]]></content><author><name>William C. Canin</name></author><category term="python" /><category term="tarball" /><category term="linux" /><summary type="html"><![CDATA[Instale a ultima versão estável do Python tarball automaticamente em qualquer Linux com um simples script shell.]]></summary></entry><entry><title type="html">Criptografando a partição HOME no Linux</title><link href="https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/" rel="alternate" type="text/html" title="Criptografando a partição HOME no Linux" /><published>2017-10-16T06:51:44+00:00</published><updated>2017-10-16T06:51:44+00:00</updated><id>https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux</id><content type="html" xml:base="https://williamcanin.github.io/blog/criptografando-a-particao-home-no-linux/"><![CDATA[<nav id="toc" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;" class="toc background_focus" data-toc-selector=".post-content" data-toc-max-level="3" data-toc-scroll-offset="20" data-btn-show="Abrir" data-btn-hidden="Fechar">
-
-  <div class="toc-head">
-    <h2>Índice</h2>
-    <button class="toc-toggle" aria-expanded="true" type="button"></button>
-  </div>
-  <div class="toc-list-wrapper">
-    <ul class="toc-list" role="list"></ul>
-    <p class="toc-empty" style="display:none">No titles found. Remove TOC!</p>
-  </div>
-</nav>
-
-<p>Olá para você pessoa, como vai? Eu vou bem graças a Deus e obrigado por perguntar mentalmente hehe.
-Esse é um post de segurança…é o que todos querem, não é?! hehe Então lá vai…</p>
-
-<h1 id="introdução">Introdução</h1>
-
-<p>Todos usuários Linux sabem que o diretório <strong>/home</strong> é onde fica armazenado toda nossa “bancada” de arquivos importantes, ou seja, é onde tudo é salvo, e tudo acontece. Pensando nisto, pensei um fazer um post como proteger a <strong>/home</strong>, o que é muito legal. Então vamos lá.</p>
-
-<p>Mesmo que você coloque uma senha muito difícil de login, você não está seguro de alguem pegar seus arquivos. Se alguém ligar sua máquina com um sistema bootável pendrive ou DVD, essa pessoa consegue montar a partição Linux e acessar seus arquivos.</p>
-
-<p><em>Como me protejo disso?</em></p>
-
-<p>A resposta é: usar uma partição separada para <strong>/home</strong> e criptografar a mesma.</p>
-
-<p>Então vamos lá manito :)</p>
-
-<h1 id="requisitos">Requisitos</h1>
-
-<p>Os seguintes requisitos baixo precisam existir em sua distribuição Linux:</p>
-
-<ul>
-  <li>Pacote: cryptsetup</li>
-  <li>A <strong>/home</strong> separada do sistema</li>
-  <li>Ter acesso ao usuário root</li>
-</ul>
-
-<h1 id="preparando-a-partição">Preparando a partição</h1>
-
-<h2 id="logar-como-root">Logar como Root</h2>
-
-<p>Para dar continuidade a este tutorial, você precisa estar logar no sistema como ROOT. Se você não conseguir logar como ROOT, você pode fazer logout da sessão (caso esteja com usuário comum) e abrir um novo <strong>tty</strong> digitando <code class="language-plaintext highlighter-rouge">Ctrl + Alt + F4</code>, após isso, você faz o login com root. É necessário usar o usuário <em>root</em> para realizar as etapas, porque a home do usuário root não fica no <strong>/home</strong> no qual vamos configurar, e sim em <strong>/root</strong>.</p>
-
-<p>Após logar com root, vamos carregar os módulos de criptografia, qual vamos usar executando no console:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">modprobe <span class="nt">-a</span> dm-mod dm-crypt</code></pre></figure>
-
-<h2 id="fazendo-backup-da-nossa-home-atual">Fazendo backup da nossa /home atual</h2>
-
-<p>A primeira coisa a se fazer é um backup da nossa <strong>/home</strong>. Se a partição raiz do sistema (<strong>/</strong>) tiver espaço suficiente, você pode fazer o backup para a pasta <strong>/opt</strong>, por exemplo, da seguinte maneira:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">mkdir</span> <span class="nt">-p</span> /opt/backup
-<span class="nb">cp</span> <span class="nt">-rf</span> /home /opt/backup</code></pre></figure>
-
-<p>Caso não tenha, você pode estar usando um <strong>HD/SSD</strong> ou até mesmo um <strong>pendrive</strong>.</p>
-
-<h2 id="listando-nossas-partições">Listando nossas partições</h2>
-
-<p>Dê o comando abaixo para listar nossas partições e identificar nossa partição <strong>/home</strong> atual:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">lsblk <span class="nt">-f</span> /dev/sda</code></pre></figure>
-
-<h2 id="criptografando-a-partição">Criptografando a partição</h2>
-
-<p>Vamos imaginar que nossa partição <strong>/home</strong> seja a <strong>/dev/sda2</strong>, com isso vamos desmontar a mesma e logo em seguida criptografar através do <strong>cryptsetup</strong> da seguinte maneira:</p>
-
-<blockquote>
-  <p>NOTA: LEMBRE-SE DE TER FEITO O BACKUP DE TODA SUA /home POIS ELA SERÁ DESTRUÍDA AGORA.</p>
-</blockquote>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">umount /home
-cryptsetup <span class="nt">-y</span> <span class="nt">-v</span> luksFormat <span class="nt">-c</span> aes-xts-plain64 <span class="nt">-s</span> 512 /dev/sda2</code></pre></figure>
-
-<p>O LUKS irá pedir pra que você confirme com um <strong>yes</strong> (em uppercase), ou seja, assim: <strong>YES</strong>.</p>
-
-<blockquote>
-  <p>Digite: <strong>YES</strong> e dê Enter</p>
-</blockquote>
-
-<p>Após isso, irá pedir para informar a senha de criptografia e logo em seguida para confirmar. Então faça isso.</p>
-
-<p><strong>A T E N Ç Ã O</strong>: Nunca esqueça essa senha, pois é ela que você usará na inicialização do sistema para para montar a <strong>/home</strong> futuramente.</p>
-
-<p>Ok! Você já tem sua partição <strong>/home</strong> criptografada</p>
-
-<h2 id="abrindo-partição-criptografada">Abrindo partição criptografada</h2>
-
-<p>Agora precisamos abrir a partição para poder trabalhar nela, isso faremos com o comando abaixo:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">cryptsetup luksOpen /dev/sda2 home</code></pre></figure>
-
-<p><strong>IMPORTANTE</strong>: Observe que no final do comando tem a palavra <strong>home</strong> (Não necessáriamente precisa ser <strong>home</strong>, você pode colocar outro nome).</p>
-
-<p>Ao fazer um <strong>open</strong> na partição criptografada, criará um “ponteiro” para nossa <strong>home</strong> no diretório <strong>/dev/mapper</strong>, ou seja, será encontrado assim: <strong>/dev/mapper/home</strong>. Porem, esse ponteiro <strong>/dev/mapper/home</strong> será excluído após desmontarmos essa partição ou quando desligar/reiniciar a máquina, para essas configurações se manter usaremos 2(dois) arquivos para isso, onde veremos mais a seguinte, enquanto isso vamos seguir passo por passo.</p>
-
-<p><em>A senha que você colocou para criptografar irá ser requerida nesse momento, então informe-a para abrir nossa partição criptografada.</em></p>
-
-<h2 id="formatando-a-partição-criptografada">Formatando a partição criptografada</h2>
-
-<p>Com nossa partição criptografada já aberta, precisamos formatar a sua montagem (<strong>/dev/mapper/home</strong>) para o tipo ext4. Para isso faremos:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkfs <span class="nt">-t</span> ext4 /dev/mapper/home</code></pre></figure>
-
-<h2 id="montando-a-partição-e-restaurando-backup">Montando a partição e restaurando backup</h2>
-
-<p>Agora, vamos montar essa partição formatada e fazer a restauração do nosso backup. Então, faremos essas etapas com os comandos abaixo:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">mkdir</span> <span class="nt">-p</span> /mnt/home
-mount <span class="nt">-t</span> ext4 /dev/mapper/home /mnt/home
-<span class="nb">cp</span> <span class="nt">-rf</span> /opt/backup/home/<span class="k">*</span> /mnt/home <span class="c"># Essa linha irá restaurar seu backup.</span>
-<span class="nb">chown </span>usuário:usuário <span class="nt">-R</span> /mnt/home/usuário
-<span class="nb">chmod </span>770 <span class="nt">-R</span> /mnt/home/usuário</code></pre></figure>
-
-<blockquote>
-  <p>NOTA: Onde está <strong>usuário</strong> você deve colocar o nome do seu usuário, por exemplo: <strong>william</strong>.</p>
-</blockquote>
-
-<h2 id="fechando-nossa-partição-criptografada">Fechando nossa partição criptografada</h2>
-
-<p>Pronto! Agora vamos fechar nossa partição criptografada com o seguinte comando abaixo:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">umount /mnt/home
-cryptsetup close /dev/mapper/home
-<span class="c">## Linha baixo apaga a pasta que criamos para montagem. Pasta vazia.</span>
-<span class="nb">rm</span> <span class="nt">-rf</span> /mnt/home</code></pre></figure>
-
-<h1 id="criando-arquivos-para-montagem-automática">Criando arquivos para montagem automática</h1>
-
-<p>Como foi mencionado acima, a partição que abrir com o cryptsetup <strong>/dev/mapper/home</strong> ela não fica permanente, então precisamos criar ou editar 2 (dois) arquivos no <strong>/etc</strong>.</p>
-
-<h2 id="crypttab">Crypttab</h2>
-
-<p>O arquivo <strong>/etc/crypttab</strong> é responsável por informar nosso sistema que existe um dispositivo criptografado. Caso ele não exista crie e adiciona as seguintes linhas:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># &lt;target name&gt;	&lt;source device&gt;		&lt;key file&gt;	&lt;options&gt;</span>
-home <span class="nv">UUID</span><span class="o">=</span>00000000-0000-0000-0000-0000000000 none discard</code></pre></figure>
-
-<p>O número de <strong>UID</strong> que está tudo zerado, coloquei para ilustrar. Esse número é o <strong>UID</strong>  que você terá que colocar no <strong>/etc/crypttab</strong> da partição criptografada. Porém, antes disso dê o comando abaixo para lhe retornar informações da partição criptografada e você saber o <strong>UID</strong> da mesma:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">lsblk <span class="nt">-f</span> | <span class="nb">grep</span> <span class="s2">"cryp"</span></code></pre></figure>
-
-<p>Vai lhe retornar um número extenso, é este que você tem que colocar. Por exemplo, a saída do comando em minha máquina foi essa:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">william at ubuntu <span class="k">in </span>folder ~  ○
- ⇨ lsblk <span class="nt">-f</span> | <span class="nb">grep</span> <span class="s2">"cryp"</span>
-  └─linux-home    crypto_LUKS                        824049e5-d6a1-4e91-a1fd-682456b6b500
-
-  william at ubuntu <span class="k">in </span>folder ~  ○
- ⇨
- </code></pre></figure>
-
-<p>Com isso meu arquivo <strong>/etc/crypttab</strong> deveria ficar assim:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># &lt;target name&gt;	&lt;source device&gt;		&lt;key file&gt;	&lt;options&gt;</span>
-home <span class="nv">UUID</span><span class="o">=</span>824049e5-d6a1-4e91-a1fd-682456b6b500 none discard</code></pre></figure>
-
-<p>Pronto! Terminamos toda configuração do arquivo <strong>/etc/crypttab</strong>.</p>
-
-<h2 id="fstab">Fstab</h2>
-
-<p>O arquivo <strong>/etc/fstab</strong> é responsável por carregar todo dispositivo na inicialização de nossa máquina. Ao criamos (ou editarmos) o arquivo <strong>/etc/crypttab</strong>, precisamos informar o mesmo no arquivo <strong>/etc/fstab</strong> para que nossa máquina reconheça que existe um dispositivo criptografado a ser lançado na inicialização da máquina.</p>
-
-<p>Para isso, vamos adicionar no <strong>/etc/fstab</strong> a seguinte linha abaixo:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/dev/mapper/home /home ext4 rw,relatime,data<span class="o">=</span>ordered 0 2</code></pre></figure>
-
-<p>Feito, as configurações do arquivo <strong>/etc/fstab</strong> foram concluídas.</p>
-
-<h1 id="colocando-partição-para-funcionar">Colocando partição para funcionar</h1>
-
-<p>Terminamos aqui toda configuração da partição <strong>/home</strong> criptografada e dos arquivos que a mesma partição necessita. Porém, antes de reiniciar, execute os comandos abaixo com o <strong>grub-mkconfig</strong> (ou <em>grub2-mkconfig</em> dependendo da distro que você usa) para criar novamente nossa imagem de boot:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg <span class="o">&amp;&amp;</span> grub-install /dev/sda</code></pre></figure>
-
-<p>Agora, basta você reiniciar sua máquina, e durante o boot, antes de montar sua <strong>/home</strong>, o sistema irá pedir a senha para descriptografar a <strong>/home</strong> e montar a mesma.</p>
-
-<h1 id="archlinux-e-derivados">Archlinux e derivados</h1>
-
-<p>Essas configurações são válidas para a maiorias das distribuições Linux, porem, se você usa <a href="https://www.archlinux.org/" target="_blank">Archlinux</a> ou derivados, você precisa fazer algumas configurações a mais no arquivo <strong>/etc/mkinitcpio.conf</strong> e <strong>/etc/default/grub</strong>.</p>
-
-<h2 id="arquivo-etcmkinitcpioconf">Arquivo /etc/mkinitcpio.conf</h2>
-
-<p>No arquivo <strong>/etc/mkinitcpio.conf</strong>, você terá que adicionar em <strong>HOOKS</strong> a palavra <strong>encrypt</strong>. Se usar <a href="https://aur.archlinux.org/packages/plymouth/" target="_blank">Plymouth</a>, você deve colocar <strong>plymouth-encrypt</strong>.</p>
-
-<p>Agora você precisa gerar uma imagem nova do <strong>mkinicipo</strong> com o comando abaixo:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkinitcpio <span class="nt">-p</span> linux</code></pre></figure>
-
-<h2 id="arquivo-etcdefaultgrub">Arquivo /etc/default/grub</h2>
-
-<p>No arquivo <strong>/etc/default/grub</strong>, você deve deixar o <strong>GRUB_CMDLINE_LINUX</strong> da seguinte maneira:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">"cryptdevice=/dev/sda2:home"</span></code></pre></figure>
-
-<p>Vamos refazer a imagem de boot e instalar o grub com o comando:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg <span class="o">&amp;&amp;</span> grub-install /dev/sda</code></pre></figure>
-
-<h1 id="conclusão">Conclusão</h1>
-
-<p>Esse foi um tutorial bem básico de como deixar nossa <strong>/home</strong> criptografada no Linux. É de certo que alguma distribuição Linux pode ter suas particularidades e você tem que configurar algo a mais na mesma, porem o principio parte dessa lógica desse tutorial. Espero que você goste e principalmente que suas dúvidas foram eliminadas, mas caso não foi, deixe aqui um comentário informando suas dúvidas. Abraço.</p>]]></content><author><name>William C. Canin</name></author><category term="crypt" /><category term="linux" /><category term="security" /><summary type="html"><![CDATA[Que tal esconder suas coisinhas da /home de possíveis pessoas "espertas"? Siga em frente neste post e descubra.]]></summary></entry></feed>
+<p>Eu fico por aqui, abraço pra você. :smile:</p>]]></content><author><name>William C. Canin</name></author><category term="python" /><category term="tarball" /><category term="linux" /><summary type="html"><![CDATA[Instale a ultima versão estável do Python tarball automaticamente em qualquer Linux com um simples script shell.]]></summary></entry></feed>
