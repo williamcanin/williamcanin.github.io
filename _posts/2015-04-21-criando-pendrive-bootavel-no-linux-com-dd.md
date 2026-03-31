@@ -92,7 +92,7 @@ Pendrive formatado, iremos gravar a imagem ISO nele com o **dd**. Para gravar al
 Suponhamos que a imagem ISO, está no diretório **Downloads**. Você pode entrar no diretório Downloads pelo terminal ou digitar o **Path** completo até chegar na imagem ISO, como eu fiz:
 
 ```bash
-sudo dd if=$HOME/Downloads/imagem.iso of=/dev/sdb
+sudo dd if=$HOME/Downloads/imagem.iso of=/dev/sdb bs=4M status=progress
 ```
 
 O atributo **if** será a verificação do **dd** para encontrar o arquivo gravável e jogar para o atributo **of**, que vai receber a unidade do pendrive, ou seja, local a ser gravado.
