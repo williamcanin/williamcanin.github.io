@@ -5,9 +5,10 @@ title: "Workflow Completo para Rust no VS Code"
 description: "Tenha um ambiente de desenvolvimento completo para Rust no seu VS Code"
 date: 2025-11-02 23:43:44 -0300
 update_date:
-comments: false
+comments: true
 tags: [rust, workflow, vscode, dev]
 ---
+
 
 # 🚀 Workflow Completo para Rust no VS Code
 
@@ -51,9 +52,9 @@ Autocompletar, IntelliSense, análise, refactors.
 
 Melhora o suporte ao `Cargo.toml`.
 
-### ⭐ **2.3 crates**
+### ⭐ **2.3 Dependi**
 
-Gerencia versões de dependências e inspeção de crates.
+Gerencia dependências Rust, versões, atualizações e inspeção de crates.
 
 ### ⭐ **2.4 CodeLLDB**
 
