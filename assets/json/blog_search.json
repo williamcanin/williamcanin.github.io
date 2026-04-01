@@ -15,6 +15,13 @@
     } ,
   
     {
+      "title"    : "Workflow Completo para Rust no VS Code",
+      "tags"     : "rust, workflow, vscode, dev",
+      "url"      : "/blog/workflow-completo-para-rust-no-vs-code/",
+      "date"     : "03 Nov, 2025"
+    } ,
+  
+    {
       "title"    : "Fazendo zero fill em HDD/SSD com Linux",
       "tags"     : "zerofill, linux, dd, badblocks",
       "url"      : "/blog/fazendo-zero-fill-em-hdd-ssd-com-linux/",
