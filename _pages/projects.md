@@ -13,7 +13,7 @@ published: true
 permalink: /projects/
 ---
 
-## Principais projetos autorais
+**Principais projetos autorais**
 
 Coloco aqui meus principais projetos do [meu GitHub](https://github.com/williamcanin){:target="_blank"}
 em desenvolvimento e manutenção.
