@@ -12,8 +12,6 @@ tags: ["squid","proxy","linux","server"]
 ---
 
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 Quer aprender Proxy Squid? Essa postagem irá te dar uma noção de como configurar o Squid em modo Intercept e bloquear palavras e urls através do mesmo em uma navegação web.
 
 -------------

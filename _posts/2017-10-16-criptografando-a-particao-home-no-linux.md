@@ -10,8 +10,6 @@ comments: true
 tags: [crypt,linux,security]
 ---
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 Olá para você pessoa, como vai? Eu vou bem graças a Deus e obrigado por perguntar mentalmente hehe.
 Esse é um post de segurança...é o que todos querem, não é?! hehe Então lá vai...
 

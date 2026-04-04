@@ -11,8 +11,6 @@ comments: true
 tags: [archlinux,encryption,criptografia,luks,lvm]
 ---
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 
 Ei, beleza? 👍
 

@@ -11,7 +11,6 @@ tags: [kutt,url,shortener,shorter]
 ---
 
 
-
 Olá, tudo joinha? Nesse post vou demonstrar como você pode deixar as URLs RAW do [**Github**](https://github.com){:target="_blank"} bem mais encurtadas e com um nome personalizado. Vamos lá.
 
 > **Nota:** Este post foi atualizado. O serviço **git.io**, que era usado originalmente aqui, foi descontinuado pelo GitHub em 2022. O substituto recomendado é o [**kutt.to**](https://kutt.to){:target="_blank"} — open source, gratuito e com suporte a slugs personalizados via API.

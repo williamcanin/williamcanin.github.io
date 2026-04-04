@@ -11,8 +11,6 @@ comments: true
 tags: [python,tarball,linux]
 ---
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 Olá :hand:, essa é uma dica rápida para você que deseja instalar o Python :snake: compilado através do código fonte (tarball). Boa leitura.
 
 # Introdução

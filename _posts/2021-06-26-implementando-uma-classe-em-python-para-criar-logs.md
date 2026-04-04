@@ -11,8 +11,6 @@ tags: [python,logs]
 ---
 
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 Olá <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">, bem vindo a mais um post no meu weblog. Vamos começar a leitura?!
 
 

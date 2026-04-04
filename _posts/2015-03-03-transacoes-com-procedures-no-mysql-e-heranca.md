@@ -11,8 +11,6 @@ comments: true
 tags: [database,mysql,procedure,trigger]
 ---
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 # Introdução
 
 Chega de ficar apenas aprendendo 'create table' no banco de dados MySQL, aprenda como se criar Procedures, View e Trigger e comunicação entre as mesmas nessa postagem.

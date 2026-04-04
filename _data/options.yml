@@ -27,7 +27,7 @@ socials:
   links:
     - title: bluesky
       url: https://williamcanin.bsky.social
-      
+
     - title: github
       url: https://github.com/williamcanin
 
@@ -231,6 +231,8 @@ pixels:
 
 # section: [page]
 page:
+  toc:
+    title: "Navegação"
   updated_on: "Página atualizada em"
   error:
     image: https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXlxYzc5eXp1Nm01cmtldzM5bHhwdzJ2Njk2c2E4b2RkdTBkeGs5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c20UV66B7zCWA/giphy.gif
@@ -288,3 +290,46 @@ footer:
     page_url: "/licenses/"
   message: | # Doing stuff on the web since 2007.
     Simplicity is a feature, not a bug.
+
+
+# section: [donation]
+# Tip: use svg images for better quality (https://www.iconpacks.net)
+donation:
+  title: "Apoie meu trabalho"
+  description: "Se algum de meus projetos te ajudou, considere me apoiar. Um preço de café já ajuda muito!"
+  copy_button:
+    text: "Copiar"
+    clicked: "Copiado!"
+  services:
+    - name: pix
+      logo: "/assets/images/icons/pix.svg"
+      description: |
+        Faça sua doação usando PIX. Use a chave abaixo.
+      address: "00b53f61-b009-4f05-8c43-444cce86af1d"
+      qrcode: "/assets/images/qrcode_inter.jpg"
+
+    - name: cartão
+      logo: "/assets/images/icons/card.svg"
+      description: |
+        Faça sua doação usando cartão de crédito através do serviço `Buy Me a Coffee`.
+      address: "https://buymeacoffee.com/williamcanin"
+
+    - name: paypal
+      logo: "/assets/images/icons/paypal.svg"
+      description: |
+        Faça seu doação usando PayPal.
+      address: "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=YBK2HEEYG8V5W&source=&ssrt=1775261628264"
+
+    - name: bitcoin (lightning network)
+      logo: "/assets/images/icons/lightning_network.svg"
+      description: |
+        Faça sua doação usando Bitcoin na Lightning Network.
+      address: "williamcanin@walletofsatoshi.com"
+      qrcode: "/assets/images/qrcode_wos.jpg"
+
+    - name: bitcoin (on-chain)
+      logo: "/assets/images/icons/bitcoin.svg"
+      description: |
+        Faça sua doação usando Bitcoin na rede principal.
+      address: "bc1qluh2mrchmtrwedspwhtta8ccgzsl9jqdr47f2p"
+      qrcode: "/assets/images/qrcode_btc_binance.jpg"

@@ -10,8 +10,6 @@ comments: true
 tags: [boot,swap,linux]
 ---
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 ## Introdução
 
 Esperar hoje em dia não é uma tarefa que agrada as pessoas, ainda mais se tratando de software.

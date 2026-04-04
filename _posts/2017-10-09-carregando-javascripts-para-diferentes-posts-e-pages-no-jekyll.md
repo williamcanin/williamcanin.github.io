@@ -12,8 +12,6 @@ tags: [jekyll,javascripts,liquid]
 ---
 
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 Oi pessoa, tudo bem? Me desculpe pela demora de um novo post, mas é que tive alguns contratempos. Mas como diz o Serjão Berranteiro:
 
 > "E com fé no Pai Eterno sempre aqui estou vou estar tô ae firme pro meu

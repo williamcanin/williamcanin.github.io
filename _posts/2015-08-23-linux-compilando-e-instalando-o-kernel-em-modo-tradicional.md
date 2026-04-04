@@ -12,8 +12,6 @@ comments: true
 tags: [kernel,linux,compile]
 ---
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 # Introdução
 
 Quando um usuário Linux já está em um nível de usabilidade Linux a tempos, algo que ele procura saber, é como compilar um kernel, e esse post falará exatamente sobre isso, mas uma compilação sem usar kernel-package, a tradicional.

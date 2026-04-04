@@ -12,8 +12,6 @@ comments: true
 tags: [linux,shell,script]
 ---
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 ## Introdução
 
 Essa postagem você irá entender melhor como são os arquivos executáveis no Linux, como se cria um com código aberto ou fechado, como dar permissão no Linux para um executável ter a permissão de execução e outras informações considerável.

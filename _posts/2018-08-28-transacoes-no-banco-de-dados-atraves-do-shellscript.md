@@ -10,8 +10,6 @@ comments: true
 tags: [shell,postgresql,mysql]
 ---
 
-{% include toc selector=".post-content" max_level=3 title="Índice" btn_hidden="Fechar" btn_show="Abrir" %}
-
 Olá pessoas, vamos falar de Shell script, que é algo que gosto muito. :)
 
 # Introdução
