@@ -295,8 +295,8 @@ footer:
 # section: [donation]
 # Tip: use svg images for better quality (https://www.iconpacks.net)
 donation:
-  title: "Apoie meu trabalho"
-  description: "Se algum de meus projetos te ajudou, considere me apoiar. Um preço de café já ajuda muito!"
+  title: "Apoie meus trabalhos"
+  description: "Se algum de meus projetos te ajudou, considere me apoiar. Um preço de café já ajuda muito! :)"
   copy_button:
     text: "Copiar"
     clicked: "Copiado!"
