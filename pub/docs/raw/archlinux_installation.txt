@@ -160,7 +160,24 @@ EOF
 
 >>> sed -i "s|^HOOKS=.*|HOOKS=(base systemd autodetect keymap modconf kms keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)|g" /etc/mkinitcpio.conf
 
+
+[--- IMPORTANT: If you use Wayland and driver proprietary NVIDIA (.run), use the method below. NVIDIA modules added and "kms" removed. --- ]
+
+	>>> sed -i "s|^MODULES=.*|MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm usbhid xhci_hcd ehci_hcd)|g" /etc/mkinitcpio.conf
+
+	>>> sed -i "s|^HOOKS=.*|HOOKS=(base systemd autodetect keymap modconf keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)|g" /etc/mkinitcpio.conf
+
+	>>> echo "FIRMWARE=()" >> /etc/mkinitcpio.conf
+
+
+NOTE: If your GPU is lower than RTX, use this configuration:
+
+>>> echo "options nvidia NVreg_EnableGpuFirmware=0" > /etc/modprobe.d/nvidia-firmware.conf
+
+
 >>> pacman -S lvm2
+
+
 
 
 --------------------------------------------------------
