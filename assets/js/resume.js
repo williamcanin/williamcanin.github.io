@@ -1,1 +1,1 @@
-(function(){var n;n=document.getElementById("btn-print"),n&&n.addEventListener("click",function(){return window.print()})}).call(void 0);
+document.addEventListener("DOMContentLoaded",()=>{const n=document.getElementById("btn-print");n&&n.addEventListener("click",()=>{window.print()})});

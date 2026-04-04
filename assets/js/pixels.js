@@ -1,1 +1,1 @@
-(function(){}).call(void 0);
+document.addEventListener("DOMContentLoaded",()=>{});
