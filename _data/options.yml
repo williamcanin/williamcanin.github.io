@@ -301,7 +301,7 @@ donation:
     text: "Copy"
     clicked: "Copied!"
   services:
-    - name: pix (BRL)
+    - name: pix
       logo: "/assets/images/icons/pix.svg"
       description: |
         Faça sua doação usando PIX. Use a chave abaixo.
