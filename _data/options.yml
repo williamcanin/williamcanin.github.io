@@ -295,41 +295,48 @@ footer:
 # section: [donation]
 # Tip: use svg images for better quality (https://www.iconpacks.net)
 donation:
-  title: "Apoie meus trabalhos"
-  description: "Se algum de meus projetos te ajudou, considere me apoiar. Um preço de café já ajuda muito! :)"
+  title: "Support my work"
+  description: "If any of my projects have helped you, please consider supporting me. Even the price of a coffee helps a lot!"
   copy_button:
-    text: "Copiar"
-    clicked: "Copiado!"
+    text: "Copy"
+    clicked: "Copied!"
   services:
-    - name: pix
+    - name: pix (BRL)
       logo: "/assets/images/icons/pix.svg"
       description: |
         Faça sua doação usando PIX. Use a chave abaixo.
       address: "00b53f61-b009-4f05-8c43-444cce86af1d"
       qrcode: "/assets/images/qrcode_inter.jpg"
 
-    - name: cartão
+    - name: github sponsors
+      logo: "/assets/images/icons/logo-mona.svg"
+      description: |
+        If you're a developer with a GitHub account, consider donating through GitHub Sponsors.
+      address: "https://github.com/sponsors/williamcanin"
+      qrcode:     
+
+    - name: card
       logo: "/assets/images/icons/card.svg"
       description: |
-        Faça sua doação usando cartão de crédito através do serviço `Buy Me a Coffee`.
+        Make your donation using a credit card through the `Buy Me a Coffee` service.
       address: "https://buymeacoffee.com/williamcanin"
 
     - name: paypal
       logo: "/assets/images/icons/paypal.svg"
       description: |
-        Faça seu doação usando PayPal.
+        Make your donation using PayPal.
       address: "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=YBK2HEEYG8V5W&source=&ssrt=1775261628264"
 
     - name: bitcoin (lightning network)
       logo: "/assets/images/icons/lightning_network.svg"
       description: |
-        Faça sua doação usando Bitcoin na Lightning Network.
+        Make your donation using Bitcoin on the Lightning Network.
       address: "williamcanin@walletofsatoshi.com"
       qrcode: "/assets/images/qrcode_wos.jpg"
 
     - name: bitcoin (on-chain)
       logo: "/assets/images/icons/bitcoin.svg"
       description: |
-        Faça sua doação usando Bitcoin na rede principal.
+        Make your donation using Bitcoin on the main network.
       address: "bc1qluh2mrchmtrwedspwhtta8ccgzsl9jqdr47f2p"
       qrcode: "/assets/images/qrcode_btc_binance.jpg"

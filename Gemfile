@@ -6,10 +6,10 @@ gem "rake", "~> 13.0"
 gem "rawfeed", "~> 0.3.0"
 
 # TODO: jemoji está criando espaço no menu
-group :jekyll_plugins do
+# group :jekyll_plugins do
   # gem "jektify", "~> 1.0.8"
   # gem "jemoji", "~> 0.12.0"
-end
+# end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

@@ -4,7 +4,7 @@ url: "https://williamcanin.github.io"
 # the subpath of your site, e.g. /blog
 baseurl: ""
 
-# ---------- CAUTION!!! DO NOT move from here unless you REALLY know what you are doing. -----------
+# --------- CAUTION!!! DO NOT move from here unless you REALLY know what you are doing. ----------
 
 theme: rawfeed
 plugins:

@@ -13,7 +13,7 @@ published: true
 permalink: /projects/
 ---
 
-**Principais projetos autorais**
+## Principais projetos autorais
 
 Coloco aqui meus principais projetos do [meu GitHub](https://github.com/williamcanin){:target="_blank"}
 em desenvolvimento e manutenção.
@@ -21,8 +21,6 @@ em desenvolvimento e manutenção.
 ---
 
 »&nbsp; [**seedctl**](https://evolvbits.github.io/seedctl){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
-
-»&nbsp; [**shred-extension-rs**](https://github.com/williamcanin/shred-extension-rs){:target="_blank"} — Uma extensão ultraleve para os gerenciadores de arquivos Nautilus e Thunar excluir arquivos de forma segura.
 
 »&nbsp; [**rawfeed**](https://github.com/rawfeed){:target="_blank"} — Uma organização GitHub para temas e modelos de SSG (Static Site Generators).
 
