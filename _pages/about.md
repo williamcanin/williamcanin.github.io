@@ -1,7 +1,7 @@
 ---
 layout: page
 author: "William Canin"
-title: "about"
+title: "sobre"
 description: |
   Mais detalhes sobre William Canin
 order: 6
