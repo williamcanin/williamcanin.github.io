@@ -315,11 +315,11 @@ donation:
       address: "https://github.com/sponsors/williamcanin"
       qrcode:     
 
-    - name: card
-      logo: "/assets/images/icons/card.svg"
-      description: |
-        Make your donation using a credit card through the `Buy Me a Coffee` service.
-      address: "https://buymeacoffee.com/williamcanin"
+    # - name: card
+    #   logo: "/assets/images/icons/card.svg"
+    #   description: |
+    #     Make your donation using a credit card through the `Buy Me a Coffee` service.
+    #   address: "https://buymeacoffee.com/williamcanin"
 
     - name: paypal
       logo: "/assets/images/icons/paypal.svg"
