@@ -22,7 +22,7 @@ em desenvolvimento e manutenção.
 
 »&nbsp; [**seedctl**](https://evolvbits.github.io/seedctl){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
 
-»&nbsp; [**shred-extension-rs**](https://github.com/williamcanin/shred-extension-rs){:target="_blank"} — Uma extensão ultraleve para excluir arquivos de forma segura para os gerenciadores de arquivos Nautilus e Thunar.
+»&nbsp;[**shred-extension-rs**](https://github.com/williamcanin/shred-extension-rs){:target="_blank"} — Uma extensão ultraleve para excluir arquivos de forma segura para os gerenciadores de arquivos Nautilus e Thunar.
 
 »&nbsp; [**rawfeed**](https://github.com/rawfeed){:target="_blank"} — Uma organização GitHub para temas e modelos de SSG (Static Site Generators).
 
