@@ -1,7 +1,7 @@
 ---
 layout: donation
 author: "William C. Canin"
-title: "Donation"
+title: "Donate"
 order: 9
 emoji: ☕
 in_menu: true
