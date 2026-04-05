@@ -308,7 +308,7 @@ donation:
       address: "00b53f61-b009-4f05-8c43-444cce86af1d"
       qrcode: "/assets/images/qrcode_inter.jpg"
 
-    - name: github sponsors
+    - name: gitHub sponsors
       logo: "/assets/images/icons/logo-mona.svg"
       description: |
         If you're a developer with a GitHub account, consider donating through GitHub Sponsors.
