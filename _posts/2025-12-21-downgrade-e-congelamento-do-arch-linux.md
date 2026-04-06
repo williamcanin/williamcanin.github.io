@@ -18,7 +18,7 @@ Este guia mostra **como voltar todo o sistema Arch Linux para o estado exato do 
 
 ---
 
-## ✅ 1) Ajustar o mirror para o snapshot antigo
+## 1) Ajustar o mirror para o snapshot antigo
 
 Edite o arquivo de mirrors:
 
@@ -36,7 +36,7 @@ Salve e feche.
 
 ---
 
-## ✅ 2) Limpar totalmente o cache do pacman
+## 2) Limpar totalmente o cache do pacman
 
 Isso é **obrigatório**. Seu cache tem pacotes mais novos (2025/2026) que causam conflitos.
 
@@ -46,7 +46,7 @@ sudo rm -rf /var/cache/pacman/pkg/*
 
 ---
 
-## ✅ 3) Forçar sincronização com downgrade do sistema inteiro
+## 3) Forçar sincronização com downgrade do sistema inteiro
 
 Esse é o passo mais importante.
 
@@ -70,7 +70,7 @@ Seu sistema vai literalmente "voltar no tempo".
 
 ---
 
-## ✅ 4) Reinicie a máquina
+## 4) Reinicie a máquina
 
 ```bash
 sudo reboot
@@ -78,7 +78,7 @@ sudo reboot
 
 ---
 
-## ✅ 5) Verifique se o sistema está alinhado com a data
+## 5) Verifique se o sistema está alinhado com a data
 
 Após reiniciar:
 
@@ -91,7 +91,7 @@ As versões agora devem ser de **final de 2024**.
 
 ---
 
-## ✅ 6) Instalar o driver NVIDIA corretamente (já compatível)
+## 6) Instalar o driver NVIDIA corretamente (já compatível)
 
 Agora que tudo está alinhado:
 
@@ -103,7 +103,7 @@ Sem baixar manualmente. Sem procurar versão. Vai funcionar porque o sistema int
 
 ---
 
-## 🔒 7) Congelar o Arch (muito importante)
+## 7) Congelar o Arch (muito importante)
 
 Se você rodar `pacman -Syu` com mirrors atuais, vai quebrar tudo de novo.
 
@@ -123,7 +123,7 @@ IgnorePkg = nvidia nvidia-utils xorg-server linux linux-headers mesa libglvnd sy
 
 ---
 
-## 🧊 8) Regra de ouro a partir de agora
+## 8) Regra de ouro a partir de agora
 
 Sempre que for atualizar, use **apenas** esse mirror congelado.
 
@@ -131,7 +131,7 @@ Nunca restaure os mirrors oficiais sem saber exatamente o que está fazendo.
 
 ---
 
-## 🧠 O que esse processo resolve
+## O que esse processo resolve
 
 Elimina o problema clássico de:
 
@@ -143,7 +143,7 @@ Agora seu sistema é um **Arch estável congelado no tempo**.
 
 ---
 
-## 📝 Resumo rápido
+## Resumo rápido
 
 ```bash
 sudo nano /etc/pacman.d/mirrorlist
