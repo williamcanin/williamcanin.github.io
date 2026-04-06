@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-04-06T10:04:14+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Gerando de forma segura uma wallet para suas criptomoedas</title><link href="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/" rel="alternate" type="text/html" title="Gerando de forma segura uma wallet para suas criptomoedas" /><published>2026-03-31T02:47:53+00:00</published><updated>2026-03-31T02:47:53+00:00</updated><id>https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas</id><content type="html" xml:base="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/"><![CDATA[<p>Gerar uma wallet de criptomoedas em um ambiente comprometido é um dos erros mais comuns e perigosos que um usuário pode cometer. Keyloggers, malwares e gravações de tela podem capturar sua seed phrase antes mesmo de você perceber. Neste post, vou mostrar como criar suas wallets com o máximo de segurança usando duas ferramentas: o <strong>Tails OS</strong> e o <strong>SeedCTL</strong>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-04-06T10:15:03+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Gerando de forma segura uma wallet para suas criptomoedas</title><link href="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/" rel="alternate" type="text/html" title="Gerando de forma segura uma wallet para suas criptomoedas" /><published>2026-03-31T02:47:53+00:00</published><updated>2026-03-31T02:47:53+00:00</updated><id>https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas</id><content type="html" xml:base="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/"><![CDATA[<p>Gerar uma wallet de criptomoedas em um ambiente comprometido é um dos erros mais comuns e perigosos que um usuário pode cometer. Keyloggers, malwares e gravações de tela podem capturar sua seed phrase antes mesmo de você perceber. Neste post, vou mostrar como criar suas wallets com o máximo de segurança usando duas ferramentas: o <strong>Tails OS</strong> e o <strong>SeedCTL</strong>.</p>
 
 <hr />
 
@@ -596,7 +596,7 @@ journalctl <span class="nt">-u</span> nvidia-rebuild.service <span class="nt">-b
 
 <hr />
 
-<h2 id="-1-ajustar-o-mirror-para-o-snapshot-antigo">✅ 1) Ajustar o mirror para o snapshot antigo</h2>
+<h2 id="1-ajustar-o-mirror-para-o-snapshot-antigo">1) Ajustar o mirror para o snapshot antigo</h2>
 
 <p>Edite o arquivo de mirrors:</p>
 
@@ -612,7 +612,7 @@ journalctl <span class="nt">-u</span> nvidia-rebuild.service <span class="nt">-b
 
 <hr />
 
-<h2 id="-2-limpar-totalmente-o-cache-do-pacman">✅ 2) Limpar totalmente o cache do pacman</h2>
+<h2 id="2-limpar-totalmente-o-cache-do-pacman">2) Limpar totalmente o cache do pacman</h2>
 
 <p>Isso é <strong>obrigatório</strong>. Seu cache tem pacotes mais novos (2025/2026) que causam conflitos.</p>
 
@@ -621,7 +621,7 @@ journalctl <span class="nt">-u</span> nvidia-rebuild.service <span class="nt">-b
 
 <hr />
 
-<h2 id="-3-forçar-sincronização-com-downgrade-do-sistema-inteiro">✅ 3) Forçar sincronização com downgrade do sistema inteiro</h2>
+<h2 id="3-forçar-sincronização-com-downgrade-do-sistema-inteiro">3) Forçar sincronização com downgrade do sistema inteiro</h2>
 
 <p>Esse é o passo mais importante.</p>
 
@@ -648,14 +648,14 @@ journalctl <span class="nt">-u</span> nvidia-rebuild.service <span class="nt">-b
 
 <hr />
 
-<h2 id="-4-reinicie-a-máquina">✅ 4) Reinicie a máquina</h2>
+<h2 id="4-reinicie-a-máquina">4) Reinicie a máquina</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>reboot
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="-5-verifique-se-o-sistema-está-alinhado-com-a-data">✅ 5) Verifique se o sistema está alinhado com a data</h2>
+<h2 id="5-verifique-se-o-sistema-está-alinhado-com-a-data">5) Verifique se o sistema está alinhado com a data</h2>
 
 <p>Após reiniciar:</p>
 
@@ -667,7 +667,7 @@ pacman <span class="nt">-Q</span> xorg-server
 
 <hr />
 
-<h2 id="-6-instalar-o-driver-nvidia-corretamente-já-compatível">✅ 6) Instalar o driver NVIDIA corretamente (já compatível)</h2>
+<h2 id="6-instalar-o-driver-nvidia-corretamente-já-compatível">6) Instalar o driver NVIDIA corretamente (já compatível)</h2>
 
 <p>Agora que tudo está alinhado:</p>
 
@@ -678,7 +678,7 @@ pacman <span class="nt">-Q</span> xorg-server
 
 <hr />
 
-<h2 id="-7-congelar-o-arch-muito-importante">🔒 7) Congelar o Arch (muito importante)</h2>
+<h2 id="7-congelar-o-arch-muito-importante">7) Congelar o Arch (muito importante)</h2>
 
 <p>Se você rodar <code class="language-plaintext highlighter-rouge">pacman -Syu</code> com mirrors atuais, vai quebrar tudo de novo.</p>
 
@@ -696,7 +696,7 @@ pacman <span class="nt">-Q</span> xorg-server
 
 <hr />
 
-<h2 id="-8-regra-de-ouro-a-partir-de-agora">🧊 8) Regra de ouro a partir de agora</h2>
+<h2 id="8-regra-de-ouro-a-partir-de-agora">8) Regra de ouro a partir de agora</h2>
 
 <p>Sempre que for atualizar, use <strong>apenas</strong> esse mirror congelado.</p>
 
@@ -704,7 +704,7 @@ pacman <span class="nt">-Q</span> xorg-server
 
 <hr />
 
-<h2 id="-o-que-esse-processo-resolve">🧠 O que esse processo resolve</h2>
+<h2 id="o-que-esse-processo-resolve">O que esse processo resolve</h2>
 
 <p>Elimina o problema clássico de:</p>
 
@@ -718,7 +718,7 @@ pacman <span class="nt">-Q</span> xorg-server
 
 <hr />
 
-<h2 id="-resumo-rápido">📝 Resumo rápido</h2>
+<h2 id="resumo-rápido">Resumo rápido</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/pacman.d/mirrorlist
 <span class="c"># colocar o server do archive</span>
