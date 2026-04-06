@@ -158,7 +158,7 @@ EOF
 
 >>> sed -i "s|^MODULES=.*|MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm usbhid xhci_hcd ehci_hcd)|g" /etc/mkinitcpio.conf
 
->>> sed -i "s|^HOOKS=.*|HOOKS=(base systemd autodetect keymap modconf keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)|g" /etc/mkinitcpio.conf
+>>> sed -i "s|^HOOKS=.*|HOOKS=(base systemd autodetect modconf keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)|g" /etc/mkinitcpio.conf
 
 >>> echo "FIRMWARE=()" >> /etc/mkinitcpio.conf
 
