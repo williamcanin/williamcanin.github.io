@@ -156,23 +156,11 @@ EOF
 :: Configuring /etc/mkinitcpio.conf
 ------------------------------------
 
->>> sed -i "s|^MODULES=.*|MODULES=(usbhid xhci_hcd ehci_hcd)|g" /etc/mkinitcpio.conf
+>>> sed -i "s|^MODULES=.*|MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm usbhid xhci_hcd ehci_hcd)|g" /etc/mkinitcpio.conf
 
->>> sed -i "s|^HOOKS=.*|HOOKS=(base systemd autodetect keymap modconf kms keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)|g" /etc/mkinitcpio.conf
+>>> sed -i "s|^HOOKS=.*|HOOKS=(base systemd autodetect keymap modconf keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)|g" /etc/mkinitcpio.conf
 
-
-[--- IMPORTANT: If you use Wayland and driver proprietary NVIDIA (.run), use the method below. NVIDIA modules added and "kms" removed. --- ]
-
-	>>> sed -i "s|^MODULES=.*|MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm usbhid xhci_hcd ehci_hcd)|g" /etc/mkinitcpio.conf
-
-	>>> sed -i "s|^HOOKS=.*|HOOKS=(base systemd autodetect keymap modconf keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)|g" /etc/mkinitcpio.conf
-
-	>>> echo "FIRMWARE=()" >> /etc/mkinitcpio.conf
-
-
-NOTE: If your GPU is lower than RTX, use this configuration:
-
->>> echo "options nvidia NVreg_EnableGpuFirmware=0" > /etc/modprobe.d/nvidia-firmware.conf
+>>> echo "FIRMWARE=()" >> /etc/mkinitcpio.conf
 
 
 >>> pacman -S lvm2
@@ -196,7 +184,7 @@ editor no
 EOF
 
 >>> cat << EOF > /etc/kernel/cmdline
-root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw loglevel=3 nvidia_drm.modeset=1 video=1920x1080@75
+root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw loglevel=3 nvidia_drm.modeset=1 nvidia_drm.fbdev=0 fbcon=nodefer nvidia.NVreg_PreserveVideoMemoryAllocations=1 module_blacklist=nouveau video=1920x1080@75
 EOF
 
 >>> cp /etc/mkinitcpio.d/linux-lts.preset /etc/mkinitcpio.d/linux-lts.preset.backup
@@ -240,6 +228,17 @@ EOF
 
 # NVIDIA (Nouveau)
 pacman -S --noconfirm  xf86-video-nouveau vulkan-nouveau
+
+NOTE: If your GPU is lower than RTX, use this configuration:
+
+>>> echo "options nvidia NVreg_EnableGpuFirmware=0" > /etc/modprobe.d/nvidia.conf
+
+
+================================== NOTE ===================================
+
+For GTX 750 Ti GPU, use this tutorial (Pt-Br): gtx-750-ti_no_archlinux.txt 
+
+===========================================================================
 
 
 --------------------

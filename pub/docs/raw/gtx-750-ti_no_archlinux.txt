@@ -1,0 +1,158 @@
+===== Driver NVIDIA correto para GTX 750 Ti no Arch Linux =====
+
+6 Abril, 2026
+
+
+
+== Introdução
+
+
+Para usar todo recurso da GTX 750 Ti (Maxwell) no Arch Linux neste ano de 2026, precisamos usar um
+driver da NVidia com uma versão específica que seja compativel com a GTX 750 Ti, porem, não para
+por aqui — também precisamos fazer com que esse driver da NVidia seja compatível com o kernel Linux,
+ou seja, a forma mais segura é usar um kernel Linux versão LTS já que estamos com um GPU antiga.
+
+O kernel Linux 6.12 é ideal para a GTX 750 Ti, porque alem da compatibilidade, terá suporte até 2028.
+
+A versão 575 da NVidia é ideal para esse combo (GTX 750 Ti + kernel 6.12 LTS) — ou seja:
+
+Driver NVidia	  | Suporte Kernel 6.12	| Compatível com GTX 750 Ti	| Observação
+|---------------|---------------------|---------------------------|--------------------------------|
+| 575	          |       Sim	          |          Sim	            | Ótimo desempenho e longo prazo |
+
+== Preparação
+
+Antes, precisamos remover qualquer driver da Nvidia instalado.
+
+Se você instalou através do .run da NVidia, faça o comando abaixo por um tty:
+
+>>> sh NVIDIA-Linux-x86_64-<VERSION>.run --uninstall
+
+Também execute esses comandos para limpar qualquer vestigios que ficou:
+
+>>> rm -rf /usr/lib/modules/*/kernel/drivers/video/nvidia*
+>>> rm -rf /usr/lib/modules/*/updates/dkms/nvidia*
+>>> rm -f /usr/lib/libnvidia-egl*/usr/share/egl/egl_external_platform.d/*_nvidia*.json
+
+Se instalou do repo oficial do Arch Linux, faça:
+
+>>> pacman -Rs nvidia lib32-nvidia nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia lib32-opencl-nvidia xf86-video-nouveau nvidia-open-dkms nvidia-open
+
+Agora você adicionar esses pacotes no nosso IgnorePkg do /etc/pacman.conf e também os kernels Linux.
+
+Abra o /etc/pacman.conf e acrescente:
+
+IgnorePkg  = nvidia lib32-nvidia nvidia-utils lib32-nvidia-utils opencl-nvidia lib32-opencl-nvidia xf86-video-nouveau nvidia-open-dkms nvidia-open linux linux-headers linux-lts linux-lts-headers linux-zen linux-zen-headers cuda
+
+
+
+== Kernel
+
+Como o Arch Linux sempre disponibiliza o ultimo kernel LTS nos repo, precisamos baixar de um mirror
+específico, pra isso vamos usar as seguintes comando:
+
+>> pacman -U https://archive.archlinux.org/packages/l/linux-lts/linux-lts-6.12.75-1-x86_64.pkg.tar.zst --overwrite '*'
+>> pacman -U https://archive.archlinux.org/packages/l/linux-lts/linux-lts-headers-6.12.75-1-x86_64.pkg.tar.zst --overwrite '*'
+
+Após instalar você DEVE reiniciar a máquina para iniciar com o novo kernel.
+
+Já no novo kernel, você pode remover outros kernels que tiver com os comando abaixo:
+
+>> pacman -Rs linux linux-headers linux-zen linux-zen-headers
+
+
+
+== NVidia
+
+Como dito antes, a melhor versão é a 575, porem vamos usar a versão dkms.
+
+Já tem essa versão disponível no AUR do Arch Linux, então só precisamos executar esses comandos
+para instalar tudo que a GTX 750 Ti precisa:
+
+>>> yay -S opencl-nvidia-575xx lib32-nvidia-575xx-utils nvidia-575xx-dkms nvidia-575xx-utils nvidia-settings --overwrite '*'
+
+Nota: Depois de instalar, você pode também adicionar esses pacotes no IgnorePkg para tentar evitar
+      alguma incompatibilidade caso os mesmo sejam atualizados.
+
+Agora ative os serviços para suspensão e hibernação da NVidia importante para o Wayland (caso use):
+
+>>> systemctl enable nvidia-suspend.service nvidia-hibernate.service nvidia-resume.service
+
+Agora vamos as configurações,. Crie o /etc/modprobe.d/nvidia.conf caso não exista e acrescente essas
+configurações nele:
+
+# --------------------------------------------------------------------------------------------------
+options nvidia NVreg_EnableGpuFirmware=0
+options nvidia NVreg_TemporaryFilePath=/var/tmp
+# --------------------------------------------------------------------------------------------------
+
+- options nvidia NVreg_EnableGpuFirmware=0: A GTX 750 Ti (série 700 Maxwell), não possui o
+  co-processador por isso desativamos esse recurso.
+
+- options nvidia NVreg_TemporaryFilePath=/var/tmp: Ajuda o parâmetro PreserveVideoMemoryAllocations=1
+  (que já tem no cmdline) a salvar o estado da VRAM no SSD/HD em vez de tentar manter tudo na RAM
+  do sistema, o que é mais rápido e estável para placas de 2GB.
+
+
+
+== Systemd-Boot
+
+Se estiver usando o sistema de bootloader systemd-boot, no /etc/kernel/cmdline, deixe assim:
+
+# --------------------------------------------------------------------------------------------------
+root=UUID=xxx rw loglevel=3 nvidia_drm.modeset=1 nvidia_drm.fbdev=0 fbcon=nodefer nvidia.NVreg_PreserveVideoMemoryAllocations=1 module_blacklist=nouveau video=1920x1080@75
+# --------------------------------------------------------------------------------------------------
+
+- nvidia_drm.modeset=1: (Direct Rendering Manager), permite que o driver NVIDIA controle a
+  resolução, profundidade de cor e taxa de atualização da tela desde o início do boot.
+
+- nvidia_drm.fbdev=0: Desativa a criação de um dispositivo de framebuffer (/dev/fb0) pelo driver
+  proprietário da NVIDIA. Evita conflitos visuais e instabilidades no console de texto (TTY) durante
+  o boot.
+
+- fbcon=nodefer: Impede que o kernel adie (defer) a inicialização do console de framebuffer.
+  Força a renderização imediata do texto assim que o driver de vídeo é carregado. Garante que o
+  console de texto esteja pronto e estável antes que o sistema tente desenhar elementos interativos,
+  como o `systemd-ask-password`
+
+- nvidia.NVreg_PreserveVideoMemoryAllocations=1: Ideal para Wayland junto com os serviços
+  habilitados acima.
+
+- module_blacklist=nouveau: Impede que drivers open source da NVidia (nouveau) sejam carregados.
+
+== Configurando imagem da initramfs
+
+Abra o /etc/mkinitcpio.conf e deixa assim as configurações:
+
+# --------------------------------------------------------------------------------------------------
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm xhci_hcd ehci_hcd uhci_hcd usbhid hid_generic)
+HOOKS=(base systemd autodetect modconf keymap sd-vconsole block sd-encrypt lvm2 filesystems fsck)
+COMPRESSION="zstd"
+FIRMWARE=()
+# --------------------------------------------------------------------------------------------------
+
+Agora execute o comando abaixo para atualizar a imagem da initramfs:
+
+>>> mkinitcpio -P
+
+Nota: Sempre que editar o /etc/kernel/cmdline, no caso de uso de UKI, o comando mkinitcpio -P
+      deve ser executado para embutir a nova linha de comando dentro do executável .efi.
+
+
+
+== Variáveis de Ambiente (Desempenho no GNOME) - opcional
+
+Para garantir que o GNOME force o uso correto da aceleração por hardware e o Explicit Sync,
+podemos criar (ou editar) o arquivo /etc/environment e adicionar:
+
+# --------------------------------------------------------------------------------------------------
+# Força o uso do backend GBM (padrão no GNOME novo, mas bom garantir)
+GBM_BACKEND=nvidia-drm
+__GLX_VENDOR_LIBRARY_NAME=nvidia
+
+# Melhora a sincronização em apps que usam XWayland
+DISPLAY=:0
+# --------------------------------------------------------------------------------------------------
+
+
+Fim
