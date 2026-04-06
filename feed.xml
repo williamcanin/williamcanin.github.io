@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-04-05T14:11:01+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Gerando de forma segura uma wallet para suas criptomoedas</title><link href="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/" rel="alternate" type="text/html" title="Gerando de forma segura uma wallet para suas criptomoedas" /><published>2026-03-31T02:47:53+00:00</published><updated>2026-03-31T02:47:53+00:00</updated><id>https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas</id><content type="html" xml:base="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/"><![CDATA[<p>Gerar uma wallet de criptomoedas em um ambiente comprometido é um dos erros mais comuns e perigosos que um usuário pode cometer. Keyloggers, malwares e gravações de tela podem capturar sua seed phrase antes mesmo de você perceber. Neste post, vou mostrar como criar suas wallets com o máximo de segurança usando duas ferramentas: o <strong>Tails OS</strong> e o <strong>SeedCTL</strong>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-04-06T10:04:14+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Gerando de forma segura uma wallet para suas criptomoedas</title><link href="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/" rel="alternate" type="text/html" title="Gerando de forma segura uma wallet para suas criptomoedas" /><published>2026-03-31T02:47:53+00:00</published><updated>2026-03-31T02:47:53+00:00</updated><id>https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas</id><content type="html" xml:base="https://williamcanin.github.io/blog/gerando-de-forma-segura-uma-wallet-para-suas-criptomoedas/"><![CDATA[<p>Gerar uma wallet de criptomoedas em um ambiente comprometido é um dos erros mais comuns e perigosos que um usuário pode cometer. Keyloggers, malwares e gravações de tela podem capturar sua seed phrase antes mesmo de você perceber. Neste post, vou mostrar como criar suas wallets com o máximo de segurança usando duas ferramentas: o <strong>Tails OS</strong> e o <strong>SeedCTL</strong>.</p>
 
 <hr />
 
@@ -586,7 +586,153 @@ journalctl <span class="nt">-u</span> nvidia-rebuild.service <span class="nt">-b
 
 <p>Depois de configurado, o processo é totalmente transparente: o pacman atualiza o kernel, você reinicia, e o GNOME sobe com o driver correto — sem TTY, sem tela preta, sem intervenção manual.</p>
 
-<p>Caso queira o processo automático, você pode ver no repositório <a href="https://github.com/williamcanin/archlinux-nvidia-auto-rebuild" target="_blank">archlinux-nvidia-auto-rebuild</a>. Você terá um script (<code class="language-plaintext highlighter-rouge">init.sh</code>) que faz a instalação automática, sem precisar seguir esses passos manuais.</p>]]></content><author><name>William C. Canin</name></author><category term="nvidia" /><category term="archlinux" /><summary type="html"><![CDATA[Description of your post]]></summary></entry><entry><title type="html">Workflow Completo para Rust no VS Code</title><link href="https://williamcanin.github.io/blog/workflow-completo-para-rust-no-vs-code/" rel="alternate" type="text/html" title="Workflow Completo para Rust no VS Code" /><published>2025-11-03T02:43:44+00:00</published><updated>2025-11-03T02:43:44+00:00</updated><id>https://williamcanin.github.io/blog/workflow-completo-para-rust-no-vs-code</id><content type="html" xml:base="https://williamcanin.github.io/blog/workflow-completo-para-rust-no-vs-code/"><![CDATA[<h1 id="-workflow-completo-para-rust-no-vs-code">🚀 Workflow Completo para Rust no VS Code</h1>
+<p>Caso queira o processo automático, você pode ver no repositório <a href="https://github.com/williamcanin/archlinux-nvidia-auto-rebuild" target="_blank">archlinux-nvidia-auto-rebuild</a>. Você terá um script (<code class="language-plaintext highlighter-rouge">init.sh</code>) que faz a instalação automática, sem precisar seguir esses passos manuais.</p>]]></content><author><name>William C. Canin</name></author><category term="nvidia" /><category term="archlinux" /><summary type="html"><![CDATA[Faça o auto-rebuild do .run da NVIDIA automaticamente no Arch Linux com esses passos]]></summary></entry><entry><title type="html">Downgrade e Congelamento do Arch Linux com Snapshot específico</title><link href="https://williamcanin.github.io/blog/downgrade-e-congelamento-do-arch-linux/" rel="alternate" type="text/html" title="Downgrade e Congelamento do Arch Linux com Snapshot específico" /><published>2025-12-21T20:07:13+00:00</published><updated>2025-12-21T20:07:13+00:00</updated><id>https://williamcanin.github.io/blog/downgrade-e-congelamento-do-arch-linux</id><content type="html" xml:base="https://williamcanin.github.io/blog/downgrade-e-congelamento-do-arch-linux/"><![CDATA[<h1 id="downgrade-e-congelamento-do-arch-linux-com-snapshot-específico">Downgrade e Congelamento do Arch Linux com Snapshot específico</h1>
+
+<p>Este guia mostra <strong>como voltar todo o sistema Arch Linux para o estado exato do dia 30/12/2024</strong> usando o archive oficial e depois <strong>congelar o sistema</strong> para evitar novos conflitos de versões (especialmente com drivers NVIDIA, kernel e Xorg).</p>
+
+<blockquote>
+  <p>⚠️ Isso NÃO é apenas remover pacotes. Você vai alinhar o sistema inteiro ao estado daquele dia.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-1-ajustar-o-mirror-para-o-snapshot-antigo">✅ 1) Ajustar o mirror para o snapshot antigo</h2>
+
+<p>Edite o arquivo de mirrors:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/pacman.d/mirrorlist
+</code></pre></div></div>
+
+<p>Apague TODO o conteúdo e deixe apenas:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server = https://archive.archlinux.org/repos/2024/12/30/$repo/os/$arch
+</code></pre></div></div>
+
+<p>Salve e feche.</p>
+
+<hr />
+
+<h2 id="-2-limpar-totalmente-o-cache-do-pacman">✅ 2) Limpar totalmente o cache do pacman</h2>
+
+<p>Isso é <strong>obrigatório</strong>. Seu cache tem pacotes mais novos (2025/2026) que causam conflitos.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo rm</span> <span class="nt">-rf</span> /var/cache/pacman/pkg/<span class="k">*</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-3-forçar-sincronização-com-downgrade-do-sistema-inteiro">✅ 3) Forçar sincronização com downgrade do sistema inteiro</h2>
+
+<p>Esse é o passo mais importante.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-Syyuu</span>
+</code></pre></div></div>
+
+<p>O <code class="language-plaintext highlighter-rouge">uu</code> força o <strong>downgrade</strong> de tudo que estiver mais novo que 30/12/2024:</p>
+
+<ul>
+  <li>kernel</li>
+  <li>xorg</li>
+  <li>bibliotecas</li>
+  <li>glvnd</li>
+  <li>systemd</li>
+  <li>mesa</li>
+  <li>tudo</li>
+</ul>
+
+<p>Seu sistema vai literalmente “voltar no tempo”.</p>
+
+<blockquote>
+  <p>Durante esse processo, responda <strong>S</strong> para substituir pacotes quando perguntado.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-4-reinicie-a-máquina">✅ 4) Reinicie a máquina</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>reboot
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-5-verifique-se-o-sistema-está-alinhado-com-a-data">✅ 5) Verifique se o sistema está alinhado com a data</h2>
+
+<p>Após reiniciar:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">uname</span> <span class="nt">-r</span>
+pacman <span class="nt">-Q</span> xorg-server
+</code></pre></div></div>
+
+<p>As versões agora devem ser de <strong>final de 2024</strong>.</p>
+
+<hr />
+
+<h2 id="-6-instalar-o-driver-nvidia-corretamente-já-compatível">✅ 6) Instalar o driver NVIDIA corretamente (já compatível)</h2>
+
+<p>Agora que tudo está alinhado:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> nvidia nvidia-utils nvidia-settings
+</code></pre></div></div>
+
+<p>Sem baixar manualmente. Sem procurar versão. Vai funcionar porque o sistema inteiro é daquele dia.</p>
+
+<hr />
+
+<h2 id="-7-congelar-o-arch-muito-importante">🔒 7) Congelar o Arch (muito importante)</h2>
+
+<p>Se você rodar <code class="language-plaintext highlighter-rouge">pacman -Syu</code> com mirrors atuais, vai quebrar tudo de novo.</p>
+
+<p>Para evitar isso:</p>
+
+<p>Edite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/pacman.conf
+</code></pre></div></div>
+
+<p>Adicione no final:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IgnorePkg = nvidia nvidia-utils xorg-server linux linux-headers mesa libglvnd systemd
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-8-regra-de-ouro-a-partir-de-agora">🧊 8) Regra de ouro a partir de agora</h2>
+
+<p>Sempre que for atualizar, use <strong>apenas</strong> esse mirror congelado.</p>
+
+<p>Nunca restaure os mirrors oficiais sem saber exatamente o que está fazendo.</p>
+
+<hr />
+
+<h2 id="-o-que-esse-processo-resolve">🧠 O que esse processo resolve</h2>
+
+<p>Elimina o problema clássico de:</p>
+
+<ul>
+  <li>kernel novo + xorg antigo</li>
+  <li>libs novas + driver antigo</li>
+  <li>partial upgrade (o maior inimigo do Arch)</li>
+</ul>
+
+<p>Agora seu sistema é um <strong>Arch estável congelado no tempo</strong>.</p>
+
+<hr />
+
+<h2 id="-resumo-rápido">📝 Resumo rápido</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/pacman.d/mirrorlist
+<span class="c"># colocar o server do archive</span>
+
+<span class="nb">sudo rm</span> <span class="nt">-rf</span> /var/cache/pacman/pkg/<span class="k">*</span>
+
+<span class="nb">sudo </span>pacman <span class="nt">-Syyuu</span>
+
+<span class="nb">sudo </span>reboot
+
+<span class="nb">sudo </span>pacman <span class="nt">-S</span> nvidia nvidia-utils nvidia-settings
+</code></pre></div></div>
+
+<p>Pronto. Sistema alinhado, funcional e congelado em 30/12/2024.</p>]]></content><author><name>William C. Canin</name></author><category term="nvidia" /><category term="archlinux" /><summary type="html"><![CDATA[Faça o downgrade e congelamento do Arch Linux para sua máquina antiga]]></summary></entry><entry><title type="html">Workflow Completo para Rust no VS Code</title><link href="https://williamcanin.github.io/blog/workflow-completo-para-rust-no-vs-code/" rel="alternate" type="text/html" title="Workflow Completo para Rust no VS Code" /><published>2025-11-03T02:43:44+00:00</published><updated>2025-11-03T02:43:44+00:00</updated><id>https://williamcanin.github.io/blog/workflow-completo-para-rust-no-vs-code</id><content type="html" xml:base="https://williamcanin.github.io/blog/workflow-completo-para-rust-no-vs-code/"><![CDATA[<h1 id="-workflow-completo-para-rust-no-vs-code">🚀 Workflow Completo para Rust no VS Code</h1>
 
 <p>Este guia apresenta um <strong>workflow completo, moderno e altamente produtivo para desenvolvimento em Rust utilizando o VS Code</strong>, com extensões, configurações e ferramentas externas capazes de atingir (ou superar) a experiência do RustRover.</p>
 
@@ -1880,365 +2026,4 @@ Error downloading sources: spotify
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">yay <span class="nt">-S</span> <span class="nt">--mflags</span> <span class="nt">--skipinteg</span> spotify</code></pre></figure>
 
-<p>Até a próxima ;)</p>]]></content><author><name>William C. Canin</name></author><category term="archlinux" /><category term="keys" /><summary type="html"><![CDATA[Você já deve ter se deparado com problemas de chaves públicas ao instalar um pacote no Arch Linux, certo? Pois esse post de dica rápida pode ajudar a você a resolver isso.]]></summary></entry><entry><title type="html">Transações no banco de dados através do Shell script</title><link href="https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/" rel="alternate" type="text/html" title="Transações no banco de dados através do Shell script" /><published>2018-08-28T08:23:33+00:00</published><updated>2018-08-28T08:23:33+00:00</updated><id>https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript</id><content type="html" xml:base="https://williamcanin.github.io/blog/transacoes-no-banco-de-dados-atraves-do-shellscript/"><![CDATA[<p>Olá pessoas, vamos falar de Shell script, que é algo que gosto muito. :)</p>
-
-<h1 id="introdução">Introdução</h1>
-
-<p>Bom, se você é usuário Linux sabe muito bem o que é <a href="https://pt.wikipedia.org/wiki/Shell_script" target="_blank">Shell Script</a>, uma linguagem usuda em vários sistemas operativos, até aqui tudo bem, mas…o que muitos não sabem é dá para fazer transações no banco de dados através da mesma.</p>
-
-<ul>
-  <li>Você: Sério?</li>
-  <li>Eu: Sério cara.</li>
-</ul>
-
-<p>O que vamos ver neste post é exatamente isso, uma conexão com um banco de dados; criação de um database; e a criação de uma tabela. Não irei abordar um CRUD completo, pois com base na conexão e criação de uma tabela, você já será apto para navegar em sua mente e realizar as demais transações no banco de dados, tendo como requerimento apenas conhecimento de PL/SQL.</p>
-
-<p>Os bancos de dados que irei abordar aqui serão o <a href="https://www.postgresql.org" target="_blank">PostgreSQL</a> e o <a href="https://www.mysql.com" target="_blank">MySQL</a>, então suponho que você já tenha um dos dois instalados em sua máquina; com as configurações de usuário e senha realizadas; e o serviço iniciado.</p>
-
-<h1 id="requerimentos">Requerimentos</h1>
-
-<ul>
-  <li>PostgreSQL ou Mysql instalado.</li>
-  <li>Conhecimento básico em PL/SQL.</li>
-  <li>Força de vontade :D</li>
-</ul>
-
-<h1 id="postgresql">PostgreSQL</h1>
-
-<h2 id="preparando-ambiente">Preparando ambiente</h2>
-
-<p>Por padrão, o PostgreSQL já cria um usuário e uma role com o nome <strong>postgres</strong>, você pode fazer um teste de conexão com o seguinte comando:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>psql <span class="nt">-U</span> postgres</code></pre></figure>
-
-<p>ou</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo</span> <span class="nt">-u</span> postgres psql</code></pre></figure>
-
-<blockquote>
-  <p>NOTA: O usuário <strong>postgres</strong> tem permissão de SUPERUSER, então você pode criar outros usuários, databases, tabelas e outros respectivas permissões com ele.</p>
-</blockquote>
-
-<h3 id="criando-um-database-no-postgresql">Criando um DATABASE no PostgreSQL</h3>
-
-<p>Uma vez que você já está conectado ao <code class="language-plaintext highlighter-rouge">psql</code> com usuário <strong>postgres</strong>, vamos criar um DATABASE onde vamos trabalhar nossas transações:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">postgres</span><span class="o">=</span><span class="c"># CREATE DATABASE my_db;</span></code></pre></figure>
-
-<blockquote>
-  <p>NOTA: Mais adiante, criamos nossa DATABASE através de uma função em nosso projeto, porém, vale lembrar que o <strong>CREATE DATABASE</strong> no PostgreSQL não tem opção <strong>IF NOT EXISTS</strong> e só podemos executar uma única instrução do <strong>CREATE DATABASE</strong>, não conseguimos executa-lo dentro de um bloco de transação. Com essas informações, foi usado outras técnicas com Shell Script para verificar se DATABASE não existe e assim criar o mesmo.</p>
-</blockquote>
-
-<h2 id="iniciando-projeto">Iniciando projeto</h2>
-
-<h2 id="criando-pasta-de-ambiente-do-projeto">Criando pasta de ambiente do projeto</h2>
-
-<p>Vamos criar uma pasta para nosso projeto e entrar na mesma com o comando abaixo:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">mkdir</span> ~/sh_postgresql<span class="p">;</span> <span class="nb">cd</span> <span class="nv">$_</span></code></pre></figure>
-
-<h2 id="criando-arquivo-de-configuração">Criando arquivo de configuração</h2>
-
-<p>Para fins de boas normas de projeto, vamos criar o arquivo <strong>config.conf</strong> na base do nosso projeto, e armazenar nossas variáveis global.</p>
-
-<p>Conteúdo do arquivo: <strong>config.conf</strong></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">DB</span><span class="o">=</span><span class="s2">"my_db"</span>
-<span class="nv">HOST</span><span class="o">=</span><span class="s2">"localhost"</span>
-<span class="nv">PORT</span><span class="o">=</span><span class="s2">"5432"</span>
-<span class="nv">USER</span><span class="o">=</span><span class="s2">"postgres"</span>
-<span class="nv">TABLE</span><span class="o">=</span><span class="s2">"films"</span></code></pre></figure>
-
-<p>Essas variáveis vão ser responsáveis por qualquer tipo de transação no banco de dados.</p>
-
-<h2 id="criando-bibliotecas-para-nosso-projeto">Criando bibliotecas para nosso projeto</h2>
-
-<p>Sempre que criamos um projeto, é interessante dividir partes do nosso código e fazer essas partes virarem bibliotecas, ou seja, pequenos trechos de código onde podemos importar a qualquer momento. Vamos criar nossas bibliotecas na pasta <strong>libs</strong>.</p>
-
-<h3 id="biblioteca-create_databasebash">Biblioteca <strong>create_database.bash</strong></h3>
-
-<p>A primeira <strong>lib</strong> (biblioteca) que vamos criar é a <strong>create_database.bash</strong>. Essa biblioteca irá conter uma função para criar nossa DATABASE caso ela não exista.</p>
-
-<p>Conteúdo do arquivo: <strong>libs/create_database.bash</strong></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">function </span>_create_database<span class="o">()</span> <span class="o">{</span>
-  psql <span class="nt">-h</span> <span class="nv">$HOST</span> <span class="nt">-p</span> <span class="nv">$PORT</span> <span class="nt">-U</span> <span class="nv">$USER</span> <span class="nt">-tc</span> <span class="s2">"SELECT 1 FROM pg_database WHERE datname = '</span><span class="nv">$DB</span><span class="s2">'"</span> | <span class="nb">grep</span> <span class="nt">-q</span> 1 <span class="o">||</span> psql <span class="nt">-h</span> <span class="nv">$HOST</span> <span class="nt">-p</span> <span class="nv">$PORT</span> <span class="nt">-U</span> <span class="nv">$USER</span> <span class="nt">-c</span> <span class="s2">"CREATE DATABASE </span><span class="nv">$DB</span><span class="s2">"</span>
-<span class="o">}</span></code></pre></figure>
-
-<p>Em <a href="#criando-um-database-no-postgresql">Criando um DATABASE no PostgreSQL</a>, criamos nosso DATABASE manualmente através do <strong>psql</strong>, mas caso não criassemos, essa função já seria responsável por criar.</p>
-
-<h3 id="biblioteca-create_tablebash">Biblioteca <strong>create_table.bash</strong></h3>
-
-<p>Outra <strong>lib</strong> (biblioteca) que vamos criar é a <strong>create_table.bash</strong>. Essa bibliotea irá conter uma função para criar nossa TABLE. Você pode ser bem mais dinâmico ao criar suas “<em>libs</em>”, como esse é um post para apenas lhe dar uma ideia, vou ser bem direto nessa biblioteca de criação de TABLE.</p>
-
-<p>Conteúdo do arquivo: <strong>libs/create_table.bash</strong></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="code"><pre><span class="k">function </span>_create_table<span class="o">()</span> <span class="o">{</span>
-  psql <span class="nt">-h</span> <span class="nv">$HOST</span> <span class="nt">-p</span> <span class="nv">$PORT</span> <span class="nt">-U</span> <span class="nv">$USER</span> <span class="nt">-d</span> <span class="nv">$DB</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
-
-  </span><span class="se">\c</span><span class="sh"> DB
-
-  CREATE TABLE IF NOT EXISTS </span><span class="nv">$TABLE</span><span class="sh"> (
-    id          char(5) CONSTRAINT firstkey PRIMARY KEY,
-    title       varchar(40) NOT NULL,
-    did         integer NOT NULL,
-    date_prod   date,
-    kind        varchar(10),
-    len         interval hour to minute
-  );
-</span><span class="no">EOF
-</span><span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<h2 id="criando-o-programa-principal">Criando o programa principal</h2>
-
-<p>Vamos agora criar um arquivo chamando <strong>setup.bash</strong>, nesse arquivo iremos carregar nosso arquivo de configuração (<strong>config.conf</strong>) e nossas <em>libs</em>. Ele também terá um menu de interação com o usuário.</p>
-
-<p>Conteúdo do arquivo: <strong>setup.bash</strong></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-</pre></td><td class="code"><pre><span class="c">#!/usr/bin/env bash</span>
-
-<span class="nb">source </span>config.conf
-
-<span class="nv">libs</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> ./libs/<span class="k">*</span>.bash<span class="si">)</span><span class="s2">"</span>
-<span class="k">for </span>lib <span class="k">in</span> <span class="nv">$libs</span><span class="p">;</span> <span class="k">do
-  </span><span class="nb">source</span> <span class="nv">$lib</span>
-<span class="k">done
-
-case</span> <span class="nv">$1</span> <span class="k">in
-  </span>createtb<span class="p">)</span>
-    _create_database
-    _create_table
-  <span class="p">;;</span>
-  <span class="k">*</span><span class="p">)</span>
-    <span class="nb">printf</span> <span class="s2">"Using: </span><span class="nv">$0</span><span class="s2"> { createtb }"</span>
-  <span class="p">;;</span>
-<span class="k">esac</span>
-<span class="nb">exit </span>0
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<h2 id="estrutura-do-projeto-para-postgresql">Estrutura do projeto para PostgreSQL</h2>
-
-<p>A árvore do nosso projeto ficou assim:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">.</span>
-├── config.conf
-├── libs
-│   ├── create_database.bash
-│   └── create_table.bash
-└── setup.bash</code></pre></figure>
-
-<h2 id="executando-nosso-programa">Executando nosso programa</h2>
-
-<p>Depois de ter criado todos arquivos, chegou a hora de fazer nosso programa ser executado. Para isso faça:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">chmod</span> +x setup.bash
-bash setup.bash createtb</code></pre></figure>
-
-<p>Se tudo ocorreu bem, a tabela ($DB) já foi criada no banco de dados. Você pode executar os comandos abaixo e verificar:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source </span>config.conf <span class="o">&amp;&amp;</span> psql <span class="nt">-h</span> <span class="nv">$HOST</span> <span class="nt">-p</span> <span class="nv">$PORT</span> <span class="nt">-U</span> <span class="nv">$USER</span> <span class="nt">-d</span> <span class="nv">$DB</span></code></pre></figure>
-
-<p>Dentro do psql, execute o comando <strong>\dt</strong> para listar as TABLES desse DATABASE:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">my_db</span><span class="o">=</span><span class="c"># \dt</span>
-            Lista de relações
- Esquema | Nome  |  Tipo  |   Dono
-<span class="nt">---------</span>+-------+--------+----------
- public  | films | tabela | postgres
-<span class="o">(</span>1 registro<span class="o">)</span></code></pre></figure>
-
-<h1 id="mysql">MySQL</h1>
-
-<h2 id="preparando-ambiente-1">Preparando ambiente</h2>
-
-<p>Antes de começar, precisamos verificar se temos acesso a conexão com o MySQL. Se você instalou e configurou normalmente, você pode executar o comando abaixo para logar informando a senha do MySQL configurada:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mysql <span class="nt">-u</span> root <span class="nt">-p</span></code></pre></figure>
-
-<p>Se você se conectou, já podemos prosseguir com os passos seguintes.</p>
-
-<h2 id="iniciando-projeto-1">Iniciando projeto</h2>
-
-<h2 id="criando-pasta-de-ambiente-do-projeto-1">Criando pasta de ambiente do projeto</h2>
-
-<p>Vamos criar uma pasta para nosso projeto de <strong>MySQL</strong> e entrar na mesma com o comando abaixo:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">mkdir</span> ~/sh_mysql<span class="p">;</span> <span class="nb">cd</span> <span class="nv">$_</span></code></pre></figure>
-
-<h2 id="criando-arquivo-de-configuração-1">Criando arquivo de configuração</h2>
-
-<p>Como fizemos no projeto para o <strong>PostgreSQL</strong>, vamos criar p arquivo  <strong>config.conf</strong> na base do nosso projeto.</p>
-
-<p>Conteúdo do arquivo: <strong>config.conf</strong></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">DB</span><span class="o">=</span><span class="s2">"my_db"</span>
-<span class="nv">HOST</span><span class="o">=</span><span class="s2">"localhost"</span>
-<span class="nv">PORT</span><span class="o">=</span><span class="s2">"3306"</span>
-<span class="nv">USER</span><span class="o">=</span><span class="s2">"root"</span>
-<span class="nv">PASSWORD</span><span class="o">=</span><span class="s2">""</span>
-<span class="nv">TABLE</span><span class="o">=</span><span class="s2">"cartoons"</span></code></pre></figure>
-
-<h2 id="criando-bibliotecas-para-nosso-projeto-1">Criando bibliotecas para nosso projeto</h2>
-
-<p>Vamos repetir o mesmo conceito que fizemos para o PostgreSQL, criando nossas bibliotecas na pasta <strong>libs</strong> do projeto.</p>
-
-<h3 id="biblioteca-create_databasebash-1">Biblioteca <strong>create_database.bash</strong></h3>
-
-<p>Diferente do PostgreSQL, o <strong>MySQL</strong> contem uma opção de <strong>IF NOT EXISTS</strong> para criação de DATABASES, com isso não precisamos fazer a verificação via Shell Script como fizemos com o projeto do PostgreSQL. Com a própria instrução SQL do MySQL, podemos fazer essa checagem.</p>
-
-<p>Conteúdo do arquivo: <strong>libs/create_database.bash</strong></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">function </span>_create_database<span class="o">()</span> <span class="o">{</span>
-  mysql <span class="nt">--host</span><span class="o">=</span><span class="nv">$HOST</span> <span class="nt">--port</span><span class="o">=</span><span class="nv">$PORT</span> <span class="nt">--user</span><span class="o">=</span><span class="nv">$USER</span> <span class="nt">--password</span><span class="o">=</span><span class="nv">$PASSWORD</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
-  CREATE DATABASE IF NOT EXISTS </span><span class="se">\`</span><span class="nv">$DB</span><span class="se">\`</span><span class="sh">;
-</span><span class="no">EOF
-</span><span class="o">}</span></code></pre></figure>
-
-<h3 id="biblioteca-create_tablebash-1">Biblioteca <strong>create_table.bash</strong></h3>
-
-<p>Diferentemente do PostgreSQL também, com o MySQL você deve criar delimitadores para executar várias instruções SQL. Você define um delimitador com a palavra reservada <strong>DELIMITER</strong> e logo em seguida o delimitador que você quer. Aqui estou usando o <strong>$$</strong>.</p>
-
-<p>Conteúdo do arquivo: <strong>libs/create_table.bash</strong></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">function </span>_create_table<span class="o">()</span> <span class="o">{</span>
-  mysql <span class="nt">--host</span><span class="o">=</span><span class="nv">$HOST</span> <span class="nt">--port</span><span class="o">=</span><span class="nv">$PORT</span> <span class="nt">--user</span><span class="o">=</span><span class="nv">$USER</span> <span class="nt">--password</span><span class="o">=</span><span class="nv">$PASSWORD</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
-
-  DELIMITER </span><span class="nv">$$</span><span class="sh">
-
-  USE </span><span class="se">\`</span><span class="nv">$DB</span><span class="se">\`</span><span class="sh"> </span><span class="nv">$$</span><span class="sh">
-
-  CREATE TABLE IF NOT EXISTS </span><span class="se">\`</span><span class="nv">$TABLE</span><span class="se">\`</span><span class="sh">  (
-    id        INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    title     VARCHAR(40) NOT NULL,
-    did       INTEGER NOT NULL,
-    date      TIMESTAMP,
-    kind      VARCHAR(10),
-    designer  VARCHAR(30),
-
-  )</span><span class="nv">$$</span><span class="sh">
-</span><span class="no">EOF
-</span><span class="o">}</span></code></pre></figure>
-
-<h2 id="criando-o-programa-principal-1">Criando o programa principal</h2>
-
-<p>Vamos carregar todas nossas bibliotecas no <strong>setup.bash</strong> e o arquivo de configuração <strong>config.conf</strong>. Na mesma ideia que fizemos no projeto do PostgreSQLm vamos fazer para o MySQL mais uma vez.</p>
-
-<p>Conteúdo do arquivo: <strong>setup.bash</strong></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-</pre></td><td class="code"><pre><span class="c">#!/usr/bin/env bash</span>
-
-<span class="nb">source </span>config.conf
-
-<span class="nv">libs</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> ./libs/<span class="k">*</span>.bash<span class="si">)</span><span class="s2">"</span>
-<span class="k">for </span>lib <span class="k">in</span> <span class="nv">$libs</span><span class="p">;</span> <span class="k">do
-  </span><span class="nb">source</span> <span class="nv">$lib</span>
-<span class="k">done
-
-case</span> <span class="nv">$1</span> <span class="k">in
-  </span>createtb<span class="p">)</span>
-    _create_database
-    _create_table
-  <span class="p">;;</span>
-  <span class="k">*</span><span class="p">)</span>
-    <span class="nb">printf</span> <span class="s2">"Using: </span><span class="nv">$0</span><span class="s2"> { createtb }"</span>
-  <span class="p">;;</span>
-<span class="k">esac</span>
-<span class="nb">exit </span>0
-<span class="o">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<h2 id="estrutura-do-projeto-para-mysql">Estrutura do projeto para MySQL</h2>
-
-<p>A árvore do nosso projeto ficou assim:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">.</span>
-├── config.conf
-├── libs
-│   ├── create_database.bash
-│   └── create_table.bash
-└── setup.bash</code></pre></figure>
-
-<h2 id="executando-nosso-programa-1">Executando nosso programa</h2>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">chmod</span> +x setup.bash
-bash setup.bash createtb</code></pre></figure>
-
-<p>Execute os comandos abaixo e verificar:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source </span>config.conf <span class="o">&amp;&amp;</span> mysql <span class="nt">--host</span><span class="o">=</span><span class="nv">$HOST</span> <span class="nt">--port</span><span class="o">=</span><span class="nv">$PORT</span> <span class="nt">--user</span><span class="o">=</span><span class="nv">$DB_USER</span> <span class="nt">--password</span><span class="o">=</span><span class="nv">$DB_PASSWD</span></code></pre></figure>
-
-<p>Dentro do console do mysql, execute o comando abaixo para listar o DATABASE criado:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">MySQL <span class="o">[(</span>none<span class="o">)]&gt;</span> show databases<span class="p">;</span>
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| my_db              |
-| mysql              |
-| performance_schema |
-+--------------------+
-3 rows <span class="k">in </span><span class="nb">set</span> <span class="o">(</span>0.001 sec<span class="o">)</span></code></pre></figure>
-
-<h1 id="conclusão">Conclusão</h1>
-
-<p>Como dito, foi um simples post para você tenha uma noção do que podemos fazer com Shell Script. Tanto os passos para PostgreSQL e para MySQL, existem trechos de código praticamente idênticos, mudando uma coisinha ou outra. Porém, apesar de realizarmos transações no banco de dados com Shell Script, não recomendo você tentar criar um sistema dessa maneira. Existem diversas linguagens de programação onde temos milhares de vantagens para realizar tudo que fizemos aqui.</p>
-
-<p>Espero que você tenha aprendido algo com esse post. Eu fico por aqui, até a próxima.</p>]]></content><author><name>William C. Canin</name></author><category term="shell" /><category term="postgresql" /><category term="mysql" /><summary type="html"><![CDATA[O Shell Script não é só uma linguagem para fazer automatização de tarefas no seu S.O, é muito mais!]]></summary></entry></feed>
+<p>Até a próxima ;)</p>]]></content><author><name>William C. Canin</name></author><category term="archlinux" /><category term="keys" /><summary type="html"><![CDATA[Você já deve ter se deparado com problemas de chaves públicas ao instalar um pacote no Arch Linux, certo? Pois esse post de dica rápida pode ajudar a você a resolver isso.]]></summary></entry></feed>

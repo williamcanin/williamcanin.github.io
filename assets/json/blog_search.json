@@ -15,6 +15,13 @@
     } ,
   
     {
+      "title"    : "Downgrade e Congelamento do Arch Linux com Snapshot específico",
+      "tags"     : "nvidia, archlinux",
+      "url"      : "/blog/downgrade-e-congelamento-do-arch-linux/",
+      "date"     : "21 Dez, 2025"
+    } ,
+  
+    {
       "title"    : "Workflow Completo para Rust no VS Code",
       "tags"     : "rust, workflow, vscode, dev",
       "url"      : "/blog/workflow-completo-para-rust-no-vs-code/",
