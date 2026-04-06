@@ -2,10 +2,10 @@
 layout: post
 author: "William C. Canin"
 title: "Nvidia auto-rebuild no Arch Linux com Wayland"
-description: "Description of your post"
+description: "Faça o auto-rebuild do .run da NVIDIA automaticamente no Arch Linux com esses passos"
 date: 2026-03-30 22:59:10 -0300
 update_date: 
-comments: false
+comments: true
 tags: [nvidia, archlinux]
 ---
 
