@@ -19,8 +19,9 @@ Hey!
 
 Me chamo **William**, sou formado em [**Análise e Desenvolvimento de Sistemas**](https://unilins.edu.br){:target="_blank"} em 2014;
 mas de 10 anos programando, com foco em programação de baixo nível, hacking/segurança cibernética;
-e um praticante autodidata de outras ferramentas de desenvolvimento. Tenho a convicção
-de que o "céu é o limite" nesta área com dedicação e resiliência.
+e um praticante autodidata de outras ferramentas de desenvolvimento.
+
+Desenvolvo ferramentas, extensões e software de sistema usando **Rust**, **Python** e **Ruby**, com foco em ferramentas para desenvolvedores, automação e controle de ambiente.
 
 Regularmente, também tenho revezamentos em "programação" **Frontend**.
 
