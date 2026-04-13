@@ -1,3 +1,26 @@
 #!/usr/bin/env sh
+set -e
 
-exec sh <(curl -fsSL https://raw.githubusercontent.com/williamcanin/auto-chroot/main/auto-chroot.sh)
+## Sample modo - no detect SHA256
+# exec sh <(curl -fsSL https://raw.githubusercontent.com/williamcanin/auto-chroot/main/auto-chroot.sh)
+
+## Mode detect SHA256
+URL="https://raw.githubusercontent.com/williamcanin/auto-chroot/main/auto-chroot.sh"
+HASH_URL="$URL.sha256"
+
+TMP="/tmp/auto-chroot.sh"
+
+echo "Downloading auto-chroot..."
+curl -fsSL "$URL" -o "$TMP"
+curl -fsSL "$HASH_URL" -o "$TMP.sha256"
+
+echo "Verifying integrity..."
+EXPECTED="$(cut -d' ' -f1 "$TMP.sha256")"
+ACTUAL="$(sha256sum "$TMP" | cut -d' ' -f1)"
+
+if [ "$EXPECTED" != "$ACTUAL" ]; then
+    echo "Hash mismatch! Aborting."
+    exit 1
+fi
+
+sh "$TMP"
