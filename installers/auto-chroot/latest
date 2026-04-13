@@ -5,22 +5,50 @@ set -e
 # exec sh <(curl -fsSL https://raw.githubusercontent.com/williamcanin/auto-chroot/main/auto-chroot.sh)
 
 ## Mode detect SHA256
+CACHE="/run/auto-chroot"
+SCRIPT="$CACHE/auto-chroot.sh"
+HASH="$CACHE/auto-chroot.sh.sha256"
+
 URL="https://raw.githubusercontent.com/williamcanin/auto-chroot/main/auto-chroot.sh"
 HASH_URL="$URL.sha256"
 
-TMP="/tmp/auto-chroot.sh"
+mkdir -p "$CACHE"
 
-echo "Downloading auto-chroot..."
-curl -fsSL "$URL" -o "$TMP"
-curl -fsSL "$HASH_URL" -o "$TMP.sha256"
+online() {
+  ping -c1 -W1 github.com >/dev/null 2>&1
+}
 
-echo "Verifying integrity..."
-EXPECTED="$(cut -d' ' -f1 "$TMP.sha256")"
-ACTUAL="$(sha256sum "$TMP" | cut -d' ' -f1)"
+download_and_verify() {
+  echo "Online mode: downloading auto-chroot..."
 
-if [ "$EXPECTED" != "$ACTUAL" ]; then
+  TMP="$(mktemp)"
+  TMP_HASH="$(mktemp)"
+
+  curl -fsSL "$URL" -o "$TMP"
+  curl -fsSL "$HASH_URL" -o "$TMP_HASH"
+
+  EXPECTED="$(cut -d' ' -f1 "$TMP_HASH")"
+  ACTUAL="$(sha256sum "$TMP" | cut -d' ' -f1)"
+
+  if [ "$EXPECTED" != "$ACTUAL" ]; then
     echo "Hash mismatch! Aborting."
     exit 1
+  fi
+
+  mv "$TMP" "$SCRIPT"
+  mv "$TMP_HASH" "$HASH"
+}
+
+if online; then
+  download_and_verify
+else
+  echo "Offline mode detected."
 fi
 
-sh "$TMP"
+if [ ! -f "$SCRIPT" ]; then
+  echo "No cached version available and no internet."
+  exit 1
+fi
+
+echo "Executing auto-chroot..."
+sh "$SCRIPT"
