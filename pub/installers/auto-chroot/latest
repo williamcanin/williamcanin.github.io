@@ -5,12 +5,15 @@ set -e
 # exec sh <(curl -fsSL https://raw.githubusercontent.com/williamcanin/auto-chroot/main/auto-chroot.sh)
 
 ## Mode detect SHA256
+VERSION="0.1.2"
+
 CACHE="/run/auto-chroot"
 SCRIPT="$CACHE/auto-chroot.sh"
 HASH="$CACHE/auto-chroot.sh.sha256"
+BASE="https://github.com/williamcanin/auto-chroot/releases/download/v$VERSION"
+URL="$BASE/auto-chroot.sh"
+HASH_URL="$BASE/auto-chroot.sh.sha256"
 
-URL="https://raw.githubusercontent.com/williamcanin/auto-chroot/main/auto-chroot.sh"
-HASH_URL="$URL.sha256"
 
 mkdir -p "$CACHE"
 
