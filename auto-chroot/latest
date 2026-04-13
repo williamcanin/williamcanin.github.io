@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+exec sh <(curl -fsSL https://raw.githubusercontent.com/williamcanin/auto-chroot/main/auto-chroot.sh)

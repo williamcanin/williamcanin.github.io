@@ -70,7 +70,7 @@
 >>> pacman -Syy
 >>> pacman -Sy archlinux-keyring
 >>> pacman-key --populate archlinux
->>> pacstrap -K /mnt base base-devel linux-lts linux-lts-headers linux-firmware systemd systemd-ukify sudo vim dhcpcd wireless_tools wpa_supplicant
+>>> pacstrap -K /mnt base base-devel linux-lts linux-lts-headers linux-firmware systemd systemd-ukify sudo gvim dhcpcd wireless_tools wpa_supplicant
 
 
 ---------------------
