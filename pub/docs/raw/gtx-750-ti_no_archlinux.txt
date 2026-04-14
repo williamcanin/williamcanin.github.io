@@ -1,6 +1,6 @@
 ===== Driver NVIDIA correto para GTX 750 Ti no Arch Linux =====
 
-6 Abril, 2026
+13 Abril, 2026
 
 
 
@@ -9,16 +9,23 @@
 
 Para usar todo recurso da GTX 750 Ti (Maxwell) no Arch Linux neste ano de 2026, precisamos usar um
 driver da NVidia com uma versão específica que seja compativel com a GTX 750 Ti, porem, não para
-por aqui — também precisamos fazer com que esse driver da NVidia seja compatível com o kernel Linux,
-ou seja, a forma mais segura é usar um kernel Linux versão LTS já que estamos com um GPU antiga.
+por aqui — também precisamos fazer com que esse driver da NVidia seja compatível com o kernel Linux.
+O repo do Arch Linux, os drivers atuais 590+, não tem suporte para placas Maxwell, e não importa o que
+faça, a aceleração gráfica não irá funcionar.
+A alternatica, e que funciona, seria usar os .run proprietário da NVIDIA, mas o problema é que toda
+vez que for atualizar o kernel dp Arch Linux, terá que reinstalar o .run manualmente — tem uma forma
+criando hooks e service que automatiza, mas isso é para uma próxima etpa. Aqui vamos focar no AUR.
 
-O kernel Linux 6.12 é ideal para a GTX 750 Ti, porque alem da compatibilidade, terá suporte até 2028.
+Felizmente, existe uma versão compatível no AUR para GTX 750 Ti (Maxwell), essa versão é o pacote
+nvidia-580xx-dkms — e por ser dkms não precisamos fazer nada após atualizar o kernel.
 
-A versão 575 da NVidia é ideal para esse combo (GTX 750 Ti + kernel 6.12 LTS) — ou seja:
 
-Driver NVidia	  | Suporte Kernel 6.12	| Compatível com GTX 750 Ti	| Observação
-|---------------|---------------------|---------------------------|--------------------------------|
-| 575	          |       Sim	          |          Sim	            | Ótimo desempenho e longo prazo |
+
+Driver NVidia	  | Suporte Kernel 6.12+ |  Compatível com GTX 750 Ti	| Observação
+|---------------|----------------------|----------------------------|--------------------------------|
+| 580	          |       Sim	           |          Sim	              | Ótimo desempenho e longo prazo |
+
+
 
 == Preparação
 
@@ -36,40 +43,33 @@ Também execute esses comandos para limpar qualquer vestigios que ficou:
 
 Se instalou do repo oficial do Arch Linux, faça:
 
->>> pacman -Rs nvidia lib32-nvidia nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia lib32-opencl-nvidia xf86-video-nouveau nvidia-open-dkms nvidia-open
+>>> pacman -Rs nvidia lib32-nvidia nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia lib32-opencl-nvidia nvidia-open-dkms nvidia-open
 
 Agora você deve adicionar esses pacotes no nosso IgnorePkg do /etc/pacman.conf e também os kernels Linux.
 
 Abra o /etc/pacman.conf e acrescente:
 
-IgnorePkg  = nvidia lib32-nvidia nvidia-utils lib32-nvidia-utils opencl-nvidia lib32-opencl-nvidia xf86-video-nouveau nvidia-open-dkms nvidia-open linux linux-headers linux-lts linux-lts-headers linux-zen linux-zen-headers cuda
+IgnorePkg  = nvidia lib32-nvidia nvidia-utils lib32-nvidia-utils opencl-nvidia lib32-opencl-nvidia nvidia-open-dkms nvidia-open cuda
 
 
 
 == Kernel
 
-Como o Arch Linux sempre disponibiliza o último kernel LTS nos repo, precisamos baixar de um mirror
-específico, pra isso vamos usar as seguintes comandos:
+Você precisa instalar o headers do kernel. Aqui estou instalando dois kernels, o principal e o LTS.
+No momento usando o kernel 6.19, e a compatibilidade funcional perfeito:
 
->> pacman -U https://archive.archlinux.org/packages/l/linux-lts/linux-lts-6.12.75-1-x86_64.pkg.tar.zst --overwrite '*'
->> pacman -U https://archive.archlinux.org/packages/l/linux-lts/linux-lts-headers-6.12.75-1-x86_64.pkg.tar.zst --overwrite '*'
+>> pacman -S linux linux-headers linux-lts linux-headers-lts
 
-Após instalar você DEVE reiniciar a máquina para iniciar com o novo kernel 6.12 LTS.
-
-Já no novo kernel, você pode remover outros kernels que tiver com os comando abaixo:
-
->> pacman -Rs linux linux-headers linux-zen linux-zen-headers
+Após instalar você DEVE reiniciar a máquina para iniciar com o novo kernel 6.19 LTS.
 
 
 
 == NVidia
 
-Como dito antes, a melhor versão é a 575, porem vamos usar a versão dkms.
-
 Já tem essa versão disponível no AUR do Arch Linux, então só precisamos executar esses comandos
 para instalar tudo que a GTX 750 Ti precisa:
 
->>> yay -S opencl-nvidia-575xx lib32-nvidia-575xx-utils nvidia-575xx-dkms nvidia-575xx-utils nvidia-settings --overwrite '*'
+>>>  yay -S nvidia-580xx-dkms nvidia-580xx-utils nvidia-580xx-settings --overwrite '*'
 
 Nota: Depois de instalar, você pode também adicionar esses pacotes no IgnorePkg para tentar evitar
       alguma incompatibilidade caso os mesmo sejam atualizados.
@@ -82,6 +82,7 @@ Agora vamos as configurações,. Crie o /etc/modprobe.d/nvidia.conf caso não ex
 configurações nele:
 
 # --------------------------------------------------------------------------------------------------
+options nvidia-drm modeset=1
 options nvidia NVreg_EnableGpuFirmware=0
 options nvidia NVreg_TemporaryFilePath=/var/tmp
 # --------------------------------------------------------------------------------------------------
@@ -94,31 +95,22 @@ options nvidia NVreg_TemporaryFilePath=/var/tmp
   do sistema, o que é mais rápido e estável para placas de 2GB.
 
 
+Faça o bloqueio dos drivers open source da NVidia (nouveau) com os comandos:
+
+>>> echo "blacklist nouveau" | sudo tee /etc/modprobe.d/nouveau_blacklist.conf
+>>> echo "options nouveau modeset=0" | sudo tee -a /etc/modprobe.d/nouveau_blacklist.conf
+
+
 
 == Systemd-Boot
 
 Se estiver usando o sistema de bootloader systemd-boot, no /etc/kernel/cmdline, deixe assim:
 
 # --------------------------------------------------------------------------------------------------
-root=UUID=xxx rw loglevel=3 nvidia_drm.modeset=1 nvidia_drm.fbdev=0 fbcon=nodefer nvidia.NVreg_PreserveVideoMemoryAllocations=1 module_blacklist=nouveau video=1920x1080@75
+root=UUID=xxxxxxxxxxxxxxxxxxxxxxx rw loglevel=3
 # --------------------------------------------------------------------------------------------------
 
-- nvidia_drm.modeset=1: (Direct Rendering Manager), permite que o driver NVIDIA controle a
-  resolução, profundidade de cor e taxa de atualização da tela desde o início do boot.
-
-- nvidia_drm.fbdev=0: Desativa a criação de um dispositivo de framebuffer (/dev/fb0) pelo driver
-  proprietário da NVIDIA. Evita conflitos visuais e instabilidades no console de texto (TTY) durante
-  o boot.
-
-- fbcon=nodefer: Impede que o kernel adie (defer) a inicialização do console de framebuffer.
-  Força a renderização imediata do texto assim que o driver de vídeo é carregado. Garante que o
-  console de texto esteja pronto e estável antes que o sistema tente desenhar elementos interativos,
-  como o `systemd-ask-password`
-
-- nvidia.NVreg_PreserveVideoMemoryAllocations=1: Ideal para Wayland junto com os serviços
-  habilitados acima.
-
-- module_blacklist=nouveau: Impede que drivers open source da NVidia (nouveau) sejam carregados.
+Ou seja, não precisa de parâmetro algum.
 
 
 
@@ -127,8 +119,8 @@ root=UUID=xxx rw loglevel=3 nvidia_drm.modeset=1 nvidia_drm.fbdev=0 fbcon=nodefe
 Abra o /etc/mkinitcpio.conf e deixa assim as configurações:
 
 # --------------------------------------------------------------------------------------------------
-MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm xhci_hcd ehci_hcd uhci_hcd usbhid hid_generic)
-HOOKS=(base systemd autodetect modconf keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)
+MODULES=()
+HOOKS=(base systemd autodetect kms modconf keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)
 COMPRESSION="zstd"
 FIRMWARE=()
 # --------------------------------------------------------------------------------------------------
@@ -141,20 +133,8 @@ Nota: Sempre que editar o /etc/kernel/cmdline, no caso de uso de UKI, o comando 
       deve ser executado para embutir a nova linha de comando dentro do executável .efi.
 
 
+Reinicie a máquina
 
-== Variáveis de Ambiente (Desempenho no GNOME) - opcional
-
-Para garantir que o GNOME force o uso correto da aceleração por hardware e o Explicit Sync,
-podemos criar (ou editar) o arquivo /etc/environment e adicionar:
-
-# --------------------------------------------------------------------------------------------------
-# Força o uso do backend GBM (padrão no GNOME novo, mas bom garantir)
-GBM_BACKEND=nvidia-drm
-__GLX_VENDOR_LIBRARY_NAME=nvidia
-
-# Melhora a sincronização em apps que usam XWayland
-DISPLAY=:0
-# --------------------------------------------------------------------------------------------------
 
 
 Fim
