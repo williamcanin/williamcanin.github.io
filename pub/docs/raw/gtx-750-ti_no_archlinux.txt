@@ -21,9 +21,9 @@ nvidia-580xx-dkms — e por ser dkms não precisamos fazer nada após atualizar 
 
 
 
-Driver NVidia	  | Suporte Kernel 6.12+ |  Compatível com GTX 750 Ti	| Observação
-|---------------|----------------------|----------------------------|--------------------------------|
-| 580	          |       Sim	           |          Sim	              | Ótimo desempenho e longo prazo |
+| Driver NVidia	| Suporte Kernel 6.12+ |  Compatível com GTX 750 Ti	| Observação                     |
+|---------------|----------------------|--------------------------------|--------------------------------|
+| 580	        |       Sim	       |          Sim	                | Ótimo desempenho e longo prazo |
 
 
 
