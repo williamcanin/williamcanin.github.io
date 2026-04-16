@@ -60,7 +60,7 @@ Para me adicionar no XMPP, use minhas credenciais abaixo:
 
 Se você quiser que nossa conversa seja criptografada, minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/docs/key/public.asc), onde a impressão digital da mesma é:
 
-**C76C C40D 0A2E C536 1DB0 6C09 372D 31D3 1AF6 49A0**
+**D184 1B51 1196 2DF1 EA31  249F 3B2A 7830 46E0 6762**
 
 
 {%- include enddetails -%}
