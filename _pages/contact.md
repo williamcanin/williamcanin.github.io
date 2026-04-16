@@ -27,11 +27,11 @@ Este tipo de criptografia uso com e-mail.
 
 Se desejar entrar em contato com e-mail criptografado com OpenPGP (recomendo usar o [**Thunderbird**](https://www.thunderbird.net/pt-BR/){:target="_blank"} que tem suporte a OpenPGP), envie o e-mail para:
 
-**talk.williamcanin@gmail.com**
+**hello.williamcanin@gmail.com**
 
 ...usando minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/docs/key/public.asc), onde a impressão digital da mesma é:
 
-**C76C C40D 0A2E C536 1DB0 6C09 372D 31D3 1AF6 49A0**
+**D184 1B51 1196 2DF1 EA31  249F 3B2A 7830 46E0 6762**
 <!-- https://keys.openpgp.org -->
 
 > Não esqueça de me enviar sua chave PGP **pública** também atráves do e-mail (ou antes) para eu descriptografar o e-mail :)
