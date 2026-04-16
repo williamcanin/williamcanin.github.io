@@ -22,7 +22,7 @@ em desenvolvimento e manutenção.
 
 »&nbsp; [**SeedCTL**](https://evolvbits.github.io/seedctl/){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
 
-»&nbsp; [**sTrash**](https://evolvbits.github.io/strash/){:target="_blank"} — Exclua arquivos e lixos eletrônico com segurança. Sem recuperação. Sem deixar rastros.
+<!-- »&nbsp; [**ashen**](https://evolvbits.github.io/ashen/){:target="_blank"} — Transforme dados sensíveis em cinzas. Sem recuperação. Sem deixar rastros. -->
 
 »&nbsp;[**shred-extension-rs**](https://github.com/williamcanin/shred-extension-rs){:target="_blank"} — Uma extensão ultraleve para excluir arquivos de forma segura para os gerenciadores de arquivos Nautilus e Thunar.
 
