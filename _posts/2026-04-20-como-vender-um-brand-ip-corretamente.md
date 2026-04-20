@@ -2,7 +2,7 @@
 layout: post
 author: William C. Canin
 title: "Como vender um Brand IP corretamente"
-description: "Por que vender uma marca não é vender um logo — e como precificar isso como um ativo empresarial."
+description: "A história de quando eu descobri que não tinha criado “um logo” — tinha criado a base de uma empresa"
 date: 2026-04-20 18:22:11 -0300
 update_date: 
 comments: true
@@ -10,50 +10,90 @@ tags: ["brand", "marca", "brand IP", "logo"]
 ---
 
 
-> Por que vender uma marca não é vender um logo — e como precificar isso como um ativo empresarial.
-> Nota: Os valores mostrados são de acordo com a época desta postagem.
+# Como vender um **Brand IP** corretamente
+
+> A história de quando eu descobri que não tinha criado “um logo” — tinha criado a base de uma empresa.
 
 ---
 
-## Introdução
+## A conversa que muda tudo
 
-Muita gente acha que criou “apenas um logo”.
+Alguém me procurou dizendo que queria **comprar a marca** que eu tinha criado.
 
-Mas quando alguém quer comprar sua marca para transformar em uma empresa, o que está em jogo é **propriedade intelectual de marca (Brand IP)** — um ativo que pode sustentar marketing, produto, cultura e valor de mercado por anos.
+Minha primeira reação foi a mais comum possível:
 
-Este guia mostra como **entender, posicionar e precificar** corretamente esse tipo de venda.
+> “Quanto será que eu cobro por isso?”
 
----
+E imediatamente veio o pensamento errado:
 
-## O que é Brand IP (na prática)
+> “É só um logo… talvez alguns milhares de dólares?”
 
-Brand IP não é design. É o **conjunto de ativos intangíveis** que tornam uma marca utilizável como base de um negócio:
+Foi aí que eu percebi o erro.
 
-* Nome
-* Identidade visual
-* Conceito e narrativa
-* Personalidade e posicionamento
-* Autoridade criativa original
-* Direito exclusivo de uso comercial
-* Base estratégica para marketing e produto
+Eles não queriam um desenho.
 
-Quando alguém compra isso, está comprando a **fundação de uma empresa**.
+Eles queriam transformar aquilo em **empresa**.
+
+E isso muda absolutamente tudo.
 
 ---
 
-## Por que isso vale muito mais do que um “trabalho de design”
+## O momento do clique
 
-Um designer entrega peças.
+Quando alguém quer usar sua marca para fundar um negócio, o que está sendo comprado não é design.
 
-Quem cria um Brand IP entrega:
+É a **propriedade intelectual completa da marca**.
 
-> Um ativo que pode gerar milhões em valor futuro.
+É o nome.
+É a identidade.
+É o conceito.
+É a personalidade.
+É a narrativa.
+É a autoridade criativa original.
 
-Depois que a empresa nasce, trocar a marca é caro, arriscado e, muitas vezes, inviável. Por isso, o valor está na **origem**.
+É a fundação sobre a qual marketing, produto, cultura e valor de mercado serão construídos.
+
+Nesse momento, você para de ser “o designer”.
+
+Você passa a ser o **criador de um ativo empresarial**.
 
 ---
 
-## Referência real de mercado (EUA / Europa)
+## Por que isso vale muito mais do que parece
+
+Depois que a empresa nasce, trocar a marca é caro, arriscado e, muitas vezes, impossível.
+
+A marca vira parte do valor da empresa.
+
+E tudo isso começa com algo que **você criou do zero**.
+
+Percebe a diferença?
+
+Você não está vendendo horas de trabalho.
+
+Você está vendendo a origem de um ativo que pode valer milhões no futuro.
+
+---
+
+## O erro que quase todo mundo comete
+
+A maioria das pessoas precifica isso como freelancer:
+
+* “Quanto tempo levei?”
+* “Quanto cobro por hora?”
+* “Quanto custa um logo?”
+
+Essas perguntas não fazem mais sentido aqui.
+
+A pergunta correta é:
+
+> Quanto vale a base de uma empresa?
+
+---
+
+## Referências reais de mercado
+
+Quando você começa a olhar como isso é tratado fora do contexto de freelancer, os números mudam:
 
 | Escopo                                        |             Faixa comum |
 | --------------------------------------------- | ----------------------: |
@@ -62,92 +102,110 @@ Depois que a empresa nasce, trocar a marca é caro, arriscado e, muitas vezes, i
 | Brand que vira empresa                        | **US$ 25.000 – 80.000** |
 | Brand muito único / estratégico               |         **US$ 80.000+** |
 
-Esses valores refletem **cessão de propriedade intelectual**, não horas de trabalho.
+> Nota: Os valores são de acordo com a época desta postagem.
+
+Isso não é sobre design.
+
+Isso é sobre **cessão de propriedade intelectual**.
 
 ---
 
-## A regra de ouro
+## A frase que muda a negociação
 
-Se a marca vai virar empresa:
-
-> **Nunca venda por menos de US$ 20.000**.
-
-Abaixo disso é preço de execução, não de criação de ativo.
-
----
-
-## Como posicionar a conversa (isso muda tudo)
-
-Não fale de logo. Não fale de design.
-
-Fale assim:
+Em vez de falar de logo, a conversa passa a ser assim:
 
 > “Estou cedendo a propriedade intelectual completa da marca, criada originalmente por mim, para uso exclusivo comercial, incluindo nome, identidade visual, conceito e base estratégica para a empresa.”
 
-Isso muda a percepção instantaneamente.
+A percepção muda na hora.
+
+Você sai do papel de fornecedor.
+
+Você entra no papel de criador do ativo.
 
 ---
 
-## Estratégia profissional de proposta
+## A regra que eu aprendi
 
-Ofereça duas opções:
+Se a marca vai virar empresa:
+
+> Nunca venda por menos de **US$ 20.000**.
+
+Abaixo disso, você está precificando execução.
+
+Não criação de ativo.
+
+---
+
+## A proposta inteligente
+
+Existe uma forma ainda mais profissional de apresentar isso.
+
+Duas opções.
 
 ### Opção A — Venda total
 
-* US$ 35.000
+* `US$ 35.000`
 
 ### Opção B — Licenciamento + participação
 
-* US$ 15.000
+* `US$ 15.000`
 * * 2% de participação societária
 
-Muitos preferem a segunda. E ela pode valer muito mais no futuro.
+Muita gente prefere a segunda.
+
+E, no longo prazo, ela pode valer muito mais.
 
 ---
 
-## Sinais de que você está pedindo pouco
+## Como saber se você pediu pouco
 
-* Aceitam o valor sem negociar
+Sinais clássicos:
+
+* Aceitam o valor imediatamente
 * Respondem muito rápido
-* Dizem “achamos justo” imediatamente
+* Dizem “achamos justo” sem discutir
 
-Isso geralmente indica que você subprecificou.
-
----
-
-## Erros comuns
-
-* Cobrar como freelancer
-* Justificar por horas trabalhadas
-* Falar demais de estética
-* Não formalizar cessão de direitos
+Isso quase sempre significa que você subprecificou.
 
 ---
 
-## Checklist antes de fechar
+## O checklist que ninguém fala
 
-* Definir se é cessão total ou licença
-* Especificar uso comercial exclusivo
-* Incluir nome, identidade, conceito e variações
-* Definir território (global)
-* Definir prazo (perpétuo, se for venda)
-* Assinar contrato de cessão de direitos autorais
+Antes de fechar, deixe claro no contrato:
+
+* Se é cessão total ou licença
+* Uso comercial exclusivo
+* Inclusão de nome, identidade, conceito e variações
+* Território global
+* Prazo perpétuo (se for venda)
+* Contrato formal de cessão de direitos autorais
 
 ---
 
-## Modelo de mensagem para enviar
+## O que eu gostaria que tivessem me dito antes
 
-> “Para cessão integral e exclusiva da propriedade intelectual da marca para uso empresarial, o valor é US$ 35.000. Posso também oferecer uma alternativa com valor reduzido atrelado a participação societária.”
+Você não criou um logo.
 
-Curto. Profissional. Objetivo.
+Você criou algo que pode se tornar a cara, a voz e o valor de uma empresa inteira.
+
+E isso não se vende como serviço.
+
+Se negocia como investimento.
+
+---
+
+## Mensagem pronta para enviar
+
+> “Para cessão integral e exclusiva da propriedade intelectual da marca para uso empresarial, o valor é `US$ 35.000`. Posso também oferecer uma alternativa com valor reduzido atrelado a participação societária.”
+
+Curto. Profissional. Posicionamento correto.
 
 ---
 
 ## Conclusão
 
-Você não criou um desenho.
+O dia que alguém quiser comprar sua marca para virar empresa, lembre disso:
 
-Você criou um **ativo empresarial**.
+Você deixou de ser o designer.
 
-E ativos empresariais não são precificados como serviços — são negociados como investimento.
-
+Você virou o dono da origem de um ativo empresarial.
