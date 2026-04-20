@@ -11,6 +11,7 @@ tags: ["brand", "marca", "brand IP", "logo"]
 
 
 > Por que vender uma marca não é vender um logo — e como precificar isso como um ativo empresarial.
+> Nota: Os valores mostrados são de acordo com a época desta postagem.
 
 ---
 
