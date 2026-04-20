@@ -12,93 +12,213 @@ comments: true
 tags: [dd,linux,iso,pendrive]
 ---
 
-Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou aquele outro sistema operacioal no qual necessita de boot. Vamos aprenda a fazer isso no Linux com um comando poderoso. :wink:
 
-Já cansou de comprar CDs e DVDs para gravar aquela imagem ISO de um sistema operacional ou qualquer outro programa que necessite iniciar no boot de sua máquina? Creio que a resposta é Sim, e por isso existe programas para fazer um pendrive bootavel. Mas o que recém usuários Linux não sabem, é de um certo "malandro" que vem por padrão na maioria das distros, que pode fazer essa tarefa para você com uma simples linha de comando no terminal sem precisar instalar programas. Estou falando do camarada chamado **dd**. Com este brother aí, você pode fazer inúmeras manipulações com imagem ISO e com unidades, porém, irei demonstrar como gravar uma imagem ISO no pendrive e o mesmo funcionar no boot de sua máquina(caso a imagem ISO seja bootavel). Separei 5 etapas importantes para fazer um pendrive bootavel. Siga abaixo:
+# Gravando uma ISO no pendrive com `dd` (forma correta, rápida e segura)
+
+Esqueça CDs, DVDs e até muitos programas gráficos. No Linux, você já tem uma ferramenta poderosa instalada por padrão que faz isso de forma direta, confiável e muito mais rápida: **`dd`**.
+
+Este guia mostra a **maneira correta** de gravar uma imagem ISO em um pendrive para que ele seja inicializável (bootável), explicando as *flags* que realmente fazem diferença — inclusive as que quase nenhum tutorial comenta.
+
+---
+
+## ⚠️ Antes de começar (leia isso!)
+
+- **Todo o conteúdo do pendrive será apagado.** Faça backup se necessário.
+- Você **não precisa formatar** o pendrive antes. A ISO já contém tabela de partições e sistema de arquivos próprios.
+- Um erro no dispositivo (`/dev/sdX`) pode apagar seu HD. **Confirme com cuidado.**
+
+{% include details summary="Se você já viu tutoriais mandando usar `mkfs` antes: isso é desnecessário para ISOs bootáveis e pode até atrapalhar." %}
+
+Uma ISO bootável moderna **não é um “arquivo para copiar dentro de um pendrive”** — ela já é **uma imagem completa de disco**.
+
+Ferramentas como `dd` não “copiam arquivos”. Elas **clonam byte a byte** a estrutura que já está dentro da ISO para o dispositivo.
+
+Muitas ISOs (como a do Arch Linux, Ubuntu, Debian, Fedora) são do tipo **isohybrid**. Isso significa que a ISO já contém:
+
+- Tabela de partições (MBR e/ou GPT)
+- Sistema de arquivos (geralmente ISO9660 + El Torito + às vezes FAT para UEFI)
+- Estrutura de boot BIOS e UEFI
+- Layout exato de setores que o firmware espera
+
+Quando você roda `mkfs` antes, você escreve **outra** tabela de partições e **outro** sistema de arquivos no pendrive.
+
+**O que acontece então?**
+
+1 - `mkfs` grava:
+
+  - Nova tabela de partições
+  - Novo filesystem (FAT, por exemplo)
+
+2 - Depois o `dd` grava a ISO por cima, setor a setor.
+
+O resultado é:
+
+* A ISO **destrói** o que o `mkfs` fez
+* Mas o kernel, o udisks, e até o firmware podem ter **metadados em cache** daquela formatação anterior
+* Isso pode gerar:
+  - Pendrive que “some” depois da gravação
+  - Tabela de partições “*fantasma*” aparecendo no `lsblk`
+  - Mensagens tipo “*device contains a valid partition table*” conflitantes
+  - Sistemas que se recusam a montar depois
+  - UEFI não reconhecendo corretamente em alguns firmwares mais chatos
+
+Ou seja: você cria **lixo estrutural temporário** que a ISO vai sobrescrever logo depois — mas o sistema já “viu” aquilo.
+
+**O ponto principal**
+
+`mkfs` é para preparar um dispositivo para armazenar arquivos.
+
+`dd` com ISO é para transformar o dispositivo **na própria mídia original**.
+
+São objetivos opostos.
+
+É como:
+
+> formatar um HD para depois clonar uma imagem de outro HD por cima — a formatação não só é inútil, como pode confundir ferramentas do sistema.
+
+Regra prática
+
+* Vai usar pendrive como armazenamento? → `mkfs`
+* Vai transformar pendrive em mídia de instalação? → NUNCA `mkfs`
+
+{% include enddetails %}
 
 
-* 1 - **Backup**
-Primeiramente você tem que realizar um backup de seu pendrive caso tenha algo importante nele, pois ele terá que passar por uma formatação. Guarde tudo de importante pra você!
+---
 
-* 2 - **Requisitos**
-Após realizar o backup de suas coisas, temos que verificar os programas que iremos utilizar, e esses são o **mkfs**(para a formatação do pendrive) e o **dd**(para a gravação da imagem ISO). Para verificar se os mesmo estão instalados na sua distro, use os seguintes comandos:
+## 1) Descobrir qual é o dispositivo do pendrive
+
+Conecte o pendrive e rode:
 
 ```bash
-mkfs --version
+lsblk
 ```
 
-e
+Você verá algo assim:
+
+```
+sda      500G
+└─sda1
+sdd       16G
+└─sdd1
+```
+
+O pendrive costuma ser o menor dispositivo. No exemplo acima, é o **`/dev/sdd`**.
+
+> Use sempre o **dispositivo inteiro** (`/dev/sdd`), **não** a partição (`/dev/sdd1`).
+
+---
+
+## 2) Desmontar o pendrive
+
+Se o sistema montou automaticamente:
 
 ```bash
-dd --version
+sudo umount /dev/sdd*
 ```
 
-> Obs: Por padrão os dos programinhas já vem na maioria das distros.
+---
 
-* 3 - **Descobrir unidade do pendrive e seu ponto de montagem**
+## 3) O comando correto com `dd`
 
-Se for realizar a formatação de qualquer dispositivo remóvel e partição no linux, o mesmo tem que estar desmontado. Se o pendrive montou e você quer saber onde ele foi montado, utilize o comando abaixo no terminal...
+Aqui está a forma recomendada:
 
 ```bash
-mount
+sudo dd if=~/Downloads/archlinux-x86_64.iso of=/dev/sdd bs=16M oflag=direct status=progress && sync
 ```
 
-... irá retornar as todas unidade montadas em sua máquina e seus respectivos pontos de montagem. Veja como retornou em minha máquina:
+Substitua `arch.iso` pelo nome da sua imagem.
 
-{% highlight bash linenos %}
- william @archlinux $
-└‣  mount
-proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
-sys on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
-dev on /dev type devtmpfs (rw,nosuid,relatime,size=1996208k,nr_inodes=499052,mode=755)
-run on /run type tmpfs (rw,nosuid,nodev,relatime,mode=755)
-/dev/sda8 on / type ext4 (rw,relatime,data=ordered)
-.
-.
-/dev/sdb on /run/media/william/sandisk type vfat (rw,nosuid,nodev,relatime,uid=1000,gid=1002,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,showexec,utf8,flush,errors=remount-ro,uhelper=udisks2)
- william @archlinux $
-└‣
-{% endhighlight %}
+---
 
-> NOTA: O comando "mount" pode retornar mais linhas, porem retirei boa parte para e deixei as principais.
+## Entendendo as flags importantes
 
-Observe que meu pendrive está montado no diretório **/run/media/william/sandisk** e que sua partição/unidade para montagem é o **/dev/sdb**. Tendo essas informações você já pode desmontar e realizar a formatação da vítima hehehe.
+### `bs=16M`
 
-* 4 - **Desmontar pendrive**
+Define o tamanho do bloco que o `dd` lê/escreve por operação.
 
-Para desmontar o querido pendrive, utilize o amigo **umount** e o ponto de montagem do pendrive que foi retornado no comando `mount`. Veja abaixo:
+- Padrão do `dd`: **512 bytes** (muito lento)
+- `16M`: escreve 16 megabytes por vez
+
+Resultado: gravação **muito mais rápida** com menos overhead do sistema.
+
+Valores entre **4M e 32M** funcionam bem. `16M` é um ótimo equilíbrio.
+
+---
+
+### `oflag=direct` (o segredo que quase ninguém usa)
+
+Sem essa flag, o Linux usa cache em RAM:
+
+```
+dd → RAM → kernel grava depois no pendrive
+```
+
+O `dd` pode terminar… mas o pendrive **ainda está sendo gravado** em segundo plano.
+
+Com `oflag=direct`:
+
+```
+dd → pendrive diretamente (sem cache)
+```
+
+Isso garante que:
+
+- A gravação é **real**
+- O progresso mostrado é verdadeiro
+- Quando termina, terminou mesmo
+
+---
+
+### `status=progress`
+
+Mostra o andamento em tempo real.
+
+---
+
+### `sync` no final
+
+Garante que qualquer dado pendente seja finalizado antes de remover o pendrive.
+
+---
+
+## O que você NÃO deve fazer (erro comum)
+
+Muitos tutoriais ensinam a **formatar o pendrive com `mkfs` antes**. Isso está **errado** para ISOs bootáveis.
+
+A ISO já possui:
+
+- Tabela de partições
+- Sistema de arquivos
+- Estrutura de boot
+
+Formatar antes é desnecessário e pode até causar problemas.
+
+---
+
+## Resumo do comando ideal
 
 ```bash
-umount /run/media/william/sandisk
+sudo dd if=imagem.iso of=/dev/sdX bs=16M oflag=direct status=progress && sync
 ```
 
-* 5 - **Formatando pendrive**
+Troque apenas:
 
-Pendrive desmontado, vem a parte da formatação utilizando o **mkfs**. Veja:
+- `imagem.iso`
+- `/dev/sdX`
+
+---
+
+## Quer saber mais?
 
 ```bash
-mkfs.vfat -I -n nome_para_o_pendrive /dev/sdb
+man dd
+dd --help
 ```
 
-Explicando:
+---
 
-> vfat: Significa que o pendrive será formatado para FAT.
-> -I: Este é um parâmetro para indicar que seu pendrive seja reconhecido para o DOS.
-> -n: Este outro parâmetro lhe da a oportunidade de colocar o nome no pendrive quando formatar.
-> /dev/sdb: É a partição/unidade do pendrive que foi descoberta no comando mount.
+Agora você pode gravar qualquer ISO bootável no pendrive **da forma correta, rápida e segura**, usando apenas o que já vem no seu Linux.
 
-* 6 - **Gravando ISO**
-Pendrive formatado, iremos gravar a imagem ISO nele com o **dd**. Para gravar algo com o **dd**, o pendrive tem que estar **DESMONTADO** e estar utilizando o usuário **root** no terminal ou usar o **sudo**.
-Suponhamos que a imagem ISO, está no diretório **Downloads**. Você pode entrar no diretório Downloads pelo terminal ou digitar o **Path** completo até chegar na imagem ISO, como eu fiz:
 
-```bash
-sudo dd if=$HOME/Downloads/imagem.iso of=/dev/sdb bs=4M status=progress
-```
-
-O atributo **if** será a verificação do **dd** para encontrar o arquivo gravável e jogar para o atributo **of**, que vai receber a unidade do pendrive, ou seja, local a ser gravado.
-
-> Nota: Dependendo do tamanho da imagem ISO e da potência de sua máquina, o processo pode ser demorado. Não se assuste, pois o **dd** não mostra (nesta forma de utilizar) o que esta sendo gravado, vai dar impressão que está travado, mas não está. No final do processo, o **dd** informa o que que foi gravado.
-
-Para saber mais sobre a documentação do **dd**, use os comandos no terminal:`man dd` e `dd --help`. Espero que você economize bastante CDs e DVDs agora ;)
-Ate a próxima! Bye :hand:
 
