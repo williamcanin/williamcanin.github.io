@@ -149,7 +149,7 @@ Duas opções.
 ### Opção B — Licenciamento + participação
 
 * `US$ 15.000`
-* * 2% de participação societária
+* 2% de participação societária
 
 Muita gente prefere a segunda.
 
