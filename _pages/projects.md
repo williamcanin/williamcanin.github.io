@@ -20,6 +20,8 @@ em desenvolvimento e manutenção.
 
 ---
 
+»&nbsp; [**Smog**](https://evolvbits.github.io/smog/){:target="_blank"} — Utilitário de higienização de dados projetado para saturar arquivos, diretórios e volumes inteiros, transformando-os em irrecuperável.
+
 »&nbsp; [**SeedCTL**](https://evolvbits.github.io/seedctl/){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
 
 <!-- »&nbsp; [**ashen**](https://evolvbits.github.io/ashen/){:target="_blank"} — Transforme dados sensíveis em cinzas. Sem recuperação. Sem deixar rastros. -->
