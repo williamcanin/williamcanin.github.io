@@ -66,7 +66,7 @@ Siga o guia de instalação correspondente ao seu sistema operacional atual (Win
 
 ## O que é o SeedCTL?
 
-[SeedCTL](https://evolvbits.github.io/seedctl/) é um gerador de wallets multichain, determinístico e focado em operação offline. Ele roda via linha de comando (CLI) e permite gerar e recuperar wallets para **10 criptomoedas** de forma auditável e transparente.
+[SeedCTL](https://github.com/orbitbits/seedctl/) é um gerador de wallets multichain, determinístico e focado em operação offline. Ele roda via linha de comando (CLI) e permite gerar e recuperar wallets para **10 criptomoedas** de forma auditável e transparente.
 
 ### Criptomoedas suportadas
 
@@ -98,7 +98,7 @@ Siga o guia de instalação correspondente ao seu sistema operacional atual (Win
 
 1. No Tails, abra o navegador Tor Browser
 2. Acesse a página de releases do SeedCTL:  
-   👉 [https://github.com/evolvbits/seedctl/releases](https://github.com/evolvbits/seedctl/releases)
+   👉 [https://github.com/orbitbits/seedctl/releases](https://github.com/orbitbits/seedctl/releases)
 3. Baixe o binário correspondente ao Linux x86_64 (ex: `seedctl-[VERSION]-linux-x86_64`)
 4. Salve o arquivo na sua pasta pessoal do Tails
 
@@ -150,7 +150,7 @@ Você também pode definir uma **passphrase** adicional (às vezes chamada de "2
 
 Após gerar a mnemônica, selecione a criptomoeda e o estilo de derivação desejado. O SeedCTL exibirá os paths explicitamente — anote-os junto com sua seed para garantir recuperação futura.
 
-Para detalhes sobre os paths de cada rede, consulte a [documentação oficial](https://evolvbits.github.io/seedctl/documentation/#networks).
+Para detalhes sobre os paths de cada rede, consulte a [documentação oficial](https://github.com/orbitbits/seedctl/).
 
 ---
 
@@ -194,7 +194,7 @@ O SeedCTL é determinístico: **os mesmos inputs sempre geram os mesmos outputs*
 5. O estilo e path de derivação
 6. O range de índices gerado
 
-Para detalhes completos sobre recuperação, veja o [Guia de Recuperação](https://evolvbits.github.io/seedctl/documentation/#recovery) e a seção de [Reprodutibilidade](https://evolvbits.github.io/seedctl/documentation/#reproducibility) na documentação.
+Para detalhes completos sobre recuperação, veja o [Guia de Recuperação](https://github.com/orbitbits/seedctl) na documentação.
 
 ---
 
@@ -213,7 +213,7 @@ Para detalhes completos sobre recuperação, veja o [Guia de Recuperação](http
 
 Combinar o **Tails OS** com o **SeedCTL** é uma das abordagens mais sólidas disponíveis hoje para quem deseja gerar wallets de criptomoedas com segurança real. O Tails garante um ambiente limpo e sem rastros, enquanto o SeedCTL oferece derivação determinística, auditável e completamente offline.
 
-Para explorar todos os recursos e detalhes técnicos do SeedCTL, acesse a [documentação completa](https://evolvbits.github.io/seedctl/documentation/).
+Para explorar todos os recursos e detalhes técnicos do SeedCTL, acesse a [documentação completa](https://github.com/orbitbits/seedctl/).
 
 ---
 
