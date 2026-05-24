@@ -23,7 +23,7 @@ commit:
 		echo "Nothing to commit"; \
 	fi
 
-push:
+push: commit
 	@echo "Push normal"
 	@git push origin $(BRANCH)
 # 	@git push hdd $(BRANCH)
