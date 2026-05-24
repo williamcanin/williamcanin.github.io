@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-05-06T16:23:05+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Como vender um Brand IP corretamente</title><link href="https://williamcanin.github.io/blog/como-vender-um-brand-ip-corretamente/" rel="alternate" type="text/html" title="Como vender um Brand IP corretamente" /><published>2026-04-20T21:22:11+00:00</published><updated>2026-04-20T21:22:11+00:00</updated><id>https://williamcanin.github.io/blog/como-vender-um-brand-ip-corretamente</id><content type="html" xml:base="https://williamcanin.github.io/blog/como-vender-um-brand-ip-corretamente/"><![CDATA[<h1 id="como-vender-um-brand-ip-corretamente">Como vender um <strong>Brand IP</strong> corretamente</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://williamcanin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://williamcanin.github.io/" rel="alternate" type="text/html" /><updated>2026-05-24T03:59:57+00:00</updated><id>https://williamcanin.github.io/feed.xml</id><entry><title type="html">Como vender um Brand IP corretamente</title><link href="https://williamcanin.github.io/blog/como-vender-um-brand-ip-corretamente/" rel="alternate" type="text/html" title="Como vender um Brand IP corretamente" /><published>2026-04-20T21:22:11+00:00</published><updated>2026-04-20T21:22:11+00:00</updated><id>https://williamcanin.github.io/blog/como-vender-um-brand-ip-corretamente</id><content type="html" xml:base="https://williamcanin.github.io/blog/como-vender-um-brand-ip-corretamente/"><![CDATA[<h1 id="como-vender-um-brand-ip-corretamente">Como vender um <strong>Brand IP</strong> corretamente</h1>
 
 <blockquote>
   <p>A história de quando eu descobri que não tinha criado “um logo” — tinha criado a base de uma empresa.</p>
@@ -311,7 +311,7 @@
 
 <h2 id="o-que-é-o-seedctl">O que é o SeedCTL?</h2>
 
-<p><a href="https://evolvbits.github.io/seedctl/">SeedCTL</a> é um gerador de wallets multichain, determinístico e focado em operação offline. Ele roda via linha de comando (CLI) e permite gerar e recuperar wallets para <strong>10 criptomoedas</strong> de forma auditável e transparente.</p>
+<p><a href="https://github.com/orbitbits/seedctl/">SeedCTL</a> é um gerador de wallets multichain, determinístico e focado em operação offline. Ele roda via linha de comando (CLI) e permite gerar e recuperar wallets para <strong>10 criptomoedas</strong> de forma auditável e transparente.</p>
 
 <h3 id="criptomoedas-suportadas">Criptomoedas suportadas</h3>
 
@@ -386,7 +386,7 @@
 <ol>
   <li>No Tails, abra o navegador Tor Browser</li>
   <li>Acesse a página de releases do SeedCTL:<br />
-👉 <a href="https://github.com/evolvbits/seedctl/releases">https://github.com/evolvbits/seedctl/releases</a></li>
+👉 <a href="https://github.com/orbitbits/seedctl/releases">https://github.com/orbitbits/seedctl/releases</a></li>
   <li>Baixe o binário correspondente ao Linux x86_64 (ex: <code class="language-plaintext highlighter-rouge">seedctl-[VERSION]-linux-x86_64</code>)</li>
   <li>Salve o arquivo na sua pasta pessoal do Tails</li>
 </ol>
@@ -446,7 +446,7 @@ Combina sua sequência de dados com a entropia do sistema (RNG). Recomendado par
 
 <p>Após gerar a mnemônica, selecione a criptomoeda e o estilo de derivação desejado. O SeedCTL exibirá os paths explicitamente — anote-os junto com sua seed para garantir recuperação futura.</p>
 
-<p>Para detalhes sobre os paths de cada rede, consulte a <a href="https://evolvbits.github.io/seedctl/documentation/#networks">documentação oficial</a>.</p>
+<p>Para detalhes sobre os paths de cada rede, consulte a <a href="https://github.com/orbitbits/seedctl/">documentação oficial</a>.</p>
 
 <hr />
 
@@ -522,7 +522,7 @@ Combina sua sequência de dados com a entropia do sistema (RNG). Recomendado par
   <li>O range de índices gerado</li>
 </ol>
 
-<p>Para detalhes completos sobre recuperação, veja o <a href="https://evolvbits.github.io/seedctl/documentation/#recovery">Guia de Recuperação</a> e a seção de <a href="https://evolvbits.github.io/seedctl/documentation/#reproducibility">Reprodutibilidade</a> na documentação.</p>
+<p>Para detalhes completos sobre recuperação, veja o <a href="https://github.com/orbitbits/seedctl">Guia de Recuperação</a> na documentação.</p>
 
 <hr />
 
@@ -543,7 +543,7 @@ Combina sua sequência de dados com a entropia do sistema (RNG). Recomendado par
 
 <p>Combinar o <strong>Tails OS</strong> com o <strong>SeedCTL</strong> é uma das abordagens mais sólidas disponíveis hoje para quem deseja gerar wallets de criptomoedas com segurança real. O Tails garante um ambiente limpo e sem rastros, enquanto o SeedCTL oferece derivação determinística, auditável e completamente offline.</p>
 
-<p>Para explorar todos os recursos e detalhes técnicos do SeedCTL, acesse a <a href="https://evolvbits.github.io/seedctl/documentation/">documentação completa</a>.</p>
+<p>Para explorar todos os recursos e detalhes técnicos do SeedCTL, acesse a <a href="https://github.com/orbitbits/seedctl/">documentação completa</a>.</p>
 
 <hr />
 
