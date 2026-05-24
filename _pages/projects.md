@@ -20,11 +20,11 @@ em desenvolvimento e manutenção.
 
 ---
 
-»&nbsp; [**Smog**](https://evolvbits.github.io/smog/){:target="_blank"} — Utilitário de higienização de dados projetado para saturar arquivos, diretórios e volumes inteiros, transformando-os em irrecuperável.
+»&nbsp; [**Smog**](https://github.com/orbitbits/smog/){:target="_blank"} — Utilitário de higienização de dados projetado para saturar arquivos, diretórios e volumes inteiros, transformando-os em irrecuperável.
 
-»&nbsp; [**SeedCTL**](https://evolvbits.github.io/seedctl/){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
+»&nbsp; [**SeedCTL**](https://github.com/orbitbits/seedctl/){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
 
-<!-- »&nbsp; [**ashen**](https://evolvbits.github.io/ashen/){:target="_blank"} — Transforme dados sensíveis em cinzas. Sem recuperação. Sem deixar rastros. -->
+<!-- »&nbsp; [**Tilder**](github.com/orbitbits/tilder/){:target="_blank"} — Gerenciador seus arquivos e diretórios HOME com links simbólicos e Git. -->
 
 »&nbsp;[**shred-extension-rs**](https://github.com/williamcanin/shred-extension-rs){:target="_blank"} — Uma extensão ultraleve para excluir arquivos de forma segura para os gerenciadores de arquivos Nautilus e Thunar.
 
