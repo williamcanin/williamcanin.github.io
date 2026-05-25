@@ -11,7 +11,7 @@
 >>> hwclock --systohc
 
 
-------------------------------------------------------------
+------------------------------------------------------------ 
 :: Partitioning storage for the system (IMPORTANT! Use GPT)
 ------------------------------------------------------------
 
@@ -20,6 +20,17 @@
 | /dev/sda1   | 2G      | EFI System          | /boot     |
 | /dev/sda2   | 120G    | Linux LVM           |           |
 | /dev/sdb1   | 1T      | Linux filesystems   | /home     |
+
+
+-----------------------------------------------------------------------
+:: Clean the installation partition completely before any installation
+-----------------------------------------------------------------------
+
+>>> umount -R /mnt 2>/dev/null
+>>> swapoff -a
+>>> wipefs -af /dev/sda
+>>> sgdisk --zap-all /dev/sda
+>>> partprobe /dev/sda
 
 
 --------------------------
@@ -124,8 +135,7 @@
 
 >>> vim /etc/pacman.conf
 
-IgnorePkg  = linux-lts linux linux-zen linux-headers linux-zen-headers linux-lts-headers
-nvidia-utils nvidia-settings nvidia lib32-nvidia cuda
+IgnorePkg  = linux linux-headers nvidia-utils nvidia-settings nvidia lib32-nvidia cuda
 
 [multilib]
 Include = /etc/pacman.d/mirrorlist
@@ -184,29 +194,25 @@ editor no
 EOF
 
 >>> cat << EOF > /etc/kernel/cmdline
-root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw loglevel=3 nvidia_drm.modeset=1 nvidia_drm.fbdev=0 fbcon=nodefer nvidia.NVreg_PreserveVideoMemoryAllocations=1 module_blacklist=nouveau video=1920x1080@75
+root=UUID=$(blkid -s UUID -o value /dev/mapper/linux-arch) rw loglevel=3 systemd.zram=0 nvidia_drm.modeset=1 nvidia_drm.fbdev=0 fbcon=nodefer nvidia.NVreg_PreserveVideoMemoryAllocations=1 module_blacklist=nouveau video=1920x1080@75
 EOF
 
 >>> cp /etc/mkinitcpio.d/linux-lts.preset /etc/mkinitcpio.d/linux-lts.preset.backup
 
->>> ESP_DIR=""
-
 >>> cat << EOF >  /etc/mkinitcpio.d/linux-lts.preset
-ESP_DIR="${ESP_DIR}"
-
 ALL_config="/etc/mkinitcpio.conf"
-ALL_kver="/boot/\${ESP_DIR}vmlinuz-linux-lts"
+ALL_kver="/boot/vmlinuz-linux-lts"
 ALL_cmdline="/etc/kernel/cmdline"
 PRESETS=('default' 'fallback')
 
 default_config="/etc/mkinitcpio.conf"
-default_image="/boot/\${ESP_DIR}initramfs-linux.img"
-default_uki="/boot/\${ESP_DIR}EFI/Linux/arch-linux-lts.efi"
+default_image="/boot/initramfs-linux.img"
+default_uki="/boot/EFI/Linux/arch-linux-lts.efi"
 default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
 
 fallback_config="/etc/mkinitcpio.conf"
-fallback_image="/boot/\${ESP_DIR}initramfs-linux-fallback.img"
-fallback_uki="/boot/\${ESP_DIR}EFI/Linux/arch-linux-fallback.efi"
+fallback_image="/boot/initramfs-linux-fallback.img"
+fallback_uki="/boot/EFI/Linux/arch-linux-fallback.efi"
 fallback_options="-S autodetect"
 EOF
 
@@ -221,13 +227,13 @@ EOF
 -----------------------------------------
 
 # OpenGL/Vulkan (IMPORTANT!!!)
->>> pacman -S --needed --noconfirm xorg wayland dialog mesa lib32-mesa xf86-video-vesa vulkan-icd-loader lib32-vulkan-icd-loader vulkan-tools
+>>> pacman -S --needed --noconfirm wayland dialog mesa lib32-mesa xf86-video-vesa vulkan-icd-loader lib32-vulkan-icd-loader vulkan-tools
 
 # Intel
 >>> pacman -S --needed --noconfirm mesa-vulkan-intel vulkan-intel linux-firmware-intel
 
 # NVIDIA (Nouveau)
-pacman -S --noconfirm  xf86-video-nouveau vulkan-nouveau
+>>> pacman -S --noconfirm vulkan-nouveau
 
 NOTE: If your GPU is lower than RTX, use this configuration:
 
@@ -252,21 +258,21 @@ For GTX 750 Ti GPU, use this tutorial (Pt-Br): gtx-750-ti_no_archlinux.txt
 :: Installation audio drivers / mixers
 ---------------------------------------
 
-pacman -S --needed --noconfirm pipewire wireplumer pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire lsp-plugins-lv2 mda.lv2 zam-plugins-lv2 zam-plugins-lv2 pavucontrol
+>>> pacman -S --needed --noconfirm pipewire pipewire-audio pipewire-pulse pipewire-alsa lib32-pipewire lsp-plugins-lv2 mda.lv2 zam-plugins-lv2 zam-plugins-lv2 pavucontrol
 
 
 --------------------------------------------------
 :: Installation of the desktop environment (i3)
 --------------------------------------------------
 
->>> pacman -S --needed --noconfirm i3 i3lock i3status polybar pcmanfm picom rofi nitrogen gtk-chtheme btop jq conky gsimplecal numlockx qt5ct qt6ct scrot dunst yazi xautolock imagemagick ranger lynx
+>>> pacman -S --needed --noconfirm i3 i3lock i3status polybar pcmanfm picom rofi btop jq conky gsimplecal numlockx qt5ct qt6ct scrot dunst yazi imagemagick ranger lynx
 
 
 --------------------------------------------
 :: Installing utility packages (IMPORTANT!)
 --------------------------------------------
 
->>> pacman -S --needed --noconfirm pacman-contrib util-linux dkms xdg-user-dirs ntfs-3g udisks2 dosfstools mtools cpupower reflector samba git openssh tor virtualbox-guest-utils vlc transmission-gtk gvfs gvfs-smb ttf-dejavu ttf-dejavu-nerd terminator veracrypt zip unzip xarchiver gimp inkscape make gcc go ruby perl tk python nodejs npm arch-wiki-docs arch-wiki-lite zeal qemu-full virt-manager piper steam-native-runtime firefox libreoffice-fresh libreoffice-fresh-pt-br terminator galculator leafpad calf smplayer gparted rofimoji easyeffects gnome-keyring seahorse mpv
+>>> pacman -S --needed --noconfirm pacman-contrib util-linux dkms xdg-user-dirs ntfs-3g udisks2 dosfstools mtools cpupower reflector samba git openssh tor virtualbox-guest-utils vlc transmission-gtk gvfs gvfs-smb ttf-dejavu ttf-dejavu-nerd terminator veracrypt zip unzip xarchiver gimp inkscape make gcc go ruby perl tk python nodejs npm arch-wiki-docs arch-wiki-lite zeal qemu-full virt-manager piper firefox libreoffice-fresh libreoffice-fresh-pt-br calf smplayer gparted fakeroot zsh debugedit rofimoji easyeffects gnome-keyring seahorse mpv
 
 
 --------------------
@@ -319,7 +325,7 @@ EOF
 -------------------
 
 >>> sed -i "s|# %sudo ALL=(ALL:ALL) ALL|%sudo ALL=(ALL:ALL) ALL|g" /etc/sudoers
->>> USERNAME_TEMP="will"
+>>> USERNAME_TEMP="william"
 >>> groupadd $USERNAME_TEMP
 >>> useradd -m -g $USERNAME_TEMP -G users,tty,wheel,games,power,optical,storage,scanner,lp,audio,video,input,mail,root -s /bin/zsh $USERNAME_TEMP
 >>> groupadd sudo -U $USERNAME_TEMP
