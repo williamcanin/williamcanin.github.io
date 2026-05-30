@@ -31,7 +31,10 @@ Se desejar entrar em contato com e-mail criptografado com OpenPGP (recomendo usa
 
 ...usando minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/docs/key/public.asc), onde a impressão digital da mesma é:
 
-**D184 1B51 1196 2DF1 EA31  249F 3B2A 7830 46E0 6762**
+```txt
+D184 1B51 1196 2DF1 EA31  249F 3B2A 7830 46E0 6762
+```
+
 <!-- https://keys.openpgp.org -->
 
 > Não esqueça de me enviar sua chave PGP **pública** também atráves do e-mail (ou antes) para eu descriptografar o e-mail :)
@@ -43,7 +46,11 @@ Se desejar entrar em contato com e-mail criptografado com OpenPGP (recomendo usa
 
 Para me adicionar basta copiar meu **Tox ID** e me adicionar no seu cliente Tox.
 
-**Meu Tox ID:** 7340B5F41655D29B8EA76C4A2FBD6B760B303C6220E883F45A97F209871D71204B26336F16F8
+**Meu Tox ID:** 
+
+```txt
+7340B5F41655D29B8EA76C4A2FBD6B760B303C6220E883F45A97F209871D71204B26336F16F8
+```
 
 
 ### XMPP
@@ -54,13 +61,19 @@ Você precisar instalar um cliente com suporte ao XMPP, existem vários, mas rec
 
 Para me adicionar no XMPP, use minhas credenciais abaixo:
 
-**Username**: `williamcanin@creep.im`
+**Username**: 
+
+```txt 
+williamcanin@creep.im
+```
 
 **Alias**: William Canin
 
 Se você quiser que nossa conversa seja criptografada, minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/docs/key/public.asc), onde a impressão digital da mesma é:
 
-**D184 1B51 1196 2DF1 EA31  249F 3B2A 7830 46E0 6762**
+```txt
+D184 1B51 1196 2DF1 EA31  249F 3B2A 7830 46E0 6762
+```
 
 
 {%- include enddetails -%}
