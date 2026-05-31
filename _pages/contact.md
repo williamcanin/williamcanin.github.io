@@ -7,12 +7,13 @@ description: |
 emoji: ✉️
 author: "William C. Canin"
 date:
-update_date:
+update_date: 2026-05-30 20:58:44 -0300
 in_menu: true
 reading_time: false
 published: true
 permalink: /contact/
 ---
+
 
 {%- include details summary="Contato com segurança máxima - Criptografia" -%}
 
@@ -27,12 +28,14 @@ Este tipo de criptografia uso com e-mail.
 
 Se desejar entrar em contato com e-mail criptografado com OpenPGP (recomendo usar o [**Thunderbird**](https://www.thunderbird.net/pt-BR/){:target="_blank"} que tem suporte a OpenPGP), envie o e-mail para:
 
-**hello.williamcanin@gmail.com**
+```bash
+hello.williamcanin@gmail.com
+```
 
 ...usando minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/docs/key/public.asc), onde a impressão digital da mesma é:
 
-```txt
-D184 1B51 1196 2DF1 EA31  249F 3B2A 7830 46E0 6762
+```bash
+D184 1B51 1196 2DF1 EA31 249F 3B2A 7830 46E0 6762
 ```
 
 <!-- https://keys.openpgp.org -->
@@ -48,7 +51,7 @@ Para me adicionar basta copiar meu **Tox ID** e me adicionar no seu cliente Tox.
 
 **Meu Tox ID:** 
 
-```txt
+```bash
 7340B5F41655D29B8EA76C4A2FBD6B760B303C6220E883F45A97F209871D71204B26336F16F8
 ```
 
@@ -63,7 +66,7 @@ Para me adicionar no XMPP, use minhas credenciais abaixo:
 
 **Username**: 
 
-```txt 
+```bash 
 williamcanin@creep.im
 ```
 
@@ -71,10 +74,11 @@ williamcanin@creep.im
 
 Se você quiser que nossa conversa seja criptografada, minha chave PGP pública que pode ser adquirida [**AQUI**](/pub/docs/key/public.asc), onde a impressão digital da mesma é:
 
-```txt
-D184 1B51 1196 2DF1 EA31  249F 3B2A 7830 46E0 6762
+```bash
+D184 1B51 1196 2DF1 EA31 249F 3B2A 7830 46E0 6762
 ```
 
+Até.
 
 {%- include enddetails -%}
 
