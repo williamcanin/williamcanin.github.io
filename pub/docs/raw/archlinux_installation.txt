@@ -130,6 +130,26 @@ Note: If using LVM, the "/dev/sda2" device must be of type Linux LVM.
 
 >>> ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
+>>> vim /etc/polkit-1/rules.d/10-manage-networkd.rules
+
+	polkit.addRule(function(action, subject) {
+	  // Checks if the action is to manage systemd units.
+	  if (action.id == "org.freedesktop.systemd1.manage-units") {
+	    // Allows users in the 'wheel' group (or your group) to perform actions.
+	    if (subject.isInGroup("wheel")) {
+	      // Optional: Restrict to specific units, such as systemd-networkd.
+	      if (action.lookup("unit") == "systemd-networkd.service") {
+	        // Allows actions such as 'start', 'stop', 'restart'
+	        return polkit.Result.YES;
+	      }
+	    }
+	  }
+	});
+
+>>> cat << EOF > /etc/sudoers.d/network-commands
+<YOUR_USER> ALL=(root) NOPASSWD: /sbin/ip, /bin/ip
+EOF
+
 
 ----------------------
 :: Configuring Pacman
