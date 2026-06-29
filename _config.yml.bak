@@ -13,13 +13,12 @@ plugins:
   - jekyll-archives
   - jekyll-paginate-v2
   - rawfeed
-  - jemoji
 collections:
   pixels:
     output: true
     permalink: /pixels/:title/
 pagination:
-  enabled: true
+  enabled: false
   debug: false
   collection: "posts"
   sort_field: "date"

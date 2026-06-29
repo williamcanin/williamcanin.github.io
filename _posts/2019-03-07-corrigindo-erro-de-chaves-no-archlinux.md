@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Corrigindo erro de chaves no Arch Linux"
 description: |
   Você já deve ter se deparado com problemas de chaves públicas ao instalar um pacote

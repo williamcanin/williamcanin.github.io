@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Criptografando a partição HOME no Linux"
 description: |
   Que tal esconder suas coisinhas da /home de possíveis pessoas "espertas"? Siga em frente neste post e descubra.

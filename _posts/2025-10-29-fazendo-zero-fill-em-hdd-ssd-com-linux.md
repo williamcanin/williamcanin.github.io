@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 author: "William C. Canin"
 title: "Fazendo zero fill em HDD/SSD com Linux"
 description: "Aprenda a fazer zero fill em seus HDD ou SSD usando Linux"

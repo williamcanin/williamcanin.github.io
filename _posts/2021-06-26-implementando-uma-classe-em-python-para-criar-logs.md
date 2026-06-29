@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Implementando uma classe em Python para criar logs"
 description: |
   Como criar logs utilizando Python? Talvez foi isso que você procurou na internet, e se está lendo, talvez você possa ter encontrado o que pesquisou

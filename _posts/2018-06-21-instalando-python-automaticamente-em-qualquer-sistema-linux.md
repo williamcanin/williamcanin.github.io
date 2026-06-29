@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Instalando Python tarball em qualquer sistema Linux."
 description: |
     Instale a ultima versão estável do Python tarball automaticamente em qualquer Linux com um

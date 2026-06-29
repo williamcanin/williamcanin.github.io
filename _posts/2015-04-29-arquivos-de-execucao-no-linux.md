@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Arquivos de execução no Linux"
 description: |
     Essa postagem você irá entender melhor como são os arquivos executáveis no Linux, como se cria

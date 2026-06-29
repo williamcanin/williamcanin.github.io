@@ -1,0 +1,12 @@
+# Rawfeed - Generic Page Content & Texts
+
+# section: [page]
+page:
+  toc:
+    title: "Navegação"
+  updated_on: "Página atualizada em"
+  error:
+    image: https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXlxYzc5eXp1Nm01cmtldzM5bHhwdzJ2Njk2c2E4b2RkdTBkeGs5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c20UV66B7zCWA/giphy.gif
+    title: Error 404
+    message: |
+      Parece que este conteúdo não existe ou foi removido pelo autor.

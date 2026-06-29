@@ -1,0 +1,20 @@
+{
+    "name": "Rawfeed Jekyll",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "forwardPorts": [
+        4000
+    ],
+    "postCreateCommand": "npm install",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Shopify.ruby-lsp",
+                "bierner.markdown-preview-github-styles"
+            ]
+        }
+    }
+}

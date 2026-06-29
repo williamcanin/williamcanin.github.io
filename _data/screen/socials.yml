@@ -1,0 +1,26 @@
+# section: [social network]
+# note: if you want more, just add more "title" and "url".
+socials:
+  enable: true
+  description:
+    text: |
+      Estas são as minhas redes sociais ativas:
+    terminal:
+      about:
+        description: |
+          Mais alguma coisa...? Oh sim, se você quer saber minhas redes sociais ATIVAS, apenas digite o comando "**socials**" aqui.
+      command:
+        description: |
+          Aqui estão minhas redes sociais ativas:
+  links:
+    - title: bluesky
+      url: https://williamcanin.bsky.social
+
+    - title: github
+      url: https://github.com/williamcanin
+
+    - title: gitlab
+      url: https://gitlab.com/williamcanin
+
+    - title: youtube
+      url: https://youtube.com/@WilliamCanin

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Como encurtar URL Raw do Github e ter uma url personalizada"
 description: |
   Cansado de compartilhar URL Raw do Github compridas? Lendo essa postagem você vai contornar isso.

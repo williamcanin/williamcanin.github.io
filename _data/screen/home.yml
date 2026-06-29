@@ -1,0 +1,24 @@
+# Rawfeed - Home Page Content & Texts
+
+# section: [home]
+home:
+  terminal:
+    enable: true
+    user: "root"
+    hostname: "linux"
+    signal: "#"
+    welcome: " digite 'help'"
+    error: ": comando não encontrado."
+    no_socials: "Rede sociais não encontrada"
+    help:
+      description: |
+        Use os comandos abaixo:
+      commands:
+        title: "Comandos:"
+        description: "Descrição:"
+      menu: |
+        about ------------- Um breve resumo sobre 'william'
+        socials ----------- Links para minhas redes sociais ativas.
+        clear ------------- Limpar a tela do terminal (ou pressionar Esc)
+        date -------------- Imprimir a data e a hora do sistema.
+        help -------------- Imprimir este menu

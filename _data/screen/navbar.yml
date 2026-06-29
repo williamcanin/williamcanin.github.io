@@ -1,0 +1,41 @@
+# section: [navbar]
+navbar:
+  title: Hey, I'm William!
+  description: "Thinker on hacking, digital well-being, Linux."
+  width: 860 # default: 860
+  # your website image or logo
+  avatar:
+    open: false
+    flip: true
+    # note: the image (.jpg|.png) will be searched in the directory: assets/images/
+    image:
+      front:
+        light: "/assets/images/avatars/wcanin_light.png"
+        dark: "/assets/images/avatars/wcanin_dark.png"
+      back: "/assets/images/avatars/wcanin_back.png"
+  # menu: use emoji unicode 6.0, to have greater compatibility
+  menu:
+    title: "menu"
+    # default: 🏠📝🔍🔖📰 legacy: ⌂✐⌕▮▤
+    home:
+      emoji: "🏠"
+      title: "/home"
+    blog:
+      emoji: "📝"
+      title: "weblog"
+      subtitle: "posts"
+      search:
+        emoji: "🔍"
+        title: "pesquisar"
+      tags:
+        emoji: "🔖"
+        title: "tags"
+      feed:
+        emoji: "📰"
+        title: "feed"
+    pixels:
+      emoji: "📷"
+      title: "momentos"
+    pub:
+      emoji: "📂"
+      title: "pub"

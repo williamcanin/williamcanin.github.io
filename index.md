@@ -6,7 +6,7 @@ published: true
 permalink: / # do not change
 ---
 
-**Hey, guy!**
+Hey, guy!
 
 Bem-vindo à casa de Internet de "William Canin". (Este sou eu!)
 

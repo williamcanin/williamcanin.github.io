@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Linux Boot: A start job is running for dev-disk-by"
 description: |
     Esperar hoje em dia não uma tarefa que agrada as pessoas, ainda mais se tratando de software.

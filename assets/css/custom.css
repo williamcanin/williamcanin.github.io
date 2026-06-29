@@ -5,15 +5,3 @@
 :root[data-theme="dark"] {
   --primary-color: #2cdaa0 !important;
 }
-
-/*TODO: Bug: O botão de copy não funciona dentro do details 
-  Por isso foi usado display: none para ocultar ele.
-*/
-.contact {
-  .code-block-header {
-    padding: 1em .8em;
-  }
-  .copy-btn {
-    display: none !important;
-  }
-}

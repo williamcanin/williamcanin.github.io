@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Criando pendrive bootavel no Linux com dd"
 description: |
     Não há nada mais precário que ficar comprando CD/DVD para gravar uma distribuição Linux, ou
@@ -27,7 +27,7 @@ Este guia mostra a **maneira correta** de gravar uma imagem ISO em um pendrive p
 - Você **não precisa formatar** o pendrive antes. A ISO já contém tabela de partições e sistema de arquivos próprios.
 - Um erro no dispositivo (`/dev/sdX`) pode apagar seu HD. **Confirme com cuidado.**
 
-{% include details summary="Se você já viu tutoriais mandando usar `mkfs` antes: isso é desnecessário para ISOs bootáveis e pode até atrapalhar." %}
+{% include markdown/details summary="Se você já viu tutoriais mandando usar `mkfs` antes: isso é desnecessário para ISOs bootáveis e pode até atrapalhar." %}
 
 Uma ISO bootável moderna **não é um “arquivo para copiar dentro de um pendrive”** — ela já é **uma imagem completa de disco**.
 
@@ -81,7 +81,7 @@ Regra prática
 * Vai usar pendrive como armazenamento? → `mkfs`
 * Vai transformar pendrive em mídia de instalação? → NUNCA `mkfs`
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 
 ---

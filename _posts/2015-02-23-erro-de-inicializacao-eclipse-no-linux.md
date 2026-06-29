@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Erro de inicialização no Eclipse"
 description: "Eclipse Luna - Erro de inicialização no Linux"
 author: "William Canin"

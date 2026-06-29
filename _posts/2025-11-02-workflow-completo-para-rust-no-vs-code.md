@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 author: "William C. Canin"
 title: "Workflow Completo para Rust no VS Code"
 description: "Tenha um ambiente de desenvolvimento completo para Rust no seu VS Code"

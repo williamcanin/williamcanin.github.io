@@ -1,10 +1,10 @@
 ---
-layout: post
+layout: blog/post
 author: "William C. Canin"
 title: "Downgrade e Congelamento do Arch Linux com Snapshot específico"
 description: "Faça o downgrade e congelamento do Arch Linux para sua máquina antiga"
 date: 2025-12-21 17:07:13 -0300
-update_date: 
+update_date:
 comments: false
 tags: [nvidia, archlinux]
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Transações com procedures no MySQL e Herança"
 description: |
    Chega de ficar apenas aprendendo 'create table' no banco de dados MySQL, aprenda como se criar

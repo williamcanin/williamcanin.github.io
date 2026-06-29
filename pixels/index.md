@@ -1,9 +1,9 @@
 ---
-layout: pixels
+layout: pixels/index
 author: "William C. Canin"
-title: "Pixels"
+title: "Momentos"
 description: |
-  Here is my day to day life as a photographer
+  Aqui está o meu dia a dia como fotógrafo.
 published: false
 permalink: /pixels/
 ---

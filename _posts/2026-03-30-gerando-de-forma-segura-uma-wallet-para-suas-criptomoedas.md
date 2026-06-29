@@ -1,10 +1,10 @@
 ---
-layout: post
+layout: blog/post
 author: "William C. Canin"
 title: "Gerando de forma segura uma wallet para suas criptomoedas"
 description: "Gerar sua seed universal para suas criptomoedas"
 date: 2026-03-30 23:47:53 -0300
-update_date: 
+update_date:
 comments: false
 tags: [seedctl, bitcoin, solana, ethereum, crypto, bip-39]
 ---
@@ -97,7 +97,7 @@ Siga o guia de instalação correspondente ao seu sistema operacional atual (Win
 > Neste passo, você precisará conectar brevemente à internet para baixar o binário. Após o download, desconecte novamente.
 
 1. No Tails, abra o navegador Tor Browser
-2. Acesse a página de releases do SeedCTL:  
+2. Acesse a página de releases do SeedCTL:
    👉 [https://github.com/orbitbits/seedctl/releases](https://github.com/orbitbits/seedctl/releases)
 3. Baixe o binário correspondente ao Linux x86_64 (ex: `seedctl-[VERSION]-linux-x86_64`)
 4. Salve o arquivo na sua pasta pessoal do Tails
@@ -132,10 +132,10 @@ Ao iniciar, o SeedCTL apresentará as opções:
 
 O SeedCTL oferece dois modos de entropia para geração da mnemônica:
 
-**Modo Determinístico (Dice Manual)**  
+**Modo Determinístico (Dice Manual)**
 Você insere uma sequência de dados manualmente. Nenhuma aleatoriedade do sistema é adicionada. Ideal para cerimônias auditáveis e reprodução exata futura.
 
-**Modo Híbrido**  
+**Modo Híbrido**
 Combina sua sequência de dados com a entropia do sistema (RNG). Recomendado para criar wallets novas com defesa em profundidade. Não permite replay exato.
 
 > Para a maioria dos usuários que estão criando uma wallet nova, o **modo híbrido** oferece uma boa combinação de segurança e praticidade.

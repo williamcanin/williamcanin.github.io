@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Compilando e configurando Squid"
 description: |
     Quer aprender Proxy Squid? Essa postagem irá te dar uma noção de como configurar o Squid em

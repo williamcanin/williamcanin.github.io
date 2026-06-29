@@ -1,10 +1,10 @@
 ---
-layout: post
+layout: blog/post
 author: William C. Canin
 title: "Como vender um Brand IP corretamente"
 description: "A história de quando eu descobri que não tinha criado “um logo” — tinha criado a base de uma empresa"
 date: 2026-04-20 18:22:11 -0300
-update_date: 
+update_date:
 comments: true
 tags: ["brand", "marca", "brand IP", "logo"]
 ---

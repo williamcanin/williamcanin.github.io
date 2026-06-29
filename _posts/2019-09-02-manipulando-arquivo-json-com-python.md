@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Video - Manipulando arquivo JSON com Python."
 description: |
   Esse post incluíra uma série de vídeos falando como manipular arquivo JSON com Python.
@@ -15,6 +15,6 @@ arquivo JSON com Python.
 
 Abaixo você terá acesso a playlist que criei sobre esse feito, dê uma olhada. Abraços.
 
-{% include video title="Manipulando arquivo JSON com Python" url="https://www.youtube.com/embed/videoseries?list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" %}
+{% include markdown/video title="Manipulando arquivo JSON com Python" url="https://www.youtube.com/embed/videoseries?list=PLZ6kIzk4n3uRmlJUAIwTLqMIIcgaR3uPa" %}
 
 

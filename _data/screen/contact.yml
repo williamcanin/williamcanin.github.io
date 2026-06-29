@@ -1,0 +1,31 @@
+# Rawfeed - Contact Page Content & Texts
+
+# section: [contact]
+contact:
+  name:
+    placeholder: "Seu primeiro e último nome"
+  email:
+    placeholder: "Seu melhor endereço de e-mail"
+    help: "Nunca compartilharei seu e-mail com mais ninguém."
+  message:
+    placeholder: "Escreva sua mensagem aqui"
+    status: "Enviando..."
+    characters:
+      min: 50
+      warning:
+        title: "Aviso"
+        content: "A mensagem deve ter pelo menos 50 caracteres."
+    success:
+      title: "Mensagem enviada"
+      content: "Sua mensagem foi enviada com sucesso!"
+    error:
+      title: "Erro"
+      content: "Ocorreu um erro ao enviar sua mensagem."
+  button:
+    text: "Enviar!"
+  recaptcha:
+    warning:
+      title: Aviso
+      content: "Por favor, marque a caixa 'Não sou um robô'."
+    fail: "A verificação falhou. Recarregue a página e tente novamente."
+    error: "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente."

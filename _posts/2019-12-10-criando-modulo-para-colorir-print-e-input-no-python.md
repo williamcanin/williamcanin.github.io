@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Video - Criando módulo para colorir print e input no Python"
 description: |
   Aprenda a criar um módulo para color as funções print e input no Python de forma nativa utilizando Ansi Code.
@@ -15,4 +15,4 @@ Olá, este post você irá entender um pouco do conceito de sequências de escap
 
 Acesse a playlist abaixo. Voilá!
 
-{% include video title="Criando módulo para colorir" url="https://www.youtube.com/embed/VW-UphhjJ3E?si=PPdXSrMvJHmu00S_" %}
+{% include markdown/video title="Criando módulo para colorir" url="https://www.youtube.com/embed/VW-UphhjJ3E?si=PPdXSrMvJHmu00S_" %}

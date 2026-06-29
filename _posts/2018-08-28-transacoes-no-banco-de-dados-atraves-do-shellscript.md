@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Transações no banco de dados através do Shell script"
 description: |
     O Shell Script não é só uma linguagem para fazer automatização de tarefas no seu S.O, é muito mais!

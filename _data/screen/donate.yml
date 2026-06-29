@@ -1,0 +1,52 @@
+# section: [donate]
+# Tip: use svg images for better quality (https://www.iconpacks.net)
+donate:
+  title: "Support the Project"
+  description: "If this project helps you, consider supporting it"
+  input:
+    label:
+      key: Chave
+      address: Address
+  copy_button:
+    text: Copy
+    clicked: Copied!
+  services:
+    - name: pix
+      logo: "/assets/images/donate/pix.svg"
+      description: |
+        Faça sua doação usando PIX. Use a chave abaixo.
+      address: "00b53f61-b009-4f05-8c43-444cce86af1d"
+      qrcode: "/assets/images/donate/qrcode_inter.jpg"
+
+    - name: gitHub sponsors
+      logo: "/assets/images/icons/logo-mona.svg"
+      description: |
+        If you're a developer with a GitHub account, consider donating through GitHub Sponsors.
+      address: "https://github.com/sponsors/williamcanin"
+      qrcode:
+
+    # - name: card
+    #   logo: "/assets/images/donate/card.svg"
+    #   description: |
+    #     Donation using card through the service `Buy Me a Coffee`.
+    #   address: "https://buymeacoffee.com"
+
+    - name: paypal
+      logo: "/assets/images/donate/paypal.svg"
+      description: |
+        Donate quickly and securely using your PayPal balance or linked card.
+      address: "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=YBK2HEEYG8V5W&source=&ssrt=1775261628264"
+
+    - name: bitcoin (lightning network)
+      logo: "/assets/images/donate/lightning_network.svg"
+      description: |
+        Make an anonymous Bitcoin donation using a Lightning Address.
+      address: "williamcanin@walletofsatoshi.com"
+      qrcode: "/assets/images/donate/qrcode_wos.jpg"
+
+    - name: bitcoin (on-chain)
+      logo: "/assets/images/donate/bitcoin.svg"
+      description: |
+        Make an anonymous Bitcoin donation using a On-Chain address (Binance).
+      address: "bc1qluh2mrchmtrwedspwhtta8ccgzsl9jqdr47f2p"
+      qrcode: "/assets/images/donate/qrcode_btc_binance.jpg"

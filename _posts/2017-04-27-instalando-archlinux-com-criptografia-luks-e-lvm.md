@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Instalando Arch Linux com criptografia LUKS e LVM"
 description: |
     Este post, irá lhe informar como ter uma segurança forte para proteção do seu S.O Arch Linux.
@@ -56,7 +56,7 @@ loadkeys br-abnt2
 
 Apenas conecto o cabo de rede e já tenho internet na ISO do **Arch Linux**.
 
-{% include details summary="Via Wi-Fi" %}
+{% include markdown/details summary="Via Wi-Fi" %}
 
 
 ```shell
@@ -78,7 +78,7 @@ Passphrase:
 quit
 {% endhighlight %}
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 > NOTA: Após configurar a internet, faço um `ping 8.8.8.8` para verificar.
 
@@ -123,7 +123,7 @@ em minha máquina.
 | /dev/sda2   | 120G    | Linux LVM           |         |
 | /dev/sdb1   | 1T      | Linux filesystems   | /home   |
 
-{% include details summary=">>> Informações interessantes 🤔" %}
+{% include markdown/details summary=">>> Informações interessantes 🤔" %}
 
 ## Boot
 
@@ -166,7 +166,7 @@ Tabela com a partição de boot separada em duas deve ficar assim:
 | /dev/sda3   | 120G    | Linux LVM           |           |
 | /dev/sdb1   | 1T      | Linux filesystems   | /home     |
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 Para realizar o particionamento, geralmente eu uso o `cfdisk`:
 
@@ -221,7 +221,7 @@ mkfs -t ext4 /dev/mapper/linux-arch;
 mkfs -t ext4 /dev/mapper/home;
 ```
 
-{% include details summary="Com partição de boot separada" %}
+{% include markdown/details summary="Com partição de boot separada" %}
 
 ```shell
 mkfs -t ext4 /dev/sda1;
@@ -229,7 +229,7 @@ mkfs.fat -F 32 /dev/sda2;
 mkfs -t ext4 /dev/mapper/linux-arch;
 mkfs -t ext4 /dev/mapper/home;
 ```
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 > IMPORTANTE!!! Se tenho a partição `/dev/mapper/home` com arquivos, não formato senão irei perder
 TODOS meus dados/arquivos.
@@ -248,7 +248,7 @@ sdb
   └─home    ext4        1.0                 65660251-8451-4722-adbd-ff5850c5df6d    999,7G    37% /home
 {% endhighlight %}
 
-{% include details summary="Com partição de boot separada" %}
+{% include markdown/details summary="Com partição de boot separada" %}
 
 {% highlight bash linenos %}
 NAME        FSTYPE      FSVER     LABEL     UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
@@ -263,7 +263,7 @@ sdb
   └─home    ext4        1.0                 65660251-8451-4722-adbd-ff5850c5df6d    999,7G    37% /home
 {% endhighlight %}
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 
 # Montagem das unidades
@@ -276,7 +276,7 @@ mount --mkdir /dev/sda1 /mnt/boot;
 mount --mkdir /dev/mapper/home /mnt/home;
 ```
 
-{% include details summary="Com partição de boot separada" %}
+{% include markdown/details summary="Com partição de boot separada" %}
 
 ```shell
 mount /dev/mapper/linux-arch /mnt;
@@ -284,7 +284,7 @@ mount --mkdir /dev/sda1 /mnt/boot;
 mount --mkdir /dev/sda2 /mnt/boot/efi;
 mount --mkdir /dev/mapper/home /mnt/home;
 ```
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 # Instalando o sistema base do Arch Linux
 
@@ -501,7 +501,7 @@ segurança para CPU Intel. Na AMD como CPU, instalo o `amd-code`.
 bootctl --path=/boot install
 ```
 
-{% include details summary="Com partição de boot separada" %}
+{% include markdown/details summary="Com partição de boot separada" %}
 
 Se eu instalei o sistema com a partição de boot separada, então minha instalação do bootloader
 fica assim:
@@ -509,7 +509,7 @@ fica assim:
 ```shell
 bootctl --path=/boot/efi install
 ```
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 **(3)** - Crio o loader do `systemd-boot`:
 
@@ -605,7 +605,7 @@ EOF
 pacman -S --noconfirm linux-lts
 ```
 
-{% include details summary="Usando modo tradicional (Opcional)" %}
+{% include markdown/details summary="Usando modo tradicional (Opcional)" %}
 
 Aqui a configuração do **systemd-boot** muda, em vez de usar UKI, uso os arquivos
 **vmlinuz-linux-lts**, **initramfs-linux-lts.img** e **intel-ucode.img** para iniciar o boot.
@@ -642,9 +642,9 @@ EOF
 
 > Nota: Nas entradas de boot, em `options`, vale a mesma configuração do `ALL_cmdline` do **UKI**.
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
-{% include details summary="Adicionando EFI do Windows (Opcional)" %}
+{% include markdown/details summary="Adicionando EFI do Windows (Opcional)" %}
 
 Quando quero fazer um dual-boot com **Windows** ou até mesmo usar o Windows instalado em outra
 SSD/HDD, e adicionar o mesmo no **systemd-boot**, eu faço os passos abaixo:
@@ -670,9 +670,9 @@ efi     /EFI/Microsoft/Boot/bootmgfw.efi
 EOF
 ```
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
-{% include details summary="Reinstalando o bootloader (Manutenção)" %}
+{% include markdown/details summary="Reinstalando o bootloader (Manutenção)" %}
 
 Caso eu precise reinstalar o **systemd-boot** após um update ou reinstalação de outro
 sistema operacional, sigo as etapas abaixo após entrar na ISO do **Arch Linux**:
@@ -691,7 +691,7 @@ bootctl --path=/boot install;
 > Nota 1: Então Repito os passos de: **Instalando o bootloader**.
 > Nota 2: Lembrando que, se usar `/boot` e `/boot/efi`, montar ambos e usar o `bootctl` em `/boot/efi`.
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 # Instalação de drivers gráficos
 
@@ -712,14 +712,14 @@ então também instalo esses drivers para GPU integrada:
 pacman -S --needed --noconfirm mesa-vulkan-intel vulkan-intel linux-firmware-intel
 ```
 
-{% include details summary="AMD" %}
+{% include markdown/details summary="AMD" %}
 
 Não estou usando **AMD** no momento, mas vou deixar os drivers necessários caso eu use futuramente:
 
 ```shell
 pacman -S --needed --noconfirm mesa-vulkan-radeon vulkan-radeon linux-firmware-radeon
 ```
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 **NVIDIA (Nouveau)**
 
@@ -729,7 +729,7 @@ Sempe bom ter os drivers da NVIDIA open-source caso a NVIDIA faça alguma "nhaca
 pacman -S --noconfirm  xf86-video-nouveau vulkan-nouveau
 ```
 
-{% include details summary="NVIDIA (proprietary) 🙄" %}
+{% include markdown/details summary="NVIDIA (proprietary) 🙄" %}
 
 Como já relatei acima, não uso o driver proprietário da **NVIDIA** do repo do **Arch Linux** por
 algumas incompatibilidades que tive na última versão 😡, mas mesmo assim vou deixar os pacotes
@@ -739,7 +739,7 @@ essenciais que se deve instalar:
 pacman -S --needed --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia;
 systemctl set-default multi-user.target
 ```
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 # Instalação de fontes
 
@@ -764,16 +764,16 @@ pacman -S --needed --noconfirm i3 i3lock i3status polybar pcmanfm picom rofi nit
 btop jq conky gsimplecal numlockx qt5ct qt6ct scrot dunst yazi xautolock imagemagick ranger lynx
 ```
 
-{% include details summary="Ambiente de trabalho (XFCE)" %}
+{% include markdown/details summary="Ambiente de trabalho (XFCE)" %}
 
 ```shell
 pacman -S --needed --noconfirm xfce4 xfce4-goodies appmenu-gtk-module libdbusmenu-glib lightdm \
 lightdm-gtk-greeter
 ```
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
-{% include details summary="Instalação do ambiente de trabalho (GNOME)" %}
+{% include markdown/details summary="Instalação do ambiente de trabalho (GNOME)" %}
 
 Minha relação com **GNOME** é entre amor e ódio. Instalo mas deixo com um ambiente de fallback:
 
@@ -790,7 +790,7 @@ gnome-browser-connector gnome-shell-extensions gnome-tweaks
 pacman -S --needed --noconfirm gnome gnome-extra gnome-desktop gnome-shell-extensions \
 gnome-browser-connector gnome-tweaks gdm
 ```
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 # Instalação de aplicações
 
@@ -859,7 +859,7 @@ EOF
 > Nota: Caso eu queira um perfil mais agressivo, para jogar por exemplo, que necessite de **zram**,
 então eu uso este perfil abaixo:
 
-{% include details summary="ZRAM: Perfil Agressivo" %}
+{% include markdown/details summary="ZRAM: Perfil Agressivo" %}
 
 {% highlight bash linenos %}
 cat << "EOF" > /etc/systemd/zram-generator.conf
@@ -871,7 +871,7 @@ fs-type = swap
 EOF
 {% endhighlight %}
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 **3** - Depois de configurar, eu faço um *reset* no daemon e habilito o serviço de **ZRAM**:
 
@@ -880,7 +880,7 @@ systemctl daemon-reload;
 systemctl enable --now systemd-zram-setup@zram0.service
 ```
 
-{% include details summary="Swap (opcional)" %}
+{% include markdown/details summary="Swap (opcional)" %}
 
 Caso eu prefiro usar **Swap** em arquivo em vez de **zram**, esses são os passos:
 
@@ -922,7 +922,7 @@ echo 'vm.swappiness=10' | tee -a /etc/sysctl.d/99-swap.conf
 
 > Nota: O swappiness recomendado é: 10 para SSD, 60 para HDD.
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 # Adicionando um usuário
 
@@ -981,7 +981,7 @@ sbctl sign -s /boot/EFI/Linux/arch-linux-lts-fallback.efi
 sbctl verify
 {% endhighlight %}
 
-{% include details summary="Assinando EFI Windows" %}
+{% include markdown/details summary="Assinando EFI Windows" %}
 
 A EFI do Windows existem muitos arquivos que devem ser assinados, por isso, faço da seguinte maneira
 retirado da própria [Wiki do Arch Linux](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl){:target="_blank"}:
@@ -995,7 +995,7 @@ sbctl verify | sed 's/✗ /sbctl sign -s /e'
 > Nota: Para este passo ser realizado, primeiro tem que ter realizado o passo
 **Adicionando EFI do Windows (Opcional)**.
 
-{% include enddetails %}
+{% include markdown/enddetails %}
 
 **(4)** - Reinicio a máquina com o comando abaixo para entrar automaticamente na **BIOS**:
 

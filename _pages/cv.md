@@ -1,12 +1,13 @@
 ---
 layout: resume
-order: 4
+author: # "Your Name"
 title: Currículo
-description: |
-  Currículo de William Canin
+order: 4
 emoji: 📜
-in_menu: true
+in_menu: false
 published: false
+toc:
+  enable: false
 permalink: /cv/
 ---
 

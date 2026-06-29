@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Linux: Compilando e instalando o kernel em modo tradicional"
 description: |
     Quando um usuário Linux já está em um nível de usabilidade Linux a tempos, algo que ele procura
@@ -258,7 +258,7 @@ No menu de configuração kernel você irá se deparar com configurações desse
 Outro recurso importante é a pesquisa de módulos/driver no menu (menuconfig) de configuração do kernel, a qualquer lugar que esteje, você apertando a tecla de barra do seu teclado (/), irá abrir uma janela dialog de pesquisa.
 Por exemplo:
 
-{% include image
+{% include markdown/image
 src= "/assets/images/posts/search-kernel-linux.png"
 title="search-kernel-linux"
 caption="kernel search"
@@ -270,7 +270,7 @@ border-color="#000" %}
 
 Nessa dialog, você coloca um módulo/driver que foi listado com os comandos dos Métodos 1, 2 ou 3, e assim vai pesquisando os drivers para sua máquina no kernel. No exemplo abaixo, pesquisei o driver *"r8169*" que listou no comando *$ lspci -k*. Veja:
 
-{% include image
+{% include markdown/image
 src= "/assets/images/posts/search-kernel-linux-return.png"
 title="search-kernel-linux-return"
 caption="kernel search return"

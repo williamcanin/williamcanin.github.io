@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog/post
 title: "Carregando Javascripts para diferentes posts e pages no Jekyll"
 description: |
         Será que seu projeto em Jekyll está carregados códigos desnecessário?

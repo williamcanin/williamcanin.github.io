@@ -1,21 +1,21 @@
 ---
 layout: contact
-order: 5
+author: William C. Canin
 title: "Contato"
 description: |
   Contato com William Canin
+order: 5
 emoji: ✉️
-author: "William C. Canin"
-date:
-update_date: 2026-05-30 20:58:44 -0300
 in_menu: true
-reading_time: false
 published: true
+reading_time: false
+toc:
+  enable: false
 permalink: /contact/
 ---
 
+{%- include markdown/details summary="Contato com segurança máxima - Criptografia" -%}
 
-{%- include details summary="Contato com segurança máxima - Criptografia" -%}
 
 ## >> Contato com segurança máxima - Criptografia
 
@@ -49,7 +49,7 @@ D184 1B51 1196 2DF1 EA31 249F 3B2A 7830 46E0 6762
 
 Para me adicionar basta copiar meu **Tox ID** e me adicionar no seu cliente Tox.
 
-**Meu Tox ID:** 
+**Meu Tox ID:**
 
 ```bash
 7340B5F41655D29B8EA76C4A2FBD6B760B303C6220E883F45A97F209871D71204B26336F16F8
@@ -64,9 +64,9 @@ Você precisar instalar um cliente com suporte ao XMPP, existem vários, mas rec
 
 Para me adicionar no XMPP, use minhas credenciais abaixo:
 
-**Username**: 
+**Username**:
 
-```bash 
+```bash
 williamcanin@creep.im
 ```
 
@@ -80,5 +80,4 @@ D184 1B51 1196 2DF1 EA31 249F 3B2A 7830 46E0 6762
 
 Até.
 
-{%- include enddetails -%}
-
+{%- include markdown/enddetails -%}
