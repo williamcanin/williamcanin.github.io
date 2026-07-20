@@ -20,6 +20,8 @@ em desenvolvimento e manutenção.
 
 ---
 
+»&nbsp; [**Tildr**](https://orbitbits.github.io/tildr/){:target="_blank"} — Gerencie e reproduza seu diretório HOME de forma declarativa. Ou seja, um gerenciador de dotfiles.
+
 »&nbsp; [**Smog**](https://github.com/orbitbits/smog/){:target="_blank"} — Utilitário de higienização de dados projetado para saturar arquivos, diretórios e volumes inteiros, transformando-os em irrecuperável.
 
 »&nbsp; [**SeedCTL**](https://github.com/orbitbits/seedctl/){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
