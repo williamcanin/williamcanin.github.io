@@ -28,8 +28,6 @@ em desenvolvimento e manutenção.
 
 »&nbsp;[SeedCTL](https://github.com/orbitbits/seedctl/){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
 
-<!-- »&nbsp;[Tilder](github.com/orbitbits/tilder/){:target="_blank"} — Gerenciador seus arquivos e diretórios HOME com links simbólicos e Git. -->
-
 »&nbsp;[shred-extension-rs](https://github.com/williamcanin/shred-extension-rs){:target="_blank"} — Uma extensão ultraleve para excluir arquivos de forma segura para os gerenciadores de arquivos Nautilus e Thunar.
 
 »&nbsp;[rawfeed-jekyll](https://rawfeed.github.io/rawfeed-jekyll/){:target="_blank"} — Um tema para Jekyll com estética estilo console e carregamento rápido. (Static Site Generators).
