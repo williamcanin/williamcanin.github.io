@@ -19,23 +19,24 @@ Coloco aqui meus principais projetos do [meu GitHub](https://github.com/williamc
 em desenvolvimento e manutenção.
 
 ---
+»&nbsp;[**Argvus**](https://argvus.github.io){:target="_blank"} — Um ambiente Desktop completo focado em Hyprland (para desenvolvedores).
 
-»&nbsp; [**Tildr**](https://orbitbits.github.io/tildr/){:target="_blank"} — Gerencie e reproduza seu diretório HOME de forma declarativa. Ou seja, um gerenciador de dotfiles.
+»&nbsp;[**Tildr**](https://orbitbits.github.io/tildr/){:target="_blank"} — Gerencie e reproduza seu diretório HOME de forma declarativa. Ou seja, um gerenciador de dotfiles.
 
-»&nbsp; [**Smog**](https://github.com/orbitbits/smog/){:target="_blank"} — Utilitário de higienização de dados projetado para saturar arquivos, diretórios e volumes inteiros, transformando-os em irrecuperável.
+»&nbsp;[**Smog**](https://github.com/orbitbits/smog/){:target="_blank"} — Utilitário de higienização de dados projetado para saturar arquivos, diretórios e volumes inteiros, transformando-os em irrecuperável.
 
-»&nbsp; [**SeedCTL**](https://github.com/orbitbits/seedctl/){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
+»&nbsp;[**SeedCTL**](https://github.com/orbitbits/seedctl/){:target="_blank"} — Gerador de carteira multichain de criptomoedas.
 
-<!-- »&nbsp; [**Tilder**](github.com/orbitbits/tilder/){:target="_blank"} — Gerenciador seus arquivos e diretórios HOME com links simbólicos e Git. -->
+<!-- »&nbsp;[**Tilder**](github.com/orbitbits/tilder/){:target="_blank"} — Gerenciador seus arquivos e diretórios HOME com links simbólicos e Git. -->
 
 »&nbsp;[**shred-extension-rs**](https://github.com/williamcanin/shred-extension-rs){:target="_blank"} — Uma extensão ultraleve para excluir arquivos de forma segura para os gerenciadores de arquivos Nautilus e Thunar.
 
 »&nbsp; [**rawfeed-jekyll**](https://rawfeed.github.io/rawfeed-jekyll/){:target="_blank"} — Um tema para Jekyll com estética estilo console e carregamento rápido. (Static Site Generators).
 
-»&nbsp; [**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"} — Um gerenciador CLI de dotfiles para sistemas Unix.
+»&nbsp;[**Dotctrl**](https://github.com/snakypy/dotctrl){:target="_blank"} — Um gerenciador CLI de dotfiles para sistemas Unix.
 
-»&nbsp; [**Jektify**](https://jektify.github.io){:target="_blank"} — Um plugin música do Spotify para [Jekyll](http://jekyllrb.com){:target="_blank"}.
+»&nbsp;[**Jektify**](https://jektify.github.io){:target="_blank"} — Um plugin música do Spotify para [Jekyll](http://jekyllrb.com){:target="_blank"}.
 
-»&nbsp; [**RS2F**](https://github.com/williamcanin/rs2f){:target="_blank"} — Quebrador de senha de contas online de baixo processamento feito em [Rust](http://rust-lang.org){:target="_blank"} e keygen de autenticador de dois fatores (Google Autenticator).
+»&nbsp;[**RS2F**](https://github.com/williamcanin/rs2f){:target="_blank"} — Quebrador de senha de contas online de baixo processamento feito em [Rust](http://rust-lang.org){:target="_blank"} e keygen de autenticador de dois fatores (Google Autenticator).
 
-»&nbsp; [**Backduor**](https://github.com/williamcanin/backdour){:target="_blank"} — Um backdoor "indetectável" multiplataforma feito em [Rust](http://rust-lang.org){:target="_blank"}, com **C2 Server** utilizando **PostGreSQL**.
+»&nbsp;[**Backduor**](https://github.com/williamcanin/backdour){:target="_blank"} — Um backdoor "indetectável" multiplataforma feito em [Rust](http://rust-lang.org){:target="_blank"}, com **C2 Server** utilizando **PostGreSQL**.
