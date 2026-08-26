@@ -36,7 +36,7 @@ donate:
       description: |
         Donate quickly and securely using your PayPal balance or linked card.
       # address: "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=YBK2HEEYG8V5W&source=&ssrt=1775261628264"
-      address: "https://www.paypal.com/donate/?hosted_button_id=XJKGA4DPNUMPY"
+      address: "https://www.paypal.com/donate/?hosted_button_id=RA8D8YAKK6Q2A"
 
     - name: bitcoin (lightning network)
       logo: "/assets/images/donate/lightning_network.svg"
