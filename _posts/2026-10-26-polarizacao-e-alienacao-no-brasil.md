@@ -1,14 +1,14 @@
 ---
 layout: blog/post
 author: "William C. Canin"
-title: "A polarização e a incapacidade de separar as coisas"
+title: "Off Topic: A polarização e a incapacidade de separar as coisas da sociedade"
 description: "O Brasil de 2026 enfrenta um problema que vai muito além das divergências políticas: a dificuldade de pensar de maneira independente, interpretar contextos e respeitar a individualidade alheia"
 date: 2026-10-26 10:00:53 -0300
 update_date: 
 comments: true
 toc:
   enable: true
-tags: [sociedade, reflexão, política]
+tags: [sociedade, reflexão, política, off-topic]
 ---
 
 <!-- Write from here your post !!! -->
